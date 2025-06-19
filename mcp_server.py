@@ -26,6 +26,7 @@ mcp = FastMCP("ocaml-search")
 # Global search engine instance (lazy loaded)
 search_engine: Optional[SemanticSearch] = None
 embeddings_dir = Path("package_embeddings")
+package_descriptions_dir = Path("package-descriptions")
 
 @mcp.tool()
 async def find_ocaml_packages(functionality: str) -> Dict[str, Any]:
@@ -78,6 +79,43 @@ async def find_ocaml_packages(functionality: str) -> Dict[str, Any]:
         return {"error": error_msg}
 
 
+@mcp.tool()
+async def get_package_summary(package_name: str) -> Dict[str, Any]:
+    """
+    Get a concise summary of an OCaml package.
+    
+    Returns a 3-4 sentence description of what the package does, its main purpose,
+    key capabilities, and practical use cases.
+    
+    Args:
+        package_name: Name of the OCaml package (e.g., 'lwt', 'base', 'cohttp')
+    
+    Returns:
+        Dictionary containing package name, version, and description
+    """
+    try:
+        description_file = package_descriptions_dir / f"{package_name}.json"
+        
+        if not description_file.exists():
+            return {
+                "error": f"No description found for package '{package_name}'. Package may not exist or description not yet generated."
+            }
+        
+        with open(description_file, 'r', encoding='utf-8') as f:
+            package_data = json.load(f)
+        
+        return {
+            "package": package_data["package"],
+            "version": package_data["version"],
+            "description": package_data["description"]
+        }
+        
+    except Exception as e:
+        error_msg = f"Failed to get package summary: {str(e)}"
+        logger.error(error_msg)
+        return {"error": error_msg}
+
+
 # Additional tool functions can be added here using the @mcp.tool() decorator
 # Example structure for future tools:
 #
@@ -103,10 +141,24 @@ def main():
     if len(sys.argv) > 1 and sys.argv[1] == "--test":
         # Run a simple test
         async def test():
-            query = sys.argv[2] if len(sys.argv) > 2 else "HTTP server"
-            print(f"Testing query: {query}\n")
-            result = await find_ocaml_packages(query)
-            print(json.dumps(result, indent=2))
+            if len(sys.argv) > 2:
+                if sys.argv[2].startswith("--summary="):
+                    # Test package summary
+                    package_name = sys.argv[2].split("=", 1)[1]
+                    print(f"Testing package summary: {package_name}\n")
+                    result = await get_package_summary(package_name)
+                    print(json.dumps(result, indent=2))
+                else:
+                    # Test semantic search
+                    query = sys.argv[2]
+                    print(f"Testing semantic search: {query}\n")
+                    result = await find_ocaml_packages(query)
+                    print(json.dumps(result, indent=2))
+            else:
+                # Default test
+                print("Testing semantic search: HTTP server\n")
+                result = await find_ocaml_packages("HTTP server")
+                print(json.dumps(result, indent=2))
         
         asyncio.run(test())
     else:
