@@ -104,7 +104,7 @@ uv run python -m py_compile generate_descriptions.py
 - **Model**: Default uses `Qwen/Qwen3-30B-A3B-FP8`
 - **Processing**: Excludes Tezos packages and skips already-processed files
 - **Parallel Processing**: Supports up to 12 workers for faster processing
-- **Error Handling**: Comprehensive exception catching and signal handling for robust operation
+- **Signal Handling**: Graceful shutdown support for robust operation
 
 ## Supporting Modules
 
@@ -127,26 +127,6 @@ Handles OCaml-specific version string normalization.
 - Converts OCaml versions to semantic versioning format
 - Handles special cases like `v0.17.1`, `4.2.1-1`
 - Finds latest version from a list of version strings
-
-### Progress Tracker (`progress_tracker.py`)
-
-Provides resumable processing and progress monitoring.
-
-**Features:**
-- Checkpoint-based resume capability
-- Real-time progress tracking with ETA
-- Atomic file operations for reliability
-- Memory-efficient processing statistics
-
-### Error Handling (`error_handling.py`)
-
-Comprehensive error handling utilities for robust processing.
-
-**Features:**
-- Categorized error types (network, parsing, validation, etc.)
-- Retry logic with exponential backoff
-- Detailed error logging and recovery
-- Graceful degradation for partial failures
 
 ## Tool 3: Embedding Generator (`generate_embeddings.py`)
 
@@ -340,8 +320,6 @@ Add to your Claude Desktop configuration:
 ├── mcp_server.py            # MCP server for tool access
 ├── parse_html.py            # HTML parsing utilities
 ├── version_utils.py         # Version handling utilities
-├── progress_tracker.py      # Progress tracking and checkpointing
-├── error_handling.py        # Error handling utilities
 ├── pyproject.toml          # Project configuration and dependencies
 ├── uv.lock                 # Dependency lock file
 └── CLAUDE.md               # This documentation

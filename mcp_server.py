@@ -27,7 +27,6 @@ mcp = FastMCP("ocaml-search")
 search_engine: Optional[SemanticSearch] = None
 embeddings_dir = Path("package_embeddings")
 
-
 @mcp.tool()
 async def find_ocaml_packages(functionality: str) -> Dict[str, Any]:
     """
