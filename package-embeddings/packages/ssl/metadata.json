@@ -1,0 +1,56 @@
+{
+  "package": "ssl",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 5,
+  "creation_timestamp": "2025-06-18T16:28:48.018954",
+  "modules": [
+    {
+      "module_path": "Ssl.Error",
+      "description": "Provides functions to retrieve error information from OpenSSL's error queue, including the error code, library name, and reason string. Operates on a private type encapsulating these error details. Used to diagnose cryptographic operations by accessing specific error contexts without altering the queue.",
+      "description_length": 304,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ssl.Runtime_lock",
+      "description": "Provides functions to manage SSL connections and data transfer without releasing the OCaml runtime lock, ensuring sequential execution of SSL operations. Works with socket descriptors and byte buffers, supporting non-blocking I/O and direct buffer manipulation. Used for secure communication in multi-threaded environments where SSL operations must not interleave.",
+      "description_length": 364,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "ssl",
+      "description": "Provides functions for parsing and manipulating MPEG audio streams, including reading header information and extracting bit rate and sample rate data. Operates on byte sequences and structured records representing audio frames. Used to analyze streaming audio data for playback configuration and metadata extraction.",
+      "description_length": 316,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ssl_threads",
+      "description": "Initializes the OpenSSL library for thread-safe operation, ensuring concurrent access is handled correctly. It works with OpenSSL's internal state and synchronization primitives. This is essential when using OpenSSL in multi-threaded applications to prevent race conditions.",
+      "description_length": 274,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ssl",
+      "description": "Encapsulates SSL error details and provides tools for managing secure, non-blocking communication over sockets. Offers access to error codes, library names, and reason strings for debugging, and supports buffer-based data transfer with socket descriptors. Enables thread-safe SSL operations by avoiding the OCaml runtime lock during I/O. Can be used to inspect failure reasons after a cryptographic operation or to implement high-performance secure servers.",
+      "description_length": 457,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 5,
+    "meaningful_modules": 5,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 457,
+    "min_description_length": 274,
+    "avg_description_length": 343.0,
+    "embedding_file_size_mb": 0.01859569549560547
+  }
+}

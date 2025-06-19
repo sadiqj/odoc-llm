@@ -1,0 +1,343 @@
+{
+  "package": "lutin",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 46,
+  "creation_timestamp": "2025-06-18T16:41:09.587874",
+  "modules": [
+    {
+      "module_path": "Util.StringMap",
+      "description": "This module offers operations for managing associative structures with string keys and arbitrary values, including insertion, deletion, lookup, traversal, and merging of key-value pairs. It supports sequence-based transformations, filtering, and construction of maps, enabling efficient manipulation of structured data. Use cases include configuration management, data aggregation, and processing hierarchical information where string-based indexing is required.",
+      "description_length": 462,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "FGen",
+      "description": "Provides functions to generate and manipulate finite sets represented as hash tables, including union, intersection, and membership checks. Operates on values of type 'a t, where 'a is the element type. Used to efficiently manage dynamic collections in constraint satisfaction and symbolic execution contexts.",
+      "description_length": 309,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MainArg",
+      "description": "This module handles command-line argument parsing, validation, and state management for a LUTIN2 application, focusing on configuring execution parameters like testing modes, input files, and output settings. It operates on a mutable `t` type for storing and modifying options such as seeds, event counts, and library lists, alongside a `gen_mode` type to represent execution modes. Use cases include initializing tool configurations, enforcing input constraints, and dynamically adjusting runtime behavior through flag modifications.",
+      "description_length": 534,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Type",
+      "description": "Converts values of type `t` to various string representations, including standard, C-style, and structured formats. Operates on custom types such as `enum_value`, `field`, and `structured`, which represent symbolic data and nested structures. Used to generate human-readable or machine-parsable output from internal type representations.",
+      "description_length": 337,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "LutProg",
+      "description": "Creates a program state from input files and node lists, initializing with specific library configurations. Operates on string lists, program states, and custom type t to manage state transitions. Used to generate initial states for simulation or analysis workflows.",
+      "description_length": 266,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sol_nb",
+      "description": "Provides arithmetic operations for a custom numeric type, including addition, multiplication, division, and exponentiation. Works with the `sol_nb` type, supporting conversions to and from floats and strings. Used to represent and manipulate specialized numerical values in contexts requiring precise control over numeric semantics.",
+      "description_length": 332,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Solver",
+      "description": "Provides functions to check Boolean satisfiability of formulas and solve formulas with numeric constraints, using Bddd for internal operations. Works with formula structures, variable environments, and numeric expressions to generate solution assignments. Used to determine feasibility of logical conditions and produce valid variable assignments for further numeric evaluation.",
+      "description_length": 378,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Auto2Lucky",
+      "description": "Generates a lucky automaton from a structured AutoGen.t input, translating state transitions and labels into a specific output format. It processes strings representing state names and transition labels, writing the result to an output channel. Used to convert automatically generated automata into a format suitable for further analysis or execution.",
+      "description_length": 351,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bddd",
+      "description": "Provides operations to convert BDD representations to strings, construct BDDs from logical formulas, and manage numeric constraints through linear constraints and GNE structures. Works with BDDs, variable environments, and constraint data types to support symbolic reasoning and solution counting. Used to generate visual representations of Boolean variables and compute solution counts for logical expressions.",
+      "description_length": 411,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Guard",
+      "description": "Provides operations to construct, manipulate, and evaluate algebraic expressions within a context-aware store, including adding expressions, merging sets, and generating string representations. Works with custom types `t` for expression sets, `store` for context mappings, and `unalias` for resolving identifiers to expressions. Used to process and simplify logical conditions in trace analysis, extract expression lists for further processing, and generate debug output.",
+      "description_length": 471,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Reactive",
+      "description": "Provides functions to execute and debug reactive programs, processing a program state and input values to produce output values and updated state. Operates on program structures, context objects representing debugging events, and custom error types for detailed event tracking. Used to advance reactive computations step-by-step while capturing debugging information and handling errors during execution.",
+      "description_length": 404,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "ExprUtil",
+      "description": "Extracts and processes expression information from a tuple containing an expression and two BDDs, returning a transformed expression. Operates on Bddd.t, Bdd.t, and Expr.t types. Used to refine logical expressions based on BDD constraints during symbolic execution.",
+      "description_length": 265,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Prog",
+      "description": "Provides functions to extract variable environments from a state, compute dynamic weights based on expression weights, and convert control states to string representations for debugging. Works with variable environments, control states as lists of strings, and weighted structures represented as maps. Used to generate error messages with detailed control state information and to process dynamic weight calculations during program execution.",
+      "description_length": 442,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "LutinUtils",
+      "description": "Calculates continuation and stopping values for numerical intervals using Gaussian and interval-based formulas, operating on integer ranges. Each function takes three integer parameters representing start, end, and step to compute specific output values. Used in signal processing and numerical simulation to determine iteration boundaries.",
+      "description_length": 340,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Glue",
+      "description": "Provides functions to convert type effects, values, and algebraic expressions into expression structures, along with utilities for variable references and expansion. Works with type representations, expressions, values, and node-based algebraic structures. Used to generate optimized expression trees from abstract syntax and manage variable bindings during code transformation.",
+      "description_length": 378,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "ExpEval",
+      "description": "Simplifies algebraic expressions, numeric values, and logical formulas by reducing them to their most compact forms. It operates on custom types representing mathematical expressions, numbers, and logical statements. Used to preprocess equations for symbolic computation and verification tasks.",
+      "description_length": 294,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Var",
+      "description": "This module handles variable configuration management, enabling operations like creating, modifying, and querying properties such as name, type, and initial values through a parameterized type 'a t. It also manages variable environments using Value.OfIdent.t-derived structures, facilitating tracking of bindings and locations in computational contexts. Use cases include dynamic configuration systems and interpreter environments where variable states and substitutions are critical.",
+      "description_length": 484,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Polyhedron",
+      "description": "Builds polyhedra from delayed constraints, extracts vertices, converts points to substitutions, and checks if a point lies within a polyhedron. Operates on constraints, variables, and geometric points. Used to manage variable dependencies, validate geometric membership, and generate substitution maps for constraint systems.",
+      "description_length": 325,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lexeme",
+      "description": "Provides operations to manage lexical state, including creating and manipulating lexing buffers, tracking current file context, and converting states to strings. Works with lexing buffers and a custom state type that can be annotated with source information. Used to track and report lexical positions during parsing and error handling.",
+      "description_length": 336,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Draw",
+      "description": "Generates points within or on the boundary of a bounded solution hull using numerical methods. Operates on integer parameters, store structures, and variable substitutions to produce distributions of points, edges, and vertices. Used to visualize geometric properties of constrained solution spaces in optimization contexts.",
+      "description_length": 324,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Store",
+      "description": "Manages numeric constraints by maintaining a range-based store for simple constraints and deferring complex ones, which are later converted into polyhedra. It processes equality constraints through substitution and handles domain checks to determine satisfiability. Used to analyze variable domains and transform constraints for polyhedral representation after all constraints are added.",
+      "description_length": 387,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Constraint",
+      "description": "Provides operations to manipulate linear constraints involving Booleans, integers, and floats, including variable extraction, substitution, negation, and string conversion. Works with inequality representations and constraint objects that track variable dependencies. Used to evaluate constraints under substitutions, generate human-readable outputs, and transform constraints through substitution lists.",
+      "description_length": 404,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Thickness",
+      "description": "Provides functions to convert various thickness-related data structures into strings, including vertex counts, numeric tuples, and boolean-integer pairs. Works with types such as `boolean`, `numeric`, `vertices_nb`, `edges_nb`, and `inside_nb` to represent and format thickness configurations. Used to generate human-readable output for test vector generation settings in simulation or analysis workflows.",
+      "description_length": 405,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "SyntaxeDump",
+      "description": "Outputs structured representations of abstract syntax tree nodes, type expressions, and value expressions to a specified formatter. Works with types like `Syntaxe.package`, `Syntaxe.let_info`, `Syntaxe.type_exp`, and `Syntaxe.val_exp` to serialize internal compiler data during analysis. Used to debug or inspect parsed code structures and type information during compilation phases.",
+      "description_length": 383,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Version",
+      "description": "Provides functions to retrieve a static version string, a SHA hash, and a dynamically generated version string. Works with string data types and returns formatted version identifiers. Used to embed build information in binaries and track deployment versions.",
+      "description_length": 258,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Formula_to_bdd",
+      "description": "Encodes logical formulas and numerical expressions into BDDs and related structures, using environment variables to substitute values during evaluation. It handles formula parsing, constraint indexing, and numeric expression evaluation with context-aware substitution. The module supports incremental building and cleaning of internal tables to manage memory efficiently during symbolic computations.",
+      "description_length": 400,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rif",
+      "description": "Reads input values from a channel, writes output data to a channel, and serializes variable interfaces with their types. Operates on input/output channels, variable lists, and value maps. Used to process and serialize reactive input formats in simulation and verification workflows.",
+      "description_length": 282,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Luc2alice",
+      "description": "Generates output processing strings from variable lists and file names, and creates Alice stubs for C and header files. Converts type representations to character strings and handles file output operations. Constructs unique identifiers and initializes random seeds for deterministic behavior.",
+      "description_length": 293,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Util",
+      "description": "Manages associative structures with string keys and arbitrary values, supporting insertion, deletion, lookup, and traversal. Provides operations for filtering, transforming, and merging maps, enabling efficient data manipulation. It allows building and processing structured data, such as configuring systems or aggregating hierarchical information. Examples include extracting specific keys from a map or combining multiple configurations into a single structure.",
+      "description_length": 464,
+      "index": 28,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Parsers",
+      "description": "Parses a list of strings into a structured package using defined syntax rules. Processes raw input into tokens for further analysis. Resets the parsing state to handle new input sequences.",
+      "description_length": 188,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "LucFGen",
+      "description": "Handles the retrieval of generated functions from a program state, using an environment context. Operates on `Var.env_in`, `Prog.state ref`, and `FGen.t` types. Used to access function generation data during program analysis or transformation.",
+      "description_length": 243,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "LutParser",
+      "description": "Parses LUT files by scanning lexemes and constructing a package structure from a lexer. It processes input through a token generator and builds a syntax tree based on defined token types. Used to convert hardware description files into structured data for analysis or transformation.",
+      "description_length": 283,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ne",
+      "description": "Provides operations to manipulate algebraic expressions, including negation, addition, subtraction, multiplication, and division. Works with a custom type `t` representing expressions and a substitution type `subst` for variable replacement. Used to transform and analyze expressions in symbolic computation contexts.",
+      "description_length": 317,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lucky",
+      "description": "Provides functions for advancing an automaton state and generating solutions based on a given environment and formula list. Operates on environment types `Var.env_in`, `Var.env_out`, and `Var.env_loc`, along with state references and formula generators. Used to explore possible system behaviors under different step modes or thickness settings for solution enumeration.",
+      "description_length": 370,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "LutinRun",
+      "description": "Creates a plugin instance from an array of strings, using a specific internal representation. Operates on command-line arguments and plugin configuration data. Used to initialize debugging support during program execution.",
+      "description_length": 222,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "CoAlgExp",
+      "description": "The module provides functions for constructing and manipulating algebraic expressions, including creating constants, variables, function calls, logical operations, and conditionals, while supporting type checks, conversions, and output formatting. It works with data structures like booleans, integers, floats, identifiers, and expression lists, offering prefix/infix display options and Lustre/Lucky syntax integration. Use cases include expression composition, verification tasks, and code generation requiring structured algebraic representations.",
+      "description_length": 550,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Prevar",
+      "description": "Processes strings to identify and manipulate pre variables, extracting root names and generating encoded representations. It includes a formatting function that preserves non-pre-variable strings. Used to handle variable naming conventions in symbolic computation contexts.",
+      "description_length": 273,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Value",
+      "description": "Provides conversion between internal value representations and data values, along with arithmetic and comparison operations on numeric types. Works with numeric types and internal value containers, supporting addition, subtraction, multiplication, division, and zero-checking. Used to perform precise numerical computations and type conversions within expression evaluation.",
+      "description_length": 374,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Exp",
+      "description": "Provides functions to manipulate and convert boolean and numeric expressions, including adding variables and values to tables, converting types to strings, and removing string prefixes. Works with custom types like `ext_func_tbl`, `var_tbl`, `simple_tbl`, and `weight`. Used to process expression structures in a domain-specific language, such as mapping variable names to their corresponding values or types.",
+      "description_length": 409,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "LutExe",
+      "description": "This module handles stateful computations involving control flow management, variable environment manipulation, and behavior generation, with a focus on symbolic execution and constraint solving. It operates on control states, data states, variable bindings, and debugging event data structured through RdbgEvent. Key use cases include runtime debugging, event handling, and analyzing program behavior through state transitions.",
+      "description_length": 428,
+      "index": 39,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Verbose",
+      "description": "Provides functions to control logging levels and flags, retrieve the current log level, and output messages with specified severity and category. Operates with integers for log levels and a custom `flag` type for categorizing output. Used to conditionally print debug information, filter output by feature flags, and execute code blocks under specific logging conditions.",
+      "description_length": 371,
+      "index": 40,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Luc2c",
+      "description": "Provides functions to manipulate and process expression variables with specific transformation rules, including a configuration structure for control flow. Operates on variable lists and custom mode types to define execution behavior. Used to implement logic for parsing and rewriting abstract syntax trees in a compiler pipeline.",
+      "description_length": 330,
+      "index": 41,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Poly_draw",
+      "description": "Provides functions to generate points within or from a convex polyhedron representation. Operates on lists of floating-point coordinates and a poly_wrap structure that encapsulates the polyhedron's geometry. Draws specified numbers of points, either distinct or repeated, and extracts points from a precomputed poly_wrap.",
+      "description_length": 321,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gne",
+      "description": "Provides operations to combine, manipulate, and inspect garded normal expressions, including arithmetic operations like addition, subtraction, multiplication, and division, as well as conditional constructs. Works with expressions of type Ne.t guarded by Boolean formulas represented as Bdd.t. Used to represent and evaluate expressions that depend on specific boolean conditions, such as in symbolic execution or constraint solving.",
+      "description_length": 433,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "LoopWeights",
+      "description": "Calculates a range of values and their average based on start, end, and step parameters, returning tuples of integers. It processes sequences defined by numerical intervals and computes central tendencies within those ranges. Used to determine weighted intervals for scheduling tasks and compute mean values for resource allocation.",
+      "description_length": 332,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "GenOcamlGlue",
+      "description": "Generates OCaml code by taking an array of strings and a MainArg.t value, then outputs corresponding executable logic. It processes command-line arguments and source code fragments to construct valid OCaml modules. Used to dynamically create entry points for CLI applications based on parsed input.",
+      "description_length": 298,
+      "index": 45,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 46,
+    "meaningful_modules": 46,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 550,
+    "min_description_length": 188,
+    "avg_description_length": 357.8478260869565,
+    "embedding_file_size_mb": 0.16747379302978516
+  }
+}

@@ -1,0 +1,322 @@
+{
+  "package": "diffast-langs-verilog",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 43,
+  "creation_timestamp": "2025-06-18T16:43:50.160079",
+  "modules": [
+    {
+      "module_path": "Verilog_base.V_lib_base.Fact.FB",
+      "description": "Generates extended filenames with language-specific prefixes and computes hash-based identifiers. Operates on string inputs, triple node structures, and buffer objects for fact storage. Used to construct unique file representations and manage data serialization in a triple-store context.",
+      "description_length": 288,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Verilog_base.V_fact.F.FB",
+      "description": "Generates extended names with optional language tags and handles virtualized triple buffers for fact storage. Operates on node identifiers, string literals, and custom buffer structures tailored for semantic data processing. Used to construct and manage unique identifiers and data representations in knowledge graph applications.",
+      "description_length": 330,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mverilog.V_change.F.CB",
+      "description": "Manages edit operations and their relationships through hash tables that track usage, parent-child links, and added/removed edits. It works with node and edit operation types from the Diffast_core library, storing tagged and uniquely identified edits. Used to efficiently query and maintain the state of document changes during synchronization processes.",
+      "description_length": 354,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mverilog.V_lib.Change.F",
+      "description": "The module provides functions for converting, comparing, and analyzing annotation data, including transformations like anonymization, property checks (e.g., `is_named_orig`), and structural analysis of custom type `t`. It operates on data structures such as literals, statements, and tagged representations, supporting use cases like semantic validation, data anonymization, and parsing through utilities like `strip` and `to_tag`. Specific operations include evaluating flags, extracting identifiers, and determining element types (e.g., operators, scope-creating constructs).",
+      "description_length": 577,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mverilog.V_lib.Change.CB",
+      "description": "Manages edit operations and their relationships through specialized hash tables, tracking parent-child relationships, usage flags, and added/removal records. It operates on edit operations, node types, and unique identifiers to support version control and conflict resolution. Used to maintain consistency during collaborative editing by preserving structural dependencies and tracking changes.",
+      "description_length": 394,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mverilog.V_lib.Analyzing.Postprocessing",
+      "description": "Handles real-time adjustment of a single floating-point value used to influence simulation outcomes. Operates on a mutable float to dynamically modify behavior during execution. Used to fine-tune agent decision thresholds in a reinforcement learning environment.",
+      "description_length": 262,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Verilog_base.V_tree.Tree",
+      "description": "This module provides operations for managing node attributes, annotations, and metadata, including labels, source tracking, and hash-based integrity checks. It works with tree nodes and their associated data structures like scopes, bindings, and weightings. Specific use cases include debugging with source location tracking and ensuring data consistency through hash comparisons.",
+      "description_length": 380,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Verilog_base.V_lib_base.Tree",
+      "description": "This module handles operations involving tree node metadata, such as labeling, source tracking, and structural annotations, while managing scope, equality checks, and hash-based operations. It works with tree nodes enriched with attributes like weights, prefixes, suffixes, and bindings, enabling precise manipulation of hierarchical data. Use cases include compiler optimizations, syntax tree analysis, and data structure transformations where detailed node properties and efficient comparisons are critical.",
+      "description_length": 509,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Verilog_base.V_lib_base.Fact",
+      "description": "Generates extended names with language-specific prefixes and handles triple node construction. Operates on string identifiers, buffer structures, and node representations for fact storage. Used to encode and manage fact data in a structured, language-aware format for database insertion.",
+      "description_length": 287,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Verilog_base.V_label.OverloadOperator",
+      "description": "Provides string conversion functions for labeled overload operators, including detailed, short, and tag-based representations. Works with a custom type representing Verilog overload operators, extracting names, tags, and formatted strings. Used to generate human-readable and machine-processable representations during parsing and code generation.",
+      "description_length": 347,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Verilog_base.V_label.AssignmentOperator",
+      "description": "Provides functions to convert assignment operator representations into various string formats, including detailed tags and short forms. Works with a type encapsulating Verilog assignment operators, enabling precise serialization and metadata extraction. Used to generate human-readable outputs and structured representations for parsing and analysis tasks.",
+      "description_length": 356,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Verilog_base.V_label.IncOrDecOperator",
+      "description": "Provides operations to convert an operator representation into various string formats, including detailed tags and short forms. Works with a type encapsulating increment or decrement operators, typically used in parsing Verilog labels. Used to generate human-readable and machine-processable representations during syntax analysis.",
+      "description_length": 331,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Verilog_base.V_label.UnaryOperator",
+      "description": "Converts unary operator values to various string representations, including detailed tags with associated data. Operates on a type representing Verilog unary operators, preserving label information. Used to generate human-readable output and structured metadata for parsing and analysis.",
+      "description_length": 287,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Verilog_base.V_label.BinaryOperator",
+      "description": "Provides operations to convert binary operator representations into various string formats, including detailed, simplified, and short forms, as well as a tagged version with associated data. Works with a type encapsulating binary operators from Verilog parsing labels. Used to generate human-readable and machine-processable representations during syntax analysis and code generation.",
+      "description_length": 384,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Verilog_base.V_label.TimingCheck",
+      "description": "Provides functions to convert timing check data to various string representations, extract names, and anonymize data. Works with a custom type representing timing checks, including labels and associated data. Used to generate human-readable logs, filter sensitive information, and prepare data for analysis.",
+      "description_length": 307,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Verilog_base.V_label.SystemTask",
+      "description": "Provides functions to convert system task representations into various string formats, extract names, and generate identifiers. Works with a labeled system task type that includes metadata and associated values. Used to generate human-readable outputs, anonymize task data, and prepare task information for logging or serialization.",
+      "description_length": 332,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Verilog_base.V_label.Qualifier",
+      "description": "Converts qualifier values to various string representations, including a detailed tag format with associated data. Operates on a type representing Verilog qualifiers, preserving semantic information in structured outputs. Used to generate human-readable labels and machine-processable tags during parsing and code generation.",
+      "description_length": 325,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Verilog_base.V_label.NetType",
+      "description": "Converts network type representations to various string formats, including detailed, simplified, and anonymized versions. Processes internal label structures specific to Verilog parsing, extracting tags and associated data. Used to generate human-readable outputs and prepare data for analysis or logging.",
+      "description_length": 305,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Verilog_base.V_label.PortDirection",
+      "description": "Handles port direction data with string conversion, tagging, and anonymization. Works with a custom type representing Verilog port directions. Used to generate human-readable labels, annotate data, and obscure sensitive information in hardware descriptions.",
+      "description_length": 257,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Verilog_base.V_label.Gate",
+      "description": "Converts gate representations to strings, tags, and anonymized forms; processes Verilog gate data and custom gate types. Handles label-based gate structures and generates concise, unique identifiers. Used for generating human-readable outputs and anonymizing gate data in verification workflows.",
+      "description_length": 295,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Verilog_base.V_label.DataType",
+      "description": "Converts data type representations to strings, identifiers, and tagged formats while supporting anonymization and custom formatting. Operates on Verilog-specific data types and identifier structures. Used to generate human-readable outputs, serialize data for analysis, and prepare data for symbolic processing.",
+      "description_length": 311,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Verilog_base.V_label.Expression",
+      "description": "Converts expression nodes to formatted strings, extracts identifiers and values, and generates tagged representations for parsing and analysis. Operates on Verilog expression data structures, including labels and identifiers. Used to generate human-readable outputs, anonymize expressions for testing, and prepare data for symbolic analysis.",
+      "description_length": 341,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Verilog_base.V_label.EventExpression",
+      "description": "Provides functions to convert event expressions to various string representations, extract identifiers, and retrieve tagged information. Works with a type representing Verilog event expressions, including labels and associated data. Used to generate human-readable outputs, extract metadata for analysis, and format event expressions for logging or debugging.",
+      "description_length": 359,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Verilog_base.V_label.PropertyExpression",
+      "description": "Converts property expressions to various string representations, including detailed, simplified, and short forms. Processes labeled property expressions, extracting identifiers and tags for analysis. Used to generate human-readable outputs and extract metadata from Verilog property definitions.",
+      "description_length": 295,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Verilog_base.V_label.SequenceExpression",
+      "description": "Provides functions to convert sequence expressions to various string representations, extract identifiers, and retrieve tagged information. Works with a custom type representing sequence expressions from a Verilog parsing module. Used to generate human-readable output, serialize data, and extract metadata during parsing workflows.",
+      "description_length": 332,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Verilog_base.V_label.JoinSpec",
+      "description": "Converts join specification data into various string representations, including a detailed string, a compact representation, and a shortened version. Works with a custom type encapsulating join specifications from the Verilog parsing module. Used to generate human-readable and machine-processable forms of join operations in hardware description contexts.",
+      "description_length": 356,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Verilog_base.V_label.Statement",
+      "description": "Converts statement objects to various string representations, extracts identifiers, and generates tagged versions for debugging. Operates on Verilog statement structures, including labels and identifiers. Used to generate human-readable outputs, anonymize sensitive data, and prepare statements for analysis or transformation.",
+      "description_length": 326,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Verilog_base.V_label.CompilerDirective",
+      "description": "Provides functions to convert compiler directives to various string representations, extract their names, and generate tagged formats. Operates on a type representing Verilog compiler directives, including identifiers and associated data. Used to process and transform directive information for logging, debugging, or analysis.",
+      "description_length": 327,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Verilog_base.V_label.Strength",
+      "description": "Converts strength values to various string representations, including a tagged format with associated data. Operates on a type representing Verilog strength labels, supporting anonymization and short-form output. Used to generate human-readable and machine-processable forms of strength information in parsing workflows.",
+      "description_length": 320,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Verilog_base.V_label.SimpleImmediateAssertion",
+      "description": "Provides functions to convert a label-based assertion structure into various string representations, including a tagged format with associated values. Works with a type encapsulating Verilog-specific labels and immediate assertions. Used to generate human-readable and machine-processable forms of assertion data during parsing or debugging.",
+      "description_length": 341,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Verilog_base.V_label.DeferredImmediateAssertion",
+      "description": "Provides functions to convert, tag, and anonymize deferred immediate assertion data structures, including detailed and simplified string representations. Operates on a type representing Verilog parsing labels with associated data. Used to generate human-readable outputs and prepare data for analysis or logging.",
+      "description_length": 312,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Verilog_base.V_label.ConcurrentAssertion",
+      "description": "Provides functions to convert assertion data into various string representations, including detailed, simplified, and tagged formats. Works with a custom type representing concurrent assertions, including labels and associated data. Used to generate human-readable output for debugging or logging purposes.",
+      "description_length": 306,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Verilog_base.V_label.ModuleSpec",
+      "description": "Converts module specifications to various string representations, including a detailed string, a compact representation, and a shortened version. Works with the internal module specification type used in Verilog parsing. Used to generate human-readable and machine-processable labels during synthesis and analysis workflows.",
+      "description_length": 324,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Verilog_base.V_label.AlwaysSpec",
+      "description": "Converts a hardware description language construct representing an always block into various string representations, including a full description, a compact form, and a shortened version. Works with a type encapsulating label information from Verilog parsing. Used to generate human-readable or machine-processable outputs for simulation or verification tools.",
+      "description_length": 360,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Verilog_base.V_label.BinsSpec",
+      "description": "Converts a bins specification into various string representations, including detailed, simplified, and abbreviated formats. Works with a custom type representing bin configurations from a Verilog parsing module. Used to generate human-readable output for debugging or logging bin groupings in hardware description tools.",
+      "description_length": 320,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mverilog.V_change.F",
+      "description": "Provides operations to manage a set of integers and track changes through a list. Works with Xset.t for set operations and a mutable change list for logging modifications. Used to maintain and update a dynamic collection of integer values with audit tracking.",
+      "description_length": 259,
+      "index": 35,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mverilog.V_lib.Analyzing",
+      "description": "Provides access to lists of source files from two different versions, allowing comparison and analysis of code changes. Works with file lists structured as lists of `Diffast_core.Lang_base.S.file` objects. Used to track modifications in specific files between codebase snapshots.",
+      "description_length": 279,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mverilog.V_lib.Change",
+      "description": "Sets a specific integer value into a set structure, enabling efficient membership checks and updates. Operates on a custom `Xset.t` type and a list of changes for tracking modifications. Used to manage dynamic state transitions in configuration systems or version control mechanisms.",
+      "description_length": 283,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Verilog_base.V_label",
+      "description": "This module provides operations for converting, comparing, and analyzing label data, including property checks, metadata extraction, and type classification, working with a custom `t` type and syntax tree elements. It supports tasks like anonymizing labeled data, categorizing hardware description language constructs, and determining structural roles within parsed syntax trees. Specific use cases include processing Verilog elements, filtering based on semantic flags, and extracting attributes from annotated labels.",
+      "description_length": 519,
+      "index": 38,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Verilog_base.V_tree",
+      "description": "Provides operations for managing node attributes, annotations, and metadata, including labels, source tracking, and hash-based integrity checks. It supports tree nodes and related structures such as scopes, bindings, and weightings. Users can track source locations for debugging and verify data consistency via hash comparisons. Specific applications include validating node integrity and annotating nodes with contextual information.",
+      "description_length": 435,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mverilog.V_change",
+      "description": "Manages a dynamic collection of integers with change tracking, using Xset.t for set operations and a mutable list to log modifications. Supports adding, removing, and querying elements while maintaining an audit trail of updates. Operations include set unions, intersections, and change logging for version control. Can track modifications to a set and replay or inspect the history of changes.",
+      "description_length": 394,
+      "index": 40,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Verilog_base",
+      "description": "provides operations for handling labeled data, node attributes, and syntax tree analysis, with support for metadata extraction, source tracking, and structural classification. It includes a custom `t` type for labeled elements and operations for anonymization, categorization, and integrity checks. Users can process Verilog constructs, filter based on semantic flags, and validate node consistency through hash comparisons. Specific tasks include extracting attributes from annotated labels and tracking source locations for debugging.",
+      "description_length": 536,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mverilog",
+      "description": "Tracks integer sets with change logging, using Xset.t for efficient operations and a mutable list to record modifications. Supports adding, removing, and querying elements, along with set operations like union and intersection. Maintains a history of changes for replay or inspection. Example: track a set of signal IDs and revert to a previous state by replaying logged updates.",
+      "description_length": 379,
+      "index": 42,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 114,
+    "meaningful_modules": 43,
+    "filtered_empty_modules": 71,
+    "retention_rate": 0.37719298245614036
+  },
+  "statistics": {
+    "max_description_length": 577,
+    "min_description_length": 257,
+    "avg_description_length": 347.0,
+    "embedding_file_size_mb": 0.15657711029052734
+  }
+}

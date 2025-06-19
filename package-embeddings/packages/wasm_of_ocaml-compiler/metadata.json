@@ -1,0 +1,294 @@
+{
+  "package": "wasm_of_ocaml-compiler",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 39,
+  "creation_timestamp": "2025-06-18T16:42:09.291188",
+  "modules": [
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Curry.Make.Memory",
+      "description": "This module handles low-level manipulation of Wasm AST expressions, including memory allocation, array access, and byte sequence operations, alongside boxing/unboxing of numeric types like int32, int64, and nativeint to bridge OCaml's internal representations with external formats. It works with Wasm-specific data structures such as expressions, variables, and typed arrays, enabling precise control over memory layouts and type conversions. Use cases include optimizing WebAssembly execution, managing raw memory buffers, and ensuring compatibility between OCaml's numeric types and Wasm's expected input/output formats.",
+      "description_length": 623,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Curry.Make.Value",
+      "description": "This module provides low-level manipulation of Wasm expressions through arithmetic, logical, and bitwise operations, including comparisons, type checks, and integer transformations. It works with `expression` values to handle tasks like boolean logic, integer arithmetic, and bitwise manipulations such as AND, XOR, and shifts, particularly useful for optimizing or analyzing WebAssembly instruction sequences.",
+      "description_length": 410,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Curry.Make.Constant",
+      "description": "Translates OCaml compiler constants into corresponding expression representations. It processes values of type `Js_of_ocaml_compiler.Code.constant` and converts them into an internal expression format used for code generation. This is essential for embedding literal values into generated JavaScript code.",
+      "description_length": 305,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Curry.Make.Closure",
+      "description": "Translates OCaml closures into Wasm-compatible expressions and manages environment binding during code generation. Operates on maps of closures indexed by variables and Wasm AST expressions, handling currying and argument loading. Used to generate efficient closure calls and manage function arity in a compiled JavaScript-to-Wasm pipeline.",
+      "description_length": 340,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Curry.Make.Math",
+      "description": "The module offers a range of mathematical operations including trigonometric, hyperbolic, exponential, logarithmic, and hypotenuse calculations, along with exponentiation, modulus, and rounding, all tailored for numeric expression types. It supports precision control and base variations, enabling accurate transformations for complex numerical computations. These functionalities are particularly useful in scientific simulations, engineering calculations, and financial modeling where rigorous mathematical handling is required.",
+      "description_length": 530,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Sexp.Util",
+      "description": "Extracts a single value from a list using a projection function, enforces presence of a list with a defaulting function, converts values to strings and booleans, retrieves associated key-value pairs, and looks up members by name in a structured data format. Works with a custom type `t` and related list structures. Used to parse and validate configuration data, extract specific fields from nested structures, and handle optional elements with strict defaults.",
+      "description_length": 461,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Code_generation.Arith",
+      "description": "The module offers arithmetic and bitwise operations\u2014such as addition, multiplication, shifts, and logical comparisons\u2014alongside specialized checks like zero equality, all tailored for abstract `expression` types. It enables manipulation of symbolic expressions in contexts like code analysis or optimization, with `eqz` specifically supporting conditional evaluations. By abstracting away raw integers, it facilitates safe and flexible handling of arithmetic logic in higher-level transformations.",
+      "description_length": 497,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Link.Wasm_binary",
+      "description": "Reads WebAssembly module files and extracts imported functions, tables, memories, and globals. Modifies WebAssembly binary files by appending source map sections with specified URLs. Operates on file paths and structured import records containing module and field names. Used to analyze dependencies in compiled WebAssembly modules and embed debugging information for source mapping.",
+      "description_length": 383,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Curry.Make",
+      "description": "Handles low-level WebAssembly AST manipulation, including memory operations, numeric type conversion, and expression evaluation. It supports arithmetic, logical, and mathematical operations on numeric and boolean expressions, along with translation of OCaml constants and closures into Wasm-compatible forms. Operations include integer and floating-point arithmetic, bitwise manipulations, trigonometric functions, and closure management. Examples include optimizing memory access, embedding literals into generated code, and performing precise mathematical computations in WebAssembly.",
+      "description_length": 586,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Gc_target.Memory",
+      "description": "This module provides low-level memory and array operations, including allocation, indexing, and type tagging, working with Wasm_ast.expression and Wasm_ast.var types to generate WebAssembly code for structured data. It also includes boxing and unboxing functions for numeric types like int32, int64, and nativeint, enabling direct manipulation of their concrete representations within expression-based systems. These capabilities support tasks such as managing memory layouts, handling heterogeneous data structures, and optimizing numeric value conversions in WebAssembly compilation.",
+      "description_length": 585,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Gc_target.Value",
+      "description": "This module offers low-level manipulation of Wasm expressions through arithmetic, logical, and bitwise operations, including integer calculations, comparisons, and boolean logic. It handles integer-valued expressions and supports block-related constructs for code generation, enabling tasks like type validation and bit-level transformations. Specific use cases involve optimizing Wasm execution paths and implementing custom type-checking workflows.",
+      "description_length": 450,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Gc_target.Constant",
+      "description": "Translates OCaml compiler constants into an abstract syntax tree representation. It operates on compiler-specific constant types and generates expression nodes suitable for code generation. This is used to embed literal values from the OCaml compiler into generated JavaScript code.",
+      "description_length": 282,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Gc_target.Closure",
+      "description": "Translates OCaml closures into Wasm-compatible expressions and manages environment binding during code generation. Operates on maps of closures indexed by variables and Wasm AST expressions. Used to handle function currying and closure allocation in a just-in-time compilation context.",
+      "description_length": 285,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Gc_target.Math",
+      "description": "This module offers a comprehensive set of mathematical operations, including trigonometric, hyperbolic, exponential, logarithmic, and specialized functions like cbrt, expm1, and log1p, alongside elementary transformations such as hypotenuse calculation and rounding. It operates on numeric expression types, enabling precise manipulation of numerical values through unified computational patterns. These capabilities are particularly useful in scientific computing, engineering simulations, and numerical analysis where accuracy and diverse mathematical transformations are critical.",
+      "description_length": 583,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Target_sig.Memory",
+      "description": "This module handles low-level memory manipulation for WebAssembly, including allocation, field access, array handling, and byte buffer operations, working with Wasm_ast.expression and Wasm_ast.var types to manage memory layouts and type tagging. It also facilitates boxing and unboxing of numeric types like int32, int64, and nativeint, enabling compatibility between OCaml's abstract representations and runtime system requirements. These operations are critical for generating efficient WebAssembly code and ensuring proper interaction with the runtime's internal data structures.",
+      "description_length": 582,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Target_sig.Value",
+      "description": "This module offers low-level manipulation of Wasm expressions through arithmetic, bitwise, and logical operations, focusing on integer and boolean value transformations. It works with `expression` types representing Wasm instructions, enabling tasks like optimizing integer computations or implementing custom logic gates. Specific use cases include handling bitwise shifts, comparing values, and constructing conditional expressions within Wasm bytecode.",
+      "description_length": 455,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Target_sig.Constant",
+      "description": "Translates OCaml compiler constants into corresponding expression representations. It processes values such as integers, strings, and booleans, converting them into a format suitable for JavaScript output. This enables direct embedding of constant values in generated code without runtime evaluation.",
+      "description_length": 300,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Target_sig.Closure",
+      "description": "Translates OCaml closures into WebAssembly expressions and manages environment binding during code generation. Operates on maps of closures indexed by variables and generates expressions for function application and argument handling. Used to implement currying and closure allocation in the compilation of OCaml to WebAssembly.",
+      "description_length": 328,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Target_sig.Math",
+      "description": "The module provides trigonometric, hyperbolic, exponential, and logarithmic operations on expression values, alongside numerical functions like modulus, rounding, and hypotenuse calculation for numeric expressions. It includes specialized variants such as cube roots and exponential-minus-one computations, catering to applications in scientific computing and engineering. These operations are designed for precise mathematical transformations and numerical analysis tasks.",
+      "description_length": 473,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Binaryen",
+      "description": "Processes WebAssembly modules by linking multiple input files into a single output, handling source maps for debugging. Removes unused code based on dependency analysis and generates updated source maps. Optimizes the output using profiling data, ensuring efficient execution and preserving source map information.",
+      "description_length": 314,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Closure_conversion",
+      "description": "Converts OCaml code to a form suitable for JavaScript compilation by transforming closures and capturing variables, operating on OCaml programs and variable maps. It processes abstract syntax trees to inline free variables and restructure function calls. Used to prepare code for translation to JavaScript while preserving lexical scoping.",
+      "description_length": 339,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Code_generation",
+      "description": "Provides arithmetic and bitwise operations on abstract `expression` types, including addition, multiplication, shifts, and logical comparisons, with specialized checks like `eqz` for conditional evaluation. Supports symbolic manipulation useful in code analysis and optimization, enabling safe handling of arithmetic logic without direct integer exposure. Operations can be applied to expressions representing program states or intermediate forms. Examples include simplifying conditional branches or transforming arithmetic patterns in abstract syntax trees.",
+      "description_length": 559,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Curry",
+      "description": "Manages WebAssembly abstract syntax trees with operations on numeric and boolean expressions, including arithmetic, bitwise, and trigonometric functions. Supports conversion of OCaml values to WebAssembly-compatible representations, enabling precise computation and memory manipulation. It allows embedding literals, optimizing memory access patterns, and handling closures within WebAssembly modules. Examples include generating efficient numeric computations and integrating OCaml closures into Wasm execution contexts.",
+      "description_length": 521,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Gc_target",
+      "description": "combines low-level memory management, expression manipulation, and numerical computation to enable detailed control over WebAssembly code generation. it handles numeric boxing, arithmetic operations, constant translation, closure management, and advanced mathematical functions, all operating on Wasm_ast.expression and related types. users can optimize memory layouts, embed OCaml literals into Wasm, manage function environments, and perform precise numerical computations. examples include converting OCaml integers to Wasm-compatible representations, generating optimized arithmetic blocks, and embedding complex mathematical expressions into compiled code.",
+      "description_length": 661,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Generate",
+      "description": "Generates WebAssembly code by initializing a context, defining functions with specific parameters, and managing variable and effect tracking. It processes OCaml bytecode and JavaScript expressions to construct Wasm AST nodes and handles function linking and output serialization. Used to transform compiled OCaml code into executable WebAssembly modules with custom variable and control flow management.",
+      "description_length": 403,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Globalize",
+      "description": "Processes OCaml JavaScript compiler programs by analyzing code structure and closures, mapping variables to their closure contexts. Operates on compiler-specific data types including program structures, closure maps, and variable sets. Used to transform or inspect code during the compilation pipeline for global variable management.",
+      "description_length": 333,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Initialize_locals",
+      "description": "Generates Wasm instructions to initialize local variables with given types and names, based on a list of parameters. It processes a sequence of instructions, inserting initialization steps for each local. Used to set up initial values for function locals during code generation.",
+      "description_length": 278,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Link",
+      "description": "Processes WebAssembly files to extract and modify imports, tables, memories, and globals, while embedding source map data. Operates on file paths and structured import records, enabling dependency analysis and debugging support. Allows appending custom URLs to source maps and inspecting module contents. Can be used to trace function dependencies or integrate source maps into compiled WebAssembly binaries.",
+      "description_length": 408,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Sexp",
+      "description": "Provides a set of operations for navigating and extracting values from structured data, including projecting values from lists, enforcing presence with defaults, converting types, and looking up key-value pairs. Main data types include a custom type `t` and associated list structures, with operations for transformation and validation. Examples include parsing configuration files, extracting specific fields from nested records, and ensuring required values are present with fallbacks. Supports precise control over data access and error handling in structured formats.",
+      "description_length": 571,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Tail_call",
+      "description": "Processes a list of WebAssembly instructions by transforming tail-recursive calls into explicit jumps, ensuring proper control flow in compiled code. Operates on lists of `Wasm_ast.instruction` to modify instruction sequences during code generation. Used to optimize recursive function calls in WebAssembly modules to prevent stack overflow.",
+      "description_length": 341,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Target_sig",
+      "description": "Provides low-level WebAssembly code generation capabilities through memory management, expression manipulation, and mathematical operations. It supports arithmetic, bitwise, and trigonometric transformations on numeric expressions, handles constant embedding and closure translation, and enables efficient data representation and runtime compatibility. Operations include boxing integers, constructing conditional logic, and computing hyperbolic functions. Examples include generating optimized integer shifts, embedding string literals, and translating OCaml functions into WebAssembly expressions.",
+      "description_length": 599,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Wasm_ast",
+      "description": "The module provides operations for defining WebAssembly's abstract syntax tree elements, including variable and value types, function signatures, and low-level integer/float operations. It works with structured data representations of AST nodes, location tracking, and module components, enabling precise handling of type definitions and binary instruction encoding. These capabilities support tasks like parsing, analyzing, and generating WebAssembly modules in compiler or tooling workflows.",
+      "description_length": 493,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Wasm_link",
+      "description": "Provides functions to process a list of input objects, generate a source map, and write the result to a specified output file. Operates on custom input records and JavaScript source map structures. Used to consolidate and map multiple Wasm module sources into a single output with accurate debugging information.",
+      "description_length": 312,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Wasm_output",
+      "description": "Writes a WebAssembly module to a given output channel based on a list of module fields. Operates on OCaml's out_channel and Wasm_ast.module_field types. Used to generate binary WebAssembly output from an abstract syntax tree during compilation.",
+      "description_length": 244,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Wasm_source_map",
+      "description": "Provides operations to manipulate source maps for WebAssembly, including checking if a map is empty, resizing, concatenating maps, iterating over sources, and inserting source contents with path rewriting. Works with custom types representing source maps and resize configurations. Used to adjust source mappings during code generation and debugging, and to handle blackboxed source content in compiled outputs.",
+      "description_length": 411,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Wat_output",
+      "description": "Writes a WebAssembly module's fields to an output channel in textual format. Operates on lists of `Wasm_ast.module_field` and `out_channel` values. Used to generate human-readable WebAssembly code from abstract syntax trees.",
+      "description_length": 224,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler.Zip",
+      "description": "Provides functions to create and manage ZIP archives, including adding entries from strings or files, and extracting or reading entries from existing archives. Works with custom `output` and `input` types representing ZIP archive handles. Used to package application data into a ZIP file, embed configuration files, or extract specific assets from a distributed archive.",
+      "description_length": 370,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "wasm_of_ocaml-compiler",
+      "description": "Converts OCaml bytecode into JavaScript, enabling execution in web browsers and Node.js. Handles OCaml's native types and structures, translating them into equivalent JavaScript representations. Supports direct integration with browser APIs through generated bindings.",
+      "description_length": 268,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasm_of_ocaml_compiler",
+      "description": "Combines WebAssembly module processing, OCaml-to-JavaScript transformation, and low-level code generation to enable efficient compilation and optimization of OCaml programs into WebAssembly. It handles abstract syntax trees, arithmetic and bitwise operations on expressions, memory management, and source map integration, allowing tasks like inlining variables, optimizing control flow, and embedding OCaml literals into Wasm. Operations include transforming closures, generating efficient numeric computations, and managing module imports and exports. Examples include converting OCaml integers to Wasm-compatible types, optimizing recursive calls, and embedding source maps for debugging.",
+      "description_length": 690,
+      "index": 38,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 39,
+    "meaningful_modules": 39,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 690,
+    "min_description_length": 224,
+    "avg_description_length": 430.6923076923077,
+    "embedding_file_size_mb": 0.14206886291503906
+  }
+}

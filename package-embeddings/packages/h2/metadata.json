@@ -1,0 +1,140 @@
+{
+  "package": "h2",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 17,
+  "creation_timestamp": "2025-06-18T16:34:17.506734",
+  "modules": [
+    {
+      "module_path": "H2.Body.Reader",
+      "description": "Provides functions to schedule byte reading from a data source, handle end-of-input notifications, and check if the source has been closed. Operates on a custom type `t` representing a readable channel. Used to manage asynchronous data consumption in network or file I/O scenarios.",
+      "description_length": 281,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "H2.Body.Writer",
+      "description": "Writes characters, strings, and bigstrings to an internal buffer, combining writes when possible. Schedules bigstrings for transmission without copying, and manages flushing and closing the output channel. Used to efficiently manage data transmission in network or file I/O operations.",
+      "description_length": 285,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "H2.Method",
+      "description": "Provides functions to check if a request method is safe, cacheable, or idempotent, and converts between string representations and internal types. Works with HTTP request method values defined in RFC 7231 and 7234. Used to validate and process HTTP methods in protocol implementations.",
+      "description_length": 285,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "H2.Status",
+      "description": "Provides functions to convert between status codes and integers, check status code categories, and retrieve standard reason phrases. Works with custom types representing HTTP status code categories and numeric codes. Used to validate and classify HTTP response codes in server and client implementations.",
+      "description_length": 304,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "H2.Headers",
+      "description": "This module provides operations for managing HTTP/2 header fields, including constructing, modifying, querying, and converting collections while preserving order and handling duplicates. It works with lowercase field names and values, enforcing rules for pseudo-header ordering and merging multiple values into comma-separated lists. Use cases include compliant HTTP/2 message processing, ensuring correct header transmission order, and managing sensitive fields like `Set-Cookie` according to RFC standards.",
+      "description_length": 508,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "H2.Body",
+      "description": "reads from and writes to data sources using a unified channel interface, supporting asynchronous data handling and efficient buffer management. It defines a custom type `t` for channels, with operations to read bytes, write strings and bigstrings, and control output flow. Functions include scheduling reads, managing end-of-input signals, and optimizing data transmission. Examples include streaming network data, writing large buffers without duplication, and coordinating input/output operations in real-time applications.",
+      "description_length": 525,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "H2.Request",
+      "description": "Creates HTTP requests with specified scheme, method, and target, supporting optional headers for client communication. Operates on `Headers.t` and `Method.t` types, and computes body length with error handling. Used to construct and inspect HTTP/2 requests with precise control over pseudo-header fields.",
+      "description_length": 304,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "H2.Response",
+      "description": "Provides functions to create HTTP responses with headers and status, determine body length based on request method, and pretty-print responses. Works with status codes, headers, and HTTP methods. Used to validate request-response pairs and generate proper HTTP output in server implementations.",
+      "description_length": 294,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "H2.IOVec",
+      "description": "Provides operations to manipulate and query contiguous memory buffers represented as a list of segments. Includes functions to calculate total length, shift buffer positions, and pretty-print buffer contents. Used for efficient handling of scattered I/O operations in network or file processing tasks.",
+      "description_length": 301,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "H2.Reqd",
+      "description": "Provides functions to manage HTTP/2 request-response exchanges, including reading request bodies, sending responses with strings, bigstrings, or streaming, and scheduling trailers. Operates on request and response objects, along with body readers and writers, and handles error reporting and exception handling. Enables server push operations for promised requests under specific conditions, ensuring proper stream state management.",
+      "description_length": 432,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "H2.Error_code",
+      "description": "Converts error codes to human-readable strings and formats them for pretty printing. Works with a custom type representing error states. Used to generate logs and error messages in system diagnostics.",
+      "description_length": 200,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "H2.Settings",
+      "description": "Encodes and decodes configuration data using Base64, supporting parsing from and serialization to string representations. Works with a structured record type containing configuration parameters. Used to transmit and store settings in a compact, standardized format within network protocols.",
+      "description_length": 290,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "H2.Config",
+      "description": "Provides functions to create and convert configuration records, including setting buffer size, maximum concurrent streams, and initial window size. Works with a record type containing numeric and boolean fields for network protocol parameters. Used to initialize protocol settings for a sender in a streaming communication context.",
+      "description_length": 331,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "H2.Server_connection",
+      "description": "Provides functions to manage HTTP/1.1 and HTTP/2.0 connections, including creating handlers for request processing, reading and writing data, and handling errors. Operates on types like `t`, `Bigstringaf.t`, `Httpun_types.Headers.t`, and custom request/response structures. Used to transition from HTTP/1.1 to HTTP/2.0 over TCP, process incoming data, and manage connection lifecycle events.",
+      "description_length": 391,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "H2.Client_connection",
+      "description": "Provides functions to manage HTTP/2 connections, including creating connections with custom configurations, handling push promises, sending requests, and managing PING frames. Operates on types like `t`, `response_handler`, `error_handler`, and `Request.t`, enabling interaction with HTTP/2 servers. Used to establish and control bidirectional communication, handle stream-level errors, and manage connection lifecycle events such as shutdown and buffer flushing.",
+      "description_length": 463,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "h2",
+      "description": "Provides HTTP/2 protocol parsing and serialization using Angstrom and Faraday, supporting frame decoding, stream management, and header compression. Works with byte streams, HTTP/2 frames, and encoded header blocks. Used to build compliant HTTP/2 servers and clients, handling multiplexed requests and flow control.",
+      "description_length": 315,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "H2",
+      "description": "H2 provides a comprehensive set of tools for building and managing HTTP/2 protocols, offering methods to validate and process request methods, status codes, and headers while ensuring compliance with RFC standards. It includes buffer manipulation, channel I/O, request and response construction, and connection management, enabling efficient data handling and stream control. Functions support converting between numeric and string representations, managing header order, and handling errors, while also facilitating server push and protocol transitions. Examples include constructing HTTP/2 requests with precise headers, streaming data through optimized channels, and managing connection states with custom configurations.",
+      "description_length": 724,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 17,
+    "meaningful_modules": 17,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 724,
+    "min_description_length": 200,
+    "avg_description_length": 366.6470588235294,
+    "embedding_file_size_mb": 0.06221771240234375
+  }
+}

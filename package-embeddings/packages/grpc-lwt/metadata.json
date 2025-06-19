@@ -1,0 +1,70 @@
+{
+  "package": "grpc-lwt",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 7,
+  "creation_timestamp": "2025-06-18T16:31:18.724218",
+  "modules": [
+    {
+      "module_path": "Grpc_lwt.Server.Rpc",
+      "description": "Handles gRPC request processing with distinct interaction models: unary calls, client and server streaming, and bidirectional streaming. Accepts request data from H2.Reqd.t and uses specialized function signatures to process and respond to RPCs. Processes string-based payloads and manages response streams or single responses based on the RPC type.",
+      "description_length": 349,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grpc_lwt.Server.Service",
+      "description": "Creates a service instance and allows adding named RPC handlers, which can be invoked based on incoming HTTP/2 requests. Operates on a custom type `t` that encapsulates registered RPCs and their routing logic. Used to build interactive server components that respond to specific request paths with predefined behaviors.",
+      "description_length": 319,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grpc_lwt.Client.Rpc",
+      "description": "Handles HTTP/2 request-response patterns by defining handlers that process incoming data streams, manage message encoding, and execute custom logic. Works with Lwt-based streams and promises, enabling bidirectional, client-streaming, server-streaming, and unary communication. Used to implement real-time data exchange, progressive data delivery, and synchronous request handling in networked applications.",
+      "description_length": 406,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grpc_lwt.Server",
+      "description": "manages gRPC interactions by processing various RPC types\u2014unary, client streaming, server streaming, and bidirectional\u2014using request data from H2.Reqd.t and handling string payloads. It constructs service instances through a custom type `t` that registers and routes RPC handlers based on request paths. This enables the creation of dynamic, path-aware server components that execute predefined behaviors. Examples include serving real-time updates via streaming or handling form submissions with unary responses.",
+      "description_length": 513,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grpc_lwt.Client",
+      "description": "Manages HTTP/2 communication through stream-based handlers that process data, encode messages, and execute custom logic using Lwt. Supports bidirectional, client-streaming, server-streaming, and unary interactions, enabling real-time data exchange and progressive delivery. Key data types include streams, messages, and promises, with operations for encoding, decoding, and event handling. Examples include implementing live data feeds, asynchronous request processing, and real-time chat protocols.",
+      "description_length": 499,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "grpc-lwt",
+      "description": "Provides functions for establishing HTTP/2 connections, sending and receiving protocol buffers, and handling various RPC styles including unary, server streaming, client streaming, and bidirectional streaming. Works with byte sequences, protocol buffer messages, and stream handlers. Used to build efficient, low-latency communication between distributed services using the gRPC protocol.",
+      "description_length": 388,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grpc_lwt",
+      "description": "handles gRPC and HTTP/2 interactions by routing requests to appropriate handlers based on path, supporting unary, streaming, and bidirectional RPCs. It defines custom types for service instances and stream-based communication, with operations for message encoding, decoding, and asynchronous processing. Users can implement real-time data feeds, live updates, and interactive chat systems using stream-based logic. Key data types include request objects, streams, and promises, enabling dynamic, event-driven server behavior.",
+      "description_length": 525,
+      "index": 6,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 7,
+    "meaningful_modules": 7,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 525,
+    "min_description_length": 319,
+    "avg_description_length": 428.42857142857144,
+    "embedding_file_size_mb": 0.025850296020507812
+  }
+}

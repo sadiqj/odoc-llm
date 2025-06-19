@@ -1,0 +1,119 @@
+{
+  "package": "asak",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 14,
+  "creation_timestamp": "2025-06-18T16:33:15.405270",
+  "modules": [
+    {
+      "module_path": "Asak.Clustering.Distance",
+      "description": "Compares distances using a numeric or custom underlying representation, returning ordering results, minimum, and maximum values. Operates on a type `t` that encapsulates distance measurements, such as floats or integers. Used to determine the smallest or largest distance in a set of measurements or to sort distance values.",
+      "description_length": 324,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Asak.Clustering.Hash",
+      "description": "Compares two hash values using lexicographical order. Operates on values of type Lambda_hash.fingerprint, representing unique identifiers for lambda expressions. Used to determine equality and ordering in hash-based data structures.",
+      "description_length": 232,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Asak.Clustering.HMap",
+      "description": "This module provides functions for manipulating ordered hash maps, enabling operations like adding, removing, and transforming key-value pairs with customizable ordering. It supports efficient lookups, structural modifications, and ordered traversal, ideal for scenarios requiring dynamic data management with both hashed and ordered access patterns.",
+      "description_length": 350,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Asak.Monad_error.Make",
+      "description": "Provides functions to construct and manipulate values of type `e`, including parsing strings into `e` instances and converting `e` values to formatted output. Operates on structured data representing build configurations and dependencies. Used to generate build scripts and validate project definitions during compilation.",
+      "description_length": 322,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Asak.Monad_error.ErrS",
+      "description": "Provides operations to construct and chain error-containing computations, including lifting values into the context, mapping over results, and binding functions that may fail. Works with a monadic type 'a t that encapsulates either a value or an error message. Used to handle optional values with custom error messages and convert between result types and the monadic structure.",
+      "description_length": 378,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Asak.Clustering",
+      "description": "Calculates and compares distances, hash values, and manages ordered hash maps, offering operations like sorting, equality checks, and dynamic key-value manipulation. It handles numeric or custom distance types, lambda expression fingerprints, and ordered associative structures. Users can find minimum/maximum distances, compare hashes lexicographically, and perform efficient updates and traversals on hash maps. This enables tasks such as clustering analysis, hash-based indexing, and structured data management.",
+      "description_length": 514,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Asak.Lambda_hash",
+      "description": "Hashes lambda expressions into fingerprints, ignoring constants and applying a threshold to filter sub-ASTs. Processes lists of lambda expressions with a hard threshold to generate aggregated hashes. Escapes hash values for safe printing, working with configurations and threshold parameters to control hashing precision.",
+      "description_length": 321,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Asak.Lambda_normalization",
+      "description": "Inlines all side-effect-free expressions within a lambda term, transforming it into a more optimized form. It operates on OCaml's internal lambda representation, replacing local variable names with unique identifiers based on their position in the abstract syntax tree. This is useful for preparing code for further analysis or transformation where variable identity must be preserved across different scopes.",
+      "description_length": 409,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Asak.Monad_error",
+      "description": "Provides error handling operations such as binding, lifting, and error propagation, working with monadic structures that encapsulate results and errors. Operates on types that include a failure case represented by the `e` type. Used to manage computations that may fail, such as parsing input or handling external API responses.",
+      "description_length": 328,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Asak.Parse_structure",
+      "description": "Parses OCaml source strings into parsetrees and typechecks them using an initialized environment. Extracts specific bindings from typedtrees, converts them to lambda expressions, and retrieves named let definitions with their locations. Processes OCaml code to generate a list of top-level bindings as lambda expressions.",
+      "description_length": 321,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Asak.Partition",
+      "description": "Provides functions to partition OCaml codes based on hierarchical clustering, using a threshold to filter sub-ASTs and a list of valid codes to identify similar implementations. Operates on type expressions, strings, and lists of code keys to group codes into partitions. Used to analyze code similarity and locate implementations of specific functions within a project.",
+      "description_length": 370,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Asak.Wtree",
+      "description": "Processes weighted trees by traversing nodes and combining results using a provided function, and calculates the size of a tree based on node values. Operates on a tree structure where each node contains a value and a list of weighted children. Used to aggregate statistics during tree traversal or compute total node counts with custom weighting.",
+      "description_length": 347,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "asak",
+      "description": "Generates partitions of OCaml code based on syntactic similarity, grouping functions that are structurally close. Operates on abstract syntax trees and source code fragments to identify redundant implementations. Used to detect duplicate function definitions in large OCaml projects and compare them against a historical database of analyzed code.",
+      "description_length": 347,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Asak",
+      "description": "Combines distance computation, hashing, and tree processing to enable analysis of OCaml code structures. It handles numeric and custom distance types, generates hash fingerprints, inlines expressions, and partitions code based on similarity. Operations include sorting, traversal, error handling, and typechecking, supporting tasks like clustering, optimization, and code comparison. Examples include generating aggregated hashes, optimizing lambda terms, and grouping similar code fragments.",
+      "description_length": 492,
+      "index": 13,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 14,
+    "meaningful_modules": 14,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 514,
+    "min_description_length": 232,
+    "avg_description_length": 361.07142857142856,
+    "embedding_file_size_mb": 0.05127239227294922
+  }
+}

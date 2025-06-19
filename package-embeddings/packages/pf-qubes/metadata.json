@@ -1,0 +1,42 @@
+{
+  "package": "pf-qubes",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 3,
+  "creation_timestamp": "2025-06-18T16:28:27.305948",
+  "modules": [
+    {
+      "module_path": "Pf_qubes.Parse_qubes",
+      "description": "This module handles parsing and pretty-printing of network configurations, focusing on elements like IP prefixes, protocols, ports, and CIDR notation, alongside Qubes-specific structures such as rules, destinations, and special targets. It operates on types including `rule`, `dst`, `proto`, and `action`, enabling precise manipulation of network and Qubes-related data. Use cases include parsing firewall rules, formatting IP ranges, and processing protocol-specific configurations in security-sensitive contexts.",
+      "description_length": 514,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "pf-qubes",
+      "description": "Parses FreeBSD pf configuration files, handling rule syntax, anchor declarations, and macro definitions. Processes token streams and constructs abstract syntax trees representing firewall rules. Used to analyze and validate pf.conf files for policy enforcement and configuration auditing.",
+      "description_length": 288,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pf_qubes",
+      "description": "Handles parsing and pretty-printing of network configurations, including IP prefixes, protocols, ports, CIDR notation, and Qubes-specific elements like rules, destinations, and targets. It works with types such as `rule`, `dst`, `proto`, and `action` to manipulate network and security-related data. Users can parse firewall rules, format IP ranges, and process protocol-specific settings. Examples include converting rule strings to structured data, generating human-readable outputs, and validating Qubes network policies.",
+      "description_length": 524,
+      "index": 2,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 3,
+    "meaningful_modules": 3,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 524,
+    "min_description_length": 288,
+    "avg_description_length": 442.0,
+    "embedding_file_size_mb": 0.011310577392578125
+  }
+}

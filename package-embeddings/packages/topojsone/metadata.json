@@ -1,0 +1,119 @@
+{
+  "package": "topojsone",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 14,
+  "creation_timestamp": "2025-06-18T16:33:58.726733",
+  "modules": [
+    {
+      "module_path": "Topojsone.Topojson.Geometry.Position",
+      "description": "Extracts latitude, longitude, and optional altitude from a float array. Compares two arrays for equality based on their numeric contents. Constructs a position value with specified longitude, latitude, and optional altitude.",
+      "description_length": 224,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Topojsone.Topojson.Geometry.Point",
+      "description": "Provides operations to convert between a point and a position data structure. Works with the `t` type representing a point and `Position.t` for coordinate-based positions. Used to translate between internal point representations and external position data in geometry processing.",
+      "description_length": 279,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Topojsone.Topojson.Geometry.Arc_index",
+      "description": "Constructs an arc-index from a list of integers, enabling efficient traversal of arc segments. Operates on integer lists and internal arc-index structures to support graph-related queries. Used to quickly access sub-sequences in large datasets, such as parsing network connections or segmenting time-series data.",
+      "description_length": 312,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Topojsone.Topojson.Geometry.MultiPoint",
+      "description": "Returns an array of position objects representing the individual points in a multipoint structure. Accepts an array of positions to construct a multipoint object. Used to aggregate multiple geographic positions into a single entity for spatial processing.",
+      "description_length": 255,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Topojsone.Topojson.Geometry.LineString",
+      "description": "Constructs a line string representation using an arc index. Operates on geometric data structures representing linear sequences of points. Used to generate path data for mapping or spatial analysis tasks.",
+      "description_length": 204,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Topojsone.Topojson.Geometry.MultiLineString",
+      "description": "Constructs a multiline geometry from an array of line strings. Operates on arrays of LineString.t values to form a composite shape. Used to represent complex routes or boundaries composed of multiple connected segments.",
+      "description_length": 219,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Topojsone.Topojson.Geometry.Polygon",
+      "description": "Returns the linear rings of a polygon, including the exterior ring and any interior rings that define holes. Accepts an array of closed line strings to construct a polygon object. Extracts the outer boundary and inner boundaries for geometric analysis.",
+      "description_length": 252,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Topojsone.Topojson.Geometry.MultiPolygon",
+      "description": "Provides operations to create and access an array of Polygon.t objects. Works with a structured type representing a collection of polygons. Used to manage complex geographic regions composed of multiple distinct polygonal areas.",
+      "description_length": 228,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Topojsone.Topojson.Geometry",
+      "description": "Processes geographic data by converting, aggregating, and structuring points, lines, and polygons. Supports operations on arrays of positions, arc indexes, and geometric shapes, enabling tasks like building multipoints, line strings, and polygons from raw data. Allows conversion between point and position representations, and extracts rings from polygon structures for detailed spatial analysis. Examples include parsing network connections, generating path data, and managing multi-part geographic regions.",
+      "description_length": 509,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Topojsone.Topojson.Topology",
+      "description": "Provides functions to extract and manipulate geometric objects, arcs, and foreign data from a topology structure. Works with arrays of position arrays, lists of geometry objects, and JSON data for serialization and deserialization. Constructs and converts topology instances with custom transforms and additional metadata.",
+      "description_length": 322,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Topojsone.Err",
+      "description": "Prints detailed error messages with source code location information. Operates on error records containing location data represented as coordinate ranges. Used to format error outputs in compiler diagnostics and static analysis tools.",
+      "description_length": 234,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Topojsone.Topojson",
+      "description": "Encapsulates geographic data through structured geometry types, including points, lines, and polygons, with support for array-based operations and spatial transformations. Offers tools to extract and manipulate arcs, geometry objects, and metadata from topology structures, enabling precise control over spatial data representation. Allows conversion between geometric forms, such as extracting rings from polygons or building complex shapes from raw positions. Examples include generating path data from network connections and serializing topological structures with custom transforms.",
+      "description_length": 587,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "topojsone",
+      "description": "Provides functions for parsing TopoJSON data into OCaml structures, serializing OCaml representations back to TopoJSON format, and modifying geometric properties within the data. Operates on data types such as polygons, lines, and collections of features. Used to integrate geographic data into applications requiring spatial analysis or visualization.",
+      "description_length": 352,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Topojsone",
+      "description": "Provides efficient, memory-conscious handling of large TopoJSON files through streaming parsing. Includes structured geometry types for points, lines, and polygons, along with operations for extracting and transforming spatial data. Supports error reporting with location-aware diagnostics for precise debugging. Enables tasks like converting topological structures to path data or applying custom spatial transformations.",
+      "description_length": 422,
+      "index": 13,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 16,
+    "meaningful_modules": 14,
+    "filtered_empty_modules": 2,
+    "retention_rate": 0.875
+  },
+  "statistics": {
+    "max_description_length": 587,
+    "min_description_length": 204,
+    "avg_description_length": 314.2142857142857,
+    "embedding_file_size_mb": 0.051268577575683594
+  }
+}

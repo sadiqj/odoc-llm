@@ -1,0 +1,399 @@
+{
+  "package": "async",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 54,
+  "creation_timestamp": "2025-06-18T16:47:44.111605",
+  "modules": [
+    {
+      "module_path": "Async_rpc.Rpc.Low_latency_transport.Reader.With_internal_reader",
+      "description": "Provides functions to create and manage a reader for asynchronous socket communication, supporting direct message reading and peeking without buffering. Operates on file descriptors and uses Bin_prot for message serialization. Enables low-level control over socket data inspection and message parsing in networked applications.",
+      "description_length": 327,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Async.Deferred.Or_error.Expect_test_config.IO",
+      "description": "Handles asynchronous computations with error handling, providing a way to wrap values into a deferred or error context. Operates on values of type 'a Async_kernel.Deferred.Or_error.t, enabling non-blocking I/O operations. Used to manage asynchronous file reads and network requests with explicit error propagation.",
+      "description_length": 314,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Async_rpc.Rpc.Transport.Reader",
+      "description": "Provides operations to read and manage message streams, including reading messages with bin_prot, tracking bytes read, and handling end-of-batch events. Works with `Async_reader.t` and message data structured as `Bigstring.t`. Used to process incoming RPC messages and handle handshake protocols in asynchronous communication.",
+      "description_length": 326,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Async_rpc.Rpc.Transport.Writer",
+      "description": "Provides methods to manage a writer that sends messages over a transport, including sending binary data, checking write status, and handling flow control. Works with types like `Async_kernel.Deferred.t`, `Core.Bigstring.t`, and `Async_writer.t` to enable asynchronous communication. Used to transfer data from a pipe to a writer without blocking on upstream flushes, and to send messages efficiently while avoiding data copying.",
+      "description_length": 428,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Async_rpc.Rpc.Transport.Tcp",
+      "description": "Provides functions to establish TCP servers and clients, handling both INET and Unix sockets. It manages transport creation, connection authentication, and error handling during communication. Used for setting up RPC-based services with custom transport logic and peer credential inspection.",
+      "description_length": 291,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Async_rpc.Rpc.Low_latency_transport.Config",
+      "description": "Provides serialization and deserialization functions for configuring network I/O parameters. Works with a configuration record containing settings like maximum message size, buffer sizes, write timeouts, and batching thresholds. Used to customize the behavior of network writers to balance latency and throughput in different messaging patterns.",
+      "description_length": 345,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Async_rpc.Rpc.Low_latency_transport.Reader",
+      "description": "manages asynchronous socket communication through direct message reading and peeking, using file descriptors and Bin_prot for efficient serialization. It supports low-level inspection and parsing of network data without buffering, offering fine-grained control over incoming data. Key operations include creating reader instances, reading messages, and inspecting data in real time. Examples include parsing binary protocols, monitoring network traffic, and handling streaming data with minimal overhead.",
+      "description_length": 504,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Async_rpc.Rpc.Low_latency_transport.Writer",
+      "description": "Provides methods to manage a writer that sends messages over a transport, including sending binary data with or without copying, checking write status, and handling closure. Works with file descriptors, bigstrings, and binary protocols, and tracks bytes written and pending. Used for efficient message delivery in RPC systems, ensuring data is flushed and ready for transmission without flooding the transport.",
+      "description_length": 410,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Async_rpc.Rpc.Low_latency_transport.With_internal_reader",
+      "description": "Creates a reader instance from a file descriptor, configuring it with a message size limit and optional settings. Operates on asynchronous file descriptors and message buffers, managing input streams with precise control over data retrieval. Used to process incoming network or file data in real-time, ensuring safe handling of large or fragmented messages.",
+      "description_length": 357,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Async.Deferred.Or_error.Expect_test_config",
+      "description": "Manages asynchronous operations with error handling, working with values of type 'a Async_kernel.Deferred.Or_error.t to support non-blocking I/O. Enables safe execution of tasks like file reads and network calls, ensuring errors are explicitly tracked and propagated. Provides combinators to chain and transform asynchronous results. For example, it allows combining multiple network requests into a single deferred result or handling failures gracefully during file processing.",
+      "description_length": 478,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Persistent_connection.Make.Event",
+      "description": "Converts event data into S-expression format using a provided address serializer. Operates on a type representing persistent connection events with associated error states and addresses. Used to serialize event records for logging or communication protocols.",
+      "description_length": 258,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Persistent_connection.Make'.Event",
+      "description": "Converts event values into S-expression representations using a provided address serializer. Operates on a type encapsulating connection states, errors, and addresses. Used to serialize event data for logging or communication protocols.",
+      "description_length": 236,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Persistent_connection.Versioned_rpc.Event",
+      "description": "Converts event data into S-expression format using a provided address serializer. Operates on a type representing persistent connection events with associated error states and addresses. Used to serialize event records for logging or communication protocols.",
+      "description_length": 258,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Persistent_connection.Rpc.Event",
+      "description": "Converts event data into S-expression format using a provided address serializer. Works with persistent connection events that include a connection, error, and address. Used to serialize event logs for debugging or logging purposes.",
+      "description_length": 232,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Async_rpc.Rpc.Transport",
+      "description": "Manages asynchronous message handling and transport layer communication, offering read and write operations for binary data streams using `Bigstring.t` and `Async_reader.t`/`Async_writer.t`. Supports TCP and Unix socket setup, connection management, and flow control, enabling efficient RPC message exchange and handshake processing. Provides low-level control over data transmission, including byte tracking, deferred writes, and error handling. Used to build reliable, non-blocking communication layers for distributed systems and networked applications.",
+      "description_length": 556,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Async_rpc.Rpc.Low_latency_transport",
+      "description": "Provides serialization, asynchronous socket communication, and message writing capabilities for low-latency RPC transport. It includes configuration records for network I/O, reader and writer instances for handling binary data, and operations for inspecting, sending, and managing message flow. Examples include parsing binary protocols, streaming data with minimal overhead, and ensuring efficient message delivery. Key data types include file descriptors, bigstrings, and message buffers, with operations focused on real-time data processing and control.",
+      "description_length": 556,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Async_rpc.Rpc.For_debugging",
+      "description": "Provides a function to capture and save binary buffers to a file when deserialization errors occur, aiding in debugging message corruption. Works with binary data and file paths, specifically handling cases where message lengths are incorrect or bin_io parsing fails. Useful for diagnosing intermittent issues in networked or serialized data processing pipelines.",
+      "description_length": 363,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Async.Deferred.Or_error",
+      "description": "Provides a framework for handling asynchronous operations with explicit error tracking, centered around the type 'a Async_kernel.Deferred.Or_error.t. It supports non-blocking I/O and includes combinators for chaining and transforming results, enabling safe execution of tasks like file reads and network calls. Operations can be combined into complex workflows, and failures can be handled without disrupting the overall flow. For instance, it allows aggregating results from multiple asynchronous requests or recovering from errors during data processing.",
+      "description_length": 556,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Async.Expect_test_config.IO",
+      "description": "Handles asynchronous value wrapping and lifting, enabling non-blocking computation sequencing. Operates on deferred values derived from the Async_kernel library. Used to construct and chain asynchronous workflows in event-driven applications.",
+      "description_length": 242,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Async.Expect_test_config_or_error.IO",
+      "description": "Handles asynchronous computations with error handling, providing a monadic interface for chaining operations. Works with the `Deferred.Or_error.t` type to represent results that may fail. Used to manage I/O operations that require error propagation and asynchronous execution.",
+      "description_length": 276,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Log_extended.Syslog.Blocking",
+      "description": "Provides a function to retrieve a blocking output handler for logging. Operates with the `Async.Log.Blocking.Output.t` type to manage log output in a non-async context. Used to ensure log messages are written synchronously during blocking operations.",
+      "description_length": 250,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Log_extended.Console.Blocking",
+      "description": "Handles output to a file or stream with customizable color attributes for debug, info, and error messages. Operates on Core.Out_channel.t and Async.Log.Blocking.Output.t types to manage logging in synchronous contexts. Used to write structured log entries to a file while preserving terminal formatting in non-async environments.",
+      "description_length": 329,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Persistent_connection.Make",
+      "description": "Provides operations to manage the lifecycle of a connection, including closing it, checking if it has been closed, and waiting for the close process to complete. Works with a type `t` representing a closable resource. Used to ensure proper cleanup and synchronization when terminating network or I/O connections.",
+      "description_length": 312,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Persistent_connection.Make'",
+      "description": "Provides operations to manage the lifecycle of a connection, including closing it, checking if it has been closed, and waiting for the close process to complete. Works with a type `t` representing a closable resource. Used to ensure proper cleanup and synchronization when terminating network or I/O connections.",
+      "description_length": 312,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Persistent_connection.Rpc",
+      "description": "Serializes event data into S-expressions using a custom address serializer, handling connection, error, and address information. Key data types include event records and serialized S-expression representations. Operations allow for logging, debugging, and persistent storage of event data. For example, it can transform a connection error into a structured log entry for later analysis.",
+      "description_length": 386,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Persistent_connection.Versioned_rpc",
+      "description": "Serializes persistent connection events, including error states and addresses, into S-expressions using a custom address serializer. Processes events of type `t` with methods for encoding and error handling. Enables structured logging or protocol communication by transforming event data into a compact, readable format. Example: converting a disconnection event with an IP address into a serialized representation for network transmission.",
+      "description_length": 440,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Async_rpc.Rpc",
+      "description": "combines asynchronous message handling, serialization, and low-level I/O operations for building efficient RPC systems. It offers `Bigstring.t`, `Async_reader.t`, and `Async_writer.t` for binary data manipulation, along with TCP and Unix socket support for reliable communication. It enables real-time data streaming, error logging, and message inspection, such as saving corrupted buffers to files for debugging. Key operations include reading/writing binary streams, managing connection flow, and handling deserialization failures.",
+      "description_length": 533,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Async_command.Staged",
+      "description": "Provides functions to create and manage asynchronous commands that return deferred values or results with error handling. Works with types such as `Async_kernel.Deferred.t` and `Async_kernel.Deferred.Or_error.t` to handle non-blocking operations. Used to construct command-line interfaces that execute background tasks and report outcomes or errors.",
+      "description_length": 349,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Async_command.For_testing",
+      "description": "Provides functions to execute command-line operations within an ongoing asynchronous test environment, handling both standard and staged command variants. Works with command-line arguments and command structures defined by the Command module. Enables testing of async commands without restarting the event loop, useful for integrating command execution into test workflows.",
+      "description_length": 373,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Unpack_sequence.Unpack_iter_result",
+      "description": "Converts a result type into an error value, useful for handling computation failures. Operates on a parameterized result type that wraps either a value or an error. Used to integrate result handling with error reporting systems that expect Core.Error.t.",
+      "description_length": 253,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Unpack_sequence.Unpack_result",
+      "description": "Converts a result type into an error value, and generates S-expressions from it. Works with the `'a t` type, which represents computations that may fail. Used to serialize result values for debugging or logging, and to propagate errors in a structured way.",
+      "description_length": 256,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Unpack_sequence.Unpack_from",
+      "description": "Provides functions to extract and decode byte sequences from a given source, supporting direct access to underlying data. Works with byte arrays, input channels, and custom sources implemented as objects. Used to parse binary data formats such as network protocols or file headers.",
+      "description_length": 281,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Async.Deferred",
+      "description": "Provides asynchronous operation handling with error tracking through the type 'a Async_kernel.Deferred.Or_error.t, enabling non-blocking I/O and safe task execution. It includes combinators for chaining, transforming, and aggregating results, along with error recovery mechanisms. Operations like file reads, network calls, and data processing can be managed in complex workflows. Example tasks include combining multiple asynchronous requests or recovering from failures during execution.",
+      "description_length": 489,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Async.Log",
+      "description": "Provides logging capabilities with support for formatted messages, Sexp serialization, and timestamps across multiple severity levels. Includes raw message logging that retains timestamps without associated levels. Offers structured logging options for debugging and analysis. Can log error details, trace execution flow, or serialize data structures for inspection.",
+      "description_length": 366,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Async.Command",
+      "description": "Provides staged execution for command-line tools, separating pre-scheduler and post-scheduler logic. Supports asynchronous completion with thread-safe handling, enabling features like daemonization. Allows creation of argument types that trigger Async operations only during auto-completion. Examples include managing background processes and optimizing performance by deferring Async setup.",
+      "description_length": 391,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Async.Expect_test_config",
+      "description": "Manages asynchronous workflows by wrapping and sequencing deferred values, allowing non-blocking computation. Operates on Async_kernel's deferred types, enabling the use of let%expect without requiring %bind. Supports constructing complex event-driven processes through chained operations. Example: executing a series of I/O operations without blocking the main thread.",
+      "description_length": 369,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Async.Expect_test_config_or_error",
+      "description": "provides a monadic interface for handling asynchronous computations with error propagation, using `Deferred.Or_error.t` to represent results that may fail. It enables chaining of operations and ensures proper error handling throughout asynchronous workflows. Users can perform I/O operations and manage failure states within a structured, composable framework. For example, it allows writing tests that capture output without requiring explicit binding of deferred values.",
+      "description_length": 472,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Log_extended.Console",
+      "description": "Manages structured logging to files or streams with color-coded message levels, supporting both synchronous and async output mechanisms. It works with Core.Out_channel.t and Async.Log.Blocking.Output.t to ensure consistent formatting across different execution models. Users can generate colored debug, info, and error logs that retain terminal styling when written to files. Example uses include logging application events to a file with distinct color tags for each severity level.",
+      "description_length": 483,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Log_extended.Syslog",
+      "description": "Manages synchronous log output through a blocking handler, enabling reliable logging during non-async operations. It defines the `Async.Log.Blocking.Output.t` type for handling log messages in a blocking manner. This module allows developers to create and manage log sinks that operate outside of the async workflow. For example, it can be used to log errors or status updates in a thread that cannot yield control to the async scheduler.",
+      "description_length": 438,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Log_extended.Command",
+      "description": "Converts between console logging configurations and S-expressions, enabling serialization and deserialization of logging settings. Handles specific data types representing console output destinations and styling options. Used to configure logging behavior based on command-line parameters, supporting console, syslog, or file output.",
+      "description_length": 333,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Async_quickcheck.Configure",
+      "description": "Provides functions to configure default parameters for random value generation and testing, including seed initialization, size sequences, and trial limits. Operates on types such as integers, sequences, and custom shrink attempt counters. Used to set consistent behavior across property-based tests without explicit configuration in each test case.",
+      "description_length": 349,
+      "index": 40,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lock_file_async.Nfs",
+      "description": "Provides functions for creating and managing file-based locks with asynchronous support, including creating locks, unlocking, and executing critical sections. Works with file paths, process IDs, and hostnames to track lock ownership. Used to coordinate access to shared resources in concurrent applications, such as ensuring exclusive access to a log file or configuration file.",
+      "description_length": 378,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lock_file_async.Flock",
+      "description": "Provides functions to acquire and release file-based locks, with options to specify owner IDs, exclusivity, and close-on-exec flags. Operates on a custom lock type `t` and string-based lock paths. Used to coordinate access to shared resources in concurrent or distributed systems, such as ensuring exclusive writes to a log file or configuration directory.",
+      "description_length": 356,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lock_file_async.Symlink",
+      "description": "Provides functions to acquire and release exclusive locks using a file-based mechanism, with variants for handling errors and asynchronous execution. Operates on a custom type `t` representing a lock, and uses strings for lock paths and metadata. Used to coordinate access to shared resources in concurrent applications, such as ensuring only one process modifies a file at a time.",
+      "description_length": 381,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Persistent_connection.Event",
+      "description": "Converts event data into S-expression format, using a provided function to serialize the address. Works with persistent connection events that include a connection, error, and address. Used to serialize event logs for debugging or persistence.",
+      "description_length": 243,
+      "index": 44,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "async",
+      "description": "Handles asynchronous I/O operations, including waiting for network events, file system access, and timer triggers. Operates on promises, events, and asynchronous workflows, enabling non-blocking execution. Used to implement responsive network servers, event-driven GUIs, and concurrent data processing pipelines.",
+      "description_length": 312,
+      "index": 45,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Persistent_connection",
+      "description": "Encodes persistent connection events into S-expressions, incorporating serialized addresses. Main data types include connection states, errors, and addresses, with operations for serialization and event logging. Functions allow conversion of event data into a structured, persistent format. Example uses include generating debug logs or storing connection history for later analysis.",
+      "description_length": 383,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Async_rpc",
+      "description": "Handles asynchronous message passing, serialization, and I/O for building high-performance RPC systems. Provides `Bigstring.t` for efficient binary data, `Async_reader.t` and `Async_writer.t` for streaming, and supports TCP and Unix sockets. It enables real-time data processing, error recovery through logging, and inspection of corrupted data. For example, it can read binary streams from a socket, deserialize messages, and save malformed data for analysis.",
+      "description_length": 460,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Async_command",
+      "description": "Provides functions for creating, managing, and executing asynchronous commands that return deferred values or results with error handling. Operates on types like `Async_kernel.Deferred.t` and `Async_kernel.Deferred.Or_error.t`, enabling non-blocking command execution. Supports testing of command-line interfaces within an ongoing async environment, allowing execution of commands without restarting the event loop. Can be used to build CLI tools that run background tasks and handle errors gracefully.",
+      "description_length": 502,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Unpack_sequence",
+      "description": "Unpack_sequence processes a stream of binary data from a reader, decoding it into structured values using a buffer. It supports direct access to raw bytes and integrates with result types for error handling and serialization. Functions allow parsing of binary formats, error conversion, and structured logging. It can generate a pipe of decoded values or apply a function to each unpacked item.",
+      "description_length": 394,
+      "index": 49,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Async",
+      "description": "The module offers tools for managing asynchronous operations, logging, and workflow control in Async programs. It includes types like 'a Deferred.Or_error.t for error-aware computations and provides logging functions with structured data and timestamps. It enables non-blocking I/O, task sequencing, and error recovery, allowing tasks such as combining multiple network requests or tracking execution flow. It also supports staged command-line execution and structured logging for debugging.",
+      "description_length": 491,
+      "index": 50,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Log_extended",
+      "description": "Provides structured and formatted logging with support for multiple output mechanisms, including colored console logs, file logging, and S-expression serialization. Offers types like `Async.Log.Blocking.Output.t` and operations for managing log levels, timestamps, and color coding. Enables logging debug, info, and error messages with terminal styling, and allows configuration of logging destinations via S-expressions. Example uses include writing colored logs to files and converting console settings to serialized data for dynamic configuration.",
+      "description_length": 550,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Async_quickcheck",
+      "description": "Provides configuration functions for random value generation and testing, allowing control over seeds, test sizes, and trial limits. Operates on integers, sequences, and custom shrink counters to standardize test behavior. Enables consistent setup across property-based tests without repeating configurations. For example, sets a fixed seed for reproducible tests or limits the number of shrink attempts during property validation.",
+      "description_length": 431,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lock_file_async",
+      "description": "provides asynchronous file-based locking with support for managing lock ownership via process IDs, hostnames, and custom identifiers. it defines a lock type `t` and operates on string-based paths, enabling safe coordination of shared resources in concurrent systems. functions include acquiring, releasing, and executing within critical sections, with error handling and configuration options. examples include ensuring exclusive access to log files or configuration directories across multiple processes.",
+      "description_length": 505,
+      "index": 53,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 202,
+    "meaningful_modules": 54,
+    "filtered_empty_modules": 148,
+    "retention_rate": 0.26732673267326734
+  },
+  "statistics": {
+    "max_description_length": 556,
+    "min_description_length": 232,
+    "avg_description_length": 378.94444444444446,
+    "embedding_file_size_mb": 0.18941307067871094
+  }
+}

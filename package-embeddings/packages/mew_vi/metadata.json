@@ -1,0 +1,259 @@
+{
+  "package": "mew_vi",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 34,
+  "creation_timestamp": "2025-06-18T16:40:34.458698",
+  "modules": [
+    {
+      "module_path": "Mew_vi.Core.Make.Interpret.Resolver.Common",
+      "description": "Returns the count from a status value, extracts a register string, and applies conditional operations based on mode, configuration, and key sequences. Operates on custom types like status, config, keyseq, and result. Used to handle keyboard input parsing with context-sensitive behavior in a text editor framework.",
+      "description_length": 314,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mew_vi.Core.Make.Interpret.Resolver.Normal",
+      "description": "Handles key sequence resolution and state transitions in a command-driven interface. Operates on configurations, statuses, and key sequences to perform mode changes, modifications, and insertions. Used to manage user input parsing and action execution in a text editor or similar interactive system.",
+      "description_length": 299,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mew_vi.Core.Make.Interpret.Resolver.Visual",
+      "description": "Handles key sequence resolution and state transitions for visual mode interactions. Operates on configuration, status, and key sequence data to apply motions, modifications, and mode changes. Used to process user input in a text editor's visual mode, enabling precise cursor control and text manipulation.",
+      "description_length": 305,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mew_vi.Core.Make.Base.Mode.KeyTrie",
+      "description": "Provides operations to construct, query, and modify a trie structure where each node holds a value and is indexed by a list of key elements. Works with path-based navigation, allowing insertion, retrieval, and deletion of values at specific hierarchical locations. Used to manage nested configurations or hierarchical data with efficient lookups and updates.",
+      "description_length": 358,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mew_vi.Core.Make.Base.Mode.Modes",
+      "description": "This module offers key-value store management through insertion, deletion, lookup, and transformation operations, along with traversal, filtering, and merging capabilities, primarily working with a generic 'a t structure where keys are specialized as Mode.Name.t. It supports tasks like configuration management or data processing by enabling efficient querying, iteration, and element-wise transformations on structured data. While the core type definitions are minimal, the provided functions align with standard map-like operations for manipulating associative collections.",
+      "description_length": 576,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mew_vi.Core.Make.Interpret.MsgBox",
+      "description": "Provides operations to create a thread-safe message box, send values into it, and retrieve values from it. Works with a parameterized type that wraps a concurrent message box structure. Used to coordinate communication between threads, such as passing results from background tasks to a main thread.",
+      "description_length": 299,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mew_vi.Core.Make.Interpret.Thread",
+      "description": "Provides operations for composing and managing asynchronous tasks, including binding continuations, combining results from multiple tasks, and scheduling parallel execution. Works with a thread type that encapsulates asynchronous computations and results. Used to coordinate concurrent operations, such as running multiple background processes, waiting for any or all to complete, and managing timeouts.",
+      "description_length": 403,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mew_vi.Core.Make.Interpret.Register",
+      "description": "Compares two strings lexicographically and evaluates the content of two values based on their internal structure. It operates on string types and custom content types defined within the module. Used to determine equality in configuration parsing and data validation scenarios.",
+      "description_length": 276,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mew_vi.Core.Make.Interpret.RegisterMap",
+      "description": "This module handles operations for managing generic key-value maps, focusing on functional transformations, filtering, and aggregation of entries. It works with a polymorphic map type indexed by register-based keys and supports tasks like membership checks, iterative processing, and conversion between maps and sequences. Use cases include configuration management and data transformation pipelines where dynamic key-value relationships are critical.",
+      "description_length": 451,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mew_vi.Core.Make.Interpret.Resolver",
+      "description": "Processes key sequences to drive state transitions and command execution in a text editor, using configuration, status, and key sequence data. Supports mode-specific operations, including register extraction, conditional logic, and context-sensitive actions. Can handle keyboard input parsing, command execution, and visual mode interactions with precise control over cursor and text. Examples include parsing multi-key commands, applying mode changes, and executing text modifications based on user input.",
+      "description_length": 506,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mew_vi.Core.Make.Base.Key",
+      "description": "Handles key events by encapsulating key codes and associated modifiers, supporting creation, comparison, and string conversion. Operates on typed representations of key codes, modifier sets, and individual modifiers. Used to represent and compare keyboard inputs in applications like game controls or shortcut managers.",
+      "description_length": 319,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mew_vi.Core.Make.Base.Mode",
+      "description": "Manages hierarchical data through a trie structure with path-based access, enabling efficient insertion, retrieval, and modification of values at nested locations. Supports key-value operations on a generic associative structure with specialized keys, allowing transformations, filtering, and merging of data. Users can build and navigate complex configurations, perform bulk updates, and manipulate structured data with map-like functions. Examples include storing nested settings, querying hierarchical information, and combining multiple data sources into a unified structure.",
+      "description_length": 579,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mew_vi.Core.Make.Base.MsgBox",
+      "description": "Provides operations to create a thread-safe message box, send values into it using a blocking put operation, and retrieve values using a blocking get operation. Works with a parameterized type representing a message box that holds values of any type. Used to coordinate communication between threads, such as passing results from background tasks to a main thread.",
+      "description_length": 364,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mew_vi.Core.Make.Base.Thread",
+      "description": "Provides asynchronous thread management with operations to chain actions using bind, inject values with return, combine threads with both, and coordinate multiple threads via join, pick, or choose. Works with a thread type that encapsulates asynchronous computations and results. Used to implement non-blocking I/O, parallel task execution, and timed delays in concurrent applications.",
+      "description_length": 385,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mew_vi.Core.Make.Base",
+      "description": "Provides functions to manage timeout values and modal key configurations, operating on float and modal key-mode pairs. Adjusts behavior based on configurable time limits and key-based mode transitions. Used to control interaction timing and state changes in event-driven systems.",
+      "description_length": 279,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mew_vi.Core.Make.Interpret",
+      "description": "Manages concurrent communication and task coordination through thread-safe message boxes and asynchronous operations, while enabling string comparison, key-value manipulation, and key sequence processing. It supports operations like sending and receiving values across threads, composing parallel tasks, comparing structured data, transforming maps, and interpreting key-based commands. Users can implement background task execution with result aggregation, validate configuration data, manage dynamic settings, and build interactive text editor behaviors. Examples include passing results between threads, running parallel computations, checking data consistency, and handling complex user input sequences.",
+      "description_length": 707,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mew_vi.Core.Make.Thread",
+      "description": "Provides asynchronous computation sequencing, parallel execution, and coordination through operations like binding, combining results with `both`, and waiting on multiple tasks with `join`. Works with a monadic type `'a t` to represent asynchronous actions, enabling non-blocking execution and result aggregation. Used to manage concurrent I/O operations, synchronize background tasks, and implement timeout mechanisms with `sleep` and `cancel`.",
+      "description_length": 445,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mew_vi.Core.Make.MsgBox",
+      "description": "Provides operations to create a thread-safe message buffer, send values into it, and retrieve values from it. Works with a parameterized type 'a t that encapsulates a message queue. Used to coordinate communication between threads, such as passing results from background tasks to a main thread.",
+      "description_length": 295,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mew_vi.Modal.Mode.KeyTrie",
+      "description": "Provides operations to construct, query, and modify a trie-based structure where each node maps a list of keys to values. Works with path as a list of key elements and nodes that store optional values or child mappings. Used to efficiently store and retrieve hierarchical data, such as configuration settings or routing tables.",
+      "description_length": 327,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mew_vi.Modal.Mode.Modes",
+      "description": "This module provides operations for managing key-value stores, including insertion, deletion, lookup, transformation, and iteration, with support for querying bindings (min, max, arbitrary) and converting between structures and sequences. It works with a generic key-value store type ('a t) and a key type alias for `Name.t`, enabling flexible data manipulation. Use cases include configuration management, caching, and structured data processing where efficient traversal and transformation are required.",
+      "description_length": 505,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mew_vi.Key.Modifiers",
+      "description": "The module offers set-like operations such as insertion, deletion, union, intersection, and membership checks, along with traversal, transformation, and filtering for collections of elements. It works with a generic collection type `t` and sequences of `elt` (modifiers), enabling tasks like dynamic set management, data transformation, and sequence-to-collection conversion. Specific use cases include processing structured modifier data, optimizing element retrieval, and implementing predicate-based filtering for complex datasets.",
+      "description_length": 534,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mew_vi.Mode.Name",
+      "description": "Compares two values of any type using a custom ordering function. Works with any data type that supports equality and ordering. Used to sort lists of custom records based on specific fields.",
+      "description_length": 190,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mew_vi.Mode.KeyTrie",
+      "description": "Provides operations to construct, query, and modify a trie-based structure where each node maps a list of keys to a value. Works with path as a list of key elements and nodes that store optional values or child mappings. Used to efficiently store and retrieve hierarchical data, such as configuration settings or routing tables.",
+      "description_length": 328,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mew_vi.Mode.Modes",
+      "description": "The module offers functions for inserting, deleting, and transforming key-value pairs, along with querying and iterating over elements in a generic 'a t structure, utilizing keys derived from `Name.t`. It supports operations like splitting, mapping, and filtering, enabling dynamic data manipulation in scenarios such as configuration management or data transformation pipelines. While it defines type abstractions for keys and stores, its concrete functionality focuses on abstracting key-value operations rather than implementing specific domain logic.",
+      "description_length": 554,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mew_vi.Core.Make",
+      "description": "Provides access to a map of register contents, allowing retrieval and inspection of mutable state during interpretation. Operates on `Interpret.Register.content` values stored in an `Interpret.RegisterMap.t` structure. Used to track and query the current values of registers in a virtual machine or interpreter context.",
+      "description_length": 319,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mew_vi.Modal.Mode",
+      "description": "manages hierarchical data through trie structures and key-value stores, combining path-based node operations with flexible key-value manipulations. It supports inserting, querying, and transforming data using paths or direct keys, with operations like min, max, and arbitrary lookups. Examples include building configuration trees, managing routing tables, and processing structured data with efficient traversal. The core types include a trie node structure and a generic key-value store type, enabling both nested and flat data representations.",
+      "description_length": 546,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mew_vi.Core",
+      "description": "Maintains and queries a map of register values, enabling inspection of mutable state during execution. It works with `Interpret.Register.content` values stored in an `Interpret.RegisterMap.t` structure. Users can retrieve specific register values or examine the full state of the register map. This supports debugging and analysis of program execution in a virtual machine or interpreter.",
+      "description_length": 388,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mew_vi.Modal",
+      "description": "manages hierarchical data through trie structures and key-value stores, offering path-based and direct key operations for insertion, querying, and transformation. It supports min, max, and arbitrary lookups, enabling efficient data manipulation. Core types include a trie node structure and a generic key-value store, allowing both nested and flat data representations. Examples include constructing configuration trees, handling routing tables, and processing structured data with fast traversal.",
+      "description_length": 497,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mew_vi.Key",
+      "description": "Provides set-like operations including insertion, deletion, union, intersection, and membership checks, along with traversal, transformation, and filtering for collections of elements. It operates on a generic collection type `t` and sequences of `elt`, supporting dynamic set management and predicate-based data processing. Examples include converting sequences to collections, optimizing element retrieval, and applying transformations to structured modifier data. Key tasks involve managing evolving datasets and performing efficient, predicate-driven data manipulation.",
+      "description_length": 573,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mew_vi.Edit_action",
+      "description": "Provides functions to create, apply, and revert text editing operations such as inserting, deleting, and replacing characters. Works with character sequences and position markers to track changes in a text buffer. Used to implement undo/redo functionality and collaborative editing features.",
+      "description_length": 291,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mew_vi.Vi_action",
+      "description": "Provides functions to create and manipulate actions for text editing, including inserting text, moving the cursor, and handling register operations. Works with custom types for insert commands, motion directives, and string-based registers. Used to construct and execute low-level editing steps in a Vim-like interface.",
+      "description_length": 319,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mew_vi.Mode",
+      "description": "Combines custom comparison, trie-based storage, and key-value manipulation into a unified data handling framework. Supports operations on ordered values, hierarchical trie structures with path-based access, and generic key-value stores with transformation capabilities. Enables sorting of custom records, efficient storage of nested configurations, and dynamic data processing through mapping and filtering. Examples include sorting user data by specific attributes, storing nested settings in a trie, and transforming configuration maps with custom functions.",
+      "description_length": 560,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "mew_vi",
+      "description": "Handles key mappings and mode transitions for a vi-like editing interface, processing input events and producing corresponding editing actions. Operates on custom key definitions, mode states, and concurrent execution contexts. Used to build interactive text editors with modal behavior, such as switching between insert and command modes based on user input.",
+      "description_length": 359,
+      "index": 32,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mew_vi",
+      "description": "manages mutable state, hierarchical data, sets, text editing, and custom actions through integrated data structures and operations. It supports register value queries, trie-based key-value manipulation, set operations, text transformation, and Vim-like command execution. Users can inspect execution states, build configuration trees, perform efficient data filtering, and implement editing workflows. Examples include debugging virtual machine registers, constructing routing tables, and managing text buffers with undo support.",
+      "description_length": 529,
+      "index": 33,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 38,
+    "meaningful_modules": 34,
+    "filtered_empty_modules": 4,
+    "retention_rate": 0.8947368421052632
+  },
+  "statistics": {
+    "max_description_length": 707,
+    "min_description_length": 190,
+    "avg_description_length": 411.1470588235294,
+    "embedding_file_size_mb": 0.12394142150878906
+  }
+}

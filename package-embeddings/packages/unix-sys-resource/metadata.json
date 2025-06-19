@@ -1,0 +1,77 @@
+{
+  "package": "unix-sys-resource",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 8,
+  "creation_timestamp": "2025-06-18T16:32:08.522565",
+  "modules": [
+    {
+      "module_path": "Sys_resource.Resource.Host",
+      "description": "Provides conversion between a custom `t` type and a `defns` structure, enabling serialization and deserialization. Operates on abstract data representations used for configuration or schema definitions. Used to transform internal state into a format suitable for storage or transmission.",
+      "description_length": 287,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sys_resource.Resource.Limit",
+      "description": "Returns the smaller of two values of type t, and converts a value of type t to its string representation. Works with an abstract type t representing numerical or comparable values. Used to enforce value boundaries in input validation and logging.",
+      "description_length": 246,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sys_resource_unix.Resource",
+      "description": "Provides access to host-specific resource information through the `host` value. Works with the `Sys_resource.Resource.Host.t` data type to retrieve system-specific details. Used to obtain and inspect host configuration data during runtime.",
+      "description_length": 239,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sys_resource.Resource",
+      "description": "Converts between a custom type and a structured format for storage or transmission, while providing comparison and string conversion capabilities for comparable values. The module handles abstract numerical or comparable types, allowing for value normalization and logging. It enables serialization of internal states and enforcement of minimum value constraints. Examples include saving configuration data and generating human-readable logs from internal representations.",
+      "description_length": 472,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sys_resource.Host",
+      "description": "type t = { ip : string; port : int; name : string } Provides functions to parse host strings into structured records, validate IP addresses, and extract port numbers from formatted input. Works with string representations of hosts and the t type to represent network endpoints. Used to process configuration files and command-line arguments specifying server connections.",
+      "description_length": 371,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "unix-sys-resource",
+      "description": "Provides functions to retrieve and set process resource limits, including CPU time, memory usage, and file descriptors. Works with system-specific data types such as rlimit and resource constants from the Unix module. Enables precise control over process behavior in resource-constrained environments or for performance tuning.",
+      "description_length": 327,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sys_resource_unix",
+      "description": "Accesses host-specific resource data via the `host` value, using the `Sys_resource.Resource.Host.t` type to store and query system details. Supports runtime inspection of configuration parameters such as CPU, memory, and disk information. Allows retrieval of host-specific metrics and system limits. Enables dynamic adaptation to environment constraints during program execution.",
+      "description_length": 379,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sys_resource",
+      "description": "Encapsulates network endpoint information with structured parsing, validation, and conversion capabilities. It defines a record type with fields for IP, port, and name, and provides functions to parse and validate host strings. Operations include extracting port numbers, ensuring valid IP formats, and converting between string representations and structured data. This enables reliable handling of server connection details in configuration and command-line inputs.",
+      "description_length": 467,
+      "index": 7,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 8,
+    "meaningful_modules": 8,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 472,
+    "min_description_length": 239,
+    "avg_description_length": 348.5,
+    "embedding_file_size_mb": 0.02947521209716797
+  }
+}

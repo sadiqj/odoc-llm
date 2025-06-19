@@ -1,0 +1,63 @@
+{
+  "package": "polling_state_rpc",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 6,
+  "creation_timestamp": "2025-06-18T16:30:12.538863",
+  "modules": [
+    {
+      "module_path": "Polling_state_rpc.Private_for_testing.Response",
+      "description": "Serializes response values into S-expressions using a provided conversion function. Operates on a polymorphic response type wrapped in a constructor. Used to generate structured data representations for logging or inter-process communication.",
+      "description_length": 242,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Polling_state_rpc.Client",
+      "description": "Provides functions to manage client-side RPC interactions, including dispatching queries, redispatching with the same query, and instructing the server to forget client state. Operates with query and response types, and maintains a bus for tracking responses. Used to handle real-time updates, manage state efficiently, and ensure consistent communication with RPC servers.",
+      "description_length": 373,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Polling_state_rpc.Private_for_testing",
+      "description": "Encapsulates response values in a polymorphic constructor and converts them to S-expressions using a custom mapping function. Supports arbitrary data types as long as a conversion function is provided. Enables structured logging by transforming complex responses into a readable format. For example, it can convert a list of user records into a nested S-expression for debugging or transmission.",
+      "description_length": 395,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Polling_state_rpc.Update",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot, including size calculation, writing, reading, and shape definition. Supports conversion to and from S-expressions. Used to persist or transmit values of type `t` in a binary format compatible with Bin_prot.",
+      "description_length": 290,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "polling_state_rpc",
+      "description": "Provides functions for initiating and managing client-side polling requests, handling response parsing, and tracking request states. Works with custom request configurations, response payloads, and timeout settings. Used to implement real-time data synchronization in distributed systems where server push is unavailable.",
+      "description_length": 321,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Polling_state_rpc",
+      "description": "handles serialization and deserialization of values using Bin_prot, with support for binary I/O and S-expressions; provides functions to compute size, write, read, and define the shape of values of type `t`. it enables efficient storage and transmission of structured data in a compact binary format. examples include saving a state to a file or sending it over a network connection.",
+      "description_length": 383,
+      "index": 5,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 6,
+    "meaningful_modules": 6,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 395,
+    "min_description_length": 242,
+    "avg_description_length": 334.0,
+    "embedding_file_size_mb": 0.022197723388671875
+  }
+}

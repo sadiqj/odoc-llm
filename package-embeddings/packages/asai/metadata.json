@@ -1,0 +1,168 @@
+{
+  "package": "asai",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 21,
+  "creation_timestamp": "2025-06-18T16:34:53.876746",
+  "modules": [
+    {
+      "module_path": "Asai.GitHub.Make",
+      "description": "Provides functions to retrieve the default severity level and a short code for diagnostics. Works with a custom type `t` representing diagnostic messages. Used to standardize error reporting and enable quick lookup of diagnostic details.",
+      "description_length": 237,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Asai.Explicator.Make",
+      "description": "Compares tag equality and retrieves priority values for sorting. Operates on a custom tag type representing system priorities. Used to sort processes by importance in a task scheduler.",
+      "description_length": 184,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Asai.Reporter.Make",
+      "description": "Provides functions to retrieve the default severity level and a short code for diagnostic messages. Works with a custom type `t` representing diagnostic entries. Used to standardize error reporting and enable quick lookup of diagnostic details.",
+      "description_length": 244,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Asai.Tty.Make",
+      "description": "Generates a unique, searchable string identifier for each message instance. Operates on the `t` type, which represents message objects. Used to quickly reference or look up specific messages in logs or databases.",
+      "description_length": 212,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Asai.StructuredReporter.Make",
+      "description": "Provides functions to retrieve the default severity, default text, and short code of a diagnostic message. Works with a custom type `t` that represents diagnostic configurations. Used to standardize error messages by defining their severity, detailed explanation, and a compact identifier for quick reference.",
+      "description_length": 309,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Asai.Explicator.Tag",
+      "description": "Compares tag values for equality and retrieves their priority integers, which follow the UNIX convention of lower numbers indicating higher priority. It supports sorting tags using List.sort based on their priority. The module includes a debugging printer for tag values.",
+      "description_length": 271,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Asai.Reporter.Message",
+      "description": "Returns the default severity level for a diagnostic message, used to categorize the importance of the message without affecting program flow. Provides a short, unique identifier for each message, suitable for quick lookup or referencing in logs. Works with the `t` type to represent structured diagnostic information.",
+      "description_length": 317,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Asai.StructuredReporter.Message",
+      "description": "Returns the default severity level for a diagnostic message, used to categorize the importance of the message without affecting program flow. Retrieves the default explanatory text for the message, intended for detailed user display. Provides a short, searchable identifier for the message, optimized for quick reference and lookup. Works with diagnostic message structures containing severity, text, and code fields. Used to standardize error reporting in compiler diagnostics and static analysis tools.",
+      "description_length": 504,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Asai.MinimumSigs.Message",
+      "description": "Produces a short, searchable string representation of message instances. Operates on the `t` type, which encapsulates message data. Used to generate identifiers for logging, error tracking, and message lookup in external systems.",
+      "description_length": 229,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Asai.Range",
+      "description": "The module provides operations for constructing, analyzing, and annotating positional data, focusing on code locations through positions (with line numbers, offsets, and sources) and ranges defined by start and end positions. It supports tasks like converting OCaml lexer positions, extracting source metadata, and attaching location information to parsed elements. These capabilities are essential for tools requiring precise tracking of code segments, such as linters, debuggers, or compilers.",
+      "description_length": 495,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Asai.Diagnostic",
+      "description": "Converts strings to formatted text with newline handling, constructs location-aware diagnostics with optional backtraces and remarks, and supports formatted message generation with context-aware formatting. Works with text, loctext, backtrace, and message-typed diagnostics. Used to create structured error messages with source location highlighting and detailed debugging information.",
+      "description_length": 385,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Asai.Reporter",
+      "description": "Handles diagnostic message creation with automatic context filling, including location, backtrace, and severity. Exposes the `t` type for structured diagnostics, along with functions to retrieve default severity and message identifiers. Allows for quick lookup via unique identifiers and customizes messages without disrupting program flow. Example: generate a warning with a predefined ID and automatic location tracking.",
+      "description_length": 422,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Asai.StructuredReporter",
+      "description": "Provides functions to generate and manage diagnostic messages with automatic location and backtrace tracking. Includes operations to retrieve severity levels, explanatory text, and unique codes for message identification. Supports structured message creation with fields for severity, text, and code. Can be used to produce standardized error reports, filter messages by severity, or look up details using a code.",
+      "description_length": 413,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Asai.MinimumSigs",
+      "description": "Provides a mechanism to generate unique, searchable identifiers from message instances, enabling logging, error tracking, and external system integration. It operates on the `t` type, offering methods to extract and manipulate message representations. Users can map diagnostic messages to custom formats and adopt reporters for unified output. Example tasks include generating log keys, filtering messages, and integrating with external monitoring tools.",
+      "description_length": 454,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Asai.Tty",
+      "description": "Provides a system for uniquely identifying and referencing message instances in UNIX terminal diagnostics. The `t` type represents message objects, with operations to generate and manage searchable identifiers. These identifiers enable efficient lookup and tracking of messages in logs or databases. For example, a message can be tagged with a unique string for later retrieval or filtering.",
+      "description_length": 391,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Asai.GitHub",
+      "description": "Handles diagnostic message management with a custom type `t` for standardized error reporting. Offers functions to extract severity levels and short codes for quick reference. Allows developers to retrieve and interpret diagnostic information efficiently. Example use includes logging errors with predefined severity and code mappings.",
+      "description_length": 335,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Asai.Explication",
+      "description": "Provides functions to serialize and debug structured text data, including segments, lines, blocks, and parts. Works with tagged data structures such as strings, lists, and nested records. Used for generating human-readable representations of parsed text during development or diagnostics.",
+      "description_length": 288,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Asai.Explicator",
+      "description": "Manages tag values with equality checks, priority-based sorting, and debugging output. It defines tag values and provides operations to compare, sort, and inspect them. Tags are ordered using UNIX-style priorities, where lower integers mean higher precedence. Examples include sorting a list of tags by priority or printing tag values for debugging.",
+      "description_length": 349,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Asai.SourceReader",
+      "description": "Loads a source file into memory using memory-mapped I/O and provides access to its content via direct indexing. Works with the `source` type, allowing retrieval of individual characters and determination of file size. Used to process large files efficiently in scenarios requiring low-level file access and custom error handling.",
+      "description_length": 329,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "asai",
+      "description": "Provides functions to parse, format, and filter compiler error messages, including locating issues within source code lines. Works with structured error records, source file paths, and line numbers. Used to generate human-readable diagnostics and highlight syntax errors during compilation.",
+      "description_length": 290,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Asai",
+      "description": "Collects and manages structured diagnostic information with location-awareness, severity, and unique identifiers. It handles positional data, formats messages with context, and provides tools to generate, track, and serialize diagnostics for error reporting and debugging. Operations include extracting source metadata, creating formatted errors with backtraces, and generating unique keys for message lookup. Examples include logging warnings with automatic location tracking, filtering messages by severity, and integrating diagnostics with external monitoring systems.",
+      "description_length": 571,
+      "index": 20,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 21,
+    "meaningful_modules": 21,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 571,
+    "min_description_length": 184,
+    "avg_description_length": 344.23809523809524,
+    "embedding_file_size_mb": 0.07676124572753906
+  }
+}

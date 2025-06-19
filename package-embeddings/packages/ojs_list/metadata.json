@@ -1,0 +1,336 @@
+{
+  "package": "ojs_list",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 45,
+  "creation_timestamp": "2025-06-18T16:41:08.419780",
+  "modules": [
+    {
+      "module_path": "Ojs_list.Types.Base.M_server_msg_to_yojson",
+      "description": "Provides functions to convert server message data into Yojson representations, supporting specific message types with structured fields. Works with custom record types that encapsulate server communication data. Used to serialize protocol messages for JSON-based inter-process communication.",
+      "description_length": 291,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojs_list.Types.Base.M_server_msg_of_yojson",
+      "description": "Converts JSON values into a specific record type by applying a series of parsing functions to each field. It processes nested structures using recursive parsing and handles optional fields with custom error handling. This is used to deserialize server messages from JSON payloads in a networked application.",
+      "description_length": 307,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojs_list.Types.Base.M_client_msg_to_yojson",
+      "description": "Provides functions to convert client message data into Yojson representations, including handling nested structures and custom encoders. Works with records containing fields like client_id, message_type, and payload. Used to serialize communication data for JSON-based messaging systems.",
+      "description_length": 287,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojs_list.Types.Base.M_client_msg_of_yojson",
+      "description": "Converts JSON values into a specific record type using a provided decoding function. Works with the `t_of_yojson` type, which defines a structure for parsing JSON data into OCaml values. Used to process client messages from JSON payloads in networked applications.",
+      "description_length": 264,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ojs_list_server.Server.Make.M_app_server_msg_to_yojson",
+      "description": "Provides functions to convert server message data into Yojson representations, supporting custom serialization for specific message types. Works with record types containing fields like status, payload, and error details. Used to generate JSON responses for client communication in a web server context.",
+      "description_length": 303,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojs_list_server.Server.Make.M_app_server_msg_of_yojson",
+      "description": "Converts JSON values into a specific record type using a custom parsing function. It processes values of type `t_of_yojson` by extracting fields such as `msg` and `server`. Used to deserialize structured messages from JSON in a networked application.",
+      "description_length": 250,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojs_list_server.Server.Make.M_app_client_msg_to_yojson",
+      "description": "Provides functions to convert client message data structures into Yojson representations, supporting specific record types with fields like `msg_id`, `timestamp`, and `content`. Works with nested data types including lists and optional fields, ensuring proper serialization for network communication. Used to prepare messages for JSON-based client-server interactions in real-time applications.",
+      "description_length": 394,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojs_list_server.Server.Make.M_app_client_msg_of_yojson",
+      "description": "Converts JSON values into a structured message type using a custom parsing function. Works with the `t_of_yojson` type, which defines the expected shape of the parsed data. Used to process incoming client messages from JSON payloads in a networked application.",
+      "description_length": 260,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojs_list_server.Server.Make.M_server_msg_to_yojson",
+      "description": "Provides functions to convert server message data into Yojson representations, supporting specific message types like status updates and error reports. Works with custom record types that encapsulate message content and metadata. Used to serialize communication between server components for logging and external system integration.",
+      "description_length": 332,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojs_list_server.Server.Make.M_server_msg_of_yojson",
+      "description": "Converts JSON values into a structured record type by applying a series of parsing functions to specific fields. It processes nested data, ensuring type safety through explicit field mappings. Used to deserialize server messages from JSON payloads into a typed representation for further processing.",
+      "description_length": 299,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ojs_list_server.Server.Make.M_client_msg_to_yojson",
+      "description": "Provides functions to convert client message data into Yojson representations, including handling of specific fields like request IDs and command types. Works with structured data types containing string identifiers, timestamps, and command-specific payloads. Used to serialize communication messages for JSON-based inter-process or network communication.",
+      "description_length": 355,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ojs_list_server.Server.Make.M_client_msg_of_yojson",
+      "description": "Converts JSON values into a specific record type using a custom parsing function. Operates on a type that includes fields for client messages, such as identifiers and payloads. Used to deserialize incoming network messages from a JSON format into structured data for processing.",
+      "description_length": 278,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojs_list.Types.Base",
+      "description": "converts server and client message data between OCaml records and Yojson representations, supporting structured serialization and deserialization. It handles custom record types with fields like client_id, message_type, and payload, and supports nested structures through recursive parsing and encoding. Functions include converting protocol messages to JSON for inter-process communication and parsing JSON payloads into typed records for networked applications. Examples include serializing a client message with a nested payload or deserializing a server response with optional fields.",
+      "description_length": 588,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojs_list.Types.M_app_server_msg_to_yojson",
+      "description": "Converts a custom message type into a Yojson representation using a provided serialization function. Operates on a record type containing a function to serialize specific message variants. Used to generate JSON responses for a server-side message handling system.",
+      "description_length": 263,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojs_list.Types.M_app_server_msg_of_yojson",
+      "description": "Converts JSON values into a specific record type using a custom parsing function. Works with the `t_of_yojson` type, which defines the structure of the parsed data. Used to process incoming server messages from JSON payloads in a web application context.",
+      "description_length": 254,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojs_list.Types.M_app_client_msg_to_yojson",
+      "description": "Provides functions to convert client message data into Yojson representations, supporting specific record types with fields like `msg_id`, `content`, and `timestamp`. Works with structured data including nested variants and optional fields. Used to serialize communication payloads for JSON-based inter-process messaging.",
+      "description_length": 321,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ojs_list.Types.M_app_client_msg_of_yojson",
+      "description": "Converts JSON values into a structured message type using a custom parsing function. It operates on a record type containing a parser for JSON data. Used to deserialize client messages from JSON payloads in a networked application.",
+      "description_length": 231,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojs_list.Types.M_server_msg_to_yojson",
+      "description": "Provides functions to convert server message data into Yojson representations, including handling of error messages, status updates, and command responses. Works with custom record types that encapsulate message payloads and metadata. Used to serialize communication between server components for JSON-based inter-process or network communication.",
+      "description_length": 347,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ojs_list.Types.M_server_msg_of_yojson",
+      "description": "Converts JSON values into a specific record type using a custom parsing function. It operates on a type that includes fields for server messages, such as identifiers and payloads. Used to deserialize incoming JSON messages into structured data for processing within a network application.",
+      "description_length": 288,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojs_list.Types.M_client_msg_to_yojson",
+      "description": "Converts client message data structures into Yojson values using a predefined mapping. Works with specific record types representing client messages and their components. Used to serialize protocol buffers or custom message formats for JSON-based communication.",
+      "description_length": 261,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojs_list.Types.M_client_msg_of_yojson",
+      "description": "Converts JSON values into a specific record type using a provided decoding function. Operates on a custom type derived from Yojson's basic types, ensuring type-safe parsing. Used to parse client-side message data from JSON strings into structured OCaml values.",
+      "description_length": 260,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojs_list_server.Server.Make",
+      "description": "Provides operations for managing mutable lists stored in a server-side map, using a custom `elist` type for efficient updates. Works with key-value pairs where keys are strings and values are lists wrapped in an opaque type. Used to dynamically update and retrieve list data in a web server context.",
+      "description_length": 299,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojsl_js.Make.M_app_server_msg_to_yojson",
+      "description": "Converts a custom message type into a Yojson representation using a provided serialization function. Operates on a record type containing a function to serialize specific data. Used to generate JSON responses for a server message protocol.",
+      "description_length": 239,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojsl_js.Make.M_app_server_msg_of_yojson",
+      "description": "Converts JSON values into a specific record type using a custom parsing function. Operates on a type that includes fields for application server messages, such as identifiers, payloads, and timestamps. Used to deserialize incoming JSON messages from a client into structured data for processing.",
+      "description_length": 295,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojsl_js.Make.M_app_client_msg_to_yojson",
+      "description": "Converts client message data structures into Yojson values using a predefined mapping. It operates on a record type containing fields like request ID, command, and arguments. Used to serialize communication payloads for JSON-based inter-process or network messaging.",
+      "description_length": 266,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ojsl_js.Make.M_app_client_msg_of_yojson",
+      "description": "Converts JSON values into a structured message type using a custom parsing function. Works with the `t_of_yojson` type, which defines the expected shape of the parsed data. Used to process incoming client messages from JSON payloads in a networked application.",
+      "description_length": 260,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojsl_js.Make.M_server_msg_to_yojson",
+      "description": "Provides functions to convert server message data into Yojson representations, supporting specific message types like status updates and error reports. Works with custom record types that encapsulate message content and metadata. Used to serialize communication between server components for logging and external system integration.",
+      "description_length": 332,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojsl_js.Make.M_server_msg_of_yojson",
+      "description": "Converts JSON values into a structured record type by applying a series of parsing functions to specific fields. It processes nested JSON objects and arrays, extracting and validating data according to predefined type constraints. This is used to deserialize server messages from JSON format into OCaml values for further processing.",
+      "description_length": 333,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojsl_js.Make.M_client_msg_to_yojson",
+      "description": "Converts client message data structures into Yojson values using a predefined mapping. Works with custom record types representing client communication payloads. Used to serialize specific message formats for JSON-based inter-service communication.",
+      "description_length": 248,
+      "index": 28,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ojsl_js.Make.M_client_msg_of_yojson",
+      "description": "Converts JSON values into a specific record type using a custom parsing function. Operates on a type that includes fields for client messages, such as identifiers and payloads. Used to deserialize incoming network messages from a JSON format into structured data for processing.",
+      "description_length": 278,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojs_list.Types",
+      "description": "Encapsulates message serialization and deserialization between custom OCaml types and JSON representations. Supports converting records with fields like `msg_id`, `content`, and `timestamp` into Yojson, and parsing JSON into structured message types with custom parsers. Enables handling of error messages, status updates, and command responses in server and client communication. Examples include generating JSON responses for a server and parsing incoming JSON payloads into typed data for processing.",
+      "description_length": 503,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojs_list_server.Server",
+      "description": "manages dynamic list operations through a server-side map, using an opaque `elist` type to encapsulate lists associated with string keys. It supports efficient insertion, deletion, and retrieval of list elements while maintaining state across requests. Operations include adding items to the end of a list, removing specific elements, and querying the current state. For example, it can track user session data or maintain a log of recent activity.",
+      "description_length": 448,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojsl_js.Make",
+      "description": "Provides operations for managing mutable lists through a map structure, where each key references a list that can be modified in place. Works with associative arrays of lists, allowing dynamic updates and access. Used to track and update stateful collections in real-time applications.",
+      "description_length": 285,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojsl_js.M_app_server_msg_to_yojson",
+      "description": "Converts a custom message type into a Yojson representation using a provided serialization function. Operates on a record type containing a function to serialize specific data. Used to generate JSON responses for a server message protocol.",
+      "description_length": 239,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojsl_js.M_app_server_msg_of_yojson",
+      "description": "Converts JSON values into a specific record type by applying a series of parsing functions to each field. Operates on a record type with fields mapped from JSON keys using custom parsing logic. Used to deserialize incoming HTTP request bodies into structured data for processing.",
+      "description_length": 279,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojsl_js.M_app_client_msg_to_yojson",
+      "description": "Provides functions to convert client message data into Yojson representations, supporting specific record types with fields like `msg_id`, `content`, and `timestamp`. Works with structured data containing nested options and variant types. Used to serialize communication payloads for JSON-based inter-process or network messaging.",
+      "description_length": 330,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojsl_js.M_app_client_msg_of_yojson",
+      "description": "Converts JSON values into a structured message type using a custom parsing function. Operates on a record type containing a parser for JSON data. Used to deserialize client messages from JSON payloads in a networked application.",
+      "description_length": 228,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ojsl_js.M_server_msg_to_yojson",
+      "description": "Provides functions to convert server message data into Yojson representations, including handling of error messages, status updates, and command responses. Works with custom record types that encapsulate message payloads and metadata. Used to serialize communication between server components for logging and external system integration.",
+      "description_length": 337,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojsl_js.M_server_msg_of_yojson",
+      "description": "Converts JSON values into a structured record type by applying a series of parsing functions to specific fields. It processes nested JSON objects and arrays, extracting and transforming values according to predefined type constraints. This is used to deserialize server messages from JSON format into OCaml data structures for further processing.",
+      "description_length": 346,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojsl_js.M_client_msg_to_yojson",
+      "description": "Provides functions to convert client message data into Yojson representations, supporting specific record types with fields like `client_id`, `request`, and `timestamp`. Works with structured data including nested records and variant types. Used to serialize communication payloads for JSON-based inter-process or network messaging.",
+      "description_length": 332,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojsl_js.M_client_msg_of_yojson",
+      "description": "Converts JSON values into a specific record type using a custom parsing function. Works with the `t_of_yojson` type, which defines a structured representation of client messages. Used to deserialize incoming JSON data into a typed format for processing within a messaging system.",
+      "description_length": 279,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "ojs_list",
+      "description": "Provides functions for establishing WebSocket connections, sending and receiving binary and text messages, and handling connection events. Works with socket endpoints, message buffers, and event callbacks. Used to build real-time communication layers in web applications, such as chat systems or live data updates.",
+      "description_length": 314,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojs_list",
+      "description": "Encapsulates message serialization and deserialization between OCaml types and JSON, handling records with fields like `msg_id`, `content`, and `timestamp`. Supports converting structured data to Yojson and parsing JSON into typed message representations, including error messages, status updates, and command responses. Enables server-side JSON generation and client-side payload parsing using custom parsers. Examples include creating JSON responses for API endpoints and extracting typed data from incoming requests.",
+      "description_length": 519,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojs_list_server",
+      "description": "manages dynamic lists via a server-side map, using an opaque `elist` type to store and manipulate lists linked to string keys. It enables adding, removing, and querying elements efficiently, preserving state between requests. Operations support tracking user sessions or maintaining activity logs. For instance, it can append a new item to a user's shopping list or remove a specific entry from a log.",
+      "description_length": 401,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ojsl_js",
+      "description": "Encapsulates serialization and deserialization logic for structured message data between OCaml and JSON formats. Supports record types with fields like `msg_id`, `content`, `client_id`, `request`, and nested options or variant types, using custom serialization and parsing functions. Enables conversion of server and client messages into Yojson for transmission and parsing of incoming JSON into typed OCaml structures. Examples include generating JSON responses for HTTP servers, deserializing request bodies, and serializing inter-process communication payloads.",
+      "description_length": 564,
+      "index": 44,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 50,
+    "meaningful_modules": 45,
+    "filtered_empty_modules": 5,
+    "retention_rate": 0.9
+  },
+  "statistics": {
+    "max_description_length": 588,
+    "min_description_length": 228,
+    "avg_description_length": 319.7111111111111,
+    "embedding_file_size_mb": 0.1640033721923828
+  }
+}

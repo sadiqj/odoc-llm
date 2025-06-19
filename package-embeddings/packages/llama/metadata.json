@@ -1,0 +1,105 @@
+{
+  "package": "llama",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 12,
+  "creation_timestamp": "2025-06-18T16:34:22.979479",
+  "modules": [
+    {
+      "module_path": "Llama.Midi.Midi_input",
+      "description": "Provides functions to initialize a MIDI input interface and retrieve available port names. Operates on an opaque type representing a MIDI input session. Used to enumerate MIDI devices before establishing a connection.",
+      "description_length": 217,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Llama_low_level.System",
+      "description": "Initializes a logging system that captures environment variables and integrates them into the application's runtime context. It operates on unit types and environment configurations, enabling dynamic logging behavior based on system settings. This is used to configure logging levels and output destinations at startup.",
+      "description_length": 319,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Llama_low_level.Wav",
+      "description": "Reads a WAV file and returns a mono audio buffer as a float array. Processes 16-bit PCM data, converting it to normalized floating-point values between -1.0 and 1.0. Used for loading audio samples in real-time synthesis applications.",
+      "description_length": 233,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Llama_low_level.Output_stream",
+      "description": "Manages audio output by providing methods to create and configure a stream, set buffer padding, and send individual samples. It operates with a stream type that tracks sample rate, number of channels, and buffer status. Used to interface with audio hardware or real-time processing systems by delivering samples at a specified rate.",
+      "description_length": 332,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Llama_low_level.Midi_input",
+      "description": "Handles MIDI input by creating a session, retrieving the number of available ports, listing their names, connecting to a specific port, and draining incoming messages into a character array for processing. Operates on a session object of type `t` and interacts with system-level MIDI interfaces. Used to capture real-time MIDI data from hardware devices or virtual ports.",
+      "description_length": 371,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Llama.Signal_player",
+      "description": "Provides functions to create and manage a signal playback system, with operations to run a player indefinitely or play a single signal with optional downsample. Works with signal references and Lwt-based asynchronous operations. Used to stream audio signals in real-time or trigger one-time playback events.",
+      "description_length": 307,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Llama.Midi",
+      "description": "Provides functions to initialize and query MIDI input interfaces, operating on an opaque session type. Enables enumeration of available MIDI ports prior to connection. Allows retrieval of port names for device selection. Supports setup and inspection of MIDI input configurations.",
+      "description_length": 280,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Llama_io.Wav",
+      "description": "Provides functions to load WAV files into a structured format and generate mono audio signals by averaging channels. Operates on file paths and audio data structures representing waveforms. Used to integrate audio samples into signal processing pipelines for real-time playback or analysis.",
+      "description_length": 290,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "llama",
+      "description": "Provides functions to create and connect audio components like oscillators, filters, and envelope generators, enabling the construction of modular synthesizer patches. Works with signal processing graphs represented as typed data structures, allowing precise control over audio signal flow. Used to generate real-time audio output in live performance settings or to prototype synthesizer designs in interactive OCaml environments.",
+      "description_length": 430,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Llama_low_level",
+      "description": "Loads and processes audio from WAV files into normalized float arrays, manages real-time audio output through stream configurations, and captures MIDI input for dynamic interaction, all while initializing a logging system that adapts to environment variables. It works with float arrays, audio streams, and MIDI session objects to enable real-time audio synthesis and control. Audio samples can be loaded and played back with precise timing, MIDI events can be captured and processed, and logging settings can be adjusted dynamically. This integration supports applications requiring audio input/output, real-time processing, and system-aware logging.",
+      "description_length": 651,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Llama",
+      "description": "combines a signal playback system with MIDI input management, offering asynchronous audio streaming and one-time playback capabilities, along with MIDI port enumeration and session configuration. It includes types for signal references, MIDI sessions, and port identifiers, with operations to play signals, manage playback duration, and inspect MIDI device properties. Users can stream audio in real-time, trigger single signal plays, and configure MIDI input sources. Functions support both continuous and event-driven audio workflows, enabling integration with external audio and MIDI hardware.",
+      "description_length": 596,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Llama_io",
+      "description": "Loads WAV files into structured audio data and converts multi-channel audio to mono by averaging. Processes file paths and waveform data to support real-time audio integration and analysis. Enables tasks such as loading a stereo audio file and producing a single-channel signal for further processing. Supports operations like channel reduction and file-to-data conversion.",
+      "description_length": 373,
+      "index": 11,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 37,
+    "meaningful_modules": 12,
+    "filtered_empty_modules": 25,
+    "retention_rate": 0.32432432432432434
+  },
+  "statistics": {
+    "max_description_length": 651,
+    "min_description_length": 217,
+    "avg_description_length": 366.5833333333333,
+    "embedding_file_size_mb": 0.044014930725097656
+  }
+}

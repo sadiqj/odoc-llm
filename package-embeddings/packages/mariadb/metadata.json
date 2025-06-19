@@ -1,0 +1,476 @@
+{
+  "package": "mariadb",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 65,
+  "creation_timestamp": "2025-06-18T16:45:39.487898",
+  "modules": [
+    {
+      "module_path": "Mariadb.Nonblocking.Make.Row.StringMap",
+      "description": "This module provides operations for managing ordered maps with string keys, including adding, removing, updating, and querying key-value bindings, as well as merging maps and extracting subsets based on key order. It supports ordered traversal, transformation, and filtering of bindings, enabling tasks like sorted key processing or constructing new maps from sequences. Specific use cases include efficiently handling structured data with ordered string keys, such as configuration settings or indexed datasets.",
+      "description_length": 512,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mariadb.Nonblocking.Make.Row.Array",
+      "description": "Creates arrays of field elements using a generation function, enabling efficient initialization based on index. Operates on arrays of `Field.t` values, suitable for algebraic structures and cryptographic computations. Used to construct large arrays of finite field elements for polynomial evaluations and modular arithmetic tasks.",
+      "description_length": 330,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mariadb.Nonblocking.Make.Row.Map",
+      "description": "Constructs a map from an integer size and a function generating field values, using string keys. Operates on a type alias for a string-to-field mapping. Used to initialize game boards by generating cells based on position.",
+      "description_length": 222,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mariadb.Nonblocking.Make.Row.Hashtbl",
+      "description": "Creates a hash table mapping strings to Field.t values, initialized with a specified number of buckets and populated using a provided function. Accepts an integer to set the initial size and a function to generate Field.t values on demand. Used to efficiently store and retrieve field data by string keys in scenarios requiring dynamic initialization.",
+      "description_length": 351,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mariadb.Nonblocking.Make.Time",
+      "description": "Extracts individual components of a date and time, including year, month, day, hour, minute, second, and microsecond. Constructs date and time values from component parts or timestamps, supporting both local and UTC time conversions. Operates on the `t` type to represent and manipulate temporal data.",
+      "description_length": 301,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mariadb.Nonblocking.Make.Field",
+      "description": "Provides methods to extract specific typed values from a field, including integers, floats, strings, bytes, and timestamps, with optional variants for each type. Works with a custom `t` type and a sum type `value` that represents different data representations. Used to process structured data fields in a type-safe manner, such as parsing database records or JSON elements.",
+      "description_length": 374,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mariadb.Nonblocking.Make.Row",
+      "description": "Constructs a row of a specified size by applying a function to each index, generating elements of type Field.t. Operates on integer indices and produces a structured row representation. Used to generate rows for tabular data structures where each cell is dynamically computed.",
+      "description_length": 276,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mariadb.Nonblocking.Make.Res",
+      "description": "Provides operations to retrieve the number of rows in a result set, the number of affected rows from an operation, and the auto-increment ID from an insert. Works with a result type `t` and a row type parameterized by a module implementing the `Row.S` signature. Used to process database query outcomes and extract specific metadata or row data.",
+      "description_length": 345,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mariadb.Nonblocking.Make.Stmt",
+      "description": "Executes a database statement with provided parameters and returns a result. Resets the state of a prepared statement for reuse. Closes the statement to release associated resources. Works with database statement handles and field values. Used to manage database queries and transactions in a controlled manner.",
+      "description_length": 311,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mariadb.Nonblocking.Make.IO",
+      "description": "Provides asynchronous computation sequencing using a monadic interface, with `>>=` for chaining operations and `return` for wrapping values in a future. Operates on the `'a future` type, representing computations that will produce a value at a later time. Enables nonblocking network and file operations by deferring execution until results are needed.",
+      "description_length": 352,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mariadb.Nonblocking.Row.StringMap",
+      "description": "This module provides operations for managing ordered key-value mappings, including insertion, deletion, modification, and querying of bindings, along with advanced functions for merging, filtering, and iterating across keys. It works with structured maps featuring ordered keys (primarily strings) and arbitrary value types, enabling sequence-based processing and efficient traversal in ascending or descending key order. Use cases include dynamic data organization, efficient lookup scenarios, and transformations requiring key-based constraints or monotonicity assumptions.",
+      "description_length": 575,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mariadb.Nonblocking.Row.Array",
+      "description": "Creates arrays of field elements using a generation function, enabling efficient initialization based on index. Operates on arrays of `Field.t` values, suitable for algebraic structures and cryptographic computations. Used to construct large arrays of finite field elements for polynomial evaluations and vector operations.",
+      "description_length": 323,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mariadb.Nonblocking.Row.Map",
+      "description": "Creates a mapping from string keys to field values, initialized with a given size and a function to generate field values. Operates on string-keyed associative structures, using a custom field type for stored data. Used to construct configuration tables where each entry is dynamically generated based on its key.",
+      "description_length": 313,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mariadb.Nonblocking.Row.Hashtbl",
+      "description": "Creates a hash table mapping strings to Field.t values, initialized with a specified number of buckets and populated using a provided generator function. Accepts an integer to set the initial size and a function to generate Field.t values on demand. Used to efficiently store and retrieve field data by string keys in scenarios requiring dynamic initialization.",
+      "description_length": 361,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mariadb.Blocking.Row.StringMap",
+      "description": "This module offers operations for dynamically managing key-value pairs, including insertion, deletion, modification, and query, with support for ordered traversal and key-conditioned searches. It works with ordered maps featuring string keys and generic values, enabling sequence-based construction and efficient key-based processing. Use cases include building structured data from iterative inputs, maintaining sorted associations, and performing targeted transformations on mapped elements.",
+      "description_length": 493,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mariadb.Blocking.Row.Array",
+      "description": "Creates arrays of field elements using a generation function, allowing for dynamic construction based on index. Operates on arrays of type Field.t, enabling efficient storage and manipulation of structured data. Used to generate rows in algebraic structures where elements are computed procedurally.",
+      "description_length": 299,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mariadb.Blocking.Row.Map",
+      "description": "Creates a mapping from string keys to Field.t values, enabling structured access to row data. Provides a build function that generates a row of specified length using a generator function for field values. Used to construct and manage tabular data structures where each column is identified by a unique name.",
+      "description_length": 308,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mariadb.Blocking.Row.Hashtbl",
+      "description": "Creates and manipulates hash tables mapping string keys to Field.t values. Provides a build function to generate rows of fields based on an index-to-field mapping. Used to construct structured data representations where fields are accessed by named keys.",
+      "description_length": 254,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ffi_bindings.Types.Field.Flags",
+      "description": "Handles bitwise operations on unsigned integers, providing constants for logical NOT and unsigned conversion. Works with the `Unsigned.uint` type and `F.const` wrapper for immutable values. Used to enforce type safety in low-level bit manipulation and ensure correct interpretation of integer values in system-level code.",
+      "description_length": 321,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ffi_bindings.Types.Uintptr.Infix",
+      "description": "Provides arithmetic and bitwise operations for a type `t`, including addition, subtraction, multiplication, division, modulus, and logical shifts. Supports bitwise AND, OR, and XOR, as well as left and right shifts by integer amounts. Used to perform low-level numeric manipulations and optimizations in numerical algorithms.",
+      "description_length": 325,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ffi_bindings.Types.Intptr.Infix",
+      "description": "Provides arithmetic and bitwise operations for a type `t`, including addition, subtraction, multiplication, division, modulus, and bit shifts. Supports logical operations such as AND, OR, and XOR, as well as left and right bit shifting. Used for low-level numerical computations and bit manipulation in performance-critical code.",
+      "description_length": 329,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ffi_bindings.Types.Ptrdiff.Infix",
+      "description": "Provides arithmetic and bitwise operations for a type `t`, including addition, subtraction, multiplication, division, modulus, and bit shifts. Supports logical operations such as AND, OR, and XOR, as well as left and right bit shifting. Used for low-level numeric manipulations in algorithms requiring direct control over integer representations.",
+      "description_length": 346,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mariadb.Nonblocking.Status",
+      "description": "Tracks event flags for a MariaDB connection socket, including read, write, exception, and timeout states. Returns boolean values for each event type when queried. Used to monitor socket activity and handle asynchronous I/O operations.",
+      "description_length": 234,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mariadb.Nonblocking.Make",
+      "description": "Sequences asynchronous operations using a monadic interface, with `>>=` for chaining and `return` for embedding values into futures. Computations are represented as `'a future`, allowing nonblocking execution of I/O and long-running tasks. Chained operations execute in order, with results passed sequentially through the pipeline. For example, fetching a file, processing its contents, and writing to another location can be expressed as a series of composed future operations.",
+      "description_length": 478,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mariadb.Blocking.Time",
+      "description": "Extracts individual components of a date-time value such as year, month, day, hour, minute, second, and microsecond. Constructs date-time objects from component parts or timestamps, supporting both local and UTC time formats. Works with the `t` type to represent and manipulate temporal data.",
+      "description_length": 292,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mariadb.Blocking.Field",
+      "description": "Provides methods to extract and check the name, value, and null status of a database field, along with type-specific accessors for integers, floats, strings, bytes, and timestamps, both as options and non-optional values. Works with a custom type representing database field data and an associated value type that encapsulates different data representations. Used to process query results by safely accessing and converting field values into appropriate OCaml types.",
+      "description_length": 466,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mariadb.Blocking.Row",
+      "description": "Creates a row of fixed size where each element is generated by a function applied to its index. Works with integer indices and a custom Field type to construct rows. Used to dynamically generate rows for data structures like tables or matrices.",
+      "description_length": 244,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mariadb.Blocking.Res",
+      "description": "Provides functions to retrieve the number of rows returned by a SELECT query, the number of affected rows from an INSERT or UPDATE, and the auto-increment ID from an insert operation. Works with a result type representing database query outputs. Fetches rows into user-defined structures for direct access to query data.",
+      "description_length": 320,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mariadb.Blocking.Stmt",
+      "description": "Executes a prepared SQL statement with provided parameters and returns the result, resets the state of a statement after execution, and closes the statement to release resources. Works with a custom type `t` representing a prepared statement and arrays of field values for parameter binding. Used to manage database interactions efficiently in applications requiring repeated SQL execution with varying inputs.",
+      "description_length": 410,
+      "index": 28,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mariadb.Nonblocking.IO",
+      "description": "Handles asynchronous operations through a monadic interface, enabling chaining of nonblocking I/O tasks. Operates on 'a future, allowing computations to proceed without blocking execution. Used to manage network requests, file reads, and event-driven processing in concurrent applications.",
+      "description_length": 289,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mariadb.Nonblocking.Time",
+      "description": "Extracts individual components of a date and time, including year, month, day, hour, minute, second, and microsecond. Constructs date and datetime values from component parts or timestamps, supporting both local and UTC time conversions. Works with the `t` type to represent and manipulate temporal data.",
+      "description_length": 304,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mariadb.Nonblocking.Field",
+      "description": "Provides methods to extract specific values from a structured data element, including integers, floats, strings, bytes, and timestamps, with optional variants for nullable fields. Works with a custom type `t` and a sum type `value` representing various data representations. Used to process and validate data from structured formats like JSON or database records.",
+      "description_length": 363,
+      "index": 31,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mariadb.Nonblocking.Row",
+      "description": "Constructs a row of a specified size by applying a function to each index, generating elements of type Field.t. Operates on integer indices and produces a structured row representation. Used to dynamically generate rows for database queries or tabular data processing.",
+      "description_length": 268,
+      "index": 32,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mariadb.Nonblocking.Res",
+      "description": "Provides functions to retrieve the number of rows in a result set, the number of affected rows from an operation, and the auto-increment ID from an insert. Works with a result type `t` and a row type parameterized by a module implementing the `Row.S` signature. Used to process database query outcomes and extract specific metadata or row data.",
+      "description_length": 344,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mariadb.Nonblocking.Stmt",
+      "description": "Executes a prepared SQL statement with given parameters, returning a result set. Resets the state of the statement to allow re-execution with new values. Closes the statement to release associated resources. Works with SQL statement handles and field values. Used to manage database interactions in a structured, repeatable manner.",
+      "description_length": 331,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mariadb.Row.StringMap",
+      "description": "The module offers operations for managing ordered maps with key-value bindings, including adding, removing, updating, and querying entries, along with merging, filtering, and ordered traversal. It works with sequences of (string * 'a) pairs and maps featuring ordered keys, enabling efficient key-based lookups and transformations. Use cases include building configuration structures or processing structured data where ordered key access is critical.",
+      "description_length": 451,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mariadb.Row.Array",
+      "description": "Creates arrays of field elements using a generation function, allowing for dynamic construction based on index. Operates on arrays of type Field.t, enabling efficient storage and manipulation of structured data. Used to generate rows in algebraic structures where elements are computed procedurally.",
+      "description_length": 299,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mariadb.Row.Map",
+      "description": "Creates a mapping from string keys to Field.t values, enabling structured access to row data. Provides a build function that generates a row of specified length by applying a function to each index. Used to construct and manage tabular data structures where each column is represented by a Field.t.",
+      "description_length": 298,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mariadb.Row.Hashtbl",
+      "description": "Creates and manages hash tables mapping string keys to Field.t values, enabling efficient lookup and storage of row data. Provides a build function to generate rows by applying a generator function to integer indices. Used to construct structured data representations where fields are accessed by named keys.",
+      "description_length": 308,
+      "index": 38,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ffi_bindings.Types.Protocol",
+      "description": "Provides constants for network protocol identifiers, including default, TCP, socket, pipe, and memory. Works with integer-based constants representing protocol types. Used to configure network interfaces and communication channels in low-level system interactions.",
+      "description_length": 264,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ffi_bindings.Types.Options",
+      "description": "This module provides functions to define and manage integer-based configuration constants for network/database clients, focusing on security and communication parameters. It works with settings such as timeouts, authentication flags, SSL/TLS attributes, and protocol behaviors, enabling precise control over connection security, character encoding, and cipher configurations. Specific use cases include securing database connections via SSL, optimizing network timeouts, and customizing authentication mechanisms.",
+      "description_length": 513,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ffi_bindings.Types.Flags",
+      "description": "Provides bitwise operations on 32-bit integers to represent and combine flag constants. Works with int32 values to enable or disable specific behaviors in database or network interactions. Used to configure connection settings, control query execution, and manage result handling in low-level protocol implementations.",
+      "description_length": 318,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ffi_bindings.Types.Server_options",
+      "description": "Provides functions to configure server behavior regarding statement execution, using integer constants to enable or disable multi-statement processing. Operates with integer-based configuration flags. Used to adjust server settings for batch query handling in database interactions.",
+      "description_length": 282,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ffi_bindings.Types.Wait_status",
+      "description": "Provides constants for monitoring file descriptor status in I/O operations, including read, write, and exception conditions, with a timeout value. Works with integer representations of event masks used in system calls like `select` or `poll`. Used to configure and interpret readiness flags in asynchronous or non-blocking I/O setups.",
+      "description_length": 334,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ffi_bindings.Types.Type",
+      "description": "The module provides constants for representing data types such as integers, floats, strings, and dates, along with functions that generate integer-based time representations for temporal data. It works with structured type systems and time-based data, enabling consistent encoding for serialization or database operations. Specific use cases include handling temporal information in logging systems or mapping database types to serialized formats.",
+      "description_length": 447,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ffi_bindings.Types.Stmt_attr",
+      "description": "Provides functions to retrieve and update constants related to database statement attributes, including maximum length, cursor type, and prefetch row count. Works with integer constants stored in a fixed configuration. Used to configure query execution parameters in database interactions.",
+      "description_length": 289,
+      "index": 45,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ffi_bindings.Types.Return_code",
+      "description": "Provides functions to represent and compare specific integer-based return codes, including a code indicating no data and another indicating data truncation. Works with integer constants wrapped in a module for type-safe comparisons. Used in system-level error handling to signal distinct states in data processing pipelines.",
+      "description_length": 324,
+      "index": 46,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ffi_bindings.Types.Bind",
+      "description": "Provides access to fields of a C structure representing a bind object, including length, null status, buffer pointer, error message, buffer size, and type information. Works with Ctypes_static pointers and primitive types to interface with low-level C data. Used to inspect and manipulate DNS bind data structures in system-level programming.",
+      "description_length": 342,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ffi_bindings.Types.Field",
+      "description": "Perform operations on unsigned integers using bitwise logic, with support for logical NOT and type-safe conversions. The `Unsigned.uint` type and `F.const` wrapper enable immutable, safe manipulation of bit patterns. This allows precise control over binary data, such as masking bits or extracting specific fields. Examples include creating bitmasks, performing bitwise AND/OR, and ensuring correct interpretation of integer values in system-level interactions.",
+      "description_length": 461,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ffi_bindings.Types.Time",
+      "description": "Extracts and represents components of a time value, including year, month, day, hour, minute, second, and fractional seconds. Operates on a structured time type composed of unsigned integers and a long unsigned integer for precision. Used to parse and decompose time values in low-level system calls or binary data parsing.",
+      "description_length": 323,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ffi_bindings.Types.Intptr",
+      "description": "Perform arithmetic and bitwise operations on a type `t`, including addition, subtraction, multiplication, division, modulus, and bit shifts. Supports logical operations like AND, OR, and XOR, enabling precise control over binary data. Operations are optimized for performance, making them suitable for system-level programming and embedded applications. Examples include manipulating flags, calculating memory offsets, and optimizing numerical algorithms.",
+      "description_length": 455,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ffi_bindings.Types.Ptrdiff",
+      "description": "offers a comprehensive set of arithmetic and bitwise operations for a type `t`, including addition, subtraction, multiplication, division, modulus, and bit shifts. It supports logical operations like AND, OR, and XOR, enabling precise manipulation of integer representations. Users can perform low-level computations such as calculating offsets, masking bits, or implementing custom numeric algorithms. Examples include adjusting memory pointers, optimizing bit-level data processing, and implementing cryptographic primitives.",
+      "description_length": 527,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ffi_bindings.Types.Uintptr",
+      "description": "Offers arithmetic and bitwise operations on a type `t`, including addition, subtraction, multiplication, division, modulus, and logical shifts. Supports bitwise AND, OR, XOR, and left/right shifts by integer values, enabling precise control over numeric representations. These operations facilitate low-level manipulations such as bit masking, data packing, and efficient numerical computations. Examples include combining multiple flags into a single value or extracting specific bits from a numeric value.",
+      "description_length": 507,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mariadb.Blocking",
+      "description": "Encapsulates database interaction by handling date-time components, field extraction, row generation, query result metadata, and prepared statement execution. It supports operations on temporal data, type-safe access to database fields, dynamic row construction, and efficient SQL execution with parameter binding. Users can manipulate dates, extract field values, build structured rows, and manage query results with precise control. Examples include parsing timestamps, accessing nullable fields, generating rows from functions, and retrieving auto-increment IDs after inserts.",
+      "description_length": 579,
+      "index": 53,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mariadb.Nonblocking",
+      "description": "Encapsulates temporal, data, and database operations through specialized types and functions. It handles date and time components, extracts structured values, generates rows, retrieves query metadata, and executes SQL statements. Operations include constructing datetime values, parsing data fields, building tabular structures, and managing database results. Examples include converting timestamps to date components, extracting nullable fields from JSON, generating query rows dynamically, and retrieving affected row counts.",
+      "description_length": 527,
+      "index": 54,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ffi_bindings.Types",
+      "description": "Provides arithmetic and bitwise operations on a type `t`, including addition, subtraction, multiplication, division, modulus, shifts, and logical operations like AND, OR, XOR. Supports low-level manipulations such as bit masking, flag management, and data packing, with operations optimized for system-level tasks. Users can calculate memory offsets, adjust pointers, and implement cryptographic functions. Examples include combining flags into a single value, extracting bits, and performing efficient numerical computations.",
+      "description_length": 526,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ffi_bindings.Functions",
+      "description": "Provides functions to bind and manipulate foreign function calls, including type-aware function composition and result handling. Works with custom types for function signatures, return values, and pointer results. Used to interface with C libraries by defining and invoking functions with precise type mappings.",
+      "description_length": 311,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mariadb.Time",
+      "description": "Extracts individual components of a date-time value such as year, month, day, hour, minute, second, and microsecond. Constructs date-time objects from component parts or timestamps, supporting both local and UTC time. Works with the `t` type to represent and manipulate temporal data.",
+      "description_length": 284,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mariadb.Field",
+      "description": "Provides methods to extract and check the name, value, and null status of a database field, along with type-specific accessors for integers, floats, strings, bytes, and timestamps, both as options and non-optional values. Works with a custom type representing database field data and a variant type for field values. Used to process query results by safely accessing and converting field data into appropriate OCaml types.",
+      "description_length": 422,
+      "index": 58,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mariadb.Row",
+      "description": "Creates a row of fields based on a given size and a function that generates each field. Operates on integers and Field.t values to construct a row structure. Used to dynamically generate rows for data tables or structured datasets.",
+      "description_length": 231,
+      "index": 59,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mariadb.Res",
+      "description": "Provides functions to retrieve the number of rows returned by a query, the number of affected rows from an update, and the auto-increment ID from an insert. Works with a result type representing database query outputs. Fetches rows into custom row structures defined by a provided module.",
+      "description_length": 288,
+      "index": 60,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mariadb.Stmt",
+      "description": "Executes a prepared statement with provided parameters and returns a result set. Resets the internal state of a statement to its post-prepare condition, discarding previous results. Closes the statement, releasing all associated resources and memory.",
+      "description_length": 250,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "mariadb",
+      "description": "Provides functions for executing prepared SQL statements, binding typed parameters, and retrieving results from MariaDB databases. Works with database connections, prepared statements, and result sets using Ctypes for low-level interaction. Used to build applications requiring safe, type-checked database queries with asynchronous or synchronous execution.",
+      "description_length": 357,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mariadb",
+      "description": "manages database interactions by handling date-time manipulation, field data extraction, row construction, query result analysis, and statement execution. it works with types like t for dates, Field.t for database fields, and row structures to process and generate structured data. it enables tasks such as parsing timestamps, accessing query results safely, building dynamic rows, and executing parameterized queries. examples include extracting year from a datetime, converting field values to OCaml types, and retrieving auto-increment IDs after inserts.",
+      "description_length": 557,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ffi_bindings",
+      "description": "Performs low-level arithmetic, bitwise manipulation, and system-oriented computations on type `t`, enabling tasks like memory offset calculation, flag management, and cryptographic operations through optimized operations such as addition, AND, OR, shifts, and bit packing. Supports foreign function interfacing by defining and invoking C functions with precise type mappings, handling custom signatures, and managing pointer-based results. Users can combine flags, extract bits, and call C functions with structured return values. Examples include packing data for memory layouts and invoking external functions with typed arguments.",
+      "description_length": 633,
+      "index": 64,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 65,
+    "meaningful_modules": 65,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 633,
+    "min_description_length": 222,
+    "avg_description_length": 364.16923076923075,
+    "embedding_file_size_mb": 0.23666095733642578
+  }
+}

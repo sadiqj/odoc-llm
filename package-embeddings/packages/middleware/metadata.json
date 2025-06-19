@@ -1,0 +1,105 @@
+{
+  "package": "middleware",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 12,
+  "creation_timestamp": "2025-06-18T16:32:42.518795",
+  "modules": [
+    {
+      "module_path": "Middleware.Make.Diverter",
+      "description": "Handles control flow redirection in middleware pipelines by capturing input, passing it to subsequent components, and transforming their output. Operates on input and output values of varying types, using a function to map the result of the next middleware. Used to inject custom processing between middleware layers without altering the flow of execution.",
+      "description_length": 356,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Middleware.Make.Infix",
+      "description": "Combines two layered structures using an infix composition operator and applies a termination function to produce a new layered structure. It operates on type-annotated components with input, output, and state transitions. Used to chain processing layers and finalize computations with monadic results.",
+      "description_length": 302,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Middleware.Monads.Identity",
+      "description": "Provides functions to transform, sequence, and wrap values within a monadic context that carries no additional computational effects. Operates on values of any type wrapped in a monadic container that is structurally identical to the unwrapped value. Used to model computations where the monadic structure is needed for consistency with other monadic code, such as in pipelines that require uniform handling of results.",
+      "description_length": 419,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Middleware.Make2.Diverter",
+      "description": "Handles control flow redirection in middleware pipelines, transforming outputs from one middleware to serve as inputs for the next. Operates on typed input and output values within a monadic context. Enables precise manipulation of data flow between sequential processing stages.",
+      "description_length": 279,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Middleware.Make2.Infix",
+      "description": "Provides composition and termination operations for structured data flows, combining two components where the output of the first matches the input of the second, and appending a termination function to a component. Works with typed, parameterized structures representing input, output, and intermediate states. Used to chain processing stages and attach finalizers to data pipelines.",
+      "description_length": 384,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Middleware.Monads",
+      "description": "Encapsulates values in a monadic structure that supports transformation, sequencing, and wrapping without additional effects. Operates on any type within a container that mirrors the original value's structure. Allows chaining of operations in a consistent manner, such as mapping over values or combining sequences. Enables uniform handling of computations in pipelines that require monadic consistency.",
+      "description_length": 404,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Middleware.Make",
+      "description": "Applies a function to each element of a monadic structure and returns a new monadic value. Chains operations by passing the result of one monadic computation to the next. Wraps a value into a monadic context for sequential processing.",
+      "description_length": 234,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Middleware.Make2",
+      "description": "Provides operations to transform, sequence, and lift values within a monadic context. Works with a type that encapsulates values along with a monadic context, supporting function application and chaining. Used to handle sequential computations where each step depends on the previous one's result, such as processing data streams or managing side effects in a controlled way.",
+      "description_length": 375,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Middleware.Diverter",
+      "description": "Handles control flow redirection in a middleware pipeline, transforming input and output between stages using a provided function. Operates on tuples of input, intermediate output, and final output types. Used to route processed data from one middleware component to another while preserving transformation logic.",
+      "description_length": 313,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Middleware.Infix",
+      "description": "Provides composition and termination operations for typed, layered data transformations. Works with structured data types that represent input, intermediate, and output states across multiple layers. Used to chain sequential processing steps and finalize computations with monadic results.",
+      "description_length": 289,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "middleware",
+      "description": "Provides functions to wrap and execute inner functions with additional behavior, such as timing or authentication. Works with function values and their arguments, enabling context setup and teardown. Used to instrument function calls for logging, performance tracking, or access control.",
+      "description_length": 287,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Middleware",
+      "description": "Provides operations to transform and sequence values within a monadic context, including mapping over values and binding actions that produce new monadic values. Works with a type parameterized by a monoidal context and a value, allowing for chained computations. Used to handle side effects or contextual data in a compositional way, such as managing state or error handling within a pipeline.",
+      "description_length": 394,
+      "index": 11,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 12,
+    "meaningful_modules": 12,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 419,
+    "min_description_length": 234,
+    "avg_description_length": 336.3333333333333,
+    "embedding_file_size_mb": 0.04401874542236328
+  }
+}

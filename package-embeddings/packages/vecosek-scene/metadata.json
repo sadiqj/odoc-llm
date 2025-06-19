@@ -1,0 +1,126 @@
+{
+  "package": "vecosek-scene",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 15,
+  "creation_timestamp": "2025-06-18T16:34:01.665982",
+  "modules": [
+    {
+      "module_path": "Vecosek_scene.Scene.Midi_event",
+      "description": "Encodes and represents MIDI events with port, status, channel, and data fields. Processes event data for audio processing workflows. Converts event structures into human-readable strings for debugging or logging.",
+      "description_length": 212,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vecosek_scene.Scene.Id",
+      "description": "Compares identifiers using string comparison. Generates unique string-based identifiers for tracking sequencer tracks. Operates on string values representing track references.",
+      "description_length": 175,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vecosek_scene.Scene.Event",
+      "description": "Handles event parsing and manipulation for a sequencer, including time-based triggers and state transitions. Works with structured event data containing timestamps, actions, and metadata. Used to manage playback sequences and user input responses in real-time applications.",
+      "description_length": 273,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vecosek_scene.Scene.Action",
+      "description": "Handles event-based action registration and modification. Processes event lists and action lists to create or update event handlers. Used to dynamically attach or detach specific actions to predefined events in a scene system.",
+      "description_length": 226,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vecosek_scene.Scene.Ticked_action",
+      "description": "Tracks actions with associated timestamps, enabling ordered comparison and storage. It operates on integer ticks and action objects defined in Action.t. Used to manage scene events in time-based systems, such as animation sequences or event logs.",
+      "description_length": 246,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vecosek_scene.Scene.Track",
+      "description": "Provides functions to create and manage musical tracks, including `make` for initializing with specific events, ID, length, and name, and `fresh` for generating tracks with automatically assigned IDs. Operates on `Ticked_action.t` lists, `Id.t`, integers, and strings. Used to construct tracks for audio sequencing where event timing and unique identifiers are critical.",
+      "description_length": 370,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vecosek_scene.Scene.Json",
+      "description": "Converts between JSON strings and structured data types, serializing and deserializing values to and from a channel. Handles basic JSON parsing and output, supporting direct input from and output to file channels. Used to read JSON content from a file or stream and generate JSON text for writing to a file or network connection.",
+      "description_length": 329,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vecosek_scene.Scene.Biniou",
+      "description": "Serializes and deserializes OCaml values to and from Biniou format, supporting reading from strings and channels and writing to channels. Works with OCaml types that are compatible with Biniou's binary representation. Used to persist structured data in a compact, efficient format for network transmission or file storage.",
+      "description_length": 322,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vecosek_scene.Meta",
+      "description": "Provides a function to retrieve the version string of the application. Works with a single string data type representing the software version. Used to dynamically access the build version in runtime diagnostics and logging.",
+      "description_length": 223,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vecosek_scene.Scene",
+      "description": "combines MIDI event handling, identifier management, event sequencing, action registration, time-based tracking, track creation, and data serialization. It supports operations on MIDI events, string identifiers, timestamped actions, and JSON or Biniou serialized data. Users can parse and manipulate event sequences, generate unique track IDs, and serialize scenes for storage or transmission. Examples include converting MIDI data to strings, managing track events by time, and saving scene configurations in JSON or Biniou formats.",
+      "description_length": 533,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vecosek_scene.Scene_format_b",
+      "description": "The module offers serialization, deserialization, and I/O operations for complex data types like `scene`, `track`, `midi_event`, and `event`, utilizing the biniou format with both tagged and untagged encoding variants. It supports reading from and writing to buffers and strings, enabling efficient handling of music sequencing data and event-driven workflows. Specific use cases include managing tempo operations, MIDI event tracking, and structured scene representation in real-time audio applications.",
+      "description_length": 504,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vecosek_scene.Scene_format_j",
+      "description": "This module handles serialization, deserialization, and parsing of structured data including event handlers, tracks, scenes, and timed actions, utilizing JSON encoding/decoding with specific libraries like Yojson and Bi_outbuf. It operates on types such as `midi_event`, `action`, and `scene`, enabling efficient conversion between string representations and complex event-driven structures. Use cases include managing interactive multimedia sequences and preserving state in systems requiring precise event timing and handler associations.",
+      "description_length": 540,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vecosek_scene.Scene_format_t",
+      "description": "Handles parsing and manipulation of music scene data, including BPM adjustments, MIDI event tracking, and event scheduling. Operates on structured data like tracks, scenes, and MIDI events with precise timing and action definitions. Used to generate and modify musical sequences with specific tempo and event-driven behaviors.",
+      "description_length": 326,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "vecosek-scene",
+      "description": "Provides functions to define and manage scenes with looping tracks and event handlers, enabling real-time MIDI output and sequencer control. Operates on custom data structures representing tracks, events, and actions, serialized from JSON or Biniou formats. Used to construct dynamic, interactive live performances with complex timing and event routing.",
+      "description_length": 353,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vecosek_scene",
+      "description": "Provides version retrieval, MIDI event handling, scene serialization, and music data manipulation. Operates on types such as `scene`, `track`, `midi_event`, and `action`, supporting operations like version string access, event sequencing, timestamped action tracking, and JSON/Biniou serialization. Users can parse MIDI data, manage track events by time, and save scene configurations for real-time audio applications. Examples include converting MIDI to strings, adjusting BPM, and serializing scenes for storage or transmission.",
+      "description_length": 530,
+      "index": 14,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 15,
+    "meaningful_modules": 15,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 540,
+    "min_description_length": 175,
+    "avg_description_length": 344.1333333333333,
+    "embedding_file_size_mb": 0.054930686950683594
+  }
+}

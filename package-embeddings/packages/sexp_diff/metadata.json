@@ -1,0 +1,119 @@
+{
+  "package": "sexp_diff",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 14,
+  "creation_timestamp": "2025-06-18T16:33:57.351085",
+  "modules": [
+    {
+      "module_path": "Sexp_diff.Display.Display_options.Layout",
+      "description": "Compares layout configurations to determine ordering, extracts a list of all known layouts, and converts layout values to S-expression format for serialization. It operates on a custom type representing layout configurations, often used in command-line tools. The `param` function enables command-line flag parsing for layout options, similar to `diff`'s behavior.",
+      "description_length": 364,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_diff.Display.Display_options",
+      "description": "Manages layout configuration options through comparison, extraction, and serialization. It handles a custom layout type, supporting operations like parsing command-line flags and converting values to S-expressions. Users can determine layout orderings, list all available layouts, and serialize configurations. For example, it allows parsing a layout flag from a command line and converting it into a format suitable for storage or transmission.",
+      "description_length": 445,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_diff.Display_util_internal.Color",
+      "description": "Converts color values to S-expression format, enables comparison and equality checks between color instances. Operates on a custom color type representing visual color data. Used to serialize and compare colors during DOM diffing in the sexp_diff library.",
+      "description_length": 255,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_diff.Display_util_internal.Line",
+      "description": "Provides operations to convert a line representation to S-expression, generate colored text outputs based on custom formatting functions, and retrieve the length of the line. Works with a structured type containing line data. Used to render terminal output with color differentiation and to compute line metrics for text processing.",
+      "description_length": 332,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_diff.Display_util_internal.Display_options",
+      "description": "Provides functions to generate S-expression representations of configuration objects, create instances with customizable display settings, and retrieve a default configuration. Works with a custom type `t` that encapsulates display parameters. Used to control how output is formatted in command-line tools, such as limiting the number of displayed items or collapsing large structures.",
+      "description_length": 385,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_diff.Display_util_internal.Line_pair",
+      "description": "Provides operations to extract the first and second line from a paired structure. Works with a custom type representing a pair of lines. Used to process structured line data in text parsing tasks.",
+      "description_length": 196,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_diff.Display_util_internal.Hideable_line_pair",
+      "description": "Provides functions to create, hide, and reveal line pairs, along with checking their visibility state. Works with a custom type representing a pair of lines, where one can be toggled between visible and hidden. Used to manage collapsible sections in text-based interfaces, such as code editors or log viewers.",
+      "description_length": 309,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_diff.Algo.Cache",
+      "description": "Provides operations to initialize a cache and manage stored values. Works with a custom type `t` representing the cache state. Used to temporarily store and retrieve computed results, such as API responses or expensive computation outputs.",
+      "description_length": 239,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_diff.Algo",
+      "description": "Computes diffs between two sexps, identifying insertions, deletions, and replacements while preserving the tree structure. Main data types include `Diff.t` and `Sexp.t`, with operations like `diff`, `to_original`, `to_updated`, and `apply_exn`. It allows reconstructing original or updated sexps from a diff and applying changes to transform one sexp into another. For example, it can track changes in a serialized OCaml data structure and apply those changes to produce the updated version.",
+      "description_length": 491,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_diff.Diff",
+      "description": "Handles conversion between a custom type and S-expressions, with hashing, comparison, and inversion capabilities. Applies transformations to S-expressions using a pre-defined set of rules. Used to modify and validate S-expression structures in testing and data processing workflows.",
+      "description_length": 282,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_diff.Display",
+      "description": "Handles layout configuration by enabling comparison, extraction, and serialization of custom layout types. It supports parsing command-line flags, converting values to S-expressions, and determining orderings or listing available layouts. Users can serialize configurations for storage or transmission, such as converting a parsed layout flag into an S-expression. Operations include extracting layout parameters and validating configuration consistency.",
+      "description_length": 454,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_diff.Display_util_internal",
+      "description": "Encapsulates utilities for serializing and manipulating visual and textual data in S-expression format, supporting color, line, and configuration operations. Offers functions to convert colors, lines, and configurations to S-expressions, apply formatting, and manage visibility states. Enables tasks like rendering colored terminal output, comparing color values, and controlling display settings in command-line tools. Supports line pair manipulation, including extraction, hiding, and revealing, for structured text processing.",
+      "description_length": 529,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "sexp_diff",
+      "description": "Provides functions to compute and represent differences between S-expression structures, including delta generation and patch application. Operates on nested lists and atoms formatted as S-expressions. Enables version control-like tracking of changes in configuration files and data serialization formats.",
+      "description_length": 305,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_diff",
+      "description": "Provides tools for analyzing, transforming, and visualizing S-expressions through structured diffs, custom type conversions, layout management, and formatting utilities. It supports operations like generating `Diff.t` objects, converting custom types to S-expressions, extracting layout parameters, and serializing color and line configurations. Users can track changes in data structures, validate configurations, and manipulate visual elements in terminal outputs. Examples include applying diffs to update serialized data, converting layout flags to S-expressions, and rendering colored text with specific formatting.",
+      "description_length": 620,
+      "index": 13,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 14,
+    "meaningful_modules": 14,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 620,
+    "min_description_length": 196,
+    "avg_description_length": 371.85714285714283,
+    "embedding_file_size_mb": 0.05128955841064453
+  }
+}

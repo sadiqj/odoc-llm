@@ -1,0 +1,91 @@
+{
+  "package": "spacetime_lib",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 10,
+  "creation_timestamp": "2025-06-18T16:32:00.658219",
+  "modules": [
+    {
+      "module_path": "Spacetime_lib.Position",
+      "description": "Provides access to file name, line number, and character positions within a line for a given source location. Works with a structured type representing positions in source code. Used to generate detailed error messages or track code locations during parsing.",
+      "description_length": 258,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Spacetime_lib.Location",
+      "description": "Provides functions to extract an address as an 64-bit integer, retrieve an optional symbol name, access a list of positions, and check if the location is foreign. Works with the `t` type, representing program locations. Used to generate debug information and track source positions during compilation.",
+      "description_length": 301,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Spacetime_lib.Backtrace",
+      "description": "Prints a list of location records in a formatted way, useful for debugging and error reporting. Accepts a formatter and a list of location objects representing stack trace information. Designed for immediate output of program execution paths during runtime.",
+      "description_length": 257,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Spacetime_lib.Allocation_entry",
+      "description": "Provides functions to extract detailed metrics from allocation records, including the number of blocks, words, and allocations, along with a backtrace. Works with a compact internal representation of allocation data. Used to analyze memory usage patterns during garbage collection events.",
+      "description_length": 288,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Spacetime_lib.Call_entry",
+      "description": "Returns the backtrace associated with a function call, indicates whether the call was direct, and counts the number of calls made. Works with the `t` type, which represents individual call records. Used to analyze execution flow and track function invocation patterns in debugging or profiling contexts.",
+      "description_length": 303,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Spacetime_lib.Stats",
+      "description": "Provides access to detailed memory and garbage collection statistics through a set of accessor functions. Works with an opaque type representing the state of the garbage collector. Used to monitor heap usage, collection frequency, and memory allocation patterns during runtime.",
+      "description_length": 277,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Spacetime_lib.Snapshot",
+      "description": "Returns the timestamp associated with a snapshot, retrieves optional statistical data, and extracts a list of allocation entries for analysis. Works with time values, optional statistics, and a list of allocation records. Used to inspect memory usage patterns and performance metrics at specific points in a program's execution.",
+      "description_length": 328,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Spacetime_lib.Series",
+      "description": "Provides operations to create a structured data container from a string and optional executable name, retrieve associated snapshots and call entries, check for presence of call counts, and access the final simulation time. Works with custom types representing series data, snapshots, and call entries. Used to analyze execution traces and timing information in computational workflows.",
+      "description_length": 385,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "spacetime_lib",
+      "description": "Provides functions to parse, manipulate, and compare date-time values using ISO 8601 formats, along with time zone conversions and duration calculations. Operates on custom types such as `date`, `time`, `datetime`, and `duration`. Enables precise scheduling and logging by handling time offsets and daylight saving transitions.",
+      "description_length": 327,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Spacetime_lib",
+      "description": "captures source code positions, program locations, and execution traces, enabling detailed analysis of code flow, memory usage, and debugging information. It handles types such as source positions, call records, allocation data, and time-stamped snapshots, offering operations to extract addresses, backtraces, metrics, and timestamps. Users can generate error messages with location details, track function calls, analyze memory allocations, and inspect execution timelines. Examples include debugging stack traces, profiling function invocations, and monitoring garbage collection behavior.",
+      "description_length": 592,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 10,
+    "meaningful_modules": 10,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 592,
+    "min_description_length": 257,
+    "avg_description_length": 331.6,
+    "embedding_file_size_mb": 0.036757469177246094
+  }
+}

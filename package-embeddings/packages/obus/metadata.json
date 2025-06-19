@@ -1,0 +1,1036 @@
+{
+  "package": "obus",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 145,
+  "creation_timestamp": "2025-06-18T16:54:16.344390",
+  "modules": [
+    {
+      "module_path": "Nm_settings.Connection.Secrets",
+      "description": "Retrieves secret values from a configuration store, mapping secret names to their associated metadata and values. It operates on a custom type `t` representing a secrets context, and processes lists of hints and a flag to request new secrets. Used to dynamically fetch credentials or configuration parameters during runtime.",
+      "description_length": 324,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OBus_value.T",
+      "description": "The module offers functions for constructing and serializing D-Bus data types, including basic values like integers, strings, and booleans, as well as composite structures such as arrays, dictionaries, and variants. It handles type aliases for sequences and singles, enabling precise manipulation of structured data in contexts like inter-process communication. Specific use cases include formatting object paths and managing nested data types in D-Bus message exchanges.",
+      "description_length": 471,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_value.V",
+      "description": "This module offers conversion functions for mapping OCaml primitives and structured data\u2014such as booleans, integers, strings, arrays, dictionaries, and variants\u2014into D-Bus-compatible types, alongside utilities for type reflection, formatting, and string representation. It includes file descriptor management operations, enabling duplication and closure tailored to D-Bus value types like basic, single, and sequence, facilitating efficient inter-process communication and message serialization. Use cases include marshaling data for D-Bus protocols and handling file descriptors in distributed systems.",
+      "description_length": 603,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_value.C",
+      "description": "This module facilitates conversion between OCaml values and D-Bus-compatible types, including basic types like booleans, integers, and strings, as well as composite structures such as arrays, tuples, and dictionaries. It enables boxing and unboxing operations, sequence manipulation, and handling of nested data structures for seamless D-Bus communication. Specific use cases include serializing OCaml data for inter-process messaging and deserializing D-Bus messages into native OCaml values.",
+      "description_length": 493,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_proxy.Private",
+      "description": "Encapsulates and converts between a private proxy type and its underlying representation. Provides bidirectional conversion between the internal structure and the proxy object. Used to manage access control by wrapping proxy instances in a restricted type.",
+      "description_length": 256,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_member.Method",
+      "description": "Encapsulates D-Bus method details including interface, member name, input and output arguments, and annotations. Works with OBus_name.interface, OBus_name.member, and OBus_value.arguments types. Used to construct and inspect method definitions for D-Bus service implementations.",
+      "description_length": 278,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OBus_member.Signal",
+      "description": "Encapsulates D-Bus signal metadata including interface, member name, arguments, and annotations. Processes and retrieves structured data for signal emission and handling. Used to construct and inspect signals for inter-process communication in D-Bus-based systems.",
+      "description_length": 264,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_member.Property",
+      "description": "Provides functions to define and inspect D-Bus properties with specific access modes, including readable, writable, or both. Works with D-Bus interface names, member names, value types, access permissions, and annotations. Used to create property descriptors for exposing or querying object properties in D-Bus services.",
+      "description_length": 320,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_peer.Private",
+      "description": "Encapsulates a peer within a restricted type to enforce access control. Converts between a peer and its wrapped representation using explicit lifting and projection. Ensures peer instances are handled in a context where direct manipulation is restricted.",
+      "description_length": 254,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hal_interfaces.Org_freedesktop_Hal_Device",
+      "description": "The module provides functions for managing device properties, capabilities, and locks, operating on structured data like device interfaces, string lists, and typed properties (strings, booleans, integers). It enables D-Bus-driven configuration updates, property modifications, and lock management, emitting signals for state changes. Use cases include dynamic device configuration, privilege-controlled operations, and monitoring interface-specific events.",
+      "description_length": 456,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hal_interfaces.Org_freedesktop_Hal_Device_CPUFreq",
+      "description": "Provides methods to retrieve and modify CPU frequency settings, including available governors, current governor, performance level, and nice consideration flags. Operates with OBus interface types and method signatures for system-level CPU management. Used to dynamically adjust CPU performance and power policies in hardware-aware applications.",
+      "description_length": 345,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hal_interfaces.Org_freedesktop_Hal_Device_KillSwitch",
+      "description": "Provides methods to get and set power state for hardware devices, using a boolean input and returning an integer status code. Works with OBus interface definitions and object structures to interact with system hardware through D-Bus. Used to control device power states in system management applications.",
+      "description_length": 304,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hal_interfaces.Org_freedesktop_Hal_Device_LaptopPanel",
+      "description": "Provides methods to retrieve and set the brightness of a laptop panel, and defines an interface for interacting with HAL device objects. Works with OBus_name.interface and OBus_member.Method.t types to expose system-level device operations. Used to control display brightness through D-Bus in system management applications.",
+      "description_length": 324,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hal_interfaces.Org_freedesktop_Hal_Device_Leds",
+      "description": "Provides methods to retrieve and set the brightness of device LEDs, using OBus for inter-process communication. Operates with OBus_name.interface and OBus_member.Method types to interact with system devices. Used to control LED brightness in hardware management applications.",
+      "description_length": 275,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hal_interfaces.Org_freedesktop_Hal_Device_Storage",
+      "description": "Provides methods to close a storage tray and eject media, using string lists and 32-bit integers as parameters. Works with OBus interface definitions and object structures. Used to interact with hardware devices through D-Bus in system management applications.",
+      "description_length": 260,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hal_interfaces.Org_freedesktop_Hal_Device_Storage_Removable",
+      "description": "Provides methods to check for media presence and construct object interfaces, working with OBus_name.interface and OBus_member.Method.t types. Enables interaction with device storage properties through specific method calls. Used to query removable storage devices for media status in system management contexts.",
+      "description_length": 312,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hal_interfaces.Org_freedesktop_Hal_Device_SystemPowerManagement",
+      "description": "Provides methods to interact with system power management features through D-Bus, including hibernation, reboot, shutdown, and suspend operations. Works with D-Bus method signatures and interface definitions, handling boolean and integer return types. Used to control device power states in system management contexts.",
+      "description_length": 318,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hal_interfaces.Org_freedesktop_Hal_Device_Volume",
+      "description": "Provides methods to eject, mount, and unmount storage devices using specific parameters like device paths and mount options. Works with OBus-based device interfaces and structured data types including lists and tuples. Used to interact with hardware volume management through system bus communication.",
+      "description_length": 301,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hal_interfaces.Org_freedesktop_Hal_Device_Volume_Crypto",
+      "description": "Provides methods to setup and teardown cryptographic volumes, with `m_Setup` taking a string and integer and `m_Teardown` requiring no arguments. Works with OBus interface definitions and member structures. Used to interact with device volume encryption features through D-Bus.",
+      "description_length": 277,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hal_interfaces.Org_freedesktop_Hal_Device_WakeOnLan",
+      "description": "Provides methods to get and set Wake-on-LAN enablement and support status for hardware devices, using OBus for inter-process communication. Operates with OBus interface definitions and method signatures, including boolean and 32-bit integer types. Used to control network wake capabilities through system management interfaces.",
+      "description_length": 327,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hal_interfaces.Org_freedesktop_Hal_Manager",
+      "description": "Provides methods to manage devices and system resources through D-Bus, including acquiring and releasing locks, finding devices by capability or string match, checking device existence, and retrieving device lists. Operates with strings, lists of strings, and device property tuples. Used for system-level device management and monitoring, such as tracking device additions, removals, and lock states.",
+      "description_length": 401,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_interfaces.Org_freedesktop_DBus",
+      "description": "This module handles D-Bus name and service management, including checking ownership, requesting names, and starting services, while also processing interface definitions and connection properties. It works with D-Bus interface names, service names, process/user IDs, SELinux contexts, and structured data like string lists, converting and encapsulating protocol values. Use cases include dynamic service activation, system-wide name coordination, and integrating with D-Bus-based system management tools.",
+      "description_length": 504,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_interfaces.Org_freedesktop_DBus_Introspectable",
+      "description": "Provides methods to define and introspect D-Bus interfaces, including a method to retrieve interface details as XML. Works with D-Bus object interfaces and member definitions. Used to dynamically expose object structure and capabilities in D-Bus services.",
+      "description_length": 255,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_interfaces.Org_freedesktop_DBus_Peer",
+      "description": "Provides methods to retrieve a machine ID and send a ping over D-Bus, working with OBus_name.interface and OBus_member.Method.t types. Enables interaction with D-Bus peer services through defined interface members. Used to verify service availability and obtain unique machine identifiers.",
+      "description_length": 289,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OBus_interfaces.Org_freedesktop_DBus_Properties",
+      "description": "Provides methods to retrieve and set properties on a D-Bus object, along with a signal to notify of property changes. Works with D-Bus interface names, property names, and values represented as single OBus values. Used to interact with D-Bus services that expose configurable properties and need to emit changes.",
+      "description_length": 312,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Policy_kit_interfaces.Org_freedesktop_PolicyKit_AuthenticationAgent",
+      "description": "Provides methods for handling authentication requests through D-Bus, including obtaining authorization with specific identifiers and timeouts. Works with D-Bus interface names, method signatures, and object structures. Used to implement authentication agents that interact with PolicyKit for user authorization checks.",
+      "description_length": 318,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hal_device.Volume",
+      "description": "Handles volume mounting, unmounting, and ejection by interacting with specified device paths and mount points. Operates on a custom type `t` representing volume configurations and processes lists of strings for device identifiers. Used to manage external storage devices in system-level operations.",
+      "description_length": 298,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hal_device.Storage",
+      "description": "Handles removal of specified items from a storage system and closes designated trays, returning the number of affected items. Operates on a stateful storage object and a list of identifiers. Used to manage physical storage units in a controlled, asynchronous manner.",
+      "description_length": 266,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hal_device.Storage_removable",
+      "description": "Checks if removable media is present in the device. Operates on a device handle type, returning a deferred boolean result. Used to detect inserted USB drives or memory cards before attempting data access.",
+      "description_length": 204,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hal_device.Wake_on_lan",
+      "description": "Handles network interface configuration for wake-on-lan capabilities. Operates on a device context type to retrieve and modify enabled status and supported features. Used to control power management settings for network interfaces in embedded or system management applications.",
+      "description_length": 277,
+      "index": 29,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hal_device.System_power_management",
+      "description": "Suspends the system or transitions it to a hybrid sleep state, with a timeout parameter, and handles hibernation, shutdown, and reboot operations. It manipulates system state objects and returns asynchronous results with timeout values. Used to manage power states in embedded or server environments requiring controlled system transitions.",
+      "description_length": 340,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hal_device.Cpufreq",
+      "description": "Controls CPU frequency scaling parameters through asynchronous operations, allowing adjustment of governor policies, performance levels, and nice value considerations. Works with a custom type representing CPU frequency settings and returns lists of available governors. Used to dynamically manage power and performance characteristics of a system's CPU cores.",
+      "description_length": 360,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hal_device.Laptop_panel",
+      "description": "Handles adjusting and retrieving the brightness level of a laptop display through asynchronous operations. Operates on a device handle type representing the laptop panel interface. Used to dynamically control screen brightness in power management or user interface applications.",
+      "description_length": 278,
+      "index": 32,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hal_device.Kill_switch",
+      "description": "Manages power state changes and queries for a system component, using a mutable state tracked via an Lwt promise. Accepts a boolean to set the power status and returns an integer representing the result of the operation. Retrieves the current power status as an integer within an Lwt thread.",
+      "description_length": 291,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_interfaces.Org_freedesktop_NetworkManager",
+      "description": "Provides methods to activate and deactivate network connections, retrieve devices, and control sleep mode, along with signals for device and state changes. Works with OBus paths, boolean flags, and integer states to interact with network management systems. Used to monitor and manage network interfaces and their properties programmatically.",
+      "description_length": 342,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nm_interfaces.Org_freedesktop_NetworkManager_AccessPoint",
+      "description": "Provides access to properties and signals of a network access point, including methods to retrieve flags, frequency, hardware address, SSID, signal strength, and other network-specific data. Works with OBus-based interfaces and properties, exposing readable fields such as integers, strings, and character values. Used to monitor and interact with wireless network configurations in a D-Bus environment.",
+      "description_length": 403,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_interfaces.Org_freedesktop_NetworkManager_Connection_Active",
+      "description": "Provides access to properties and signals of a NetworkManager connection object, including interface name, property changes, and connection state. Works with OBus types such as paths, strings, and integers to represent connection details and device associations. Used to monitor active connections, retrieve service names, and track device assignments in a network management context.",
+      "description_length": 384,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_interfaces.Org_freedesktop_NetworkManager_DHCP4Config",
+      "description": "Provides access to DHCPv4 configuration properties through a structured interface, including a signal for property changes and a property for option settings. Works with OBus-based data structures, such as interface names, signal definitions, and property descriptors. Used to monitor and retrieve DHCP4 configuration details from a network manager service.",
+      "description_length": 357,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nm_interfaces.Org_freedesktop_NetworkManager_Device",
+      "description": "Provides methods to disconnect network devices and signals to monitor state changes, along with properties to access device capabilities, type, IP configurations, driver, interface name, and state. Works with integers, strings, boolean values, and D-Bus path types to represent network device attributes. Used to manage network connections, retrieve device information, and respond to network state transitions in system-level networking applications.",
+      "description_length": 451,
+      "index": 38,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nm_interfaces.Org_freedesktop_NetworkManager_Device_Bluetooth",
+      "description": "Provides access to Bluetooth device properties through D-Bus, including hardware address, name, and Bluetooth capabilities. Works with D-Bus interface definitions and property types, enabling interaction with NetworkManager's Bluetooth device objects. Used to retrieve and monitor specific device attributes like device name and hardware address in network management applications.",
+      "description_length": 381,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_interfaces.Org_freedesktop_NetworkManager_Device_Cdma",
+      "description": "Provides access to CDMA device properties and signals through OBus, including a signal for property changes and an interface constructor. Works with OBus_name.interface and OBus_value.V.single types to interact with system bus objects. Used to monitor and manage CDMA network device configurations in real time.",
+      "description_length": 311,
+      "index": 40,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nm_interfaces.Org_freedesktop_NetworkManager_Device_Gsm",
+      "description": "Provides methods to interact with GSM device properties through D-Bus, including signal handling for property changes and object creation. Works with D-Bus interface names, property dictionaries, and signal subscriptions. Used to monitor and manage cellular network connections in system-level networking applications.",
+      "description_length": 318,
+      "index": 41,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nm_interfaces.Org_freedesktop_NetworkManager_Device_OlpcMesh",
+      "description": "Provides access to properties and signals for OLPC mesh device objects, including active channel, companion device path, and hardware address. Works with OBus interface definitions and property types to interact with D-Bus objects. Used to monitor and retrieve specific mesh device attributes in network management contexts.",
+      "description_length": 324,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_interfaces.Org_freedesktop_NetworkManager_Device_Serial",
+      "description": "Provides access to PPP statistics through a signal that returns a tuple of 32-bit integers, and defines an interface for interacting with serial network devices. Works with OBus-based object interfaces and signal definitions. Used to monitor data transmission metrics in PPP connections within a network management framework.",
+      "description_length": 325,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_interfaces.Org_freedesktop_NetworkManager_Device_Wired",
+      "description": "Provides access to properties and signals for a wired network device, including carrier status, hardware address, and link speed. Works with OBus interfaces and properties to interact with system network configurations. Used to monitor network interface changes and retrieve device-specific details in a network management context.",
+      "description_length": 331,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_interfaces.Org_freedesktop_NetworkManager_Device_Wireless",
+      "description": "Provides methods and signals to interact with wireless network device properties, including retrieving access points and monitoring changes. Works with OBus path types, integers, and strings to represent device attributes like hardware address, bitrate, and wireless mode. Used to manage wireless connections, track access point availability, and query device-specific settings through D-Bus.",
+      "description_length": 392,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_interfaces.Org_freedesktop_NetworkManager_IP4Config",
+      "description": "Provides access to IPv4 configuration data through properties like addresses, domains, nameservers, routes, and WINS servers. Works with list-based data structures representing network configuration parameters. Used to retrieve and inspect static or dynamic IP settings from a network manager service.",
+      "description_length": 301,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_interfaces.Org_freedesktop_NetworkManager_IP6Config",
+      "description": "Provides access to IPv6 configuration data through properties like addresses, domains, nameservers, and routes, each with specific formats including lists of tuples and strings. Works with structured data types such as lists of string-int32 pairs and string lists to represent network settings. Used to retrieve and inspect detailed IPv6 configuration information from a network manager service.",
+      "description_length": 395,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_interfaces.Org_freedesktop_NetworkManager_PPP",
+      "description": "Provides methods to handle PPP interface operations, including requesting secrets, setting IPv4 configuration, and updating state. Works with OBus interface definitions, strings, and integer states. Used to interact with NetworkManager's PPP service through defined D-Bus methods.",
+      "description_length": 280,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_interfaces.Org_freedesktop_NetworkManager_VPN_Connection",
+      "description": "Provides access to properties and signals related to a VPN connection's state and interface, including a readable banner and state changes. Works with OBus types such as interface names, signal lists, and property definitions. Used to monitor and interact with VPN connection status and configuration through D-Bus.",
+      "description_length": 315,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_interfaces.Org_freedesktop_NetworkManager_VPN_Plugin",
+      "description": "Provides methods to manage VPN connections, including initiating connections, disconnecting, requesting secrets, and setting IP configuration, along with signals for state changes, failure, and IP4 configuration updates. Works with OBus interface structures, string-based secrets, and property values for state tracking. Used to integrate VPN plugins with NetworkManager via D-Bus communication.",
+      "description_length": 395,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_interfaces.Org_freedesktop_NetworkManagerSettings",
+      "description": "Provides methods to add connections using a structured configuration and list existing connections, along with a signal for new connection events. Works with OBus interfaces, paths, and typed values to interact with NetworkManager settings. Used to dynamically manage network configurations through system bus communication.",
+      "description_length": 324,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_interfaces.Org_freedesktop_NetworkManagerSettings_Connection",
+      "description": "Provides methods to delete connections, retrieve settings, and update connection configurations, along with signals for tracking removal and updates. Operates on connection settings represented as lists of key-value pairs with string identifiers. Used to manage network configurations through a D-Bus interface in system-level networking tools.",
+      "description_length": 344,
+      "index": 52,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nm_interfaces.Org_freedesktop_NetworkManagerSettings_Connection_Secrets",
+      "description": "Provides methods to retrieve secrets for network connections, including a function to fetch secrets with specific parameters like connection UUIDs and service names. Works with OBus types such as interface names, string lists, and nested value structures. Used to access sensitive network configuration data in a structured, type-safe manner.",
+      "description_length": 342,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_interfaces.Org_freedesktop_NetworkManagerSettings_System",
+      "description": "Provides methods to save a hostname and check permissions, along with signals for property changes and permission checks. Works with D-Bus interface members, including properties like hostname and modify permissions. Used to interact with NetworkManager's system settings through D-Bus communication.",
+      "description_length": 300,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_device.Bluetooth",
+      "description": "Provides access to Bluetooth device properties and events, including hardware address, name, capabilities, and dynamic property updates. Works with OBus-based data types such as properties, signals, and values. Used to monitor device changes and retrieve specific device information in real-time.",
+      "description_length": 296,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_device.Cdma",
+      "description": "Handles signal emissions for property changes in a CDMA interface, using a custom type `t` and OBus value representations. It returns a list of property names paired with their updated values in a signal format. Used to monitor real-time updates in network configuration settings.",
+      "description_length": 280,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_device.Gsm",
+      "description": "Handles signal emissions for changes in GSM device properties, providing a list of updated key-value pairs where keys are strings and values are OBus single values. Works with OBus signal structures and GSM-specific property data. Used to monitor real-time updates in device configurations during network operations.",
+      "description_length": 316,
+      "index": 57,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nm_device.Olpc_mesh",
+      "description": "Provides access to network interface properties and device information through OBus, including hardware address, active channel, and companion device references. Works with OBus_proxy and OBus_property types to retrieve and monitor dynamic data. Used to track real-time changes in mesh network configurations and device relationships.",
+      "description_length": 334,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_device.Serial",
+      "description": "Provides signal-based access to packet statistics, returning a tuple of integers representing received and transmitted packets. Works with network interface data structures encapsulated in the `t` type. Used to monitor real-time traffic metrics in network monitoring applications.",
+      "description_length": 280,
+      "index": 59,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nm_device.Wired",
+      "description": "Handles network interface properties through OBus, exposing signals for property changes and retrieving hardware address, speed, carrier status, and grouped properties. Works with OBus_value.V.single and OBus_property types to interact with system network interfaces. Used to monitor real-time network configuration updates and retrieve interface-specific data.",
+      "description_length": 361,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_device.Wireless",
+      "description": "Provides functions to retrieve access points, monitor property changes, and manage wireless capabilities, including WEP, TKIP, CCMP, WPA, and RSN encryption. Works with access point proxies, hardware addresses, bitrates, and mode identifiers. Used to detect available networks, track network configuration changes, and query supported wireless features.",
+      "description_length": 353,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_error.Register",
+      "description": "Provides operations to retrieve and manipulate D-Bus names associated with errors. Works with string-based identifiers and error records. Used to identify the origin of D-Bus communication issues during system event logging.",
+      "description_length": 224,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_settings.Connection",
+      "description": "Manages dynamic retrieval of secrets with metadata, operating on a context type to fetch values based on hints and flags. Supports operations like querying, updating, and validating secrets during runtime. Can fetch credentials, configuration parameters, or environment-specific values as needed. Examples include loading API keys, database passwords, or feature flags on demand.",
+      "description_length": 379,
+      "index": 63,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nm_settings.System",
+      "description": "Handles system hostname configuration and permission checks, offering asynchronous save and retrieval operations. Works with system state objects and OBus properties/sigals for real-time updates. Used to dynamically adjust hostnames and monitor access controls in system management interfaces.",
+      "description_length": 293,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Notification_interfaces.Org_freedesktop_Notifications",
+      "description": "Provides methods to interact with a notification server through D-Bus, including sending notifications, closing them, and retrieving server capabilities and information. Operates with D-Bus interface definitions, message types, and structured data like strings, lists, and tuples. Used to implement desktop notification handling in applications that integrate with the freedesktop.org notification specification.",
+      "description_length": 412,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "UPower_interfaces.Org_freedesktop_UPower",
+      "description": "This module handles power management operations such as suspending, hibernating, and checking sleep permissions, along with monitoring system power states like battery levels and lid presence. It works with system-level power events, device states, and D-Bus object interfaces to abstract and manage power-related interactions. Use cases include implementing sleep control mechanisms and enabling communication with power management services via D-Bus.",
+      "description_length": 452,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "UPower_interfaces.Org_freedesktop_UPower_Device",
+      "description": "This module offers functions for retrieving and managing power device data, including energy metrics, status updates, and historical statistics, alongside methods to access device metadata like voltage, time estimates, and identifiers. It operates on numeric values (e.g., capacity, energy levels) and string-based attributes (e.g., device states, identifiers) to expose configurable properties. Use cases include real-time power monitoring, system diagnostics, and applications requiring precise energy management or device state tracking.",
+      "description_length": 540,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "UPower_interfaces.Org_freedesktop_UPower_QoS",
+      "description": "Provides methods to manage power management latency requests, including requesting, canceling, and setting minimum latency thresholds, and retrieving current latency values and active requests. Works with strings, integers, boolean flags, and structured tuples representing latency details and request metadata. Used to interface with the UPower daemon for controlling device performance characteristics under power constraints.",
+      "description_length": 428,
+      "index": 68,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "UPower_interfaces.Org_freedesktop_UPower_Wakeups",
+      "description": "Provides methods to retrieve wake-up data and total count, and signals to notify changes in wake-up information. Works with boolean, integer, floating-point, and string data types. Used to monitor system wake-up events and their statistics through D-Bus communication.",
+      "description_length": 268,
+      "index": 69,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "UDisks_interfaces.Org_freedesktop_UDisks",
+      "description": "This module handles device management and storage configuration, offering operations like LVM volume manipulation, spindown timeout adjustments, and device enumeration, along with event tracking for RAID arrays and hardware changes. It works with device paths, major/minor numbers, LVM-specific parameters, and structured D-Bus properties to enable low-level storage control and monitoring. Use cases include system administration tasks such as managing encrypted volumes, configuring RAID setups, and responding to hardware event notifications.",
+      "description_length": 545,
+      "index": 70,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "UDisks_interfaces.Org_freedesktop_UDisks_Adapter",
+      "description": "Provides access to device properties and signals through OBus, enabling interaction with storage device metadata. Works with string and int32 types for attributes like driver, model, and native path. Used to monitor changes in device configurations and retrieve details for system management tasks.",
+      "description_length": 298,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "UDisks_interfaces.Org_freedesktop_UDisks_Device",
+      "description": "Provides operations for managing storage devices, including encryption, partitioning, file system management, and status checks, along with querying metadata like device attributes, SMART data, and RAID configurations. Works with device paths, metadata, numeric values, and structured data types to handle encryption, partitioning, and storage configuration. Supports tasks such as disk ejection, LUKS volume management, LVM2 configuration, and monitoring drive health, enabling system administration and storage maintenance.",
+      "description_length": 525,
+      "index": 72,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "UDisks_interfaces.Org_freedesktop_UDisks_Expander",
+      "description": "Provides access to properties and signals of a storage device expander through D-Bus, including adapter paths, model, native path, port counts, and vendor information. Works with OBus_path.t, int32, and string types to represent device attributes and relationships. Used to monitor changes in expander configurations and retrieve detailed hardware metadata.",
+      "description_length": 357,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "UDisks_interfaces.Org_freedesktop_UDisks_Port",
+      "description": "Provides access to device properties and signals for storage devices, including adapter, connector type, native path, number, and parent device information. Works with OBus_path.t and primitive types like string and int32 to interact with D-Bus objects. Used to monitor device changes and retrieve device-specific metadata in system management tools.",
+      "description_length": 350,
+      "index": 74,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "obus",
+      "description": "Provides asynchronous communication primitives for sending and receiving D-Bus messages, handling method calls, and emitting signals. Operates on message structures, object paths, interface names, and method signatures. Enables real-time interaction with system and session buses, such as monitoring hardware events or controlling desktop applications through D-Bus.",
+      "description_length": 366,
+      "index": 75,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "UDisks_adapter",
+      "description": "Provides functions to convert between a proxy object and a wrapped type, emit signals when properties change, and access read-only properties such as fabric, number of ports, driver, model, vendor, and native path. Operates on OBus proxy objects and property groups. Used to interact with UDisks devices through D-Bus, enabling access to hardware-specific details and state changes.",
+      "description_length": 382,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_vpn_plugin",
+      "description": "Converts between a proxy object and an internal representation, enabling interaction with a VPN service. Provides methods to establish connections, handle secrets, configure IP settings, and manage disconnections, all using OBus for inter-process communication. Emits signals for state changes, IP configuration updates, and login banners, and exposes properties for current state and failure reasons.",
+      "description_length": 401,
+      "index": 77,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OBus_value",
+      "description": "Provides functions for constructing, serializing, and converting OCaml values to D-Bus-compatible types, including basic values, arrays, dictionaries, and variants. It supports type reflection, file descriptor handling, and manipulation of nested structures for efficient inter-process communication. Operations include marshaling data for D-Bus messages, formatting object paths, and unboxing serialized values into OCaml types. Examples include serializing a list of integers or converting a tuple into a D-Bus variant for message passing.",
+      "description_length": 541,
+      "index": 78,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "UPower_device",
+      "description": "The module provides functions for accessing and manipulating power device data via D-Bus, focusing on retrieving metrics like capacity, voltage, and charge status, as well as battery-specific attributes such as energy_full, vendor, and model. It operates on a `t` type representing UPower devices, enabling interactions with properties, signals, and historical data. Use cases include monitoring battery health, tracking energy consumption patterns, and querying device metadata for system power management.",
+      "description_length": 507,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_object",
+      "description": "This module handles D-Bus object lifecycle management, interface introspection, and property manipulation, enabling dynamic object creation and removal. It operates on D-Bus interfaces, properties, and signals, utilizing asynchronous callbacks for reactive property access and event-driven communication. Use cases include building real-time D-Bus services, managing configurable object hierarchies, and facilitating inter-process communication with dynamic interface updates.",
+      "description_length": 476,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_proxy",
+      "description": "Provides conversion between a private proxy type and its underlying representation. Works with the `proxy` data type, ensuring encapsulation while allowing necessary transformations. Used to safely pass proxy objects between components without exposing their internal structure.",
+      "description_length": 278,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_method",
+      "description": "Provides functions to invoke D-Bus methods on a proxy object, supporting synchronous replies, context-aware replies, and one-way calls. Operates with method descriptors, proxy objects, and argument types specific to D-Bus interactions. Used to trigger remote procedure calls in distributed systems, retrieve method responses with metadata, or send messages without expecting a return value.",
+      "description_length": 390,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_signal",
+      "description": "Emits D-Bus signals with specified arguments and destinations, and creates signal descriptors for both sending and receiving. Handles event transformation, context inclusion, and argument filtering to refine signal handling. Connects to D-Bus signals from specific objects or any object of a peer, enabling targeted message processing.",
+      "description_length": 335,
+      "index": 83,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OBus_message",
+      "description": "The module offers functions to construct, inspect, and manipulate D-Bus messages, enabling operations like setting flags, serial numbers, and body content, as well as validating and printing message structures. It works with message flags, types, and metadata to handle distinct message formats such as method calls, errors, and signals. This supports use cases like building reliable inter-process communication protocols and debugging message exchanges.",
+      "description_length": 455,
+      "index": 84,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_protocol",
+      "description": "Provides constants for protocol limits such as maximum recursion depth, name length, array size, and message size. Operates on integers and strings to enforce constraints in D-Bus communication. Used to validate message structures and ensure compliance with protocol specifications.",
+      "description_length": 282,
+      "index": 85,
+      "embedding_norm": 1.0000001192092896
+    },
+    {
+      "module_path": "OBus_wire",
+      "description": "Reads and writes OBus messages over input/output channels, handling byte order and file descriptors. Serializes messages to strings and deserializes them from buffers, resolving associated file descriptors. Provides socket-based readers and writers to transmit messages along with their file descriptors.",
+      "description_length": 304,
+      "index": 86,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OBus_introspect_ext",
+      "description": "The module offers functions for defining enumerated and flagged types with string labels, along with type conversion and manipulation operations for OBus data structures such as sequences, tuples, and symbols. It supports decoding standard interfaces into extended formats by processing annotations, enabling metadata-driven interface enhancements and seamless transformation between OBus representations. Use cases include handling complex data structures in messaging protocols and enriching interface definitions with custom metadata.",
+      "description_length": 537,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_manager",
+      "description": "Provides operations to interact with the NetworkManager daemon, including retrieving devices, activating and deactivating connections, and managing wireless and WWAN states. Works with types such as device objects, connection settings, and bus names through asynchronous Lwt-based functions. Enables monitoring of device changes and property updates via signals and properties.",
+      "description_length": 377,
+      "index": 88,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OBus_member",
+      "description": "Handles D-Bus method, signal, and property definitions by encapsulating metadata such as interface, member names, arguments, and annotations. It supports constructing and inspecting method signatures, signal structures, and property access rules using types like OBus_name.interface, OBus_name.member, and OBus_value.arguments. Users can define how methods are called, signals are emitted, and properties are accessed within D-Bus services. For example, it enables creating a method that accepts a string and returns a boolean, defining a signal with two integer arguments, or specifying a read-only property with a given type.",
+      "description_length": 627,
+      "index": 89,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_peer",
+      "description": "Converts between a private peer type and its underlying representation. Provides bidirectional conversion for peer objects used in OBus communication. Enables safe handling of peer identities in inter-process communication contexts.",
+      "description_length": 232,
+      "index": 90,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "UPower_wakeups",
+      "description": "Provides functions to retrieve a list of wakeups and a total count from UPower, along with signals for changes to this data. Operates on UPower instances and returns structured wakeup data including timestamps and sources. Used to monitor system wake events and track their frequency in real time.",
+      "description_length": 297,
+      "index": 91,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_match",
+      "description": "The module provides functions for creating, inspecting, and comparing D-Bus message matching rules, along with filtering messages based on argument patterns. It operates on D-Bus message rules, arguments, values, and a `comparison_result` type to represent comparison outcomes. Use cases include implementing rule-based message filtering and managing dynamic message handling in D-Bus communication.",
+      "description_length": 399,
+      "index": 92,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_ip4_config",
+      "description": "Converts between an OBus proxy and an internal representation for IPv4 configuration. Retrieves structured network data such as IP addresses, DNS servers, WINS servers, domain names, and routing information. Used to interact with system network settings through a standardized property interface.",
+      "description_length": 296,
+      "index": 93,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_auth",
+      "description": "Handles authentication mechanisms by defining core types and operations for credential management and verification. Includes types for credentials, tokens, and authentication states, along with functions to validate, generate, and inspect authentication data. Supports custom authentication flows through extensible interfaces and predefined validation checks. Example tasks include generating secure tokens, verifying user credentials, and managing session states.",
+      "description_length": 465,
+      "index": 94,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hal_interfaces",
+      "description": "Manages device properties, CPU frequency, power states, display brightness, LED brightness, storage trays, media presence, system power actions, storage mounts, cryptographic volumes, Wake-on-LAN, and device resource locks through D-Bus. Supports structured data types like strings, lists, tuples, booleans, and integers, with operations for configuration, control, and monitoring. Examples include adjusting CPU performance, toggling device power, changing display brightness, and managing storage media. Interfaces with OBus and D-Bus to enable system-level hardware interaction and automation.",
+      "description_length": 596,
+      "index": 95,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_match_rule_lexer",
+      "description": "Parses OBus match rule strings into lists of tuples containing integer positions and string components, with support for namespace, path, and string arguments. Processes lexing buffers to extract structured data, including handling commas and end-of-file conditions. Used to tokenize and validate D-Bus match rules in system message filtering.",
+      "description_length": 343,
+      "index": 96,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "UDisks_expander",
+      "description": "Provides methods to convert between a proxy and an internal representation, emit signals on changes, and access read-only properties such as native path, vendor, model, and revision. Works with device-specific data including port lists, adapter references, and property groups. Used to monitor and retrieve detailed information about storage devices through the UDisks interface.",
+      "description_length": 379,
+      "index": 97,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_uuid",
+      "description": "Generates, parses, and converts UUIDs between string and internal representations. Operates on strings formatted as 32-character hexadecimal sequences and a custom type `t` for UUID values. Used to create unique identifiers for D-Bus objects and messages.",
+      "description_length": 255,
+      "index": 98,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OBus_interfaces",
+      "description": "Manages D-Bus name ownership, service activation, and interface introspection, enabling dynamic service coordination and object structure discovery. Supports property retrieval and modification, along with machine ID lookup and ping operations, facilitating interaction with D-Bus peers. Operates on interface names, object paths, method members, and structured data types. Examples include checking service availability, exposing interface XML, monitoring property changes, and retrieving system identifiers.",
+      "description_length": 509,
+      "index": 99,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_context",
+      "description": "Provides functions to extract connection, message, sender, destination, flags, and serial from a message context. Works with OBus_connection.t, OBus_message.t, and OBus_peer.t types. Used to access contextual information during method call handling in OBus-based communication.",
+      "description_length": 277,
+      "index": 100,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_type_ext_lexer",
+      "description": "This module handles lexical parsing tasks for OCaml type representations, focusing on extracting structured terms, managing delimiters like commas, and enumerating values within lexing buffers. It processes recursive type definitions and tuple arguments, utilizing stateful lexing to navigate complex type syntax. Specific use cases include parsing OCaml type expressions and analyzing nested data structures during compilation or type-checking workflows.",
+      "description_length": 455,
+      "index": 101,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "UPower_policy",
+      "description": "Retrieves and manages latency requests and policies for power-aware systems. It handles operations such as querying current latency values, requesting specific latency levels, canceling requests, and setting minimum latency constraints. The module works with custom types like `cookie` and `latency`, and emits signals when latency or request states change.",
+      "description_length": 357,
+      "index": 102,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_property",
+      "description": "The module provides operations for creating, grouping, and transforming D-Bus properties, enabling dynamic management of property values through typed accessors and context-aware maps. It works with D-Bus proxies, interfaces, and string-based dictionaries to facilitate real-time updates and type-safe access in distributed systems. Use cases include monitoring property changes and integrating with D-Bus services requiring structured data handling.",
+      "description_length": 450,
+      "index": 103,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Policy_kit_interfaces",
+      "description": "Handles D-Bus-based authentication by defining methods to request authorization using interface names, method signatures, and object paths. Supports operations like checking user permissions, managing timeouts, and processing authorization identifiers. Provides structures for representing D-Bus messages and authorization states. Enables implementation of agents that communicate with PolicyKit to grant or deny access based on configured policies.",
+      "description_length": 449,
+      "index": 104,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "UDisks",
+      "description": "The module offers storage management functionalities through D-Bus, including RAID/LVM volume group operations, device enumeration, and event tracking. It handles data structures like UUIDs, device lists, and LVM objects, enabling tasks such as volume group administration and device monitoring. Specific use cases involve configuring storage arrays, managing logical volumes, and responding to device changes in real time.",
+      "description_length": 423,
+      "index": 105,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_ppp",
+      "description": "Provides functions to convert between a proxy object and a private type, request secrets asynchronously, and update IP4 configuration and state. Works with OBus_proxy.proxy and Lwt-based asynchronous operations. Used to interact with network manager PPP connections through D-Bus.",
+      "description_length": 280,
+      "index": 106,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_address_lexer",
+      "description": "The module provides functions for parsing and validating structured address data, extracting nested key-value pairs and lists from lexing buffers while handling recursive lexical analysis and character unescaping. It operates on `Lexing.lexbuf` and `Buffer.t` to process complex address formats, such as those requiring semicolon, colon, or comma-separated components. This is particularly useful in scenarios like network protocol address parsing or configuration string processing where precise syntax validation and data extraction are critical.",
+      "description_length": 548,
+      "index": 107,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "UPower_monitor",
+      "description": "Monitors properties of UPower interfaces, capturing changes in real time. It works with OBus_property types to track updates to system power-related data. Used to detect battery status changes or device connection events in power management applications.",
+      "description_length": 254,
+      "index": 108,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hal_device",
+      "description": "manages system-level device interactions including volume control, storage removal, media detection, network configuration, power states, CPU scaling, and display brightness. It operates on custom types such as volume configurations, storage objects, device handles, and system state objects, enabling asynchronous manipulation and querying. Functions include mounting volumes, ejecting media, checking for inserted devices, configuring wake-on-lan, suspending the system, adjusting CPU governors, and modifying display brightness. Examples include automating USB drive ejection, detecting inserted cards before data access, and dynamically scaling CPU performance based on workload.",
+      "description_length": 683,
+      "index": 109,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nm_connection",
+      "description": "Provides functions to convert between a NetworkManager connection proxy and an opaque type, access connection properties, and retrieve associated devices and service details. Works with OBus proxies, connection settings, device lists, and state information. Used to monitor active connections, check if a connection is default or a VPN, and access configuration data through D-Bus.",
+      "description_length": 381,
+      "index": 110,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_interfaces",
+      "description": "Provides methods to manage network interfaces, access point details, connection states, and configuration data through D-Bus and OBus interfaces. Key data types include paths, strings, integers, boolean flags, and structured properties for devices, connections, and IP settings. It enables monitoring device status, retrieving wireless information, managing PPP and VPN connections, and handling DHCP and IP configuration changes. Examples include tracking wireless access points, updating connection settings, and inspecting IPv6 routes.",
+      "description_length": 538,
+      "index": 111,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nm_ip6_config",
+      "description": "Encapsulates IPv6 configuration data and provides access to network addresses, nameservers, domains, and routes through property getters. It converts between a proxy object and its internal representation, enabling interaction with system network settings. Used to retrieve and manage IPv6 configuration details in a structured, property-based manner.",
+      "description_length": 351,
+      "index": 112,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_bus",
+      "description": "The module provides functions for managing D-Bus connections, including registering, requesting, and releasing bus names, as well as starting services and monitoring activity. It operates on bus connections, names, addresses, and metadata such as UNIX user identifiers, PIDs, and SELinux contexts, handling signals related to name ownership and service activation. Use cases include system service management, ensuring name uniqueness, and dynamic service activation in session or system buses.",
+      "description_length": 494,
+      "index": 113,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_device",
+      "description": "Manages network device properties and events through OBus, exposing real-time updates on hardware addresses, signal strengths, encryption capabilities, and traffic statistics. Supports custom types and signal structures to track changes in Bluetooth, CDMA, GSM, and wireless interfaces, enabling dynamic monitoring of network configurations. Provides access to packet counts, interface speeds, and access point data, allowing for detailed network analysis and management. Examples include tracking mesh device relationships, detecting available Wi-Fi networks, and monitoring real-time traffic metrics.",
+      "description_length": 602,
+      "index": 114,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OBus_util",
+      "description": "Provides functions to manipulate lists with options, such as finding and filtering elements based on partial functions, splitting lists into success and failure cases, and mapping over options. Works with lists, options, and byte sequences, and includes cryptographic utilities like SHA-1 hashing and random value generation. Used for processing configuration data, handling optional values in parsing, and generating secure random strings.",
+      "description_length": 440,
+      "index": 115,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nm_access_point",
+      "description": "Provides methods to convert between an access point object and an OBus proxy, and to retrieve specific properties like SSID, frequency, MAC address, and signal strength. Works with OBus proxy objects and custom types representing access point flags and security settings. Used to interact with network access point data in aDBus-based system, enabling retrieval of real-time network information.",
+      "description_length": 395,
+      "index": 116,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OBus_config",
+      "description": "Provides functions to access the machine UUID file path and the version string. Works with string data types to retrieve system-specific configuration values. Used to identify the virtual machine and determine the OBus version during runtime.",
+      "description_length": 242,
+      "index": 117,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OBus_xml_parser",
+      "description": "Parses XML elements and attributes using monadic combinators, extracting values with specific key-based accessors and handling optional or repeated elements. Works with XML input streams and node parsers that process elements, PCData, and attribute-value pairs. Used to validate and extract structured data from XML documents, such as parsing configuration files or data payloads with strict schema requirements.",
+      "description_length": 412,
+      "index": 118,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_monitor",
+      "description": "Monitors changes in properties of Network Manager interfaces, providing real-time updates through a dedicated monitoring mechanism. It interacts with OBus_property types to track and report state transitions. Used to detect network connection status changes and interface configuration updates.",
+      "description_length": 294,
+      "index": 119,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_error",
+      "description": "Provides access to the D-Bus error name, enabling identification of specific error conditions in inter-process communication. Works with D-Bus error objects that encapsulate error names and messages. Used to handle and log D-Bus-specific exceptions in system-level applications.",
+      "description_length": 278,
+      "index": 120,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_connection",
+      "description": "The module offers operations for managing D-Bus connections, including creating, closing, and monitoring their status, as well as sending and receiving messages through message handling and filtering mechanisms. It works with connection objects, addresses, message types, key-value stores, and transport configurations to enable reliable communication and lifecycle management. Use cases include establishing inter-process communication, handling asynchronous events, and configuring connection parameters for robust D-Bus interactions.",
+      "description_length": 536,
+      "index": 121,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_introspect",
+      "description": "Reads and writes D-Bus introspection data from and to XML, using specific annotations like `deprecated` and `no_reply` to tag elements. Operates on structured data including interfaces, members, annotations, and nodes, with precise types for names, arguments, and access controls. Used to generate or parse XML representations of D-Bus objects for communication and metadata exchange.",
+      "description_length": 384,
+      "index": 122,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_settings",
+      "description": "manages dynamic secret retrieval and system hostname configuration, combining context-based value fetching with real-time system state updates. It defines context and system state types, enabling secret queries, updates, and hostname adjustments with permission validation. Operations include loading API keys, database credentials, or feature flags, as well as saving and monitoring hostname changes. Examples include securely accessing environment-specific values and dynamically enforcing access controls during system operations.",
+      "description_length": 533,
+      "index": 123,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "UDisks_monitor",
+      "description": "Monitors property changes on UDisks interfaces, providing real-time updates on device states and configurations. It works with OBus_property.monitor type to track dynamic data from system storage devices. Used to detect disk insertion, removal, or status changes in system management tools.",
+      "description_length": 290,
+      "index": 124,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_server",
+      "description": "Provides functions to create and manage servers that handle one-to-one communication, including setting up authentication mechanisms, listening on specified addresses, and handling client connections. Operates with OBus_address.t for network endpoints and OBus_connection.t or OBus_transport.t for client interactions. Used to establish secure, authenticated communication channels where clients connect via predefined addresses and authentication policies.",
+      "description_length": 457,
+      "index": 125,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "UDisks_port",
+      "description": "Provides methods to convert between a proxy and a type-safe wrapper, emit signals on changes, and access properties like connector type, number, parent, adapter, and native path. Works with OBus proxy objects and property groups to interact with UDisks device interfaces. Used to monitor device state changes and retrieve device-specific attributes in system management applications.",
+      "description_length": 383,
+      "index": 126,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_address",
+      "description": "Extracts and manipulates D-Bus address components such as name, arguments, and GUID. Operates on address records and UUIDs, enabling parsing and serialization of D-Bus address strings. Used to construct custom addresses, retrieve specific arguments, and access predefined system and session bus configurations.",
+      "description_length": 310,
+      "index": 127,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hal_manager",
+      "description": "Provides functions to manage HAL devices through an OBus proxy, including retrieving device lists, checking device existence, and handling device events. Operates on HAL device objects and OBus signals, enabling interaction with hardware abstraction layers. Used for dynamically managing device properties, monitoring device changes, and coordinating device operations in system-level applications.",
+      "description_length": 398,
+      "index": 128,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_vpn_connection",
+      "description": "Provides functions to convert between a VPN connection object and an OBus proxy, emit signals for state and property changes, and access specific properties like state and banner. Works with OBus_proxy.proxy and OBus_property types to interact with system-level VPN configurations. Used to monitor and manage VPN connection states and associated metadata in a dbus-based environment.",
+      "description_length": 383,
+      "index": 129,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OBus_transport",
+      "description": "Provides message reception and transmission over a transport, with support for capability negotiation and resource cleanup. Operates on message objects and file descriptors, enabling communication through socket or loopback transports. Used to establish secure, authenticated connections to OBus servers or simulate message passing within a single process.",
+      "description_length": 356,
+      "index": 130,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Notification_interfaces",
+      "description": "Handles desktop notifications via D-Bus, enabling sending, closing, and querying notification server details. Utilizes D-Bus interface definitions and structured data types such as strings, lists, and tuples. Supports operations like delivering rich notifications and checking server capabilities. Examples include displaying alerts and managing notification lifecycles in desktop applications.",
+      "description_length": 394,
+      "index": 131,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_obus",
+      "description": "Provides functions to process OCaml attributes, rewrite structure items, and map AST nodes for OBus integration. Works with Ppxlib attribute lists, expressions, and structure items. Used to identify and transform OBus exception definitions and attribute-based annotations during ppx processing.",
+      "description_length": 294,
+      "index": 132,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_info",
+      "description": "Provides access to runtime information such as the library version, machine UUID, D-Bus protocol version, and system limits for names and message sizes. Works with strings, integers, and the OBus_uuid.t type for unique identifiers. Used to validate message constraints and retrieve system-specific identifiers during runtime.",
+      "description_length": 325,
+      "index": 133,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_path",
+      "description": "Provides functions to create, compare, and manipulate D-Bus object paths as lists of strings. Includes operations to escape and unescape path elements, validate paths, and generate unique paths. Used to construct and verify D-Bus object paths from strings and handle path hierarchies.",
+      "description_length": 284,
+      "index": 134,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_string",
+      "description": "Provides functions to extract details from error records, including error messages, string values, offsets, and messages. Works with error records and string validation functions to enforce D-Bus string constraints. Validates strings against predefined rules and retrieves structured error information for debugging.",
+      "description_length": 316,
+      "index": 135,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Notification",
+      "description": "Provides functions to create, manage, and respond to popup notifications with custom icons, actions, and timeouts. Works with types like urgency, image, and notification handles that track state and user interactions. Used to display system notifications with specific actions, such as showing a message with a close button or triggering a custom response when a user clicks on an action.",
+      "description_length": 388,
+      "index": 136,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OBus_name",
+      "description": "Validates D-Bus names using string validators for buses, interfaces, members, and errors. Splits names into components and converts them to OCaml or Haskell style identifiers. Works with string-based types representing D-Bus bus names, interfaces, members, and error names.",
+      "description_length": 273,
+      "index": 137,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "UDisks_device",
+      "description": "The module offers low-level storage management operations, including encryption control, RAID and LVM2 management, device ejection, and SMART testing, alongside property retrieval for metadata like UUIDs, labels, and device states. It works with device objects (`t`) and employs options lists, Lwt promises for async handling, and structured data types to configure and query storage configurations. Use cases span disk maintenance, secure volume unlocking, partition management, and monitoring hardware-specific attributes such as optical disc status or RAID synchronization.",
+      "description_length": 576,
+      "index": 138,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "UPower_interfaces",
+      "description": "manages power-related system interactions through operations like sleep control, device monitoring, latency management, and wake-up tracking. it handles numeric and string-based data, including energy levels, device states, latency thresholds, and wake-up statistics, enabling real-time power management and event detection. it supports D-Bus communication for system-level power service integration and provides methods to request, cancel, and track power-related actions. examples include monitoring battery status, adjusting sleep behavior, and responding to wake-up events dynamically.",
+      "description_length": 589,
+      "index": 139,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "UDisks_interfaces",
+      "description": "Combines device management, storage configuration, and hardware monitoring through D-Bus and OBus interfaces, enabling low-level control and event-driven responses. It handles device paths, numeric identifiers, metadata, and structured properties to support encryption, partitioning, RAID management, and drive health monitoring. Operations include querying SMART data, managing LUKS and LVM volumes, and tracking hardware changes via signals. Examples include configuring encrypted volumes, monitoring RAID status, and retrieving device metadata for system diagnostics.",
+      "description_length": 570,
+      "index": 140,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OBus_resolver",
+      "description": "Creates a resolver that monitors a specific bus name and emits the current owner via a signal. Works with OBus_connection.t and OBus_name.bus types to track name ownership changes. Used to detect when a service becomes available or disappears on a D-Bus bus.",
+      "description_length": 258,
+      "index": 141,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Policy_kit",
+      "description": "Provides functions to check and obtain authorization via PolicyKit for specific actions, using action IDs, X11 window IDs, and process IDs. Works with strings, integers, and Lwt promises to handle asynchronous authorization requests. Used to grant permissions for system-level operations in graphical applications.",
+      "description_length": 314,
+      "index": 142,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nm_dhcp4_config",
+      "description": "Provides functions to convert between a DHCP4 configuration object and an OBus proxy, retrieve configuration options as a property, and emit signals when properties change. Works with OBus_proxy.proxy and OBus_value.V.single data types. Used to interface with system DHCP4 services through D-Bus, enabling dynamic configuration updates and monitoring.",
+      "description_length": 351,
+      "index": 143,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "UPower",
+      "description": "This module enables control and monitoring of power management functionalities, including handling system sleep/resume events, device enumeration, and tracking power state changes via a daemon interface. It interacts with device-specific properties like hibernation support and suspension capabilities through a dedicated device object, exposing these via OBus properties. Use cases include managing system power transitions, querying hardware power features, and responding to device state updates in real-time.",
+      "description_length": 512,
+      "index": 144,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 147,
+    "meaningful_modules": 145,
+    "filtered_empty_modules": 2,
+    "retention_rate": 0.9863945578231292
+  },
+  "statistics": {
+    "max_description_length": 683,
+    "min_description_length": 204,
+    "avg_description_length": 371.49655172413793,
+    "embedding_file_size_mb": 0.5273361206054688
+  }
+}

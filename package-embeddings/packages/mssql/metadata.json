@@ -1,0 +1,56 @@
+{
+  "package": "mssql",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 5,
+  "creation_timestamp": "2025-06-18T16:29:58.948898",
+  "modules": [
+    {
+      "module_path": "Mssql.Error",
+      "description": "Provides functions to create and handle structured error instances with source position, query details, parameters, formatted queries, and result rows. Works with exception types, source code positions, and database-related data structures like query strings and row lists. Used to wrap database operation failures with contextual information for debugging and logging.",
+      "description_length": 369,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mssql.Param",
+      "description": "Provides methods to convert and extract values from Mssql data types safely, including numeric, string, and date conversions with optional column names. Works with custom type t, which wraps database data, and supports serialization to and from S-expressions. Used to safely retrieve and format database results, such as converting a database date to a Core.Date.t or a numeric value to a Bignum.t.",
+      "description_length": 398,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mssql.Row",
+      "description": "The module provides functions to retrieve and convert column values from a structured data row, supporting types like integers, strings, and dates, with options for handling missing or invalid data through optional returns or exception raises. It includes specialized functions such as `datetime` and `datetime_exn` to parse and validate time values from named columns, accommodating nulls or format errors differently. This is particularly useful in data processing workflows requiring robust type conversion and error handling for heterogeneous datasets.",
+      "description_length": 556,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "mssql",
+      "description": "Provides functions for executing SQL queries, managing connections, and handling result sets in an asynchronous environment. Works with SQL Server databases using connection pools or individual connections, and processes query results as lists of rows. Designed for applications requiring non-blocking database interactions with Microsoft SQL Server.",
+      "description_length": 350,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mssql",
+      "description": "Encapsulates database interaction by managing errors, data conversion, and row processing. It defines a custom type for database values, supports safe conversions between Mssql types and OCaml equivalents, and provides methods to extract and validate column data. Functions like `datetime` and `datetime_exn` handle time values with flexible null and format handling, while error structures include query details and source positions for debugging. It enables robust data retrieval and transformation, such as converting database dates to Core.Date.t or numeric values to Bignum.t.",
+      "description_length": 581,
+      "index": 4,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 5,
+    "meaningful_modules": 5,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 581,
+    "min_description_length": 350,
+    "avg_description_length": 450.8,
+    "embedding_file_size_mb": 0.018585205078125
+  }
+}

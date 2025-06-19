@@ -1,0 +1,1022 @@
+{
+  "package": "typerep",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 143,
+  "creation_timestamp": "2025-06-18T16:53:58.464251",
+  "modules": [
+    {
+      "module_path": "Typerep_lib.Type_generic.Make.Computation.Named.Context",
+      "description": "Creates a new context instance with default values, allowing for the tracking of execution state during complex computations. Operates on a custom type `t` that encapsulates environment and configuration data. Used to manage and pass along contextual information in parser or interpreter implementations.",
+      "description_length": 304,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Make.Computation.Tag_internal",
+      "description": "Handles the creation and manipulation of tagged data structures, supporting variant types with associated arguments through specialized constructors and accessors. Operates on polymorphic variants and tuples representing tagged values and their parameters. Used to build and inspect tagged records in parsing and serialization workflows.",
+      "description_length": 337,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Make.Computation.Tag",
+      "description": "Provides functions to inspect and manipulate variant type constructors, including retrieving their names, arity, field labels, index, and runtime representation. Works with variant types and their associated argument types, such as tuples, records, and polymorphic variants. Enables dynamic construction of variant values and introspection of their structure, useful for serialization, reflection, or custom type handling.",
+      "description_length": 422,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Make.Computation.Variant_internal",
+      "description": "Provides functions to manipulate and inspect variant types, including tagging, untagging, and value extraction. Works with custom type representations such as tags, values, and polymorphic variants. Used to implement runtime type checks and dynamic dispatch in meta-programming scenarios.",
+      "description_length": 288,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Make.Computation.Variant",
+      "description": "Returns the typename associated with a variant type, retrieves the number of tags, and allows access to individual tags by index. It distinguishes between polymorphic and standard variants, supports pattern matching on variant values, and enables folding over tags. Used to inspect and process variant type definitions at runtime, such as generating serialization logic or validating input against type constraints.",
+      "description_length": 415,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Make.Computation.Field_internal",
+      "description": "Provides functions to access and modify specific fields within a record structure, including retrieval, updating, and field existence checks. Works with polymorphic record types where each field is associated with a unique identifier. Used to implement field-specific logic in domain models, such as validating or transforming individual attributes during data processing.",
+      "description_length": 372,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Make.Computation.Field",
+      "description": "Provides field metadata including name, index, and type information for record fields. Supports field access, mutation checks, and type-based computations. Used to dynamically inspect and manipulate fields in a type-safe manner, such as generating serialization code or validating field constraints.",
+      "description_length": 299,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Make.Computation.Record_internal",
+      "description": "Provides functions to manipulate and access fields of a record type, including field extraction and modification. Works with custom record structures defined using the type aliases !_ field, !'record fields, and !'a t. Used to implement low-level record operations in a type-safe manner within the compiler or type-checking pipeline.",
+      "description_length": 333,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Make.Computation.Record",
+      "description": "Provides operations to inspect and manipulate record type definitions, including retrieving field counts, accessing specific fields by index, and checking low-level array representation. Works with type-safe record structures and field encodings, enabling creation of records from field values and folding over field tags. Used to generate optimized runtime representations of records with known float fields and to map between record values and their field-based encodings.",
+      "description_length": 474,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Make.Computation.Named",
+      "description": "Initializes a context with default settings, tracking execution state through a custom `t` type that holds environment and configuration data. Supports operations to modify and query this state during computation. Enables consistent state management in parsers or interpreters by passing the context through nested function calls. Example: tracking variable bindings or error logs across recursive parsing steps.",
+      "description_length": 412,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Make.Named.Context",
+      "description": "Creates a context object with isolated state, useful for managing application-specific data during execution. Operates on a custom type `t` that encapsulates internal configuration and session information. Used to pass environment variables, logging settings, or user-specific data between components without global state.",
+      "description_length": 322,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Variant_and_record_intf.M.Tag_internal",
+      "description": "Provides functions to construct and manipulate tagged data structures with variant types and associated arguments. Operates on tuples of variant identifiers and argument lists, enabling structured representation of heterogeneous data. Used to encode and decode complex data models in parsing and serialization workflows.",
+      "description_length": 320,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Variant_and_record_intf.M.Tag",
+      "description": "Provides functions to inspect and manipulate variant constructors, including retrieving the constructor's name, arity, field labels for records, index, and runtime representation. Works with variant types and their associated argument types, such as tuples, records, and polymorphic variants. Used to dynamically construct values from their tags and extract type information for runtime processing.",
+      "description_length": 398,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Variant_and_record_intf.M.Variant_internal",
+      "description": "Provides functions to manipulate and inspect variant types, including tagging, untagging, and value extraction. Works with custom type representations using polymorphic variants and tagged values. Used to implement runtime type checks and dynamic dispatch in parser generators.",
+      "description_length": 277,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Variant_and_record_intf.M.Variant",
+      "description": "Returns the name of a variant type, retrieves the number of tags, and accesses individual tags by index. Operates on variant types, tags, and values with support for polymorphic and standard variants. Enables pattern matching on variant values and traversal over their tags for custom processing.",
+      "description_length": 296,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Variant_and_record_intf.M.Field_internal",
+      "description": "Provides functions to access and modify specific fields within a record structure, including retrieval, updating, and validation. Works with a polymorphic record-field type that pairs a record type with a field type. Used to implement field-specific logic in domain models, such as enforcing constraints during field updates.",
+      "description_length": 325,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Variant_and_record_intf.M.Field",
+      "description": "Provides field metadata including name, index, and type information, along with accessors and traversal capabilities. Works with record types and their associated field types, enabling reflection-like operations. Used to dynamically access and inspect fields in a record, such as retrieving the value of a specific field or determining its position in the record structure.",
+      "description_length": 373,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Variant_and_record_intf.M.Record_internal",
+      "description": "Provides functions to manipulate and access fields of a record type, including field extraction and modification. Works with custom record structures defined using the `fields` and `t` type aliases. Enables direct access to specific fields in a typed record for data processing tasks.",
+      "description_length": 284,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Variant_and_record_intf.M.Record",
+      "description": "Provides operations to inspect and manipulate record types, including retrieving field counts, accessing specific fields by index, and checking low-level array representation. Works with polymorphic record types and their associated field structures. Used to construct records from field values and traverse field metadata for type-specific processing.",
+      "description_length": 352,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Computation.Named.Context",
+      "description": "Creates a context object that tracks state changes and dependencies, supporting operations to register and retrieve values. It works with a custom type `t` that encapsulates mutable state and event listeners. Used to manage application state in real-time systems, such as tracking user interactions or sensor data.",
+      "description_length": 314,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Make.Computation",
+      "description": "combines tag-based data manipulation, variant and record inspection, and context management to enable dynamic type handling and transformation. it supports operations like tagging, untagging, field access, and variant introspection, with data types including polymorphic variants, records, and custom tagged structures. it allows runtime processing of type definitions, such as generating serialization logic or validating input against type constraints. examples include inspecting variant constructors, extracting field values from records, and managing execution state during parsing.",
+      "description_length": 587,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Variant_and_record_intf.M",
+      "description": "Provides functions to create, transform, and query values of type 'a t, including mapping over elements, filtering, and folding. Operates on structured data with nested or labeled components, supporting pattern matching and extraction. Used to process configuration records and aggregate results from sequential computations.",
+      "description_length": 325,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Make_named_for_closure.Context",
+      "description": "Creates a context object that tracks state changes and dependencies, supporting operations to mark modifications and query current status. It works with a custom opaque type representing a context state, enabling fine-grained control over application flow. Used to manage incremental updates in a build system, ensuring only affected components are re-evaluated.",
+      "description_length": 362,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Make.Tag_internal",
+      "description": "Handles the creation and manipulation of tagged data structures, supporting variant types with associated arguments through specialized constructors and accessors. Operates on polymorphic variants and their associated argument tuples, enabling structured data representation. Used to build and deconstruct tagged records in parsing and serialization workflows.",
+      "description_length": 360,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Make.Tag",
+      "description": "Provides functions to inspect and manipulate variant constructors, including retrieving constructor labels, arity, field labels for inline records, and indices. Works with variant types and their associated argument types, such as tuples, records, and primitive types. Enables dynamic construction of variant values and introspection of their runtime representations.",
+      "description_length": 367,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Make.Variant_internal",
+      "description": "Provides functions to manipulate and inspect variant types, including tagging, untagging, and value extraction. Works with custom type representations such as tags, values, and polymorphic variants. Used to implement runtime type checks and dynamic dispatch in meta-programming scenarios.",
+      "description_length": 288,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Make.Variant",
+      "description": "Returns the type name associated with a variant, retrieves the number of tags, and accesses individual tags by index. Handles both standard and polymorphic variants, distinguishing between them via a boolean check. Supports pattern matching on variant values and folding over their tags for custom processing.",
+      "description_length": 309,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Make.Field_internal",
+      "description": "Provides functions to access and modify specific fields within a record type, including retrieval, updating, and validation. Works with a custom type representing a record-field pair, enabling direct manipulation of structured data. Used to implement field-level operations in domain-specific data models, such as parsing and transforming configuration settings.",
+      "description_length": 362,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Make.Field",
+      "description": "Provides field metadata including name, index, and type information for record fields. Supports field access, mutation checks, and type-based computations. Used to dynamically inspect and manipulate fields in a typed record structure.",
+      "description_length": 234,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Make.Record_internal",
+      "description": "Provides functions to manipulate and access fields of a record type, including field extraction and modification. Works with custom record structures defined using the type !'record fields and type !'a t. Used to implement field-specific operations in generated code for type-safe record handling.",
+      "description_length": 297,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Make.Record",
+      "description": "Provides operations to inspect and manipulate record type definitions, including retrieving field counts, accessing specific fields by index, and determining if a record uses optimized float arrays. Works with custom record types and their associated field structures, enabling creation of records from field data and folding over fields. Used to generate optimized data structures or analyze record layouts at runtime.",
+      "description_length": 419,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Make.Named",
+      "description": "Manages application-specific state through a custom type `t`, enabling safe data passage between components without global variables. Supports configuration, environment variables, and logging settings within isolated execution contexts. Allows for dynamic adjustments to session behavior during runtime. Example: injecting user-specific data into a processing pipeline while maintaining state isolation.",
+      "description_length": 404,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Helper.Tag_internal",
+      "description": "Provides functions to construct and manipulate tagged data structures with variant types and associated arguments. Works with polymorphic variants and tuples representing tagged values and their parameters. Used to encode and decode structured data in protocol buffers and similar serialization formats.",
+      "description_length": 303,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Helper.Tag",
+      "description": "Provides functions to inspect and manipulate variant constructors, including retrieving constructor labels, arity, field labels for inline records, and indices. Works with variant types and their associated argument types, such as tuples, records, and primitive types. Enables dynamic construction of variant values and introspection of their runtime representations.",
+      "description_length": 367,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Helper.Variant_internal",
+      "description": "Provides functions to manipulate and inspect variant types, including tagging, untagging, and value extraction. Works with custom type representations such as tags, values, and polymorphic variants. Used to implement runtime type checks and dynamic dispatch in meta-programming scenarios.",
+      "description_length": 288,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Helper.Variant",
+      "description": "Returns the type name associated with a variant, retrieves the number of tags, and accesses individual tags by index. Handles both standard and polymorphic variants, allowing pattern matching on values and folding over tags. Used to inspect and process variant type definitions at runtime, such as generating serialization logic or type-safe dispatch.",
+      "description_length": 351,
+      "index": 35,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Helper.Field_internal",
+      "description": "Provides functions to access and modify specific fields within a record structure, including retrieval, updating, and validation. Works with a custom type representing field records, where each field is associated with a specific record type. Used to implement field-level operations in a domain-specific language for data manipulation.",
+      "description_length": 336,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Helper.Field",
+      "description": "Provides field metadata including name, index, and type information for record fields. Supports field access, mutation checks, and type-based computations. Used to dynamically inspect and manipulate fields in structured data like configuration records or data models.",
+      "description_length": 267,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Helper.Record_internal",
+      "description": "Provides functions to manipulate and access fields of a record type, including retrieval and modification of individual fields. Works with custom record structures defined using a specific syntax for field annotations and type parameters. Used to implement reflective operations and field-based transformations in domain-specific languages.",
+      "description_length": 340,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Helper.Record",
+      "description": "Provides operations to inspect and manipulate record type definitions, including retrieving field counts, accessing specific fields by index, and checking if a record uses an optimized float array representation. Works with custom record types and their associated field structures, enabling creation of records from field values and folding over fields. Used to generate optimized data structures or analyze record layouts at runtime.",
+      "description_length": 435,
+      "index": 39,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Named.Context",
+      "description": "Creates a context object that tracks state changes and dependencies, supporting operations to register and retrieve values. It works with a custom type `t` that encapsulates mutable state and event listeners. Used to manage application state in reactive systems, such as tracking user input and updating UI components.",
+      "description_length": 318,
+      "index": 40,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Variant_and_record_intf.Tag_internal",
+      "description": "Handles the creation and manipulation of tagged data structures, supporting variant types with associated arguments through specialized constructors and accessors. Operates on polymorphic variants and tuples representing tagged values and their parameters. Used to build and inspect tagged events in a logging system, where each tag carries specific contextual data.",
+      "description_length": 366,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Variant_and_record_intf.Tag",
+      "description": "Provides functions to inspect and manipulate variant constructors, including retrieving constructor labels, arity, field labels for inline records, and indices. Works with variant types and their associated argument types, such as tuples, records, and single values. Enables dynamic construction of variant values and introspection of their runtime representations.",
+      "description_length": 365,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Variant_and_record_intf.Variant_internal",
+      "description": "Provides functions to manipulate and inspect variant types, including tagging, untagging, and value extraction. Works with custom type representations using tag and value wrappers. Used to serialize and deserialize variant structures in a type-safe manner.",
+      "description_length": 256,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Variant_and_record_intf.Variant",
+      "description": "Returns the type name associated with a variant, retrieves the number of tags, and accesses individual tags by index. It distinguishes between polymorphic and standard variants, supports pattern matching on variant values, and enables folding over tags. Used to analyze and manipulate variant types at runtime, such as generating serialization logic or validating input against a known type structure.",
+      "description_length": 401,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Variant_and_record_intf.Field_internal",
+      "description": "Provides functions to access and modify specific fields within a record structure, including retrieval, updating, and validation. Works with a typed record-field pair structure that enforces field uniqueness and type safety. Used to implement field-specific logic in domain models, such as enforcing constraints during record updates.",
+      "description_length": 334,
+      "index": 45,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Variant_and_record_intf.Field",
+      "description": "Provides field metadata including name, index, and type information for record types. Supports field access, mutation checks, and type-based computations. Used to dynamically inspect and manipulate fields in structured data.",
+      "description_length": 224,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Variant_and_record_intf.Record_internal",
+      "description": "Provides operations to manipulate and access fields of a record type, including field retrieval and modification. Works with custom record structures defined using a specific syntax for field annotations. Used to implement reflective access in generated code for database mappings and serialization.",
+      "description_length": 299,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Variant_and_record_intf.Record",
+      "description": "Provides operations to inspect and manipulate record type definitions, including retrieving field counts, accessing specific fields by index, and checking low-level array representation. Works with type representations, field indices, and structured field data. Used to construct records from field data, analyze type metadata, and perform fold operations over record fields.",
+      "description_length": 375,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Computation.Tag_internal",
+      "description": "Handles the creation and manipulation of tagged data structures, supporting variant types with associated arguments through specialized constructors and accessors. Operates on polymorphic variants and tuples representing tagged values and their parameters. Used to build and inspect tagged events in a logging system, where each tag carries specific contextual data.",
+      "description_length": 366,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Computation.Tag",
+      "description": "Provides functions to inspect and manipulate variant constructors, including retrieving constructor labels, arity, field labels for inline records, and indices. Works with variant types and their associated argument types, such as tuples, records, and polymorphic variants. Enables dynamic construction of variant values and introspection of their runtime representations.",
+      "description_length": 372,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Computation.Variant_internal",
+      "description": "Provides functions to manipulate and inspect variant types, including tagging, untagging, and value extraction. Works with custom type representations such as tags, values, and polymorphic variants. Used to implement runtime type checks and dynamic dispatch in meta-programming scenarios.",
+      "description_length": 288,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Computation.Variant",
+      "description": "Returns the type name associated with a variant, retrieves the number of tags, and accesses individual tags by index. Works with variant types, including polymorphic and standard variants, and supports pattern matching and folding over tags. Used to inspect and process variant definitions at runtime, such as generating serialization code or validating input against a known type structure.",
+      "description_length": 391,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Computation.Field_internal",
+      "description": "Provides functions to access and modify specific fields within a record structure, including retrieval, updating, and validation. Operates on typed records and fields, ensuring type safety during field operations. Used to implement field-specific logic in domain models, such as enforcing constraints or transforming field values during updates.",
+      "description_length": 345,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Computation.Field",
+      "description": "Provides field metadata including name, index, and type information for record fields. Supports field access, mutation checks, and type-based computations. Used to dynamically inspect and manipulate fields in structured data like configuration records or data models.",
+      "description_length": 267,
+      "index": 54,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Computation.Record_internal",
+      "description": "Provides functions to manipulate and access fields of a record type, including field extraction and modification. Works with custom record structures defined using a specific syntax for field annotations. Used to implement reflective operations within the compiler's internal processing of variant and record types.",
+      "description_length": 315,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Computation.Record",
+      "description": "Provides operations to inspect and manipulate record type definitions, including retrieving field counts, accessing specific fields by index, and checking if a record uses an optimized float array representation. Works with custom record types and their associated field structures, enabling creation of records from field data and folding over fields. Used to generate optimized data structures and perform low-level type inspections during serialization or runtime processing.",
+      "description_length": 478,
+      "index": 56,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Computation.Named",
+      "description": "Tracks state changes and dependencies through a custom `t` type, enabling registration and retrieval of values for real-time application management. It supports mutable state updates and event-driven interactions, making it suitable for systems requiring dynamic data tracking. Users can register callbacks to respond to state changes, such as updating UI elements on user input. Example uses include managing sensor data streams or maintaining session state in interactive applications.",
+      "description_length": 487,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Std_internal.Typerep.Named",
+      "description": "Provides operations to work with named types, including retrieving a specific value of type `a`, converting between type representations, and asserting type equality. It operates with polymorphic types `'a named` and concrete type `a`, along with type-level annotations `t`. Used to enforce type distinctions while enabling type-safe conversions and runtime type checks.",
+      "description_length": 370,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Std_internal.Typerep.Tuple",
+      "description": "Returns the number of elements in a tuple and retrieves the type name associated with its structure. Works with heterogeneous data structures represented as tagged types. Used to inspect tuple dimensions and type metadata during runtime analysis.",
+      "description_length": 246,
+      "index": 59,
+      "embedding_norm": 1.0000001192092896
+    },
+    {
+      "module_path": "Typerep_lib.Std_internal.Typerep.Tag_internal",
+      "description": "Handles the creation and manipulation of tagged data structures, supporting variant types with associated arguments through specialized constructors and accessors. Operates on polymorphic variants and tuples representing tagged values and their parameters. Used to build and inspect tagged records in parsing and serialization workflows.",
+      "description_length": 337,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Std_internal.Typerep.Tag",
+      "description": "Provides functions to inspect and manipulate variant constructors, including retrieving their names, arity, field labels, and indices. Works with variant types and their associated argument types, such as tuples, records, and polymorphic variants. Enables dynamic construction of values and introspection of runtime representations, useful for serialization or reflection-like operations.",
+      "description_length": 388,
+      "index": 61,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Std_internal.Typerep.Variant_internal",
+      "description": "Provides functions to manipulate and inspect variant types, including tagging, untagging, and value extraction. Works with custom type representations such as tags, values, and polymorphic variants. Used to implement runtime type checks and dynamic dispatch in meta-programming scenarios.",
+      "description_length": 288,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Std_internal.Typerep.Variant",
+      "description": "Returns the typename associated with a variant type, retrieves the number of tags, and allows access to individual tags by index. It distinguishes between polymorphic and standard variants, supports pattern matching on values, and enables folding over tags. Used to analyze and manipulate variant types at runtime, such as generating documentation or implementing serialization logic.",
+      "description_length": 384,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Std_internal.Typerep.Field_internal",
+      "description": "Provides functions to access and modify specific fields within a record structure, including retrieval, updating, and validation. Works with polymorphic record types and field identifiers encoded as type parameters. Used to implement field-specific logic in domain models, such as enforcing constraints during updates or extracting nested data.",
+      "description_length": 344,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Std_internal.Typerep.Field",
+      "description": "Provides field metadata including name, index, and type information for record fields. Supports field access, mutation checks, and type-based computations. Used to dynamically inspect and manipulate fields in a typed record structure.",
+      "description_length": 234,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Std_internal.Typerep.Record_internal",
+      "description": "Provides functions to manipulate and access fields of a record type, including field retrieval and modification. Works with custom record structures defined using a specific syntax for field annotations. Used to implement reflective operations within the compiler's type-checking pipeline.",
+      "description_length": 289,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Std_internal.Typerep.Record",
+      "description": "Provides operations to inspect and manipulate record type definitions, including retrieving field counts, accessing specific fields by index, and checking if a record uses an optimized float array representation. Works with type representations, field indices, and structured field data. Used to construct records from field data, fold over fields for processing, and access low-level type metadata.",
+      "description_length": 399,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Variant_and_record_intf.M.Tag_internal",
+      "description": "Provides functions to construct and manipulate tagged data structures, including creating instances with specific variants and arguments, and accessing their components. Works with polymorphic variants and associated argument types, enabling structured data representation. Used to encode and decode tagged records in protocol implementations.",
+      "description_length": 343,
+      "index": 68,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Variant_and_record_intf.M.Tag",
+      "description": "Provides operations to inspect and manipulate variant constructors, including retrieving the constructor's name, arity, field labels for records, index, and runtime representation. Works with variant types and their associated argument types, such as tuples, records, and polymorphic variants. Used to dynamically construct values from their tags and extract type information for runtime processing.",
+      "description_length": 399,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Variant_and_record_intf.M.Variant_internal",
+      "description": "Provides functions to tag and unwrap values with type-safe metadata, and to construct and deconstruct a polymorphic variant type that associates values with their tags. Works with abstract types representing tags, values, and a container type that holds tagged values. Used to implement type-safe variant handling in domain-specific languages and serialization formats.",
+      "description_length": 369,
+      "index": 70,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Variant_and_record_intf.M.Variant",
+      "description": "Provides operations to inspect and manipulate variant types, including retrieving the type name, tag count, individual tags, and determining if a variant is polymorphic. Works with custom variant types and their associated tags and values, enabling pattern matching and traversal over tags. Used to analyze variant definitions at runtime, such as generating documentation or implementing serialization logic.",
+      "description_length": 408,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Variant_and_record_intf.M.Field_internal",
+      "description": "Provides functions to access and modify specific fields within a record structure, including retrieval and updating operations. Works with a polymorphic record-field type that pairs a record type with a field type. Used to implement field-specific logic in domain models, such as validating or transforming individual attributes during data processing.",
+      "description_length": 352,
+      "index": 72,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Variant_and_record_intf.M.Field",
+      "description": "Provides field metadata including name, index, and type information, along with accessors and traversal capabilities. Works with record types and their individual fields, capturing both structural and type-specific details. Enables direct field access, type-based lookups, and traversal in a typed manner.",
+      "description_length": 305,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Variant_and_record_intf.M.Record_internal",
+      "description": "Provides functions to manipulate and access fields of a record type, including field extraction and modification. Works with custom record types defined using a specific syntax, allowing structured data handling. Used to implement field accessors and mutators in a type-safe manner for domain-specific data models.",
+      "description_length": 314,
+      "index": 74,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Variant_and_record_intf.M.Record",
+      "description": "Provides operations to inspect and manipulate record types, including retrieving field counts, accessing specific fields by index, and checking low-level array representation. Works with custom record types and their associated field structures, enabling creation of records from field data and folding over fields. Used to generate optimized float records and handle internal record representations during serialization or reflection.",
+      "description_length": 435,
+      "index": 75,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Variant_and_record_intf",
+      "description": "Combines variant and record manipulation, offering tools to create, inspect, and transform tagged data structures and typed records. It supports operations like constructor introspection, field access, and type analysis, enabling dynamic handling of polymorphic variants and structured records. Users can serialize variant data, validate record fields, and perform runtime type operations such as folding over tags or fields. Examples include logging tagged events, enforcing domain constraints, and generating serialization logic based on type metadata.",
+      "description_length": 554,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Helper",
+      "description": "Encapsulates tools for working with variant and record types, offering construction, inspection, and manipulation capabilities. Supports tagging, untagging, field access, and metadata retrieval, enabling dynamic type handling and data transformation. Allows for runtime introspection of constructors, fields, and type definitions, facilitating serialization, validation, and meta-programming tasks. Examples include decoding protocol buffer data, generating type-safe dispatch logic, and modifying configuration records at runtime.",
+      "description_length": 531,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Make_named_for_closure",
+      "description": "Provides functions to transform input values into output values using closure-based mappings. Operates on polymorphic types 'a input, 'a output, and functions from 'a input to 'a output. Used to encapsulate and apply custom conversion logic in type-safe, closure-driven workflows.",
+      "description_length": 280,
+      "index": 78,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Ident",
+      "description": "Provides functions to generate, compare, and hash unique identifiers. Works with the `t` type, representing opaque identifiers used in symbolic computation. Used to track variables and expressions in abstract syntax trees during code analysis.",
+      "description_length": 243,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Make",
+      "description": "Provides functions to generate type representations and type names from values of type `t`, and a computation function that transforms values of type `t`. Operates on a single type `t` with no additional data structures. Used to derive metadata for serialization or reflection purposes.",
+      "description_length": 286,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic_intf.M",
+      "description": "Provides functions to generate type representations and type names from values of type `t`, and to compute an `X.t` value based on the structure of `t`. Operates on the abstract type `t` and related type metadata. Used to derive runtime type information and perform transformations specific to the internal structure of `t`.",
+      "description_length": 324,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Std_internal.Typerep",
+      "description": "combines runtime type inspection and manipulation capabilities across tuples, records, and variants, enabling dynamic access, conversion, and analysis of structured data. It supports operations like retrieving field values, inspecting variant constructors, and determining tuple sizes, using types such as `'a named`, `t`, and tagged variants. Users can extract and modify record fields, assert type equality, and perform pattern matching on variants at runtime. This allows for tasks like serializing complex data structures, validating domain models, and implementing reflective behaviors in meta-programming contexts.",
+      "description_length": 620,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_abstract.Make0",
+      "description": "Provides a string identifier and a custom type for representing build configurations. Operates on opaque values that encapsulate build parameters and constraints. Used to generate unique build targets and track dependencies in a static analysis context.",
+      "description_length": 253,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_abstract.Make1",
+      "description": "Provides functions to construct and manipulate values of type 'a t, including creating instances with a given string identifier and transforming contained values. Operates on polymorphic types wrapped in a context that associates them with a name. Used to generate unique labeled entities in domain-specific abstractions.",
+      "description_length": 321,
+      "index": 84,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_abstract.Make2",
+      "description": "Provides functions to construct and manipulate pairs of values with distinct types, including a named accessor for the first element of the pair. Works with the polymorphic tuple type ('a, 'b) t to associate values of different types. Used to encapsulate configuration settings where one value serves as an identifier and the other as a corresponding parameter.",
+      "description_length": 361,
+      "index": 85,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_abstract.Make3",
+      "description": "Provides functions to construct and manipulate tuples of three elements, including accessors and transformations. Works with the polymorphic tuple type ('a, 'b, 'c) t. Used to encapsulate and process triplets in data pipelines or configuration settings.",
+      "description_length": 253,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_abstract.Make4",
+      "description": "Provides functions to construct and manipulate tuples with four distinct type parameters, including pairing, projection, and transformation operations. Works with heterogeneous four-tuple structures, enabling structured data handling in complex type scenarios. Used to manage configuration states in compiler pipelines, where each component requires distinct type tracking.",
+      "description_length": 373,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_abstract.Make5",
+      "description": "Provides functions to construct, deconstruct, and manipulate tuples with exactly five elements, supporting heterogeneous types. Operates on the polymorphic tuple type ('a, 'b, 'c, 'd, 'e) t, enabling structured data handling. Used to bundle related values in a fixed-size, typed format for tasks like configuration storage or function return values.",
+      "description_length": 349,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Make_typename.Make0",
+      "description": "Provides functions to generate and manipulate build configuration data, including parsing and serializing project metadata. Operates on string identifiers and structured data representing build targets. Used to create consistent build environments from declarative project definitions.",
+      "description_length": 285,
+      "index": 89,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Make_typename.Make1",
+      "description": "Provides a constructor for creating named values with a specific type 'a t, and a function to retrieve the name associated with an instance. Works with labeled data structures that combine a string identifier and a generic payload. Used to encapsulate configuration parameters with explicit names for runtime inspection.",
+      "description_length": 320,
+      "index": 90,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Make_typename.Make2",
+      "description": "Provides operations to construct and manipulate pairs of values with distinct types, including functions to access and transform the components of a tuple. Works with the polymorphic variant type ('a, 'b) t to represent structured data. Used to encapsulate configuration settings where each field has a specific type and name.",
+      "description_length": 326,
+      "index": 91,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Make_typename.Make3",
+      "description": "Provides functions to construct and manipulate tuples of three elements, including accessors and transformations. Works with the polymorphic tuple type ('a, 'b, 'c) t. Used to encapsulate and process triplets in data pipelines and configuration settings.",
+      "description_length": 254,
+      "index": 92,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Make_typename.Make4",
+      "description": "Provides functions to construct and manipulate tuples with four distinct type parameters, including accessors for each element. Works with the polymorphic tuple type ('a, 'b, 'c, 'd) t to encapsulate heterogeneous data. Used to bundle configuration parameters, process structured data from external sources, and manage state transitions in finite automata.",
+      "description_length": 356,
+      "index": 93,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Make_typename.Make5",
+      "description": "Provides functions to construct, deconstruct, and manipulate tuples of exactly five elements, including accessors for each position and a mapping function that applies a transformation to all elements. Works with the polymorphic tuple type ('a, 'b, 'c, 'd, 'e) t. Used to handle fixed-size data groups in scenarios like coordinate systems or record-like structures with strict element ordering.",
+      "description_length": 394,
+      "index": 94,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Type_equal.Lift",
+      "description": "Provides functions to lift values into a context, apply functions within a context, and flatten nested contexts. Works with the 'a t type, which represents a value wrapped in a computational context. Used to handle optional values, asynchronous computations, or error-prone operations in a composable way.",
+      "description_length": 305,
+      "index": 95,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Typename.Key",
+      "description": "Compares, checks equality, and generates hash values for runtime representations of fully applied types. Operates on the abstract type `t` that encapsulates type information. Used to ensure consistent handling of type identities in reflection or serialization contexts.",
+      "description_length": 269,
+      "index": 96,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Typename.Uid",
+      "description": "Compares, checks equality, and computes hash values for unique identifiers. Operates on the `t` type, representing opaque runtime values. Retrieves string names associated with each identifier.",
+      "description_length": 193,
+      "index": 97,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Typename.Make0",
+      "description": "Provides a string identifier and a custom type for representing build configurations. Operates on opaque data structures to encapsulate project settings. Used to generate unique build targets and track dependencies in a static analysis context.",
+      "description_length": 244,
+      "index": 98,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Typename.Make1",
+      "description": "Provides a constructor for creating values of type 'a t and a function to retrieve a string identifier. Operates on polymorphic types wrapped in a t container. Used to generate unique identifiers for configuration objects in a build system.",
+      "description_length": 240,
+      "index": 99,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Typename.Make2",
+      "description": "Provides operations to construct and manipulate pairs of values with distinct types, including functions to access and transform elements. Works with the polymorphic tuple type ('a, 'b) t to handle heterogeneous data combinations. Used to build structured data for configuration settings and parameterized workflows.",
+      "description_length": 316,
+      "index": 100,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Typename.Make3",
+      "description": "Provides functions to construct and manipulate tuples with three distinct type parameters, supporting operations like projection and combination. Works with heterogeneous triplets where each element can have a different type. Used to encode and process structured data in scenarios requiring type-safe tuple handling.",
+      "description_length": 317,
+      "index": 101,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Typename.Make4",
+      "description": "Provides functions to construct and manipulate tuples with four distinct type parameters, including pairing, projection, and transformation operations. Works with heterogeneous four-tuple structures, enabling structured data handling in complex type scenarios. Used to manage configuration states in compiler pipelines, where each component requires distinct type tracking.",
+      "description_length": 373,
+      "index": 102,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Typename.Make5",
+      "description": "Provides functions to construct, deconstruct, and manipulate tuples with exactly five elements. Works with the polymorphic tuple type ('a, 'b, 'c, 'd, 'e) t. Used to encapsulate and process heterogeneous data sets in a fixed structure, such as combining distinct data points from multiple sources.",
+      "description_length": 297,
+      "index": 103,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Typename.Table",
+      "description": "Provides operations to create, update, and query a hash table with key-value pairs, including insertion, lookup, and removal. Works with the polymorphic hash table type 'a t, where keys and values can be of any type. Used to efficiently manage dynamic mappings in applications like symbol tables or configuration storage.",
+      "description_length": 321,
+      "index": 104,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Typename.Same_witness_exn_1",
+      "description": "Provides a function to extract a type name from a typed value, working with parameterized types 'a t. Accepts a polymorphic type and returns its associated type name. Used to enforce type consistency in runtime checks where type information is required.",
+      "description_length": 253,
+      "index": 105,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Typename.Same_witness_exn_2",
+      "description": "Generates a type name for a pair of types based on their individual type names. Operates on type representations and returns a combined type identifier. Used to enforce type equality constraints in generic code.",
+      "description_length": 211,
+      "index": 106,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Typename.Same_witness_exn_3",
+      "description": "Generates a type name for a triple of types, ensuring type equality across all three components. Operates on type constructors and polymorphic variants to enforce structural consistency. Used to create unique type representations in meta-programming contexts where type equality must be explicitly verified.",
+      "description_length": 307,
+      "index": 107,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Typename.Same_witness_exn_4",
+      "description": "Generates a type name for a four-parameter type constructor using four input type names. Operates on type names and polymorphic type constructors. Used to create unique type identifiers in meta-programming contexts.",
+      "description_length": 215,
+      "index": 108,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Typename.Same_witness_exn_5",
+      "description": "Generates a combined type name from five distinct type names, useful for debugging or logging type information in complex generic structures. Operates on type representations and tuples of type names, producing a unified identifier. Enables precise tracking of type parameters in scenarios involving multiple generic parameters.",
+      "description_length": 328,
+      "index": 109,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Variant_and_record_intf.M",
+      "description": "Provides functions to create, transform, and query values of type 'a t, including mapping over elements and folding with accumulation. Operates on structured data that supports sequential processing and element-wise modification. Used to process lists of events, applying filters and aggregating results into summary values.",
+      "description_length": 324,
+      "index": 110,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Tag_internal",
+      "description": "Handles construction and manipulation of tagged data structures with variant types and associated arguments. Operates on polymorphic tuples representing variants and their parameters, enabling precise pattern matching and transformation. Used to generate and inspect tagged values in parser and compiler internals.",
+      "description_length": 314,
+      "index": 111,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Tag",
+      "description": "Provides functions to inspect and manipulate variant constructors, including retrieving their names, arity, field labels, index, and runtime representation. Works with variant types and their associated argument types, such as tuples, records, and polymorphic variants. Enables dynamic construction of variant values and introspection of their structure for serialization or reflection tasks.",
+      "description_length": 392,
+      "index": 112,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Variant_internal",
+      "description": "Provides functions to manipulate and inspect variant types, including tagging, untagging, and value extraction. Works with custom type representations such as tags, values, and polymorphic variants. Used to implement runtime type checks and dynamic dispatch in meta-programming scenarios.",
+      "description_length": 288,
+      "index": 113,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Variant",
+      "description": "Returns the typename associated with a variant type, retrieves the number of tags, and allows access to individual tags by index. It distinguishes between polymorphic and standard variants, supports pattern matching on variant values, and enables folding over tags. Used to inspect and process variant type definitions at runtime, such as generating serialization logic or validating input against type constraints.",
+      "description_length": 415,
+      "index": 114,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Field_internal",
+      "description": "Provides functions to access and modify specific fields within a record structure, including retrieval, updating, and validation. Operates on typed records and fields, ensuring type safety during field operations. Used to implement field-level logic in domain models, such as enforcing constraints or transforming field values during data processing.",
+      "description_length": 350,
+      "index": 115,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Field",
+      "description": "Provides field metadata including name, index, and type information for record fields. Supports field access, mutation checks, and type-based computations. Used to dynamically inspect and manipulate fields in a typed record structure.",
+      "description_length": 234,
+      "index": 116,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Record_internal",
+      "description": "Provides operations to manipulate and access fields of a record type, including field extraction and modification. Works with custom record structures defined using the type !'record fields and generic record types !'a t. Used to implement field-specific logic in domain models requiring direct access to internal record components.",
+      "description_length": 332,
+      "index": 117,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Record",
+      "description": "Provides operations to inspect and manipulate record type definitions, including retrieving field counts, accessing specific fields by index, and checking if a record uses an optimized float array representation. Works with custom record types and their associated field structures, enabling creation of records from field data and folding over fields. Used to generate optimized data structures and perform low-level type inspections in compiler or serialization contexts.",
+      "description_length": 473,
+      "index": 118,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Named",
+      "description": "Tracks state changes and dependencies through a custom `t` type, enabling registration and retrieval of values for reactive application management. It supports mutable state updates and event-driven interactions, making it suitable for real-time UI updates. Operations include setting values, subscribing to changes, and querying current state. Example uses include tracking form inputs or synchronizing data across components.",
+      "description_length": 427,
+      "index": 119,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Context",
+      "description": "Creates a new context object with default settings. Operates on a custom type `t` that encapsulates execution environment state. Used to manage and pass configuration parameters between components in a modular application.",
+      "description_length": 222,
+      "index": 120,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic.Computation",
+      "description": "combines tag-based data manipulation, variant and record introspection, and state tracking to enable dynamic type handling and data transformation. it supports operations like tagging, untagging, field access, and state registration, working with polymorphic variants, records, and custom types. users can inspect runtime type structures, modify field values, and track dependencies in real time. examples include logging tagged events, validating input against type definitions, and managing dynamic application state.",
+      "description_length": 519,
+      "index": 121,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Variant_and_record_intf.Tag_internal",
+      "description": "Handles the creation and manipulation of tagged data structures, supporting variant types with associated arguments through specialized constructors and accessors. Operates on polymorphic variants and tuples representing tagged values and their parameters. Used to build and inspect tagged records in parsing and serialization workflows.",
+      "description_length": 337,
+      "index": 122,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Variant_and_record_intf.Tag",
+      "description": "Provides functions to inspect and manipulate variant constructors, including retrieving their names, arity, field labels, and indices. Works with variant types and their associated argument types, such as tuples, records, and polymorphic variants. Enables dynamic construction of variant values and introspection of their runtime representations.",
+      "description_length": 346,
+      "index": 123,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Variant_and_record_intf.Variant_internal",
+      "description": "Provides functions to manipulate and inspect variant types, including tagging, untagging, and value extraction. Works with custom type representations involving tags, values, and polymorphic variants. Used to implement runtime type checks and dynamic dispatch in meta-programming scenarios.",
+      "description_length": 290,
+      "index": 124,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Variant_and_record_intf.Variant",
+      "description": "Returns the type name associated with a variant, retrieves the number of tags, and accesses individual tags by index. It distinguishes between polymorphic and standard variants, supports pattern matching on variant values, and enables folding over tags. Used to inspect and process variant type definitions at runtime, such as generating serialization logic or validating input against a known type structure.",
+      "description_length": 409,
+      "index": 125,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Variant_and_record_intf.Field_internal",
+      "description": "Provides functions to access and modify specific fields within a record type, including retrieval and updating operations. Works with a tuple type representing a record and its associated field. Used to implement field-specific logic in generated code for type-safe data manipulation.",
+      "description_length": 284,
+      "index": 126,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Variant_and_record_intf.Field",
+      "description": "Provides field metadata including name, index, and type information for record fields. Supports field access, mutation checks, and type-based computations. Used to dynamically inspect and manipulate fields in a typed record structure.",
+      "description_length": 234,
+      "index": 127,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Variant_and_record_intf.Record_internal",
+      "description": "Provides functions to manipulate and access fields of a record type, including field retrieval and modification. Works with custom record structures defined using specific type aliases for fields and records. Used to dynamically access and update fields in a typed record during runtime operations.",
+      "description_length": 298,
+      "index": 128,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Variant_and_record_intf.Record",
+      "description": "Provides operations to inspect and manipulate record type definitions, including retrieving field counts, accessing specific fields by index, and checking if a record uses an optimized float array representation. Works with custom record types and their associated field structures, enabling creation of records from field data and folding over fields. Used to generate optimized data structures or analyze record layouts at runtime.",
+      "description_length": 433,
+      "index": 129,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Make_typename",
+      "description": "Combines functions for building and managing structured data through typed tuples of varying lengths, from two to five elements, each with distinct type parameters. Supports operations to create, access, and transform tuple components, enabling precise handling of heterogeneous data. Allows encapsulation of configuration parameters with named fields, facilitating inspection and manipulation in build systems and data processing pipelines. Examples include constructing project metadata, managing state transitions, and bundling typed settings for consistent configuration.",
+      "description_length": 575,
+      "index": 130,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Named_intf",
+      "description": "Provides a single accessor function to retrieve a string name from a value of type t. Works with any data structure that includes a named identifier. Used to extract and reference entity names in domain-specific models.",
+      "description_length": 219,
+      "index": 131,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Std_internal",
+      "description": "provides runtime type inspection and manipulation for tuples, records, and variants, allowing dynamic access and transformation of structured data. It defines types such as `'a named`, `t`, and tagged variants, and supports operations like field extraction, variant constructor inspection, and type equality checks. Users can serialize complex data, validate models, and implement reflective behaviors by analyzing and modifying values at runtime. For example, it enables extracting a specific record field without prior knowledge of its structure or asserting that two values share the same type.",
+      "description_length": 597,
+      "index": 132,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_abstract",
+      "description": "Provides a set of polymorphic tuple types and associated operations for encapsulating and manipulating structured data with named or typed components. Each module offers functions to create, access, and transform tuples of varying lengths, supporting heterogeneous type combinations for use in configuration management, data pipelines, and domain-specific abstractions. Examples include generating unique build targets, labeling entities with identifiers, and managing multi-component configuration states. Operations include constructing tuples, extracting elements by position or name, and transforming contained values while preserving type information.",
+      "description_length": 656,
+      "index": 133,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Type_equal",
+      "description": "Encapsulates values within a computational context using the 'a t type, enabling safe manipulation of optional, asynchronous, or error-prone operations. Offers lift, bind, and flatten operations to compose computations seamlessly. For example, it can chain multiple optional lookups or handle error propagation in a clean manner. It supports lifting functions to operate on wrapped values and combining nested contexts into a single layer.",
+      "description_length": 439,
+      "index": 134,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic",
+      "description": "Provides operations to generate type representations and type names from values of a specific type, and a function to compute a new value of the same type. Works with a single type `t` and associated metadata types `Typerep.t` and `Typename.t`. Used to inspect and manipulate type information during runtime, such as in serialization or reflection-like scenarios.",
+      "description_length": 363,
+      "index": 135,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Type_generic_intf",
+      "description": "Provides operations to generate a type representation and type name from a value, and to compute a transformed version of the value. Works with the abstract type `t` to enable introspection and transformation. Used to derive type metadata for serialization and reflection purposes.",
+      "description_length": 281,
+      "index": 136,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Typename",
+      "description": "Returns the type name associated with a value of type `t`. Operates on values of a specific type `t` to retrieve their corresponding string representation. Used to dynamically obtain type names for logging or serialization purposes.",
+      "description_length": 232,
+      "index": 137,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Typerep_obj",
+      "description": "Provides operations for working with OCaml's internal representation of types, including generating hash values for variant constructors, extracting numeric representations of polymorphic variants, and checking for double array tags. Works with OCaml's internal type representations, polymorphic variants, and arbitrary values. Used in code generation and reflection tasks where low-level type information is required.",
+      "description_length": 418,
+      "index": 138,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib.Typerepable",
+      "description": "Provides functions to derive type representations and type names from values of a given type. Works with the `t` type and associated type representation and name structures. Used to generate runtime type metadata for serialization and reflection purposes.",
+      "description_length": 255,
+      "index": 139,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Typerep_lib.Variant_and_record_intf",
+      "description": "Combines operations for working with variant and record types, enabling creation, inspection, and manipulation of tagged data and structured records. Provides access to type metadata, field information, and variant constructors, supporting dynamic type checks, pattern matching, and field-level modifications. Functions include retrieving tag names, extracting values, inspecting field indices, and building records from tuples. Used to implement parsing, serialization, and meta-programming tasks requiring runtime type awareness.",
+      "description_length": 531,
+      "index": 140,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "typerep",
+      "description": "Provides functions to generate and manipulate type representations for runtime type inspection, including hashing, equality checks, and serialization. Works with OCaml's type representation structures, such as type descriptors and polymorphic variants. Enables precise control over how types are handled in meta-programming scenarios like protocol buffers or custom serialization formats.",
+      "description_length": 388,
+      "index": 141,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Typerep_lib",
+      "description": "Combines typed tuple operations, type inspection, and named value access to manage structured data with precise type control. Offers polymorphic tuple creation, field and variant inspection, and runtime type metadata retrieval through types like `'a named`, `t`, and `Typerep.t`. Enables tasks such as extracting record fields without prior knowledge of their structure, generating unique build targets, and serializing complex data. Supports dynamic type checks, configuration bundling, and error-safe computation chaining.",
+      "description_length": 524,
+      "index": 142,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 153,
+    "meaningful_modules": 143,
+    "filtered_empty_modules": 10,
+    "retention_rate": 0.934640522875817
+  },
+  "statistics": {
+    "max_description_length": 656,
+    "min_description_length": 193,
+    "avg_description_length": 347.13286713286715,
+    "embedding_file_size_mb": 0.5196857452392578
+  }
+}

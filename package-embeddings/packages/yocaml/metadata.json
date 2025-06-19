@@ -1,0 +1,392 @@
+{
+  "package": "yocaml",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 53,
+  "creation_timestamp": "2025-06-18T16:43:52.601735",
+  "modules": [
+    {
+      "module_path": "Yocaml.Make.Data_reader.Eff",
+      "description": "Reads a file and extracts either its raw data along with a string representation of metadata or just the raw data, depending on the specified mode. Operates on data types conforming to the DATA_READABLE module interface and file paths. Used to process files in contexts where metadata extraction is needed without relying on a DATA_PROVIDER.",
+      "description_length": 341,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Yocaml.Make.Data_reader.Pipeline",
+      "description": "Reads a file and extracts its metadata using a specified extraction strategy, or returns the file content as metadata-only. Operates on data types conforming to the DATA_READABLE interface and file paths. Used to process structured files where metadata parsing is required alongside content retrieval.",
+      "description_length": 301,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Archetype.Datetime.Infix",
+      "description": "Compares date values using standard infix operators for equality, inequality, and ordering. Operates on a date type representing calendar dates. Enables direct comparison of date instances in conditional logic and sorting routines.",
+      "description_length": 231,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Data.Validation.Infix",
+      "description": "Provides sequential composition of validators using `&`, parallel validation with failure fallback using `/`, and transformation of validated results with `$`. Operates on functions that take a value and return a validated result. Used to build readable validation pipelines, such as parsing and checking numeric constraints in a single expression.",
+      "description_length": 348,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Yocaml.Data.Validation.Syntax",
+      "description": "Provides binding operators to sequentially validate and combine fields from an associative structure, using `let+` for parallel validation and `and+` to merge validated results. Works with `Result.t` types and validated records to construct complex data structures from individual field validations. Used to build structured data like forms or configurations by linking required and optional fields with specific validators.",
+      "description_length": 424,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Yocaml.Make.Runtime",
+      "description": "Provides operations for handling runtime errors, logging messages at various levels, and performing file and directory manipulations such as reading, writing, checking existence, and retrieving metadata. Works with custom types like `runtime_error`, `Path.t`, and monadic structures `'a t` to encapsulate asynchronous or effectful computations. Enables tasks like logging diagnostics, managing file systems, executing external commands, and generating hashes within a structured computation context.",
+      "description_length": 499,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Make.Data_reader",
+      "description": "Reads and converts a string into a structured data representation, then transforms it into a standardized data format for validation. Operates on raw string inputs and produces intermediate values that map to a specific data model. Used to prepare configuration data for schema-based validation checks.",
+      "description_length": 302,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Yocaml.Archetype.Datetime",
+      "description": "Provides date and time comparisons using standard operators, enabling conditional logic and sorting. Operates on a calendar date type with support for equality, inequality, and ordering. Users can compare date instances to filter entries, sort events, or validate time ranges. Examples include checking if a blog post is newer than a reference date or arranging entries by creation time.",
+      "description_length": 387,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Archetype.Page",
+      "description": "Provides functions to extract and manipulate metadata such as title, charset, description, and tags from a structured page representation. Supports adding a table of contents and normalizing page data into a format compatible with Yocaml's data system. Used to validate and transform raw data into a fully configured page object for HTML generation.",
+      "description_length": 349,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Archetype.Article",
+      "description": "Provides functions to extract and manipulate blog post metadata, including title, synopsis, date, and table of contents. Works with a custom type `t` and interacts with `Page.t`, `Datetime.t`, and `Data.t` structures. Validates and normalizes raw data into structured blog post representations.",
+      "description_length": 294,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Archetype.Articles",
+      "description": "Injects a list of article identifiers and metadata into a page structure, enabling the creation of indexed or archived pages. Operates on tuples of `Path.t` and `Article.t` to organize and process article data. Supports sorting, filtering, and transforming directory structures into structured article listings for use in static site generation.",
+      "description_length": 345,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Reader.Over",
+      "description": "Provides operations for sequencing computations with context, including lifting values into a monadic structure and chaining functions that produce monadic results. Works with a parameterized monad type and an environment type to manage stateful or effectful computations. Used to handle asynchronous workflows and error propagation in a structured way.",
+      "description_length": 353,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Yocaml.Eff.List",
+      "description": "Transforms lists by applying effectful operations, sequencing actions, and accumulating results. Works with lists and monadic values, supporting operations like mapping with side effects, filtering with effectful conditions, and left-associative folding. Enables processing of list elements in a context-aware manner, such as validating inputs or accumulating state during traversal.",
+      "description_length": 383,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Yocaml.Eff.Infix",
+      "description": "Provides monadic and applicative operations for transforming and combining values within a context, including mapping, applying, binding, and composing functions. Works with functor and monad-like structures such as lists, options, and custom wrapped types. Enables chaining of effectful computations, like parsing with error handling or sequential data processing.",
+      "description_length": 365,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Eff.Syntax",
+      "description": "Provides monadic binding and sequencing operations for effectful computations, including lifting functions over effects and combining multiple effects into tuples. Works with type `t` that supports functor and monad interfaces, enabling structured handling of computations with side effects. Used to chain dependent operations, such as parsing expressions with sequential bindings or handling I/O in a structured way.",
+      "description_length": 417,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Action.Static",
+      "description": "Writes files based on task computations, separating content generation from metadata handling. Operates on path representations and task structures that yield either unit or tuples of metadata and strings. Used to generate static assets where metadata is processed separately from file content.",
+      "description_length": 294,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Action.Dynamic",
+      "description": "Writes tasks that generate files based on dynamic dependencies, handling both raw outputs and metadata. Operates on paths, tasks returning unit with string or tuple outputs, and dependency sets. Used to manage build artifacts that depend on runtime data or external inputs.",
+      "description_length": 273,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Runtime.Make",
+      "description": "Converts runtime errors to strings, handles asynchronous operations with monadic bind and return, and logs messages at various levels. Performs file and directory operations such as checking existence, reading, writing, and modifying timestamps. Executes external commands and manages file system interactions with path-based abstractions.",
+      "description_length": 339,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Path.Infix",
+      "description": "Appends a list of fragments to a path using left-associative composition, allowing chained operations. Constructs a relative path from a list of fragments, enabling concise path creation. Supports building and combining path components with operator overloading for readability.",
+      "description_length": 278,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Path.Map",
+      "description": "The module provides operations for managing ordered key-value maps, including adding, removing, updating, and querying bindings, as well as merging and transforming maps. It works with maps structured around specific key types and generic values, supporting ordered traversal and sequence-based construction. Use cases include processing sorted datasets, efficiently merging multiple maps, and building maps from external data sources like lists or streams.",
+      "description_length": 457,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Sexp.Canonical",
+      "description": "Converts between canonical S-expression representations and byte sequences, supporting deserialization from strings or character sequences and serialization into buffers or strings. Operates on abstract `t` type representing compressed data sources. Used to generate compact serialized forms for network transmission or file storage.",
+      "description_length": 333,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Sexp.Provider",
+      "description": "Converts an S-expression string into a validated provider structure, handling potential parsing errors. Transforms provider data into Yocaml.Data.t format for interoperability with other systems. Used to process configuration nodes from external sources into a standardized internal representation.",
+      "description_length": 298,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Yocaml.Markup.Toc",
+      "description": "Generates hierarchical HTML from a structured list of elements, using integer indices to represent nesting levels. Processes a list of (int * 'a) pairs to construct a navigable tree and converts it into a labeled list with position tracking. Accepts a mapping function to render labels as strings and outputs HTML content with optional ordered lists.",
+      "description_length": 350,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Yocaml.Task.Infix",
+      "description": "Provides composition and sequencing operations for functions and effectful computations, along with parallel and choice-based combinations. Works with function types, effectful computations, and Either types to manage branching and parallel execution. Enables chaining of transformations, merging of dependencies, and handling of optional or alternative outcomes in a structured way.",
+      "description_length": 383,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Task.Syntax",
+      "description": "Provides bind and sequence operations for composable computations, enabling structured handling of dependent values. Works with a custom monadic type 'a ct, supporting sequential and parallel value extraction. Used to simplify nested function applications and combine multiple computation steps in a readable format.",
+      "description_length": 316,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Task.Static",
+      "description": "Provides functions to manipulate tasks by isolating or modifying their content or metadata. Operates on tuples representing tasks, where each task consists of metadata and content. Used to transform tasks by focusing on content alone, stripping metadata, or adding an empty string as a body.",
+      "description_length": 291,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Task.Dynamic",
+      "description": "Provides functions to manipulate tasks with separate content, metadata, and dependencies. It allows modifying only the content, only the metadata, or only the dependencies of a task, and includes utilities to strip metadata or attach an empty body. Used to transform task structures while preserving or altering specific components.",
+      "description_length": 332,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Data.Validation",
+      "description": "Combines sequential, parallel, and transformation operators to build flexible validation pipelines that process values described by Yocaml.Data.t. Supports `&`, `/`, `$` for composing validators and `let+`, `and+` for binding and merging validated fields in associative structures. Enables parsing and constraint checking in a single expression or constructing complex data from individual field validations. Transforms raw data into structured results, such as form submissions or configuration objects, with clear and composable logic.",
+      "description_length": 537,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Yocaml.Required.Eff",
+      "description": "Reads a file and extracts its metadata or content using a provided data-readable module, supporting both source and target paths. Operates on path strings and returns results wrapped in an effect type, separating metadata from raw data when needed. Used to process structured file formats by directly accessing their parsed content or metadata without external data providers.",
+      "description_length": 376,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Required.Pipeline",
+      "description": "Reads a file and extracts both its content and associated metadata using a specified data-readable module. Processes paths and returns results as asynchronous arrays, separating metadata from parsed data. Designed for scenarios where file content and metadata need to be handled independently but in a structured pipeline.",
+      "description_length": 322,
+      "index": 29,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Yocaml.Required.Runtime",
+      "description": "Converts runtime errors to strings, manages asynchronous operations through a monadic interface, and performs file system operations like reading, writing, and checking file existence. Works with custom types such as `runtime_error`, `Path.t`, and monadic values `'a t`. Executes shell commands, logs messages at different levels, and handles file metadata like modification times and directory contents.",
+      "description_length": 404,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Yocaml.Required",
+      "description": "handles error conversion, asynchronous workflows, and file system interactions through a monadic interface, using types like `runtime_error`, `Path.t`, and `'a t` to manage computations. it supports reading and writing files, checking existence, retrieving metadata, and executing shell commands. logging is integrated with level-based message handling. examples include parsing file contents, tracking modification times, and chaining asynchronous operations.",
+      "description_length": 460,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Nel",
+      "description": "The module provides operations for constructing, transforming, and manipulating non-empty lists, including functions like `singleton`, `cons`, `map`, and `append`, ensuring at least one element is always present. It supports index-aware mappings, concatenation, and folding, with type safety guarantees to prevent empty structures, making it suitable for scenarios like error tracking where at least one item must exist. These operations enable robust handling of sequences requiring mandatory elements, such as validation results or minimal data collections.",
+      "description_length": 559,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Path",
+      "description": "Encapsulates path construction and manipulation with left-associative composition, enabling the creation of relative paths from fragments. Supports ordered key-value operations, including map modifications, merges, and traversals, using structured keys and generic values. Path fragments can be combined with map entries to represent complex file system structures. Examples include building nested directory paths and merging configuration maps into a single structured path.",
+      "description_length": 476,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Yocaml.Cache",
+      "description": "Provides functions to create, update, and retrieve cache entries tied to file paths, including tracking hashed content, dependencies, and build timestamps. Operates on `Path.t` keys and `entry` values containing hashes, dependencies, and optional build dates. Used to restore build state between sessions, validate target freshness, and manage dependency tracking.",
+      "description_length": 364,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Yocaml.Deps",
+      "description": "Provides operations to combine, create, and inspect sets of file dependencies, including merging multiple sets, checking emptiness, and retrieving modification times. Works with a custom type `t` representing dependency sets and `Path.t` for file paths. Used to manage build dependencies, serialize/deserialize dependency data, and compare sets for equality.",
+      "description_length": 358,
+      "index": 35,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Yocaml.Metadata",
+      "description": "Extracts metadata from document content using defined strategies, including regular expressions, Jekyll front-matter, or custom parsing functions. Operates on strings and validation results, returning extracted metadata along with remaining content. Validates required fields using a provider module and a readable module with a neutral fallback.",
+      "description_length": 346,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Archetype",
+      "description": "Combines date comparisons, metadata extraction, and article injection to manage and structure blog content. Operates on types like `Datetime.t`, `Page.t`, `Article.t`, and `Path.t`, enabling tasks such as filtering posts by date, generating tables of contents, and building indexed pages. Supports validating, transforming, and organizing raw data into structured representations for static site generation. Examples include sorting posts by creation time, embedding metadata into page templates, and creating archives from directory listings.",
+      "description_length": 543,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Yocaml.Cmd",
+      "description": "The module provides functions for constructing and manipulating shell commands, handling arguments, flags, and parameters with customizable prefixes and suffixes, operating on data types such as strings, integers, paths, and lists. It supports pretty-printing, command serialization, and normalization into argument lists, useful for cross-platform CLI execution and dependency tracking via path-based operations.",
+      "description_length": 413,
+      "index": 38,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Yocaml.Slug",
+      "description": "Generates and validates slugs from strings using a fixed set of transformation rules, with options to customize character mappings, separators, and unknown characters. Works exclusively with strings, converting them into URL-friendly formats. Used to create consistent slugs for blog posts during initial setup or data import.",
+      "description_length": 326,
+      "index": 39,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Yocaml.Task",
+      "description": "combines task composition, sequencing, and transformation capabilities, offering operations to merge, branch, and execute tasks in parallel or sequentially. It works with function types, monadic computations, and task tuples, enabling structured handling of dependencies, content, and metadata. Users can chain transformations, isolate task components, or modify specific elements like content or metadata without affecting others. Examples include combining parallel workflows, extracting values from nested computations, and adjusting task metadata while preserving core functionality.",
+      "description_length": 587,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Pipeline",
+      "description": "Tracks files and executes shell commands within a task-based workflow, enabling file content aggregation, metadata validation, and template processing. It operates on paths, strings, and custom data types defined by provided modules. Use cases include building dependency graphs, combining file contents with separators, and injecting data into templates.",
+      "description_length": 355,
+      "index": 41,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Yocaml.Action",
+      "description": "manages file generation and task execution within a pipeline, combining content creation with metadata handling. It supports operations on paths and tasks, enabling the production of static or dynamically dependent files through unit or tuple outputs. Examples include generating HTML pages with embedded metadata or building assets that rely on runtime inputs. The module facilitates structured, dependency-aware artifact creation and caching.",
+      "description_length": 444,
+      "index": 42,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Yocaml.Eff",
+      "description": "Combines effectful list processing, context-aware value transformation, and structured computation sequencing. Supports operations like effectful map, filter, and fold on lists, monadic composition across functor types, and binding of dependent effectful actions. Enables tasks such as validating input lists, parsing with error handling, and chaining I/O operations. Works with monadic values, lists, options, and custom wrapped types to manage side effects in a structured way.",
+      "description_length": 479,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Runtime",
+      "description": "manages execution contexts by handling errors, logging, and file system operations through a monadic interface. it supports asynchronous workflows, command execution, and path-based file manipulation. operations include checking file existence, reading and writing content, and modifying metadata. examples include logging debug messages, executing shell commands, and updating file timestamps.",
+      "description_length": 394,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Make",
+      "description": "Encapsulates runtime error handling, logging, file operations, and data transformation through custom types and monadic abstractions. Processes strings into structured data for validation, supporting tasks like file manipulation, diagnostics, and configuration preparation. Operations include logging at multiple levels, reading and writing files, and converting raw input into validated formats. Examples include generating hashes, executing commands, and validating configuration data against schemas.",
+      "description_length": 503,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Sexp",
+      "description": "Encodes and decodes S-expressions between in-memory representations and byte sequences, supporting efficient serialization and deserialization. Processes S-expression strings into structured data, validating input and converting it to a standardized format for further use. Operations include parsing from strings, generating compact byte streams, and transforming data for interoperability. Examples include reading configuration files, transmitting structured data over networks, and converting external S-expressions into internal data models.",
+      "description_length": 546,
+      "index": 46,
+      "embedding_norm": 0.9999998807907104
+    },
+    {
+      "module_path": "Yocaml.Data",
+      "description": "provides a flexible framework for validating and transforming data structured as Yocaml.Data.t, combining sequential and parallel operations with expressive composition operators. It supports `&`, `/`, `$` for chaining validators and `let+`, `and+` for binding and merging validated fields, enabling structured data creation from individual validations. Examples include parsing form submissions, validating configuration files, and constructing complex objects with embedded constraints. The module allows arbitrary metadata to be converted into a generic, composable format for use across different data sources and templates.",
+      "description_length": 628,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Diagnostic",
+      "description": "Converts exceptions and runtime errors into structured, formatted error messages using custom pretty-printing logic. Works with exception types, custom error records, and string-based error messages. Used to generate human-readable diagnostics during exception handling or runtime error reporting.",
+      "description_length": 297,
+      "index": 48,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Yocaml.Reader",
+      "description": "Encapsulates context-aware computations by combining a parameterized monad with an environment, enabling structured handling of state and effects. Supports lifting values into the monadic context and chaining functions that return monadic results. Operations include binding, mapping, and composing functions within the reader environment. For example, it can manage configuration data across asynchronous calls or propagate errors through a pipeline of dependent operations.",
+      "description_length": 475,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml.Markup",
+      "description": "creates a navigable tree structure from a list of elements with nested levels, enabling structured HTML generation. it supports custom label rendering and produces HTML with optional ordered lists. given a list like [(0, \"title\"); (1, \"section\"); (2, \"paragraph\")], it outputs a nested HTML structure. operations include tree construction, label transformation, and HTML serialization.",
+      "description_length": 385,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "yocaml",
+      "description": "Provides functions for defining and executing construction rules, transforming content, and managing file dependencies. Operates on data types such as file paths, content trees, and metadata maps. Used to generate static sites by processing markdown files, templating HTML outputs, and optimizing assets.",
+      "description_length": 304,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Yocaml",
+      "description": "Yocaml provides a comprehensive framework for managing file system interactions, asynchronous workflows, and data transformation through a monadic interface. It includes types like `runtime_error`, `Path.t`, and `t` for handling computations, with operations for file I/O, dependency tracking, metadata extraction, and shell command execution. It supports building structured paths, validating and transforming data, generating slugs, and creating navigable HTML trees. Examples include parsing document metadata, managing build dependencies, and generating static site content with embedded data.",
+      "description_length": 597,
+      "index": 52,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 55,
+    "meaningful_modules": 53,
+    "filtered_empty_modules": 2,
+    "retention_rate": 0.9636363636363636
+  },
+  "statistics": {
+    "max_description_length": 628,
+    "min_description_length": 231,
+    "avg_description_length": 391.7169811320755,
+    "embedding_file_size_mb": 0.19291400909423828
+  }
+}

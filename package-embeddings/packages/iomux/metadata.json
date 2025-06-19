@@ -1,0 +1,63 @@
+{
+  "package": "iomux",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 6,
+  "creation_timestamp": "2025-06-18T16:29:40.484414",
+  "modules": [
+    {
+      "module_path": "Iomux.Util.Raw",
+      "description": "Returns the maximum number of open file descriptors allowed. Operates on system-level resource limits, specifically file handle constraints. Useful for diagnosing resource exhaustion in networked or file-intensive applications.",
+      "description_length": 227,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Iomux.Poll.Flags",
+      "description": "Provides bitwise operations for managing file descriptor event flags, including union, membership checks, and conversion between integer and flag types. Works with a custom type `t` representing combinations of poll event constants like POLLIN, POLLOUT, and POLLHUP. Used to track and query I/O readiness states in system calls such as poll(2).",
+      "description_length": 344,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Iomux.Poll",
+      "description": "Manages file descriptor event states using a custom type `t` to represent combinations of poll events. Supports bitwise operations for setting, checking, and combining flags like POLLIN and POLLOUT. Allows conversion between integer values and flag sets for use in system calls. Enables efficient tracking of I/O readiness by querying which file descriptors are ready for reading, writing, or have hung up.",
+      "description_length": 406,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Iomux.Util",
+      "description": "Provides system-level resource monitoring by exposing the maximum number of open file descriptors. It includes a function to retrieve this limit, enabling developers to manage and debug resource constraints in high-volume I/O applications. The module works with system-specific data types to access and interpret kernel-level limits. For example, it can help prevent crashes by checking available file handles before opening new connections.",
+      "description_length": 441,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "iomux",
+      "description": "Provides direct access to the `poll` and `ppoll` system calls, allowing management of file descriptor events through an opaque buffer. It exposes functions to set and retrieve file descriptors, event masks, and return events at specific indices. Used for low-level I/O multiplexing in network servers or event-driven applications requiring precise control over timeout and signal handling.",
+      "description_length": 389,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Iomux",
+      "description": "Tracks I/O readiness using a custom `t` type for poll events, supporting bitwise operations to manage flags like POLLIN and POLLOUT. Provides functions to convert between integer values and event sets, enabling efficient I/O monitoring. Exposes the system's maximum file descriptor limit, allowing developers to check resource constraints and avoid overflow. For instance, it can determine which file descriptors are ready for reading and ensure the application does not exceed the system's open file limit.",
+      "description_length": 507,
+      "index": 5,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 6,
+    "meaningful_modules": 6,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 507,
+    "min_description_length": 227,
+    "avg_description_length": 385.6666666666667,
+    "embedding_file_size_mb": 0.022202491760253906
+  }
+}

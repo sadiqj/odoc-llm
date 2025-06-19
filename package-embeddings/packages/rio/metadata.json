@@ -1,0 +1,84 @@
+{
+  "package": "rio",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 9,
+  "creation_timestamp": "2025-06-18T16:30:25.281600",
+  "modules": [
+    {
+      "module_path": "Rio.Bytes.Bytes_writer",
+      "description": "Writes binary data to a byte buffer, supporting appending bytes, strings, and integers in various formats. Operates on mutable byte arrays and tracks the current write position. Used to construct binary protocols or file formats with precise byte-level control.",
+      "description_length": 261,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rio.Iovec",
+      "description": "Provides operations to create, manipulate, and convert buffer-like structures representing memory regions. Works with arrays of `iov` records and interoperates with `Cstruct`, `bytes`, `string`, and `Buffer` types. Enables efficient handling of scatter/gather I/O operations and data serialization.",
+      "description_length": 298,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rio.Writer",
+      "description": "Writes values to a specified source using a provided writer, preserving the original value. Operates on typed writer modules and source data structures. Used to inject side effects like logging or serialization during data processing.",
+      "description_length": 234,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rio.Reader",
+      "description": "Provides operations to construct and manipulate reader structures from read sources, including creating a reader from a source and an initial value. Works with read sources encapsulated in modules and abstract reader types. Used to build lazy or deferred computation pipelines based on input sources.",
+      "description_length": 300,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rio.Cstruct",
+      "description": "Provides a way to convert a buffer into a writer object for sequential data writing. Operates on byte buffers represented as Cstruct.t, enabling efficient manipulation and output. Used to stream data into a buffer from various sources, such as network sockets or file I/O.",
+      "description_length": 272,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rio.Bytes",
+      "description": "Encapsulates binary data writing with mutable byte arrays, allowing incremental construction of binary content through append operations for bytes, strings, and integers in multiple formats. Tracks write position automatically, enabling precise control over binary output. Supports low-level serialization tasks such as packing network packets or binary file structures. Examples include building a custom binary protocol by appending fields like headers, lengths, and payloads in sequence.",
+      "description_length": 490,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rio.Buffer",
+      "description": "Creates and manipulates a buffer with methods to initialize with a specific capacity, check its current length, retrieve its contents as a string or bytes, and prepare it for writing. Operates on the buffer type, which stores mutable sequences of characters. Used to efficiently build and manage string data during I/O operations or data processing.",
+      "description_length": 349,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "rio",
+      "description": "Provides message-passing primitives and process management for concurrent execution, enabling lightweight, isolated tasks to exchange data safely. Operates with process identifiers, messages, and channels to coordinate behavior across multiple cores. Used to build fault-tolerant, parallel applications such as distributed systems or real-time event handlers.",
+      "description_length": 359,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rio",
+      "description": "Reads bytes or vectorized data from a connection, returning the number of bytes read or an error. Operates on a connection handle of type `t` and supports timeout settings. Used for efficient network or file I/O operations where raw data access is required.",
+      "description_length": 257,
+      "index": 8,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 9,
+    "meaningful_modules": 9,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 490,
+    "min_description_length": 234,
+    "avg_description_length": 313.3333333333333,
+    "embedding_file_size_mb": 0.03314018249511719
+  }
+}

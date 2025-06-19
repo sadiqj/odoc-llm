@@ -1,0 +1,385 @@
+{
+  "package": "sihl-type",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 52,
+  "creation_timestamp": "2025-06-18T16:44:17.657924",
+  "modules": [
+    {
+      "module_path": "Sihl_type.Token_data.Fields.Direct",
+      "description": "Processes a collection of fields with user permissions, applying custom operations to each element. Operates on a structured data type representing fields with read and set permissions. Used to transform, validate, or aggregate field values based on user access in a controlled manner.",
+      "description_length": 285,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.User.Fields.Direct",
+      "description": "Provides operations to iterate over, fold, check conditions, and transform user data fields, including identifiers, emails, usernames, passwords, status, admin status, confirmation, and creation timestamps. Works with a structured user type containing optional and immutable fields, along with time-based data. Used to validate user records, generate lists of field values, and apply transformations to mutable attributes.",
+      "description_length": 422,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl_type.Queue_job_instance.Fields.Direct",
+      "description": "Provides operations to iterate over, fold, check conditions, and transform fields of a structured data type representing tasks or records. Works with fields of types string, string option, int, Ptime.t, and Status.t. Used to validate task configurations, generate lists of task attributes, and update mutable fields in bulk.",
+      "description_length": 324,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl_type.Email_template.Fields.Direct",
+      "description": "Provides operations to iterate over, fold across, and check conditions on a structured data type containing fields like ID, name, content text, content HTML, and creation time. Supports mapping values of specific fields and updating all mutable fields in bulk. Designed for processing and transforming records with strict permission-based access to their components.",
+      "description_length": 366,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl_type.Queue_workable_job.Fields.Direct",
+      "description": "Provides operations to iterate over, fold, check conditions, and transform fields with read and set permissions, handling asynchronous input and error recovery. Works with field configurations that include permissions, input handling, and retry policies. Used to process configuration fields with customizable retry logic and error handling during batch updates.",
+      "description_length": 362,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Token.Fields.Direct",
+      "description": "Provides operations to iterate over, fold, check conditions, and transform fields of a structured data type representing records with identifiers, values, status, timestamps, and optional data. Works with fields of types string, string option, Status.t, and Ptime.t. Used to validate, process, or modify record attributes in a controlled manner.",
+      "description_length": 345,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl_type.Storage_file.Fields.Direct",
+      "description": "Processes and transforms data structures containing file metadata, such as identifiers, filenames, sizes, and MIME types. Applies operations like iteration, folding, and predicate checks on individual fields with permission-aware access. Supports creating new instances with modified fields or extracting lists of specific metadata values.",
+      "description_length": 339,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl_type.Email.Fields.Direct",
+      "description": "Provides operations to process and transform email data structures, including iterating over fields, folding values, checking conditions, and mapping transformations. Works with a structured type containing email components like sender, recipient, subject, content, and template data. Used to validate email configurations, generate lists of field values, and apply uniform updates to mutable fields.",
+      "description_length": 400,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl_type.Queue_job.Fields.Direct",
+      "description": "Provides operations to iterate, fold, check conditions, and transform values within a structured data type, using field-specific handlers for input validation, string conversion, and error handling. Works with a generic type parameterized by field configurations, including read/write permissions and custom conversion logic. Used to enforce consistent data validation and transformation across mutable fields in a configuration or state object.",
+      "description_length": 445,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Storage_stored.Fields.Direct",
+      "description": "Provides operations to iterate over, fold, check conditions, and transform fields in a structured data container, handling both file and blob values with specific permissions. Works with a custom type `t` and associated field types that reference storage files and strings. Used to process and modify storage configurations by applying functions to individual fields or all mutable fields at once.",
+      "description_length": 397,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Database.Ql.Filter",
+      "description": "This module provides serialization, deserialization, and representation utilities for custom types, including JSON and Sexp formatting, equality checks, and pretty-printing. It operates on structured data like `op`, `criterion`, and `t`, with specific JSON parsing capabilities for `t` using Yojson. Use cases include converting external data formats (e.g., JSON) into internal representations and debugging via human-readable outputs.",
+      "description_length": 435,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Database.Ql.Sort",
+      "description": "Provides functions to serialize, deserialize, and compare lists of criteria, with support for pretty-printing, string representation, and JSON and S-expression conversions. Operates on the `t` type, which is a list of `criterion` values, and includes methods for converting between these values and external formats. Used to handle structured sorting configurations in data serialization and comparison workflows.",
+      "description_length": 413,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Database.Ql.Page",
+      "description": "Provides serialization and deserialization to and from JSON, S-expressions, and formatted strings. Works with a paginated data structure that tracks limit and offset values for query constraints. Enables conversion between string representations and structured page configurations, supporting safe parsing and error handling.",
+      "description_length": 325,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl_type.Database.Ql.Sql",
+      "description": "Provides functions to construct and validate SQL queries, including filtering, sorting, limiting, and offsetting results. Operates on lists of strings, filter and sort criteria, and a custom query type. Used to generate SQL fragments and fully formed queries from structured input.",
+      "description_length": 281,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Token_data.Fields",
+      "description": "manages field-level access control and transformation through structured data types that track read and set permissions. It supports operations like value validation, aggregation, and custom transformations conditioned on user rights. For example, it can filter visible fields for a user or compute summary statistics based on access levels. The core data type represents fields with permission constraints, enabling fine-grained manipulation during data processing.",
+      "description_length": 466,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.User.Error",
+      "description": "Provides functions to create, inspect, and combine error representations, including mapping error values and checking for specific error conditions. Works with the abstract type `t` to encapsulate error information. Used to handle parsing failures and validation errors in input processing pipelines.",
+      "description_length": 300,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl_type.User.Fields",
+      "description": "Offers functions to process user data fields through iteration, folding, condition checking, and transformation. Key data types include a structured user record with optional, immutable fields and time-based values. Operations enable validation, extraction of field lists, and modification of mutable attributes like status or passwords. Examples include generating a list of email addresses or updating a user's admin status.",
+      "description_length": 426,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Queue_job_instance.Status",
+      "description": "Converts between a custom type and JSON representations, parsing and serializing with error handling. Formats the type for pretty printing and string conversion, enabling inspection and safe parsing from strings. Supports equality checks and string-based serialization for interoperability.",
+      "description_length": 290,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Queue_job_instance.Fields",
+      "description": "Processes structured data by enabling iteration, folding, condition checks, and transformation across multiple field types including strings, integers, dates, and status values. Supports validation, attribute listing, and bulk updates for task or record configurations. Operations can filter fields based on type or value, accumulate results during iteration, and apply transformations to modify field contents. Examples include extracting all string fields, checking for missing optional fields, or updating timestamps across a dataset.",
+      "description_length": 537,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Email_template.Fields",
+      "description": "Processes structured data with fields such as ID, name, content, and time, enabling iteration, folding, and condition checks. Supports field-specific value mapping and bulk updates to mutable fields, with access control enforced throughout. Examples include filtering records by creation time, transforming content text to HTML, and updating multiple fields in a single operation. Operations are tailored for efficient record manipulation and transformation.",
+      "description_length": 458,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Email_template.Data",
+      "description": "Formats, compares, and converts lists of string pairs into human-readable representations. Supports adding key-value pairs to a list and creates a default empty list. Used to manage configuration data and simple mappings in text-based interfaces.",
+      "description_length": 246,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Queue_workable_job.Fields",
+      "description": "manages field configurations with customizable permissions, input handling, and retry policies, enabling batch updates with error recovery. it supports iteration, folding, condition checks, and transformation of fields, with asynchronous processing capabilities. operations include reading, setting, and modifying fields based on defined policies. examples include applying retry logic to failed updates, filtering fields by access level, and transforming input data before storage.",
+      "description_length": 482,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Session.Map",
+      "description": "This module offers key-based operations for manipulating associative data structures, including insertion, deletion, lookup, and transformation of entries, along with traversal and aggregation functions. It works with maps that associate keys (particularly strings) to arbitrary values, enabling sequence-based construction and conversion between maps and iterable structures. Specific use cases include building maps from sequences, filtering or mapping key-value pairs, and efficiently querying or modifying large datasets.",
+      "description_length": 525,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl_type.Token.Status",
+      "description": "Converts between a custom type and JSON, parsing and serializing with error handling. Formats the type for pretty printing and string representation. Supports equality checks and safe string conversion with error reporting.",
+      "description_length": 223,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Token.Fields",
+      "description": "Processes structured records by enabling iteration, folding, condition checks, and transformation on fields of specific types including strings, options, status values, and timestamps. Supports operations to validate, modify, or extract information from record attributes efficiently. Examples include filtering fields by status, converting timestamps to strings, or extracting optional data. Provides a flexible interface for manipulating record structures with type-safe functions.",
+      "description_length": 483,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Storage_file.Fields",
+      "description": "Manages file metadata through structured transformations, enabling iteration, filtering, and value extraction from fields like identifiers, sizes, and MIME types. Supports permission-aware operations to modify or retrieve specific metadata components. Users can generate new metadata instances or compile lists of selected attributes. Examples include filtering files by size, extracting all MIME types, or updating identifiers with new values.",
+      "description_length": 444,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Email.Fields",
+      "description": "Processes and transforms email data by iterating, folding, checking, and mapping over structured components such as sender, recipient, subject, content, and template data. Supports validation, value extraction, and uniform updates to mutable fields. Can generate lists of email attributes or apply conditional transformations. Examples include extracting all recipient addresses or replacing placeholder values in templates.",
+      "description_length": 424,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Queue_job.Fields",
+      "description": "manages structured data through field-specific operations, enabling validation, transformation, and traversal with customizable handlers for conversion and error handling. It operates on a generic type that encapsulates field configurations, including permissions and conversion rules. Users can filter, map, and fold over fields while maintaining data integrity. For example, it can convert all string fields to uppercase or check that numeric fields fall within a specified range.",
+      "description_length": 482,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Http_response.Logs",
+      "description": "Provides logging operations at different severity levels, including error, warning, info, and debug, with support for formatted messages and error handling. Works with log levels, formatted strings, and result types to capture and process logging output. Used to instrument applications with structured logging and handle errors by emitting messages and transforming results.",
+      "description_length": 375,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Storage_stored.Fields",
+      "description": "manages structured data by enabling iteration, transformation, and condition checks on fields, supporting both file and string-based values. it operates on a custom type `t` and related field types, allowing for granular or bulk modifications. examples include filtering fields by permission, converting file references to strings, or updating all mutable fields with a given function. it facilitates dynamic configuration adjustments within storage systems.",
+      "description_length": 458,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Database.Ql",
+      "description": "combines serialization, deserialization, and representation utilities for structured data, including JSON, S-expressions, and pretty-printing. It handles types like `op`, `criterion`, `t`, and paginated query configurations, enabling conversion between external formats and internal representations. Functions support parsing JSON into `t`, generating SQL queries from criteria, and managing paginated data with limit and offset. Examples include converting JSON input to structured query objects, debugging with human-readable outputs, and constructing SQL statements from filter and sort parameters.",
+      "description_length": 601,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Cleaner",
+      "description": "Provides functions to manage and execute cleanup actions, including composing multiple actions into a single unit and running them asynchronously. Works with the `t` type, which represents a function that returns a deferred unit. Used to ensure resources are properly released after asynchronous operations complete.",
+      "description_length": 316,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Database",
+      "description": "handles data conversion and representation across multiple formats, including JSON, S-expressions, and pretty-printed outputs, with support for types like `op`, `criterion`, `t`, and paginated queries. it enables parsing JSON into structured query objects, generating SQL from filtering and sorting criteria, and managing results with limit and offset parameters. operations include serializing data for storage or transmission, debugging with readable formats, and constructing dynamic queries. examples include transforming user input into queryable structures, producing human-readable logs, and building SQL statements from user-defined filters.",
+      "description_length": 649,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Email",
+      "description": "Processes and transforms email data by iterating, folding, checking, and mapping over structured components like sender, recipient, subject, content, and template data. Supports validation, value extraction, and uniform updates to mutable fields, enabling operations such as generating lists of email attributes or applying conditional transformations. Extracts all recipient addresses or replaces placeholder values in templates. Key data types include email structures and transformation functions, with operations focused on manipulation and extraction.",
+      "description_length": 556,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Email_template",
+      "description": "Manages structured email records with fields like ID, name, content, and time, offering iteration, filtering, and bulk updates with access control. Handles key-value pair lists for configuration and mapping, enabling formatting, comparison, and conversion to readable formats. Operations include transforming content to HTML, filtering by time, and adding entries to a configuration list. Supports efficient data manipulation and representation in email-related workflows.",
+      "description_length": 472,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Http_middleware",
+      "description": "Provides a function to construct middleware components that process HTTP requests and responses using a filter. Operates with request and response objects from the Rock module, applying transformations or checks. Used to implement logging, authentication, or request validation within an HTTP pipeline.",
+      "description_length": 302,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Http_request",
+      "description": "This module enables constructing and processing HTTP requests by handling operations such as creating requests with specific methods (GET, POST, etc.) and body formats (JSON, URL-encoded, multipart), manipulating headers and cookies, and parsing request bodies into structured data. It works with types like `t` (representing requests), headers, cookies, and body content, allowing tasks like API development, form data extraction, and content-type handling. Specific use cases include securely managing session cookies, reusing request streams via body cloning, and generating human-readable request representations.",
+      "description_length": 617,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Http_response",
+      "description": "captures logging operations with severity levels, formatted messages, and error handling, enabling structured application instrumentation and result transformation. It supports log levels, formatted strings, and result types to manage and process logging output. Users can emit error, warning, info, and debug messages with contextual data. Examples include logging HTTP request errors, tracking request durations, and capturing debug information for troubleshooting.",
+      "description_length": 467,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Http_route",
+      "description": "Provides route definitions for HTTP methods like GET, POST, PUT, DELETE, and ANY, each associating a path and a handler function. Works with method types, route handlers, and route structures that encapsulate HTTP method, path, and processing logic. Used to build and organize HTTP endpoints, apply path prefixes, and convert router configurations into concrete route lists.",
+      "description_length": 374,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Migration",
+      "description": "Provides pretty-printing, string representation, and equality checks for migration steps and migration structures. Works with a step type containing a label, optional foreign key check, and a string, and a t type representing a migration as a string and a list of steps. Used to construct and inspect migration plans with labeled steps and dependencies.",
+      "description_length": 353,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Migration_state",
+      "description": "Tracks the state of a migration process with a namespace, a counter, and a dirty flag. It supports updating the state through marking as dirty or clean, incrementing the counter, and retrieving or setting the state via a tuple. It is used to manage and query the current status of database or configuration migrations.",
+      "description_length": 318,
+      "index": 40,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl_type.Queue_job",
+      "description": "manages structured data with field-specific operations, supporting validation, transformation, and traversal using customizable handlers. It works with a generic type that defines field configurations, including permissions and conversion rules. Users can filter, map, and fold over fields while preserving data integrity, such as converting string fields to uppercase or enforcing numeric range constraints.",
+      "description_length": 408,
+      "index": 41,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl_type.Queue_job_instance",
+      "description": "Encapsulates job instances with serialization, validation, and data manipulation capabilities. Supports converting between custom types and JSON, with parsing, pretty printing, and equality checks. Provides tools to iterate, filter, and transform structured data across multiple field types, enabling tasks like extracting specific fields or updating timestamps. Allows for safe persistence and processing of job configurations in a queue system.",
+      "description_length": 446,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Queue_workable_job",
+      "description": "manages field configurations with customizable permissions, input handling, and retry policies, enabling batch updates with error recovery. it supports iteration, folding, condition checks, and transformation of fields, with asynchronous processing capabilities. operations include reading, setting, and modifying fields based on defined policies. examples include applying retry logic to failed updates, filtering fields by access level, and transforming input data before storage.",
+      "description_length": 482,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Session",
+      "description": "Provides key-based manipulation of associative data structures, supporting insertion, deletion, lookup, and transformation of string-keyed entries. It includes traversal, aggregation, and conversion between maps and iterable formats, enabling efficient data processing. Users can construct maps from sequences, filter or map key-value pairs, and perform bulk queries. Operations are optimized for handling large datasets with structured key-value relationships.",
+      "description_length": 461,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Storage_file",
+      "description": "Handles file metadata with structured transformations, allowing iteration, filtering, and extraction of attributes such as identifiers, sizes, and MIME types. Provides operations to modify or retrieve specific metadata fields while respecting permissions, and supports creating new metadata instances or compiling lists of selected attributes. Users can filter files by size, extract all MIME types, or update identifiers programmatically. Key data types include metadata records and attribute selectors, with operations focused on transformation and extraction.",
+      "description_length": 562,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Storage_stored",
+      "description": "manages structured data through iteration, transformation, and condition checks on fields, supporting file and string-based values. it works with a custom type `t` and field types, enabling both granular and bulk modifications. operations include filtering fields by permission, converting file references to strings, and updating mutable fields with a function. it allows dynamic configuration adjustments in storage systems.",
+      "description_length": 426,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Token",
+      "description": "Converts custom types to and from JSON with error handling, supports pretty printing, string conversion, and equality checks. Enables efficient manipulation of structured records through iteration, folding, and type-specific transformations on fields like strings, options, and timestamps. Allows filtering by status, converting timestamps to strings, and extracting optional values. Provides type-safe operations for validating, modifying, and extracting information from records.",
+      "description_length": 481,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type.Token_data",
+      "description": "manages field-level access control and transformation using structured data types that enforce read and set permissions. It enables value validation, aggregation, and conditional transformations based on user rights, allowing operations such as filtering visible fields or generating summary statistics. Core data types represent fields with permission constraints, facilitating precise control during data processing. For instance, it can restrict access to sensitive fields or compute aggregated values based on user roles.",
+      "description_length": 525,
+      "index": 48,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl_type.User",
+      "description": "Encapsulates error handling and user data manipulation through abstract types and structured operations. Supports error mapping, condition checks, and user field transformations, including generating lists of attributes and updating mutable state. Functions operate on immutable records and error representations, enabling robust input validation and data processing. Examples include parsing input with error tracking and modifying user properties like status or passwords.",
+      "description_length": 474,
+      "index": 49,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "sihl-type",
+      "description": "Handles HTTP request routing, middleware composition, and response generation. Processes URL paths, query parameters, and HTTP headers. Used to build RESTful APIs with custom route handlers and request preprocessing.",
+      "description_length": 216,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_type",
+      "description": "Manages asynchronous cleanup, data conversion, email processing, structured record handling, HTTP request and middleware construction, logging, routing, migration tracking, and data transformation. Key types include deferred units, query structures, email records, request objects, log entries, migration steps, and custom data types, with operations for serialization, filtering, transformation, and validation. It enables tasks such as generating SQL from filters, constructing HTTP middleware, logging request details, and managing migration states. Examples include safely releasing resources, converting data formats, extracting email attributes, and building dynamic queries.",
+      "description_length": 681,
+      "index": 51,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 54,
+    "meaningful_modules": 52,
+    "filtered_empty_modules": 2,
+    "retention_rate": 0.9629629629629629
+  },
+  "statistics": {
+    "max_description_length": 681,
+    "min_description_length": 216,
+    "avg_description_length": 422.0192307692308,
+    "embedding_file_size_mb": 0.18929576873779297
+  }
+}

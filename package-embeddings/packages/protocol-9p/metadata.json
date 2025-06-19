@@ -1,0 +1,455 @@
+{
+  "package": "protocol-9p",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 62,
+  "creation_timestamp": "2025-06-18T16:45:55.853109",
+  "modules": [
+    {
+      "module_path": "Protocol_9p.Client.Make.LowLevel",
+      "description": "Provides operations for managing 9P file identifiers (fids), performing file system operations like walking, opening, creating, reading, writing, and updating file metadata. Works with 9P fid types, byte buffers, and file metadata structures. Used to interact directly with a 9P server, handling low-level file operations while enforcing fid management and message size constraints.",
+      "description_length": 382,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Types.Tag.Set",
+      "description": "This module provides operations for constructing, modifying, and querying sets with generic elements, including set algebra (union, intersection, difference), membership checks, and ordered element manipulation. It supports transformations like partitioning, min/max retrieval, and sequence generation, while handling sequence-to-set conversions and preserving order during insertions. Use cases include managing dynamic collections, efficient data filtering, and processing ordered datasets with predicate-based operations.",
+      "description_length": 524,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Types.Tag.Map",
+      "description": "This module provides operations for managing ordered key-value associations, including insertion, deletion, modification, and traversal, along with predicates and transformations for filtering or altering elements. It works with polymorphic map structures that maintain ordered sequences of key-value pairs, enabling efficient queries like minimum/max key retrieval, splitting, and predicate-based searches. Use cases include maintaining sorted data structures, dynamic data aggregation, and scenarios requiring ordered traversal or merging of associative collections.",
+      "description_length": 568,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Types.Fid.Set",
+      "description": "The module offers functions for creating, modifying, and querying sets, including adding, removing, membership checks, and set operations like union, intersection, and difference. It works with ordered sets of generic elements, supporting predicate-based filtering, iteration, and conversion to lists or sequences. Use cases include efficiently managing dynamic data structures and processing sequences to build or update sets.",
+      "description_length": 427,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Types.Fid.Map",
+      "description": "This module provides operations for managing ordered key-value associations, including insertion, deletion, modification, merging, and filtering of bindings, alongside traversal and structural transformations. It works with polymorphic maps structured around ordered keys, enabling efficient queries like minimum/maximum key retrieval, predicate-based lookups, and split operations. Use cases include maintaining sorted data structures, dynamic configuration management, and scenarios requiring ordered traversal or comparison of associative collections.",
+      "description_length": 554,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Server.Make",
+      "description": "Handles 9p protocol interactions for file system operations such as attaching to a file system, walking directory paths, reading and writing files, and managing file metadata. Operates on connection state and 9p request/response types to execute actions like open, create, remove, and stat. Used to implement low-level file system access in a networked environment.",
+      "description_length": 365,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Buffered9PReader.Make",
+      "description": "Provides functions to read from and write to network flows, with support for handling errors and shutting down connections. Operates on `flow` objects and `Cstruct.t` buffers, and includes specialized pretty-printers for error types. Used to manage data transmission in network protocols, ensuring proper error handling and resource cleanup.",
+      "description_length": 341,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Response.Version",
+      "description": "Provides serialization and deserialization functions for a version structure using S-expressions, along with buffer size calculation and reading/writing operations for network communication. Works with a custom type `t` representing a version value and Cstruct buffers for binary data. Used to parse and encode version numbers in protocol messages, ensuring correct buffer handling during transmission.",
+      "description_length": 402,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Protocol_9p.Response.Auth",
+      "description": "Encodes and decodes values between S-expressions and a binary structure, using sexp serialization. Reads and writes the structure from and to a Cstruct buffer, ensuring proper size validation. Handles parsing and serialization for network or file protocols requiring precise binary formatting.",
+      "description_length": 293,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Response.Err",
+      "description": "Handles serialization and deserialization of error representations using S-expressions. Operates on the `t` type, which encapsulates error information from the 9P2000.u protocol. Reads and writes error data to and from Cstruct buffers, ensuring proper size validation during transmission.",
+      "description_length": 288,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Response.Flush",
+      "description": "Provides serialization and deserialization functions for converting between a unit type and S-expressions. Implements read and write operations for packing and unpacking the unit type into and from Cstruct buffers, ensuring proper buffer size management. Used to handle protocol elements that represent empty or null data structures in network or file formats.",
+      "description_length": 360,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Protocol_9p.Response.Attach",
+      "description": "Provides serialization and deserialization between a custom type `t` and S-expressions, along with binary encoding and decoding using Cstruct buffers. Operates on a structured type `t` that includes fields for network protocol data. Used to parse incoming network packets and serialize data for transmission.",
+      "description_length": 308,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Response.Walk",
+      "description": "Provides serialization and deserialization between a custom type and S-expressions, along with operations to determine buffer size, read from, and write to Cstruct buffers. Works with a structured type containing fields like name, length, and data. Used to parse and generate binary data streams in network protocols or file formats.",
+      "description_length": 333,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Response.Open",
+      "description": "Provides serialization and deserialization between a custom type and S-expressions, along with buffer-based reading and writing operations. Works with a structured type `t` and Cstruct buffers for efficient memory manipulation. Used to parse and generate binary data streams, such as network packets or file formats.",
+      "description_length": 316,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Protocol_9p.Response.Create",
+      "description": "Provides serialization and deserialization between a custom type and S-expressions, along with buffer-based reading and writing operations. Works with a structured type `t` and the `Cstruct.t` buffer type for binary data manipulation. Used to parse and generate binary data streams, such as network packets or file formats, ensuring proper size validation and error handling.",
+      "description_length": 375,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Response.Read",
+      "description": "Provides serialization and deserialization between a custom type `t` and S-expressions, along with buffer size calculations. Operates on `Cstruct.t` for reading from and writing to binary buffers, and uses `Sexplib0.Sexp.t` for S-expression conversion. Used to parse and encode structured data in network protocols or file formats where precise buffer management is required.",
+      "description_length": 375,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Response.Write",
+      "description": "Encodes and decodes values between S-expressions and a structured type, using custom serialization functions. Operates on a type representing a structured data format, suitable for network or file protocols. Reads and writes instances of the type from and into Cstruct buffers, ensuring proper size validation.",
+      "description_length": 310,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Response.Clunk",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with buffer-based reading and writing operations. Works with the `Cstruct.t` type for binary data and the `Sexplib0.Sexp.t` type for symbolic expressions. Used to parse and generate binary data streams from S-expression representations.",
+      "description_length": 323,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Protocol_9p.Response.Remove",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with buffer operations for reading and writing `t` values. Works with the `Cstruct.t` type for binary data and the `Sexplib0.Sexp.t` type for symbolic expressions. Used to parse and generate binary data streams from structured representations.",
+      "description_length": 330,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Response.Stat",
+      "description": "Provides serialization and deserialization functions for a custom data type using S-expressions and Cstruct buffers. Operates on a structured type that includes fields for network statistics or similar data. Enables reading from and writing to binary buffers with error handling, useful for network protocol parsing and message encoding.",
+      "description_length": 337,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Response.Wstat",
+      "description": "Provides serialization and deserialization functions for converting between a type `t` and S-expressions, along with buffer operations for reading and writing `t` values. Works with the `Cstruct.t` type for low-level buffer manipulation and the `Sexplib0.Sexp.t` type for symbolic data representation. Used to parse and encode binary data in network protocols or file formats that require precise byte-level control.",
+      "description_length": 416,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Client.Make",
+      "description": "Provides functions to read from and write to network flows, with support for handling errors and shutting down connections. Operates on flow objects and Cstruct.t buffers, offering precise control over data transmission and connection state. Used to manage reliable data transfer in network protocols, ensuring proper error handling and resource cleanup.",
+      "description_length": 354,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Protocol_9p.Request.Version",
+      "description": "Provides serialization and deserialization of a version structure using S-expressions, and operations to compute buffer size, read from, and write to Cstruct buffers. Works with the `t` type, which represents a version value. Used to parse and encode version information in network protocols or data streams.",
+      "description_length": 308,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Protocol_9p.Request.Auth",
+      "description": "Provides functions to serialize and deserialize a numeric user ID structure using S-expressions, and to read from and write to byte buffers using the Cstruct library. Works with the `t` type, which represents a 9P2000.u user ID. Used to parse and encode user IDs in network protocols or file system interactions.",
+      "description_length": 312,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Protocol_9p.Request.Flush",
+      "description": "Provides serialization and deserialization functions for converting between a custom type and S-expressions, along with buffer-based reading and writing operations. Works with the `Cstruct.t` type for efficient byte buffer manipulation and a custom type `t` representing structured data. Used to parse and encode data in network protocols or file formats where precise buffer control is required.",
+      "description_length": 396,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Request.Attach",
+      "description": "Provides serialization and deserialization of numeric user IDs using S-expressions and binary buffers. Works with the `Cstruct.t` type for low-level buffer manipulation and the `Sexplib0.Sexp.t` type for symbolic representation. Used to parse and encode user IDs in network protocols requiring precise binary formatting.",
+      "description_length": 320,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Request.Walk",
+      "description": "Provides serialization and deserialization between a custom type and S-expressions, along with methods to determine buffer size, read from, and write to Cstruct buffers. Works with a structured type containing fields and a Cstruct buffer for binary data. Used to parse and generate binary data streams with precise buffer management.",
+      "description_length": 333,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Request.Open",
+      "description": "Provides serialization and deserialization between a custom type `t` and S-expressions, along with binary encoding and decoding using Cstruct buffers. Operates on `t` and `Cstruct.t`, enabling efficient data parsing and storage. Used to parse network packets from byte buffers and serialize data into formats suitable for transmission or storage.",
+      "description_length": 346,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Request.Create",
+      "description": "Represents 9P2000 metadata entries, including symbolic links and device information, with fields for type, major, and minor numbers. Provides serialization and deserialization via S-expressions, and binary encoding/decoding using Cstruct buffers. Used to parse and generate network protocol messages in low-level system interactions.",
+      "description_length": 333,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Request.Read",
+      "description": "Provides serialization and deserialization functions for a custom type using S-expressions. Operates on Cstruct.t buffers to read and write data, ensuring proper sizing and error handling. Used to parse and encode structured data in binary formats with precise buffer management.",
+      "description_length": 279,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Request.Write",
+      "description": "Provides serialization and deserialization between a custom type `t` and S-expressions, along with methods to calculate buffer sizes and read/write instances of `t` from/to Cstruct buffers. Operates on a structured type `t` with specific size constraints and binary encoding rules. Used to parse and generate binary data streams with precise control over buffer allocation and consumption.",
+      "description_length": 389,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Request.Clunk",
+      "description": "Provides serialization and deserialization between a custom type and S-expressions, along with binary encoding and decoding using Cstruct buffers. Operates on a structured type with fields and a fixed-size representation. Used to parse and generate binary data streams, such as network packets or file formats.",
+      "description_length": 310,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Request.Remove",
+      "description": "Provides serialization and deserialization between a custom type and S-expressions, along with buffer-based reading and writing operations. Works with a structured type that includes fields for data representation and size calculation. Used to parse and generate binary data streams from and into a specific in-memory format.",
+      "description_length": 325,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Request.Stat",
+      "description": "Provides serialization and deserialization functions for converting between a custom type and S-expressions, along with buffer size calculation, reading, and writing operations using Cstruct. Works with a structured data type that includes fields for network protocol or message representation. Used to parse and encode data in binary formats during network communication or file I/O.",
+      "description_length": 384,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Request.Wstat",
+      "description": "Provides serialization and deserialization of data structures using S-expressions, along with binary reading and writing operations using Cstruct buffers. Works with a custom type `t` that represents structured data, supporting size calculation for buffer allocation. Used to parse and encode data in network protocols or file formats requiring precise binary layout.",
+      "description_length": 367,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Protocol_9p.Types.Int8",
+      "description": "Provides serialization and deserialization between 8-bit integers and S-expressions, along with buffer operations for reading and writing 8-bit integers. Works with the `int` type and Cstruct buffers, enabling low-level data manipulation. Used to parse and encode 8-bit values in network protocols or binary file formats.",
+      "description_length": 321,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Types.Int16",
+      "description": "Provides serialization and deserialization functions for 16-bit integers using S-expressions, along with operations to check for a special \"any\" value. Works with the `int` type and Cstruct buffers for reading and writing binary data. Used to parse and generate 16-bit integer values in network protocols or binary file formats.",
+      "description_length": 328,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Protocol_9p.Types.Int32",
+      "description": "This module offers arithmetic and bitwise operations on 32-bit integers, including signed/unsigned division, shifts, and conversions between integer and floating-point types. It handles serialization and deserialization of 32-bit integers into Cstruct buffers, ensuring safe memory access. Use cases include low-level data manipulation, network protocol encoding, and interoperability with systems requiring fixed-size integer representations.",
+      "description_length": 443,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Protocol_9p.Types.Int64",
+      "description": "Converts between 64-bit integers and S-expressions, checks if a value is the \"any\" placeholder, determines buffer size for serialization, and reads/writes values to and from Cstruct buffers. Operates on 64-bit integer values. Used for parsing and serializing protocol fields that may represent arbitrary 64-bit values.",
+      "description_length": 318,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Types.Version",
+      "description": "Provides serialization and deserialization functions for converting between a custom type `t` and S-expressions. Supports operations to read and write instances of `t` from and to Cstruct buffers, along with determining the required buffer size. Includes predefined values like `default`, `unix`, and `unknown` for specific protocol extensions.",
+      "description_length": 344,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Types.Fid",
+      "description": "manages ordered collections with efficient operations for sets and maps, supporting dynamic data manipulation through insertion, deletion, and set-theoretic operations, as well as key-based lookups and transformations. It handles generic elements in sets and polymorphic key-value pairs in maps, enabling tasks like filtering, merging, and converting to lists or sequences. Users can perform union, intersection, and difference on sets, or retrieve minimum/maximum keys and split maps based on predicates. Examples include building dynamic data structures, managing sorted configurations, and processing sequences to update or query associative or set-based information.",
+      "description_length": 670,
+      "index": 40,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Protocol_9p.Types.OpenMode",
+      "description": "Provides functions to serialize and deserialize data structures representing file access modes, including read, write, read-write, and execute permissions. Works with `t` type encapsulating mode flags and `Cstruct.t` for buffer manipulation. Used to parse and generate binary representations of file modes during I/O operations.",
+      "description_length": 328,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Types.FileMode",
+      "description": "Provides functions to construct, serialize, and deserialize file permission and metadata structures, including access controls, file type flags, and special attributes. Works with custom types representing permissions, boolean flags for file properties, and a composite type encapsulating all file mode information. Used to encode and decode 9P protocol file mode data for network communication and file system operations.",
+      "description_length": 422,
+      "index": 42,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Protocol_9p.Types.Qid",
+      "description": "Provides functions to construct and manipulate file and directory descriptors with specific attributes, including flags like append-only, exclusive, and temporary. Works with custom types `t` and `flag`, encoding and decoding them to and from S-expressions and binary buffers. Constructs and parses descriptors for 9P2000.u protocol interactions, such as handling symlinks, hard-links, and mountpoints.",
+      "description_length": 402,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Types.Tag",
+      "description": "Provides operations for managing sets and ordered maps with generic elements, supporting set algebra, key-value associations, and ordered data manipulation. It includes membership checks, transformations, and predicates for filtering, along with methods for generating sequences, retrieving extremes, and splitting collections. Users can construct dynamic data structures, perform efficient filtering, and process ordered datasets with customizable operations. Examples include merging sets, querying map ranges, and generating sorted outputs from arbitrary inputs.",
+      "description_length": 565,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Types.Data",
+      "description": "Provides serialization and deserialization between a custom type and S-expressions, as well as string conversion. Operates on a buffer type represented as Cstruct.t, supporting reading and writing operations that validate buffer size and content. Used to parse and encode data structures within network protocols or file formats.",
+      "description_length": 329,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Types.Stat",
+      "description": "Provides functions to serialize and deserialize file metadata, including user and group IDs, timestamps, and file permissions, using Sexp and Cstruct formats. Works with structured data types representing file attributes and extensions, such as user identifiers and time values. Used to encode and decode file information for network protocols or file system operations.",
+      "description_length": 370,
+      "index": 46,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Protocol_9p.Types.Arr",
+      "description": "Reads and writes a specific data type from and to a Cstruct buffer, ensuring proper buffer size and handling errors. Operates on a custom type `t` and a Cstruct buffer, returning the parsed value or error during reading, and the remaining buffer after writing. Used to serialize and deserialize structured data in network protocols or binary file formats.",
+      "description_length": 355,
+      "index": 47,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Protocol_9p.Client.LowLevel",
+      "description": "Provides operations for managing 9P file identifiers (fids), performing file system operations like walking, opening, creating, reading, writing, and modifying file metadata. Works with 9P protocol types such as Fid, FileMode, OpenMode, and Stat, along with Cstruct.t for binary data. Used to interact directly with a 9P server, handling low-level file operations while enforcing fid management and message size constraints.",
+      "description_length": 424,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.S",
+      "description": "Provides functions to determine the size of a value, read it from a Cstruct buffer, and write it into a Cstruct buffer, returning remaining buffer space or errors. Operates on a type t and Cstruct.t buffers. Used to serialize and deserialize structured data within fixed-size memory regions.",
+      "description_length": 291,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Request",
+      "description": "Handles serialization and deserialization of various structured data types, including 9P protocol elements, user IDs, and metadata, using S-expressions and Cstruct buffers. Supports operations to compute buffer sizes, read from, and write to binary buffers, working with types like `t`, `Cstruct.t`, and `Sexplib0.Sexp.t`. Enables precise control over data encoding and decoding for network communication, file formats, and system interactions. Examples include parsing version strings, encoding user IDs, and generating binary metadata for 9P messages.",
+      "description_length": 553,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Error",
+      "description": "Provides operations for constructing and chaining results with error handling, including a function to create error results from formatted messages and a bind operator for sequencing computations. Works with the `result` type, which encapsulates either a value or an error of a sum type including string messages. Used to propagate and handle errors in a controlled manner during parsing or validation workflows.",
+      "description_length": 412,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Info",
+      "description": "Provides functions to access and manipulate session-specific data including the initial fid, protocol version, aname tree, and maximum message size. Works with a record type containing these fields. Used to track and query negotiation results during protocol setup.",
+      "description_length": 265,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Response",
+      "description": "Handles serialization and deserialization of various data types between S-expressions and binary formats using Cstruct buffers. Supports custom types like version, error, unit, and structured data, enabling precise buffer management and size validation. Provides read and write operations for network and file protocols, ensuring correct data encoding and decoding. Examples include parsing 9P protocol versions, encoding error messages, and handling null data structures in binary streams.",
+      "description_length": 490,
+      "index": 53,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Protocol_9p.Types",
+      "description": "Handles serialization and deserialization of numeric and custom data types for 9P protocols, including 8-bit, 16-bit, 32-bit, and 64-bit integers, file modes, permissions, and descriptors. Provides arithmetic, bitwise, and conversion operations on integers, along with buffer management for reading and writing binary data. Supports custom types like file metadata, access modes, and ordered collections, enabling low-level data manipulation and protocol-specific encoding. Examples include parsing 64-bit timestamps, encoding file permissions, and managing dynamic sets of file descriptors.",
+      "description_length": 591,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Client",
+      "description": "Manages 9P file operations through fid-based interactions, supporting file system actions like walk, open, create, read, write, and metadata updates. It utilizes types such as Fid, FileMode, OpenMode, Stat, and Cstruct.t to handle protocol-specific data and binary operations. Operations are executed in a way that enforces fid lifecycle and message size limits. Examples include opening a file, reading its contents, and modifying its permissions via the 9P protocol.",
+      "description_length": 468,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Server",
+      "description": "manages 9p protocol interactions over a network transport, enabling file system operations like attaching, walking, reading, writing, and modifying files. It processes connection state and 9p request/response types to execute actions such as open, create, remove, and stat. Users can implement low-level file access, traverse directory structures, and manipulate file metadata remotely. Examples include serving files over a network, handling client file requests, and managing remote file system operations.",
+      "description_length": 508,
+      "index": 56,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Protocol_9p.Buffered9PReader",
+      "description": "reads and writes data over network flows using `flow` objects and `Cstruct.t` buffers, with robust error handling and connection termination. supports structured error reporting through custom pretty-printers and ensures reliable data transmission. examples include parsing protocol headers, streaming binary data, and managing connection lifecycles. operations are designed for low-level network interaction, enabling precise control over data flow and error recovery.",
+      "description_length": 469,
+      "index": 57,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Protocol_9p.Filesystem",
+      "description": "Handles 9p protocol interactions for file system operations such as attaching, walking, reading, writing, and removing files. Operates on connection state and request/response structures specific to the 9p protocol. Manages file system access and modification through asynchronous, cancellable operations.",
+      "description_length": 305,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Protocol_9p.Infix",
+      "description": "Performs sequential binding of Lwt-promise results, propagating errors through the chain. Operates on Lwt threads that return result types, allowing for error-aware composition. Used to handle asynchronous operations where each step depends on the success of the previous, such as API calls with error handling.",
+      "description_length": 311,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "protocol-9p",
+      "description": "Provides functions for parsing, constructing, and handling 9P protocol messages, including request and response encoding/decoding. Works with message structures, file descriptors, and path representations specific to the 9P protocol. Used to implement network file system clients and servers in MirageOS-based applications.",
+      "description_length": 323,
+      "index": 60,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Protocol_9p",
+      "description": "Provides serialization and deserialization capabilities for 9P protocol data using Cstruct buffers and S-expressions, with support for numeric types, metadata, and structured data. Includes error handling through result types and binding operators, and manages session state with records tracking protocol version, fid, and message size. Enables low-level network interactions, file operations via fids, and asynchronous execution of protocol commands. Examples include parsing 64-bit timestamps, encoding file permissions, and handling remote file reads and writes.",
+      "description_length": 566,
+      "index": 61,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 62,
+    "meaningful_modules": 62,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 670,
+    "min_description_length": 265,
+    "avg_description_length": 384.741935483871,
+    "embedding_file_size_mb": 0.22557640075683594
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "package": "coqide-server",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 7,
+  "creation_timestamp": "2025-06-18T16:30:57.517145",
+  "modules": [
+    {
+      "module_path": "coqide-server",
+      "description": "Provides functions to parse, manipulate, and validate logical proofs written in a formal language, along with tools to check the correctness of theorem statements and proof scripts. Works with abstract syntax trees of mathematical expressions, proof goals, and tactic applications. Used to verify the soundness of algorithms, construct formal proofs, and ensure consistency in mathematical theories.",
+      "description_length": 399,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Interface",
+      "description": "The module provides operations for modeling Coq's internal state, managing structured data types like state transitions and goal tracking, and facilitating communication between RocqIDE and Coq through request-response patterns. It works with data structures such as Coq's internal state representations, type aliases for domain-specific data, and state IDs, enabling tasks like interactive debugging, proof state management, and configuration adjustments. Specific use cases include tracking proof goals, inspecting stacks, and handling exceptions during development.",
+      "description_length": 568,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xml_parser",
+      "description": "Provides functions to extract detailed error information from XML parsing, including line numbers, character ranges, and error messages. Works with XML data structures, error positions, and sources, enabling precise control over parsing behavior. Configures parsers to enforce end-of-file checks and canonicalize XML content during parsing.",
+      "description_length": 340,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xmlprotocol",
+      "description": "This module provides command operations for interacting with a proof assistant, including proof management, query, editing, and debugger functionalities like breakpoint updates and stack information retrieval. It works with structured data types from Interface, XML nodes, strings, and pretty-printing objects, enabling serialization/deserialization of messages and debugger outputs. Specific use cases involve system control, subgoal management, and formatted communication between RocqIDE and Rocq.",
+      "description_length": 500,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xml_lexer",
+      "description": "Initializes a lexical buffer for parsing XML, processes tokens, and tracks position within the input. Operates on lexing buffers, custom token types, and position tuples representing file, line, and column indices. Used to parse XML content incrementally, detect syntax errors, and manage parsing state during validation.",
+      "description_length": 321,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Richpp",
+      "description": "Provides functions to interpret and manipulate semi-structured documents with annotations, including converting formatted text to structured XML, extracting annotation positions, and mapping annotations to string representations. Operates on located annotations and XML data structures derived from pretty-printing commands. Used to generate XML outputs from styled text and track annotation locations within source strings.",
+      "description_length": 424,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xml_printer",
+      "description": "Produces compact XML strings from an XML data structure for output to a target, and generates human-readable formatted XML. Handles XML nodes and PCDATA, converting them to properly escaped strings. Used to serialize XML data for transmission or storage, and to generate debug-friendly representations.",
+      "description_length": 302,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 9,
+    "meaningful_modules": 7,
+    "filtered_empty_modules": 2,
+    "retention_rate": 0.7777777777777778
+  },
+  "statistics": {
+    "max_description_length": 568,
+    "min_description_length": 302,
+    "avg_description_length": 407.7142857142857,
+    "embedding_file_size_mb": 0.025823593139648438
+  }
+}

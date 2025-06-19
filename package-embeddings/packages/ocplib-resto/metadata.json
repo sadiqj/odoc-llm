@@ -1,0 +1,217 @@
+{
+  "package": "ocplib-resto",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 28,
+  "creation_timestamp": "2025-06-18T16:38:25.593840",
+  "modules": [
+    {
+      "module_path": "Resto_impl.StringMap",
+      "description": "This module offers operations for managing string-keyed maps, including insertion, deletion, lookup, iteration, and transformation, alongside set-like functions for combining and comparing maps. It works with a generic map structure where string keys associate with values of any type, enabling efficient querying and manipulation. Use cases include configuration management, data indexing, and processing structured data with string-based keys, such as parsing logs or handling hierarchical datasets.",
+      "description_length": 501,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resto_impl.Ty",
+      "description": "Provides operations to generate and compare type witnesses, including a unique value representing the type and a function to establish equality between types. Works with the abstract type `t` and type-level witnesses. Used to enforce type constraints at runtime and enable safe type-based dispatch.",
+      "description_length": 298,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resto_impl.Arg",
+      "description": "Provides functions to define and manipulate command-line argument parsers, including equality checks, description handling, and conversions between string and typed values. Works with custom argument types, descriptions, and built-in numeric types like int, float, int32, and int64. Used to create structured command-line interfaces with validation and serialization.",
+      "description_length": 367,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resto_impl.Path",
+      "description": "Provides operations to construct and manipulate path structures, including adding suffixes, arguments, and context elements, while maintaining type-safe transformations. Works with path types that represent sequences of segments and context types that track additional state. Used to build structured URL-like paths with embedded arguments and contextual data for routing or configuration systems.",
+      "description_length": 397,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resto_impl.Make",
+      "description": "Provides functions to convert between a value and its JSON representation, including a view for inspection and a method to reconstruct the value from that view. Operates on the `value` type and related JSON structures. Used to serialize and deserialize values in a standardized format for storage or transmission.",
+      "description_length": 313,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resto_impl.Description",
+      "description": "Encodes and decodes service and directory descriptions using JSON, with specific serializers for each type. Provides pretty-printing functions for detailed and static directory structures as well as service descriptions. Used to serialize and visualize configuration data for web services and directory layouts.",
+      "description_length": 311,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "RestoDirectory.Answer",
+      "description": "Represents a computation that may succeed with a value or fail, providing `ok` to wrap a successful result and `return` to lift a value into a monadic Lwt thread. Works with the `'a answer` type, which encapsulates either a value or an error. Used to handle asynchronous operations with explicit success or failure states in networked or I/O-bound code.",
+      "description_length": 353,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "RestoDirectory.Make",
+      "description": "Provides functions to convert between a value and its JSON representation, including a view for inspection and a method to reconstruct the value from that view. Operates on the `value` type and related JSON structures. Used to serialize and deserialize values while preserving unique identifiers.",
+      "description_length": 296,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resto.Arg",
+      "description": "Provides functions to create and manipulate typed arguments for path parsing, including destructors and constructors for converting between string and typed values. Works with custom argument types derived from string, supporting integers, floats, and user-defined types. Used to define route parameters in web frameworks, ensuring type-safe extraction of values from URL paths.",
+      "description_length": 378,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resto.Path",
+      "description": "Constructs and manipulates parametrized URL paths by appending suffixes, adding query arguments, and combining segments. Operates on path types that track prefix and parameter components, enabling structured route definitions. Used to build dynamic API endpoints with typed parameters and nested routes.",
+      "description_length": 303,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resto.Make",
+      "description": "Provides functions to convert a value into a standardized view, reconstruct a value from such a view, and retrieve a unique identifier for a value. Operates on the `value` type, which represents structured data. Used to serialize and deserialize values for storage or transmission, ensuring consistent representation.",
+      "description_length": 317,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resto.Description",
+      "description": "Provides functions to define and pretty-print service and directory descriptions, including path-based service registration with optional descriptions and structured directory metadata. Works with path types, service descriptors, and directory-specific data structures like static subdirectory configurations. Used to build and document RESTful service endpoints with detailed metadata for API documentation or runtime inspection.",
+      "description_length": 430,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzRestoDirectory.Answer",
+      "description": "Represents a computation that may succeed with a value or fail, providing `ok` to wrap a successful result and `return` to lift a value into a delayed computation. Works with the `'a answer` type, which encapsulates either a successful value or an error. Used to handle asynchronous operations with explicit success or failure states in I/O or network code.",
+      "description_length": 357,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzRestoDirectory.Make",
+      "description": "Provides functions to convert a value into a standardized view, reconstruct a value from such a view, and retrieve a unique identifier for the value. Works with the `value` type and related JSON representation structures. Used to serialize and deserialize values while preserving their identity for comparison or storage.",
+      "description_length": 321,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzResto.Arg",
+      "description": "Provides functions to create and manipulate typed arguments for parsing paths, including destructors and constructors for converting between string and typed values. Works with custom argument types parameterized by value, along with built-in types like int, int32, int64, and float. Used to define and extract specific argument formats in route matching or configuration parsing.",
+      "description_length": 380,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzResto.Path",
+      "description": "Provides operations to construct and manipulate URL paths with parameters, including adding suffixes, appending arguments, and transforming parameter types. Works with a parametrized path type that tracks embedded parameters. Used to build dynamic API endpoints by combining static segments with typed query arguments.",
+      "description_length": 318,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzResto.Make",
+      "description": "Provides functions to convert a value into a standardized view format and reconstruct it from that view, along with a function to extract a unique identifier from a value. Works with the `value` type and the `Json_repr` module's `view` and `repr_uid` types. Used to serialize and deserialize values while preserving unique identifiers for tracking.",
+      "description_length": 348,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzResto.Description",
+      "description": "Provides functions to define and serialize service configurations, including path-based service creation and pretty-printing of directory metadata. Works with custom types representing service descriptions, directory structures, and static subdirectory layouts. Used to construct RESTful endpoints with detailed routing information and generate human-readable directory representations.",
+      "description_length": 386,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "RestoDirectory_impl.StringMap",
+      "description": "This module offers key-value operations including insertion, deletion, lookup, and transformation on a string-based map, supporting functional patterns like folding and filtering. It works with a generic map structure where string keys associate with values of any type, enabling efficient data manipulation. Use cases include configuration management, data aggregation, and scenarios requiring predicate-based searches or sequence conversions.",
+      "description_length": 444,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "RestoDirectory_impl.Answer",
+      "description": "Provides functions to construct and handle asynchronous success values, with `ok` wrapping a value into an answer and `return` converting it into an Lwt promise. Works with the `'a answer` type, which encapsulates a value or an error, and `Lwt.t` for asynchronous computation. Used to manage asynchronous workflows where success states need to be explicitly represented and passed through promise chains.",
+      "description_length": 404,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "RestoDirectory_impl.Make",
+      "description": "Provides functions to convert between a value and its JSON representation, including a view for inspection and a method to reconstruct the value from that view. Operates on the `value` type and related JSON structures. Used to serialize and deserialize values in a format suitable for storage or transmission.",
+      "description_length": 309,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "ocplib-resto",
+      "description": "Provides functions to parse and generate HTTP request and response bodies in various formats, including JSON and form data. Operates on types such as `string`, `Yojson.t`, and `Httpaf.Body.t`. Used to handle incoming API payloads and construct outgoing HTTP responses with structured data.",
+      "description_length": 289,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resto_impl",
+      "description": "combines string-keyed map operations, type enforcement, command-line parsing, path construction, JSON serialization, and service description encoding into a unified system for handling structured data and configuration. it supports map manipulations, type-safe dispatch, argument parsing, path building, and JSON conversion, with specific operations for managing values, types, and hierarchical structures. users can build typed configurations, parse command-line inputs, construct URL-like paths, and serialize data for storage or transmission. examples include parsing log files, enforcing type constraints at runtime, generating RESTful routes, and converting service definitions to JSON.",
+      "description_length": 691,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "RestoDirectory",
+      "description": "Encapsulates asynchronous operations with success or failure states using a monadic Lwt structure, where computations return values wrapped in an `'a answer` type. Supports JSON serialization and deserialization of values, allowing inspection and reconstruction of data through a structured view. For example, it can handle HTTP request responses by wrapping results in `ok` or propagating errors, and it can convert a user record to a JSON object for transmission and back. Operations include lifting values into threads, inspecting JSON representations, and reconstructing original data from serialized forms.",
+      "description_length": 611,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resto",
+      "description": "defines a set of utilities for building and managing RESTful APIs, handling typed URL paths, parameterized routes, and structured data serialization. It includes operations for converting between string and typed values, constructing URLs with parameters, and serializing structured data for transmission. The module supports custom types, dynamic route generation, and metadata management for service documentation. Examples include extracting integer parameters from URLs, building nested API endpoints, and generating consistent representations for data storage.",
+      "description_length": 565,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzRestoDirectory",
+      "description": "Encapsulates computations that can either succeed with a value or fail, using `ok` and `return` to manage success and delay, with `'a answer` representing the outcome. Supports serialization and deserialization of values through `value` type and JSON structures, enabling identity-preserving conversions. For example, it can transform a user record into a JSON object for storage and later reconstruct it, while also handling I/O operations with explicit error states. This allows for robust handling of asynchronous workflows and data persistence.",
+      "description_length": 548,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzResto",
+      "description": "manages route and service configuration through typed argument handling, path construction, and value serialization; supports int, float, and custom types for route parameters, dynamic path building, and JSON-based value representation; enables creation of RESTful endpoints with structured routing and metadata, including serialization of service configurations and unique identifier tracking; allows for precise route matching, parameterized URL generation, and consistent data representation across API layers.",
+      "description_length": 513,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "RestoDirectory_impl",
+      "description": "manages string-keyed maps with functional transformations, handles asynchronous success states through promise-based workflows, and enables JSON serialization and deserialization of values. It supports operations like insert, delete, and fold on maps, constructs `answer` types for asynchronous success, and provides `value` to JSON conversion and reconstruction. Users can build dynamic configurations, manage non-blocking I/O flows, and persist data in a structured format. Examples include filtering map entries by predicate, chaining asynchronous operations, and storing complex data in JSON.",
+      "description_length": 596,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 28,
+    "meaningful_modules": 28,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 691,
+    "min_description_length": 289,
+    "avg_description_length": 405.14285714285717,
+    "embedding_file_size_mb": 0.10211753845214844
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "package": "ocp-indent-nlfork",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 14,
+  "creation_timestamp": "2025-06-18T16:33:40.635434",
+  "modules": [
+    {
+      "module_path": "Nstream.Position",
+      "description": "Tracks and represents lexical positions with column offsets. Provides conversion to string and access to column information. Used to annotate error messages with precise location data during parsing.",
+      "description_length": 199,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nstream.Region",
+      "description": "Creates and manipulates regions defined by start and end positions, providing access to line and column numbers, character offsets, and lengths. Operates on position-based data to track text ranges in a file. Used to represent and adjust lexical spans during parsing or analysis.",
+      "description_length": 279,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nstream.Simple",
+      "description": "Provides functions to construct instances from an input channel or string, and to retrieve the next token along with the updated state. Works with a custom `token` type and an abstract `t` type representing the parsing state. Used to process structured input incrementally, such as parsing a stream of delimited values.",
+      "description_length": 319,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Approx_lexer.Simple",
+      "description": "Converts lexing positions to strings and processes various token types from a lexing buffer, returning parsed tokens and updated contexts. Works with lexing positions, context records, and string inputs to handle specific token formats like comments, code, and PXP/P4 tokens. Used to parse and transform tokens during lexical analysis in a custom language processor.",
+      "description_length": 366,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "ocp-indent-nlfork",
+      "description": "Indents OCaml code according to specified formatting rules, handling complex syntax structures like nested expressions and pattern matching. Operates on abstract syntax trees and source code strings to produce consistently formatted output. Used to automate code formatting in build processes and editor integrations.",
+      "description_length": 317,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Simple_tokens",
+      "description": "Provides functions to create, compare, and serialize tokens, and to check their type. Works with a discriminated union type representing different lexical elements such as keywords, identifiers, and operators. Used to process and analyze input streams during parsing or lexing tasks.",
+      "description_length": 283,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "IndentExtend",
+      "description": "Registers custom lexer extensions with optional keywords and lexer functions, enabling dynamic token recognition. Works with strings, token lists, and custom lexer functions to extend parsing capabilities. Used to integrate domain-specific syntax highlighting or parsing rules into a larger analysis tool.",
+      "description_length": 305,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Approx_tokens",
+      "description": "Converts token values to their string representations, handles overflow states during token processing, and manages token type conversions. Works with custom token types and overflow state tracking. Used to generate human-readable output from parsed tokens and manage error conditions in token streams.",
+      "description_length": 302,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "IndentPrinter",
+      "description": "Handles line-by-line reindentation by analyzing and adjusting indentation levels based on file context. Operates on stream data and indentation blocks to determine which lines require adjustment. Outputs modified content to standard output or custom sinks, preserving original structure while applying consistent indentation.",
+      "description_length": 325,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Util",
+      "description": "Provides composition of functions, default value handling, and string manipulation including splitting by character or string, checking prefixes, detecting escape endings, counting leading spaces, and truncating strings. Works with functions, options, strings, and bytes. Used for processing and transforming text data in parsing and formatting tasks.",
+      "description_length": 351,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "IndentBlock",
+      "description": "Provides operations to manipulate and query block indentation state, including shifting, setting columns, reversing, and calculating padding or current indentation. Works with a custom type representing block context, tracking stack, token positions, and syntactic state. Used to manage indentation during parsing, handle empty lines, and determine contextual positions like being in a comment or at the top level.",
+      "description_length": 414,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "IndentConfig",
+      "description": "Provides functions to parse, generate, and manage indentation configuration strings, including loading from files, updating via key-value strings, and saving configurations. Operates on a custom type `t` representing indentation settings and a list of man page blocks for documentation. Used to read and apply user-defined indentation rules from configuration files or environment variables, and to extract syntax extensions from config content.",
+      "description_length": 445,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nstream",
+      "description": "Tracks lexical positions and regions, enabling precise location tracking in text input. It supports creating tokens from input sources, managing parsing state, and extracting structured data with line and column information. Operations include converting positions to strings, calculating region lengths, and advancing through input streams. Examples include parsing CSV files, generating error messages with exact locations, and analyzing code syntax.",
+      "description_length": 452,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Approx_lexer",
+      "description": "Processes lexing positions and token types from a buffer, generating parsed tokens and updated contexts. Handles comments, code, and PXP/P4 tokens using string conversions and context records. Accepts input strings and returns structured token data with position tracking. Enables detailed lexical analysis by extracting and transforming specific token formats during processing.",
+      "description_length": 379,
+      "index": 13,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 14,
+    "meaningful_modules": 14,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 452,
+    "min_description_length": 199,
+    "avg_description_length": 338.2857142857143,
+    "embedding_file_size_mb": 0.051285743713378906
+  }
+}

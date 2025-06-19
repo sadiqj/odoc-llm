@@ -25,7 +25,7 @@ mcp = FastMCP("ocaml-search")
 
 # Global search engine instance (lazy loaded)
 search_engine: Optional[SemanticSearch] = None
-embeddings_dir = Path("package_embeddings")
+embeddings_dir = Path("package-embeddings")
 package_descriptions_dir = Path("package-descriptions")
 
 @mcp.tool()

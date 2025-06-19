@@ -1,0 +1,42 @@
+{
+  "package": "pecu",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 3,
+  "creation_timestamp": "2025-06-18T16:28:27.521529",
+  "modules": [
+    {
+      "module_path": "Pecu.Inline",
+      "description": "Decodes and encodes quoted-printable data using RFC2047 standards, handling inline email headers with non-ASCII characters. It processes byte sequences through a decoder that tracks decoded bytes and a encoder that manages output buffers. Functions support manual input/output control, allowing precise handling of malformed data and partial encoding/decoding states.",
+      "description_length": 367,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "pecu",
+      "description": "Encodes and decodes data using quoted-printable encoding with strict 80-character line length enforcement. Processes byte sequences and strings, ensuring compliance with RFC2045 standards. Detects and flags violations of the 80-character rule during decoding to prevent potential security risks.",
+      "description_length": 295,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pecu",
+      "description": "Encodes and decodes quoted-printable data according to RFC2047, supporting inline email headers with non-ASCII characters. It manages byte sequences through a decoder that tracks decoded bytes and an encoder that handles output buffers, enabling manual control over input and output. Operations include processing malformed data and maintaining partial encoding/decoding states. Examples include safely transmitting emails with special characters and handling large text streams in a non-blocking manner.",
+      "description_length": 504,
+      "index": 2,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 3,
+    "meaningful_modules": 3,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 504,
+    "min_description_length": 295,
+    "avg_description_length": 388.6666666666667,
+    "embedding_file_size_mb": 0.011331558227539062
+  }
+}

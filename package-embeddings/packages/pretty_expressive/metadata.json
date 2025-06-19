@@ -1,0 +1,70 @@
+{
+  "package": "pretty_expressive",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 7,
+  "creation_timestamp": "2025-06-18T16:31:48.949549",
+  "modules": [
+    {
+      "module_path": "Pretty_expressive.Printer.Make",
+      "description": "Calculates and compares costs for text layout using operations like `text` for column-based text placement, `newline` for indentation costs, and `combine` to merge costs. It supports ordered comparisons via `le` and includes specialized costs for two-column formatting with `two_columns_bias` and `two_columns_overflow`. The module is used to enforce layout constraints in typesetting systems, such as preferring leftmost column separators or prioritizing page width over column limits.",
+      "description_length": 486,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pretty_expressive.Printer.MakeCompat",
+      "description": "Calculates and compares costs for text layout using operations like `text`, `newline`, `combine`, and `le` to model placement and formatting constraints. It works with a custom `t` type representing cost values, including biases and overflow penalties for column-based formatting. Used to enforce layout preferences, such as prioritizing leftmost column separators or preferring page width over column overflow.",
+      "description_length": 411,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pretty_expressive.Printer",
+      "description": "Calculates and compares layout costs using `text`, `newline`, `combine`, and `le` to model formatting constraints, with a custom `t` type that includes biases and overflow penalties. Supports two-column formatting with `two_columns_bias` and `two_columns_overflow` to influence layout decisions. Can enforce preferences like leftmost column separation or page width prioritization. Examples include optimizing text placement for readability or adjusting layout to fit specific page dimensions.",
+      "description_length": 493,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pretty_expressive.Signature",
+      "description": "This module provides document composition and layout control through combinators that manage alignment, indentation, and line breaks, operating on a `doc` type representing structured formatted content. It enables precise control over text rendering, including horizontal and vertical concatenation, folding, and customizable layout strategies, suitable for generating readable code outputs, reports, or formatted strings. Specific use cases include handling complex indentation in code generation and optimizing line breaks for readability in textual outputs.",
+      "description_length": 560,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pretty_expressive.Util",
+      "description": "Provides functions to create, update, and query structured data with metadata, including merging information, extracting fields, and validating content. Works with the 't info type, which pairs a value with additional descriptive attributes. Used to manage configuration settings and annotate parsed input with source locations.",
+      "description_length": 328,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "pretty_expressive",
+      "description": "Generates formatted output using a layout algorithm that ensures optimal line breaks and indentation based on a tree of layout elements. It operates on a custom abstract syntax tree structure representing formatted content. Used to produce human-readable JSON and XML outputs with consistent formatting.",
+      "description_length": 303,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pretty_expressive",
+      "description": "combines layout optimization, document formatting, and structured data management through specialized types and operations. it handles cost-based layout decisions with `t` types and combinators, manages structured documents with `doc` for precise formatting, and manipulates annotated data via `t info` for metadata-aware processing. it enables tasks like optimizing two-column layouts, generating indented code, and annotating parsed inputs with source information. examples include adjusting text flow for readability, generating well-formatted reports, and preserving metadata during data transformations.",
+      "description_length": 608,
+      "index": 6,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 7,
+    "meaningful_modules": 7,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 608,
+    "min_description_length": 303,
+    "avg_description_length": 455.57142857142856,
+    "embedding_file_size_mb": 0.025847434997558594
+  }
+}

@@ -1,0 +1,665 @@
+{
+  "package": "tcpip",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 92,
+  "creation_timestamp": "2025-06-18T16:49:13.341823",
+  "modules": [
+    {
+      "module_path": "Tcp.User_buffer.Tx.TXS",
+      "description": "Handles transaction serialization and output with customizable flags and options, operating on transaction objects of type Segment.Tx.t. Accepts a buffer and returns a Lwt promise indicating completion. Used to prepare and send transactions over a network protocol with specific formatting requirements.",
+      "description_length": 303,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tcpip.Tcp.Keepalive",
+      "description": "Provides functions to configure and manage TCP keep-alive settings, including setting the interval between probes and the number of unacknowledged probes before termination. Works with a record type containing fields for interval, count, and initial timeout. Used to maintain reliable long-lived network connections in server applications.",
+      "description_length": 339,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcpip.Stack.UDP",
+      "description": "Provides functions to manage UDP connections, including listening on ports, handling incoming packets, writing datagrams with optional source and TTL settings, and disconnecting. Operates on types such as IP addresses, Cstruct.t for packet data, and custom error types. Used to route incoming traffic, send packets with specific source details, and manage active connections in networked applications.",
+      "description_length": 401,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcpip.Stack.TCP",
+      "description": "The module provides low-level TCP operations for managing connections, transmitting data, and controlling flow, including functions like read, write, shutdown, and disconnect. It works with connection handles (`t`), IP addresses, and ports to facilitate reliable, stateful communication. Use cases include implementing custom network protocols or handling explicit connection management in high-performance applications.",
+      "description_length": 420,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcpip.Stack.IP",
+      "description": "Provides pretty-printers for errors, IP addresses, and prefixes. Handles IP layer operations such as demultiplexing incoming packets, sending data with configurable options, and calculating pseudoheaders for checksums. Works with IP addresses, prefixes, and callback functions to manage network communication.",
+      "description_length": 309,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcpip_stack_direct.TCPV4V6.UDP",
+      "description": "Handles UDP communication by providing functions to listen on and unlisten from specific ports, process incoming packets, and send data with optional source and TTL settings. Operates on IP addresses, ports, and Cstruct buffers, with error handling through a custom error type. Used to manage real-time packet reception and transmission in networked applications.",
+      "description_length": 363,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tcpip_stack_direct.TCPV4V6.TCP",
+      "description": "This module provides TCP connection management and data transfer operations, including reading, writing, disconnecting, and error handling, with support for buffered and nodelay write modes. It operates on network flows, IP addresses, ports, and a type `t` for connection state management. Use cases include implementing reliable network communication protocols or server-client architectures requiring precise control over data transmission and connection lifecycle.",
+      "description_length": 467,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcpip_stack_direct.TCPV4V6.IP",
+      "description": "Provides pretty-printers for errors, IP addresses, and prefixes. Handles IP layer operations such as demultiplexing incoming packets, sending data with configurable options, and generating pseudoheaders for checksums. Works with IP addresses, prefixes, and callback functions to process network traffic.",
+      "description_length": 303,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tcp.User_buffer.Rx",
+      "description": "Manages a bounded buffer for asynchronous data exchange, supporting adding and taking packets with Lwt-based concurrency. Operates on a custom type `t` and works with `Cstruct.t` for packet data and `Window.t` for window management. Used to control data flow in network protocols, ensuring safe buffer handling and synchronization.",
+      "description_length": 331,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcp.User_buffer.Tx",
+      "description": "Manages transaction data through serialization and output, using Segment.Tx.t as the core data type. Supports customizable formatting options and returns asynchronous results via Lwt. Can prepare transactions for network transmission with precise control over encoding and flags. Example tasks include generating binary representations for network delivery or logging with specific metadata.",
+      "description_length": 391,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcp.Ack.Immediate",
+      "description": "Handles sequence-based message transmission and acknowledgment, supporting receive, pushack, and transmit operations with a stateful context. Operates on sequence numbers and Lwt-mutexes to coordinate asynchronous communication. Used to manage reliable data flow in network protocols or stream processing.",
+      "description_length": 305,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcp.Ack.Delayed",
+      "description": "Handles sequence-based message acknowledgment and transmission with asynchronous operations. Operates on sequence numbers and Lwt-based mvars to manage state between send and receive processes. Used to coordinate message delivery and confirmation in networked or event-driven systems.",
+      "description_length": 284,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcp.Wire.Make",
+      "description": "Provides pretty-printers for errors, IP addresses, and prefixes. Handles IP layer operations such as disconnecting, demultiplexing incoming packets, and writing IP frames with customizable headers and fragmentation. Works with IP addresses, prefixes, and callback functions to process network traffic. Used for managing network interfaces, constructing packets, and handling protocol-specific data.",
+      "description_length": 398,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcp.Stats.Gc",
+      "description": "Provides functions to control garbage collection statistics display, including enabling and disabling live memory tracking and forcing a major garbage collection before output. Operates on internal GC state and system memory metrics. Useful for diagnosing memory usage spikes or understanding allocation patterns during debugging.",
+      "description_length": 330,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcp.Segment.Rx",
+      "description": "Handles sequence-based message transmission and acknowledgment with asynchronous operations. Operates on sequences and Lwt-based mutable variables to manage state between senders and receivers. Used to coordinate reliable data flow in concurrent network protocols.",
+      "description_length": 264,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcp.Segment.Tx",
+      "description": "Manages outbound data transmission by queuing segments for sending, handling acknowledgment tracking, and managing window updates. It operates with sequence numbers, transmission windows, and Lwt-based synchronization primitives. Used to coordinate packet transmission in network protocols, ensuring proper flow control and reliable delivery.",
+      "description_length": 342,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcp.Tcp_packet.Unmarshal",
+      "description": "Parses a binary structure from a Cstruct buffer, returning a parsed value and remaining data or an error message. It processes structured binary data using a custom format defined by the module's encoding rules. This is used to decode network packets or serialized data streams efficiently.",
+      "description_length": 290,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcp.Tcp_packet.Marshal",
+      "description": "Handles TCP header construction and checksum calculation, using a pseudoheader and payload to generate a valid header in a buffer. Operates on Cstruct.t for input and output, ensuring correct alignment and size for network transmission. Used to prepare TCP packets for sending over a network interface with accurate checksums.",
+      "description_length": 326,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tcp.Flow.Make",
+      "description": "Provides pretty-printers for errors, IP addresses, and prefixes. Handles IP layer communication by demultiplexing incoming packets, sending data with configurable IP headers, and calculating pseudoheaders for checksums. Manages IP address and prefix configuration, and retrieves interface-specific metrics like MTU.",
+      "description_length": 315,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Routing.Make",
+      "description": "Provides asynchronous operations to manage ARP cache entries, including adding, removing, and querying IP addresses, as well as disconnecting from the ARP layer. Works with IP addresses, MAC addresses, and custom error types to handle ARP communication. Used to dynamically update ARP tables and respond to ARP requests in networked applications.",
+      "description_length": 346,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tcpip.Ip",
+      "description": "Reassembles IP fragments into packets, demultiplexes incoming IP frames to TCP, UDP, or custom protocols, and fragments payloads for transmission with configurable options like TTL and fragmentation. Operates on IP addresses, network prefixes, and raw packet buffers. Used to handle IP-level communication, manage packet routing, and calculate checksums for TCP/UDP headers.",
+      "description_length": 374,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcpip.Stack",
+      "description": "manages network communication through UDP and TCP protocols, along with IP layer operations, offering control over packet routing, connection handling, and data transmission. It defines types like IP addresses, connection handles, and Cstruct.t for packet data, and includes operations for sending and receiving packets, managing connections, and generating human-readable outputs. Users can route traffic, implement custom protocols, and handle network events with fine-grained control. Examples include sending datagrams with specified sources, maintaining TCP sessions, and pretty-printing error messages for debugging.",
+      "description_length": 622,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tcpip.Tcp",
+      "description": "The module offers low-level TCP operations for managing network connections, including reading, writing, shutting down, and closing streams, with robust error handling and lifecycle control. It works with connection handles, IP addresses, ports, and stream-based data, enabling reliable, ordered data transfer. Use cases include building networked applications requiring guaranteed delivery and sequential processing of data over reliable channels.",
+      "description_length": 448,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcpip.Udp",
+      "description": "Handles UDP communication by managing connections, listening on ports, and routing packets. Processes datagrams using IP addresses and Cstruct buffers, with support for writing and disconnecting. Enables event-driven packet handling through callbacks and error reporting.",
+      "description_length": 271,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Udp.Make",
+      "description": "Provides pretty-printers for errors, IP addresses, and prefixes. Handles network packet input, writing, and demultiplexing, with support for TCP, UDP, and custom protocols. Manages IP address configuration, MTU retrieval, and pseudoheader generation for checksums.",
+      "description_length": 264,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Icmpv4_packet.Unmarshal",
+      "description": "Extracts a subheader from an ICMPv4 packet header and deserializes a complete ICMPv4 packet from a byte buffer, returning a result that may contain an error message. Operates on Cstruct.t for byte-level manipulation and Icmpv4_wire.ty for protocol-specific header information. Used to parse incoming network traffic for ICMPv4 messages and validate packet structure during processing.",
+      "description_length": 384,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Icmpv4_packet.Marshal",
+      "description": "Generates ICMPv4 headers in a Cstruct buffer using a provided payload for checksum calculation. Allocates and returns a new Cstruct with header data, ensuring proper size for the ICMPv4 header. Handles errors during buffer operations with string-based error messages.",
+      "description_length": 267,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Udpv4v6_socket.Log",
+      "description": "Provides logging operations for different severity levels, including message formatting and error handling. Works with log levels, formatted messages, and result types to manage success and error states. Enables structured error recovery with custom formatting and tagging.",
+      "description_length": 273,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcpip_stack_direct.IPV4V6",
+      "description": "Provides pretty-printers for errors, IP addresses, and prefixes. Handles IP layer operations such as demultiplexing incoming packets, writing IP frames with optional fragmentation, and calculating pseudoheaders for checksums. Works with IP addresses, prefixes, and network interfaces, enabling tasks like sending packets, determining MTU, and managing configured IP ranges.",
+      "description_length": 373,
+      "index": 28,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tcpip_stack_direct.MakeV4V6",
+      "description": "Provides functions to manage network interfaces, including writing packets with a specified size and fill function, listening for incoming packets with a header size constraint, and disconnecting from the device. Operates on network handles of type `t`, MAC addresses of type `Macaddr.t`, and custom error types. Used to send and receive network traffic, retrieve interface statistics, and manage device connections.",
+      "description_length": 416,
+      "index": 29,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tcpip_stack_direct.TCPV4V6",
+      "description": "manages network communication by combining UDP and TCP protocols with IP layer operations, enabling packet handling, connection management, and traffic processing. It works with IP addresses, ports, Cstruct buffers, and a connection state type `t`, supporting operations like listening, sending, reading, writing, and error reporting. Examples include real-time packet reception, reliable data transfer in client-server setups, and generating checksums for network packets. It also includes pretty-printing for debugging and monitoring network activity.",
+      "description_length": 553,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ipv4_packet.Unmarshal",
+      "description": "Parses and validates network protocol headers from Cstruct buffers, extracting protocol-specific data and verifying transport checksums. It handles protocol conversion from integer identifiers and processes raw packet data with offset tracking. Used to validate TCP/UDP packets within an IPv4 header during network packet analysis.",
+      "description_length": 331,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ipv4_packet.Marshal",
+      "description": "Constructs and manipulates IPv4 headers by converting protocol values to integers, generating pseudoheaders for checksums, and serializing header data into Cstruct buffers. Operates on IP address structures, protocol identifiers, and custom header types. Used to prepare headers for network transmission or checksum calculations in low-level networking code.",
+      "description_length": 358,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ipv6.Make",
+      "description": "Provides functions to manage network device operations including writing packets, listening for incoming traffic, and disconnecting. It works with types like Cstruct.t for buffer manipulation, Macaddr.t for MAC addresses, and custom error types for handling network-related issues. Use cases include sending formatted packets, capturing network traffic with specified headers, and retrieving or resetting interface statistics.",
+      "description_length": 426,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tcp.Ack",
+      "description": "Handles acknowledgment tracking and transmission for sequence numbers, supporting receipt, pushing, and sending of acknowledgments. Operates on sequence numbers and Lwt-based mutable variables for asynchronous coordination. Used to manage reliable data flow in network protocols or stream processing.",
+      "description_length": 300,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tcp.Flow",
+      "description": "handles error, IP address, and prefix formatting, along with IP packet demultiplexing, header customization, and pseudoheader computation for checksums; it manages IP configuration and interface metrics such as MTU. it supports operations like parsing and serializing IP addresses, constructing packets with user-defined headers, and calculating checksums using pseudoheaders. examples include generating human-readable error messages, sending customized IP packets, and retrieving interface-specific data.",
+      "description_length": 506,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcp.Keepalive",
+      "description": "Manages TCP keepalive logic by tracking connection state and determining whether to send a probe or close the connection based on inactivity duration. It processes timestamps of last received packets and applies configured thresholds to decide actions. Uses a state machine to transition between active and inactive states, triggering network probes or closure when needed.",
+      "description_length": 373,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tcp.Options",
+      "description": "Parses and serializes TCP options from and into Cstruct buffers, handling lists of option records. Operates on a custom type representing individual options and lists of these records. Used to validate option equality, calculate total length, and convert between binary data and structured option lists.",
+      "description_length": 303,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tcp.Segment",
+      "description": "manages sequence-based communication using Lwt for asynchronous coordination, enabling reliable message transmission and acknowledgment through mutable state management. It supports queuing, window-based flow control, and sequence number tracking to ensure ordered and complete data delivery. Operations include sending segments, tracking acknowledgments, and adjusting transmission windows dynamically. Examples include implementing a reliable chat protocol or streaming data over TCP with flow control.",
+      "description_length": 504,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcp.Sequence",
+      "description": "Provides comparison and arithmetic operations on an abstract numeric type `t`, including checking order relations, adding and subtracting values, and converting between integer types. Supports range checks and increment/decrement operations. Used for precise numeric manipulation and formatted output of values.",
+      "description_length": 311,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcp.State",
+      "description": "Provides functions to manage and inspect the state of a TCP connection, including timers for FIN-WAIT-2 and TIME-WAIT phases, and actions to transition between states. Works with custom types like `action`, `tcpstate`, and `t` to represent connection behavior and internal state. Used to handle timeout events and clean up connections gracefully upon closure.",
+      "description_length": 359,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcp.Stats",
+      "description": "Tracks and manages garbage collection statistics, allowing control over memory tracking and forced garbage collection. Exposes internal GC state and system memory metrics through functions for inspection and manipulation. Enables debugging by capturing allocation patterns and memory spikes. Examples include forcing a GC to analyze memory usage or toggling live memory tracking during performance analysis.",
+      "description_length": 407,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcp.Tcp_packet",
+      "description": "Parses and constructs TCP packets using Cstruct buffers, handling both decoding and encoding operations. It supports extracting header fields and payload from binary data, as well as generating headers with correct checksums. Operations include parsing headers with options for validation and building headers from raw data. Examples include decoding a received packet to extract source and destination ports, or constructing a packet with a calculated checksum for transmission.",
+      "description_length": 479,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcp.Tcp_wire",
+      "description": "This module provides direct access and modification of TCP header fields, including ports, sequence numbers, flags, and window size, through a set of getter and setter functions operating on `Cstruct.t` buffers. It enables precise manipulation of TCP flags such as FIN, SYN, and ACK, facilitating tasks like packet inspection, protocol debugging, or custom header adjustments in network applications. The focus on binary data handling makes it suitable for low-level network processing or protocol implementation scenarios.",
+      "description_length": 523,
+      "index": 43,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tcp.Tcptimer",
+      "description": "Manages timed event sequences by scheduling periodic triggers and handling expiration logic. It operates with 64-bit integer time values and sequence data structures to control event timing. Used to implement delayed retransmission in network protocols, ensuring events are processed at specified intervals.",
+      "description_length": 307,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcp.User_buffer",
+      "description": "manages a bounded buffer for asynchronous data exchange, using a custom type `t` with `Cstruct.t` for packet data and `Window.t` for flow control, while also handling transaction serialization with `Segment.Tx.t` for network-ready outputs. It enables safe, concurrent data handling and precise control over transaction encoding and transmission. Operations include adding and taking packets, as well as preparing transactions with custom formatting. Examples include managing network protocol flow and generating binary transaction logs with metadata.",
+      "description_length": 551,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcp.Window",
+      "description": "The module provides operations for managing TCP window state, such as sequence number advancement, acknowledgment validation, and window scale adjustments, working with a stateful `t` type. It includes functions for controlling transmit and receive window sizes, tracking available space, and handling retransmissions and timeouts to ensure reliable data transmission. These features are critical for managing network connections, optimizing data flow, and recovering from packet loss.",
+      "description_length": 485,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcp.Wire",
+      "description": "handles error, IP address, and prefix formatting, along with IP layer operations like packet demultiplexing, disconnection, and frame construction. it works with IP addresses, prefixes, and callback functions to manage network traffic and interface operations. users can customize IP headers, fragment packets, and process protocol-specific data. examples include generating human-readable error messages, constructing IP frames with specific headers, and handling incoming packets through defined callbacks.",
+      "description_length": 508,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Udp_packet.Unmarshal",
+      "description": "Parses a Cstruct buffer into a UDP header and extracts the payload, returning an error message on failure. It operates on Cstruct.t values, expecting a valid UDP header format. Used to process incoming network packets by separating header data from the remaining content.",
+      "description_length": 271,
+      "index": 48,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Udp_packet.Marshal",
+      "description": "Assembles a UDP header in a buffer using source and destination ports, length, and checksum calculated from a pseudoheader and payload. Operates on Cstruct.t for buffer manipulation and returns a result type indicating success or error. Used to construct network packets with accurate checksums for reliable transmission.",
+      "description_length": 321,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Static_ipv4.Make",
+      "description": "Disconnects from the ARP layer asynchronously, updates ARP cache from incoming frames, and manages IP address bindings with GARP notifications. It handles IPv4 addresses, maintains a cache of MAC addresses, and provides error pretty-printing. It allows querying the cache for MAC addresses and modifying IP bindings dynamically.",
+      "description_length": 328,
+      "index": 50,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Icmpv4.Make",
+      "description": "Provides pretty-printers for errors, IP addresses, and prefixes. Handles network packet demultiplexing, writing, and checksum calculations, with support for IP address configuration and MTU retrieval. Manages packet input through TCP, UDP, or custom protocol callbacks, and constructs IP headers for transmission.",
+      "description_length": 313,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fragments.V",
+      "description": "Calculates the data length of received fragments by extracting the first component of a tuple containing an int64, a Cstruct.t, a boolean, an integer, and a list of fragment pairs. Operates on a custom type that encapsulates network packet metadata and fragmented data. Used to determine the size of complete packets during reassembly.",
+      "description_length": 335,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fragments.K",
+      "description": "Compares pairs of IPv4 addresses and port ranges, returning an integer based on lexicographical order. It operates on tuples containing two IPv4 addresses and two integers, typically representing network endpoints. This is used to sort or order network connections in a consistent manner.",
+      "description_length": 288,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fragments.Cache",
+      "description": "The module provides operations for managing a cache with LRU eviction, including creating, resizing, querying, and key-based traversal of bindings with weights. It works with key-value pairs of types K.t and V.t, supporting conversions between lists and the cache structure while maintaining LRU-to-MRU order. Specific use cases include optimizing memory usage in resource-constrained applications and serializing cache contents for debugging or persistence.",
+      "description_length": 458,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ipv6_wire.Ns",
+      "description": "Provides access to specific fields within a network packet structure, including checksum, reserved, and target address offsets. It includes functions to retrieve and modify these fields using Cstruct.t, with support for 16-bit, 32-bit, and IPv6 address types. Used to manipulate and validate packet headers in low-level network protocol implementations.",
+      "description_length": 353,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ipv6_wire.Llopt",
+      "description": "Handles operations on a specific network protocol header format, providing direct access to field offsets and values. Works with Cstruct.t for buffer manipulation and Macaddr.t for MAC address representation. Enables precise extraction and modification of length and address fields in network packets.",
+      "description_length": 301,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ipv6_wire.Icmpv6",
+      "description": "Handles ICMPv6 packet operations, including setting checksums and accessing fixed-size fields. Works with Cstruct.t for packet manipulation and unsigned 16-bit integers for checksum values. Used to validate and modify ICMPv6 headers in network packet processing.",
+      "description_length": 262,
+      "index": 57,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ipv6_wire.Na",
+      "description": "Provides access and modification of fields within a network address structure, including reserved bits, target IPv6 address, and flag bits. Operates on Cstruct.t and Ipaddr.V6.t types to extract and update specific components of network packets. Used to parse and construct neighbor discovery messages in low-level network protocols.",
+      "description_length": 333,
+      "index": 58,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ipv6_wire.Rs",
+      "description": "Provides functions to manipulate DNS resource record headers, including setting the checksum and reserved fields. Operates on Cstruct.t buffers and unsigned integer types. Used to construct or modify DNS response records in network packet processing.",
+      "description_length": 250,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ipv6_wire.Pingv6",
+      "description": "Provides access to fields and checksum of IPv6 ping packets using Cstruct.t. Extracts and modifies the identifier, sequence number, and checksum at specific offsets within the packet structure. Used to construct and validate ICMPv6 echo requests and replies in network communication.",
+      "description_length": 283,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ipv6_wire.Opt",
+      "description": "Provides functions to retrieve and modify the length field of an option structure within a Cstruct. Operates on Cstruct.t and Cstruct.uint8 types. Used to parse and update the length of an option in network packet processing.",
+      "description_length": 225,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ipv6_wire.Opt_prefix",
+      "description": "This module provides operations for extracting and modifying specific fields within a structured binary buffer (`Cstruct.t`) representing IPv6 prefix options, such as length, reserved bits, lifetimes, and the prefix address, using targeted get and set functions. It includes a check for packet autonomy, enabling validation of raw packet data structured as `Cstruct.t`. These capabilities are applicable in network protocol parsing and configuration tasks, such as handling IPv6 address delegation or packet filtering.",
+      "description_length": 518,
+      "index": 62,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ipv6_wire.Ra",
+      "description": "Provides access to fields within an IPv6 Router Advertisement (RA) message, including checksum, hop limit, router lifetime, reachable time, and retransmission timer. Operates on Cstruct.t buffers, extracting and modifying specific 8-bit, 16-bit, and 32-bit values at predefined offsets. Used to parse and configure RA packets in network protocol implementations.",
+      "description_length": 362,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ipv6_wire.Redirect",
+      "description": "Provides access to and modification of fields in a redirect header, including checksum, reserved bits, target address, and destination address. Operates on Cstruct.t buffers and IPv6 address structures. Used to inspect and alter redirect messages in network packet processing.",
+      "description_length": 276,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "tcpip",
+      "description": "Handles IP, ICMP, UDP, and TCP protocols with support for both socket and direct stack implementations. Processes IPv4 and IPv6 packets, manages connection states, and routes data between network interfaces. Used for building low-level network communication layers in Mirage-based systems.",
+      "description_length": 289,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ipv4_wire",
+      "description": "Provides direct access to and modification of IPv4 header fields within a byte buffer, including header length, version, total length, identification, flags, time-to-live, protocol, checksum, source, and destination addresses. Operates on Cstruct.t for efficient memory manipulation and Ipaddr.V4.t for IP address handling. Used to parse and construct IPv4 packets in network protocol implementations.",
+      "description_length": 401,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ipv4_socket",
+      "description": "Provides functions to format IPv4 addresses, prefixes, and errors, and to manage socket operations such as connecting, disconnecting, and sending data. Works with IPv4 addresses, network prefixes, and socket handles to enable low-level network communication. Used for configuring IP interfaces, handling incoming packets, and transmitting data with custom headers and options.",
+      "description_length": 376,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Routing",
+      "description": "Manages ARP cache entries through asynchronous operations, enabling dynamic updates and responses to ARP requests. Supports IP and MAC address manipulation, with custom error handling for network communication. Allows adding, removing, querying, and disconnecting from ARP entries. Can be used to maintain accurate ARP tables in real-time network applications.",
+      "description_length": 360,
+      "index": 68,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcpip",
+      "description": "Manages IP, TCP, and UDP communication with low-level control over packet assembly, transmission, and routing. Provides types such as IP addresses, connection handles, and Cstruct.t, enabling operations like sending datagrams, maintaining TCP streams, and handling UDP packets via callbacks. Supports custom protocol development, checksum calculations, and fine-grained control over network events. Examples include reassembling fragmented IP traffic, establishing TCP sessions, and routing UDP datagrams based on source addresses.",
+      "description_length": 531,
+      "index": 69,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Udp",
+      "description": "Handles network packet processing, error reporting, and IP address management with support for multiple protocols. Provides functions for reading and writing packets, demultiplexing traffic, and generating checksum pseudoheaders. Key data types include error messages, IP addresses, and packet buffers, with operations for configuration, parsing, and transmission. Examples include printing error details, inspecting packet headers, and configuring network interfaces.",
+      "description_length": 468,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Udp_wire",
+      "description": "Handles UDP header manipulation using Cstruct.t, providing direct access to port numbers, length, and checksum fields. Allows reading and modifying specific header values within a byte buffer. Used for constructing and parsing UDP packets in network protocols.",
+      "description_length": 260,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Icmpv4_packet",
+      "description": "Processes and constructs ICMPv4 packets using Cstruct.t for byte manipulation and Icmpv4_wire.ty for protocol details. Parses incoming packets into structured headers or returns errors, and builds outgoing packets with correct header formatting and checksums. Supports validation of received ICMPv4 traffic and generation of new packets for transmission. Can extract echo request headers, verify packet integrity, or create custom ICMPv4 messages with specified payloads.",
+      "description_length": 471,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Udpv4v6_socket",
+      "description": "Handles logging with structured error recovery, supporting multiple severity levels, formatted messages, and result types for success and failure states. Includes custom tagging and error handling to track and manage log entries effectively. Allows developers to generate detailed logs, manage error states, and associate metadata with log messages. Example tasks include logging warnings with contextual data, capturing errors in a structured format, and filtering logs by severity.",
+      "description_length": 483,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcpip_stack_direct",
+      "description": "manages network communication by integrating IP, UDP, and TCP protocols, enabling packet handling, connection management, and traffic processing. It operates on IP addresses, ports, Cstruct buffers, and connection states, supporting operations like sending, receiving, listening, and error reporting. Tasks include real-time packet reception, reliable data transfer in client-server applications, and generating checksums for network packets. It also includes pretty-printing for debugging and interface management features like sending packets and retrieving statistics.",
+      "description_length": 571,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcp_socket_options",
+      "description": "Sets TCP keepalive parameters including idle time, interval between probes, and number of probes. Operates on Unix file descriptors and duration values. Used to configure long-lived network connections to detect and handle peer failures.",
+      "description_length": 237,
+      "index": 75,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ipv4_packet",
+      "description": "Extracts and validates protocol data from raw packet buffers, handling checksums and protocol conversions, while constructing and serializing IPv4 headers with support for IP addresses and custom header types. Key data types include Cstruct buffers, protocol identifiers, and IP address structures, with operations for parsing, validating, and generating header content. Examples include verifying TCP/UDP headers within an IPv4 packet and preparing headers for transmission with correct checksums. The module enables low-level network packet analysis and manipulation through precise header handling and data extraction.",
+      "description_length": 621,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ipv6_socket",
+      "description": "Provides functions to format IPv6 addresses, prefixes, and errors, and to manage socket operations such as connecting, disconnecting, reading input, and writing packets with options for fragmentation, TTL, and source address. Works with IPv6 addresses, prefixes, and network sockets, supporting low-level packet handling and IP configuration queries. Used for constructing and inspecting IPv6 network traffic, configuring socket parameters, and managing connection states in network applications.",
+      "description_length": 496,
+      "index": 77,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tcpv4v6_socket",
+      "description": "This module handles low-level TCP/IP socket operations for IPv4 and IPv6, including connection management, data transmission, and address retrieval. It works with network flows, IP addresses, file descriptors, and socket handles to enable reliable communication. Use cases include building network servers, clients, or protocols requiring explicit control over TCPv4v6 interactions.",
+      "description_length": 382,
+      "index": 78,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ipv4v6_socket",
+      "description": "Provides functions to handle IP address formatting, error reporting, and network operations such as connecting, disconnecting, and writing packets. Works with IP address types, prefixes, and callback functions for packet processing. Used to manage IPv4 and IPv6 communication, including setting source addresses, determining MTU, and constructing pseudoheaders for protocols.",
+      "description_length": 375,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ipv6",
+      "description": "handles network device interactions through packet writing, traffic listening, and disconnection, utilizing Cstruct.t for buffer handling, Macaddr.t for MAC address management, and custom error types for robust error reporting. It enables sending structured packets, capturing traffic with defined headers, and accessing or resetting interface metrics. Operations include low-level buffer manipulation, MAC address validation, and error-aware network communication. Examples include constructing IPv6 packets, monitoring incoming traffic, and retrieving interface statistics.",
+      "description_length": 575,
+      "index": 80,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ndpv6",
+      "description": "Calculates IPv6 packet checksums and manages local network contexts, including IP addresses, prefixes, and routers. It processes incoming packets, resolves routes, and generates outgoing packets with specified headers and payloads. It supports periodic maintenance tasks and enables sending packets with source IP selection and custom data filling.",
+      "description_length": 348,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Icmpv4_wire",
+      "description": "Converts ICMPv4 message types to and from integers and strings, extracts and modifies fields like type, code, and checksum from a Cstruct buffer. Operates on custom types for ICMPv4 message types and unreachable error reasons. Used to parse and construct ICMPv4 packets in network protocol implementations.",
+      "description_length": 306,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcp",
+      "description": "Manages TCP communication through sequence tracking, acknowledgment handling, and flow control, with support for parsing and constructing packets, manipulating headers, and handling connection states. Provides custom types for options, window states, and connection actions, along with operations for checksum calculation, packet serialization, and state transitions. Enables tasks like reliable data transmission, packet inspection, and connection lifecycle management. Examples include implementing a chat protocol, generating custom IP packets, and managing keepalive timers.",
+      "description_length": 578,
+      "index": 83,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tcp_socket",
+      "description": "Provides functions for reading from and writing to TCP sockets using Lwt for asynchronous I/O, including handling of errors and connection termination. Operates on file descriptors and Cstruct.t for buffer manipulation, with distinct error types for read and write operations. Supports non-blocking writes, connection shutdown, and cancellation-aware exception handling.",
+      "description_length": 370,
+      "index": 84,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Udp_packet",
+      "description": "Extracts UDP headers and payloads from Cstruct buffers or constructs UDP headers with validated checksums, enabling packet processing and transmission. It handles source and destination ports, payload length, and checksum calculations, working with Cstruct.t as the primary data structure. Operations include parsing incoming data and assembling outgoing packets with correct formatting. Examples include decoding network traffic for analysis or preparing packets for sending over a network.",
+      "description_length": 491,
+      "index": 85,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Icmpv4_socket",
+      "description": "Handles ICMPv4 communication by connecting to the ICMP layer, sending and receiving messages, and managing packet input. Operates with IP addresses, Cstruct buffers, and custom error types to process and route ICMPv4 packets. Used to establish listeners for incoming ICMP messages and to transmit custom ICMP payloads with specified TTL values.",
+      "description_length": 344,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Static_ipv4",
+      "description": "Manages IPv4 network interactions by handling ARP disconnections, cache updates, and IP binding changes with GARP support. It maintains a MAC address cache and enables dynamic IP reassignment. Operations include querying MAC addresses and modifying IP bindings. Examples include updating ARP entries in response to network events and retrieving MAC addresses for known IPs.",
+      "description_length": 373,
+      "index": 87,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Icmpv4",
+      "description": "Provides functions to handle ICMPv4 messages, including sending and receiving packets with specific source and destination IPv4 addresses, and managing disconnection from the ICMP layer. Operates on types such as `t` for session state, `ipaddr` for IPv4 addresses, and `error` for error reporting. Used to process incoming ICMP messages and transmit custom ICMP packets with controlled TTL settings.",
+      "description_length": 399,
+      "index": 88,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fragments",
+      "description": "Manages IPv4 fragment reassembly using an LRU cache, tracking packets by source and destination IP, identifier, and protocol. Processes fragment data length, sorts network endpoints, and manages cache operations with weighted key-value pairs. Supports reassembly of packets up to 24,000 bytes, ensuring non-overlapping fragments and timely completion within 10 seconds. Enables efficient handling of out-of-order fragments and prevents denial of service through strict size and timing constraints.",
+      "description_length": 497,
+      "index": 89,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tcpip_checksum",
+      "description": "Calculates the one's complement checksum for network data using RFC1071 algorithm, operating on Cstruct.t and lists of Cstruct.t. It processes raw byte sequences to validate TCP and IP headers. Used to ensure data integrity during packet transmission and verification.",
+      "description_length": 268,
+      "index": 90,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ipv6_wire",
+      "description": "Provides low-level access to fields within various network packet structures using Cstruct.t, enabling precise manipulation of IPv6 headers, ICMPv6, DNS, and other protocol-specific data. Supports operations on IP addresses, MAC addresses, 16-bit and 32-bit integers, and option lengths, allowing extraction, modification, and validation of checksums, addresses, and control fields. Examples include setting ICMPv6 checksums, parsing RA messages, and adjusting DNS record headers. Facilitates tasks like constructing echo requests, validating neighbor discovery messages, and processing IPv6 option fields.",
+      "description_length": 606,
+      "index": 91,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 100,
+    "meaningful_modules": 92,
+    "filtered_empty_modules": 8,
+    "retention_rate": 0.92
+  },
+  "statistics": {
+    "max_description_length": 622,
+    "min_description_length": 225,
+    "avg_description_length": 381.04347826086956,
+    "embedding_file_size_mb": 0.33466625213623047
+  }
+}

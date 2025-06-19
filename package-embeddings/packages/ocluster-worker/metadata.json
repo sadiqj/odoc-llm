@@ -1,0 +1,56 @@
+{
+  "package": "ocluster-worker",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 5,
+  "creation_timestamp": "2025-06-18T16:30:02.733560",
+  "modules": [
+    {
+      "module_path": "Cluster_worker.Obuilder_config",
+      "description": "Provides functions to construct configuration objects for build environments, supporting both native and Docker-based sandboxes. Operates on store specifications and encapsulates sandbox-specific settings. Used to initialize build processes with environment-specific parameters.",
+      "description_length": 278,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Cluster_worker.Process",
+      "description": "Executes system commands with customizable environment, input, and error handling, returning results or specific error types. It works with command-line arguments, environment variables, and Lwt-based process management. Use it to run background tasks with logging and cancellation support.",
+      "description_length": 290,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Cluster_worker.Log_data",
+      "description": "Provides operations to manage log data streams, including creating a log instance, writing strings, reading from a stream, copying data from an input channel, and closing the log. Works with a custom type representing a log handle, along with integers and strings for tracking positions and content. Used to process and transfer log entries in real-time applications, such as streaming server logs to a file or network destination.",
+      "description_length": 431,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "ocluster-worker",
+      "description": "Manages build worker pools and assigns jobs based on build type and platform, using Cap'n Proto for communication. Processes Dockerfile and OBuilder spec builds, associating each with a Git commit context. Schedules builds on workers that match the required platform and have relevant cache data.",
+      "description_length": 296,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Cluster_worker",
+      "description": "manages build configurations, command execution, and log handling through integrated functions for environment setup, process control, and real-time log management. It uses configuration records, process handles, and log instances to encapsulate build parameters, execute commands with Lwt, and stream log data. Users can create sandboxed build environments, run and monitor background processes, and direct log outputs to files or networks. Examples include initializing a Docker build, executing a script with custom environment variables, and capturing log entries as they are generated.",
+      "description_length": 590,
+      "index": 4,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 5,
+    "meaningful_modules": 5,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 590,
+    "min_description_length": 278,
+    "avg_description_length": 377.0,
+    "embedding_file_size_mb": 0.01859569549560547
+  }
+}

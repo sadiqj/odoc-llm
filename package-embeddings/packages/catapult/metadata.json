@@ -1,0 +1,210 @@
+{
+  "package": "catapult",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 27,
+  "creation_timestamp": "2025-06-18T16:36:33.544054",
+  "modules": [
+    {
+      "module_path": "Catapult.Ser.Bare.String_map",
+      "description": "This module provides operations for managing string-keyed maps, including insertion, deletion, lookup, and transformation of key-value pairs, alongside sequence-based manipulation like converting maps to sequences or building maps from sequences. It supports functional programming patterns such as folding, filtering, and iterating over mappings, enabling efficient data processing and transformation. Use cases include dynamic configuration management, data aggregation, and scenarios requiring bidirectional conversion between map and sequence representations.",
+      "description_length": 563,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Catapult.Ser.Bare.Decode",
+      "description": "This module provides decoding operations for primitive data types (integers, floats, strings, bytes) and optional values, using a stateful decoder to track progress through binary or serialized data. It supports varint decoding and fixed-size extraction, operating on inputs like strings, bytes, or custom objects. It is designed for parsing structured data formats, such as protocol buffers or custom binary protocols, enabling efficient stream processing.",
+      "description_length": 457,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Catapult.Ser.Bare.Encode",
+      "description": "Encodes various data types into byte sequences using a stateful encoding context. It handles integers, booleans, floats, strings, and byte blobs, with support for both variable-length and fixed-length encoding. The encoder can write directly to an output stream or a buffer, enabling efficient serialization of structured data.",
+      "description_length": 327,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Catapult.Ser.Bare.Pp",
+      "description": "Provides functions to generate pretty-printing routines for basic types like integers, floats, booleans, and strings, as well as for collections such as lists, arrays, and options. Works with Format.formatter and custom type constructors to format values directly to output. Used to format debug logs, serialize data structures for display, and generate structured text outputs.",
+      "description_length": 378,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Catapult.Tracing.Syntax",
+      "description": "Provides a custom operator for binding values to identifiers within a syntax tree, supporting nested expressions. Works with abstract syntax tree nodes and lambda expressions. Used to construct and manipulate parsed code structures during compilation.",
+      "description_length": 251,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Catapult.Tracing.Control",
+      "description": "Handles initialization and cleanup of the backend system. Accepts an optional backend configuration to start operations and ensures proper shutdown. Used to manage lifecycle events in application workflows.",
+      "description_length": 206,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Catapult.Ser.Bare",
+      "description": "Reads byte sequences from an input source, supporting individual byte retrieval and multi-byte integer decoding in little-endian format. Operates on raw byte buffers and integer types of varying sizes. Used for parsing binary data streams, such as network protocols or file formats requiring precise byte-level access.",
+      "description_length": 318,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Catapult.Ser.Arg_value",
+      "description": "Handles decoding and encoding of command-line argument values using a specific binary format, with pretty-printing support. Works with the `t` type, which represents parsed argument values. Used to serialize and deserialize arguments during command-line processing and debugging.",
+      "description_length": 279,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Catapult.Ser.Arg",
+      "description": "Provides functions to decode, encode, and pretty-print values using a specific binary format, working with a custom type that represents structured data. Decoding converts binary data into the structured type, encoding serializes the type into a binary buffer, and pretty-printing outputs a human-readable representation. Used to serialize and deserialize protocol buffers or similar binary data formats.",
+      "description_length": 404,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Catapult.Ser.Extra",
+      "description": "Encodes and decodes values using a custom binary format through dedicated encode and decode functions, with error handling on invalid input. Formats values for pretty printing using the OCaml Format module. Works with a structured type containing fields for data representation. Used to serialize and deserialize structured data in network protocols and file formats.",
+      "description_length": 367,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Catapult.Ser.Event",
+      "description": "Handles decoding and encoding of event data using custom binary formats, with pretty-printing for debugging. Operates on a record type containing event-specific fields like timestamp and payload. Used to serialize events for network transmission and deserialize incoming data streams.",
+      "description_length": 284,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Catapult.Ser.Client_open_trace",
+      "description": "Handles decoding and encoding of trace data using a specific binary format, with pretty-printing for debugging. Operates on a structured type containing trace metadata and events. Used to serialize and deserialize trace information during distributed system diagnostics.",
+      "description_length": 270,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Catapult.Ser.Client_close_trace",
+      "description": "Handles decoding, encoding, and pretty-printing of trace data related to client disconnections. Operates on a record type containing timestamps, client identifiers, and disconnection reasons. Used to serialize and log detailed disconnection events for debugging and monitoring purposes.",
+      "description_length": 286,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Catapult.Ser.Client_emit",
+      "description": "Encodes and decodes values using a binary format, with explicit error handling during decoding. Formats values for pretty printing using OCaml's format module. Works with a custom type representing structured data payloads. Used to serialize and deserialize network messages in a client-server communication context.",
+      "description_length": 316,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Catapult.Ser.Client_message",
+      "description": "Handles decoding and encoding of client-side message data using custom binary serialization. Operates on a structured type representing client messages, including headers and payload fields. Used to serialize messages for network transmission and deserialize incoming data streams.",
+      "description_length": 281,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Catapult_utils.Gc_stats",
+      "description": "Tracks and emits garbage collection statistics at specified intervals, using process ID and timestamps to control output. Operates on floating-point timestamps and process identifiers to schedule and trigger events. Used to collect real-time GC performance data for profiling and analysis.",
+      "description_length": 289,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Catapult_utils.Thread_local",
+      "description": "Provides functions to manage thread-local storage, including creating, retrieving, removing, and iterating over values associated with specific thread IDs. Operates on a polymorphic type 'a t, where each thread maintains its own value. Used to store per-thread state such as configuration or context that must remain isolated between threads.",
+      "description_length": 342,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Catapult_utils.Json_out",
+      "description": "Writes JSON-encoded values to a buffer, supporting characters, strings, integers, floats, booleans, and null. Handles raw string insertion and type-specific serialization for precise control over output. Used to construct JSON content incrementally in memory for logging, API responses, or data serialization.",
+      "description_length": 309,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Catapult.Event_type",
+      "description": "Converts between a custom event type and its corresponding ASCII character representation. Operates on a polymorphic variant type that encodes distinct event categories. Used to serialize and deserialize event identifiers in protocol messaging.",
+      "description_length": 244,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Catapult.Arg",
+      "description": "Provides functions to create, manipulate, and serialize custom argument data, including adding key-value pairs and formatting output. Works with a flexible data structure that supports strings, integers, and nested values. Used to attach diagnostic information to logs or events for troubleshooting and monitoring.",
+      "description_length": 314,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Catapult.Tracing",
+      "description": "Injects tracing points into code for runtime event collection, using a backend for data emission or silent operation. Supports binding values to identifiers in abstract syntax trees and manages backend initialization and shutdown. Enables code structure manipulation and event-driven application workflows. Allows developers to track execution flow and manage resource lifecycles efficiently.",
+      "description_length": 392,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Catapult.Nil_impl",
+      "description": "Provides functions to install and remove a profiling backend, and to execute code within a scoped setup. Operates with unit values and returns results of arbitrary type. Useful for temporarily enabling profiling during specific code execution blocks.",
+      "description_length": 250,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Catapult.Endpoint_address",
+      "description": "Converts between a custom address type and its string representation, with safe and unsafe parsing options. Works with a private type representing a daemon's endpoint address. Used to serialize addresses for logging and deserialize configuration values during initialization.",
+      "description_length": 275,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Catapult.Ser",
+      "description": "Provides low-level byte manipulation and binary data parsing, along with high-level serialization and deserialization of structured data types. Supports decoding and encoding of command-line arguments, events, traces, and client messages, with pretty-printing for debugging. Operates on custom types such as `t`, event records, trace structures, and client message payloads. Enables precise control over binary data streams, allowing for network protocol parsing, logging, and data exchange in distributed systems.",
+      "description_length": 514,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "catapult",
+      "description": "Tracks and records event-based data with timestamps, including process and thread information, and supports writing traces to JSON files. It handles structured data such as events, categories, and timestamps, and provides functions for starting and stopping trace collection. Use it to capture detailed execution profiles for performance analysis and debugging.",
+      "description_length": 361,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Catapult_utils",
+      "description": "Tracks and emits garbage collection statistics using process IDs and timestamps, enabling real-time performance monitoring. Manages thread-local storage with polymorphic values, allowing isolated per-thread state management. Serializes various data types to a buffer in JSON format, supporting custom string insertion and precise output control. These capabilities enable profiling GC behavior, maintaining thread-specific contexts, and building structured data outputs efficiently.",
+      "description_length": 482,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Catapult",
+      "description": "Emits structured event data with timestamps, IDs, and custom arguments for performance tracking and debugging. Processes event types, thread and process IDs, and nested category lists to support detailed tracing. Ensures background tasks complete properly through periodic calls and a clean shutdown routine.",
+      "description_length": 308,
+      "index": 26,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 28,
+    "meaningful_modules": 27,
+    "filtered_empty_modules": 1,
+    "retention_rate": 0.9642857142857143
+  },
+  "statistics": {
+    "max_description_length": 563,
+    "min_description_length": 206,
+    "avg_description_length": 335.81481481481484,
+    "embedding_file_size_mb": 0.09846878051757812
+  }
+}

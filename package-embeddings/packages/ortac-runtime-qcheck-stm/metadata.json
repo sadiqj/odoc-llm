@@ -1,0 +1,77 @@
+{
+  "package": "ortac-runtime-qcheck-stm",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 8,
+  "creation_timestamp": "2025-06-18T16:31:41.177153",
+  "modules": [
+    {
+      "module_path": "Ortac_runtime_qcheck_stm.Make.Internal",
+      "description": "Checks if command sequences are valid under a given state and ensures interpreter agreement between system models. Generates and shrinks arbitrary command triples for property-based testing, and verifies consistency across interleaved command executions. Validates observed outcomes against expected results to detect discrepancies in system behavior.",
+      "description_length": 351,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ortac_runtime_qcheck_stm.Model.Make",
+      "description": "Initializes a structure with a single element, supporting operations to build and manipulate collections of that element. Works with a custom type `elt` to represent individual items within the structure. Used to create and manage homogeneous data sets in scenarios requiring simple aggregation.",
+      "description_length": 295,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ortac_runtime_qcheck_stm.SUT.Make",
+      "description": "Initializes a new instance of the `sut` type, setting up a default configuration for system under test. Operates exclusively with the `sut` data structure, which encapsulates runtime state and behavior. Used to prepare test environments before executing scenario-based validation.",
+      "description_length": 280,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ortac_runtime_qcheck_stm.Model",
+      "description": "Constructs and manages homogeneous data sets using a custom `elt` type, enabling aggregation and modification of collections. Provides operations to add, remove, and transform elements within the structure. Supports building complex data arrangements from simple, uniform components. Examples include maintaining a list of user profiles or a set of configuration parameters.",
+      "description_length": 374,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ortac_runtime_qcheck_stm.SUT",
+      "description": "Initializes and configures a test environment by creating and managing instances of the `sut` type, which tracks system state and behavior. Provides operations to set up and reset test scenarios, ensuring consistent execution conditions. Users can define custom configurations, inject dependencies, and simulate system responses. Example tasks include preparing a mock server, loading test data, and resetting state between test runs.",
+      "description_length": 434,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ortac_runtime_qcheck_stm.Make",
+      "description": "Generates and validates commands based on a state, using `next_state` to transition between states and `precond`/`postcond` to enforce constraints. It interacts with a system under test via `run`, capturing results for comparison against model expectations. Initializes and cleans up the SUT with `init_sut` and `cleanup`, supporting deterministic testing and property-based verification.",
+      "description_length": 388,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "ortac-runtime-qcheck-stm",
+      "description": "Generates test programs using QCheck-STM to validate OCaml module behavior against Gospel specifications by executing random function calls and comparing results with a model. Operates on OCaml module interfaces and Gospel annotations. Used to ensure implementation consistency with formal behavioral contracts in concurrent settings.",
+      "description_length": 334,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ortac_runtime_qcheck_stm",
+      "description": "Manages test scenarios through state transitions, command generation, and environment setup, with support for custom data aggregation and system under test configuration. Key types include `elt` for homogeneous data, `sut` for system state tracking, and functions for state transitions, command validation, and test initialization. It enables tasks like maintaining user profiles, simulating system behavior, and verifying properties through deterministic execution. Operations include adding elements to data sets, configuring test environments, and validating command preconditions and postconditions.",
+      "description_length": 603,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 11,
+    "meaningful_modules": 8,
+    "filtered_empty_modules": 3,
+    "retention_rate": 0.7272727272727273
+  },
+  "statistics": {
+    "max_description_length": 603,
+    "min_description_length": 280,
+    "avg_description_length": 382.375,
+    "embedding_file_size_mb": 0.029462814331054688
+  }
+}

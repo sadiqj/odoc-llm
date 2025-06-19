@@ -1,0 +1,238 @@
+{
+  "package": "functoria",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 31,
+  "creation_timestamp": "2025-06-18T16:38:51.967802",
+  "modules": [
+    {
+      "module_path": "Functoria.Lib.Make",
+      "description": "Provides functions to generate a project's build configuration, including a prelude with custom operators, package dependencies, and job creation. Works with types like Info.t, Package.t, and DSL.job DSL.impl to define build processes. Used to construct Dune files and manage project naming based on build context.",
+      "description_length": 314,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Functoria.Key.Arg",
+      "description": "Converts command-line arguments into OCaml values with support for serializing and deserializing across stages, using custom conversion functions for strings, booleans, integers, lists, and pairs. Handles cross-stage optional, required, and flag arguments with specified serialization and runtime conversion logic. Processes command-line parameters for unikernels by embedding OCaml expressions directly in argument strings.",
+      "description_length": 424,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Functoria.Key.Set",
+      "description": "This module provides operations for manipulating sets of elements, including adding, removing, and combining sets through union, intersection, and difference, along with querying capabilities like cardinality and membership checks. It supports transformations such as mapping and folding, conversions between sets and sequences/lists, and pretty-printing, making it suitable for tasks like dynamic data management and efficient data processing workflows.",
+      "description_length": 454,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Functoria.Key.Alias",
+      "description": "Provides functions to map command-line arguments to other keys using a transformation function and to create configure-only flags. Operates on typed key structures and argument parsers. Used to bind user-friendly command-line options to internal configuration keys during setup.",
+      "description_length": 278,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Functoria.Impl.Tbl",
+      "description": "This module offers operations for dynamically managing hash tables, including inserting, removing, and looking up key-value pairs, as well as iterating and transforming their contents. It works with hash tables featuring abstract keys and generic values, enabling sequence-based updates and constructions from key-value streams. Specific use cases include efficiently rebuilding tables from external data sources or\u6279\u91cf updating entries using iterative transformations.",
+      "description_length": 467,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Functoria.Action.List",
+      "description": "Iterates over a list and applies a function that returns a monadic value, then maps each element through a function that lifts results into a monadic context, producing a list of monadic values. Works with lists of arbitrary elements and monadic types. Used to process and transform lists within effectful computations, such as logging or state manipulation.",
+      "description_length": 358,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Functoria.Action.Infix",
+      "description": "Provides monadic binding and mapping operations for values in a context, allowing sequential computation and transformation. Works with type constructors that support the `t` type, such as option or result. Enables chaining of computations where each step depends on the result of the previous one, like handling optional values or error-prone operations.",
+      "description_length": 355,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Functoria.Action.Syntax",
+      "description": "Provides monadic binding and sequencing operations for effectful computations, where `let*` chains computations with side effects and `let+` binds results in a pure context. Works with type `'_ t`, representing computations that may carry effects. Used to structure asynchronous or stateful code in a readable, sequential style.",
+      "description_length": 328,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Functoria.Device.Graph",
+      "description": "Iterates over nodes in topological order using a folding function, extracts variable names valid as OCaml identifiers, and retrieves module implementation names. Operates on graph structures representing computational dependencies. Used to traverse and inspect graph nodes during code generation and analysis.",
+      "description_length": 309,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Functoria.Tool.Make",
+      "description": "Provides functions to retrieve the name and version of a tool, manage a list of packages for compilation, and construct job implementations from a list of DSL job definitions. Works with strings, package lists, and job implementation structures. Used to initialize and configure build processes with specific tools and dependencies.",
+      "description_length": 332,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Functoria.Package",
+      "description": "Provides functions to construct and manipulate opam package representations, including setting build-time dependencies, specifying sublibraries, and applying version constraints. Works with package names, installation scopes, and library lists to define dependencies and version ranges. Used to generate pin-depends entries, merge package configurations, and produce human-readable package summaries.",
+      "description_length": 400,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Functoria.Info",
+      "description": "Provides functions to access and manipulate application metadata, including configuration file paths, application name, main file, output name, and dependencies. Works with types such as Fpath.t, string, string list, Package.t, Key.t, and Opam.t. Used to construct and inspect build configurations, extract command-line context, and generate opam files for installation.",
+      "description_length": 370,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Functoria.Install",
+      "description": "Installs files by specifying source-to-destination mappings for binaries and configuration files, and merges installation rules. Works with lists of file paths and a custom type representing installation configurations. Generates Dune rules for promoting installed files and prints installation instructions with optional subdirectory prefixes.",
+      "description_length": 344,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Functoria.Device",
+      "description": "provides a mechanism for processing and analyzing computational graphs by traversing nodes in topological order, extracting valid OCaml identifiers, and retrieving module names. It supports operations on graph structures to facilitate code generation and dependency analysis. Users can inspect node properties, collect variable names, and generate module implementations based on graph topology. This enables automated code synthesis and static analysis of device configurations.",
+      "description_length": 479,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Functoria.Type",
+      "description": "Provides operations to construct and analyze module type signatures, including creating functor types with `@->` and checking if a type is a functor with `is_functor`. Works with custom types like `job`, `argv`, and `info` representing specific module signatures. Used to define and manipulate module type structures in a typed, composable way.",
+      "description_length": 344,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Functoria.Impl",
+      "description": "Manages hash tables with abstract keys and generic values, supporting insertion, deletion, lookup, iteration, and transformation. Provides operations to construct and update tables from key-value sequences, enabling efficient data reorganization. Allows bulk updates through iterative processing and dynamic table reconstruction. Examples include rebuilding tables from external data streams or modifying entries using custom transformation functions.",
+      "description_length": 451,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Functoria.Key",
+      "description": "Manages command-line arguments and configuration by converting, transforming, and validating values across stages, supporting custom serialization and parsing for basic types and structured data. Offers set operations for efficient data manipulation, including unions, intersections, and transformations, alongside utilities for converting and displaying set contents. Enables mapping between user-facing options and internal keys, allowing flexible configuration binding and flag management. Processes unikernel parameters by embedding OCaml expressions directly in argument strings, facilitating dynamic and type-safe configuration workflows.",
+      "description_length": 644,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Functoria.Opam",
+      "description": "Provides functions to construct and manipulate build configurations for software packages, including handling dependencies, build commands, and repository locations. Works with types such as package identifiers, file paths, and installation specifications. Used to generate structured build plans for reproducible package installations.",
+      "description_length": 336,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Functoria.Lib",
+      "description": "Provides functions to generate a project's main entry point, manage package dependencies, and define job execution logic. Works with types like Info.t, Package.t, and DSL.job DSL.impl to structure build processes. Used to create custom DSLs that integrate with Dune, handle project naming conventions, and define build workflows.",
+      "description_length": 329,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Functoria.Tool",
+      "description": "Provides functions to retrieve the tool's name and version, manage a list of packages for configuration compilation, and construct job implementations from a list of DSL job definitions. Operates with strings, package lists, and job implementation structures. Used to initialize and configure build processes with specific dependencies and task definitions.",
+      "description_length": 357,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Functoria.Engine",
+      "description": "Provides operations to extract keys, packages, installed files, and Dune stanzas from a device graph. Works with abstract representations of device configurations and build information. Used to generate build files, track dependencies, and manage configuration hooks during project setup.",
+      "description_length": 288,
+      "index": 20,
+      "embedding_norm": 1.0000001192092896
+    },
+    {
+      "module_path": "Functoria.DSL",
+      "description": "This module provides a domain-specific language for constructing modular, configurable applications through functional composition of module implementations, command-line key management, and dependency handling. It operates on structured types like module definitions, package metadata, device abstractions, and job configurations, enabling flexible application assembly. Use cases include building portable systems with runtime parameterization, integrating component dependencies, and managing scoped application logic through declarative configuration.",
+      "description_length": 555,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Functoria.Cli",
+      "description": "Parses and processes command-line arguments, extracting options like --output and --eval, and handling terminal setup flags. Works with argument structures, query kinds, and action types to manage CLI input. Used to configure, describe, build, and clean projects based on parsed command-line parameters.",
+      "description_length": 303,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Functoria.Action",
+      "description": "Processes lists by applying monadic functions, transforming elements into monadic contexts, and enabling sequential effectful computations. Supports operations on type constructors like option, result, and effectful computations with `let*` and `let+`. Can log actions, handle errors, or manage state during list transformations. For example, it can process a list of file paths, perform I/O operations, and collect results in a monadic context.",
+      "description_length": 445,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Functoria.Dune",
+      "description": "Provides functions to construct and format Dune file structures, including parsing strings into stanzas, generating pretty-printed output, and creating minimal configurations for building config.ml. Works with custom types `stanza` and `t`, and supports formatting lists with indentation. Used to generate valid Dune files for project and workspace setup, ensuring correct syntax and structure.",
+      "description_length": 394,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Functoria.Arg",
+      "description": "Converts command-line arguments into OCaml values with support for cross-stage persistence, using custom serialization and runtime conversion functions. Handles basic types like strings, booleans, integers, and complex structures such as lists, pairs, and options. Enables defining optional, required, and flag arguments with stage-specific behavior for meta-programming scenarios.",
+      "description_length": 381,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Functoria.Set",
+      "description": "This module provides standard set operations such as union, intersection, and difference, along with element addition, removal, and membership checks, operating on sets of a generic type `elt`. It supports iterative transformations, filtering, and conversion between sets and sequences or lists, enabling tasks like data aggregation or algorithmic processing. Use cases include efficient collection management, symbolic computation, and structured data manipulation where set-theoretic operations are required.",
+      "description_length": 510,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Functoria.Alias",
+      "description": "Provides functions to map command-line arguments to other keys using a transformation function and to create configure-only flags. Works with key-value pairs where values are transformed before assignment. Used to create custom command-line options that trigger predefined key settings during configuration.",
+      "description_length": 307,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "functoria",
+      "description": "Provides network protocol parsing and serialization functions, working with byte sequences and structured data types like IP addresses and TCP headers. Enables low-level packet manipulation for building custom network stacks and application-specific communication protocols. Used to implement secure, high-performance unikernel services such as DNS resolvers and HTTP proxies.",
+      "description_length": 376,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Functoria_test",
+      "description": "Executes a test scenario by running a list of job implementations within a given context, using specified keys and initial setup. It operates on job implementations, context objects, and key sets to simulate and validate behavior. This is used to test the integration of components under controlled conditions.",
+      "description_length": 310,
+      "index": 29,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Functoria",
+      "description": "The module provides a domain-specific language (DSL) for constructing applications through compositional operations like combining module types, managing dependencies, and handling configuration parameters via command-line arguments. It works with abstract representations of module implementations, keys, package configurations, and application structures, enabling flexible and portable application design. This supports use cases such as dynamic configuration of modular systems, runtime parameter adjustment, and structured composition of complex application components.",
+      "description_length": 574,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 31,
+    "meaningful_modules": 31,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 644,
+    "min_description_length": 278,
+    "avg_description_length": 390.83870967741933,
+    "embedding_file_size_mb": 0.11298751831054688
+  }
+}

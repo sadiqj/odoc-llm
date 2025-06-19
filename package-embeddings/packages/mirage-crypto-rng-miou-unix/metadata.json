@@ -1,0 +1,42 @@
+{
+  "package": "mirage-crypto-rng-miou-unix",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 3,
+  "creation_timestamp": "2025-06-18T16:28:11.706732",
+  "modules": [
+    {
+      "module_path": "Mirage_crypto_rng_miou_unix.Pfortuna",
+      "description": "Provides functions to generate cryptographically secure random bytes, reseed a generator with external entropy, and accumulate entropy from sources. Operates on a stateful `g` type and byte buffers, ensuring deterministic output based on internal pools. Used to initialize and maintain a secure random number generator in safety-critical applications.",
+      "description_length": 351,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "mirage-crypto-rng-miou-unix",
+      "description": "Provides AES, RSA, and elliptic curve operations with built-in protections against timing attacks, including AES-NI acceleration and RSA blinding. Works with byte sequences, keys, and cryptographic contexts for encryption, decryption, and key exchange. Used for secure communication protocols and data integrity checks in networked applications.",
+      "description_length": 345,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mirage_crypto_rng_miou_unix",
+      "description": "initializes and manages a cryptographically secure random number generator using system-specific entropy sources like getrandom(), getentropy(), or BCryptGenRandom(). it operates on a stateful `g` type, allowing generation of random bytes, reseeding with external entropy, and entropy accumulation from hardware or system sources. examples include generating secure keys, initializing cryptographic protocols, and ensuring entropy is continuously refreshed in environments requiring high security. the module ensures deterministic behavior through internal state management while adapting to platform-specific entropy APIs.",
+      "description_length": 623,
+      "index": 2,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 3,
+    "meaningful_modules": 3,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 623,
+    "min_description_length": 345,
+    "avg_description_length": 439.6666666666667,
+    "embedding_file_size_mb": 0.011325836181640625
+  }
+}

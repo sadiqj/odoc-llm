@@ -1,0 +1,161 @@
+{
+  "package": "noise",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 20,
+  "creation_timestamp": "2025-06-18T16:35:31.723479",
+  "modules": [
+    {
+      "module_path": "Noise.Util.Let_syntax",
+      "description": "Provides operations for transforming and chaining results with error propagation. Works with the result type, allowing safe value extraction and function application. Enables concise error-aware computation pipelines by abstracting sequence and transformation of successful outcomes.",
+      "description_length": 283,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Noise.Cipher",
+      "description": "Handles encryption and decryption of binary data using a key and associated data, with support for nonce values. Operates on opaque cipher state objects and byte strings, returning results with error handling. Enables secure message transmission by binding authentication data to encrypted payloads.",
+      "description_length": 299,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Noise.Cipher_aes_gcm",
+      "description": "Generates initialization vectors from 64-bit nonces and performs authenticated encryption and decryption using AES-GCM with associated data. Operates on cryptographic keys, 64-bit integers, and byte strings represented as Cstruct.t. Encrypts and decrypts payloads while ensuring data integrity and confidentiality in secure communications.",
+      "description_length": 339,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Noise.Cipher_chacha_poly",
+      "description": "Encrypts and decrypts data using the ChaCha20-Poly1305 algorithm, handling associated data and generating authenticated ciphertexts. Operates on private keys, 64-bit nonces, and Cstruct.t buffers for input and output. Supports both standard encryption with a nonce and low-level encryption with fixed and incremental IVs for specialized use cases.",
+      "description_length": 347,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Noise.Cipher_state",
+      "description": "Manages cryptographic state with key and nonce tracking, supporting operations to check key presence, create states with keys, and handle state transitions during encryption/decryption. Works with a private key and an optional nonce, tracking whether the key is depleted. Used to safely increment nonces or detect when a key should no longer be used for encryption.",
+      "description_length": 365,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Noise.Dh",
+      "description": "Provides operations for comparing DH values, pretty-printing, converting to strings, and performing key exchanges. Works with a custom type representing DH keys and Cstruct.t for binary data. Used to generate shared secrets during cryptographic key exchange protocols.",
+      "description_length": 268,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Noise.Dh_25519",
+      "description": "Generates a shared secret using a private and public key pair, verifies if a public key corresponds to a private key, and derives a public key from a private key. Works with cryptographic key types defined in the module. Used to establish secure communication channels and validate key pairs in cryptographic protocols.",
+      "description_length": 319,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Noise.Hash",
+      "description": "Provides functions to compare hashes, format and convert them to strings, create hashes from strings, and compute hash and HMAC values from byte sequences. Works with opaque hash values and Cstruct.t for binary data. Used for generating secure message digests and authenticating data with cryptographic keys.",
+      "description_length": 308,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Noise.Hkdf",
+      "description": "Generates keying material using HMAC-based key derivation by extracting a pseudorandom key from an initial keying material and optional salt, then expanding it into one or more output keys. Operates on binary data represented as Cstruct.t values. Used for deriving cryptographic keys in protocols requiring secure key separation and expansion.",
+      "description_length": 343,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Noise.Pattern",
+      "description": "Provides operations to compare patterns, format and convert them to strings, parse from strings, and extract step lists and transport information. Works with custom types representing patterns, individual steps, and transport details. Used to validate input strings against pattern definitions and process structured data for analysis or transformation.",
+      "description_length": 353,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Noise.Private_key",
+      "description": "Provides operations to compare private keys for equality, pretty-print them, and convert between their internal representation and Cstruct buffers. Works with the `t` type, which encapsulates cryptographic private key data. Used to serialize and deserialize keys in protocols requiring binary format, such as TLS or cryptographic signatures.",
+      "description_length": 341,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Noise.Protocol",
+      "description": "Handles cryptographic protocol state transitions by hashing public data, parsing incoming messages, and encoding outgoing messages. Operates on state objects, cryptographic buffers, and public key lists. Used to establish secure communication channels and manage message exchange with integrity checks.",
+      "description_length": 302,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Noise.Public_key",
+      "description": "Provides operations to compare public keys for equality, pretty-print them, and convert between their internal representation and byte buffers. Works with the `t` type, which encapsulates public key data. Used to serialize keys for storage or transmission and to verify key identity in cryptographic protocols.",
+      "description_length": 310,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Noise.State",
+      "description": "The module provides operations for managing cryptographic handshake states, including key management, Diffie-Hellman (DH) key exchange coordination, and transport layer encryption/decryption. It works with types such as `t` (handshake state container), `key_type` (key identifier), and `state` (protocol-specific state representation). These capabilities are critical for implementing secure communication protocols requiring key agreement and stateful message handling.",
+      "description_length": 470,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Noise.Symmetric_state",
+      "description": "Encapsulates a cryptographic state combining a hash and a Diffie-Hellman value, supporting key and hash mixing with byte sequences. Operates on hash values, DH objects, and byte buffers to derive new states and private keys. Used to update and split cryptographic states during secure key exchange protocols.",
+      "description_length": 308,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Noise.Util",
+      "description": "Offers a structured approach to handling computations that may fail, using the result type to manage errors gracefully. It supports chaining operations, extracting values safely, and transforming outcomes in a clear, sequential manner. Functions like bind and map allow for composing error-aware workflows. For example, it can be used to process user input, validate data, and perform a series of dependent operations while propagating any encountered errors.",
+      "description_length": 459,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "noise",
+      "description": "Provides functions for establishing secure communication channels using cryptographic primitives such as key exchange, symmetric encryption, and message authentication. Works with byte sequences, cryptographic keys, and stateful session objects to manage handshake protocols. Used to implement Noise protocol patterns like `Noise_XX_25519_AESGCM_SHA256` in custom network applications.",
+      "description_length": 385,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Chacha20",
+      "description": "Performs the quarter-round operation on 32-bit integers, compares state equality, and serializes state data. Operates on a custom `state` type representing the internal configuration of the ChaCha20 algorithm. Used to initialize encryption contexts, process blocks, and generate encrypted output from plaintext.",
+      "description_length": 311,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Noise",
+      "description": "Encapsulates cryptographic operations for secure communication, including encryption/decryption with AES-GCM and ChaCha20-Poly1305, key derivation, hash generation, and key exchange. Manages stateful operations like nonce tracking, DH key coordination, and protocol transitions using types such as cipher states, keys, and hash values. Supports authenticated encryption, shared secret generation, and error handling through result types. Examples include encrypting payloads with associated data, deriving keys from shared secrets, and validating public-private key pairs.",
+      "description_length": 572,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tweetnacl",
+      "description": "Computes the Poly1305 authenticator for a given message using a secret key. Operates on byte sequences represented as Cstruct.t values. Used to verify message integrity in cryptographic protocols like NaCl's secretbox.",
+      "description_length": 218,
+      "index": 19,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 20,
+    "meaningful_modules": 20,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 572,
+    "min_description_length": 218,
+    "avg_description_length": 345.0,
+    "embedding_file_size_mb": 0.07312583923339844
+  }
+}

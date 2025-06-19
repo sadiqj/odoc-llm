@@ -1,0 +1,84 @@
+{
+  "package": "loc",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 9,
+  "creation_timestamp": "2025-06-18T16:31:27.474262",
+  "modules": [
+    {
+      "module_path": "Loc.Private.File_cache",
+      "description": "Provides functions to serialize cache data into S-expressions, enabling persistent storage and retrieval. Works with a custom data structure representing cached file contents and metadata. Used to save and load file states between application sessions.",
+      "description_length": 252,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Loc.File_cache",
+      "description": "Provides functions to retrieve the file path and construct a cache from a file path and its contents. Works with file paths and string data to track line positions and offsets. Used to determine exact character positions in a file when line numbers are known.",
+      "description_length": 259,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Loc.Lexbuf_loc",
+      "description": "type t = { pos_bol : int; pos_cnum : int; pos_lnum : int; pos_bol : int; pos_fname : string } Provides functions to track and manipulate source code positions, including calculating line numbers, character offsets, and file names. Works with position data from OCaml's lexing buffer to support error reporting and source mapping. Used to generate detailed error messages with precise location information during parsing or lexing.",
+      "description_length": 430,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Loc.Offset",
+      "description": "Handles offset comparisons and conversions between integer offsets and lexing positions. Works with integer values representing file offsets and Lexing.position records. Converts between file positions and offsets, useful for tracking and reconstructing file positions after modifications.",
+      "description_length": 289,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Loc.Range",
+      "description": "Provides operations to compare ranges, convert them to S-expressions, and create ranges from lexer positions. Works with a structured type representing ranges, including start and stop positions. Constructs overlapping or adjacent ranges into a single encompassing range.",
+      "description_length": 271,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Loc.Txt",
+      "description": "Provides functions to create and manipulate decorated symbols with positional information, including mapping, equality checks, and S-expression conversion. Works with a type that wraps a value and associates it with a location, using a record or list structure. Used in parsing to attach source positions to parsed elements, such as associating an identifier with its lexical location in a Menhir rule.",
+      "description_length": 402,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Loc.Private",
+      "description": "Serializes custom file data structures into S-expressions for persistent storage, allowing state to be saved and restored across sessions. Supports operations like encoding and decoding file contents and metadata. Examples include saving a file's last modified timestamp and content hash, then reloading them after a restart. Designed for test scenarios requiring reproducible state management.",
+      "description_length": 394,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "loc",
+      "description": "Provides functions to create, compare, and format code location ranges, including start and end positions with file information. Works with lexing positions and file paths to track source code regions. Used to generate precise error messages and trace code origins during parsing and analysis.",
+      "description_length": 293,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Loc",
+      "description": "manages source code positions, ranges, and decorated values with location data, enabling precise error reporting and source mapping. it defines a position type with line numbers, character offsets, and file names, along with operations to convert between offsets and positions, compare ranges, and create structured location-aware values. it supports serializing location data to S-expressions for persistent storage and includes utilities for tracking file content and metadata. examples include generating error messages with exact file positions, merging overlapping code ranges, and attaching locations to parsed symbols.",
+      "description_length": 625,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 9,
+    "meaningful_modules": 9,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 625,
+    "min_description_length": 252,
+    "avg_description_length": 357.22222222222223,
+    "embedding_file_size_mb": 0.03314685821533203
+  }
+}

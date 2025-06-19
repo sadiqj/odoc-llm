@@ -1,0 +1,56 @@
+{
+  "package": "xen-gnt",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 5,
+  "creation_timestamp": "2025-06-18T16:29:02.124640",
+  "modules": [
+    {
+      "module_path": "Gnt.Gnttab.Local_mapping",
+      "description": "Converts a local memory mapping into a buffer representation suitable for I/O operations. Works with the `t` type, which represents a mapped region of memory. Used to efficiently pass memory contents to network or file I/O layers without copying.",
+      "description_length": 246,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gnt.Gnttab",
+      "description": "Manages memory exports between domains by mapping local memory to a buffer type, enabling efficient I/O operations. The `t` type represents a memory region, and operations allow direct access to its contents. This supports low-overhead data transfer to networks or files. For example, it can be used to send a memory-mapped buffer over a socket or write it to a disk without explicit copying.",
+      "description_length": 392,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gnt.Gntshr",
+      "description": "Provides operations to open and close a connection to a shared memory interface, share pages with a foreign domain, and manage grant table indices. Works with domain IDs, page structures, and grant references to enable low-level memory sharing. Used to map and unmap shared memory regions, allocate and release grant table entries, and grant or revoke access to foreign domains.",
+      "description_length": 378,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "xen-gnt",
+      "description": "Provides functions to establish communication channels between Xen domains, supporting bidirectional data transfer and event handling. Works with socket-like structures and asynchronous I/O primitives. Used to implement network and block device drivers in virtualized environments.",
+      "description_length": 281,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Gnt",
+      "description": "manages shared memory between Xen domains by mapping foreign memory regions into local address space, using domain IDs and grant references to control access. it defines a `t` type for memory regions and provides operations to read, write, and map these regions efficiently. it supports low-level memory sharing, such as mapping a disk buffer for I/O or transferring data between domains without copying. examples include sending a shared buffer over a network or persisting it to disk.",
+      "description_length": 486,
+      "index": 4,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 5,
+    "meaningful_modules": 5,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 486,
+    "min_description_length": 246,
+    "avg_description_length": 356.6,
+    "embedding_file_size_mb": 0.018610000610351562
+  }
+}

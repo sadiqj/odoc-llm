@@ -1,0 +1,644 @@
+{
+  "package": "sexplib",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 89,
+  "creation_timestamp": "2025-06-18T16:48:56.172655",
+  "modules": [
+    {
+      "module_path": "Sexplib.Pre_sexp.Parser_output.Bare_sexp.Impl.State.Read_only",
+      "description": "Returns the byte offset, line number, and column number of a position in a file. Accepts a custom type `t` representing parsed positions and converts it to a standard position record. Used to track and report exact locations during parsing for error messages or logging.",
+      "description_length": 270,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Parser_output.Annotated_sexp.Impl.State.Read_only",
+      "description": "Returns the byte offset, line number, and column number from a position value, along with the original position structure. Works with a custom type representing parsed position data. Used to extract detailed location information from parsed input for error reporting or logging.",
+      "description_length": 278,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Make_parser.Impl.State.Read_only",
+      "description": "Returns the byte offset, line number, and column number of a position in a file. Accepts a custom type `t` representing parsed positions and converts it to a standard position record. Used to extract detailed location information from parsed data for error reporting or logging.",
+      "description_length": 278,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Parser_output.Bare_sexp.Impl.State",
+      "description": "Tracks exact file positions by converting custom parsed positions into standard byte, line, and column representations. Provides a type `t` for parsed positions and functions to extract location details. Can be used to generate precise error messages or trace parsing steps with positional data. Example: converting a parsed expression's position to a human-readable location for debugging.",
+      "description_length": 390,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Parser_output.Bare_sexp.Impl.Stack",
+      "description": "Provides operations to create an empty stack, push elements onto the stack, and pop elements from the stack. Works with the abstract type `t` representing a stack structure. Used to manage last-in-first-out data sequences in algorithms requiring temporary storage and retrieval.",
+      "description_length": 278,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Parser_output.Bare_sexp.Impl.Lexbuf_consumer",
+      "description": "Consumes single s-expressions from a lexing buffer, returning a parsed value or option. Works with Lexing.lexbuf and custom parsed_value types. Used to process structured data streams incrementally during parsing tasks.",
+      "description_length": 219,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Parser_output.Impl.State.Read_only",
+      "description": "Returns the byte offset, line number, and column number of a position in a file. Operates on a custom type representing parsed positions. Used to track and report locations during parsing for error messages and source mapping.",
+      "description_length": 226,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Parser_output.Annotated_sexp.Impl.State",
+      "description": "Calculates byte offsets, line numbers, and column numbers from position data, preserving the original structure. It operates on a custom type that tracks parsed input locations. This enables precise error tracking by converting abstract positions into human-readable coordinates. For example, it can transform a position in a parsed file into a specific line and column for display in an error message.",
+      "description_length": 402,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Parser_output.Annotated_sexp.Impl.Stack",
+      "description": "Provides operations to create an empty stack, push elements onto the stack, and pop elements from the stack. Works with the `t` type, which represents a stack structure. Used to manage last-in-first-out data sequences in algorithms requiring temporary storage and retrieval.",
+      "description_length": 274,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Parser_output.Annotated_sexp.Impl.Lexbuf_consumer",
+      "description": "Consumes single s-expressions from a lexing buffer, returning a parsed value or option. Works with Lexing.lexbuf and custom parsed_value types. Used to process structured input incrementally in parsing workflows.",
+      "description_length": 212,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Make_parser.Impl.State",
+      "description": "Tracks the byte offset, line, and column of a position in a file, converting a custom `t` type into a standardized position record. Provides access to detailed location data for debugging or error tracking. Given a parsed position, it can return the exact line and column where an issue occurred. Useful for generating precise error messages based on source code locations.",
+      "description_length": 373,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Make_parser.Impl.Stack",
+      "description": "Provides operations to create an empty stack, push elements onto the stack, and pop elements from the stack. Works with the `t` type, which represents a stack structure. Used to manage last-in-first-out data sequences in algorithms requiring temporary storage and retrieval.",
+      "description_length": 274,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Make_parser.Impl.Lexbuf_consumer",
+      "description": "Consumes single s-expressions from a lexing buffer, returning a parsed value or option. Works with Lexing.lexbuf and custom parsed_value types. Used to process structured input incrementally in parsing workflows.",
+      "description_length": 212,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Parser_output.Bare_sexp.Impl",
+      "description": "Processes lexing buffers to extract s-expressions, tracking exact file positions and managing stack-based parsing state. It includes a stack type for temporary data storage and functions to convert parsed positions into byte, line, and column representations. It can parse structured data incrementally, extract error locations, and stop at the first s-expression in a stream. For example, it can convert a parsed expression's position into a human-readable format or manage parsing state during stream processing.",
+      "description_length": 514,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Parser_output.Annotated_sexp.Impl",
+      "description": "Processes input streams to extract s-expressions, tracking positions with a custom type that includes byte offsets, line numbers, and column numbers. Supports stack operations for managing parsing state and provides functions to read individual s-expressions from a lexing buffer. It enables precise error reporting by converting internal positions into readable coordinates and allows incremental parsing by stopping at the first s-expression found. For example, it can parse a stream and return the first s-expression while preserving the input's position data for later use.",
+      "description_length": 577,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Parser_output.Impl.State",
+      "description": "Tracks file positions using a custom type, providing byte offset, line, and column information. Supports operations to compute and manipulate these values for precise source location tracking. Enables accurate error reporting and debugging by linking parsed elements to their original file locations. For example, it can convert a byte offset into a human-readable line and column or calculate the distance between two positions.",
+      "description_length": 429,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Parser_output.Impl.Stack",
+      "description": "Provides operations to create an empty stack, push elements onto the stack, and pop elements from the stack. Works with the `t` type, which represents a stack structure. Used to manage last-in-first-out data sequences in algorithms requiring temporary storage and retrieval.",
+      "description_length": 274,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Parser_output.Impl.Lexbuf_consumer",
+      "description": "Consumes single s-expressions from a lexing buffer, returning a parsed value or option. Operates on Lexing.lexbuf and custom parsed_value types. Used to process structured data streams incrementally during parsing tasks.",
+      "description_length": 220,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Sexp_with_layout.Forget.Cps",
+      "description": "Extracts type information from wrapped values, transforming them into raw type representations. Operates on custom types `t`, `t_or_comment`, and lists of `t_or_comment`. Used to safely unwrap and process type data in parsing or analysis workflows.",
+      "description_length": 248,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Sexp.With_layout.Forget",
+      "description": "Provides functions to extract type information from parsed syntax elements, handling both individual nodes and lists of nodes. Works with custom types representing syntax nodes and lists of such nodes. Used to analyze abstract syntax trees for type inference or validation tasks.",
+      "description_length": 279,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Sexp.With_layout.Render",
+      "description": "Provides operations to construct and sequence computations that produce output, including binding between actions, embedding S-expressions, and executing character-based output. Works with a monadic type 'a t that encapsulates side-effecting computations. Used to generate structured text output and manage rendering pipelines in a controlled, composable way.",
+      "description_length": 359,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Sexp.With_layout.Parser",
+      "description": "Parses S-expressions from a lexing buffer, extracting tokens and constructing lists of parsed elements or comments. Processes single or multiple S-expressions, supporting optional results and reversed sequences. Works with custom token types and returns structured data including layout information.",
+      "description_length": 299,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Sexp.With_layout.Lexer",
+      "description": "Processes input streams to generate tokens for parsing, using a provided buffer and lexing buffer. Operates on OCaml's `Buffer.t` and `Lexing.lexbuf` types to handle text input efficiently. Used to convert raw source code into a sequence of tokens for the parser to consume.",
+      "description_length": 274,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Parser_output.Bare_sexp",
+      "description": "Processes lexing buffers to extract and track s-expressions with precise positional data, using a stack to manage parsing state and enabling incremental processing. It supports converting positions to byte, line, and column formats and can isolate the first s-expression in a stream. Key data types include the stack for temporary storage and position records. Examples include generating human-readable error messages from parsed positions or maintaining state during streamed data parsing.",
+      "description_length": 491,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Parser_output.Annotated_sexp",
+      "description": "Extracts and tracks s-expressions from input streams using a position type with byte offsets, line, and column numbers. Supports stack-based parsing state management and provides functions to read s-expressions incrementally from a lexing buffer. It converts internal positions into human-readable coordinates for precise error reporting. For instance, it can isolate the first s-expression in a stream while retaining the input's position data for subsequent processing.",
+      "description_length": 471,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Make_parser.Impl",
+      "description": "Tracks byte offsets, lines, and columns, enabling precise location tracking for debugging. Manages stack operations for temporary data storage, supporting LIFO workflows. Processes s-expressions from a lexing buffer, allowing incremental parsing and extraction of structured data. Can parse a stream, stop at the first s-expression, and return its position and content.",
+      "description_length": 369,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Parser_output.Impl",
+      "description": "Tracks file positions with custom types for byte offsets, lines, and columns, enabling precise source tracking and error reporting. Manages stack operations for last-in-first-out data handling, supporting temporary storage during parsing. Processes s-expressions from a lexing buffer, extracting individual parsed values. For example, it can convert a byte offset to a line and column, manage parsing state with a stack, or extract the first s-expression from a stream.",
+      "description_length": 469,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Sexp_intf.With_layout.Forget",
+      "description": "Provides functions to extract type information from parsed syntax elements, handling both single and multiple occurrences. Works with custom types representing parsed tokens and lists of token groups. Used to analyze abstract syntax trees for type inference and validation.",
+      "description_length": 273,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Sexp_intf.With_layout.Render",
+      "description": "Produces and executes rendering operations, handling character output and structured data serialization. Operates on monadic values and S-expression-like structures. Used to generate formatted text output and manage rendering pipelines.",
+      "description_length": 236,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Sexp_intf.With_layout.Parser",
+      "description": "Parses S-expressions and related constructs from a lexing buffer, returning structured data or comments. Processes single or multiple S-expressions, with options for optional results and reversed lists. Works with custom token types to handle syntactic elements in a layout-aware manner.",
+      "description_length": 287,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Sexp_intf.With_layout.Lexer",
+      "description": "Processes input streams to generate tokens for parsing, using a provided buffer and lexer buffer. Operates on OCaml's Lexing.lexbuf and Buffer.t to handle character-level scanning. Used to convert raw text into structured token sequences for syntax analysis.",
+      "description_length": 258,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib_num.Std.Big_int",
+      "description": "The module provides arithmetic operations, comparisons, and conversions for arbitrary-precision integers, enabling interactions with standard integer types and floating points. It supports precise manipulation through functions like GCD, exponentiation, and bitwise operations, catering to applications requiring exact large number handling, such as cryptographic algorithms or financial calculations. Additionally, it includes safe conversions and inspections for diverse integer representations.",
+      "description_length": 497,
+      "index": 31,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib_num.Std.Nat",
+      "description": "The module provides low-level arithmetic, bitwise, and structural operations on arbitrary-precision integers, working with arrays of digits and nativeint types to enable precise manipulation of large numbers. It includes addition, multiplication, GCD, and conversions between numeric formats, supporting use cases like cryptographic algorithms and numerical computations requiring digit-level control. Additionally, it handles tasks such as square roots, power calculations, and serialization to strings or S-expressions.",
+      "description_length": 521,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib_num.Std.Ratio",
+      "description": "Converts between a rational number representation and S-expression format. Works with the internal ratio type, which encapsulates numerator and denominator. Enables serialization and deserialization of ratios for data interchange or configuration parsing.",
+      "description_length": 255,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib_num.Std.Num",
+      "description": "The module provides arithmetic operations (addition, subtraction, multiplication, division, exponentiation), rounding functions (floor, ceiling, round), comparisons, and conversions for the `num` type, which represents arbitrary-precision numbers. It supports interactions with strings, integers, big integers, ratios, and floats, enabling precise numerical manipulation and formatting for applications like financial calculations or scientific computations. Specific use cases include converting between numeric formats, enforcing exact arithmetic, and generating human-readable numerical outputs.",
+      "description_length": 598,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Std.Hashtbl",
+      "description": "Provides a hash table implementation with support for custom comparison and hashing, enabling efficient key-value storage and lookup. It includes specialized modules for specific key types, such as integers or characters, and offers operations like insertion, lookup, and counting. The module supports histogram analysis of bucket distribution and ensures type safety through functorial interfaces. For example, it can count character frequencies in a sequence by mapping each character to its occurrence count.",
+      "description_length": 511,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Std.Lazy",
+      "description": "Provides operations to manage suspended computations, including forcing evaluation, mapping functions over values, and checking if a computation has been resolved. Works with lazy evaluation structures that delay computation until explicitly requested. Used to optimize performance by deferring expensive operations and handling exceptions in deferred evaluations.",
+      "description_length": 364,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Type_with_layout.Make",
+      "description": "Provides functions to convert build target representations and comments into S-expression formatted type descriptions. Works with nested data structures representing build configurations and associated comments. Used to serialize build rules and documentation into a structured, human-readable format for analysis or output.",
+      "description_length": 324,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Type_with_layout.Parsed",
+      "description": "Provides functions to convert parsed elements into S-expressions, including full documents, comments, and mixed content. Works with structured data representing source code with absolute position tracking. Used to serialize parsed input for debugging or analysis tools.",
+      "description_length": 269,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Sexp_with_layout.List",
+      "description": "Iterates over a list and applies a function to each element, or transforms each element using a mapping function to produce a new list. Operates on linked lists of arbitrary elements. Used to process each item in a sequence without modifying the original list, or to generate a new list based on existing elements.",
+      "description_length": 314,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Sexp_with_layout.Lexer",
+      "description": "Processes input text by reading from a buffer or lexing buffer, tokenizing it according to defined lexical rules, and producing a stream of tokens suitable for parsing. It operates on OCaml's `Buffer.t` and `Lexing.lexbuf` types, extracting and categorizing elements like identifiers, keywords, and operators. This is used to convert raw source code into a structured format for subsequent parsing steps.",
+      "description_length": 404,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Sexp_with_layout.Forget",
+      "description": "Extracts and transforms type information from wrapped values into raw representations, supporting custom types `t`, `t_or_comment`, and lists of `t_or_comment`. Provides operations to safely unwrap and analyze type data, enabling precise handling during parsing or transformation. It allows developers to inspect and manipulate type structures without direct access to their wrapped forms. For example, it can convert a list of annotated types into a simplified format for further processing.",
+      "description_length": 492,
+      "index": 41,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Sexp.Parse_pos",
+      "description": "Tracks line and character positions in parsed text, buffer offsets, and global logical positions. Operates on integer-based line numbers, character indices, and buffer positions to represent locations within source text. Used to annotate parse errors with precise location data or track progress through a string buffer during parsing.",
+      "description_length": 335,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Sexp.Cont_state",
+      "description": "Converts parser continuation state to a string representation for debugging. Operates on internal parser state type used to track parsing progress. Used to inspect and log the exact position and context within a nested S-expression.",
+      "description_length": 232,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Sexp.Annotated",
+      "description": "This module provides parsing, extraction, and conversion operations for S-expressions augmented with location metadata, such as positions and ranges, working with structured data like annotated syntax trees and parsed elements. It enables precise tracking of source code locations, making it suitable for applications like linters, compilers, or analyzers that require detailed positional information during syntax processing.",
+      "description_length": 426,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Sexp.Of_string_conv_exn",
+      "description": "Provides functions to convert strings to specific types, raising exceptions on invalid input. Works with primitive types such as integers, floats, and booleans. Used to parse command-line arguments or configuration values where strict type checking is required.",
+      "description_length": 261,
+      "index": 45,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Sexp.With_layout",
+      "description": "Combines parsing, type analysis, and output generation for S-expressions with positional and layout metadata. Supports custom node types, monadic output sequencing, token extraction, and stream-based lexing. Enables tasks like type checking, pretty-printing, and source transformation by linking syntax analysis with structured output. Processes input streams into tokens, extracts type information from ASTs, and constructs output pipelines with embedded S-expressions.",
+      "description_length": 470,
+      "index": 46,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Tmp_file",
+      "description": "Generates unique temporary file names using a prefix and suffix, and opens them with specified permissions. It operates on strings and output channels, utilizing a random state for name uniqueness. Used to create isolated temporary storage during file processing tasks.",
+      "description_length": 269,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Annot",
+      "description": "Provides functions to extract and manipulate S-expressions and their positions from parsed data, including retrieving type information, ranges, and converting results into S-expressions. Works with custom types representing positions, ranges, and parsed structures, along with conversion functions for type validation. Used to inspect and transform parsed syntax trees during analysis or serialization.",
+      "description_length": 402,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Parse_pos",
+      "description": "Provides operations to construct and modify position tracking objects, including setting buffer position and initializing with line, character, and offset values. Works with a record type containing line, character, buffer position, and global offset fields. Used to track source code positions during parsing for accurate error reporting and token location tracking.",
+      "description_length": 367,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Parser_output",
+      "description": "Tracks file positions using custom types for byte offsets, lines, and columns, while managing parsing state with a stack and processing s-expressions from a lexing buffer. It supports converting byte positions to line and column numbers, maintaining temporary data during parsing, and extracting parsed values from a stream. Operations include stack manipulation, position conversion, and s-expression extraction. For instance, it can track where an error occurred in a file or parse a nested s-expression structure.",
+      "description_length": 516,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Make_parser",
+      "description": "Tracks byte offsets, lines, and columns, while managing stack-based temporary storage for LIFO operations. It processes s-expressions from a lexing buffer, enabling incremental parsing and extraction of structured data. It can parse a stream, halt at the first s-expression, and return its position and content. This allows for precise error reporting and selective data retrieval during parsing.",
+      "description_length": 396,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.String_single_sexp",
+      "description": "Parses a string into a structured representation using a specific position and length, returning a result that includes either the parsed string or an error type. It processes raw string inputs and integrates with a position tracking system to manage parsing state. This is used to extract and validate structured data from textual input in a controlled manner.",
+      "description_length": 361,
+      "index": 52,
+      "embedding_norm": 0.9999998807907104
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.String_single_annot",
+      "description": "Parses a string into a tagged result using position and length parameters, incorporating annotations. It processes raw strings and returns structured data with associated annotations. This is used to analyze and transform text with precise positional metadata.",
+      "description_length": 260,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Bigstring_single_sexp",
+      "description": "Parses a bigstring into a Type.t value using a specified position and length, supporting incremental parsing. It works with bigstring and Parse_pos.t to track parsing state. Used to process large binary data streams efficiently during serialization or deserialization.",
+      "description_length": 268,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Bigstring_single_annot",
+      "description": "Parses a bigstring into a structured format using a position tracker and length parameter, returning a result that includes annotations. It processes raw byte data and integrates annotation information during parsing. This is used to efficiently analyze and annotate binary data streams in network or file processing tasks.",
+      "description_length": 323,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Annotated",
+      "description": "This module handles parsing and annotation of S-expressions from strings, bigstrings, and input channels, with support for tracking positions, ranges, and error handling during processing. It utilizes types like 'a conv and a stack for internal data manipulation, though specific operations on these structures are not detailed in the provided summaries. Use cases include structured data extraction and analysis where precise input tracking and conversion are required.",
+      "description_length": 470,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp.Of_string_conv_exn",
+      "description": "Provides functions to convert string representations into specific types, including parsing integers, floats, and custom types with error handling. Works with primitive types and user-defined records that have explicit conversion functions. Used to safely parse command-line arguments or configuration values from text input.",
+      "description_length": 325,
+      "index": 57,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Src_pos.Relative",
+      "description": "Represents relative values with operations for arithmetic addition and subtraction, and conversion to a type representation. It works with a record type containing numeric fields. Used to compute and serialize relative offsets in a structured format.",
+      "description_length": 250,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Src_pos.Absolute",
+      "description": "Provides operations to convert a position to S-expression, retrieve the origin position, construct positions from lexing data, calculate differences and offsets between positions, and compare positions for greater-than-or-equal. Works with a structured type representing positions, including file, line, and column information. Used to track and manipulate source code positions during parsing or error reporting.",
+      "description_length": 413,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Sexp_intf.Parse_pos",
+      "description": "Tracks line, character, buffer position, and global offset in parsed text. Supports creating and modifying positions with precise control over each component. Used to annotate parsed tokens with their exact location in source input.",
+      "description_length": 232,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Sexp_intf.Cont_state",
+      "description": "Converts the internal state of a parser continuation to a string representation. Operates on the `t` type, which encapsulates the state of a parsing process. Used to debug or log the exact condition of a parser during execution.",
+      "description_length": 228,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Sexp_intf.Annotated",
+      "description": "This module provides operations for parsing, analyzing, and transforming S-expressions while tracking positional metadata and conversion errors, including retrieving annotated structures and identifying physically equivalent forms. It works with annotated S-expression types (`t`), position markers (`pos`), ranges (`range`), and structured parsing contexts like `'a conv` and `stack` to manage complex transformations. Use cases include debugging source code via location tracking, validating S-expression consistency, and handling error-prone conversions between data formats.",
+      "description_length": 578,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Sexp_intf.Of_string_conv_exn",
+      "description": "Provides functions to convert strings to specific types, raising exceptions on invalid input. Works with primitive types such as integers, floats, and booleans. Used to parse command-line arguments or configuration values where strict type checking is required.",
+      "description_length": 261,
+      "index": 63,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Sexp_intf.With_layout",
+      "description": "Combines parsing, type analysis, rendering, and tokenization to process S-expressions with positional and structural metadata. Handles custom token types, abstract syntax trees, and monadic rendering operations, enabling tasks like type validation, output formatting, and layout-aware parsing. Extracts and manipulates type information from syntax elements, generates formatted text from structured data, and converts raw input into token sequences. Supports operations such as analyzing ASTs for type inference, rendering S-expressions with comments, and parsing multi-expression inputs with position tracking.",
+      "description_length": 611,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib_num.Sexplib_num_conv",
+      "description": "Converts arbitrary-precision integer, natural number, rational, and numeric types to and from S-expressions. Processes values of types Big_int.big_int, Nat.nat, Ratio.ratio, and Num.num. Enables serialization and deserialization of numeric data in S-expression format for interoperability.",
+      "description_length": 289,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib_num.Std",
+      "description": "combines arithmetic, conversion, and serialization capabilities for arbitrary-precision numbers, including integer and rational types. it offers operations like GCD, exponentiation, and rounding, along with conversions between numeric formats and S-expressions. it enables precise control over large numbers, supporting tasks such as cryptographic computations and financial calculations. examples include converting a big integer to a string, performing exact division of ratios, and serializing numbers to S-expressions.",
+      "description_length": 522,
+      "index": 66,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Conv",
+      "description": "The module provides utilities for converting between OCaml values and S-expressions. It includes functions for serializing and parsing data structures, with support for common types like lists, options, and variants. Operations such as `of_sexp` and `sexp_of` enable seamless integration with S-expression-based data formats. It is designed for use in applications requiring structured data exchange.",
+      "description_length": 400,
+      "index": 67,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Conv_error",
+      "description": "The module provides functions to generate detailed error messages for S-expression parsing and conversion failures, focusing on structural issues like mismatched variants, incorrect argument counts, and invalid list formats. It operates on Sexp.t values and location strings, enabling precise identification of invalid input during type-safe parsing workflows. Use cases include validating S-expressions in configuration files, ensuring correct tuple/record structures, and handling semantic inconsistencies in data serialization.",
+      "description_length": 530,
+      "index": 68,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Exn_magic",
+      "description": "Registers exception constructors with custom serialization logic for converting exceptions to S-expressions, supporting up to ten arguments. Each function associates an exception type with a name and provides converters for its parameters. Used to enable structured representation of exceptions in S-expressions for debugging or logging.",
+      "description_length": 337,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Lexer",
+      "description": "Handles tokenization of input streams, supporting both standard and layout-aware lexical analysis. Processes input via Lexing.lexbuf and outputs tokens defined in the Parser and Parser_with_layout modules. Used to convert raw source text into structured token sequences for parsing.",
+      "description_length": 282,
+      "index": 70,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Parser",
+      "description": "Parses S-expressions into typed values, optional values, or lists of values using a provided lexer. Processes input from a lexing buffer, consuming tokens defined by the `token` type. Used to convert structured textual data into OCaml types for further processing or evaluation.",
+      "description_length": 278,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Parser_with_layout",
+      "description": "Parses S-expressions and associated layout information from a lexing buffer, handling both single and multiple forms. It processes tokens generated by a provided lexer function and returns structured data including comments. The module supports optional parsing, reversed lists of parsed elements, and works with custom types that track source positions and comments.",
+      "description_length": 367,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Path",
+      "description": "Provides operations to navigate and modify S-expressions using path-based access. Works with lists of path elements and S-expression data structures, supporting field access, tuple indexing, and tag-based selection. Enables replacing specific sub-expressions in a structured S-expression, such as substituting the third element of a list or the \"value\" field in a record.",
+      "description_length": 371,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Pre_sexp",
+      "description": "provides utilities for parsing and tracking positions in structured data, particularly S-expressions, using custom types for byte offsets, lines, and columns. it includes functions to generate temporary file names, manipulate parsed structures, and convert between string and typed representations. operations range from incremental parsing of bigstrings to extracting annotated results and managing stack-based temporary storage. it enables precise error reporting, data validation, and structured analysis of textual and binary inputs.",
+      "description_length": 537,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Sexp",
+      "description": "Handles S-expression parsing, annotation, and transformation with precise positional tracking. Manages location data through line numbers, character indices, and buffer offsets, and supports debugging by converting parser states to strings. Enables type-safe parsing of primitive values and integrates syntax analysis with output generation, allowing for tasks like pretty-printing, type checking, and source manipulation. Provides tools to extract and process annotated S-expressions, supporting custom node types and stream-based lexing.",
+      "description_length": 539,
+      "index": 75,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Sexp_grammar",
+      "description": "This module provides operations for constructing and validating s-expression grammars, including handling atoms (booleans, integers, floats, strings), structured types like lists, records, and variants, and supporting recursive and polymorphic definitions. It works with s-expression representations, type constructors, and lazy evaluations to enable flexible serialization and parsing. Use cases include parsing domain-specific data formats, enforcing case-sensitive or case-insensitive comparisons, and managing recursive or polymorphic type hierarchies in structured data.",
+      "description_length": 575,
+      "index": 76,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Sexp_grammar_intf",
+      "description": "Provides functions to parse and generate S-expressions using a defined grammar, operating on the `t` type that represents grammar rules. Works with `Sexplib0.Sexp_grammar.t` to structure and validate nested list-based data. Used to convert between structured data and S-expression formats in parsing and serialization workflows.",
+      "description_length": 328,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Sexp_intf",
+      "description": "Tracks line, character, buffer position, and global offset in parsed text, enabling precise location tracking for tokens. Provides parsing continuation state serialization, annotated S-expression processing, and type-safe string conversion with error handling. Supports debugging through position logging, validating S-expression structure, and converting raw input into structured data with positional metadata. Can analyze ASTs, render formatted output, and handle complex parsing scenarios with position-aware transformations.",
+      "description_length": 529,
+      "index": 78,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Sexp_with_layout",
+      "description": "Processes linked lists through mapping and iteration, and handles text input by tokenizing raw data into structured streams. Supports type extraction and transformation, enabling manipulation of wrapped type data. It can convert annotated type lists into simplified formats and generate new lists from existing elements. Operates on buffers, lexing buffers, and custom type structures like `t` and `t_or_comment`.",
+      "description_length": 413,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Src_pos",
+      "description": "Manages source code positions through structured types that track file, line, and column data, enabling arithmetic operations on relative offsets and precise comparisons. Supports conversion to S-expressions, origin retrieval, and construction from lexing information for use in parsing and error handling. Operations include difference calculation, offset adjustment, and ordering checks between positions. Examples include serializing position data, computing offsets between tokens, and determining if one position precedes another.",
+      "description_length": 535,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib.Std",
+      "description": "implements a hash table system with customizable comparison and hashing, supporting efficient key-value operations and specialized key types, while also offering tools for managing lazy computations, enabling deferred evaluation and exception handling. It includes type-safe interfaces for hash tables and suspended computations, allowing tasks like counting character frequencies or deferring resource-intensive operations. Operations such as insertion, lookup, mapping, and forcing evaluation are supported. Examples include building frequency histograms or delaying database queries until needed.",
+      "description_length": 599,
+      "index": 81,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Type",
+      "description": "Provides functions to parse, pretty-print, and compare S-expression values. Works with the Sexp.t type from Sexplib0, enabling manipulation of structured data representations. Used to serialize and deserialize configuration data and perform semantic checks on parsed input.",
+      "description_length": 273,
+      "index": 82,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib.Type_with_layout",
+      "description": "Converts structured build and source data into annotated S-expressions, preserving positions and comments. Supports nested configurations, full documents, and mixed content with absolute position tracking. Enables serialization of build rules, comments, and parsed elements into a readable format. Examples include generating debug outputs, analyzing source structure, and exporting documentation.",
+      "description_length": 397,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib_unix.Sexplib_unix_conv",
+      "description": "Converts Unix exceptions to and from s-expressions using Sexplib, handling Unix.Unix_error specifically. Operates on exception types and s-expression representations. Ensures proper serialization of Unix errors in applications requiring explicit handling of system-level exceptions.",
+      "description_length": 282,
+      "index": 84,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "sexplib",
+      "description": "Provides functions to serialize and deserialize OCaml values to and from S-expressions, supporting custom type representations. Works with OCaml's native data types including records, variants, lists, and tuples. Enables structured data exchange in applications requiring symbolic representation, such as configuration parsing or macro systems.",
+      "description_length": 344,
+      "index": 85,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexplib_num",
+      "description": "Provides serialization and arithmetic operations for arbitrary-precision numeric types, including big integers, natural numbers, ratios, and numerics. Supports conversions between these types and S-expressions, along with operations like GCD, exponentiation, and rounding. It enables precise handling of large numbers, such as converting a big integer to a string or serializing a ratio. Examples include exact division of rational numbers and exporting numeric values in a structured format.",
+      "description_length": 492,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib",
+      "description": "Provides tools for converting, parsing, and manipulating S-expressions with support for structured data, error reporting, and positional tracking. It includes `of_sexp` and `sexp_of` for serialization, error functions for diagnosing parsing issues, and utilities for navigating and modifying S-expressions via paths. It handles tokenization, grammar-based parsing, and position-aware processing, enabling tasks like validating configuration files, generating debug outputs, and transforming annotated data. The module supports custom exception serialization, type-safe parsing, and efficient data manipulation with precise location tracking.",
+      "description_length": 641,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexplib_unix",
+      "description": "Converts Unix exceptions to and from s-expressions, with special handling for Unix.Unix_error, enabling structured representation and reconstruction of system-level errors. Provides functions to serialize and parse exceptions, supporting error tracking and logging in applications. Operations include converting exceptions to s-expressions and reconstructing exceptions from them. Example uses include debugging by inspecting error details or persisting error states for later analysis.",
+      "description_length": 486,
+      "index": 88,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 102,
+    "meaningful_modules": 89,
+    "filtered_empty_modules": 13,
+    "retention_rate": 0.8725490196078431
+  },
+  "statistics": {
+    "max_description_length": 641,
+    "min_description_length": 212,
+    "avg_description_length": 372.60674157303373,
+    "embedding_file_size_mb": 0.31305885314941406
+  }
+}

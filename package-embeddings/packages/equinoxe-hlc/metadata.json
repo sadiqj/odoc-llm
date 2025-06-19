@@ -1,0 +1,98 @@
+{
+  "package": "equinoxe-hlc",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 11,
+  "creation_timestamp": "2025-06-18T16:32:26.089311",
+  "modules": [
+    {
+      "module_path": "Equinoxe_hlc.Backend",
+      "description": "Provides asynchronous HTTP request execution with GET, POST, PUT, and DELETE methods, handling JSON-based communication. Operates on string-based responses and error states wrapped in an Lwt_result type. Enables chaining of request operations and error handling through monadic functions like map and bind.",
+      "description_length": 306,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Equinoxe_hlc.Orga",
+      "description": "Creates an organization ID from a string, converts organization configurations to strings, retrieves configurations by ID or all at once using an API token, and pretty-prints configurations. Works with custom `id` and `config` types representing organization identifiers and settings. Used to fetch and display organization data from Equinix API endpoints.",
+      "description_length": 356,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Equinoxe_hlc.User",
+      "description": "Provides functions to convert user identifiers between string and id types, and to serialize user configurations to strings. Operates on id and config types, where config contains user-specific settings. Retrieves the current user's configuration from an API context and pretty-prints it for display.",
+      "description_length": 300,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Equinoxe_hlc.Auth",
+      "description": "Provides functions to generate unique identifiers from strings, convert API key configurations to strings, retrieve and manage user API keys, create new keys with optional read-only settings, and delete keys by ID. Works with custom types `id` and `config`, which represent unique identifiers and API key configurations, respectively. Used to handle API key lifecycle operations and representation in Equinix API interactions.",
+      "description_length": 426,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Equinoxe_hlc.Ip",
+      "description": "Converts strings to IP identifiers and parses JSON into configuration records. Retrieves IP configurations by ID and formats them for output. Handles structured data including IP IDs and configuration records.",
+      "description_length": 209,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Equinoxe_hlc.Project",
+      "description": "Converts strings to unique project identifiers and vice versa, serializes project configurations to strings, retrieves all projects linked to a token, and fetches individual project configurations by ID. Operates on opaque `id` values and structured `config` records containing project details. Used to generate identifiers for API requests, display project data, and query project information from a token-based system.",
+      "description_length": 420,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Equinoxe_hlc.State",
+      "description": "Converts between string representations and an internal state type, handling unknown values through an exception. Operates on a custom type representing device states. Used to parse and serialize device state information from API responses.",
+      "description_length": 240,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Equinoxe_hlc.Event",
+      "description": "Provides functions to convert between event identifiers and strings, and to parse and serialize event data from JSON. Works with custom types `id` and `t`, where `t` represents an event with structured information. Used to process event data from API responses and generate human-readable or serialized outputs.",
+      "description_length": 311,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Equinoxe_hlc.Device",
+      "description": "This module handles device-related API interactions, including converting device types to strings, constructing configurations, and executing operations like creation, deletion, and action execution. It works with specialized data structures such as `config` and `device_state`, along with identifiers like id, action, os, location, and plan. Use cases include managing device lifecycle events, serializing state for API requests, and retrieving or updating device configurations dynamically.",
+      "description_length": 492,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "equinoxe-hlc",
+      "description": "Provides functions to query and manage resources via the Equinix API, including retrieving project details, provisioning devices, and handling organization settings. Works with data types such as project records, device configurations, and API authentication tokens. Used to automate infrastructure setup and monitoring within cloud environments through direct API interactions.",
+      "description_length": 378,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Equinoxe_hlc",
+      "description": "provides a unified interface for interacting with Equinix API endpoints through asynchronous HTTP requests, supporting GET, POST, PUT, and DELETE operations with JSON handling. It manages custom types such as `id`, `config`, and structured data for organizations, users, API keys, IPs, projects, devices, and events, enabling data conversion, retrieval, and serialization. Functions include fetching and modifying configurations, generating identifiers, handling device states, and processing event data, all integrated through monadic error handling and API token-based access. Examples include retrieving user configurations, creating API keys, converting device states, and fetching project details from the API.",
+      "description_length": 715,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 11,
+    "meaningful_modules": 11,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 715,
+    "min_description_length": 209,
+    "avg_description_length": 377.54545454545456,
+    "embedding_file_size_mb": 0.04038238525390625
+  }
+}

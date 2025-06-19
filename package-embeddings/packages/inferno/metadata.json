@@ -1,0 +1,168 @@
+{
+  "package": "inferno",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 21,
+  "creation_timestamp": "2025-06-18T16:36:06.593991",
+  "modules": [
+    {
+      "module_path": "Inferno.Generalization.Make.Data",
+      "description": "Provides operations to traverse, transform, and inspect structured data, including applying functions to children, extracting identifiers, and checking for leaf nodes. Works with a polymorphic structure type that can represent hierarchical or nested data. Used to process unification variable data, such as extracting base structures for type decoding or identifying terminal nodes in constraint graphs.",
+      "description_length": 403,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inferno.Generalization.Make.U",
+      "description": "Provides operations to retrieve the structure associated with a variable and to unify two variables, merging their structures using a user-provided conjunction function. Operates on variables and structured data where each variable is linked to a structure defined by the Data submodule. Used to manage variable equivalence and constraint propagation in logic programming or type inference systems.",
+      "description_length": 398,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inferno.OccursCheck.Make",
+      "description": "Retrieves the current structure associated with a variable, which may update after unification. Operates on variables and structured data types where each structure is tied to an equivalence class of variables. Used to access and manipulate symbolic representations during constraint solving or type inference.",
+      "description_length": 310,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Inferno.Solver.Make",
+      "description": "Provides equality, hashing, and string conversion for key types used in associative structures. Operates on arbitrary data types through customizable equality and hash functions. Used to define key behavior for hash tables and similar data structures.",
+      "description_length": 251,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inferno.Structure.Option",
+      "description": "Provides operations to combine, traverse, and transform structured data. Works with a generic 'a structure type, supporting conjunction, iteration, folding, and mapping. Conjunction merges structures with constraint checking, while map transforms elements without altering the structure's form.",
+      "description_length": 294,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inferno.Tarjan.Run",
+      "description": "Provides operations to access node identifiers, traverse node successors, and iterate over all nodes. Works with a `node` type representing elements in a graph-like structure. Enables processing of node relationships and global node enumeration.",
+      "description_length": 245,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Inferno.Unifier.Make",
+      "description": "Computes the logical conjunction of two structures, applying equality constraints where necessary to ensure consistency. It operates on values of type 'a structure, handling cases like optional terms and nested constructors. Raises an exception when structures are logically incompatible, such as when combining terms with differing head constructors.",
+      "description_length": 351,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inferno.Generalization.Make",
+      "description": "Provides operations to combine, traverse, and transform structured data with logical constraints. Works with a generic 'a structure type, supporting operations like conjunction, iteration, folding, and mapping. Used to manage logical constraints in unification, where conjunction merges structures and raises errors on contradictions, and leaf represents no constraint.",
+      "description_length": 369,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inferno.Decoder.Make",
+      "description": "Retrieves the current structure associated with a variable, which may update after unification. Operates on variables and structured data represented as variable S.structure. Used to access the latest state of a variable's structure during constraint solving.",
+      "description_length": 259,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Inferno.Decoder",
+      "description": "Provides dynamic access to the evolving structure of variables during constraint resolution. Handles variable S.structure and enables inspection of updated forms after unification. Allows tracking of how variables transform as constraints are applied. For example, it can reveal how a variable's structure changes from a simple value to a complex nested type during solving.",
+      "description_length": 374,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inferno.Generalization",
+      "description": "Combines, traverses, and transforms structured data under logical constraints using a generic 'a structure type, enabling operations such as conjunction, mapping, and folding. It supports error handling for contradictory constraints and allows for the representation of no constraint through a leaf value. This enables precise manipulation of logical conditions in contexts like unification, where structures are merged or modified based on defined rules. For example, it can merge two constraint sets, apply a transformation to all elements, or check for consistency between structures.",
+      "description_length": 587,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inferno.InfiniteArray",
+      "description": "Creates and manipulates arrays that dynamically expand as elements are accessed or modified. Operates on a custom type 'a t, allowing retrieval and modification of elements at arbitrary indices. Initializes a base array and extends it as needed when setting values beyond the current size.",
+      "description_length": 289,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Inferno.OccursCheck",
+      "description": "Tracks variable structures and their evolution during unification, enabling dynamic access to symbolic representations. It handles variables and structured data, maintaining equivalence classes to reflect changes in relationships. Operations include retrieving and updating variable structures, supporting tasks like constraint resolution and type inference. For example, it can track how a variable's type evolves as constraints are applied.",
+      "description_length": 442,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inferno.Signatures",
+      "description": "Provides operations to retrieve and unify variables, where retrieving returns the structure associated with a variable and unifying merges two variables into an equivalence class. Works with variable types and structured data that can be combined via a user-provided conjunction function. Used to manage dynamic equivalence classes during constraint solving, such as in type inference or logical unification systems.",
+      "description_length": 416,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inferno.Solver",
+      "description": "Handles key type operations by defining equality, hashing, and string conversion, enabling custom behavior for arbitrary data types. Supports hash tables and associative structures by allowing user-defined comparison and hashing strategies. Examples include defining unique keys for custom records or ensuring consistent hashing for immutable data. Provides functions to compare, hash, and serialize keys for use in structured data storage.",
+      "description_length": 440,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inferno.Structure",
+      "description": "Combines, traverses, and transforms structured data using a generic 'a structure type, enabling operations like conjunction, iteration, folding, and mapping. Conjunction merges structures while enforcing constraints, and map applies transformations without changing the overall structure. It supports complex data manipulation through recursive and iterative processes. For example, it can merge two configuration structures or apply a function to all elements within a nested data hierarchy.",
+      "description_length": 492,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inferno.Tarjan",
+      "description": "Offers tools for navigating graph-like structures by accessing node identifiers, traversing successor nodes, and iterating through all nodes. Central data types include `node` and associated operations for relationship exploration and enumeration. Users can analyze connectivity, perform depth-first searches, or collect all nodes in a structure. Enables efficient graph traversal and analysis through direct node manipulation.",
+      "description_length": 427,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Inferno.Unifier",
+      "description": "Combines two structured values into a single consistent structure by enforcing equality constraints, handling optional and nested elements. It works with values of type 'a structure and supports operations like merging terms with shared or compatible constructors. For example, it can unify two lists with matching elements or merge records with overlapping fields. If structures conflict, such as differing constructor types, it raises an exception.",
+      "description_length": 450,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inferno.Utils",
+      "description": "Increments an integer reference and returns its original value. Generates unique integer identifiers through a closure-based counter. Operates on references and functions to manage stateful sequences.",
+      "description_length": 200,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "inferno",
+      "description": "Performs first-order unification and Hindley-Milner type inference, applying semantic actions during constraint solving to build explicitly-typed terms. Operates on constraint graphs and type variables with polymorphic bindings. Used to infer types in a custom language compiler and generate annotated intermediate representations.",
+      "description_length": 331,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Inferno",
+      "description": "combines dynamic variable tracking, structured data manipulation, and graph navigation to support constraint resolution and unification. it manages 'a structure types for merging, transforming, and inspecting data, along with 'a t arrays that expand on demand. it enables operations like unifying variables, traversing graphs, and generating unique identifiers, allowing tasks such as merging constraint sets, tracking type evolution, or analyzing connectivity in complex data. examples include resolving nested type structures, applying transformations to configuration data, and generating unique IDs for symbolic variables.",
+      "description_length": 626,
+      "index": 20,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 21,
+    "meaningful_modules": 21,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 626,
+    "min_description_length": 200,
+    "avg_description_length": 378.76190476190476,
+    "embedding_file_size_mb": 0.07673263549804688
+  }
+}

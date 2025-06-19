@@ -1,0 +1,70 @@
+{
+  "package": "sihl-token",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 7,
+  "creation_timestamp": "2025-06-18T16:30:28.616974",
+  "modules": [
+    {
+      "module_path": "Sihl_token.MariaDb",
+      "description": "Generates, verifies, and manages tokens with expiration, deactivation, and secret signing. Operates on strings for tokens and key-value pairs for stored data. Used to issue session tokens, validate authentication tokens, and check token status in user management systems.",
+      "description_length": 271,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_token.PostgreSql",
+      "description": "Creates and manages signed tokens with expiration and activation controls, allowing storage and retrieval of key-value data. Operates on strings, lists of key-value pairs, and durations, supporting token verification, deactivation, and lifecycle management. Used to handle session tokens, authentication claims, and secure data exchange with time-bound validity.",
+      "description_length": 362,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl_token.JwtInMemory",
+      "description": "Generates and validates JSON Web Tokens with custom claims, expiration, and signing secrets. Processes tokens as strings and associates them with key-value pairs. Used to issue authenticated session tokens, verify user identity, and manage token lifecycle states like deactivation and expiration.",
+      "description_length": 296,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl_token.JwtMariaDb",
+      "description": "Creates and manages JSON Web Tokens stored in a MariaDB backend, supporting operations to generate tokens with custom claims, expire times, and secrets; retrieve specific or all claims from a token, verify token validity, and manage token activation status. Works with strings, key-value pairs, and duration values to handle token data and expiration. Used to securely issue and validate session tokens, manage user authentication states, and enforce token expiration and deactivation policies.",
+      "description_length": 494,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_token.JwtPostgreSql",
+      "description": "Generates and validates JWT tokens with expiration, context, and secret customization, allowing storage and retrieval of key-value pairs within tokens. Tokens can be marked as active or inactive, and their validity, expiration, and signature status can be checked. Used to manage session tokens, API access controls, and user authentication states in a PostgreSQL-backed system.",
+      "description_length": 378,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "sihl-token",
+      "description": "Manages token generation, validation, and storage, associating unique strings with user identifiers. It handles operations like creating tokens with expiration times, verifying their validity, and retrieving associated user data. Used in authentication flows to securely link user sessions to token strings.",
+      "description_length": 307,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_token",
+      "description": "Manages token generation, verification, and lifecycle with support for expiration, deactivation, and secret signing. Operates on strings for tokens and key-value pairs for stored data, enabling session management, authentication validation, and secure data exchange. Supports JWT creation with custom claims, duration-based validity, and database-backed storage for persistent token tracking. Examples include issuing authenticated session tokens, checking token status, and retrieving claims for user authentication workflows.",
+      "description_length": 527,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 7,
+    "meaningful_modules": 7,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 527,
+    "min_description_length": 271,
+    "avg_description_length": 376.42857142857144,
+    "embedding_file_size_mb": 0.02585887908935547
+  }
+}

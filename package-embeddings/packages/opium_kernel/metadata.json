@@ -1,0 +1,168 @@
+{
+  "package": "opium_kernel",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 21,
+  "creation_timestamp": "2025-06-18T16:36:55.458126",
+  "modules": [
+    {
+      "module_path": "Opium_kernel.Rock.Response.Fields.Direct",
+      "description": "Provides operations to iterate over, fold, check conditions, and transform HTTP response components such as status code, headers, body, and environment map. Works with OCaml types representing HTTP responses and their fields, including status codes, headers, and body streams. Used to process and modify HTTP responses in web applications, validate response data, and extract elements into lists.",
+      "description_length": 396,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Opium_kernel.Rock.Request.Fields.Direct",
+      "description": "Processes HTTP request, body, and environment fields by applying custom operations to each. Operates on a structured type containing Cohttp request objects, Lwt body streams, and header maps. Enables transformation of request data, extraction of field values, and modification of mutable state within a request context.",
+      "description_length": 319,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Opium_kernel.Route.Fields_of_matches.Direct",
+      "description": "Processes route match data by applying custom operations to parameters and splats, supporting iteration, folding, and predicate checks. Operates on route match structures and lists of key-value pairs or strings. Used to transform or validate route data during request handling.",
+      "description_length": 277,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opium_kernel.Rock.Response.Fields",
+      "description": "Processes and modifies HTTP responses by iterating, folding, checking conditions, and transforming components like status codes, headers, body, and environment maps. Operates on OCaml types such as status codes, headers, and body streams, enabling validation, data extraction, and transformation. Examples include filtering headers by name, extracting status code ranges, or converting response bodies to lists. Supports complex manipulation of web response data within application logic.",
+      "description_length": 488,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opium_kernel.Rock.Request.Fields",
+      "description": "Extracts, transforms, and manipulates HTTP request data through structured operations on request objects, body streams, and headers. Supports field value extraction, state modification, and custom processing within a request context. Operates on types like Cohttp requests, Lwt streams, and header maps. Examples include parsing query parameters, logging request headers, and modifying body content dynamically.",
+      "description_length": 411,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opium_kernel.Route.Fields_of_matches",
+      "description": "Processes route match data by applying custom operations to parameters and splats, enabling iteration, folding, and predicate checks on route structures and key-value lists. Supports transformations and validations during request handling by manipulating strings and structured data. Operations include filtering, mapping, and aggregating route information. Examples include extracting specific parameters, checking for required fields, or modifying splat values dynamically.",
+      "description_length": 475,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Opium_kernel.Rock.Service",
+      "description": "Converts between asynchronous service values and S-expressions using custom serialization functions. Operates on request and response pairs wrapped in Lwt promises. Enables serialization of service endpoints for logging, debugging, or inter-process communication.",
+      "description_length": 263,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opium_kernel.Rock.Filter",
+      "description": "Transforms service requests and responses by applying a sequence of filters, converting between different request and response types. Works with service types that encapsulate request-response pairs and their transformations. Applies multiple filters to a service to modify its behavior, such as logging, authentication, or data conversion.",
+      "description_length": 340,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Opium_kernel.Rock.Request",
+      "description": "Processes HTTP requests by extracting and modifying data from request objects, body streams, and headers using types such as Cohttp requests, Lwt streams, and header maps. Enables operations like parsing query parameters, logging headers, and dynamically altering body content. Supports custom transformations within a request context, allowing for flexible handling of incoming HTTP traffic. Examples include injecting custom headers, filtering request bodies, and extracting specific fields for further processing.",
+      "description_length": 516,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Opium_kernel.Rock.Response",
+      "description": "Processes and modifies HTTP responses by iterating over, folding, and transforming components such as status codes, headers, body streams, and environment maps. It supports operations like header filtering, status code range extraction, and body conversion to lists, using OCaml types for precise data manipulation. The module enables validation, data extraction, and transformation of web response elements within application logic. Examples include removing specific headers, checking if a status falls within a range, or converting a body stream into a list of bytes.",
+      "description_length": 570,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opium_kernel.Rock.Handler",
+      "description": "Handles HTTP requests by mapping them to responses using a predefined service structure. Operates on request and response types specific to the Rock framework. Used to define default behavior and generate S-expressions for serialization.",
+      "description_length": 237,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opium_kernel.Rock.Middleware",
+      "description": "Provides functions to create and apply filters to HTTP requests and responses, with a focus on transforming or inspecting request and response data. Operates on custom types `Rock.Request.t` and `Rock.Response.t` through a simple filter interface. Used to inject logging, modify headers, or enforce request validation during service execution.",
+      "description_length": 343,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opium_kernel.Rock.App",
+      "description": "Converts an application instance to an S-expression, retrieves its handler, and manages a list of middlewares. Operates on a custom type representing an application configuration. Used to construct and modify web application pipelines with middleware layers.",
+      "description_length": 258,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Opium_kernel.Hmap.Key",
+      "description": "Provides operations to create and inspect keys with associated metadata, convert keys to existential types, and compare or check equality between keys. Works with typed information structures consisting of a string and a serialization function, and an abstract key type. Used to manage unique identifiers with embedded metadata in systems requiring type-safe key comparisons and serialization.",
+      "description_length": 393,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opium_kernel.Rock",
+      "description": "Encapsulates HTTP request and response processing with support for filters, transformations, and serialization. Provides types for requests, responses, and services, along with operations to modify headers, bodies, and status codes, and apply logging or authentication. Enables creating middleware pipelines, converting between service types and S-expressions, and handling request routing. Examples include injecting headers, parsing query parameters, validating requests, and serializing service endpoints.",
+      "description_length": 508,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Opium_kernel.Cookie",
+      "description": "Extracts and manages HTTP cookies from requests and responses. Operates on request and response objects, handling key-value pairs with percent-encoded values. Sets individual or multiple cookies with configurable attributes like expiration, path, and security flags.",
+      "description_length": 266,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opium_kernel.Router",
+      "description": "Converts between a structured route handler type and S-expressions, enabling serialization and deserialization. Manages route registration with HTTP methods and associated actions, and extracts parameters and splats from incoming requests. Integrates with middleware to process request routing based on defined routes.",
+      "description_length": 318,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opium_kernel.Route",
+      "description": "Manages route data through parameter and splat manipulation, offering filtering, mapping, and aggregation over structured information. Key operations include extracting, validating, and transforming route components during request processing. It handles key-value lists and route structures, enabling dynamic modifications and checks. Examples include isolating query parameters, enforcing required fields, or adjusting splat values mid-processing.",
+      "description_length": 448,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opium_kernel.Hmap",
+      "description": "manages typed keys with metadata, enabling creation, inspection, conversion to existential types, and type-safe comparisons. It supports operations on key-value pairs where each key is associated with a string and a serialization function. Users can check key equality, convert keys for generic use, and handle serialized representations. Examples include generating unique identifiers with embedded type information and ensuring safe comparisons across different key domains.",
+      "description_length": 476,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "opium_kernel",
+      "description": "Provides route handling, middleware composition, and request/response manipulation using a simple syntax. Works with HTTP methods, URI patterns, and Lwt-based asynchronous workflows. Enables rapid development of web services with customizable processing layers for logging, authentication, and content transformation.",
+      "description_length": 317,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Opium_kernel",
+      "description": "Encapsulates HTTP request and response processing with support for filters, transformations, and serialization, while managing cookies, route data, and typed keys. Provides types for requests, responses, services, cookies, and keys, along with operations to modify headers, bodies, status codes, extract parameters, set cookies, and handle route routing. Enables injecting headers, parsing query parameters, validating requests, serializing service endpoints, and managing typed key comparisons. Examples include setting secure cookies, extracting route parameters, and generating type-safe identifiers.",
+      "description_length": 603,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 31,
+    "meaningful_modules": 21,
+    "filtered_empty_modules": 10,
+    "retention_rate": 0.6774193548387096
+  },
+  "statistics": {
+    "max_description_length": 603,
+    "min_description_length": 237,
+    "avg_description_length": 391.5238095238095,
+    "embedding_file_size_mb": 0.07674407958984375
+  }
+}

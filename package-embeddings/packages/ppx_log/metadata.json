@@ -1,0 +1,189 @@
+{
+  "package": "ppx_log",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 24,
+  "creation_timestamp": "2025-06-18T16:36:21.489276",
+  "modules": [
+    {
+      "module_path": "Ppx_log_types.Message_source.Code_position",
+      "description": "Provides functions to create, compare, and manipulate code positions, including line and column tracking. Works with a private record type containing line and column integers. Used to generate precise error messages and track source locations during parsing.",
+      "description_length": 258,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_log_types.Message_source.Private",
+      "description": "Provides a function to generate a unique code based on file name, line number, and module name, using base types for input and output. Operates on strings and integers to construct identifiers for internal use. Used to create consistent, context-aware labels in code generation or logging systems.",
+      "description_length": 297,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_log_types.Tag_data.Without_type_label",
+      "description": "Provides serialization to S-expression and string representations for a type `t`. Operates on a type alias `t` that is equivalent to itself. Used to generate human-readable and machine-parsable formats for data structures without type labels.",
+      "description_length": 242,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_log_types.Tag_data.With_type_label",
+      "description": "Provides serialization of a type to S-expression format using `sexp_of_t`. Operates on a type `t` that is explicitly labeled. Used to generate S-expressions for structured data in parsing or logging contexts.",
+      "description_length": 208,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_log_types.Message_data.Unstable",
+      "description": "Provides serialization of internal representations to S-expressions using a custom type `t` that is recursively defined. Works with structured data where symbolic representation is needed for debugging or configuration. Enables direct conversion of complex data forms into a format suitable for parsing and inspection.",
+      "description_length": 318,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_log_types.Message_sexp.Label",
+      "description": "Provides functions to create, compare, and serialize labels, including parsing from strings and generating unique identifiers. Works with the abstract type t and string representations of labels. Used to manage configuration keys in a parser and ensure consistent label handling across different system components.",
+      "description_length": 314,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_log_types.Message_sexp.Unstable",
+      "description": "Provides serialization of internal representations to S-expressions using a custom conversion function. Operates on a recursive type `t` that is structurally equivalent to itself. Used to generate human-readable debug outputs and facilitate interoperability with Sexp-based systems.",
+      "description_length": 282,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_log_types.Log_tag.Verbose",
+      "description": "Provides serialization of internal representations to S-expressions using a custom `sexp_of_t` function. Operates on a recursive type `t` that is structurally identical to itself. Used to generate human-readable debug outputs during development.",
+      "description_length": 245,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_log_types.Log_tag.For_message_sexp",
+      "description": "Converts values of type `t` to S-expression representations using the `sexp_of_t` function. Operates on the `t` type, which is aliased to itself. Used to serialize structured data for debugging or configuration purposes.",
+      "description_length": 220,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_log_types.Level",
+      "description": "Provides conversion of level values to S-expression format. Works with an enumerated type representing distinct level states. Used to serialize configuration levels for logging or persistence.",
+      "description_length": 192,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_log_types.Log_tag",
+      "description": "Serializes recursive `t` values into S-expressions using a custom `sexp_of_t` function, enabling structured debugging and configuration output. The `t` type is self-aliased and supports recursive representation, ensuring consistency in serialization. This allows developers to inspect complex data structures in a readable format during development. For example, a nested `t` value can be converted to a human-readable S-expression for logging or configuration file generation.",
+      "description_length": 477,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_log_types.Message_data",
+      "description": "Encodes and decodes structured data using a recursive type `t`, supporting symbolic representation for debugging and configuration. Offers conversion functions to and from S-expressions, enabling inspection and manipulation of complex data hierarchies. Allows preservation of data integrity during serialization, making it suitable for logging or inter-process communication. For example, it can transform a nested list of messages into a readable S-expression or reconstruct a message tree from a parsed string.",
+      "description_length": 512,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_log_types.Message_sexp",
+      "description": "Encapsulates label management and S-expression serialization, offering tools to generate, compare, and serialize labels as well as convert internal data structures to S-expressions. It handles abstract label types and recursive data structures, enabling consistent configuration key management and debug output generation. Functions include label creation from strings, unique identifier generation, and custom serialization to S-expressions. This supports both internal data representation and interoperability with Sexp-based systems.",
+      "description_length": 536,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_log_types.Message_source",
+      "description": "Tracks source code positions with line and column integers, enabling precise error reporting and parsing context tracking. Generates unique identifiers from file names, line numbers, and module names using string and integer inputs, supporting consistent labeling in code generation. Operations include position comparison, manipulation, and identifier construction. Example uses include highlighting syntax errors and generating debug labels for compiled code.",
+      "description_length": 461,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_log_types.Tag_data",
+      "description": "Handles serialization of data types to S-expressions and strings, supporting both unlabeled and labeled representations. Includes operations to convert values of type `t` to S-expressions and human-readable strings. Allows for flexible output formats suitable for logging, parsing, and data interchange. For example, it can transform a data structure into a readable string or a structured S-expression for further processing.",
+      "description_length": 426,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_log_syntax.Global",
+      "description": "Handles log level evaluation and message construction for logging systems, operating on log levels, timestamps, tags, and message data. Provides a mechanism to determine if logging should occur based on configured levels and constructs structured log messages with source information. Used to integrate logging logic into asynchronous applications with custom message formatting and conditional logging.",
+      "description_length": 403,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_log_kernel.Log_tag",
+      "description": "Provides functions to extract and compare labels and data from tagged values, and to parse and render log tags from ppx syntax. Works with tagged structures containing labels and associated data, including constants, expressions, and type-constrained values. Parses argument labels into structured log tags and generates expressions for evaluating lists of tags.",
+      "description_length": 362,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_log_kernel.Tag_data",
+      "description": "Provides functions to convert a tag structure to S-expressions, parse tags from OCaml expressions, and render tags as either a direct value or an optional value based on annotations. Works with custom tag data types and OCaml expressions annotated with specific attributes. Used to generate and process tagged data in logging or serialization contexts, such as converting an integer tag to a concrete value or wrapping a type in a Sexp representation.",
+      "description_length": 451,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_log_kernel.For_testing",
+      "description": "Returns a list of file extension strings. Operates on base strings and lists. Used to filter files by type in build scripts.",
+      "description_length": 124,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_log_types.Global",
+      "description": "Checks if a log level is enabled for output and returns a boolean. Processes log messages with specified levels, timestamps, tags, and source information, returning a structured log entry. Handles default logging behavior based on configured settings.",
+      "description_length": 251,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "ppx_log",
+      "description": "Provides logging macros and helpers for inserting log statements with structured data. Works with tuples, records, and custom types to format and emit log messages. Enables detailed runtime diagnostics by embedding log points directly in code with minimal overhead.",
+      "description_length": 265,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_log_types",
+      "description": "Provides functions to check log level eligibility and construct structured log entries with levels, timestamps, tags, and source details. Includes operations to filter and process messages according to configured logging settings. Supports default behaviors for unconfigured log levels. Example uses include enabling/disabling logs based on severity and enriching messages with contextual metadata.",
+      "description_length": 398,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_log_syntax",
+      "description": "Provides runtime evaluation of log levels and constructs structured log messages with timestamps, tags, and source context. Supports conditional logging based on configured severity thresholds and enables custom formatting for asynchronous environments. Operations include level checks, message assembly, and source tracking. Example uses include filtering logs by severity, embedding timestamps in messages, and attaching contextual tags to log entries.",
+      "description_length": 454,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_log_kernel",
+      "description": "Combines tag manipulation, serialization, and file filtering capabilities. Handles tagged values with labels and data, converts them to S-expressions, and parses OCaml expressions with custom attributes. Supports generating log tags from ppx syntax and filtering files by extension. Enables structured logging, data transformation, and build script customization.",
+      "description_length": 363,
+      "index": 23,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 25,
+    "meaningful_modules": 24,
+    "filtered_empty_modules": 1,
+    "retention_rate": 0.96
+  },
+  "statistics": {
+    "max_description_length": 536,
+    "min_description_length": 124,
+    "avg_description_length": 335.7916666666667,
+    "embedding_file_size_mb": 0.08757305145263672
+  }
+}

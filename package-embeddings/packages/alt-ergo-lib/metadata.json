@@ -1,0 +1,2135 @@
+{
+  "package": "alt-ergo-lib",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 302,
+  "creation_timestamp": "2025-06-18T17:06:43.313927",
+  "modules": [
+    {
+      "module_path": "AltErgoLib.Domains.Make.Ephemeral.Canon.Entry",
+      "description": "Returns the domain associated with an entry and allows modifying it, with responsibility on the caller to maintain domain validity. Operates on a custom type `t` and a domain type `D.t`. Used to manage and update the scope of entries in a system where domain constraints are enforced externally.",
+      "description_length": 295,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains.Make.Ephemeral.Entry",
+      "description": "Returns the domain associated with an entry and allows updating it, ensuring the new domain is a subset of valid options. Operates on entries and domain values represented as D.t. Used to manage access control policies by dynamically adjusting the scope of entries.",
+      "description_length": 265,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains.Make.Ephemeral.Canon",
+      "description": "Computes and manages canonical representations by linking a custom type `t` to a domain type `D.t`, enabling domain modification while enforcing external validity checks. It provides operations to retrieve and update the domain of an entry, ensuring consistency within a larger system. This allows precise control over the scope and context of data elements during processing. For example, it can adjust the domain of a symbolic reference to reflect changes in an underlying structure.",
+      "description_length": 485,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains.Make.Atom.Set",
+      "description": "This module offers set operations like insertion, deletion, and membership checks, along with set-theoretic operations (union, intersection, difference) and ordered traversal mechanisms. It works with ordered sets defined by comparison functions and sequences, enabling structured data manipulation. Use cases include efficient element management, predicate-based filtering, and constructing sets from sequential data sources.",
+      "description_length": 426,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains.Make.Atom.Map",
+      "description": "This module offers functions for manipulating ordered key-value maps, including adding, updating, removing, and querying bindings, with support for safe access, merging, and traversal. It works with ordered key-value pairs and sequences, enabling operations like filtering, transforming, and iterating over structured data in specific orders. Use cases include dynamic data management, efficient lookups, and processing ordered datasets with customizable comparison logic.",
+      "description_length": 472,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains.Make.Atom.Table",
+      "description": "This module offers key-based operations for manipulating hash tables, including insertion, deletion, lookup, and iteration, along with sequence-driven construction and modification of tables. It works with hash tables where keys are of type `t` and values are polymorphic `'a`, enabling efficient dynamic data management. Use cases include scenarios requiring rapid key-value access, such as caching systems or configuration settings, where elements are frequently updated or traversed.",
+      "description_length": 486,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains.Make.Composite.Set",
+      "description": "The module provides standard set operations like union, intersection, and element manipulation, alongside traversal, transformation, and predicate-based querying for ordered sets and sequences. It supports both imperative and functional paradigms, enabling efficient handling of ordered data and sequence-based constructions. Use cases include maintaining ordered collections, optimizing large-scale data processing, and integrating with sequential workflows.",
+      "description_length": 459,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains.Make.Composite.Map",
+      "description": "This module provides key-based operations for constructing, modifying, and querying ordered maps, including adding, updating, removing, and merging bindings, with support for both single and list-valued entries. It works with ordered key-value pairs and sequences, enabling efficient traversal, filtering, and transformation of map elements in sorted order. Use cases include maintaining sorted data structures, batch processing of key-value pairs, and dynamic map updates with predicate-driven selections.",
+      "description_length": 506,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Domains.Make.Composite.Table",
+      "description": "This module offers key-based operations for manipulating hash tables, including insertion, deletion, lookup, and iteration, along with transformations of key-value pairs. It works with tables where keys are of type `t` and values are generic `'a`, supporting sequence-driven updates and construction. Use cases include dynamic data mapping, configuration management, and efficient lookups in scenarios requiring frequent key-value modifications.",
+      "description_length": 445,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Intervals_core.Make.Union.Interval",
+      "description": "Provides functions to construct, inspect, and compare intervals defined by lower and upper bounds, including creating singleton intervals and the full interval spanning all values. Works with bounded and unbounded interval representations, using a finite value type for endpoints. Used to represent ranges in constraint systems or numerical analysis where precise boundary checks are required.",
+      "description_length": 393,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.Make.P.Set",
+      "description": "This module provides operations for managing ordered collections, including standard set manipulations like insertion, deletion, and union/intersection, alongside traversal, transformation, and predicate-based queries. It works with ordered data structures relying on type-specific comparisons and sequence-based constructions, enabling efficient element access and structured data processing. Use cases include maintaining sorted datasets, filtering large collections, and converting between sequences and ordered sets for optimized operations.",
+      "description_length": 545,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.Make.P.Map",
+      "description": "This module offers comprehensive operations for managing ordered key-value maps, including insertion, deletion, modification, and merging of entries, alongside queries for cardinality, min/max keys, and value retrieval. It supports ordered traversal, transformation, and filtering of map elements, along with sequence-based construction and partial iteration from specific keys. Use cases include dynamic data management, ordered data processing, and efficient manipulation of structured datasets like configuration tables or indexed collections.",
+      "description_length": 546,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.Make.P.Ints",
+      "description": "Provides operations for constructing and manipulating polynomials with integer coefficients, including conversion from and arithmetic with big integers. Supports addition, subtraction, negation, and scalar multiplication using both polynomial and integer operands. Enables efficient polynomial adjustments with constant values through specialized operators.",
+      "description_length": 357,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.FM.P.Set",
+      "description": "The module provides set operations like union, intersection, and element manipulation, working with ordered sets and sequences to enable efficient querying and dynamic data management. It supports ordered traversal, transformation via mapping/filtering, and predicate-based splitting, making it suitable for applications requiring structured data processing and ordered element handling.",
+      "description_length": 387,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.FM.P.Map",
+      "description": "This module provides key-based operations for creating, modifying, and querying ordered maps, including adding, updating, removing, and merging entries, as well as retrieving cardinality and extreme keys. It supports traversal, transformation, and filtering of key-value pairs in sorted order, along with sequence-based construction and subset iteration. Use cases include dynamic data management, ordered data processing, and efficient manipulation of structured datasets with key constraints.",
+      "description_length": 494,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.FM.P.Ints",
+      "description": "Provides operations for constructing and manipulating polynomials with integer coefficients, including conversion from and arithmetic with big integers. Supports addition, subtraction, negation, and scalar multiplication. Used to efficiently perform polynomial arithmetic in contexts requiring integer coefficients.",
+      "description_length": 315,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.Ephemeral.Canon.Entry",
+      "description": "Returns the domain associated with an entry and allows modifying it, with responsibility on the caller to maintain domain validity. Operates on a custom type `t` and a `domain` type representing permissible values. Used to manage and update the scope of entries in a system where domain constraints are critical, such as in configuration or access control settings.",
+      "description_length": 365,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.NF.Atom.Set",
+      "description": "This module provides set theory operations like union, intersection, and difference, along with element manipulation and querying, leveraging ordered structures for efficient membership checks and extremal element retrieval. It supports transformations such as mapping, filtering, and predicate-based searches, while preserving order through type-specific comparisons for iterative and partitioning tasks. Additionally, it enables sequence-driven set construction and traversal, allowing ordered element insertion and reverse iteration for structured data handling.",
+      "description_length": 565,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.NF.Atom.Map",
+      "description": "This module offers operations for managing ordered maps with key-based manipulations, including insertion, deletion, lookup, and complex merging or transformation tasks. It works with key-value pairs structured as maps ordered via a custom comparator, enabling efficient traversal, filtering, and sequence-based construction. Use cases include dynamic data aggregation, hierarchical data processing, and scenarios requiring ordered key access or bulk operations like merging multiple datasets.",
+      "description_length": 493,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.NF.Atom.Table",
+      "description": "The module provides hash table operations such as insertion, removal, lookup, iteration, and sequence conversion, along with functions to construct and modify tables using sequences of key-value pairs. It works with hash tables where keys are of type `t` and values are of type `'a`, enabling dynamic data manipulation. Use cases include building tables from sequential data or updating existing tables by replacing elements with new key-value sequences.",
+      "description_length": 454,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.NF.Composite.Set",
+      "description": "The module provides set operations such as union, intersection, and element transformation, working with ordered sets and sequences to enable efficient data manipulation. It supports querying properties, iterating in order, and constructing sets from sequences, suitable for tasks like merging datasets or processing ordered collections. Specific use cases include filtering elements via predicates, splitting sets based on criteria, and reverse iteration for specialized data traversal.",
+      "description_length": 487,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.NF.Composite.Map",
+      "description": "This module provides operations for managing ordered key-value maps, including insertion, deletion, merging, and conditional updates, alongside traversal, transformation, and comparison functions that process elements in key order. It works with ordered maps and sequences, enabling efficient manipulation of structured data through methods like key-based filtering, list-like additions, and ordered iteration. Use cases include maintaining sorted configurations, incremental data aggregation, or processing hierarchical data where ordered access and modification are critical.",
+      "description_length": 577,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.NF.Composite.Table",
+      "description": "This module offers hash table operations such as insertion, deletion, lookup, and iteration, along with sequence-based methods for constructing and modifying tables. It works with hash tables where keys are of type `t` and values are of type `'a`, enabling flexible manipulation through mutation and traversal. Specific use cases include dynamically updating tables with key-value sequences or initializing tables from structured data streams.",
+      "description_length": 443,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Arith.Type.Set",
+      "description": "The module offers standard set operations such as union, intersection, and element retrieval, alongside ordered traversal, transformation, and predicate-based querying for manipulating ordered sets. It works with ordered sets and sequences, enabling efficient dynamic data management and structured processing. Use cases include managing hierarchical data, filtering elements via predicates, and constructing sets from sequential inputs.",
+      "description_length": 437,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Arith.Type.Map",
+      "description": "This module provides operations for managing ordered key-value maps, including insertion, deletion, modification, and querying of bindings, with support for custom comparison functions to maintain key order. It works with structured data like maps and sequences, enabling tasks such as efficient key-based lookups, ordered traversal, and transformation of bindings. Specific use cases include dynamically maintaining sorted data structures, processing large datasets through sequence-based map construction, and performing predicate-driven filtering or aggregation on key-value pairs.",
+      "description_length": 584,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Arith.Type.Ints",
+      "description": "Provides operations for constructing and manipulating polynomials with integer coefficients, including conversion from and arithmetic with big integers. Supports addition, subtraction, negation, and scalar multiplication using custom operators and specialized functions. Used to efficiently perform polynomial arithmetic in contexts requiring exact integer computations.",
+      "description_length": 370,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Arith.Shostak.Set",
+      "description": "The module provides set theory operations like union, intersection, and difference, alongside element manipulation, querying, and ordered traversal, working with ordered sets and sequences to enable efficient data management and structured processing. It supports tasks such as filtering, mapping, and constructing sets from sequences, with functions for reverse iteration and predicate-based element selection.",
+      "description_length": 411,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Arith.Shostak.Map",
+      "description": "The module supports operations for creating, modifying, and querying ordered key-value maps, including adding, removing, and merging bindings, as well as transforming and filtering elements. It enables traversal and iteration over ordered pairs, with capabilities to process sequences for building maps and efficient key-based access. Use cases include managing sorted data structures, dynamic updates, and processing large datasets through sequence-based operations.",
+      "description_length": 467,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Arith.Shostak.Ints",
+      "description": "Provides operations for constructing and manipulating polynomials with integer coefficients, including conversion from and arithmetic with big integers. Supports addition, subtraction, negation, and scalar multiplication using custom operators and specialized functions. Used to efficiently perform polynomial arithmetic in contexts requiring integer coefficients and constant adjustments.",
+      "description_length": 389,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Xliteral.Make.Map",
+      "description": "The module offers operations for creating, modifying, and querying ordered maps with key-value pairs, including merging, splitting, and sequence-based construction. It enables efficient searching, iteration, transformation, and filtering of bindings while maintaining key order, ideal for scenarios like dynamic data aggregation or structured data processing. Specific functions support tasks such as conditional updates, reverse traversal, and building maps from enumerable sources.",
+      "description_length": 483,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Xliteral.Make.Set",
+      "description": "The module offers operations for managing ordered sets via set theory principles, including union, intersection, and element selection, alongside sequence-based construction and traversal. It enables querying properties like size and membership, transforming elements through mapping and filtering, and iterating in ordered or reverse sequences. Use cases include efficient data aggregation, ordered data processing, and dynamic set manipulation in applications requiring structured element management.",
+      "description_length": 502,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains.Make.Ephemeral",
+      "description": "manages domain associations for entries, allowing retrieval and constrained updates to ensure validity. It links a custom type `t` to a domain type `D.t`, enabling domain modifications while maintaining external consistency. Operations include fetching and adjusting domains, such as updating a symbolic reference's scope in response to structural changes. This supports dynamic policy management and precise data context control.",
+      "description_length": 430,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains.Make.Set",
+      "description": "The module provides set operations like union, intersection, and element traversal, working with ordered sets and sequences to enable efficient querying and dynamic data management. It includes transformation functions, predicate-based filtering, and reverse iteration, supporting use cases such as maintaining unique elements, processing ordered data, and constructing sets from sequential inputs.",
+      "description_length": 398,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains.Make.Map",
+      "description": "This module provides operations for creating, modifying, and querying ordered maps with key-value pairs, including adding, updating, removing, and merging entries, as well as efficient traversal and sequence-based construction. It supports transformations, filtering, and ordered iteration, enabling use cases like building maps from sequences or processing data in sorted order. Specific functions allow for key-based subset iteration and predicate-driven selection, enhancing flexibility in data manipulation.",
+      "description_length": 511,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Domains.Make.Atom",
+      "description": "provides a unified interface for working with ordered and hashed data structures, combining set, map, and hash table operations. it supports ordered and unordered collections with key-based and value-based manipulations, including insertion, deletion, lookup, and traversal. users can perform set-theoretic operations, manage key-value bindings, and construct tables from sequences, enabling efficient data processing and dynamic data management. examples include building ordered sets from streams, maintaining ordered maps with custom comparisons, and implementing fast lookup tables for caching.",
+      "description_length": 598,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains.Make.Composite",
+      "description": "combines ordered set and map operations with hash table manipulations, enabling efficient handling of structured data through key-based and sequence-driven workflows. It provides set operations, ordered map transformations, and hash table modifications, with support for both imperative and functional styles. Users can perform unions, intersections, key-value merges, and dynamic updates on structured collections. Examples include managing sorted datasets, building multi-variate polynomials, and configuring dynamic data mappings.",
+      "description_length": 533,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Compat.Type.Id",
+      "description": "Generates and compares type identifiers that can be used to test for type equality at runtime. Works with the polymorphic type 'a t, where each instance represents a unique type reference. Used to track and compare types in scenarios like serialization, where type identity must be preserved across sessions.",
+      "description_length": 308,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.D_loop.Typer.Ext",
+      "description": "Provides functions to retrieve a name, built-in symbols for a language, and a list of all instances, along with a conversion from bitvector to natural number. Works with a custom type `t` representing language environments. Used to manage language-specific symbols and generate unique identifiers during code generation.",
+      "description_length": 320,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Intervals_core.Make.Union",
+      "description": "Provides operations to compare, pretty-print, and convert between finite values and extended values that include infinity and epsilon-adjusted bounds. Works with a type `t` that extends `finite` with -infinity, +infinity, and successor/predecessor representations for precise interval handling. Used to model strict bounds in interval arithmetic, such as converting open intervals to closed ones using `succ` and `pred`.",
+      "description_length": 420,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Id.Namespace.Internal",
+      "description": "Generates unique strings by appending incrementing numbers to a base prefix. It operates on strings and integers, maintaining internal state between calls. Used to create distinct identifiers in code generation or temporary file naming.",
+      "description_length": 236,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Id.Namespace.Skolem",
+      "description": "Generates unique strings by appending sequential numbers to a base prefix. It operates on strings and integers, ensuring each generated string is distinct. Used to create unique variable names in symbolic computation systems.",
+      "description_length": 225,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Id.Namespace.Abstract",
+      "description": "Generates unique strings by appending incrementing numbers to a base prefix. It operates on strings and maintains internal state between calls. Used to create unique identifiers in code generation or temporary file naming.",
+      "description_length": 222,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Intervals_intf.Union.Interval",
+      "description": "Provides functions to create, inspect, and compare intervals, including constructing from bounds, checking for singletons, and retrieving interval views. Operates on values of type OT.finite and bound types representing interval endpoints. Used to represent ranges in numerical analysis, constraint systems, or domain-specific value sets.",
+      "description_length": 338,
+      "index": 42,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Polynome.Make.Set",
+      "description": "The module provides standard set operations like union, intersection, and element modification, along with querying features such as size, membership, and extremal elements, working with ordered sets and sequences. It supports transformations including mapping, filtering, and predicate-based searches, while preserving order through comparison functions for efficient traversal. Use cases include dynamic data management, ordered element processing, and constructing sets from sequential inputs.",
+      "description_length": 496,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Polynome.Make.Map",
+      "description": "The module offers functions for creating, modifying, and querying ordered maps with key-value pairs, including operations like adding, updating, removing, and merging entries, as well as efficient traversal and list-based manipulations. It supports ordered iteration, transformation of values or keys, conditional filtering, and sequence-based processing for handling large datasets. Use cases include maintaining sorted data structures, optimizing lookup performance, and processing structured data in sequential or ordered formats.",
+      "description_length": 533,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Polynome.Make.Ints",
+      "description": "Provides operations for constructing and manipulating polynomials with integer coefficients, including conversion from and arithmetic with big integers. Supports addition, subtraction, negation, and scalar multiplication of polynomials. Used to efficiently perform polynomial arithmetic in contexts requiring integer coefficients, such as algebraic computations or symbolic manipulations.",
+      "description_length": 388,
+      "index": 45,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.FM.P",
+      "description": "Combines set, map, and polynomial operations for structured data management, enabling efficient manipulation of ordered collections and algebraic expressions. It handles ordered sets and maps with traversal, transformation, and filtering, alongside polynomial arithmetic with integer coefficients. Users can perform union and intersection on sets, manage key-value pairs in sorted order, and execute addition or multiplication on polynomials. Examples include querying structured datasets, maintaining ordered sequences, and performing exact arithmetic on polynomial expressions.",
+      "description_length": 579,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.FM.MP",
+      "description": "This module provides operations for managing ordered maps through insertion, updating, removal, and querying of key-value pairs, alongside advanced functions like merging, traversal, and sequence-based manipulation. It supports ordered key processing, predicate-driven filtering, and conversions between maps and lists/sequences, enabling tasks such as data aggregation, transformation, and efficient key-based access. Specific use cases include building maps from iterative data sources and performing structured transformations on ordered collections.",
+      "description_length": 553,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.FM.MINEQS",
+      "description": "Manages a mapping of variables to rational numbers, supporting insertion, iteration, and folding over entries. Operates on a type `mp` that represents a map from variables (`t`) to rational values (`Numbers.Q.t`). Used to track and manipulate inequalities in symbolic computation contexts.",
+      "description_length": 289,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.Make.P",
+      "description": "combines ordered collection management, key-value map operations, and polynomial arithmetic into a unified framework for structured data handling. It supports ordered sets with set operations and sequence transformations, ordered maps with key-based queries and modifications, and polynomials with arithmetic and coefficient conversions. Users can maintain sorted data, manage dynamic configurations, and perform algebraic manipulations with integers and polynomials. Examples include filtering large datasets, building indexed configurations, and adjusting polynomial expressions with constant terms.",
+      "description_length": 601,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.Make.MP",
+      "description": "The module offers operations for creating, modifying, and querying ordered maps with key-value structures, including adding, removing, merging, and inspecting bindings, as well as retrieving cardinality and key ranges. It supports sequence-based construction, transformation via filtering and folding, and efficient processing of ordered data for use cases like dynamic dataset management or structured data aggregation from streams.",
+      "description_length": 433,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.Make.MINEQS",
+      "description": "Manages a mapping of variables to rational numbers, supporting insertion, iteration, and folding over entries. Operates on a type representing variable-rational pairs and a map structure for storing these pairs. Enables processing of inequality constraints and aggregation of related data during symbolic computation.",
+      "description_length": 317,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.Make.Set",
+      "description": "This module offers set operations centered on ordered collections, including set-theoretic manipulations like union, intersection, and difference, alongside element insertion, deletion, and property queries such as size and membership. It supports ordered traversal, predicate-based filtering, and transformation of elements, along with sequence-to-set construction and reverse iteration. Use cases include efficient data management, ordered data processing, and dynamic set transformations in applications requiring structured element access.",
+      "description_length": 543,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.Make.Map",
+      "description": "This module provides operations for managing ordered key-value mappings, including insertion, deletion, modification, and traversal with key-based ordering. It works with structured data like maps and sequences, enabling tasks such as efficient searching (e.g., `find_last`), transformation (e.g., `map`, `filter_map`), and structural splits (e.g., `split`). Use cases include maintaining sorted data, processing large datasets via sequences, and conditional filtering of key-value pairs.",
+      "description_length": 488,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.Make.Ints",
+      "description": "Provides operations for constructing and manipulating polynomials with integer coefficients, including conversion from and arithmetic with big integers. Supports addition, subtraction, negation, and scalar multiplication of polynomials. Used to efficiently perform polynomial arithmetic in contexts requiring integer coefficients, such as algebraic computations or symbolic manipulations.",
+      "description_length": 388,
+      "index": 54,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.FM.Set",
+      "description": "This module offers set operations like union, intersection, and membership checks, along with ordered traversal and transformation capabilities, leveraging ordered data structures defined by a comparison interface. It supports sequence-based set construction and manipulation, enabling efficient processing of elements through predicates, filtering, and reverse iteration. Use cases include managing ordered collections, data filtering, and converting between sequences and sets while maintaining structural integrity.",
+      "description_length": 518,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.FM.Map",
+      "description": "This module provides operations for managing ordered key-value maps, including adding, updating, removing, and querying bindings, as well as merging, unioning, and traversing maps with key-based ordering. It works with structured data like maps and sequences, enabling tasks such as filtering, transforming, and splitting key-value pairs while maintaining order. Use cases include efficiently combining datasets, generating ordered reports, or processing large collections through sequence-based operations.",
+      "description_length": 507,
+      "index": 56,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.FM.Ints",
+      "description": "Provides operations for constructing and manipulating polynomials with integer coefficients, including conversion from and arithmetic with big integers. Supports addition, subtraction, negation, and scalar multiplication of polynomials. Used to efficiently perform polynomial arithmetic in contexts requiring integer coefficients, such as algebraic computations or symbolic manipulations.",
+      "description_length": 388,
+      "index": 57,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.P.Set",
+      "description": "The module offers set theory operations like union, intersection, and difference, along with element manipulation through addition, removal, and membership checks, all tailored for ordered sets. It enables ordered traversal, predicate-based filtering, and sequence-driven construction, supporting tasks such as maintaining sorted unique collections or processing data in reverse order. Transformations like mapping and splitting further facilitate dynamic data management and structured element analysis.",
+      "description_length": 504,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.P.Map",
+      "description": "The module supports creating, modifying, and querying ordered maps with key-value pairs, enabling operations like adding, removing, merging, and retrieving bindings, as well as analyzing cardinality and extremal elements. It offers traversal, transformation, and filtering capabilities, including sequence-based construction and key-ordered processing for tasks like data aggregation or transformation pipelines. Specific use cases include merging datasets, extracting subsets via predicates, and efficiently handling large-scale data with ordered key structures.",
+      "description_length": 563,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.P.Ints",
+      "description": "Provides operations for constructing and manipulating polynomials with integer coefficients, including conversion from and arithmetic with big integers. Supports addition, subtraction, negation, and scalar multiplication using custom operators and functions. Used to efficiently perform polynomial arithmetic in contexts requiring exact integer computations.",
+      "description_length": 358,
+      "index": 60,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Literal.Make.Table",
+      "description": "This module offers key-based operations for managing hash tables, including insertion, removal, lookup, and iteration, along with functions to modify, query, and convert table contents. It works with hash tables where keys are of type `t` and values are polymorphic `'a`, supporting sequence-based construction and updates. Use cases include dynamically building tables from data streams or efficiently managing mutable key-value mappings in applications requiring frequent updates.",
+      "description_length": 482,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Literal.Make.Set",
+      "description": "The module offers set theory operations such as union, intersection, and difference, alongside element manipulation, membership checks, and ordered traversal for structured data. It works with ordered sets and sequences, enabling efficient querying, predicate-based filtering, and reverse iteration. Use cases include managing dynamic data collections, optimizing membership queries, and converting between sequential and set-based representations.",
+      "description_length": 448,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Literal.Make.Map",
+      "description": "This module provides functions for creating, modifying, and querying ordered maps with key-value bindings, supporting operations like adding, updating, removing, and merging entries, as well as transformations, filtering, and comparisons. It enables efficient key-based access and processing, including sequence-based operations for iterating over subsets of bindings or constructing maps from sequences. Use cases include managing ordered datasets, performing bulk transformations, and optimizing searches in structured data.",
+      "description_length": 526,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Satml_types.Flat_Formula.Set",
+      "description": "This module offers standard set operations like insertion, deletion, and membership checks, along with set-theoretic operations such as union, intersection, and difference, all tailored for ordered collections. It supports ordered traversal, predicate-based filtering, and transformation of elements, enabling efficient manipulation of structured data. Use cases include managing dynamic datasets with fast lookups, processing ordered sequences, and constructing sets from iterable sources.",
+      "description_length": 490,
+      "index": 64,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Satml_types.Flat_Formula.Map",
+      "description": "This module provides operations for managing ordered key-value maps, including insertion, modification, deletion, and query, with support for safe access, merging, and traversal. It works with ordered data structures where keys are systematically processed in increasing or decreasing order, leveraging sequences for efficient construction and iteration. Use cases include maintaining sorted configurations, dynamic dictionaries, or scenarios requiring ordered data manipulation and predicate-based filtering.",
+      "description_length": 509,
+      "index": 65,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Satml_types.Atom.Set",
+      "description": "This module provides operations for managing ordered collections through set theory principles, including union, intersection, and difference, alongside element insertion, deletion, and membership checks. It supports ordered traversal, predicate-based filtering, and transformation of elements, along with sequence-based construction and reverse iteration for structured data manipulation. Use cases include efficiently maintaining unique elements, processing ordered datasets, and dynamically modifying collections while preserving ordering constraints.",
+      "description_length": 554,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Satml_types.Atom.Map",
+      "description": "This module provides operations for creating, modifying, and querying ordered maps, including adding, removing, and merging key-value bindings, as well as retrieving min/max keys and cardinality. It supports structured traversal (iteration, folding, conversion to lists/sequences) and transformation (mapping, filtering, partitioning) of bindings, with functions like `find_last` and `split` for precise key-based manipulation. Use cases include dynamic data management, ordered data processing, and sequence-based construction of maps from atom-keyed bindings.",
+      "description_length": 561,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Shostak.Polynome.Set",
+      "description": "The module provides standard set operations such as union, intersection, and element manipulation, along with querying capabilities like size and membership, operating on ordered sets and sequences for structured data handling. It supports traversal, transformation, and predicate-based filtering, enabling tasks like building sets from sequences, processing elements in order, and splitting sets based on conditions.",
+      "description_length": 417,
+      "index": 68,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Shostak.Polynome.Map",
+      "description": "This module offers operations for managing ordered maps with key-based comparisons, including insertion, deletion, lookup, and complex transformations like merging, union, and binding extraction. It works with ordered key-value pairs and sequences, enabling tasks such as structured data aggregation, sorted record maintenance, and efficient traversal of hierarchical datasets. Specific use cases involve combining multiple datasets, filtering subsets based on predicates, or constructing maps from sequential data sources.",
+      "description_length": 523,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Shostak.Polynome.Ints",
+      "description": "Provides operations for constructing and manipulating polynomials with integer coefficients, including conversion from and arithmetic with big integers. Supports addition, subtraction, negation, and scalar multiplication using custom operators and specialized functions. Used to efficiently perform polynomial arithmetic in contexts requiring exact integer computations.",
+      "description_length": 370,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Shostak.L.Map",
+      "description": "This module offers a comprehensive set of operations for managing ordered maps, including insertion, modification, deletion, and query functions that leverage custom key comparison logic. It works with key-value structures where elements are processed in ordered sequences, supporting transformations, filtering, and structural manipulations like splitting or merging. Specific use cases include efficiently handling sorted data, generating derived maps from sequences, and performing ordered traversals for tasks like range queries or incremental processing.",
+      "description_length": 559,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Shostak.L.Set",
+      "description": "This module offers core set operations like insertion, deletion, and combination, along with queries for size, membership, and extremal elements, working with ordered sets and leveraging type-specific comparisons for efficient management. It supports advanced manipulations such as predicate-based filtering, ordered iteration, and set partitioning, while also enabling sequence-driven construction and reverse traversal for flexible data handling. Use cases include maintaining ordered collections, optimizing search workflows, and transforming data through structured filtering and splitting.",
+      "description_length": 594,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Shostak.Literal.Table",
+      "description": "This module manages hash tables with operations like insertion, removal, lookup, iteration, and transformation, focusing on key-value pair manipulation. It works with hash tables where keys are of type `Table.key` and values are generic, enabling sequence-based construction and modification. Use cases include dynamic data management, such as configuration handling or caching, where efficient key-based access and updates are critical.",
+      "description_length": 437,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Shostak.Literal.Set",
+      "description": "This module provides operations for managing ordered sets of literals, including standard set manipulations like union, intersection, and difference, along with imperative-style modifications and query functions. It supports traversal, transformation, and predicate-based filtering, enabling tasks such as maintaining sorted collections, efficient element lookup, and ordered processing. Specific use cases include constructing sets from sequences, reverse iteration, and preserving physical equality during operations.",
+      "description_length": 519,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Shostak.Literal.Map",
+      "description": "The module provides operations for constructing, modifying, and querying ordered maps with key-value bindings, supporting actions like adding, removing, and merging entries, as well as retrieving cardinality and key ranges. It works with maps featuring keys of a specific type and values of a generic type, enabling tasks such as filtering, transforming, and iterating over bindings in ordered sequences. Use cases include efficiently managing dynamic data structures and converting between map and sequence representations.",
+      "description_length": 524,
+      "index": 75,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Intervals.Real.Interval",
+      "description": "Provides functions to create, inspect, and compare intervals defined by lower and upper bounds, including constructing singletons and the full interval. Works with values of type Q.t and bound types that can be closed, open, or unbounded. Used to represent ranges in mathematical or computational contexts where precise boundary handling is required, such as in constraint systems or numerical analysis.",
+      "description_length": 403,
+      "index": 76,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Intervals.Int.Interval",
+      "description": "Provides operations to construct, examine, and compare intervals over integer values. Supports creating intervals from bounds, checking if an interval is a singleton, and retrieving a view of the interval's bounds. Used to represent ranges of integers in constraint solving or numerical analysis.",
+      "description_length": 296,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.Atom.Set",
+      "description": "This module provides set operations such as union, intersection, difference, and membership checks, along with ordered traversal and predicate-based element manipulation, all leveraging a defined comparison function for ordering. It works with ordered sets and sequences, enabling efficient construction, transformation, and querying of structured data. Use cases include managing dynamic datasets, performing logical set computations, and processing elements in sorted or reversed order.",
+      "description_length": 488,
+      "index": 78,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.Atom.Map",
+      "description": "This module provides operations for managing ordered key-value pairs, including adding, removing, updating, and merging bindings, as well as querying cardinality, min/max keys, and retrieving specific entries. It works with structured data like balanced trees or similar ordered representations, leveraging sequences for map construction and traversal. Use cases include maintaining sorted datasets, efficient lookup scenarios, and transforming data through predicate-based filtering or sequential processing.",
+      "description_length": 509,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.Atom.Table",
+      "description": "This module offers hash table operations such as insertion, deletion, lookup, and iteration, along with construction and modification via sequence-based updates. It works with hash tables where keys are of type `t` and values are of type `'a`, enabling efficient manipulation of key-value pairs. Use cases include dynamically updating data structures or initializing tables from sequential data sources.",
+      "description_length": 403,
+      "index": 80,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.Composite.Set",
+      "description": "The module enables operations like addition, removal, combination, and property queries (e.g., cardinality, membership) on ordered sets, leveraging a provided ordering to ensure structured data manipulation. It supports traversal, transformation, and predicate-based filtering of elements, along with sequence-driven set construction and reverse iteration for flexible data processing. These capabilities are suited for applications requiring efficient membership checks, ordered data handling, and dynamic set management from sequential inputs.",
+      "description_length": 545,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.Composite.Map",
+      "description": "The module provides functions for creating, modifying, and querying ordered maps with key-value pairs, supporting operations like adding, removing, and merging bindings, as well as efficient retrieval and iteration. It enables sequential processing, predicate-based filtering, and sequence-driven manipulation, allowing for structured handling of sorted data or batch operations. Use cases include dynamic dataset management, sorted key traversal, and efficient transformation of large key-value collections.",
+      "description_length": 508,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.Composite.Table",
+      "description": "This module offers operations for manipulating hash tables, including insertion, deletion, lookup, and iteration over key-value pairs, alongside construction and modification via sequences of key-value pairs. It works with associative data structures where keys are of type `t` and values are polymorphic (`'a`), enabling dynamic mapping and efficient querying. Use cases include managing mutable state in applications requiring frequent updates, such as caching systems or configuration managers, and processing structured data streams through sequence-based transformations.",
+      "description_length": 576,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.Ephemeral.Entry",
+      "description": "Returns the domain associated with an entry and allows modifying it, ensuring the new domain is a subset of valid options. Operates on a custom type `t` and a domain type representing valid ranges. Used to manage and update the scope of entries in a controlled manner, such as restricting access or filtering data.",
+      "description_length": 314,
+      "index": 84,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.Ephemeral.Canon",
+      "description": "Computes and manages canonical representations by linking a custom type `t` to a `domain` that defines valid values, enabling controlled modification of entry scopes. It supports operations to retrieve and update domains, ensuring consistency within a system that enforces strict constraints. For example, it can validate and adjust configuration parameters or access levels dynamically. This allows precise control over how entries are represented and modified in a structured, domain-aware manner.",
+      "description_length": 499,
+      "index": 85,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.NF.Atom",
+      "description": "combines set, map, and hash table operations into a unified interface for managing ordered and hashed collections. it provides ordered sets with membership checks, transformations, and sequence-based construction; ordered maps with key-based manipulations and merging; and hash tables with insertion, lookup, and sequence-driven updates. users can perform efficient set operations, manage key-value pairs with custom ordering, and dynamically build or modify tables. examples include finding intersections of sets, merging maps by key, and constructing tables from streams of data.",
+      "description_length": 581,
+      "index": 86,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.NF.Composite",
+      "description": "combines set, map, and hash table operations to manage structured, ordered, and hashed data. it supports set unions, map insertions, and hash table lookups, with operations that process elements in order or via key-value pairs. users can merge datasets, maintain sorted configurations, or dynamically update tables using sequences or predicates. examples include filtering set elements, merging ordered maps, and initializing hash tables from data streams.",
+      "description_length": 456,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Arith.Type",
+      "description": "The module supports operations such as substitution, solving, and attribute handling on symbolic expressions and model terms, with a focus on abstract syntax tree (AST) manipulation and constraint resolution. It works with custom types like `r`, alongside `Symbols.t` and `Expr.t`, enabling tasks like value assignment, solvability checks, and expression extraction. These capabilities are particularly useful in symbolic computation, logic solving, and model generation scenarios.",
+      "description_length": 481,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Arith.Shostak",
+      "description": "This module handles symbolic computation and transformation through operations on a custom type, including term manipulation, substitution, comparison, and extraction of abstract syntax tree (AST) components or AC structures. It works with abstract representations, model terms, and solvable symbols to support tasks like expression validation, model construction, and symbolic logic processing. Specific use cases include automated reasoning, theorem proving, and handling algebraic constraints in formal systems.",
+      "description_length": 514,
+      "index": 89,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Fun_sat_frontend.Make",
+      "description": "Provides operations to manage logical assumptions, objectives, and term additions within a constraint context. Works with literal lists, expressions, term sets, and objective models to support theorem proving and optimization. Used to extract ground terms, perform case splits, and compute concrete models based on assumed constraints.",
+      "description_length": 335,
+      "index": 90,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Xliteral.Make",
+      "description": "Compares instances using a custom ordering, generates hash values for equality checks, and formats output for debugging. It operates on the abstract type `t` and relies on an associated type system module `Ty.t` for type information. The `top` and `bot` values represent maximum and minimum elements in a lattice structure.",
+      "description_length": 323,
+      "index": 91,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Domains.Make",
+      "description": "combines ordered and hashed data structures into a unified framework for efficient data manipulation, offering set, map, and hash table operations with support for both ordered and unordered collections. it enables key-based insertions, deletions, lookups, and set-theoretic operations, along with sequence-driven construction and transformation. users can build ordered sets from streams, manage sorted datasets, and implement caching mechanisms with fast lookups. examples include constructing multi-variate polynomials, performing key-value merges, and dynamically updating structured data mappings.",
+      "description_length": 602,
+      "index": 92,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Satml_frontend_hybrid.Make",
+      "description": "Provides operations to manage logical assumptions, objectives, and term additions within a constraint context. Works with literal lists, expressions, term sets, and objective models to support theorem proving and optimization. Used to extract ground terms, perform case splits, and compute concrete models based on assumed constraints.",
+      "description_length": 335,
+      "index": 93,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Uid.Term_set",
+      "description": "This module offers set operations like union, intersection, and difference, along with element querying and transformation, tailored for generic sets and term_cst structures. It supports ordered traversal, predicate-based filtering, and custom insertion behaviors, making it suitable for tasks such as symbolic term management or structured data manipulation. Operations include adding elements in sequence, reverse iteration, and property checks, enabling precise control over set dynamics.",
+      "description_length": 491,
+      "index": 94,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Uid.Ty_map",
+      "description": "This module provides ordered map operations for inserting, removing, and querying key-value pairs, with support for sequence-based transformations and ordered traversal. It works with maps structured around a specific key type `ty_cst` and generic value type `'a`, enabling efficient manipulation of structured data. Use cases include building ordered datasets, processing key-conditioned filters, and converting between map representations and sequences.",
+      "description_length": 455,
+      "index": 95,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Compat.List",
+      "description": "Checks if a list is empty, compares lists for equality using a custom predicate, and performs lexicographic comparisons with a custom comparator. It also finds the first element that matches a condition via a mapping function and combines folding with mapping to transform and accumulate results. These operations support list validation, sorting, and data processing in algorithms requiring precise control over element comparison and transformation.",
+      "description_length": 451,
+      "index": 96,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Compat.String",
+      "description": "Iterates over each character in a string, applying a function to accumulate a result and processing the string from left to right. Checks whether a string begins with a specified substring, returning a boolean value. Used for character-level transformations and prefix validation in text processing tasks.",
+      "description_length": 305,
+      "index": 97,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Compat.Seq",
+      "description": "Provides operations to inspect and manipulate sequences, including extracting the head and tail of a nonempty sequence, checking if a sequence is empty, concatenating two sequences, and comparing sequences for element-wise equality using a custom equality function. Works with the `Seq.t` type, which represents a potentially infinite or finite sequence. Used to process lazy or infinite data streams, validate sequence content, and combine sequences in functional pipelines.",
+      "description_length": 475,
+      "index": 98,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Compat.Type",
+      "description": "Provides runtime type identity through unique 'a t identifiers, enabling type equality checks and comparisons. Supports operations like generating, comparing, and inspecting type representations, with applications in serialization and type-safe data handling. Examples include verifying type consistency between serialized and in-memory data, or enforcing type constraints in generic functions. The core data type is 'a t, with functions to create and compare instances.",
+      "description_length": 470,
+      "index": 99,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Numbers.Z",
+      "description": "This module offers a comprehensive set of arithmetic, comparison, and mathematical operations\u2014such as GCD, LCM, bitwise manipulation, and power calculations\u2014on arbitrary-precision integers. It works with a custom integer type `t`, supporting conversions to and from string representations, formatting, and overflow-safe type transformations. Use cases include cryptographic computations, financial calculations, and applications requiring precise integer handling without overflow risks.",
+      "description_length": 487,
+      "index": 100,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Numbers.Q",
+      "description": "This module provides arithmetic operations (addition, multiplication, division), comparisons, and specialized functions like min, max, inversion, and root calculations for rational numbers represented as type `t`. It supports conversions between rationals and floats, integers, or strings, along with scaling by powers of two and precision-sensitive square root computations. Use cases include precise financial calculations, scientific computations requiring exact fractions, and scenarios demanding controlled handling of irrational roots via optional results.",
+      "description_length": 562,
+      "index": 101,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Ccx.Main",
+      "description": "The module offers functionalities for manipulating logical contexts, such as adding facts, terms, and assumptions, performing case splits, and extracting models, while working with expressions, facts, literals, and theories. It leverages a type alias for combining results, enabling efficient handling of logical deductions and model generation in theorem proving or automated reasoning tasks.",
+      "description_length": 393,
+      "index": 102,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Ty.Svty",
+      "description": "This module provides set operations such as union, intersection, and element querying, along with ordered traversal and transformation functions, tailored for manipulating collections indexed by type variables or integers. It works with ordered data structures, emphasizing efficient modifications and conversions between sets, lists, and sequences while preserving ordering constraints. Use cases include managing type variable dependencies in compilers or processing structured integer datasets requiring ordered operations.",
+      "description_length": 526,
+      "index": 103,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Ty.Set",
+      "description": "This module offers operations for constructing, modifying, and querying ordered sets, including union, intersection, difference, and element lookup, while leveraging comparison functions for ordering. It works with ordered data structures of type `t`, enabling sequence-based manipulations, predicate-driven searches, and transformations like mapping and filtering. Use cases include managing dynamic collections requiring efficient membership checks, processing structured data with ordered traversal, and performing set-theoretic computations in applications like symbolic processing or database queries.",
+      "description_length": 606,
+      "index": 104,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Ty.M",
+      "description": "This module offers operations for managing ordered key-value maps, including adding, removing, and merging entries, as well as querying min/max elements and iterating over bindings in key order. It works with maps where keys are determined by an associated ordering module, supporting integer keys and generic value types, and facilitates conversions between maps, lists, and sequences. Specific use cases include efficiently handling dynamic key-value associations, processing ordered data subsets, and integrating with sequence-based data sources.",
+      "description_length": 549,
+      "index": 105,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.D_loop.Pipeline",
+      "description": "Provides operations for sequencing stateful transformations, mapping over values with context, and branching execution paths. Works with stateful operations, continuation-based flows, and fixed-point iterations. Enables building complex data processing pipelines with explicit state management and error handling.",
+      "description_length": 313,
+      "index": 106,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.D_loop.Parser",
+      "description": "Handles syntax error tracking and interactive prompt configuration through state keys. Processes logical statements and responses, supporting file-based parsing and statement expansion with detailed state transitions. Enables controlled execution flow by returning functions for further processing.",
+      "description_length": 298,
+      "index": 107,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.D_loop.Header",
+      "description": "Provides functions to manage and validate header information within a state, including checking header compliance, extracting header data, and modifying state with parsed header details. Works with state keys for boolean checks, header records, license lists, and version strings. Used to enforce header constraints and inject parsed header content into statement processing pipelines.",
+      "description_length": 385,
+      "index": 108,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.D_loop.Typer",
+      "description": "Manages language environments through a custom type `t`, offering functions to access names, built-in symbols, and instances, as well as converting bitvectors to natural numbers. Supports code generation by ensuring unique identifier creation based on language-specific data. Can retrieve symbol lists, validate environment structures, and perform type-safe conversions. Enables dynamic handling of language semantics during compilation processes.",
+      "description_length": 447,
+      "index": 109,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.D_loop.Typer_Pipe",
+      "description": "Provides type-checking operations for statements, including initializing a type-checking state, performing type checks, and printing results. Works with custom statement and declaration types, along with environment and control structures. Used to validate and process abstract syntax trees in a typed language implementation.",
+      "description_length": 326,
+      "index": 110,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Intervals_core.Make",
+      "description": "Provides operations to manipulate explanations as logical unions, including checking emptiness, combining explanations, and comparing them. Works with a type `t` representing logical conditions across models. Used to select the minimal explanation for a fact based on a custom comparison.",
+      "description_length": 288,
+      "index": 111,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Id.Namespace",
+      "description": "Generates unique strings by appending numeric suffixes to a base prefix, ensuring no duplicates across calls. It operates on strings and maintains internal state to track used values. Used to create unique identifiers in code generation or temporary file naming scenarios.",
+      "description_length": 272,
+      "index": 112,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Uqueue.Make",
+      "description": "Compares keys for equality and generates hash values for key-based data structures. Operates on arbitrary types through user-defined equality and hashing functions. Used to implement hash tables or sets where custom key comparison and hashing are required.",
+      "description_length": 256,
+      "index": 113,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Fun_sat.Make",
+      "description": "Provides operations to manage logical assumptions, objectives, and term additions within a constraint context, supporting query evaluation, case splitting, and model extraction. Works with expressions, literals, explanations, and objective values, and integrates with theory instances and symbolic reasoning. Used to track optimized objectives, extract ground terms, and compute concrete models during automated reasoning tasks.",
+      "description_length": 428,
+      "index": 114,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Use.SA",
+      "description": "This module provides foundational set operations such as insertion, deletion, and algebraic manipulations (union, intersection, difference), along with traversal and transformation functions like folding, mapping, and predicate-based queries, all operating on ordered generic sets. It supports specialized handling of paired data structures containing expressions and explanations, enabling sequence-based construction and reverse iteration for context-sensitive processing. These capabilities are tailored for applications requiring ordered element management and structured data manipulation, such as symbolic analysis or annotated data workflows.",
+      "description_length": 649,
+      "index": 115,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Expr.Table",
+      "description": "This module offers hash table operations such as insertion, deletion, lookup, and iteration, along with conversion to sequences, enabling dynamic manipulation of key-value pairs. It works with tables where keys are of type `t` and values are generic `'a`, supporting sequence-based updates and construction. Use cases include efficiently building tables from data streams or processing stored data through iterative traversal.",
+      "description_length": 426,
+      "index": 116,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Expr.Set",
+      "description": "This module provides set theory operations like union, intersection, and difference, along with element manipulation and querying, such as membership checks and size determination, all tailored for ordered sets. It supports sequence-based construction and traversal, enabling efficient handling of ordered data through iteration, transformation, and reverse-order processing. Use cases include managing structured data collections, optimizing search operations, and integrating external data streams into ordered set structures.",
+      "description_length": 528,
+      "index": 117,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Expr.Map",
+      "description": "This module offers comprehensive operations for managing ordered maps, including creating, updating, and querying key-value bindings, with support for merging, filtering, and transforming entries. It leverages ordered key structures to enable efficient traversal, search, and structural manipulations like splitting maps or iterating over subsets. Use cases include dynamic data aggregation, ordered data processing, and scenarios requiring strict or optional value handling through sequence-based construction and transformation.",
+      "description_length": 530,
+      "index": 118,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Expr.Core",
+      "description": "Provides logical operations including negation, equality, exclusive or, conjunction, disjunction, and conditional selection. Works with terms represented as values of type t, typically used in SMT solver interactions. Enables construction of complex logical expressions for theorem proving and constraint solving.",
+      "description_length": 313,
+      "index": 119,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Expr.Ints",
+      "description": "Provides arithmetic and comparison operations for integer expressions, including addition, subtraction, multiplication, division, modulus, and exponentiation. Works with a custom integer type `t` constructed from OCaml's `int` and `Z.t` (big integers). Supports creating integer terms for SMT-LIB integration, enabling symbolic manipulation in formal verification contexts.",
+      "description_length": 373,
+      "index": 120,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Expr.Reals",
+      "description": "Converts integers, big integers, and rational numbers to real numbers, and supports arithmetic and comparison operations on real values. Works with arbitrary-precision integers, rational numbers, and real number representations. Used to construct and manipulate real number expressions in symbolic logic contexts, such as SMT solver interfaces.",
+      "description_length": 344,
+      "index": 121,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Expr.BV",
+      "description": "The module provides bitwise and arithmetic operations on fixed-size bit-vectors, including construction, manipulation, and comparisons. It supports both signed and unsigned operations, adhering to QF_BV logic, and is designed for applications requiring precise bit-level control, such as formal verification and SMT solver implementations.",
+      "description_length": 339,
+      "index": 122,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Expr.ArraysEx",
+      "description": "Provides operations for manipulating arrays in a logical context, including selecting a value at a specific index and storing a new value at a given position. Works with array and index values represented as terms in a symbolic logic framework. Used to model array behaviors in theorem proving and formal verification tasks.",
+      "description_length": 324,
+      "index": 123,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Ac.Make",
+      "description": "This module handles symbolic expression manipulation, including term transformation, comparison, substitution, and extraction of abstract syntax trees, alongside constraint solving and value assignment for logical analysis. It operates on custom types like `r`, `Symbols.t`, and `Expr.t`, enabling tasks such as solvability checks, model term conversion, and symbolic abstraction. Use cases include theorem proving, automated reasoning, and formal verification workflows.",
+      "description_length": 471,
+      "index": 124,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Var.Set",
+      "description": "This module offers set operations rooted in set theory, including union, intersection, difference, and element selection, alongside methods for querying properties like size and membership. It works with ordered sets and sequences, enabling traversal, transformation, and predicate-based filtering of elements. Use cases include efficient data aggregation, ordered data processing, and constructing sets from sequential inputs.",
+      "description_length": 427,
+      "index": 125,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Var.Map",
+      "description": "This module provides operations for managing key-value bindings in ordered maps, including adding, updating, removing, and querying entries, along with traversal, transformation, and filtering capabilities. It works with ordered data structures where keys are sorted via a comparison function, enabling efficient manipulation of sequences and conditional processing of bindings. Use cases include maintaining dynamic datasets, generating structured outputs, and performing ordered data transformations.",
+      "description_length": 502,
+      "index": 126,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Polynome.Make",
+      "description": "This module handles symbolic expressions and abstract representations through operations like substitution, solving, and conversion between forms, utilizing structured data types for logical or algebraic manipulation. It supports tasks such as extracting syntax structures, assigning values to expressions, and managing solvability checks, with applications in model term generation and expression transformation.",
+      "description_length": 413,
+      "index": 127,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Matching.Make",
+      "description": "Provides operations to generate term representations, compare expressions for equality with initialization flags, and determine the equivalence class of an expression. Works with abstract syntax trees represented as `Expr.t` and sets of terms. Used to analyze and manipulate symbolic expressions in theorem proving contexts.",
+      "description_length": 324,
+      "index": 128,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Symbols.Set",
+      "description": "The module provides basic set operations like union, intersection, and difference, along with ordered traversal, predicate-based filtering, and sequence-based construction, working with ordered sets and sequences. It enables efficient membership checks, data transformation pipelines, and structured processing of ordered collections, such as filtering elements or building sets from external data streams. Specific use cases include maintaining sorted unique elements, performing relational queries, and reverse iteration for specialized data manipulation.",
+      "description_length": 557,
+      "index": 129,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Symbols.Map",
+      "description": "The module offers functions for creating, modifying, and querying ordered maps with key-value pairs, supporting operations like adding, updating, removing, and merging entries. It enables traversal, transformation, and filtering of key-value pairs, leveraging sequences for construction and iteration while emphasizing ordered data processing and predicate-based selections. Use cases include efficient key-based lookups, structured data manipulation, and handling sequence-driven map constructions.",
+      "description_length": 499,
+      "index": 130,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Rel_utils.HLR",
+      "description": "This module offers key-based operations for managing dynamic collections, including insertion, deletion, and lookup in hash tables, along with sequence-driven construction and modification of keyed structures. It works with generic hash table types and sequences of key-value pairs, enabling efficient traversal and transformation of data. Use cases include real-time data synchronization and batch processing of structured datasets.",
+      "description_length": 433,
+      "index": 131,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Rel_utils.Delayed",
+      "description": "Provides operations to manage partially evaluated functions, including creating structures for delayed evaluation, adding terms for potential evaluation, updating based on known values, and iterating over delayed applications. Works with symbolic expressions, semantic values, and operator-based function representations. Used to handle function evaluation delays in constraint solving, ensuring equalities are introduced only when arguments are known.",
+      "description_length": 452,
+      "index": 132,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Rel_utils.XComparable",
+      "description": "Provides a framework for comparing semantic values through defined ordering rules. Includes basic types for representing values and operations for establishing equality and ordering. Supports custom comparison logic to enable sorting and set operations. Allows developers to define how different value types interact in ordered contexts.",
+      "description_length": 337,
+      "index": 133,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.FM",
+      "description": "combines set and map operations with polynomial arithmetic, offering ordered data manipulation through comparison-based structures. It handles set unions, intersections, and transformations, map key-value operations with ordered traversal, and polynomial arithmetic with integer coefficients. Users can filter sequences, merge datasets, and perform algebraic computations. Examples include managing ordered collections, generating structured reports, and executing polynomial operations efficiently.",
+      "description_length": 499,
+      "index": 134,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Literal.Make",
+      "description": "Provides ordered map and set operations for managing structured data, including key-value manipulations, set theory operations, and sequence transformations. It supports adding, removing, and merging entries in maps, as well as union, intersection, and difference on sets. Users can filter, transform, and iterate over subsets, enabling efficient data processing and query optimization. Examples include building ordered configurations, merging datasets, and performing fast membership checks on dynamic collections.",
+      "description_length": 516,
+      "index": 135,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Adt.Shostak",
+      "description": "The module offers operations for manipulating abstract syntax trees (ASTs) and symbolic terms, including caching, substitution, comparison, and normalization. It works with custom types representing logical expressions, abstracted pairs, and model terms, enabling tasks like solvability checks and term extraction. These capabilities are tailored for theorem proving, symbolic computation, and handling algebraic structures in formal systems.",
+      "description_length": 442,
+      "index": 136,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Frontend.Make",
+      "description": "Provides operations to manage logical environments, including declaring identifiers, adding assertion levels, assuming formulas, and retrieving models or objective values. Works with types such as expressions, identifiers, and models to support constraint solving and optimization. Used to build and analyze logical theories, generate models, and handle unsatisfiability checks during automated reasoning.",
+      "description_length": 405,
+      "index": 137,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.D_state_option.Mode",
+      "description": "Retrieves or modifies a mode value within a solver state, using a specific type derived from Util.mode. It allows setting a custom mode, fetching the current mode, or resetting it to a predefined default. Operates directly on the solver's state structure without external dependencies.",
+      "description_length": 285,
+      "index": 138,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.D_state_option.StrictMode",
+      "description": "Handles retrieval, modification, and reset of a boolean flag within a state object, using predefined default values from the Options module. Updates the state by setting the flag to a specified boolean value or restoring it to the default. Used to control behavior enforcement in parsing or processing workflows based on the flag's state.",
+      "description_length": 338,
+      "index": 139,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.D_state_option.ProduceAssignment",
+      "description": "Retrieves or modifies a boolean flag within a state object, using predefined default values from the Options module. Updates the state by setting or clearing the flag, ensuring consistent behavior across execution contexts. Used to control the activation of assignment retrieval during parsing workflows.",
+      "description_length": 304,
+      "index": 140,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.D_state_option.SatSolver",
+      "description": "Handles manipulation of SAT solver configurations within a state, allowing retrieval, modification, and reset of solver options. Operates on a state structure and a type representing SAT solver choices. Used to dynamically adjust the solver backend during theorem proving processes.",
+      "description_length": 282,
+      "index": 141,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.D_state_option.SatSolverModule",
+      "description": "Returns the SAT solver instance from the state, defaulting to a predefined option if not registered. Operates with a state object and a module type representing a SAT solver implementation. Used to dynamically select and access the current SAT solving strategy during execution.",
+      "description_length": 278,
+      "index": 142,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.D_state_option.Steps",
+      "description": "Manages a step count limit as an integer, allowing retrieval, modification, and reset within a state object. Updates the maximum allowed steps in a computation context, enforcing bounds checks during updates. Used to control iteration limits in a proof or parsing process.",
+      "description_length": 272,
+      "index": 143,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Util.MI",
+      "description": "The module provides functions for manipulating ordered maps with specific key types and generic values, supporting operations like adding, updating, removing, and querying key-value bindings, along with merging and traversal. It includes ordered traversal and filtering capabilities for key-value pairs, enabling efficient decomposition and transformation of data structures. Specific use cases involve constructing integer-keyed maps from sequences, processing subsets of bindings, and managing dynamic data associations through sequence-based operations.",
+      "description_length": 556,
+      "index": 144,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Util.SI",
+      "description": "This module provides operations for managing ordered sets, including creating, modifying, and querying elements through additions, removals, and set operations like unions and intersections, while leveraging monotonic predicates for efficiency. It supports processing elements in sorted order via iteration, transformation, and predicate-based filtering, with specialized functions for integer-based sets and conversions between sets and lists. Key use cases involve efficient set manipulation, ordered data traversal, and sequence-to-set construction.",
+      "description_length": 552,
+      "index": 145,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Util.MS",
+      "description": "The module offers operations for creating, modifying, and querying ordered maps, supporting both imperative and functional paradigms through functions like adding, removing, and merging entries. It works with ordered key-value structures, including string-based maps, enabling tasks such as data transformation, filtering, and aggregation via sequence-based processing. Specific use cases include building dynamic configuration systems or processing hierarchical data streams where ordered key access and efficient updates are critical.",
+      "description_length": 536,
+      "index": 146,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Util.SS",
+      "description": "This module offers set operations like union, intersection, and element manipulation, along with traversal and transformation functions for ordered processing. It handles generic sets and string-based sequences, enabling tasks such as dynamic data management and structured element filtering. Specific use cases include efficient membership checks, list conversions, and reverse iteration over string collections.",
+      "description_length": 413,
+      "index": 147,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Emap.Make",
+      "description": "Compares two instances of type t using a total ordering, returning -1, 0, or 1 based on their relative values. It operates on the abstract type t, which represents keys in a structured format. This function is used to sort or order key-based data in applications like configuration management or dependency resolution.",
+      "description_length": 318,
+      "index": 148,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Explanation.MI",
+      "description": "The module offers key-based operations for manipulating ordered maps with specific key types (e.g., integers) and generic values, including adding, updating, removing, and querying bindings, alongside sequence-based insertion and conversion to lists. It enables transformation and iteration via mapping, filtering, folding, and predicate-driven partitioning, tailored for structured data processing. Use cases include dynamic configuration management, efficient integer-keyed data aggregation, and sequential data pipeline integration.",
+      "description_length": 535,
+      "index": 149,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Satml_frontend.Make",
+      "description": "Provides operations to manage logical assumptions, objectives, and term additions within a constraint context. Works with literal lists, expressions, term sets, and objective models to support theorem proving and optimization. Used to extract ground terms, perform case splits, and compute concrete models based on assumed constraints.",
+      "description_length": 335,
+      "index": 150,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Satml_types.Atom",
+      "description": "manages ordered collections and maps with set-like and key-value operations, enabling efficient manipulation of unique elements and structured data. It supports set operations such as union, intersection, and difference, as well as map operations like insertion, deletion, and key-based retrieval. Users can filter, transform, and traverse data in order, with functions for reverse iteration, min/max key access, and binding partitioning. Examples include maintaining sorted unique lists, building dynamic dictionaries from sequences, and extracting subsets based on predicates.",
+      "description_length": 578,
+      "index": 151,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Satml_types.Flat_Formula",
+      "description": "manages ordered collections and key-value mappings with efficient set and map operations, supporting insertion, deletion, traversal, and transformation. It handles ordered data through sequences, enabling predicate-based filtering and structured data manipulation. Operations include set unions, intersections, and map merges, allowing for dynamic dataset management and sorted configuration handling. Examples include building ordered lists from streams, querying structured data, and maintaining sorted dictionaries with efficient updates.",
+      "description_length": 541,
+      "index": 152,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Satml_types.Proxy_formula",
+      "description": "Extracts proxy atoms from an expression based on a mapping of expressions to atoms. Constructs a conjunctive normal form by processing atoms, expressions, and variables within a given environment. Operates on expression trees, atom maps, and variable lists to transform logical structures.",
+      "description_length": 289,
+      "index": 153,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Bitv.Shostak",
+      "description": "The module provides symbolic term processing with operations like substitution, solving, and abstraction, handling abstract syntax trees and AC structures. It includes functionalities for checking solvability, embedding/extracting abstract representations, and converting constants to model terms, applicable in theorem proving and symbolic computation tasks.",
+      "description_length": 359,
+      "index": 154,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Shostak.Combine",
+      "description": "This module offers symbolic term manipulation, including substitution, comparison, and extraction of abstract syntax structures, alongside logical operations like solvability checks and value assignment. It works with symbolic expressions, abstract values, and model terms, enabling transformations and analysis in theorem proving or model construction contexts. Specific use cases include optimizing term representations, validating symbolic constraints, and facilitating automated reasoning tasks.",
+      "description_length": 499,
+      "index": 155,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Shostak.Polynome",
+      "description": "manages ordered sets, maps, and polynomials with specialized operations for structured data handling. It supports set unions, map key-value manipulations, and polynomial arithmetic, including addition, multiplication, and conversion from big integers. Users can build sets from sequences, merge maps, and perform exact integer-based polynomial computations. Tasks include filtering data, aggregating records, and executing precise algebraic operations.",
+      "description_length": 452,
+      "index": 156,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Shostak.Arith",
+      "description": "The module offers functions for analyzing, transforming, and evaluating symbolic terms, including creating, comparing, and substituting expressions, as well as assessing properties like constancy and ownership. It works with term representations, polynomial expressions, and type information to enable tasks such as constant value conversion and arithmetic context evaluation. Specific use cases include manipulating symbolic polynomials, validating term properties, and performing semantic analysis in algebraic workflows.",
+      "description_length": 523,
+      "index": 157,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Shostak.Records",
+      "description": "This module offers symbolic manipulation operations such as term creation, substitution, equality solving, and constant checking, alongside transformations between abstract record structures and expression terms. It works with term hierarchies, record values, and abstract expression types to enable semantic analysis and model validation. Use cases include theorem proving, symbolic computation, and verification tasks requiring constant record conversion to formal expressions.",
+      "description_length": 479,
+      "index": 158,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Shostak.Bitv",
+      "description": "The module provides operations for manipulating symbolic terms, including creation, comparison, substitution, and property checks like constancy and ownership, alongside conversions between constant values and model terms. It works with abstract representations of bitvector values, term structures (`r`), and expressions (`Expr.t`), enabling symbolic logic analysis and term transformation. Specific use cases include handling symbolic term substitutions, verifying term properties, and converting bitvector constants into structured model representations.",
+      "description_length": 557,
+      "index": 159,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Shostak.Adt",
+      "description": "This module offers term manipulation capabilities, including creation, comparison, substitution, and property analysis (e.g., constancy, ownership) for abstract syntax tree (AST) structures, operating on types like `r`, `Expr.t`, and type metadata. It enables conversion of constant values `r` into model terms via `to_model_term`, facilitating semantic analysis or verification tasks. These operations support use cases such as AST transformation, static analysis, and symbolic evaluation in compiler or interpreter workflows.",
+      "description_length": 527,
+      "index": 160,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Shostak.Ac",
+      "description": "Provides operations to manipulate and analyze abstract constraint expressions, including substitution, abstraction of selectors, and value assignment. Works with custom types representing expressions, symbols, and constraints. Used to process symbolic expressions, check for AC properties, and manage constraint substitutions in formal verification contexts.",
+      "description_length": 358,
+      "index": 161,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Shostak.MXH",
+      "description": "This module provides operations for managing maps with keys of type `Combine.r` and generic values, supporting both hash-based and ordered key comparisons. It enables creating, updating, merging, and querying maps, along with iterating, transforming, and filtering bindings in ordered or sequence-based workflows. Use cases include efficient semantic value lookups, ordered data processing, and dynamic map construction in applications requiring flexible key handling.",
+      "description_length": 468,
+      "index": 162,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Shostak.SXH",
+      "description": "This module provides set operations such as union, intersection, and element manipulation, along with ordered traversal and transformation functions, operating on structured data types like `t` and sequences of `Combine.r` elements. It supports efficient querying, predicate-based filtering, and reverse iteration, making it suitable for applications requiring dynamic set management or sequence-based processing. The functions emphasize ordered processing and cardinality-aware modifications, ideal for scenarios involving hierarchical or sorted data structures.",
+      "description_length": 563,
+      "index": 163,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Shostak.L",
+      "description": "manages ordered collections through key-value and set-based operations, supporting insertion, deletion, querying, and transformation with custom comparison logic. It handles ordered maps and sets, enabling efficient range queries, filtering, and merging of structured data. Users can construct derived collections from sequences, perform ordered traversals, and split or combine elements based on predicates. Examples include maintaining sorted dictionaries, optimizing search operations, and processing data in incremental or reversed order.",
+      "description_length": 542,
+      "index": 164,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Shostak.Literal",
+      "description": "manages hash tables, ordered sets, and ordered maps with key-value operations, enabling efficient data manipulation and querying. It handles hash tables with `Table.key`-based access, ordered sets for sorted element management, and ordered maps for structured key-value storage and retrieval. Operations include insertion, deletion, transformation, and traversal, supporting tasks like configuration management, set algebra, and dynamic data organization. Examples include building caches, maintaining sorted collections, and converting between map and sequence formats.",
+      "description_length": 570,
+      "index": 165,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Shostak.HX",
+      "description": "This module offers operations for managing key-value stores, including insertion, deletion, lookup, and iteration, with support for both imperative and functional paradigms. It works with structures built from sequences of key-value pairs, enabling creation via `of_seq` and updates through `replace_seq`. Use cases include dynamic data management, such as caching systems or configuration handling, where efficient manipulation of associative data is required.",
+      "description_length": 461,
+      "index": 166,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Uf.GlobalDomains",
+      "description": "Registers and retrieves global domain instances for various domain modules. Operates on a registry type `t` that maps domain modules to their respective domain values. Allows adding a specific domain instance for a module and retrieving it, with a default fallback when no instance is present.",
+      "description_length": 293,
+      "index": 167,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Hconsing.Make",
+      "description": "Provides equality and hashing operations for values used in hashconsing, along with methods to assign unique identifiers without affecting equality. Works with the `elt` type, which represents hashable values. Used to manage interned values in data structures like abstract syntax trees or symbolic expressions.",
+      "description_length": 311,
+      "index": 168,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Intervals.Real",
+      "description": "Encapsulates intervals over real numbers with customizable bounds, supporting operations to construct, query, and compare intervals using Q.t values. Key types include interval representations with lower and upper bounds, each marked as open, closed, or unbounded. Functions allow creating single-point intervals, combining ranges, and checking membership. Examples include defining a range [1, 5) for numerical constraints or representing the entire real line as an unbounded interval.",
+      "description_length": 486,
+      "index": 169,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Intervals.Int",
+      "description": "Encapsulates integer intervals with operations for creation, inspection, and comparison. Supports defining intervals from lower and upper bounds, checking for single-element intervals, and extracting bound values. Enables precise manipulation of integer ranges in applications like constraint solving and range analysis. Examples include creating [5; 10], checking if [3;3] is a singleton, or extracting bounds from [1;5].",
+      "description_length": 422,
+      "index": 170,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Intervals.Legacy",
+      "description": "The module provides interval arithmetic and set operations, including creating, modifying, and analyzing intervals defined over rational numbers, with functions for bounding, intersecting, scaling, and union operations. It supports use cases like numerical analysis and constraint solving, offering tools for precise range manipulation and compatibility with older systems through structured interval transformations.",
+      "description_length": 417,
+      "index": 171,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Options.Time",
+      "description": "Tracks and enforces time limits on operations. Measures elapsed time and allows setting a maximum duration for function execution. Cancels long-running operations by raising an exception if the specified time limit is exceeded.",
+      "description_length": 227,
+      "index": 172,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Options.Output",
+      "description": "Manages output channels for formatting and writing data, supporting creation from files, formatters, or standard streams. Provides functions to retrieve and manipulate underlying formatters, and to set or get specific output channels for regular, diagnostic, and model outputs. Used to direct program output to files, standard I/O, or custom formatting structures.",
+      "description_length": 364,
+      "index": 173,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Options.Sources",
+      "description": "Provides source identifiers for different stages and components in a logical processing pipeline. Works with `Logs.src` values to categorize and trace events related to construction, parsing, interpretation, and optimization. Used to tag log entries with specific origins, such as type checking, model generation, or unsatisfiable core analysis.",
+      "description_length": 345,
+      "index": 174,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Hstring.Set",
+      "description": "This module offers set-theoretic operations like insertion, deletion, and union, along with queries for size, membership, and extremal elements, all leveraging ordered structures maintained via a comparison function. It supports traversal, transformation, and partitioning of elements while preserving order, enabling efficient processing of sorted data. Additionally, it facilitates conversion between sequences and sets, allowing structured manipulation of ordered collections and reverse iteration for specialized data flow needs.",
+      "description_length": 533,
+      "index": 175,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Hstring.Map",
+      "description": "This module provides operations for creating, modifying, and querying ordered maps with key-value pairs, including adding, updating, removing, and merging bindings while handling key uniqueness and ordered traversal. It supports advanced transformations, filtering, and comparisons, along with sequence-based construction and iteration, enabling efficient processing of structured data in applications requiring ordered access or incremental updates. Use cases include managing dynamic datasets with ordered keys, optimizing search operations, and generating derived maps from sequential inputs.",
+      "description_length": 595,
+      "index": 176,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Objective.Function",
+      "description": "Represents an objective function with a flag indicating maximization or minimization, and associates it with an expression and a unique index. Provides construction, pretty-printing, and counter reinitialization operations. Used to manage optimization goals in constraint-solving contexts.",
+      "description_length": 289,
+      "index": 177,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Objective.Value",
+      "description": "Encapsulates values used to represent upper or lower bounds in optimization contexts, distinguishing between limits that are not yet reached. It works with a `limit_kind` type to specify whether a bound is upper or lower, and a `t` type to represent the actual value. Used to track constraints like x < 2, where 2 acts as an upper limit but is not the final value of the objective function.",
+      "description_length": 390,
+      "index": 178,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Objective.Model",
+      "description": "Provides operations to manage a collection of objective functions with associated values, including adding, folding, and checking emptiness. Works with a custom type `t` representing a model and `Function.t` for objective functions. Used to track and query the state of optimization variables, such as identifying the next unknown function or verifying if all values are bounded.",
+      "description_length": 379,
+      "index": 179,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Records.Shostak",
+      "description": "This module handles symbolic and abstracted data structures through operations like substitution, term manipulation, and solving, with support for abstract syntax tree (AST) processing and associative-commutative (AC) structure extraction. It works with custom types representing expressions and model terms, enabling tasks such as value abstraction, theory symbol validation, and constant conversion. Key use cases include theorem proving and model generation, where symbolic representation and efficient term comparison are critical.",
+      "description_length": 535,
+      "index": 180,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Theories.Set",
+      "description": "This module offers set-theoretic operations like union, intersection, and element addition/removal, along with iteration and transformation functions for processing elements within a generic set structure. It supports sequence-based manipulations, including converting sets to reversed lists and building sets from sequences, enabling efficient data processing and aggregation. Use cases include managing dynamic data collections, performing algebraic set operations, and integrating set logic with functional programming workflows.",
+      "description_length": 532,
+      "index": 181,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Instances.Make",
+      "description": "Provides operations to manage logical assumptions, objectives, and term additions within a constraint context. Works with literal lists, expressions, term sets, and objective values to support theorem proving and model extraction. Used to query logical consequences, perform case splits, and compute concrete models based on assumed constraints.",
+      "description_length": 345,
+      "index": 182,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Theory.Main_Default",
+      "description": "Provides operations to manage a logical environment, including adding assumptions, extracting ground terms, and querying expressions. Works with types like `Expr.t`, `Expr.Set.t`, `Objective.Function.t`, and `Explanation.t`. Used to track objectives, perform case splits, and compute concrete models during theorem proving.",
+      "description_length": 323,
+      "index": 183,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Theory.Main_Empty",
+      "description": "Provides operations to manage a logical environment, including adding assumptions, querying expressions, extracting ground terms, and handling objectives. Works with types such as literals, expressions, explanations, and objective values. Used to track assumptions, perform case splits, and compute concrete models during theorem proving.",
+      "description_length": 338,
+      "index": 184,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Satml.Make",
+      "description": "Provides operations to manage logical assumptions, objectives, and term additions within a constraint context. Works with literal lists, expressions, sets of expressions, and objective models. Used to query logical consequences, extract ground terms, perform case splits, and compute concrete models based on assumptions and optimizations.",
+      "description_length": 339,
+      "index": 185,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Heap.MakeRanked",
+      "description": "Provides operations to track and manage the index of elements within a heap, update their index values, and define a total ordering between elements. Works with a custom type `t` representing elements that need indexed tracking. Used to maintain accurate positional information during heap modifications, such as when reordering or updating elements in a priority queue.",
+      "description_length": 370,
+      "index": 186,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Heap.MakeOrdered",
+      "description": "Compares instances of type `t` using a custom ordering defined by the `compare` function. It provides a dummy value via `default` for heap operations where a placeholder is needed. The module is designed for scenarios requiring ordered data handling, such as priority queues or sorted collections.",
+      "description_length": 297,
+      "index": 187,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Sat_solver_sig.Make",
+      "description": "Provides operations to manage logical assumptions, extract ground terms, and query expressions within a constraint context. Works with sets of expressions, literals, and objective functions to support optimization and case splitting. Used to track assumed constraints, compute models, and manage theory instances during automated reasoning.",
+      "description_length": 340,
+      "index": 188,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Xliteral.Map",
+      "description": "This module provides functions for creating, modifying, and querying ordered maps, with operations like adding, updating, removing, and merging key-value bindings, as well as filtering and transforming entries based on predicates or sequences. It works with ordered key-value pairs and leverages sequences to construct or process maps, enabling tasks such as building data structures from iterative sources or iterating over subsets of bindings. Specific use cases include structured data transformation, efficient key-based lookups, and handling sorted or sequentially processed datasets.",
+      "description_length": 589,
+      "index": 189,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Xliteral.Set",
+      "description": "This module provides operations for managing ordered sets through set-theoretic actions like union, intersection, and difference, alongside element manipulation via predicates, mapping, and filtering. It works with ordered sets and sequences, enabling efficient membership checks, ordered traversal, and dynamic set construction. Use cases include maintaining sorted collections, processing structured data with constraints, and optimizing queries requiring extremal or conditional element selection.",
+      "description_length": 500,
+      "index": 190,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Intervals_intf.Interval",
+      "description": "Provides functions to create and manipulate intervals, including constructing from bounds, checking equality, and extracting singleton values. Works with bounded and unbounded intervals over a value type, supporting operations like pretty-printing and viewing interval structure. Used to represent ranges in constraint systems or numerical analysis where precise bounds are critical.",
+      "description_length": 383,
+      "index": 191,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Intervals_intf.Union",
+      "description": "Provides operations to compare, print, and transform extended values that include finite elements, positive and negative infinities, and their successors and predecessors. Works with a `t` type that extends a `finite` type to represent intervals with strict bounds, using `succ` and `pred` to handle open and closed intervals. Used to model half-planes and interval bounds in numerical analysis and constraint systems.",
+      "description_length": 418,
+      "index": 192,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Polynome.Set",
+      "description": "The module offers operations for managing ordered sets, including basic manipulations like insertion, deletion, and membership checks, along with advanced features such as predicate-based element selection, ordered traversal, and set transformations. It works with ordered collections of elements and sequences, enabling efficient handling of sorted data structures and scenarios requiring structured element iteration or filtering. Use cases include maintaining dynamic sorted lists, optimizing search operations, and processing elements in specific orderings.",
+      "description_length": 561,
+      "index": 193,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Polynome.Map",
+      "description": "The module offers operations for creating, modifying, and querying ordered maps with key-value bindings, including adding, updating, removing, and merging entries, while supporting both strict and optional value handling. It enables ordered traversal, filtering, transformation, and structural manipulations like splitting or building maps from sequences, with functions tailored for key-based access and efficient data processing. Use cases include maintaining sorted data structures, handling dynamic key-value associations, and optimizing lookups in large datasets.",
+      "description_length": 568,
+      "index": 194,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Polynome.Ints",
+      "description": "Provides operations for constructing and manipulating polynomials with integer coefficients, including conversion from and arithmetic with big integers. Supports addition, subtraction, negation, and scalar multiplication of polynomials. Used to efficiently perform polynomial arithmetic in contexts requiring integer coefficients, such as algebraic computations or symbolic manipulations.",
+      "description_length": 388,
+      "index": 195,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.Make",
+      "description": "Combines set operations on ordered collections, key-value mappings with ordered keys, and polynomial arithmetic with integer coefficients. It enables efficient set manipulations, ordered data lookups, and algebraic computations through operations like union, insertion, `find_last`, and polynomial addition. Users can process structured data with ordered traversal, filter and transform elements, and perform exact arithmetic on polynomials. Examples include managing dynamic datasets, querying sorted key-value pairs, and executing precise polynomial calculations.",
+      "description_length": 565,
+      "index": 196,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.P",
+      "description": "Combines set, map, and polynomial operations for structured data management, enabling ordered collection handling, key-value transformations, and exact integer polynomial arithmetic. It provides ordered sets with membership checks and transformations, ordered maps with key-based queries and merging, and polynomials with arithmetic and coefficient manipulation. Users can maintain sorted data, merge datasets, and perform precise polynomial computations. Examples include filtering elements, aggregating key-value pairs, and executing exact polynomial operations.",
+      "description_length": 564,
+      "index": 197,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.MP",
+      "description": "This module provides operations for creating, modifying, and querying ordered maps with key-based access, including adding, removing, and merging key-value pairs, as well as iterating over subsets or converting maps to lists/sequences. It handles ordered key structures and supports transformations like filtering, folding, and partitioning, making it suitable for tasks such as dynamic data aggregation or structured configuration management. Specific use cases include building maps from sequential inputs or managing optional values in hierarchical data.",
+      "description_length": 557,
+      "index": 198,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities.MINEQS",
+      "description": "Manages a mapping of variables to rational numbers, supporting insertion, iteration, and folding over entries. Operates on a type representing variable-rational pairs and a map structure for storing these associations. Enables processing of inequality constraints and aggregation of related data during symbolic computations.",
+      "description_length": 325,
+      "index": 199,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Literal.Table",
+      "description": "This module offers hash table operations for inserting, removing, looking up, and iterating over key-value pairs, supporting in-place modifications and sequential traversal. It works with hash tables where keys are of type `t` and values are polymorphic `'a`, enabling sequence-based construction and updates via functions like `of_seq` and `replace_seq`. Use cases include dynamic data management, such as configuration handling or caching, where efficient key-based access and transformation are required.",
+      "description_length": 507,
+      "index": 200,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Literal.Set",
+      "description": "This module offers set operations for managing dynamic collections of unique elements, including insertion, deletion, and set-theoretic operations like union, intersection, and difference, all ordered via a comparison function. It supports efficient querying, transformation, and iteration over elements, with functions for predicate-based filtering, folding, and reverse-order traversal. Use cases include symbolic computation, configuration management, and data deduplication where ordered, immutable sets with predictable equality semantics are required.",
+      "description_length": 557,
+      "index": 201,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Literal.Map",
+      "description": "This module offers operations for constructing, modifying, and querying maps with key-value pairs, including adding, removing, and merging entries, as well as traversing, filtering, and transforming map contents. It works with maps featuring keys of a specific type and values of a generic type, supporting sequence-based manipulations and conversions between maps, lists, and sequences. Use cases include data transformation pipelines, configuration management, and scenarios requiring ordered key access or efficient lookup mechanisms.",
+      "description_length": 537,
+      "index": 202,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Satml_types.Set",
+      "description": "This module offers set operations rooted in set theory, including union, intersection, difference, and element selection, alongside iteration, transformation, and partitioning functions for ordered collections. It works with ordered sets and sequences of atoms, enabling tasks like predicate-based filtering, reverse iteration, and constructing sets from sequential data. Use cases include managing sorted data structures, processing hierarchical or ordered elements, and efficiently querying or modifying set properties.",
+      "description_length": 521,
+      "index": 203,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Satml_types.Map",
+      "description": "This module offers a comprehensive set of operations for managing ordered key-value maps, including insertion, modification, deletion, and query functions, alongside advanced capabilities like merging, union, and key-condition-based searches. It works with polymorphic maps featuring ordered keys (such as atoms) and generic values, enabling structured data manipulation through iteration, transformation, and filtering. Specific use cases include constructing maps from sequences, efficiently querying bindings, and maintaining ordered data for applications requiring predictable traversal or comparison logic.",
+      "description_length": 611,
+      "index": 204,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.Atom",
+      "description": "combines set, map, and hash table operations into a unified interface for managing structured data. it supports ordered set manipulations, ordered key-value mappings, and hash table operations, each with specialized functions for insertion, deletion, querying, and transformation. users can perform set unions, map merges, and hash table updates, while leveraging ordered traversal or hash-based lookups. examples include maintaining sorted collections, efficiently querying dynamic datasets, and building tables from sequential inputs.",
+      "description_length": 536,
+      "index": 205,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.Composite",
+      "description": "combines ordered set and map operations with hash table functionality, offering structured manipulation of collections through ordered and hashed interfaces. it provides set operations like union and membership checks, map operations such as key-value insertion and merging, and hash table methods for dynamic key-value storage and retrieval. users can construct and transform data using sequences, filter elements with predicates, and manage ordered or hashed collections efficiently. examples include building polynomial terms from atomic variables, maintaining sorted key-value pairs, and dynamically updating configuration data.",
+      "description_length": 632,
+      "index": 206,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.Set",
+      "description": "This module offers set operations like union, intersection, and difference, along with element manipulation via predicates, iteration, and transformation, working with ordered sets and sequences. It enables efficient querying of set properties, such as size and membership, and supports constructing sets from sequences or processing elements in ordered or reversed traversal. Use cases include dynamic data management, hierarchical filtering, and structured data transformations where ordered access or sequence-based initialization is required.",
+      "description_length": 546,
+      "index": 207,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.Map",
+      "description": "The module offers operations for creating, modifying, and querying ordered maps with key-value pairs, including adding, removing, and merging bindings, as well as retrieving cardinality and extreme elements. It supports traversal in ordered sequences, transformation of values or keys, and predicate-based filtering, alongside building maps from sequences and iterating from specific keys. These capabilities are useful for maintaining sorted data structures, efficiently managing dynamic datasets, and processing structured information with ordered access patterns.",
+      "description_length": 566,
+      "index": 208,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.Table",
+      "description": "This module offers hash table operations such as insertion, deletion, lookup, and iteration, along with sequence-based construction and modification of tables. It works with hash tables where keys are of type `t` and values are generic `'a`, enabling efficient key-value management. Specific use cases include dynamic data aggregation, configuration handling, and processing structured data streams through sequential updates.",
+      "description_length": 426,
+      "index": 209,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.Entry",
+      "description": "Returns the domain of an entry and allows updating it, ensuring the new domain is a subset of valid options. Operates on entries and domain values, where domains represent permissible ranges or sets. Used to manage and enforce domain constraints in configuration or rule-based systems.",
+      "description_length": 285,
+      "index": 210,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.NF",
+      "description": "manages ordered and hashed collections through unified set, map, and hash table operations. it supports set intersections, map merges, and hash table updates, with ordered processing and key-based manipulations. users can filter elements, combine datasets, and build structures from sequences. examples include merging sorted maps, constructing tables from streams, and performing set unions.",
+      "description_length": 392,
+      "index": 211,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf.Ephemeral",
+      "description": "manages entry domains and canonical representations through a custom type `t` linked to a domain type that enforces valid ranges. It allows retrieving and modifying domains while ensuring changes adhere to predefined constraints, such as restricting access or validating configuration parameters. Operations include domain updates that maintain consistency and scope control. For instance, it can adjust user access levels or filter data based on defined domain boundaries.",
+      "description_length": 473,
+      "index": 212,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Ac",
+      "description": "Provides operations to manipulate and analyze abstract constraint expressions, including substitution, abstraction, and value assignment. Works with custom types `r` and `t`, representing constraints and symbolic expressions. Used to check symbol ownership, generate leaf nodes, and manage constraint assignments with symbolic variables.",
+      "description_length": 337,
+      "index": 213,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Adt",
+      "description": "This module handles symbolic computation and abstract syntax tree (AST) manipulation through operations like term substitution, comparison, hashing, and extraction, working with custom types representing abstract values and logical expressions. It supports tasks such as solving symbolic constraints, generating model terms from constants, and transforming expressions within theorem-proving contexts. Key use cases include automated reasoning, expression analysis, and abstract interpretation.",
+      "description_length": 494,
+      "index": 214,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Adt_rel",
+      "description": "Provides operations to manage a relation within a union-find framework, including adding literals, processing assumptions, and generating case splits. Works with union-find structures, symbolic expressions, and logical inputs. Used to handle theory-specific constraints, optimize objectives, and support model generation during theorem proving.",
+      "description_length": 344,
+      "index": 215,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Arith",
+      "description": "manages symbolic expressions and model terms through AST manipulation, substitution, and constraint resolution, using types like `r`, `Symbols.t`, and `Expr.t` to enable value assignment, solvability checks, and expression extraction. It supports term comparison, transformation, and extraction of AC structures, facilitating tasks such as automated reasoning, theorem proving, and algebraic constraint handling. Operations include solving equations, validating expressions, and constructing models from symbolic representations. Examples include simplifying complex expressions, verifying logical consistency, and generating models from abstract constraints.",
+      "description_length": 659,
+      "index": 216,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Arrays_rel",
+      "description": "Provides operations for managing a relation-based environment within a union-find framework, including adding literals, processing assumptions, and generating case splits. Works with union-find structures, logical expressions, and symbolic terms to support theorem proving and constraint solving. Used to handle array theories, equality reasoning, and model generation with precise control over domain registration and term instantiation.",
+      "description_length": 438,
+      "index": 217,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Bitlist",
+      "description": "This module handles arbitrary-precision bit-vectors, enabling bitwise operations like AND, OR, XOR, and shifts, along with arithmetic functions, to manipulate sets of known 0s, 1s, and unknown bits. It supports tasks such as extracting concrete integer values, validating consistency, and combining explanations, making it suitable for applications like symbolic execution or formal verification where precise bit-level control is required.",
+      "description_length": 440,
+      "index": 218,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Bitv",
+      "description": "The module provides operations for manipulating abstract symbolic expressions, including substitution, equality checks, hashing, and term extraction/embedding, alongside logic-solving tasks like solvability checks and model term generation. It works with abstract representations (type `r`) and symbolic structures, enabling manipulation of constraints and attributes within formal systems. Use cases include symbolic computation, automated reasoning, and constraint satisfaction scenarios where abstract term analysis and transformation are required.",
+      "description_length": 551,
+      "index": 219,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Bitv_rel",
+      "description": "Provides operations to manage a relation within a union-find framework, including adding literals, processing assumptions, and generating case splits for theorem proving. Works with union-find structures, logical expressions, and symbolic terms. Used to track and manipulate constraints during automated reasoning, such as handling equalities and disequalities in array theories.",
+      "description_length": 379,
+      "index": 220,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Ccx",
+      "description": "This module handles logical context management, including adding facts, terms, and assumptions, performing case splits, and querying relationships within logical theories. It operates on structured data types like expressions, literals, and custom `r` types derived from `Shostak.Combine.r`, enabling tasks such as model extraction and logical reasoning. Use cases include theorem proving and structured data analysis within formal systems.",
+      "description_length": 440,
+      "index": 221,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Cnf",
+      "description": "Generates SAT-compatible type declarations from abstract syntax tree nodes and lists. Processes typed attribute declarations and converts them into a format suitable for SAT solvers. Used to prepare constraints for logical verification tasks.",
+      "description_length": 242,
+      "index": 222,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Commands",
+      "description": "Provides functions to log and format SAT problem declarations, including a formatter for printing detailed SAT type declarations. Works with logging sources and custom data structures representing SAT declarations. Used to generate human-readable output for SAT problem definitions during debugging or analysis.",
+      "description_length": 311,
+      "index": 223,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Compat",
+      "description": "Combines list, string, sequence, and type operations for precise data manipulation, offering custom comparison, transformation, and validation across different data structures. It supports list equality checks, string prefix validation, sequence concatenation, and type identity comparisons, with functions to process elements, accumulate results, and enforce type constraints. Operations include custom predicate-based filtering, lexicographic sorting, character-by-character processing, and lazy sequence handling. Examples include validating input formats, processing infinite data streams, and ensuring type consistency in serialized data.",
+      "description_length": 643,
+      "index": 224,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.D_cnf",
+      "description": "Converts Dolmen types to Alt-Ergo types, handling type variables and applications with cache management. Constructs typed expressions and declarations from parsed input, incorporating location and declaration kind information. Provides access to built-in symbols for type-checking and translation processes.",
+      "description_length": 307,
+      "index": 225,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.D_loop",
+      "description": "combines stateful computation, syntax handling, and type validation into a unified processing framework. it supports sequencing, branching, and mapping over stateful operations, while managing header validation, language environments, and type-checking for statements. it enables complex pipelines with explicit state control, error handling, and environment-aware processing. examples include parsing logical statements with state transitions, validating header compliance, and checking typed abstract syntax trees.",
+      "description_length": 516,
+      "index": 226,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.D_state_option",
+      "description": "Retrieves or modifies an option value within a state object, using a specific type `t` for the option. It allows fetching the current option, updating it, or resetting it to a predefined default. Operates on state structures from the D_loop module, enabling dynamic configuration management during execution.",
+      "description_length": 308,
+      "index": 227,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Domains",
+      "description": "provides a unified interface for ordered and hashed data structures, enabling efficient set, map, and hash table operations. it supports key-based insertions, deletions, lookups, and set-theoretic operations, along with sequence-based construction. users can create ordered sets from streams, manage sorted data, and implement caching with fast access. examples include building polynomial representations, merging key-value pairs, and dynamically updating data mappings.",
+      "description_length": 471,
+      "index": 228,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Domains_intf",
+      "description": "manages ordered and hashed collections with unified operations for sets, maps, and hash tables, enabling intersections, merges, and updates with key-based manipulations; also handles entry domains through a custom type that enforces valid ranges, allowing safe modifications and scope control; users can merge sorted maps, build hash tables from sequences, and adjust access levels while maintaining domain constraints; examples include filtering data within defined boundaries and combining datasets efficiently.",
+      "description_length": 513,
+      "index": 229,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Emap",
+      "description": "The module provides operations for constructing, modifying, and querying ordered maps, including merging, union, comparison, and traversal of key-value pairs with ordered keys. It supports advanced manipulations like finding minimum/maximum bindings, splitting maps, and applying functions to values or key-value pairs. These functionalities are suited for scenarios requiring efficient key-based data management, such as maintaining sorted datasets or transforming structured information.",
+      "description_length": 489,
+      "index": 230,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Errors",
+      "description": "Provides functions to raise and handle specific errors related to parsing, typing, execution, and mode restrictions, along with a reporting function for error messages. Works with custom error types such as typing errors, run errors, mode errors, and model errors, each tied to distinct stages of processing. Used to enforce valid command usage in specific modes, manage immutable options, and generate structured error outputs during analysis.",
+      "description_length": 444,
+      "index": 231,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Explanation",
+      "description": "Provides key-based manipulation of ordered maps with integer or custom keys, supporting insertion, modification, deletion, and query operations. Offers sequence-based insertion, list conversion, and functional transformations such as mapping, filtering, folding, and partitioning based on predicates. Enables efficient data aggregation, configuration management, and pipeline processing. Examples include building dynamic settings structures, aggregating numeric data, and processing structured datasets through iterative operations.",
+      "description_length": 533,
+      "index": 232,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Expr",
+      "description": "manages symbolic expressions through a suite of specialized data structures, including hash tables, ordered sets, ordered maps, logical operators, integer and real arithmetic, bit-vectors, and arrays. It supports key-value manipulation, set and map operations, logical and arithmetic expressions, and array modeling, all with sequence-based construction and transformation. Operations include insertion, union, negation, addition, bitwise manipulation, and array indexing, enabling complex symbolic reasoning. It is used for building and analyzing expressions in formal verification, SMT solver interactions, and logical theorem proving.",
+      "description_length": 637,
+      "index": 233,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Fpa_rounding",
+      "description": "provides a unified interface for handling floating-point rounding modes, aligning legacy definitions with SMT2 standards. it includes a type representing five rounding modes, with operations to convert and compare them. examples include checking if a mode is round_toward_zero or converting between legacy and SMT2 identifiers. the module supports precise control over arithmetic rounding behavior in formal verification contexts.",
+      "description_length": 430,
+      "index": 234,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Frontend",
+      "description": "Provides operations for managing a symbolic execution environment, including pushing and popping contexts, asserting assumptions, defining predicates, querying constraints, and optimizing objectives. Works with custom types such as `sat_env`, `env`, and `Expr.t` to represent logical states and expressions. Used to process declarations, generate models, and handle SAT solver interactions in formal verification workflows.",
+      "description_length": 423,
+      "index": 235,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Fun_sat",
+      "description": "manages logical constraints by tracking assumptions, objectives, and terms, enabling evaluation, case analysis, and model generation. It handles expressions, literals, and objective values, supporting symbolic reasoning and integration with theory instances. Users can extract ground terms, track optimized objectives, and compute concrete models. It facilitates automated reasoning by maintaining and querying constraint contexts dynamically.",
+      "description_length": 443,
+      "index": 236,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Fun_sat_frontend",
+      "description": "Manages logical constraints through assumption handling, objective setting, and term manipulation, enabling theorem proving and optimization. Supports operations on literals, expressions, terms, and objectives, including ground term extraction and case splitting. Allows computation of concrete models under given constraints. Can be used to derive valid assignments, analyze logical consequences, and guide proof search.",
+      "description_length": 421,
+      "index": 237,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Gc_debug",
+      "description": "Registers alarm functions to output garbage collection statistics to standard error. Works with OCaml's internal GC data and logging system. Used to monitor memory allocation and collection behavior during debugging sessions.",
+      "description_length": 225,
+      "index": 238,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Hconsing",
+      "description": "Provides operations to hashcons values, ensuring maximal sharing by returning existing instances when possible. Works with the abstract type `t` to manage unique instances of hashconsed values. Used to efficiently manage and retrieve canonical representations of data structures in memory.",
+      "description_length": 289,
+      "index": 239,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Heap",
+      "description": "Provides operations to retrieve and update the index of elements within a heap structure, along with a comparison function to determine the relative order of elements. Works with a custom type `t` representing heap elements. Used to manage dynamic priority adjustments in real-time systems where element positions must be tracked and updated efficiently.",
+      "description_length": 354,
+      "index": 240,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Hstring",
+      "description": "provides ordered set and map operations with efficient insertion, deletion, and traversal, along with transformations and queries. It handles ordered collections through comparison functions, supporting set unions, element extremas, and key-value mappings with ordered access. Users can convert between sequences and sets, manage dynamic datasets, and perform incremental updates. Examples include maintaining sorted user lists, optimizing search with ordered keys, and generating derived maps from input sequences.",
+      "description_length": 515,
+      "index": 241,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Id",
+      "description": "Generates unique identifiers by appending numeric suffixes to a base string, maintaining internal state to prevent duplicates. It handles string manipulation and numeric progression, supporting operations like generating the next unique value or resetting the counter. Users can create sequences such as \"temp1\", \"temp2\", \"temp3\" or \"id100\", \"id101\" based on a given prefix. This is useful for dynamically generating names in code generation, temporary file handling, or session management.",
+      "description_length": 490,
+      "index": 242,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Inequalities",
+      "description": "Combines set, map, and polynomial operations to manage structured data, enabling ordered collections, key-value transformations, and exact polynomial arithmetic. It supports ordered sets for membership checks, ordered maps for key-based queries and merging, and polynomials for coefficient manipulation and arithmetic. Users can filter elements, aggregate key-value pairs, and perform precise polynomial computations, such as combining constraints or transforming variable-rational mappings. Specific tasks include merging datasets, building dynamic configurations, and handling symbolic inequalities with exact rational coefficients.",
+      "description_length": 634,
+      "index": 243,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Input",
+      "description": "Parses input files and preludes, converting them into a sequence of parsed elements using specified formats. Processes and typechecks these elements within an environment, producing typed declarations and updated environments. Handles arbitrary term input for GUI interactions, maintaining separate parsed and typed representations.",
+      "description_length": 332,
+      "index": 244,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Instances",
+      "description": "Provides operations to manage a collection of logical terms, lemmas, and predicate definitions, including adding, querying, and modifying these elements. Works with sets of expressions, guarded formulas, explanations, and mapping structures for term matching. Used to track and manipulate logical instances during theorem proving or symbolic reasoning tasks.",
+      "description_length": 358,
+      "index": 245,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.IntervalCalculus",
+      "description": "Provides operations to manage and reason about interval constraints, including adding literals, processing assumptions, querying results, and generating case splits. Works with union-find structures, symbolic expressions, and logical relations. Used to handle interval arithmetic in theorem proving, optimize objectives, and support model generation.",
+      "description_length": 350,
+      "index": 246,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Intervals",
+      "description": "Combines interval operations for real and integer ranges, supporting creation, comparison, and set-based manipulations. Key types include interval structures with open, closed, or unbounded bounds, and operations like intersection, union, and membership checks. It enables defining [1, 5), checking if [3;3] is a singleton, or performing arithmetic on rational intervals. Examples include constraint modeling, range analysis, and numerical computations with precise bound handling.",
+      "description_length": 481,
+      "index": 247,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Intervals_core",
+      "description": "Manages logical unions of intervals, enabling operations like checking for emptiness, merging, and comparing conditions. It works with a type `t` that represents logical constraints across models, allowing for the selection of minimal explanations through custom comparisons. Users can combine intervals into unified ranges, verify if a set of conditions is empty, and refine explanations based on specific criteria. For example, it can merge overlapping intervals or determine the smallest valid explanation for a given fact.",
+      "description_length": 526,
+      "index": 248,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Intervals_intf",
+      "description": "Manages collections of intervals over a value type, enabling creation, comparison, and inspection of bounded or unbounded ranges. Supports operations such as constructing intervals from bounds, checking equality, and extracting single values. Provides pretty-printing and structural views for debugging or visualization. Can represent precise numerical ranges or constraints in applications like interval arithmetic or symbolic computation.",
+      "description_length": 440,
+      "index": 249,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Ite_rel",
+      "description": "Provides operations for managing a relation within a union-find framework, including adding literals, processing assumptions, and generating case splits. Works with union-find structures, logical expressions, and symbolic terms. Used to handle theory-specific constraints, such as equality and disequality reasoning, and to support model generation and optimization.",
+      "description_length": 366,
+      "index": 250,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Literal",
+      "description": "provides hash tables, sets, and maps with key-based operations, supporting dynamic data manipulation and efficient lookups. It includes hash tables with polymorphic values, ordered sets for unique elements, and maps with typed keys and generic values, each offering insertion, deletion, and traversal. Operations like `of_seq`, `replace_seq`, and set-theoretic functions enable data transformation and querying. Examples include managing configuration data, deduplicating symbolic expressions, and building data pipelines with ordered key access.",
+      "description_length": 546,
+      "index": 251,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Loc",
+      "description": "Tracks positions in source files using start and end lexical positions. Provides formatting for human-readable output and a placeholder location value. Used to annotate parsed elements with their original file positions.",
+      "description_length": 220,
+      "index": 252,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Matching",
+      "description": "Provides operations to construct and manipulate a term matching structure, including adding terms with associated information, setting maximum depth, and incorporating triggers. Works with maps of expressions, symbols, and trigger information, along with a theory representation. Used to query matches during theorem proving, supporting efficient term retrieval with context-specific substitutions.",
+      "description_length": 398,
+      "index": 253,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Matching_types",
+      "description": "Provides operations to manipulate substitution mappings, track trigger conditions, and annotate terms with metadata. Works with structured records representing substitutions, trigger configurations, and term annotations. Used to manage variable bindings during pattern matching and to record contextual information for rule application.",
+      "description_length": 336,
+      "index": 254,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.ModelMap",
+      "description": "Adds bindings from symbols to expressions, substituting identifiers within a model structure. Operates on typed identifiers, expressions, and a model type representing partial function graphs. Used to construct and manipulate symbolic models in theorem proving contexts, such as replacing variables with specific terms during verification.",
+      "description_length": 339,
+      "index": 255,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Models",
+      "description": "A map from terms to their corresponding values, supporting operations to create an empty model, inspect its structure, and serialize it for output. It works with a record type containing a mapping from terms to values. Used to represent and display the state of a logical model during evaluation or debugging.",
+      "description_length": 309,
+      "index": 256,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.My_list",
+      "description": "Provides functions for manipulating association lists with custom comparison, including lookup, membership check, and removal. Includes transformation utilities that track whether elements changed and a method to safely map over lists with potential failures. Also includes a sortedness check using a custom comparator.",
+      "description_length": 319,
+      "index": 257,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.My_unix",
+      "description": "Provides functions to retrieve and manage time-related operations, including getting the current time and setting/unsetting timeouts. Works with float values to represent time and unit for control flow. Used to handle timing logic across different environments, such as pausing execution or scheduling delayed actions.",
+      "description_length": 318,
+      "index": 258,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.My_zip",
+      "description": "Provides functions to open, close, and read entries from ZIP archives, including extracting the sole file from a ZIP archive. Works with `in_file` and `entry` types to access and manipulate ZIP contents. Used to extract specific files, such as `.js` files, from ZIP archives for integration into web-based tools.",
+      "description_length": 312,
+      "index": 259,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Nest",
+      "description": "creates a total order for ADT constructors using a minimal perfect hash function, mapping each constructor to a unique integer. the main data types include the ADT itself and integer representations of its constructors, with operations for generating and applying the hash function. this enables deterministic model generation by ensuring well-founded recursion. for example, it allows defining a consistent ordering for pattern matching or equality checks across different ADT instances.",
+      "description_length": 488,
+      "index": 260,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Numbers",
+      "description": "offers arithmetic, comparison, and mathematical operations on arbitrary-precision integers and rational numbers, using custom types `t` for precise computation. It supports GCD, LCM, bitwise operations, power calculations, and rational operations like min, max, and square roots, with conversions between integer, rational, and string representations. Operations include safe overflow handling, scaling by powers of two, and precision-controlled results. Examples include cryptographic key generation, exact financial ledger calculations, and scientific simulations requiring irrational root approximations.",
+      "description_length": 607,
+      "index": 261,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Objective",
+      "description": "Manages optimization goals and constraints through a structured representation of objectives, bounds, and their relationships. It supports defining whether to maximize or minimize an expression, tracking upper and lower limits with distinct types, and maintaining a collection of functions with associated values. Operations include adding new objectives, iterating over stored functions, and checking if all constraints are satisfied. For example, it can determine the next unbounded variable or verify if a limit has been reached in a constraint system.",
+      "description_length": 555,
+      "index": 262,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Options",
+      "description": "Tracks time limits, manages output channels, and handles source logging for logical processing. Provides time-based cancellation, formatter-based output control, and source-tagged logging. Can enforce execution timeouts, direct output to files or streams, and tag log entries with pipeline stages. Used to control runtime behavior, direct diagnostic information, and trace events through processing steps.",
+      "description_length": 405,
+      "index": 263,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Parsed",
+      "description": "Formats abstract syntax tree nodes for pretty printing, including pure types, logical expressions, and type declarations. Operates on custom types such as `ppure_type`, `lexpr`, and `type_decl` to generate human-readable representations. Used to visualize parsed logic expressions and type definitions during debugging or code analysis.",
+      "description_length": 336,
+      "index": 264,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Parsed_interface",
+      "description": "This module specializes in constructing and manipulating abstract syntax tree nodes for type declarations, logical expressions, and arithmetic operations, working with parsed expressions, location data, and type information. It supports low-level symbolic execution and verification tasks through operations like bitvector manipulations, logical quantifiers, and control flow constructs, while enabling complex type system interactions via typed constructors and pattern matching. Use cases include formal verification, language parsing, and analysis of logical theories with structured type and expression hierarchies.",
+      "description_length": 619,
+      "index": 265,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Polynome",
+      "description": "The module provides symbolic manipulation operations such as substitution, arithmetic multiplication, and term construction on a custom type representing algebraic expressions and constants. It enables tasks like solving equations through logical evaluation, expression extraction, and cache management for efficient symbolic computation. Use cases include analyzing polynomial structures, evaluating expressions with assigned values, and managing term embeddings in algebraic workflows.",
+      "description_length": 487,
+      "index": 266,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Printer",
+      "description": "Prints formatted messages to standard, error, warning, and debug formatters with optional headers, flushing, and module/function context. Handles custom list formatting and status messages for logical outcomes like \"sat\", \"unsat\", and \"timeout\" with location and timing details. Configures formatters for color output and SMTLIB2 format, and routes log messages to appropriate destinations based on severity.",
+      "description_length": 408,
+      "index": 267,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Profiling",
+      "description": "Tracks and records decision points, conflicts, and instance creation during SMT solving, with functions to log boolean and theory-level conflicts, manage branching levels, and register terms produced during reasoning. Operates on integers, strings, expressions, locations, and sets of expressions, along with timers and formatting structures. Used to instrument and analyze solver behavior, capture conflict sources, and generate detailed runtime statistics for debugging and optimization.",
+      "description_length": 489,
+      "index": 268,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Records",
+      "description": "This module handles symbolic and abstract representations through operations like term manipulation, substitution, and algebraic constraint extraction, leveraging a custom type for abstract syntax tree (AST) structures. It enables tasks such as solving symbolic equations, model conversion, and value assignment by working with terms, constraints, and embedded abstract values. Use cases include logical expression analysis, automated reasoning, and symbolic computation workflows.",
+      "description_length": 481,
+      "index": 269,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Records_rel",
+      "description": "Provides operations for managing a relation within a union-find framework, including adding literals, processing assumptions, and generating case splits. Works with union-find structures, symbolic expressions, and logical inputs. Used to handle theory-specific constraints, optimize objectives, and support model generation during theorem proving.",
+      "description_length": 347,
+      "index": 270,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Rel_utils",
+      "description": "combines key-based hash table manipulation with delayed function evaluation and semantic comparison capabilities. It supports hash table operations like insertion, deletion, and lookup, along with sequence-based construction, and handles symbolic function structures for delayed evaluation. It also enables custom ordering and equality checks for semantic values, facilitating sorting and set operations. Users can synchronize real-time data, manage constraint-based function evaluations, and define custom value comparisons.",
+      "description_length": 525,
+      "index": 271,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Relation",
+      "description": "Provides operations to manage a relation within a logical environment, including adding literals, processing assumptions, and generating case splits for model construction. Works with union-find structures, logical expressions, and symbolic terms. Used to track new terms for axiom instantiation and optimize objectives in constraint solving.",
+      "description_length": 342,
+      "index": 272,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Sat_solver",
+      "description": "Provides functions to retrieve a SAT solver instance based on configuration or context, and to access a theory module with optional normalization. Operates with SAT solver implementations and theory modules. Used to dynamically select and interact with different SAT-solving backends during theorem proving.",
+      "description_length": 307,
+      "index": 273,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Sat_solver_sig",
+      "description": "Manages logical assumptions and constraint contexts, enabling extraction of ground terms and querying of expressions. Supports operations on sets of literals, expressions, and objective functions for optimization and case analysis. Allows tracking of constraints, model computation, and theory instance management. Can be used to analyze assumptions, derive models, and guide automated reasoning processes.",
+      "description_length": 406,
+      "index": 274,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Satml",
+      "description": "The module enables solving logical formulas, managing constraint environments, and optimizing with objective functions, working with structures like formulas, atoms, models, and environments. It includes stack-like operations for atoms, optimization routines requiring zero decision levels, and supports applications in SAT solving, constraint propagation, and logical deduction tasks.",
+      "description_length": 385,
+      "index": 275,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Satml_frontend",
+      "description": "Manages logical constraints, assumptions, and objectives through term manipulation and expression evaluation. Supports operations on literals, terms, and objectives to enable theorem proving, case analysis, and model generation. Allows extraction of ground terms, splitting of cases, and construction of concrete models under given constraints. Facilitates automated reasoning by integrating assumptions with logical structures.",
+      "description_length": 428,
+      "index": 276,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Satml_frontend_hybrid",
+      "description": "Manages logical constraints, assumptions, and objectives through term manipulation and expression evaluation. Supports operations on literals, expressions, term sets, and objective models to enable theorem proving and model generation. Capable of extracting ground terms, performing case analysis, and building concrete models from abstract constraints. Allows for dynamic adjustment of logical contexts to explore different proof paths or optimization scenarios.",
+      "description_length": 463,
+      "index": 277,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Satml_types",
+      "description": "provides set and map operations for ordered collections, supporting union, intersection, insertion, and key-based queries. it handles ordered atoms and polymorphic key-value pairs, enabling efficient data manipulation through filtering, transformation, and merging. users can construct sets from sequences, query map bindings, and perform structured data processing. examples include building sorted data structures, extracting elements based on predicates, and merging maps with custom logic.",
+      "description_length": 493,
+      "index": 278,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Shostak",
+      "description": "Combines symbolic term manipulation, structured data handling, and constraint analysis through operations like substitution, comparison, and transformation. It manages abstract syntax trees, polynomials, sets, maps, and bitvector representations, enabling tasks such as constraint solving, model construction, and algebraic evaluation. Functions include term conversion, set and map operations, polynomial arithmetic, and property checks, supporting applications in theorem proving, compiler analysis, and formal verification. Examples include optimizing symbolic expressions, validating constraints, and converting between abstract and concrete data representations.",
+      "description_length": 667,
+      "index": 279,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Sig",
+      "description": "This module provides operations for analyzing and transforming symbolic terms and expressions, including substitution, comparison, and component extraction, alongside conversion of constant values into structured model representations. It works with term structures like `Expr.t` and constant types `r`, enabling manipulation of symbolic expressions within formal theories. Use cases include model validation, semantic interpretation, and symbolic computation in theorem proving or automated reasoning systems.",
+      "description_length": 510,
+      "index": 280,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Sig_rel",
+      "description": "Provides operations to manage a relation within a logical environment, including adding literals, processing assumptions, and generating case splits. Works with union-find structures, Shostak Combine inputs, and expressions. Used to handle logical reasoning tasks such as constraint propagation, model generation, and objective optimization.",
+      "description_length": 341,
+      "index": 281,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Steps",
+      "description": "Tracks and manages step counts for theorem-solving processes. Provides operations to increment, reset, save, and retrieve step counters, including specialized case-split tracking. Controls step limits and temporarily disables them during specific operations.",
+      "description_length": 258,
+      "index": 282,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Symbols",
+      "description": "Provides ordered set and map operations for managing structured data, with support for membership checks, transformations, and key-value manipulations. It handles symbolic representations with specialized namespaces for internal, fresh, and skolemized symbols, enabling precise control over name generation and uniqueness. Operations include set unions, map merges, and predicate-based filtering, useful for maintaining sorted collections, managing symbolic abstractions, and processing relational data. Examples include building ordered sets from streams, querying maps by keys, and tracking fresh symbols in AC(X) abstractions.",
+      "description_length": 629,
+      "index": 283,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Th_util",
+      "description": "Provides functions to handle substitution literals, case splits, and optimized splits, including pretty-printing and string representation of theory-related data. Works with types like `case_split`, `optimized_split`, and `lit_origin`, which represent logical assertions and their origins. Used to manage SAT solver interactions, including decision literals, case splits, and objective function optimizations.",
+      "description_length": 409,
+      "index": 284,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Theories",
+      "description": "Provides set-theoretic operations such as union, intersection, and element manipulation, along with iteration and transformation functions. It handles sequence-based conversions, including reversing sets into lists and constructing sets from sequences. Operations support dynamic data management, algebraic computations, and functional integration. Examples include merging multiple data sources, filtering elements, and generating ordered representations for further processing.",
+      "description_length": 479,
+      "index": 285,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Theory",
+      "description": "Provides operations to manage logical assumptions, objectives, and queries, including adding terms, extracting ground terms, and performing case splits. Works with expressions, literals, explanations, and objective models. Used to track assumptions during theorem proving, optimize objectives, and generate concrete models for verification.",
+      "description_length": 340,
+      "index": 286,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Timers",
+      "description": "Manages nested timing measurements for specific module-function pairs, allowing start, pause, and value retrieval operations. It tracks individual and aggregated time values, maintaining a stack of active timers. Used to instrument code execution, measure performance of specific functions, and aggregate timing data across modules.",
+      "description_length": 332,
+      "index": 287,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Ty",
+      "description": "This module provides set and map operations for ordered data, enabling efficient manipulation of type variables, integers, and key-value associations. It supports union, intersection, difference, element lookup, and ordered traversal, with operations tailored for sets of type `t` and maps with ordered keys. Users can manage dynamic collections, perform set-theoretic computations, and convert between sets, lists, and sequences while preserving order. Examples include tracking type dependencies in compilers, querying structured integer datasets, and handling ordered key-value pairs in symbolic processing.",
+      "description_length": 610,
+      "index": 288,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Typechecker",
+      "description": "Checks type consistency of expressions and declarations using a typed environment. Processes parsed input to infer types, validate goals, and split declarations into structured output. Operates on environments, typed terms, and parsed syntax trees to enforce type constraints during analysis.",
+      "description_length": 292,
+      "index": 289,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Typed",
+      "description": "This module handles operations for constructing and serializing annotated typed terms, formulas, and logical structures, leveraging typed abstract syntax trees (ASTs) with custom annotations. It works with structured data types like annotated declarations, rule frameworks, and logic types, enabling precise manipulation of formal language components. Use cases include formal verification, theorem proving, and semantic analysis where typed term representations are critical.",
+      "description_length": 476,
+      "index": 290,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Uf",
+      "description": "Provides operations to manage global domains in union-find, including initializing domains for representatives, merging domains during equivalence, and filtering by type. Works with a type `t` representing these domains and uses a function to restrict processing to specific term types. Used to track and combine variable substitutions when merging equivalence classes.",
+      "description_length": 369,
+      "index": 291,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Uid",
+      "description": "manages set and map operations for structured data, offering set-theoretic functions like union and intersection, along with ordered map manipulations using key-value pairs. it handles generic types and custom operations, including element transformation, filtering, and traversal. users can perform symbolic term management, data restructuring, and key-based data processing. examples include merging sets, extracting subsets, and building ordered datasets from key-value mappings.",
+      "description_length": 482,
+      "index": 292,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Uqueue",
+      "description": "Maintains a sequence of unique elements, ensuring no duplicates are added during insertion. Supports adding elements to the end, removing from the front, and inspecting the front without removal. Used to manage ordered collections where each item must appear exactly once, such as processing tasks with no repetition.",
+      "description_length": 317,
+      "index": 293,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Use",
+      "description": "manages ordered generic sets with insertion, deletion, and algebraic operations, while supporting traversal, transformation, and predicate-based queries. it handles paired data structures with expressions and explanations, enabling sequence construction and reverse iteration for context-aware processing. operations include folding, mapping, and filtering, allowing for structured data manipulation in symbolic analysis or annotated workflows. examples include building ordered sets from sequences, querying elements based on conditions, and transforming paired data with custom functions.",
+      "description_length": 590,
+      "index": 294,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Util",
+      "description": "manages ordered collections through map and set operations, supporting key-value and element-based manipulations with efficient traversal and transformation. It provides ordered maps with integer and string keys, and ordered sets for element management, enabling tasks like dynamic data association, set intersections, and sequence-based construction. Operations include adding, removing, merging, filtering, and converting between data structures, with support for both imperative and functional styles. Examples include building configuration systems, processing hierarchical data, and managing dynamic sets with sorted access.",
+      "description_length": 629,
+      "index": 295,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib.Var",
+      "description": "manages ordered collections through set and map operations, supporting union, intersection, insertion, and lookup while enabling traversal, transformation, and filtering. it handles ordered sets and key-value maps, offering methods to query size, membership, and structure. users can aggregate data, maintain dynamic datasets, and process sequences with predicates. examples include building sorted result sets, updating mappings efficiently, and extracting subsets based on conditions.",
+      "description_length": 486,
+      "index": 296,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Vec",
+      "description": "The module provides operations for managing dynamic arrays, including insertion, deletion, size control, and conversions between vector, list, and array formats. It supports in-place filtering, sorting, and element-wise transformations on generic vectors, enabling efficient data processing. Specific use cases include scenarios requiring real-time data manipulation or optimization of memory usage through capacity management.",
+      "description_length": 427,
+      "index": 297,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Version",
+      "description": "Provides version string and release commit hash retrieval. Operates on internal build metadata stored as strings. Used to dynamically inject build information into logs and error messages.",
+      "description_length": 188,
+      "index": 298,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AltErgoLib.Xliteral",
+      "description": "manages ordered collections through map and set operations, supporting key-value bindings and element-based structures with efficient querying and transformation. It offers functions for adding, removing, and merging entries in maps, as well as union, intersection, and difference on sets, all while preserving order and enabling sequence-based processing. Users can build dynamic data structures from iterative sources, filter or transform elements based on conditions, and perform efficient lookups or traversals. Examples include maintaining sorted user data, aggregating structured logs, or processing time-series information with precise control over elements.",
+      "description_length": 665,
+      "index": 299,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "alt-ergo-lib",
+      "description": "Provides functions for parsing and manipulating logical formulas, including term construction, substitution, and simplification. Works with custom data types such as terms, formulas, and substitutions. Used to implement theorem proving workflows and constraint validation in formal verification tools.",
+      "description_length": 301,
+      "index": 300,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "AltErgoLib",
+      "description": "The module provides a comprehensive set of tools for symbolic computation, constraint management, and logical reasoning, integrating operations for manipulating abstract expressions, managing union-find relations, and handling logical contexts. It supports custom types like `r`, `t`, `Expr.t`, and `Symbols.t`, enabling substitution, hashing, term comparison, and constraint resolution. Key functionalities include solving symbolic constraints, generating models, managing logical assumptions, and optimizing objectives, with applications in theorem proving, formal verification, and automated reasoning. Examples include simplifying expressions, validating logical consistency, and extracting concrete models from abstract constraints.",
+      "description_length": 737,
+      "index": 301,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 320,
+    "meaningful_modules": 302,
+    "filtered_empty_modules": 18,
+    "retention_rate": 0.94375
+  },
+  "statistics": {
+    "max_description_length": 737,
+    "min_description_length": 188,
+    "avg_description_length": 441.97682119205297,
+    "embedding_file_size_mb": 1.0902557373046875
+  }
+}

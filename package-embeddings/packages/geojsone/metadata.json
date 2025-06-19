@@ -1,0 +1,252 @@
+{
+  "package": "geojsone",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 33,
+  "creation_timestamp": "2025-06-18T16:38:59.764081",
+  "modules": [
+    {
+      "module_path": "Geojsone.G.Accessor.Optics.Either",
+      "description": "Provides functions to construct values representing either a left or right variant of a sum type. Works with the polymorphic variant type ('a, 'b) t, where each instance holds one of two possible values. Used to encode computations that can succeed with a value of type 'a or fail with a value of type 'b.",
+      "description_length": 305,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Geojsone.G.Accessor.Optics.Lens",
+      "description": "Provides accessors and mutators for nested data structures, including tuples, lists, and custom records. Supports operations like extracting the first or second element of a pair, retrieving list elements by index, and composing lenses for complex data navigation. Enables precise modification of specific fields within immutable data structures.",
+      "description_length": 346,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Geojsone.G.Accessor.Optics.Prism",
+      "description": "Provides lens-like operations to access and modify specific parts of a data structure, with `get` extracting a value from a state and `set` updating it. Works with polymorphic types and options, enabling manipulation of nested structures through composition. Supports chaining of transformations using the `>>` operator for sequential updates.",
+      "description_length": 343,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Geojsone.G.Accessor.Optics.Optional",
+      "description": "Provides combinators for composing lenses and prisms into new optics, enabling traversal and modification of nested data structures. Works with lens and prism types to focus on optional fields within complex records. Supports chaining operations to navigate and update optional values in a type-safe manner.",
+      "description_length": 307,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Geojsone.G.Accessor.Optics.Infix",
+      "description": "Provides composition and transformation operations for optional values, lenses, and prisms. Combines these structures to navigate and modify nested data, enabling seamless traversal and update of complex data hierarchies. Supports chaining of operations to refine focus and extract or set values within structured records.",
+      "description_length": 322,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Geojsone.G.Accessor.Optics",
+      "description": "Offers a unified interface for working with sum types, nested data, and optional values through a set of composable operations. It includes constructors for left/right variants, lenses for accessing and modifying fields, and combinators for traversing and updating complex structures. Users can extract elements from tuples and lists, navigate optional fields, and chain transformations to refine focus. Examples include updating a nested record field, extracting a value from a sum type, and modifying a list element through a composed lens.",
+      "description_length": 542,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Geojsone.G.Accessor.Feature",
+      "description": "Focuses on extracting and manipulating specific aspects of geographic features, including properties, foreign members, and geometry, with both safe and strict accessors. Operates on a `Feature.t` type, which encapsulates spatial data and associated metadata. Used to inspect or modify JSON-based properties, foreign key-value pairs, and optional geometric representations in geospatial applications.",
+      "description_length": 399,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Geojsone.G.Accessor.Geometry",
+      "description": "Extracts and manipulates geometric values and their associated foreign members using lenses. Supports type-specific access to points, multi-points, line strings, multi-line strings, polygons, and multi-polygons via prisms. Enables precise querying and transformation of geometric data structures within a larger record.",
+      "description_length": 319,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Geojsone.G.Geometry.Position",
+      "description": "Extracts latitude, longitude, and optional altitude from a position. Compares positions for equality by value. Constructs positions with specified coordinates and optional elevation. Works with float arrays to represent geographic positions. Used to validate location data and ensure consistency in mapping applications.",
+      "description_length": 320,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Geojsone.G.Geometry.Point",
+      "description": "Converts between a point and a position structure, enabling precise coordinate manipulation. Operates on custom point types and Position.t records. Used to interface with rendering systems that require position data.",
+      "description_length": 216,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Geojsone.G.Geometry.MultiPoint",
+      "description": "Returns an array of position objects representing the individual points in a multipoint geometry. Constructs a multipoint geometry from an array of position objects. Used to aggregate multiple spatial locations into a single entity for processing or rendering.",
+      "description_length": 260,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Geojsone.G.Geometry.LineString",
+      "description": "Converts a line string to an array of positions and constructs a line string from an array of positions, ensuring a minimum of two positions. Works with arrays of Position.t to represent geometric line segments. Used to validate and prepare input for rendering or spatial analysis operations.",
+      "description_length": 292,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Geojsone.G.Geometry.MultiLineString",
+      "description": "Provides operations to access and construct multiline geometry from arrays of line strings and position arrays. Works with arrays of line strings and nested arrays of positions. Used to convert between structured geometric data and raw position data for rendering or analysis.",
+      "description_length": 276,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Geojsone.G.Geometry.Polygon",
+      "description": "Returns the linear rings of a polygon, including the exterior ring and any interior rings that define holes. Constructs polygons from arrays of line strings or converts between polygon structures and position arrays. Operates on arrays of LineString and Position data to represent and manipulate geometric boundaries.",
+      "description_length": 317,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Geojsone.G.Geometry.MultiPolygon",
+      "description": "Provides operations to create and extract arrays of polygon objects, convert between polygon structures and nested position arrays, and manage collections of polygons. Works with arrays of Polygon.t and nested arrays of Position.t. Used to aggregate multiple polygons for rendering or spatial analysis tasks.",
+      "description_length": 308,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Geojsone.G.Feature.Collection",
+      "description": "Extracts and constructs GeoJSON feature collections, handling feature lists and foreign member metadata. Operates on feature lists and JSON-based key-value pairs representing additional properties. Used to build and inspect GeoJSON objects with custom attributes.",
+      "description_length": 263,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Geojsone.Ezjsone.List",
+      "description": "This module offers comprehensive list manipulation through operations like construction, reversal, concatenation, and traversal, alongside higher-order functions for mapping, filtering, folding, and searching. It handles arbitrary element lists, key-value pairs, and sequences, with specialized functions for sorted list operations and efficient equality checks. Use cases include data transformation, aggregation, association lookups, and seamless conversion between list and sequence representations.",
+      "description_length": 502,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Geojsone.Uutfe.Manual",
+      "description": "Handles byte-level data copying from a decoder to a buffer and from an encoder to a buffer, tracking remaining space. Operates on decoder and encoder records, along with Cstruct.t for buffer manipulation. Used to manage data transmission in network protocols by directly controlling data placement and space tracking.",
+      "description_length": 317,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Geojsone.Uutfe.String",
+      "description": "Provides functions to guess the encoding of a string and to fold over its UTF-8 or UTF-16 (BE/LE) encoded code points, handling malformed sequences. Operates on strings and uses a folder type to process each code point or error during iteration. Useful for parsing or transforming text data with explicit encoding handling.",
+      "description_length": 323,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Geojsone.Uutfe.Buffer",
+      "description": "Adds Unicode code points to a buffer using UTF-8, UTF-16BE, or UTF-16LE encoding. Operates on buffers and Uchar.t values to construct encoded byte sequences. Used to generate properly encoded text data for output or transmission.",
+      "description_length": 229,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Geojsone.G.Geometry",
+      "description": "manages geographic positions, points, and complex geometries through structured data conversions and manipulations. it handles Position.t, Point.t, Multipoint.t, LineString.t, MultiLineString.t, Polygon.t, and related arrays, enabling operations like extracting coordinates, building geometries, and converting between data formats. it supports tasks such as validating location data, rendering spatial features, and processing multi-part geometries. examples include converting a line string to positions, constructing polygons from rings, and aggregating multiple spatial entities.",
+      "description_length": 583,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Geojsone.G.Feature",
+      "description": "Handles the creation and manipulation of GeoJSON features, including their geometry and associated properties. Supports operations on feature lists and key-value pairs to embed custom metadata. Enables building structured geographic data with precise control over attributes and geometry. Examples include generating feature collections with user-defined properties and extracting metadata from existing GeoJSON objects.",
+      "description_length": 420,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Geojsone.G.Accessor",
+      "description": "Provides a set of composable optics for navigating and modifying deeply nested GeoJSON structures, including sum types, optional values, and geographic data. It supports operations like extracting properties, accessing geometric types through prisms, and updating nested fields using lenses. Users can modify a feature's properties, extract a point from a geometry, or update a list element within a complex record. The module enables precise, reusable data manipulation without direct pattern matching.",
+      "description_length": 503,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Geojsone.G.Random",
+      "description": "Generates random GeoJSON structures using a provided template and a float generator, ensuring compliance with GeoJSON geometry rules. It operates on custom types like geometry, feature, and r, which define the structure of the output. Used to create randomized test data for geospatial applications or simulations.",
+      "description_length": 314,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Geojsone.Jsone.Manual",
+      "description": "Handles byte-level data copying from a decoder to a buffer and from a buffer to an encoder, with support for tracking remaining space in the output buffer. Operates on decoder and encoder types, along with Cstruct.t for buffer manipulation. Used to manage data flow in network protocols and binary serialization tasks.",
+      "description_length": 318,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Geojsone.Jsone.Uncut",
+      "description": "Handles JSON decoding and encoding with precise error tracking and tokenization. Processes raw byte streams and emits structured tokens like booleans, strings, and numbers. Used for parsing and generating JSON data in systems requiring strict validation and low-level control.",
+      "description_length": 276,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Geojsone.Err",
+      "description": "Prints error messages with location information, using a custom format for display. Operates on a tagged type representing errors and a location type tracking start and end positions. Used to generate human-readable error outputs during parsing or analysis.",
+      "description_length": 257,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Geojsone.G",
+      "description": "manages geojson objects by providing structured handling of positions, geometries, and features, along with tools for data conversion, manipulation, and testing. it defines types such as Position.t, Polygon.t, Feature.t, and supports operations like coordinate extraction, property modification, and geometry construction. users can build complex spatial data, extract metadata, or generate randomized test structures. examples include converting line strings to positions, updating feature properties, and creating random polygon collections.",
+      "description_length": 543,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Geojsone.Ezjsone",
+      "description": "Provides list and sequence operations for building, transforming, and querying data structures, including mapping, filtering, folding, and sorted list management. Supports arbitrary elements, key-value pairs, and efficient equality comparisons. Enables data aggregation, lookup, and conversion between list and sequence formats. Examples include filtering a list of records, folding over a sequence to compute totals, and reversing a sorted list while maintaining order.",
+      "description_length": 470,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Geojsone.Jsone",
+      "description": "Manages data flow between decoders, encoders, and buffers using Cstruct.t, enabling efficient byte-level manipulation for network and serialization tasks. Supports precise JSON parsing and generation, tracking errors and tokenizing input streams into structured values. Allows seamless integration of binary data handling with JSON processing, facilitating complex data transformation workflows. Examples include decoding a JSON stream from a byte buffer and encoding structured data back into a binary format with error reporting.",
+      "description_length": 531,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Geojsone.Uutfe",
+      "description": "Manages byte-level data transfer between decoders, encoders, and buffers, tracking available space and ensuring proper data placement. Supports encoding and decoding of Unicode strings with explicit control over UTF-8 and UTF-16 formats, including error handling during iteration. Allows adding code points to buffers using specified encodings, enabling precise construction of encoded text. Can be used to parse incoming data, validate encodings, or generate output in required formats.",
+      "description_length": 487,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "geojsone",
+      "description": "Reads and writes GeoJSON data using streaming and standard parsing approaches. Processes geometric types, features, and feature collections from JSON input. Enables efficient handling of large geospatial datasets and conversion between OCaml data structures and GeoJSON format.",
+      "description_length": 277,
+      "index": 31,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Geojsone",
+      "description": "manages large GeoJSON documents through streaming and efficient data handling, combining error reporting, geometric operations, list manipulations, and byte-level encoding/decoding. it defines types like Position.t, Polygon.t, Feature.t, and Cstruct.t, supporting operations such as coordinate extraction, data filtering, and binary serialization. users can parse and modify spatial data, generate test structures, and handle encoded text streams with precision. examples include converting geometries, filtering features, and encoding JSON into byte buffers.",
+      "description_length": 559,
+      "index": 32,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 33,
+    "meaningful_modules": 33,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 583,
+    "min_description_length": 216,
+    "avg_description_length": 364.969696969697,
+    "embedding_file_size_mb": 0.12026596069335938
+  }
+}

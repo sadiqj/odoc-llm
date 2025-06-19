@@ -1,0 +1,56 @@
+{
+  "package": "ppx_mysql_identity",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 5,
+  "creation_timestamp": "2025-06-18T16:30:15.286124",
+  "modules": [
+    {
+      "module_path": "Mysql_with_identity.IO",
+      "description": "Handles asynchronous value sequencing and lifting, enabling structured composition of operations that produce single values. Works with a monadic type that wraps individual values, allowing chaining of computations. Used to manage sequential I/O operations where each step depends on the result of the previous one.",
+      "description_length": 315,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mysql_with_identity.IO_result",
+      "description": "Provides monadic operations for chaining I/O actions that may fail, including lifting values into the effectful result context and binding subsequent actions based on successful outcomes. Works with a type representing I/O operations that return either a value or an error. Used to handle file reading with error propagation and sequential I/O tasks that depend on prior successful results.",
+      "description_length": 390,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mysql_with_identity.Prepared",
+      "description": "Handles database connection initialization and statement execution with error handling. Processes SQL statements, retrieves results, and manages prepared statements with caching options. Works with database handles, SQL statements, and result sets to perform structured database interactions.",
+      "description_length": 292,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "ppx_mysql_identity",
+      "description": "Provides functions to map SQL tables to OCaml records, execute parameterized queries, and handle result sets. Works with MySQL connections, SQL queries, and OCaml record types that mirror database schemas. Enables direct insertion, selection, and updating of employee data using typed operations.",
+      "description_length": 296,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mysql_with_identity",
+      "description": "Combines asynchronous value sequencing, error-handled I/O, and database operations into a unified flow for building reliable, step-dependent applications. It supports monadic types for chaining computations, handling failures, and managing database interactions through structured execution and result retrieval. Users can perform sequential I/O, manage database connections, and execute SQL queries with error-aware composition. Examples include reading files with error recovery, executing parameterized SQL statements, and building pipelines that depend on prior successful steps.",
+      "description_length": 583,
+      "index": 4,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 5,
+    "meaningful_modules": 5,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 583,
+    "min_description_length": 292,
+    "avg_description_length": 375.2,
+    "embedding_file_size_mb": 0.01860523223876953
+  }
+}

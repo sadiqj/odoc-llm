@@ -1,0 +1,42 @@
+{
+  "package": "session-cohttp",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 3,
+  "creation_timestamp": "2025-06-18T16:28:41.391802",
+  "modules": [
+    {
+      "module_path": "Session_cohttp.Make",
+      "description": "Provides functions to manage session keys with expiration, including generating unique keys with optional expiry, retrieving session values with their expiry periods, updating session values with new expiries, and removing sessions. Operates on session keys as strings, values as strings, and periods as 64-bit integers. Used to handle temporary user sessions in web applications, ensuring data is automatically removed after a specified time.",
+      "description_length": 443,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "session-cohttp",
+      "description": "Handles cookie-based session management and persistence, including creating, reading, and updating session data using a functor-defined storage backend. Operates on HTTP request and response objects from CoHTTP, Async, and Lwt, enabling secure user authentication workflows. Used to enforce access control by validating session cookies on each request and granting access only after successful authentication.",
+      "description_length": 409,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Session_cohttp",
+      "description": "Provides functions to manage session data via HTTP cookies, including fetching sessions by key, extracting session keys from headers, creating new sessions, and generating cookie headers for client communication. Operates on session records, backend storage, and HTTP headers, with support for expiration and cookie attributes. Used to handle user authentication states and maintain session persistence across HTTP requests.",
+      "description_length": 424,
+      "index": 2,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 3,
+    "meaningful_modules": 3,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 443,
+    "min_description_length": 409,
+    "avg_description_length": 425.3333333333333,
+    "embedding_file_size_mb": 0.011321067810058594
+  }
+}

@@ -1,0 +1,406 @@
+{
+  "package": "shuttle_http",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 55,
+  "creation_timestamp": "2025-06-18T16:44:09.754339",
+  "modules": [
+    {
+      "module_path": "Shuttle_http.Client.Address.Map.Key",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons in data structures.",
+      "description_length": 269,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Client.Address.Map.Diff",
+      "description": "Provides operations to convert between a structured data type and S-expressions, and to compute and apply differences between maps. Works with key-value maps where values can be modified through delta updates. Enables precise tracking of changes between two versions of a map for reconciliation or versioning tasks.",
+      "description_length": 315,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Client.Address.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Operates on S-expressions and the Key module's type. Used to deserialize configuration keys from structured text data.",
+      "description_length": 191,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Client.Address.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t. Used to persist and reconstruct key data structures in binary format for storage or communication.",
+      "description_length": 304,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Client.Address.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information to prevent prefix-based collisions. Used to generate reliable hash values for complex structures in hashing-based data structures.",
+      "description_length": 371,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Shuttle_http.Client.Address.Table.Provide_of_sexp",
+      "description": "Converts a S-expression into a key by parsing and validating its structure. Works with `Sexplib0.Sexp.t` and extracts specific values as keys. Used to transform serialized data into lookup keys for efficient data retrieval.",
+      "description_length": 223,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Shuttle_http.Client.Address.Table.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary encoding, particularly those involving polymorphic variants. Used to enable efficient binary persistence of data structures in applications needing fast serialization.",
+      "description_length": 360,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Client.Address.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific type using a provided constructor function. Operates on S-expressions and custom data types defined with the `elt` type. Used to parse structured data from S-expression representations in configuration or serialization contexts.",
+      "description_length": 268,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Client.Address.Hash_set.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, including polymorphic variants. Used to enable efficient binary serialization in data exchange or persistent storage scenarios.",
+      "description_length": 343,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Client.Address.Set.Elt",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons in data structures.",
+      "description_length": 269,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Client.Address.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting between S-expressions and internal representations. Works with sets of elements and optional difference structures representing changes between two states. Used to track and apply incremental updates between distinct set configurations.",
+      "description_length": 336,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Client.Address.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor function. Works with S-expressions and a specific element type defined in the module. Used to parse structured data from S-expressions into typed values for further processing.",
+      "description_length": 249,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Shuttle_http.Client.Address.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape definition. Operates on a type `t` that is parameterized by `Elt.t`, supporting polymorphic variants through a tag-based reader. Used to persist and reconstruct complex data structures in binary format for storage or communication.",
+      "description_length": 368,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Client.Address.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating size information before element-wise folding. Operates on custom data types defined with `Elt.t`, supporting recursive and composite structures. Used to generate consistent, collision-resistant hash values for custom types in hashing-based data structures.",
+      "description_length": 404,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Shuttle_http.Server.Logger.For_testing",
+      "description": "Sets up a test-specific logging output that strips metadata from log messages and prints only their bodies. Accepts a transformation function to modify messages before output. Used to simplify log verification during testing by eliminating extraneous details.",
+      "description_length": 259,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Client.Address.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports comparison, enabling direct use in sorting and decision-making logic. Used to replace polymorphic comparisons in scenarios requiring explicit type-specific behavior.",
+      "description_length": 384,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Client.Address.Map",
+      "description": "Encapsulates operations for serializing, deserializing, and comparing structured data, with support for versioning, delta tracking, and hash generation. It handles key-value maps, custom types, and S-expressions, enabling efficient storage, reconciliation, and consistent hashing. Functions include parsing keys from S-expressions, applying delta updates, and folding data into hash states. Examples include persisting maps to disk, tracking changes between configurations, and generating unique identifiers for complex data.",
+      "description_length": 525,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Shuttle_http.Client.Address.Set",
+      "description": "Encapsulates operations for serializing, comparing, and tracking changes in structured data, with support for S-expressions, binary formats, and hash generation. It handles type conversion from S-expressions, computes and applies set differences, and generates collision-resistant hashes for custom types. Key data types include `t`, sets of elements, and hash states, with operations like `compare`, `diff`, `of_sexp`, `bin_read`, and `hash_fold`. It enables persistent storage, incremental updates, and consistent hashing for complex data structures.",
+      "description_length": 552,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Shuttle_http.Client.Address.Table",
+      "description": "Transforms S-expressions into structured keys and enables binary serialization of custom types with Bin_prot. Supports operations like parsing, validation, size calculation, and encoding/decoding for efficient data handling. Key types include Sexp.t and custom polymorphic variants, with functions to extract, serialize, and reconstruct data. Examples include converting configuration data into lookup keys and persisting complex data structures in binary format for quick access.",
+      "description_length": 480,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Client.Address.Hash_set",
+      "description": "Converts S-expressions to custom types using a constructor function and supports binary serialization and deserialization with Bin_prot, including size and shape operations. Handles structured data parsing and efficient binary I/O for custom types, including polymorphic variants. Parses configuration data from S-expressions and writes values to binary formats for storage or transmission. Enables seamless conversion between textual and binary representations of complex data structures.",
+      "description_length": 489,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Shuttle_http.Client.Address.Hash_queue",
+      "description": "This module provides operations for managing key-value pairs in a queue that maintains ordered insertion and unique keys, supporting traversal, aggregation, and transformation through functions like folding, filtering, and counting. It enables efficient membership checks, key-based lookups, and modifications such as enqueuing, dequeuing, and reordering elements, with both safe and exception-throwing variants for concurrent access. Use cases include scenarios requiring ordered data processing with guaranteed key uniqueness, such as task scheduling or priority management with dynamic updates.",
+      "description_length": 597,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Meth.Map.Key",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons of key values in data structures.",
+      "description_length": 283,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Meth.Map.Diff",
+      "description": "Provides operations to construct and manipulate difference maps between two data structures, using key-based mappings. Works with typed difference maps and derived-on maps that track key-value relationships. Enables applying diffs to update a structure or generating diffs from a list of changes.",
+      "description_length": 296,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Shuttle_http.Meth.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type by parsing its structure and extracting relevant components. Operates on Sexp.t and Key.t, ensuring precise mapping between serialized data and internal representations. Used to deserialize configuration keys from external files into a structured format for programmatic access.",
+      "description_length": 318,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Shuttle_http.Meth.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t. Used to persist and reconstruct key data structures in binary format for storage or communication.",
+      "description_length": 304,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Meth.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information to prevent prefix-based collisions. Used to generate reliable hash values for complex structures like trees and lists in hashing algorithms.",
+      "description_length": 381,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Shuttle_http.Meth.Set.Elt",
+      "description": "Provides serialization and deserialization between a type and S-expressions, along with a comparator for ordered operations. Works with a generic type `t` and its associated comparator witness. Enables structured data handling in contexts requiring symbolic representation and ordered comparisons.",
+      "description_length": 297,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Meth.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting between S-expressions and internal representations. Works with sets of elements and optional difference structures representing changes between two states. Used to track and apply incremental updates to set-based data structures.",
+      "description_length": 329,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Shuttle_http.Meth.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor function. Operates on `Sexplib0.Sexp.t` and user-defined types via the `Elt.t` interface. Used to parse structured data from S-expression representations into application-specific data models.",
+      "description_length": 265,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Meth.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape definition. Operates on a type `t` that is parameterized by `Elt.t`, supporting polymorphic variants through a constructor tag reader. Used to persist and reconstruct complex data structures in binary format for storage or communication.",
+      "description_length": 374,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Meth.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Operates on custom data types defined with `Elt.t`, supporting recursive and composite structures. Used to generate consistent, collision-resistant hash values for complex types in serialization and equality checks.",
+      "description_length": 413,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Body.Stream",
+      "description": "Creates and manages HTTP streaming bodies, enabling single-use consumption of data through functions like `iter`, `fold`, and `drain`. Operates on `t` type, which encapsulates streaming data and provides methods to determine encoding, check if reading has started, and close resources. Used to handle HTTP body data in a controlled manner, ensuring proper resource management and single-pass processing.",
+      "description_length": 403,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Server.Logger",
+      "description": "Logs are processed by stripping metadata and applying custom transformations, with outputs tailored for test verification. The core data type is a log message, and operations include filtering, transforming, and printing. Functions allow customization of log content, enabling precise control over what is displayed during testing. For example, a message can be modified to remove timestamps or formatted for easier comparison.",
+      "description_length": 427,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Server.Ssl",
+      "description": "Provides functions to create and serialize SSL contexts, supporting configuration of protocol versions, certificate files, key files, and verification modes. Works with types such as version, options, and verification modes to customize SSL behavior. Used to set up secure HTTPS servers with specified cipher suites and certificate validation.",
+      "description_length": 343,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Server.Config",
+      "description": "Provides functions to serialize configuration data into S-expressions, retrieve a default configuration, and construct a custom configuration with parameters like buffer size, connection limits, timeouts, and error handling. Operates on a structured type representing HTTP server settings. Used to define server behavior for handling network traffic, managing connection limits, and controlling timeouts during request processing.",
+      "description_length": 430,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Shuttle_http.Client.Address",
+      "description": "Combines comparison, serialization, and key management for structured data, offering operations to order, hash, and transform custom types and key-value pairs. It supports S-expressions, binary formats, and versioned data, with functions to parse, compare, diff, and serialize data efficiently. Users can manage ordered queues with unique keys, track changes between configurations, and persist complex structures to disk. Examples include generating unique identifiers for data, converting configuration files into lookup keys, and maintaining ordered task lists with dynamic updates.",
+      "description_length": 585,
+      "index": 35,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Shuttle_http.Client.Ssl",
+      "description": "Provides functions to create and configure SSL connections with options for version, certificate verification, and cipher suites. Works with types such as SSL session, certificate files, and verification modes. Used to establish secure client connections, validate server certificates, and manage encryption settings in network communications.",
+      "description_length": 343,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Client.Oneshot",
+      "description": "Performs a single HTTP request to a specified address, supporting SSL with optional hostname verification or custom certificate validation. Accepts a request object and returns a deferred response. Handles connection timeouts and interrupt signals during the call.",
+      "description_length": 264,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Client.Persistent",
+      "description": "Provides functions to create and manage a durable HTTP connection that automatically reconnects after failures. Works with types like `Request.t`, `Response.t`, and `Address.t` to handle network interactions. Used to maintain a stable connection to a service, allowing requests to be retried seamlessly after transient failures.",
+      "description_length": 328,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Parser.Private",
+      "description": "Parses a method identifier from a binary buffer, returning the parsed method and the number of bytes consumed. It operates on Core.Bigstring.t and returns a result type with either a Meth.t value or an error. This is used to extract protocol method information from raw network data.",
+      "description_length": 283,
+      "index": 39,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Shuttle_http.Meth.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports the `compare` function to establish order. Used to implement custom sorting logic and decision-making based on value relationships.",
+      "description_length": 350,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Meth.Map",
+      "description": "offers serialization, deserialization, and comparison capabilities for a type `t` using S-expressions and a comparator, enabling ordered operations and persistent storage. It supports difference maps for tracking changes between structures, key parsing from S-expressions, binary serialization with Bin_prot, and hash folding for secure, collision-resistant hashing of complex data. Operations include applying diffs, generating key representations from serialized data, and computing hash values that reflect structural integrity. This enables efficient data manipulation, storage, and comparison across various data structures.",
+      "description_length": 629,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Meth.Set",
+      "description": "Combines serialization, comparison, and difference tracking for set-like structures, supporting S-expression and binary formats. Offers operations to convert between custom types and structured representations, compute set deltas, and generate collision-resistant hashes. Works with generic types, optional difference records, and hash states, enabling efficient data manipulation and persistence. Examples include parsing S-expressions into application models, applying incremental set updates, and generating stable hash values for complex data.",
+      "description_length": 547,
+      "index": 42,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Shuttle_http.Body",
+      "description": "manages HTTP streaming bodies with controlled, single-use data consumption through `iter`, `fold`, and `drain` operations on the `t` type. The `t` type tracks encoding, reading state, and resource status, allowing precise control over data flow and cleanup. It enables efficient handling of large or continuous data streams without loading entire contents into memory. Examples include processing log lines in real-time or streaming media files incrementally.",
+      "description_length": 459,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Headers",
+      "description": "Provides operations to convert between a list of string pairs and S-expressions, and to construct, inspect, and modify ordered collections of key-value pairs. Supports adding, removing, and looking up entries by key, with options to handle duplicates and avoid overwriting existing entries. Used to process HTTP headers or similar structured data where order and key uniqueness matter.",
+      "description_length": 385,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Meth",
+      "description": "Combines comparison, serialization, and difference tracking for custom data types, enabling ordered operations, persistent storage, and efficient data manipulation. It supports S-expressions, binary formats, and hash folding, allowing for parsing, diff application, and structural integrity checks. Operations include generating set deltas, converting between types and representations, and computing collision-resistant hashes. Examples include sorting custom types, tracking changes in data structures, and ensuring consistent hash values across serialized forms.",
+      "description_length": 565,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Parser",
+      "description": "Extracts protocol method information from raw binary data using a bigstring input, returning the method and byte count or an error. The core data types include Meth.t and a result type for success or failure. It enables low-level parsing of network protocol identifiers, allowing for precise handling of binary streams. Examples include decoding method headers in network packets or validating protocol structures.",
+      "description_length": 414,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Request",
+      "description": "Provides operations to construct, inspect, and modify HTTP requests, including extracting methods, paths, headers, and bodies, and modifying transfer encoding and headers. Works with HTTP method, version, and body data types, along with header key-value pairs. Used to build and process HTTP requests with precise control over headers and body content during network communication.",
+      "description_length": 381,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Response",
+      "description": "Provides functions to construct and manipulate HTTP responses, including setting version, status, headers, and body, as well as extracting and modifying header values. Works with types such as Version.t, Status.t, and Body.t, and handles HTTP headers as key-value pairs. Used to build structured HTTP responses, inspect header data, and manage transfer encoding and connection reuse.",
+      "description_length": 383,
+      "index": 48,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Shuttle_http.Server",
+      "description": "Processes log messages by filtering, transforming, and printing them, with support for customizing output for testing. Manages SSL context creation and serialization, allowing configuration of protocols, certificates, and verification settings. Serializes HTTP server configurations into S-expressions, enabling control over buffer sizes, timeouts, and connection limits. For example, logs can be stripped of timestamps, SSL contexts can be set to use specific cipher suites, and server settings can be adjusted to handle high traffic loads.",
+      "description_length": 541,
+      "index": 49,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Shuttle_http.Status",
+      "description": "This module offers serialization, deserialization, comparison, hashing, and property-based testing utilities for HTTP status code categories, including informational, success, redirection, client errors, server errors, and a generic `t` type. It enables conversions between status codes and representations like integers, strings, and reason phrases, supporting error handling and semantic classification. Use cases include validating HTTP responses, generating test scenarios, and ensuring consistent handling of status code semantics across systems.",
+      "description_length": 551,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http.Version",
+      "description": "Handles serialization and string conversion for version identifiers. Operates on a custom type representing version numbers, supporting S-expression encoding and decoding. Used to parse and generate human-readable version strings from structured data.",
+      "description_length": 251,
+      "index": 51,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Shuttle_http.Client",
+      "description": "manages secure, structured data exchange over HTTP, combining data handling, SSL configuration, and connection management. It supports ordered data operations, secure communications through SSL, and reliable HTTP interactions with automatic reconnection. Users can serialize and compare data, establish encrypted connections, and perform resilient HTTP requests. Examples include generating unique keys for data records, validating server certificates during connections, and maintaining stable API interactions through network disruptions.",
+      "description_length": 540,
+      "index": 52,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "shuttle_http",
+      "description": "Provides functions for parsing HTTP requests, handling streaming bodies, and managing error responses during request processing. Works with OCaml types such as `request`, `response`, and `body` to construct and manipulate HTTP messages. Used to build scalable web services that process large data streams and customize error handling per server configuration.",
+      "description_length": 359,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Shuttle_http",
+      "description": "Provides structured handling of HTTP data through operations on custom types, enabling efficient stream processing, header manipulation, and protocol parsing. It includes methods for converting between string pairs and S-expressions, serializing status codes, and managing version identifiers, while supporting secure, resilient HTTP communication. Key operations include streaming data with `iter` and `fold`, constructing HTTP requests and responses, and extracting method information from binary data. Examples include real-time log processing, secure API interactions, and parsing HTTP headers with ordered key-value management.",
+      "description_length": 632,
+      "index": 54,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 55,
+    "meaningful_modules": 55,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 632,
+    "min_description_length": 191,
+    "avg_description_length": 385.6181818181818,
+    "embedding_file_size_mb": 0.20025634765625
+  }
+}

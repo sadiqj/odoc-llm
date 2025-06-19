@@ -1,0 +1,77 @@
+{
+  "package": "hiredis",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 8,
+  "creation_timestamp": "2025-06-18T16:29:37.838091",
+  "modules": [
+    {
+      "module_path": "Hiredis.Shell.Server",
+      "description": "Starts a Redis server instance with specified configuration and port, saving the config to a temporary directory. Stops an active server instance. Operates on a server handle type representing an ongoing server process. Used to manage local Redis instances for testing or isolated environments.",
+      "description_length": 294,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hiredis.Shell.Client",
+      "description": "Opens an interactive session with a server using a specified host and port, allowing real-time communication. Works with string and integer types to establish and manage the connection. Used to test server responses or engage in live data exchange during development.",
+      "description_length": 267,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hiredis.Reader",
+      "description": "Reads and parses Redis protocol data from a buffer, processing strings to extract structured replies. It handles incremental input, allowing partial data to be processed as it becomes available. Once sufficient data is accumulated, it returns parsed Redis values such as strings, integers, or arrays.",
+      "description_length": 300,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hiredis.Client",
+      "description": "Provides functions to manage Redis client connections, including creating from file descriptors, setting timeouts, enabling keepalive, and queuing commands. Works with file descriptors, string arrays, and Hiredis Value types to execute and retrieve Redis operations. Used to load and invoke Lua scripts, handle command batching, and interact with Redis servers asynchronously.",
+      "description_length": 376,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hiredis.Pool",
+      "description": "Provides operations to create and manage a pool of client connections, allowing access to a server through multiple clients. Works with client objects and Lwt-based asynchronous operations. Used to efficiently distribute requests across a fixed number of clients in networked applications.",
+      "description_length": 289,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hiredis.Shell",
+      "description": "Manages local Redis server instances and interactive sessions, enabling controlled testing and real-time data interaction. Tracks server processes through a handle type and facilitates connection setup with host and port parameters. Allows starting, stopping, and communicating with Redis servers, supporting string and integer operations. Enables testing server behavior, executing commands live, and isolating environments for reliable experimentation.",
+      "description_length": 454,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "hiredis",
+      "description": "Provides functions to connect to, write to, and read from Redis servers using Hiredis. Works with string-based keys, values, and structured replies such as lists and hashes. Enables real-time data fetching and caching in networked applications.",
+      "description_length": 244,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hiredis",
+      "description": "reads and parses Redis protocol data from buffers, extracting structured replies like strings, integers, and arrays, while supporting incremental input processing; manages client connections with file descriptors, timeouts, and command queuing, enabling Lua script execution and asynchronous operations; provides connection pooling for efficient client reuse in networked applications; and facilitates local Redis server management, allowing test environments to be started, stopped, and interacted with directly.",
+      "description_length": 513,
+      "index": 7,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 9,
+    "meaningful_modules": 8,
+    "filtered_empty_modules": 1,
+    "retention_rate": 0.8888888888888888
+  },
+  "statistics": {
+    "max_description_length": 513,
+    "min_description_length": 244,
+    "avg_description_length": 342.125,
+    "embedding_file_size_mb": 0.029449462890625
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "package": "resp-server",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 13,
+  "creation_timestamp": "2025-06-18T16:33:00.933553",
+  "modules": [
+    {
+      "module_path": "Resp_server.Make.Client",
+      "description": "Initializes a client instance from provided data, using a custom type `t` to represent the client state. Operates on structured data to configure and manage client-specific properties. Used to set up client configurations for network communication and session management.",
+      "description_length": 271,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resp_server.Auth.String",
+      "description": "Checks if a string contains any of the provided substrings, returning a boolean result. Works with strings and arrays of strings. Used to validate input against a set of allowed patterns.",
+      "description_length": 187,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resp_server.Auth.User",
+      "description": "Checks if a user's credentials match a given array of strings, using a hash table that maps string keys to string values. Operates on a user data structure represented as an associative array. Validates login attempts by comparing stored user data against provided input.",
+      "description_length": 271,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resp_server.Make.Reader",
+      "description": "Reads binary data, lines, and individual characters from an input channel, and parses lexemes and protocol responses. Operates on input channels and returns values wrapped in Lwt promises. Used to process network protocol messages and extract structured data from raw byte streams.",
+      "description_length": 281,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resp_server.Make.Writer",
+      "description": "Writes a string to a network connection, appends a separator, and serializes custom response types to a socket. Operates on network connections and lexeme data structures. Used to send protocol-specific messages and structured responses over a TCP stream.",
+      "description_length": 255,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resp_server.Value.Reader",
+      "description": "Reads a specified number of bytes, lines, or characters from an input channel, and parses lexemes or decoded responses from a stream. Operates on input channels and returns values wrapped in Lwt promises. Used for processing network or file data in a non-blocking manner, such as parsing protocol messages or streaming content.",
+      "description_length": 327,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resp_server.Value.Writer",
+      "description": "Writes a string, separator, or parsed response element to a channel in a non-blocking manner. Operates on output channels and response data structures specific to the protocol. Used to stream structured data and control flow signals during network communication.",
+      "description_length": 262,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resp_server.Auth",
+      "description": "Checks if a user has permission to perform a set of actions by validating their credentials against a predefined set of rules. Works with a custom type `t` representing user authentication state and an array of strings representing action names. Used to enforce access control in user-facing API endpoints.",
+      "description_length": 306,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resp_server.Make",
+      "description": "Reads and parses binary, line-based, and character-level input from network channels, extracting structured data through lexeme parsing and protocol handling. Writes serialized responses, including custom types, to network connections with explicit message separation. Supports asynchronous operations via Lwt, enabling efficient handling of network protocol interactions. Can process incoming messages like \"GET /path HTTP/1.1\" or send structured replies such as \"200 OK\\r\\nContent-Length: 13\\r\\n\\r\\nHello, world!\"",
+      "description_length": 515,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resp_server.Client",
+      "description": "Initializes a client instance from provided data, storing configuration and state. Operates on a custom type `t` that encapsulates session information and connection details. Used to establish and manage interactions with a remote service endpoint.",
+      "description_length": 248,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resp_server.Value",
+      "description": "Reads and writes structured data from and to input and output channels using non-blocking I/O, supporting protocol-specific parsing and formatting. Processes streams by extracting lexemes, decoding responses, or emitting formatted strings and control signals. Input operations return parsed values via Lwt promises, while output operations send data in a controlled, protocol-aware manner. Examples include parsing incoming message headers, streaming JSON elements, or sending acknowledgment signals during network exchanges.",
+      "description_length": 525,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "resp-server",
+      "description": "Encodes and decodes values according to the Redis Serialization Protocol, handling integers, strings, bulk strings, and arrays. Processes data in a streaming fashion, allowing efficient handling of large payloads. Used to implement Redis client interactions, such as parsing command responses or constructing query messages.",
+      "description_length": 324,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resp_server",
+      "description": "Manages network interactions by initializing client sessions, handling protocol-specific data exchange, and enforcing access control. Operates on custom types representing session state, user authentication, and action sets, enabling structured communication with remote services. Supports non-blocking I/O for parsing and sending messages, validating user permissions, and maintaining connection integrity. Examples include reading JSON streams, sending control signals, and restricting access to API endpoints based on user roles.",
+      "description_length": 532,
+      "index": 12,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 15,
+    "meaningful_modules": 13,
+    "filtered_empty_modules": 2,
+    "retention_rate": 0.8666666666666667
+  },
+  "statistics": {
+    "max_description_length": 532,
+    "min_description_length": 187,
+    "avg_description_length": 331.0769230769231,
+    "embedding_file_size_mb": 0.04766273498535156
+  }
+}

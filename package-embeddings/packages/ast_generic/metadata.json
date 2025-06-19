@@ -1,0 +1,126 @@
+{
+  "package": "ast_generic",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 15,
+  "creation_timestamp": "2025-06-18T16:34:03.571287",
+  "modules": [
+    {
+      "module_path": "AST_utils.String_set",
+      "description": "Formats and displays lists of strings and sets of strings using pretty-printing and string conversion functions. Operates on OCaml's native list and set types, specifically `string list` and `string Set_.t`. Used to generate human-readable representations for debugging or logging purposes.",
+      "description_length": 290,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AST_utils.Node_ID",
+      "description": "Provides operations for formatting, comparing, hashing, and converting node identifiers, including generating unique IDs and extracting integer representations. Works with the `t` type, a custom identifier structure used to distinguish nodes in distributed systems. Used to create and manage unique node references in networked applications and distributed data structures.",
+      "description_length": 373,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AST_generic.SId",
+      "description": "Provides operations for formatting, comparing, hashing, and converting instances of type `t`, including generating string representations, checking equality, and extracting integer values. Works with the abstract type `t` representing unique identifiers. Used to create, inspect, and manage identifier instances in low-level system or performance-critical code.",
+      "description_length": 361,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AST_generic.IdInfoId",
+      "description": "Provides pretty-printing, string representation, equality checks, comparison, hashing, and conversion to integer for unique identifier values. Operates on the abstract type `t` representing generated or default identifiers. Used to manage and serialize unique ID instances in logging, comparison, and serialization contexts.",
+      "description_length": 324,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "ast_generic",
+      "description": "Provides functions for traversing and transforming abstract syntax trees, including mapping over nodes, folding expressions, and extracting specific node types. Operates on OCaml's internal AST structures such as expressions, patterns, and type declarations. Used to implement custom AST manipulations in code generators and static analysis tools.",
+      "description_length": 347,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ast_generic_v1_j",
+      "description": "This module offers serialization, deserialization, and parsing functionalities for OCaml type representations and abstract syntax tree (AST) components, including constructs like `label`, `literal`, `module_name`, and `expr`, using JSON as the format. It operates on structured data types such as tokens, identifiers, type parameters, and language-specific elements, enabling tasks like AST manipulation, code analysis, and data interchange in tools requiring JSON-based representation of OCaml programs.",
+      "description_length": 504,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AST_utils",
+      "description": "Handles string list and set formatting, along with node identifier manipulation, offering pretty-printing, comparison, hashing, and unique ID generation. Operates on `string list`, `string Set_.t`, and a custom `t` type for node identifiers. Enables readable output for debugging and efficient node management in distributed systems. Examples include converting a set of strings to a formatted string or generating a unique integer-based node ID.",
+      "description_length": 446,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Meta_AST",
+      "description": "Converts specific AST nodes from a generic representation into OCaml values, including expressions, statements, literals, and control structures. Works with types like function definitions, class definitions, and arithmetic operators. Used to serialize or analyze parsed code for transformation or inspection.",
+      "description_length": 309,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Map_AST",
+      "description": "Provides functions to create and modify AST visitors, including a default visitor and a way to adjust token locations during traversal. Works with visitor_in and visitor_out types that define traversal behavior and transformations. Used to handle sub-AST interpretations and metavariable pattern matching in parsing logic.",
+      "description_length": 322,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Visitor_AST",
+      "description": "Provides functions to traverse and extract information from abstract syntax trees, including visiting nodes with customizable equivalence rules, extracting parse information, and determining token ranges. Works with AST_generic.any and Parse_info.t types to track locations and ranges within parsed code. Used to analyze variable and field definitions, attribute expressions, and token positions in source files.",
+      "description_length": 412,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tok",
+      "description": "Produces human-readable representations of parsed tokens, compares tokens for equality, and generates hash values for use in associative data structures. Operates on parsed token data derived from syntax analysis. Used to debug token sequences and ensure consistent hashing in tables mapping tokens to metadata.",
+      "description_length": 311,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Raw_tree",
+      "description": "Provides pretty-printing, string representation, equality checks, and hashing for tree structures. Operates on a polymorphic tree type that contains tokens and nested elements. Enables traversal and transformation of tree nodes, extraction of location information, and conversion between different node types.",
+      "description_length": 309,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AST_generic_helpers",
+      "description": "This module provides type-safe transformations and analyses of OCaml AST elements, including converting identifiers to strings, expressions to patterns, and handling name resolution. It operates on structures like identifiers, attributes, operators, and expressions, enabling tasks such as normalizing AC-operator expressions, checking keyword attributes, and abstracting values for comparison. Specific use cases include simplifying complex expressions, ensuring semantic consistency in code transformations, and supporting compiler passes requiring operator associativity checks.",
+      "description_length": 581,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AST_generic_to_v1",
+      "description": "Converts a generic abstract syntax tree program into its version 1 representation. Operates on AST_generic.program and produces Ast_generic_v1_t.program. Used to migrate code structures from a flexible, extensible AST format to a fixed, versioned format for serialization or compatibility.",
+      "description_length": 289,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ast_generic_v1_t",
+      "description": "This module provides operations for constructing and analyzing abstract syntax trees (ASTs), focusing on structured representation of program elements like identifiers, literals, expressions, and control flow. It works with hierarchical data structures such as nested records, composite types, and recursive node definitions to model language constructs, including type parameters, XML elements, and syntactic categories. Specific use cases involve tracking token locations, resolving names, and handling complex syntax like function definitions and module structures.",
+      "description_length": 568,
+      "index": 14,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 16,
+    "meaningful_modules": 15,
+    "filtered_empty_modules": 1,
+    "retention_rate": 0.9375
+  },
+  "statistics": {
+    "max_description_length": 581,
+    "min_description_length": 289,
+    "avg_description_length": 383.06666666666666,
+    "embedding_file_size_mb": 0.054912567138671875
+  }
+}

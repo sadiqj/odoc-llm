@@ -1,0 +1,252 @@
+{
+  "package": "shared-memory-ring",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 33,
+  "creation_timestamp": "2025-06-18T16:40:17.660834",
+  "modules": [
+    {
+      "module_path": "Console_ring.Ring.Front.Reader",
+      "description": "Provides operations to manage and retrieve data from a stream of Cstruct.t buffers, using position markers to track read progress. Allows reading data at the current position without advancing the stream, and advances the position to indicate processed data. Used to efficiently handle sequential data processing with buffer recycling.",
+      "description_length": 335,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Console_ring.Ring.Front.Writer",
+      "description": "Writes to a stream at a specific position using buffer data, allowing multiple writes to the same location before advancing the stream. Operates on streams represented as Cstruct.t and positions as int32 values. Used to manage data output in network protocols where buffer recycling and precise positioning are critical.",
+      "description_length": 320,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Console_ring.Ring.Back.Reader",
+      "description": "Provides operations to manage and retrieve data from a stream of Cstruct.t buffers. It allows reading data at a specific position without advancing the stream and advancing the stream to mark processed data. Used in network protocols to handle incoming data fragments efficiently.",
+      "description_length": 280,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Console_ring.Ring.Back.Writer",
+      "description": "Writes data to a stream at a specified position using Cstruct buffers, allowing multiple writes to the same location before advancing the stream. Operates on stream as Cstruct.t and position as int32 to manage data output. Used to efficiently manage buffer recycling and sequential data writing in network or file I/O contexts.",
+      "description_length": 327,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Xenstore_ring.Ring.Front.Reader",
+      "description": "Provides operations to manage and retrieve data from a stream of Cstruct.t buffers, allowing reading at specific positions and advancing the stream to mark processed data. Works with stream as a Cstruct.t and position as an int32 to track read progress. Used to efficiently process network packets by reading at known offsets and recycling buffers after processing.",
+      "description_length": 365,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xenstore_ring.Ring.Front.Writer",
+      "description": "Writes to a stream at a specified position, returning buffer space for data insertion. Operates on streams represented as Cstruct.t and positions as int32 values. Used to manage data insertion in network protocols where buffer recycling and precise positioning are critical.",
+      "description_length": 274,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xenstore_ring.Ring.Back.Reader",
+      "description": "Provides operations to manage and retrieve data from a stream of binary buffers. It allows reading data at a specific position without advancing the stream and advancing the stream to mark processed data. Used in network protocols to handle incoming byte streams efficiently.",
+      "description_length": 275,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Xenstore_ring.Ring.Back.Writer",
+      "description": "Writes data to a specific position in a stream, returning buffer space for writing. Operates on streams represented as Cstruct.t and positions as int32 values. Used to manage data output in network protocols where buffer recycling and precise positioning are critical.",
+      "description_length": 268,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Console_ring.Ring.Front",
+      "description": "manages a stream of Cstruct.t buffers with precise position control, enabling both reading and writing operations at specific points. It supports reading without advancing the position and writing to the same location multiple times before moving forward. Key data types include Cstruct.t for buffer storage and int32 for position tracking. This allows efficient handling of sequential data, such as parsing network packets or constructing protocol messages with reusable buffers.",
+      "description_length": 480,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Console_ring.Ring.Back",
+      "description": "manages a stream of Cstruct.t buffers, enabling both reading from and writing to specific positions without advancing the stream, while supporting efficient data handling in network and I/O operations. It exposes operations to read at a given offset, write to a specified position, and advance the stream pointer, working with Cstruct.t and int32 types. This allows for precise control over data fragments, such as parsing protocol headers without consuming the stream or overwriting buffer regions before finalizing output. Examples include parsing incoming TCP data in chunks or building messages by writing multiple fields to the same buffer location.",
+      "description_length": 654,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Xenstore_ring.Ring.Front",
+      "description": "Manages data streams using Cstruct.t buffers, enabling precise reading and writing at specific positions tracked by int32 values. Supports efficient packet processing by allowing reads at known offsets and inserting data without reallocating memory. Operations include advancing the stream after reading and reserving space for writes, facilitating low-level network protocol manipulation. Examples include parsing structured data from a stream and modifying protocol headers in place.",
+      "description_length": 485,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Xenstore_ring.Ring.Back",
+      "description": "Manages binary data streams by allowing precise read and write operations at specific positions, with control over buffer advancement and reuse. Key data types include Cstruct.t for buffer representation and int32 for position tracking. Operations include reading without advancing the stream, advancing the stream to mark processed data, and writing to specific positions while reclaiming buffer space. This enables efficient handling of network data, such as parsing incoming bytes or constructing protocol messages with exact byte positioning.",
+      "description_length": 546,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ring.Rpc.Front",
+      "description": "Initializes a front-end connection to a shared ring, retrieves request/response slots as Cstruct.t, and manages slot indices, free request counts, and response acknowledgments. It interacts with ring metadata to track the number of slots and handle request and response synchronization. Used to coordinate communication between local and remote domains in a high-performance, low-level messaging setup.",
+      "description_length": 402,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ring.Rpc.Back",
+      "description": "Initializes a backend connected to a shared ring, retrieves request/response slots as Cstruct.t, and manages response production and request acknowledgment. It tracks the number of slots, advances response IDs, and checks for pending work. Used to coordinate communication between local and remote domains by processing and notifying of new requests or responses.",
+      "description_length": 363,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ring.Pipe.Reader",
+      "description": "Provides operations to manage and retrieve data from a stream of Cstruct.t buffers, using position markers to track read progress. It allows reading data at the current position without advancing the stream and explicitly advances the position to mark processed data. Used in network protocols to handle incoming data fragments efficiently.",
+      "description_length": 340,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ring.Pipe.Writer",
+      "description": "Writes data to a stream at a specified position using Cstruct buffers, allowing multiple writes to the same location before advancing the stream. Operates on stream values represented as Cstruct.t and positions encoded as int32. Used to manage data output in network protocols where buffer recycling and precise positioning are critical.",
+      "description_length": 337,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ring.Front.Reader",
+      "description": "Provides operations to advance a stream to a specific position and read data from the current position without modifying it. Works with stream as a Cstruct.t and position as an int32. Used to manage data processing pipelines where buffer recycling is critical, such as in network packet handling or file parsing.",
+      "description_length": 312,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ring.Front.Writer",
+      "description": "Writes data to a specific position in a stream, returning buffer space for writing. Operates on streams represented as Cstruct.t and positions as int32 values. Used to manage data output in network protocols where precise control over buffer placement is required.",
+      "description_length": 264,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ring.Back.Reader",
+      "description": "Provides operations to advance a stream to a specific position and to read data from the current position without modifying it. Works with stream as a Cstruct.t and position as an int32. Used to manage data processing pipelines where buffer recycling is critical, such as in network packet handling or file parsing.",
+      "description_length": 315,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ring.Back.Writer",
+      "description": "Writes data to a stream at a specified position using Cstruct buffers, allowing multiple writes to the same location before advancing the stream. Operates on stream as Cstruct.t and position as int32 to manage data output. Used to efficiently manage buffer recycling and sequential data writing in network or file I/O contexts.",
+      "description_length": 327,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Console_ring.Ring",
+      "description": "manages a stream of Cstruct.t buffers with precise position control, allowing reading and writing at specific offsets without advancing the stream. It supports operations like reading at a given position, writing to a specified location, and advancing the pointer, using Cstruct.t for data storage and int32 for tracking positions. This enables efficient manipulation of sequential data, such as parsing protocol headers or constructing messages by overwriting buffer regions. Examples include processing TCP data in chunks or building messages with multiple fields written to the same buffer location.",
+      "description_length": 602,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Xenstore_ring.Ring",
+      "description": "Provides low-level control over binary data streams using Cstruct.t buffers and int32 positions, enabling precise read and write operations at arbitrary offsets. Supports stream advancement, buffer reuse, and in-place modifications, making it suitable for network protocol manipulation. Operations include reading without advancing the stream, reserving space for writes, and inserting data without reallocation. Examples include parsing structured data from a stream and constructing protocol messages with exact byte positioning.",
+      "description_length": 531,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ring.Rpc",
+      "description": "Manages bidirectional communication through shared memory rings, handling request and response slots as Cstruct.t, with synchronized index tracking and acknowledgment mechanisms. Tracks slot counts, advances response IDs, and ensures proper coordination between local and remote domains. Supports high-performance messaging by managing slot allocation, request processing, and response delivery. Examples include sending structured data across domains, handling asynchronous notifications, and maintaining consistent state across distributed components.",
+      "description_length": 553,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ring.Reverse",
+      "description": "Provides access to and modification of ring buffer metadata within a Cstruct.t, including consumer and producer indices for both input and output rings. Operates on 32-bit integers to track buffer positions and returns Cstruct.t instances representing the buffer contents. Used to manage data flow between a guest and host in a virtualized environment, ensuring proper synchronization of data production and consumption.",
+      "description_length": 420,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ring.Pipe",
+      "description": "Provides access to and manipulation of ring buffers within a Cstruct.t, exposing consumer and producer indices for both input and output rings. Works with int32 values to track buffer positions and Cstruct.t to represent the actual buffer data. Used to manage data flow between a guest and host in a virtualized environment, ensuring synchronized read and write operations.",
+      "description_length": 373,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ring.Front",
+      "description": "Manages stream operations for both reading and writing, allowing precise control over data positions within a Cstruct.t buffer. Supports advancing to a position and reading without modification, as well as writing to a position and reclaiming buffer space. Enables efficient data processing in scenarios like packet handling by maintaining buffer integrity and reuse. For example, it can read a specific field from a network packet or overwrite a header while preserving the rest of the data.",
+      "description_length": 492,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ring.Back",
+      "description": "Manages stream data through position-based read and write operations using Cstruct buffers. Supports advancing a stream to a specific position and reading data without modification, while also enabling writes to arbitrary positions before moving forward. This allows precise control over buffer recycling in data processing pipelines, such as inserting headers in network packets or updating file records. Operations are performed using stream as a Cstruct.t and position as an int32.",
+      "description_length": 484,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ring.Reader",
+      "description": "Provides functions to manage and retrieve data from a stream of Cstruct.t buffers, using position markers to track read progress. Advance updates the stream's position to indicate processed data, while read retrieves the current buffer without modifying the position. Used in network protocols to handle incoming data fragments efficiently.",
+      "description_length": 340,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ring.Writer",
+      "description": "Writes to a stream at a specified position using buffer data, allowing multiple writes to the same location before advancing. Operates on streams represented as Cstruct.t and positions as int32 values. Used to manage data output in network protocols where buffer recycling and precise positioning are critical.",
+      "description_length": 310,
+      "index": 28,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "shared-memory-ring",
+      "description": "Provides functions for initializing, writing to, and reading from shared memory rings compliant with the Xen ABI. Operates on byte arrays and ring buffer structures with fixed size and metadata. Enables efficient inter-process communication where one process generates data and another processes it in real time.",
+      "description_length": 312,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Console_ring",
+      "description": "manages a stream of Cstruct.t buffers with precise position control, enabling reading and writing at specific offsets without advancing the overall pointer. It supports operations like reading at a given position, writing to a specified location, and advancing the pointer, using int32 to track positions. This allows efficient manipulation of sequential data, such as parsing protocol headers or constructing messages by overwriting buffer regions. For example, it can process TCP data in chunks or build messages with multiple fields written to the same buffer location.",
+      "description_length": 572,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xenstore_ring",
+      "description": "manages binary data streams with fine-grained control over positioning and buffer manipulation, using Cstruct.t and int32 to read, write, and modify data at specific offsets. It supports operations like peeking, reserving, and inserting data without reallocating buffers, enabling efficient protocol handling. Users can parse complex data structures from raw streams or build messages with precise byte-level control. Examples include extracting fields from network packets and constructing protocol headers with exact layout.",
+      "description_length": 526,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ring",
+      "description": "manages data streams using position markers, enabling precise control over reading and writing operations. It supports advancing the stream position after processing data and reading the current buffer without altering the position, along with writing data to specific positions in the stream. Key data types include Cstruct.t for buffers and int32 for positions, with operations like advance, read, and write. This allows efficient handling of fragmented network data, such as reconstructing messages from multiple incoming buffers or overwriting specific sections of a transmitted stream.",
+      "description_length": 590,
+      "index": 32,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 33,
+    "meaningful_modules": 33,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 654,
+    "min_description_length": 264,
+    "avg_description_length": 405.27272727272725,
+    "embedding_file_size_mb": 0.12038803100585938
+  }
+}

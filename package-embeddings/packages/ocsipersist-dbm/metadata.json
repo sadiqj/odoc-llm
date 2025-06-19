@@ -1,0 +1,126 @@
+{
+  "package": "ocsipersist-dbm",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 15,
+  "creation_timestamp": "2025-06-18T16:33:41.196011",
+  "modules": [
+    {
+      "module_path": "Ocsipersist.Functorial.Column.String",
+      "description": "Provides functions to encode and decode values to and from string representations, with a specific column type identifier. Operates on string data and custom types serialized as strings. Used to convert between internal representations and external string formats in data processing pipelines.",
+      "description_length": 293,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocsipersist.Functorial.Column.Float",
+      "description": "Provides functions to convert between float values and their string representations, with a specific column type identifier. Operates on the float data type for numerical data handling. Used to serialize and deserialize floating-point numbers in data processing workflows.",
+      "description_length": 272,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocsipersist.Functorial.Column.Marshal",
+      "description": "Provides functions to serialize and deserialize values of type t using OCaml's built-in binary format. Works with arbitrary OCaml data structures, including lists, variants, and records. Used to save and load complex data structures from files or over networks.",
+      "description_length": 261,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocsipersist.Functorial.Table.Variable",
+      "description": "Provides functions to create variables with immediate, lazy, or Lwt-based default values, and operations to retrieve and update their contents asynchronously. Works with a custom type `t` representing variable state. Used to manage dynamic configuration values or mutable state in concurrent applications.",
+      "description_length": 305,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocsipersist.Functorial.Table",
+      "description": "Provides operations to create and manipulate tables with string keys and arbitrary values. Works with associative structures where each entry maps a unique string to a value. Used to store configuration settings and lookup data during runtime.",
+      "description_length": 243,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocsipersist.Functorial.Column",
+      "description": "Encodes and decodes values between string representations and internal formats, supporting custom types and floats with specific column identifiers. Serializes and deserializes arbitrary OCaml data structures using binary encoding. Converts float values to and from strings for numerical data processing. Can transform custom types into strings, convert floats for storage, and persist complex data structures to files.",
+      "description_length": 419,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocsipersist.Aux",
+      "description": "Provides a wrapper for system exit with an integer status code. Operates on integer exit codes and terminates the program. Used to cleanly exit with specific status values in command-line applications.",
+      "description_length": 201,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ocsipersist.Db",
+      "description": "Establishes database connections and manages key-value operations over a network, including querying, inserting, updating, and iterating through keys. Works with Lwt-based asynchronous file descriptors, strings, and query-answer pairs. Used for real-time data synchronization and session management in distributed systems.",
+      "description_length": 322,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocsipersist.Store",
+      "description": "Provides functions to open a store, create persistent lazy or immediate values, and retrieve or set values associated with a store and key. Works with store identifiers (strings) and key-value pairs stored as tuples. Used to manage cached or persisted data with lazy initialization and thread-safe access.",
+      "description_length": 305,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocsipersist.Functorial",
+      "description": "Provides functions to serialize and deserialize values of type `t` using a specific string format, with `column_type` defining the associated data schema. Operates on the abstract type `t` and relies on custom encoding and decoding logic. Used to transform internal representations into a format suitable for storage or transmission.",
+      "description_length": 333,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocsipersist.Polymorphic",
+      "description": "Provides asynchronous operations for managing key-value stores with string keys and polymorphic values, including retrieval, insertion, modification, and iteration. Works with a table type that encapsulates persistent storage structures, supporting both step-wise and block-wise traversal. Used to handle dynamic data in concurrent applications, such as session management or configuration storage.",
+      "description_length": 398,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ocsipersist.Ref",
+      "description": "Provides atomic reference operations for storing and retrieving values with persistence support. Works with lazy-loaded store instances and mutable reference types encapsulating values. Enables concurrent access to shared state in asynchronous applications, such as maintaining session data or configuration settings.",
+      "description_length": 317,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "ocsipersist-dbm",
+      "description": "Provides functions to interact with a key-value store using the DBM backend, including reading, writing, and deleting entries. Operates on strings and byte sequences as keys and values. Used to persist session data or application state in a distributed environment.",
+      "description_length": 265,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocsipersist",
+      "description": "manages persistent key-value storage with support for asynchronous operations, serialization, and atomic references. It includes types for store identifiers, key-value pairs, and serialized data, along with functions for opening stores, inserting, retrieving, and updating values, as well as serializing and deserializing data. It enables real-time data synchronization, session management, and thread-safe access to shared state in distributed and concurrent applications. For example, it can be used to store user sessions with lazy initialization or to manage configuration settings across multiple nodes.",
+      "description_length": 608,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ocsipersist_settings",
+      "description": "Provides functions to configure storage backend, delay loading behavior, Ocsidbm path, and error log location. Operates on strings and boolean values to adjust runtime settings. Used to customize database persistence and logging during application initialization.",
+      "description_length": 263,
+      "index": 14,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 16,
+    "meaningful_modules": 15,
+    "filtered_empty_modules": 1,
+    "retention_rate": 0.9375
+  },
+  "statistics": {
+    "max_description_length": 608,
+    "min_description_length": 201,
+    "avg_description_length": 320.3333333333333,
+    "embedding_file_size_mb": 0.054930686950683594
+  }
+}

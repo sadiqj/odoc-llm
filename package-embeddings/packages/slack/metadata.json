@@ -1,0 +1,140 @@
+{
+  "package": "slack",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 17,
+  "creation_timestamp": "2025-06-18T16:35:46.136026",
+  "modules": [
+    {
+      "module_path": "Slack_lib.Mrkdwn.Cmarkit_slack",
+      "description": "Generates Slack-compatible message formats from CommonMark content using a specialized renderer. It processes parsed markdown structures and converts them into JSON objects representing Slack message blocks. This is used to dynamically create interactive and formatted messages in Slack integrations.",
+      "description_length": 300,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Slack_lib.Utils.ApiHelpers",
+      "description": "Provides functions to interact with Slack's API for sending and updating messages, uploading files, retrieving conversation and user data, and managing user groups. Operates with request and response types from the Slack_t module, including message payloads, file uploads, and user information structures. Enables direct API calls for real-time messaging, user management, and conversation tracking within a Slack workspace.",
+      "description_length": 424,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Slack_lib.Atd_adapters.Slack_response_adapter",
+      "description": "Processes Slack API responses by detecting and handling error fields within JSON structures. Converts between standard JSON and ATD-compliant formats to ensure consistent parsing and validation. Used to reliably extract error messages from API responses when status codes are not available.",
+      "description_length": 290,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Slack_lib.Atd_adapters.Unfurl_adapter",
+      "description": "Converts JSON trees between a format compatible with ATD and a standard JSON representation. Operates on Yojson.Safe.t values, ensuring structural compatibility with ATD's type system. Used to prepare JSON data for serialization with ATD and to revert serialized data back to its original form.",
+      "description_length": 294,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Slack_lib.Api",
+      "description": "Provides functions to interact with Slack's API for sending and updating messages, uploading files, retrieving conversation and user data, and managing usergroups. Operates on request and response types defined in Slack_t, including message payloads, file uploads, and user information. Enables real-time communication and data retrieval in a Slack-integrated application.",
+      "description_length": 372,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Slack_lib.Api_local",
+      "description": "This module offers mock implementations for Slack API interactions, including message sending, file uploads, message updates, and data retrieval, operating on Slack-specific request/response types and cached file handling. It supports testing scenarios like authentication validation through functions such as `send_auth_test`, which simulates API responses for reliable test environments. The module is designed for scenarios requiring controlled Slack API behavior, such as verifying message workflows or user data retrieval without real network dependencies.",
+      "description_length": 561,
+      "index": 5,
+      "embedding_norm": 0.9999998807907104
+    },
+    {
+      "module_path": "Slack_lib.Api_remote",
+      "description": "This module executes Slack API operations such as sending messages, uploading files, managing usergroups, and retrieving conversation/user data through HTTP requests and authentication handling. It works with Slack-specific types like `Slack_t` and `Slack_j`, along with request/response structures, leveraging JSON parsing and form encoding for communication. Use cases include real-time message updates, file sharing, user list management, and verifying API authentication status.",
+      "description_length": 482,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Slack_lib.Atd_adapters",
+      "description": "Processes JSON data by converting between ATD-compatible and standard formats, enabling reliable parsing and error handling from API responses. Handles error detection within JSON structures, allowing extraction of messages even when status codes are absent. Operates on Yojson.Safe.t values, supporting bidirectional conversion for data serialization and deserialization. Can transform Slack API responses into structured error reports or prepare data for ATD-based serialization workflows.",
+      "description_length": 491,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Slack_lib.Colors",
+      "description": "Provides color names as string literals for direct use in rendering or styling. Works with basic string data to represent standard color names. Used to standardize color references in UI elements or graphical outputs.",
+      "description_length": 217,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Slack_lib.Common",
+      "description": "Provides functions for handling HTTP requests with customizable methods and bodies, parsing and signing strings with SHA-256, and reading local files with or without custom processing. Works with types like HTTP methods, file paths, and binary or form data. Used for making authenticated API calls, processing log files, and generating secure signatures.",
+      "description_length": 354,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Slack_lib.Context",
+      "description": "Provides functions to construct and retrieve Slack secrets from environment or file, and to build a context object containing user agent and secrets. Works with string-based secrets, user agent, and a context type encapsulating these. Used to initialize Slack-aware application contexts with configured authentication and access tokens.",
+      "description_length": 336,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Slack_lib.Mrkdwn",
+      "description": "Converts CommonMark content into Slack message blocks via a specialized renderer, producing structured JSON for integration. It handles markdown elements like headers, lists, and links, translating them into Slack-compatible formats. Operations include parsing, transforming, and serializing content for real-time messaging. Examples include generating dynamic alerts, formatted reports, or interactive bot responses in Slack.",
+      "description_length": 426,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Slack_lib.Slack_j",
+      "description": "The module provides serialization and deserialization functions for Slack API data types, including users, messages, files, events, and error responses, enabling structured interactions with Slack's API through JSON encoding/decoding. It supports operations like generating request payloads for message updates, file uploads, and usergroup management, as well as parsing responses for event notifications, authentication tests, and conversation replies. Key use cases involve handling complex message formatting, managing usergroup memberships, and processing real-time event callbacks.",
+      "description_length": 586,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Slack_lib.Slack_t",
+      "description": "The module provides functions for constructing Slack API requests and processing responses, working with data structures like messages, usergroups, files, and conversation details. It supports use cases such as posting formatted messages, managing user authentication, uploading files, and handling event payloads through typed request-response pairs. Specific operations include generating message attachments, encapsulating error responses, and modeling conversation management workflows.",
+      "description_length": 490,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Slack_lib.Utils",
+      "description": "Handles real-time interaction with Slack's API through request and response types, enabling message sending, file uploads, and user data retrieval. Supports updating messages, managing user groups, and accessing conversation history using structured data like message payloads and user information. Operations include direct API calls for dynamic workspace management and communication. Examples include posting notifications, uploading logs, and fetching user details for access control.",
+      "description_length": 488,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "slack",
+      "description": "Handles sending and receiving messages via Slack's Web API and Events API, including parsing event payloads and generating mrkdwn-formatted messages. Operates on strings, JSON data, and custom record types representing Slack events and message payloads. Used to build real-time notification systems and bot interactions that respond to user input or workspace events.",
+      "description_length": 367,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Slack_lib",
+      "description": "Provides functions for interacting with Slack's API, including message handling, file uploads, user data retrieval, and real-time communication, using types like `Slack_t` and `Slack_j` for structured data. Includes mock implementations for testing, JSON processing for reliable parsing, and HTTP utilities for authenticated requests. Supports converting CommonMark to Slack blocks, managing secrets, and serializing API responses. Enables tasks like sending formatted messages, verifying authentication, and processing event payloads with typed operations.",
+      "description_length": 557,
+      "index": 16,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 17,
+    "meaningful_modules": 17,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 586,
+    "min_description_length": 217,
+    "avg_description_length": 413.8235294117647,
+    "embedding_file_size_mb": 0.06219673156738281
+  }
+}

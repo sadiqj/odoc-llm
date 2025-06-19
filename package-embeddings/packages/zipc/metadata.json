@@ -1,0 +1,84 @@
+{
+  "package": "zipc",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 9,
+  "creation_timestamp": "2025-06-18T16:32:10.944827",
+  "modules": [
+    {
+      "module_path": "Zipc.Fpath",
+      "description": "Provides functions to manipulate and normalize file paths, including replacing backslashes with forward slashes, ensuring trailing slashes for directories, and sanitizing paths by removing relative segments and absolute references. Works with string-based file paths and integer-based file modes. Used to process and standardize file paths in cross-platform applications and to format file permissions for display.",
+      "description_length": 414,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zipc.Ptime",
+      "description": "Converts POSIX time values to UTC date and time tuples, and formats them according to RFC 3339. Handles time representations starting from 1980-01-01 00:00:00 UTC. Works with integer-based time values to enable precise timestamp manipulation and output.",
+      "description_length": 253,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zipc.File",
+      "description": "Creates and manipulates file data structures for ZIP archives, supporting stored and deflated compression formats. Operates on strings and provides access to metadata like compression type, start offset, compressed size, and CRC-32 checksum. Used to generate ZIP entries from binary data, validate decompression compatibility, and extract content with or without CRC checks.",
+      "description_length": 374,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Zipc.Member",
+      "description": "Creates and manages archive members with specific file paths, modes, and modification times. Works with Fpath.t for file paths, Ptime.t for timestamps, and custom kind types to represent file or directory entries. Used to generate structured archive entries for ZIP formats, ensuring path sanitization and proper metadata handling.",
+      "description_length": 331,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zipc_deflate.Crc_32",
+      "description": "Calculates and compares ZIP CRC-32 checksums from string data, using 32-bit unsigned integers. It supports validating a computed checksum against an expected value and pretty-printing checksums for display. The module processes substrings with specified start and length parameters, ensuring accurate checksum generation for partial data.",
+      "description_length": 338,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zipc_deflate.Adler_32",
+      "description": "Computes and compares Adler-32 checksums from string segments, supporting custom start and length parameters. Handles 32-bit unsigned integers as checksum representations. Validates data integrity by checking expected versus computed checksums and formats checksum values for output.",
+      "description_length": 283,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "zipc",
+      "description": "Provides functions to create, read, and manipulate in-memory ZIP archives, including adding and extracting files, and compressing data using the deflate algorithm. Works with byte sequences, file metadata, and archive structures stored in memory. Used to embed compressed resources in applications or process ZIP files without disk I/O.",
+      "description_length": 336,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zipc",
+      "description": "Manages ZIP archive creation and manipulation by combining path normalization, time conversion, and file metadata handling. Processes file paths with Fpath.t, timestamps with Ptime.t, and binary data with string operations, supporting compression types and checksum validation. Enables generation of structured archive entries with sanitized paths, precise timestamps, and metadata tracking. Examples include creating ZIP entries from binary data, validating decompression compatibility, and formatting timestamps for RFC 3339 compliance.",
+      "description_length": 538,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Zipc_deflate",
+      "description": "Calculates and verifies CRC-32 and Adler-32 checksums from string data, supporting partial segments via start and length parameters. Both modules handle 32-bit unsigned integers for checksum representation and provide validation against expected values. They enable data integrity checks by comparing computed and stored checksums, and format results for display. Examples include validating compressed data headers or ensuring payload consistency during decompression.",
+      "description_length": 469,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 9,
+    "meaningful_modules": 9,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 538,
+    "min_description_length": 253,
+    "avg_description_length": 370.6666666666667,
+    "embedding_file_size_mb": 0.03312969207763672
+  }
+}

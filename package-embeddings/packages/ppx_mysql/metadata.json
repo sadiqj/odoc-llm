@@ -1,0 +1,140 @@
+{
+  "package": "ppx_mysql",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 17,
+  "creation_timestamp": "2025-06-18T16:35:41.052212",
+  "modules": [
+    {
+      "module_path": "Ppx_mysql_runtime.Make_context.IO",
+      "description": "Handles asynchronous value sequencing and wrapping, enabling structured handling of I/O operations through monadic binding and lifting. Operates on a parameterized type representing deferred computations. Used to chain file reading, network requests, and user input processing in a composable manner.",
+      "description_length": 300,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_mysql_runtime.Make_context.IO_result",
+      "description": "Provides monadic operations for chaining I/O actions that may fail, including lifting values into the effectful result type and binding subsequent actions based on success or failure. Works with I/O-aware result types that encapsulate either a value or an error. Used to handle file reads, network requests, or other side-effecting operations with explicit error propagation.",
+      "description_length": 375,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_mysql_runtime.Make_context.Prepared",
+      "description": "Handles database statement creation, execution, and result fetching using prepared statements. Operates on database handles, statement objects, and result structures to manage SQL queries and data retrieval. Executes parameterized queries and retrieves rows from database results.",
+      "description_length": 280,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_mysql_runtime.Stdlib.Array",
+      "description": "The module provides array manipulation, transformation, and iteration operations, including element-wise processing, bulk transformations, and sequential operations on arrays of arbitrary types and float arrays. It supports tasks like concatenation, subarray extraction, and parallel processing, but requires careful synchronization to avoid data races in concurrent environments. Specific use cases include handling multi-dimensional arrays and ensuring atomicity in bulk operations through manual synchronization mechanisms.",
+      "description_length": 526,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_mysql_runtime.Stdlib.List",
+      "description": "This module offers comprehensive list manipulation through operations like transformation, filtering, folding, and sorting, alongside utilities for element access, reversal, and concatenation, working with lists of arbitrary elements and key-value pairs. It supports efficient data processing tasks such as deduplication, pairwise operations, and merging sorted sequences, while enabling customization via comparison functions and equality semantics for diverse application scenarios.",
+      "description_length": 484,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_mysql_runtime.Stdlib.Option",
+      "description": "Applies a function to the value inside an optional container, returning a new optional value. Extracts the underlying value from a non-None option, raising an exception if None. Operates on the 'a option type, representing values that may be absent. Used to safely transform results of potentially failing computations, such as parsing or lookup operations.",
+      "description_length": 357,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_mysql_runtime.Stdlib.Result",
+      "description": "Performs chaining of operations that may fail, applying a function to the success value of a result and returning a new result. Works with the `('a, 'e) t` type, representing computations that can succeed with a value of type 'a or fail with an error of type 'e. Used to handle error-prone computations like parsing input or reading from a file, maintaining error context through successive steps.",
+      "description_length": 397,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_mysql_runtime.Stdlib.String",
+      "description": "This module offers string manipulation, transformation, and binary decoding operations, including concatenation, substring extraction, case conversion, and integer decoding from binary data. It works with strings and bytes, supporting endianness-specific parsing of 8-bit, 16-bit, 32-bit, and 64-bit integers, as well as UTF-8/UTF-16 character handling. Use cases include network protocol parsing, binary file processing, and data serialization where precise control over byte representation and integer formatting is required.",
+      "description_length": 527,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_mysql_runtime.Make_context",
+      "description": "Manages asynchronous workflows and database interactions through deferred computation and SQL execution. Supports chaining I/O operations using monadic constructs and executes parameterized SQL queries with result handling. Enables file reading, network calls, and database queries to be composed and executed in sequence. Processes database results and manages statement lifecycles for efficient data retrieval.",
+      "description_length": 412,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_mysql_runtime.Stdlib",
+      "description": "provides array, list, option, result, and string operations for data transformation, error handling, and low-level manipulation. it supports array iteration, list processing, optional value extraction, error chaining, and string/binary decoding with type-specific functions. users can perform tasks like parsing binary data, handling nullable values, and processing structured lists with custom transformations. it enables safe and precise control over data flow in applications requiring robust error management and complex data structures.",
+      "description_length": 541,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_mysql.Query",
+      "description": "Parses a string into a structured query representation, handling syntax and semantic errors through specific error types. Processes parameter lists to eliminate duplicates, returning conflicts when necessary. Converts internal error representations into human-readable strings for debugging or user feedback.",
+      "description_length": 308,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_mysql_runtime.IO",
+      "description": "Handles asynchronous value sequencing and lifting, supporting monadic composition through bind and return operations. Works with wrapped values of type 'a t to manage side effects and control flow. Enables structured handling of I/O operations and event-driven computations.",
+      "description_length": 274,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_mysql_runtime.Prepared",
+      "description": "Initializes a database handle and executes SQL statements, handling results and errors with specific types. It supports fetching rows from query results and managing prepared statements with caching or no caching. Used for executing and retrieving data from a database in a controlled, error-aware manner.",
+      "description_length": 305,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_mysql_runtime.IO_result",
+      "description": "Provides monadic operations for chaining I/O actions that may fail, including lifting values into the effectful result type and binding subsequent actions based on successful outcomes. Works with a type representing I/O operations that return either a value or an error. Used to handle file reads, network requests, or other side-effecting computations with explicit error propagation.",
+      "description_length": 385,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "ppx_mysql",
+      "description": "Provides functions to map SQL tables to OCaml records, execute parameterized queries, and handle result sets. Works with MySQL connections, SQL queries, and OCaml record types that mirror database schemas. Enables direct insertion, selection, and updating of employee data using typed operations.",
+      "description_length": 296,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_mysql_runtime",
+      "description": "Manages asynchronous and error-aware database interactions through monadic composition, enabling structured I/O and control flow. It works with types like 'a t for wrapped values and result types for error handling, supporting operations such as binding, lifting, and error propagation. Executes SQL queries, fetches results, and manages prepared statements with explicit error handling. Examples include chaining database queries, handling failed I/O operations, and efficiently retrieving and processing query results.",
+      "description_length": 520,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_mysql",
+      "description": "Parses SQL strings into structured queries, managing syntax and semantic errors with custom error types and providing human-readable diagnostics. It processes parameter lists, detecting and reporting duplicates. The module supports query transformation and error handling, enabling robust SQL manipulation. It can validate input, generate error messages, and prepare queries for execution.",
+      "description_length": 389,
+      "index": 16,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 18,
+    "meaningful_modules": 17,
+    "filtered_empty_modules": 1,
+    "retention_rate": 0.9444444444444444
+  },
+  "statistics": {
+    "max_description_length": 541,
+    "min_description_length": 274,
+    "avg_description_length": 392.70588235294116,
+    "embedding_file_size_mb": 0.06222724914550781
+  }
+}

@@ -1,0 +1,406 @@
+{
+  "package": "menhirSdk",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 55,
+  "creation_timestamp": "2025-06-18T16:42:32.168917",
+  "modules": [
+    {
+      "module_path": "MenhirSdk.Cmly_read.Read.Range",
+      "description": "Provides methods to retrieve the starting and ending positions of a range, represented as a custom type `t`. Operates on `Lexing.position` values to track source code locations. Used to annotate parsed elements with their exact source range for error reporting and debugging.",
+      "description_length": 275,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.Read.Attribute",
+      "description": "Extracts a string label, checks for label presence, retrieves a payload string, and identifies the position range of a structured data element. Works with an opaque type representing attributed items. Used to process syntax nodes in a parser, extracting metadata for error reporting and code analysis.",
+      "description_length": 301,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.Read.Grammar",
+      "description": "Extracts the base name from a grammar string, retrieves lists of preludes, postludes, and parameters for customization. Processes entry points as tuples of nonterminals, productions, and LR(1) states for parsing. Manages a list of attributes for extended grammar definitions.",
+      "description_length": 275,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.Read.Terminal",
+      "description": "Provides operations to convert between integers and terminal values, compare terminals, and iterate or fold over them. Works with a custom type `t` representing terminal entities, including their names, kinds, and attributes. Used to process terminal symbols in parsing or lexical analysis, such as distinguishing between regular input, errors, or end-of-file markers.",
+      "description_length": 368,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.Read.Nonterminal",
+      "description": "Provides operations to convert between integers and nonterminal identifiers, compare, hash, and iterate over nonterminals. Works with a custom type `t` representing grammar nonterminals, including associated metadata like names, types, and production positions. Used to manage and analyze nonterminal properties during parser generation and syntax analysis.",
+      "description_length": 357,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.Read.Symbol",
+      "description": "Provides operations to retrieve a symbol's name (with optional mangled formatting), compute its hash, and compare or check equality between symbols. Works with an abstract type representing symbolic identifiers. Used in compiler or interpreter contexts to manage and uniquely identify variables, functions, or keywords.",
+      "description_length": 319,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.Read.Action",
+      "description": "Provides functions to extract an OCaml expression from a parsed action and retrieve associated keywords. Operates on a type `t` representing structured action data. Used to analyze and transform action components during parsing or code generation.",
+      "description_length": 247,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.Read.Production",
+      "description": "Provides operations to convert between integers and production objects, compare, hash, and iterate over productions. Works with production objects that encapsulate grammar rules, including nonterminals, symbols, ranges, and attributes. Used to process and analyze parsed grammar structures, such as extracting rule details or applying actions during parsing.",
+      "description_length": 358,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.Read.Lr0",
+      "description": "Provides operations to count, convert, hash, compare, and iterate over elements of a specific type `t` representing LR(0) states. Works with a custom type `t` and associated data like symbols and item lists. Used to process and analyze parsing states in compiler construction.",
+      "description_length": 276,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.Read.Lr1",
+      "description": "Provides operations to count, convert, hash, compare, and iterate over LR(1) states. Works with the `t` type, representing LR(1) states, and related structures like symbols, terminals, and productions. Used to analyze state transitions, retrieve reductions, and manage parsing tables in compiler construction.",
+      "description_length": 309,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.Read.Print",
+      "description": "Formats various grammar-related elements for terminal and nonterminal symbols, productions, and items, with options for mangling and annotation. Works with types such as `terminal`, `nonterminal`, `symbol`, `production`, `item`, and lists of items. Used to generate human-readable representations of parser state and grammar rules during analysis or debugging.",
+      "description_length": 360,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.FromString.Range",
+      "description": "Provides functions to extract the start and end positions from a range object, which encapsulates lexical positions. Works with the `Lexing.position` type to represent source code locations. Used to track and retrieve the exact boundaries of code segments during parsing or analysis.",
+      "description_length": 283,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.FromString.Attribute",
+      "description": "Extracts a string label, checks for label presence, retrieves a payload string, and returns a position range from a structured data element. Works with an opaque type representing attributed items. Used to process syntax nodes in a parser, extracting metadata for error reporting and code analysis.",
+      "description_length": 298,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.FromString.Grammar",
+      "description": "Extracts the base name of a grammar, retrieves lists of preludes and postludes, and identifies parameters, entry points with their associated LR(1) states, and attributes. Operates on strings, lists of strings, and tuples involving nonterminals and productions. Used to analyze and process grammar definitions for parsing and transformation tasks.",
+      "description_length": 347,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.FromString.Terminal",
+      "description": "Provides operations to convert between integers and terminal values, compare terminals, and iterate or fold over them. Works with a custom type `t` representing terminal entities, including their names, kinds, and attributes. Used to process terminal states in parsing or lexical analysis, such as checking for end-of-file or error conditions.",
+      "description_length": 343,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.FromString.Nonterminal",
+      "description": "Provides operations to convert, compare, and hash nonterminal symbols, along with iteration and folding over them. Works with a custom type representing grammar nonterminals, including associated metadata like names, types, and production rules. Used to analyze and manipulate grammar structures in parser generators, such as determining first sets and nullable properties.",
+      "description_length": 373,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.FromString.Symbol",
+      "description": "Provides operations to retrieve a symbol's name (with optional mangled formatting), compute its hash, and compare or check equality between symbols. Works with an opaque type representing symbolic identifiers. Used to uniquely identify and manipulate compiler-generated or user-defined symbols in code analysis tools.",
+      "description_length": 317,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.FromString.Action",
+      "description": "Provides functions to extract an OCaml expression from a structured representation and to retrieve a list of keywords associated with it. Works with a custom type `t` that encapsulates parsed action data. Used to analyze and transform action definitions during code generation.",
+      "description_length": 277,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.FromString.Production",
+      "description": "Provides operations to create, inspect, and manipulate production rules, including conversion to and from integers, hashing, comparison, and iteration. Works with a custom type representing grammar productions, containing nonterminals, symbols, ranges, and attributes. Used to process and analyze parsed grammar structures in compiler or parser implementations.",
+      "description_length": 361,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.FromString.Lr0",
+      "description": "Provides operations to count, convert, hash, compare, and iterate over elements of type `t`, which represents LR(0) states. Supports folding, tabulating, and retrieving associated items and incoming symbols. Used to manage and process state transitions in parser construction.",
+      "description_length": 276,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.FromString.Lr1",
+      "description": "Provides operations to count, convert, hash, compare, and iterate over LR(1) states. Works with the `t` type, representing LR(1) states, and related structures like symbols, terminals, and productions. Used to analyze state transitions, retrieve reductions, and manage parsing tables in compiler construction.",
+      "description_length": 309,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.FromString.Print",
+      "description": "Formats various grammar-related elements such as terminals, nonterminals, symbols, productions, and item sets to a formatter. Works with custom types like `terminal`, `nonterminal`, `symbol`, `production`, and `item`. Used to generate human-readable representations of parser state during analysis or debugging.",
+      "description_length": 311,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.Lift.Range",
+      "description": "Provides functions to extract the start and end positions from a range object, which encapsulates lexical positions. Works with the `Lexing.position` type to represent source code locations. Used to track and retrieve the boundaries of code segments during parsing or analysis.",
+      "description_length": 277,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.Lift.Attribute",
+      "description": "Extracts a string label, checks for label presence, retrieves a payload string, and identifies the position range of a structured data element. Works with an opaque type representing attributed nodes or tokens. Used to analyze syntax trees and track source locations during parsing.",
+      "description_length": 282,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.Lift.Grammar",
+      "description": "Extracts the base name of a grammar, retrieves lists of preludes and postludes, and identifies parameters, entry points with their LR(1) states, and associated attributes. Operates on strings, nonterminals, productions, and attribute objects. Used to analyze grammar structure for parsing and code generation tasks.",
+      "description_length": 315,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.Lift.Terminal",
+      "description": "Provides operations to convert between integers and terminal values, compare terminals, and iterate over or fold terminal data. Works with a custom type `t` representing terminal entities, along with associated metadata like names, types, and attributes. Used to process terminal states in a parser, extract terminal information, and manage terminal-specific behaviors.",
+      "description_length": 369,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.Lift.Nonterminal",
+      "description": "Provides operations to convert, compare, and hash nonterminal symbols, along with iteration and folding over them. Works with a custom type representing grammar nonterminals, including associated metadata like names, types, and production rules. Used to analyze and manipulate grammar structures in parser generators, such as determining nullable nonterminals or extracting first sets.",
+      "description_length": 385,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.Lift.Symbol",
+      "description": "Provides operations to retrieve a symbol's name (with optional mangled format), compute its hash, and compare or check equality between symbols. Works with an abstract type representing symbolic identifiers. Used to manage unique symbol representations in compiler internals or code analysis tools.",
+      "description_length": 298,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.Lift.Action",
+      "description": "Provides operations to extract an OCaml expression from a parsed action and retrieve associated keywords. Works with a custom type representing action data. Used to analyze syntax and identify reserved terms during parsing.",
+      "description_length": 223,
+      "index": 28,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.Lift.Production",
+      "description": "Provides operations to inspect and manipulate production rules, including counting, conversion to and from integers, hashing, equality checks, and comparison. Works with a custom type representing grammar productions, supporting access to nonterminals, symbols, attributes, and ranges. Used to process parsed grammar structures, extract rule details, and perform transformations during compiler or parser execution.",
+      "description_length": 415,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.Lift.Lr0",
+      "description": "Provides operations to count, convert, hash, compare, and iterate over elements of type `t`, which represents LR(0) states. Supports folding, tabulating, and retrieving associated items and incoming symbols. Used to process and analyze parsing states in compiler construction.",
+      "description_length": 276,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.Lift.Lr1",
+      "description": "Provides operations to count, convert, hash, compare, and iterate over elements of type `t`, along with folding and tabulating functions. Works with state representations in a parser, offering access to transitions, reductions, and default reductions for each state. Used to analyze and manipulate parser states during shift-reduce parsing.",
+      "description_length": 340,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.Lift.Print",
+      "description": "Formats various grammar-related elements such as terminals, nonterminals, symbols, productions, and item sets to a formatter. Works with custom types like `terminal`, `nonterminal`, `symbol`, `production`, and `item`. Used to generate human-readable representations of parsing structures during compiler or parser development.",
+      "description_length": 326,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Keyword.KeywordSet",
+      "description": "The module provides set operations like addition, removal, combination, and querying, along with iteration, filtering, and transformation functions, supporting both imperative and functional paradigms. It works with generic sets (`t`) containing elements of type `elt` or specifically `keyword` types, enabling sequence-based construction and ordered manipulations. Use cases include managing dynamic keyword collections, processing structured data through predicate-based selections, and efficiently combining or transforming set elements.",
+      "description_length": 540,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.Read",
+      "description": "Provides functions to read and process content from a file, including retrieving the file path as a string. Operates on file paths and raw text data. Used to load configuration data from a specified file or parse input for further processing.",
+      "description_length": 242,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.FromString",
+      "description": "Extracts the underlying string value from a custom type, enabling direct access to the raw data. It operates on a wrapped string representation, typically used to enforce type safety around string inputs. This function is essential when converting validated or parsed string data back to its original form for further processing or output.",
+      "description_length": 339,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read.Lift",
+      "description": "Provides parsing and transformation operations for language grammars, including rule extraction and structure validation. Works with Cmly_format.grammar data structures to process and analyze syntactic definitions. Used to generate abstract syntax trees from annotated grammar files.",
+      "description_length": 283,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_api.Range",
+      "description": "Provides methods to retrieve the start and end positions of a range, using Lexing.position records. Operates on an opaque type t that represents a range interval. Used to track source code locations in parser error messages and diagnostics.",
+      "description_length": 240,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_api.Attribute",
+      "description": "Extracts a string label, checks for label presence, retrieves a payload string, and identifies the position range of a structured data element. Works with an opaque type representing attributed items. Used to process syntax nodes in a parser, extracting metadata for error reporting and code analysis.",
+      "description_length": 301,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_api.Grammar",
+      "description": "Extracts the base name of a grammar, retrieves lists of preludes and postludes, and identifies parameters, entry points with their LR(1) states, and associated attributes. Operates on strings, nonterminals, productions, and attribute objects. Used to analyze grammar structure for parsing and code generation tasks.",
+      "description_length": 315,
+      "index": 39,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_api.Terminal",
+      "description": "Provides operations to convert between integers and terminal values, compare terminals, and iterate over or fold terminal data. Works with a `t` type representing terminal nodes, including their names, kinds, and attributes. Used to process terminal symbols in parsing or lexical analysis, such as identifying error conditions or extracting type information.",
+      "description_length": 358,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_api.Nonterminal",
+      "description": "Provides operations to convert between integers and nonterminal representations, compare, hash, and iterate over nonterminals. Works with custom types including ranges, terminals, and attribute lists. Used to manage grammar rules, track nullable nonterminals, and extract metadata during parsing.",
+      "description_length": 296,
+      "index": 41,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_api.Symbol",
+      "description": "Provides operations to retrieve a symbol's name (with optional mangled formatting), compute its hash, and compare or check equality between symbols. Works with an opaque type representing symbolic identifiers. Used to uniquely identify and manipulate compiler-generated or user-defined symbols in code analysis tools.",
+      "description_length": 317,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_api.Action",
+      "description": "Provides operations to extract an OCaml expression from a structured representation and to retrieve a list of keywords associated with the structure. Works with a custom type `t` that encapsulates parsed or processed data. Used to analyze and transform syntax elements during code generation or static analysis.",
+      "description_length": 311,
+      "index": 43,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_api.Production",
+      "description": "Provides operations to create, compare, and hash production objects, along with iteration and folding over production data. Works with production objects that encapsulate grammar rules, including nonterminals, symbols, ranges, and attributes. Used to process parsed grammar structures, extract rule components, and apply actions during parsing.",
+      "description_length": 344,
+      "index": 44,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_api.Lr0",
+      "description": "Provides operations to count, convert, hash, compare, and iterate over elements of type `t`, which represents LR(0) states. Supports folding, tabulating, and retrieving associated items and incoming symbols. Used to manage and process state transitions in parser construction.",
+      "description_length": 276,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_api.Lr1",
+      "description": "Provides operations to count, convert, hash, compare, and iterate over elements of type `t`, which represents LR(1) states. It includes methods to retrieve transitions, reductions, and default reductions associated with each state. Used to analyze and manipulate the structure of LR(1) automata during parser construction.",
+      "description_length": 322,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_api.Print",
+      "description": "Formats various grammar-related elements such as terminals, nonterminals, symbols, productions, and item sets to a formatter. Works with custom types like `terminal`, `nonterminal`, `symbol`, `production`, and `item`. Used to generate human-readable representations of parser state during analysis or debugging.",
+      "description_length": 311,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_api",
+      "description": "Provides operations to convert between integer indices and values of type t, including hashing, equality checks, and comparison. Works with a type t that represents elements in a one-to-one correspondence with integers from 0 to count-1. Used to iterate over a fixed set of values, fold over their representations, and generate mappings based on their integer positions.",
+      "description_length": 370,
+      "index": 48,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_format",
+      "description": "Provides functions to parse and manipulate grammar definitions, including operations to extract terminal and nonterminal identifiers, build production rules, and manage attribute lists. Works with complex data structures such as production definitions, state definitions, and symbol representations. Used to generate structured representations of parser rules for compiler front-end processing.",
+      "description_length": 394,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Cmly_read",
+      "description": "Reads and decodes .cmly files, extracting and processing grammar definitions, string values, and file paths. It handles raw text, validates syntactic structures, and converts parsed data back to native string formats. Functions include loading configuration, extracting grammar rules, and transforming annotated files into structured representations. Users can parse input, validate syntax, and retrieve original string values from typed wrappers.",
+      "description_length": 447,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Keyword",
+      "description": "manages collections of elements through set operations, offering addition, removal, and combination alongside iteration, filtering, and transformation. It supports generic sets (`t`) with elements of type `elt` or `keyword`, enabling ordered manipulations and sequence-based construction. Users can perform predicate-based selections, merge sets, and apply transformations to elements. Examples include dynamically updating keyword lists, filtering structured data, and generating new sets from existing ones.",
+      "description_length": 509,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "MenhirSdk.Version",
+      "description": "Provides a single function to retrieve a version string. Operates on no input and returns a static string literal. Used to embed build version information in applications.",
+      "description_length": 171,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "menhirSdk",
+      "description": "Provides parsing and error recovery operations for context-free grammars, including shift-reduce and handle analysis. Works with abstract syntax trees, token streams, and state machines. Used to generate efficient parsers from grammar definitions and handle syntax errors during compilation.",
+      "description_length": 291,
+      "index": 53,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "MenhirSdk",
+      "description": "manages integer-indexed values, grammar parsing, file decoding, set operations, and version retrieval. It handles type t with integer mappings, parses and manipulates grammar rules, decodes .cmly files into structured data, performs set-based transformations, and returns a static version string. Users can iterate over indexed elements, extract terminal symbols, validate file content, filter and merge sets, and access build version details. Examples include generating symbol tables, processing parser rules, extracting configuration data, and dynamically managing keyword sets.",
+      "description_length": 581,
+      "index": 54,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 55,
+    "meaningful_modules": 55,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 581,
+    "min_description_length": 171,
+    "avg_description_length": 327.3454545454546,
+    "embedding_file_size_mb": 0.20025348663330078
+  }
+}

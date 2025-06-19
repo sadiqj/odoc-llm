@@ -1,0 +1,133 @@
+{
+  "package": "capnp-rpc-mirage",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 16,
+  "creation_timestamp": "2025-06-18T16:34:11.605455",
+  "modules": [
+    {
+      "module_path": "Capnp_rpc_mirage.Make.Network.Dns.Transport",
+      "description": "Provides functions to create and manage DNS transport contexts, including setting nameservers, generating random data, and handling time. Operates with types like `context`, `io_addr`, `stack`, and `t` to facilitate network operations. Used for establishing DNS connections, sending and receiving packets, and managing I/O operations in a non-blocking manner.",
+      "description_length": 359,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc_mirage.Make.Network.Dns",
+      "description": "Manages DNS transport layers with context setup, nameserver configuration, and I/O handling. Uses types such as `context`, `io_addr`, `stack`, and `t` to control packet transmission and reception. Supports non-blocking operations, random data generation, and time management for efficient network interactions. Enables tasks like sending queries, receiving responses, and configuring network stacks dynamically.",
+      "description_length": 411,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc_mirage.Make.Network.Types",
+      "description": "Provides functions to generate, compare, and serialize unique identifiers for provisions, recipients, third-party capabilities, and join key parts. Operates on opaque type aliases representing distinct business entities. Used to ensure type-safe handling of entity references in authentication and access control workflows.",
+      "description_length": 323,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc_mirage.Make.Network.Address",
+      "description": "Extracts network addresses and service IDs from URIs and reconstructs them. Works with a type representing TCP addresses paired with authentication digests. Used to serialize and verify communication endpoints in distributed systems.",
+      "description_length": 233,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc_mirage.Make.Vat_config.Listen_address",
+      "description": "Represents network addresses and supports pretty-printing for debugging and logging. It handles IP addresses and port numbers, enabling configuration and display of listening endpoints. Used to parse and format addresses in server setup and network diagnostics.",
+      "description_length": 261,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc_mirage.Make.Network",
+      "description": "Handles DNS transport, identifier management, and URI-based address extraction with specialized types for context control, entity references, and TCP endpoint serialization. Supports non-blocking I/O, secure identifier generation, and URI parsing to enable efficient query handling, access control, and distributed communication. Operations include configuring network stacks, validating entity uniqueness, and reconstructing addresses from URIs. Examples include sending DNS queries, generating secure tokens, and verifying endpoint authenticity in distributed workflows.",
+      "description_length": 572,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc_mirage.Make.CapTP",
+      "description": "Provides functions to establish and manage CapTP connections over a network, including bootstrapping remote capabilities and gracefully disconnecting with a reason. Operates on endpoint objects and capability identifiers to enable remote object interaction. Used to initialize secure, capability-based communication sessions and handle termination with explicit error messages.",
+      "description_length": 377,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc_mirage.Make.Vat",
+      "description": "Creates and manages CapTP network actors, enabling connection setup, address configuration, and capability exchange. Operates with network endpoints, sturdy references, and URIs to facilitate inter-Vat communication. Used to establish secure connections, expose services via URIs, and import capabilities from remote Vats.",
+      "description_length": 322,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc_mirage.Make.Vat_config",
+      "description": "Encapsulates network address handling, including IP and port parsing, formatting, and pretty-printing for debugging. Provides types for representing endpoints and operations to configure and display network interfaces. Supports server setup by enabling address validation and logging of connection details. Examples include parsing a string like \"127.0.0.1:8080\" into a structured address and formatting it for log output.",
+      "description_length": 422,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc_mirage.Make.UDP",
+      "description": "Provides functions to manage UDP communication, including listening for packets on specific ports, handling incoming datagrams, and sending data with optional source addresses and TTL. Operates on IP addresses, ports, and Cstruct buffers, with error handling through a custom error type. Used to establish and manage UDP connections, route packets, and send data across networks.",
+      "description_length": 379,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc_mirage.Make.TCP",
+      "description": "This module provides functions for managing TCP connections, including establishing, reading, writing, and terminating sessions, along with error handling and shutdown operations. It works with network flows, IP addresses, ports, and a type `t` representing connection states. Use cases include reliable data transfer in networked applications, supporting buffered and nodelay write modes for performance tuning.",
+      "description_length": 412,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc_mirage.Make.IP",
+      "description": "Provides pretty-printers for errors, IP addresses, and prefixes. Handles IP layer operations such as demultiplexing incoming packets, sending data with configurable options, and calculating pseudoheaders for checksums. Works with IP addresses, prefixes, and callback functions to process network traffic.",
+      "description_length": 304,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc_mirage.Location",
+      "description": "Represents network locations with variants for TCP and Unix domain sockets, supporting pretty-printing and equality checks. Operates on strings for hostnames and integers for port numbers. Used to encode connection endpoints in networked applications.",
+      "description_length": 251,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc_mirage.Make",
+      "description": "Measures time intervals by returning a monotonically increasing nanosecond count and provides the clock's period in nanoseconds when available. Operates on integer64 values to track time with high precision. Useful for benchmarking code execution and measuring precise time deltas in performance-critical applications.",
+      "description_length": 318,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "capnp-rpc-mirage",
+      "description": "Processes and validates JSON input, extracts fields, and constructs structured data from raw byte sequences. Operates on byte arrays, strings, and associative lists to parse and transform configuration settings. Used to decode Docker daemon configuration files and extract runtime parameters.",
+      "description_length": 292,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc_mirage",
+      "description": "Encapsulates network endpoint configurations and time measurement capabilities for high-precision operations. Supports TCP and Unix domain socket addresses using string-based hostnames and integer ports, and tracks time with 64-bit integers for accurate interval calculations. Enables encoding of connection points and benchmarking of code performance. Can be used to establish network connections and measure execution durations with nanosecond-level accuracy.",
+      "description_length": 461,
+      "index": 15,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 16,
+    "meaningful_modules": 16,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 572,
+    "min_description_length": 233,
+    "avg_description_length": 356.0625,
+    "embedding_file_size_mb": 0.058498382568359375
+  }
+}

@@ -1,0 +1,1365 @@
+{
+  "package": "ppxlib",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 192,
+  "creation_timestamp": "2025-06-18T17:03:21.645211",
+  "modules": [
+    {
+      "module_path": "Ppxlib.Attribute.Floating.Context",
+      "description": "Provides access to parsed structure and signature items, class fields, and class type fields from OCaml abstract syntax trees. Works with OCaml's internal representation of code elements as defined in Astlib.Ast_502.Parsetree. Used to inspect or transform specific parts of OCaml modules during static analysis or code generation.",
+      "description_length": 330,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Ast_builder.Make.Located",
+      "description": "Extracts location information from wrapped values, constructs new wrapped values, and transforms contained data. Operates on type `'a Loc.t` which pairs values with source location metadata. Used to annotate parsed syntax tree nodes with their original source positions during compilation processes.",
+      "description_length": 299,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Ast_builder.Make.Latest",
+      "description": "Provides functions to construct and declare pattern matching constructs with updated semantics for new compiler features. Works with AST nodes, locations, and core types from the Astlib library. Used to create pattern constructors and variant type declarations that reflect recent language changes not available in standard functions.",
+      "description_length": 334,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Ast_builder.Default.Located",
+      "description": "Returns a location from a wrapped value, constructs new values with a given location, transforms values within a location-aware context, converts strings to fully qualified identifiers with locations, and creates location-aware strings. Works with location-aware wrappers around arbitrary data types. Used to track source positions during parsing or transformation of abstract syntax trees.",
+      "description_length": 390,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Ast_builder.Default.Latest",
+      "description": "Provides functions to create updated AST nodes for pattern matching, value bindings, and constructor declarations, using specific types from the Astlib library. Works with location-aware identifiers, patterns, expressions, and type annotations. Used to generate ASTs that incorporate new compiler features not available in standard constructors.",
+      "description_length": 345,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Context_free.Rule.Constant_kind",
+      "description": "Provides functions to create and inspect constant values, including equality checks and conversion to string. Works with the abstract type `t` representing constant expressions. Used to enforce type consistency in code generation and static analysis.",
+      "description_length": 250,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Deriving.Generator.V2",
+      "description": "Provides functions to create generators that process input ASTs and produce output ASTs, with access to an expansion context. Works with types like 'input_ast', 'output_ast', and dependencies represented as a list of t. Used to define code generation rules that depend on context and external dependencies.",
+      "description_length": 306,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Driver.Instrument.V2",
+      "description": "Provides a transformation function that modifies OCaml AST structures using an expansion context, enabling context-aware code rewriting. Operates on parsetree structures and position information to guide transformations. Used to instrument or modify code during macro expansion in ppx rewriters.",
+      "description_length": 295,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Select_ast.Ast.Parsetree",
+      "description": "Processes and analyzes abstract syntax trees from OCaml source code, handling constructs like function definitions, type declarations, and module structures. Operates on complex data types such as expressions, patterns, and type extensions to represent parsed program elements. Used for tasks like code transformation, type checking, and generating intermediate representations for compilers or linters.",
+      "description_length": 403,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Select_ast.Ast.Config",
+      "description": "Provides string constants representing magic numbers used to identify AST implementation and interface files. Works with string data types to ensure consistency in file format recognition. Used during parsing to validate and differentiate between AST file types.",
+      "description_length": 262,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Convert.Ast.Parsetree",
+      "description": "Handles parsing and representation of OCaml abstract syntax trees, including expressions, types, patterns, and module structures. Operates on complex data types such as core_type, expression, and module_expr to model program components. Used to analyze and transform code during compilation or static analysis tasks.",
+      "description_length": 316,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_ast.Convert.Ast.Config",
+      "description": "Provides functions to retrieve magic numbers used for identifying AST (Abstract Syntax Tree) implementation and interface files. Works with string data types to store and return version-specific identifiers. Used to validate and distinguish between different AST formats during parsing or serialization processes.",
+      "description_length": 313,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Pp_ast.Config",
+      "description": "Config provides functions to customize how AST nodes are printed, controlling the display of attributes, locations, and their formatting. It works with a configuration type that tracks settings for attribute visibility, location visibility, and location representation style. This is used to generate human-readable output for ASTs in tools that require detailed or concise formatting, such as debuggers or code analyzers.",
+      "description_length": 422,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Pp_ast.Make",
+      "description": "Provides access to a configuration record through a dedicated accessor function. Operates with a custom Config.t type that encapsulates build-time parameters. Used to retrieve and reference build settings during the initialization of other components.",
+      "description_length": 251,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Pp_ast.Default",
+      "description": "Generates human-readable representations of OCaml AST elements like expressions, patterns, and type definitions. Operates on specific OCaml 5.02 AST node types such as structure_item, signature_item, and core_type. Used to debug or analyze parsed code by converting abstract syntax trees into structured text output.",
+      "description_length": 316,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Location.Error",
+      "description": "Provides functions to construct, modify, and inspect error objects with locations, including creating errors from exceptions, updating their locations, and converting between errors and extension points. Works with location data and error payloads, primarily used for compiler error handling and reporting. Enables raising errors with specific positions and converting errors for use in AST extensions.",
+      "description_length": 402,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Ast_pattern.Packed",
+      "description": "Provides functions to construct and parse data structures using a typed, extensible format. Operates on a polymorphic type ('a, 'b) t, where 'a represents input data and 'b represents parsed output. Used to validate and convert input values with location tracking during parsing.",
+      "description_length": 279,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Attribute.Context",
+      "description": "This module provides functions for constructing and manipulating abstract syntax tree (AST) nodes representing OCaml language elements, such as type declarations, expressions, and module structures. It works with specific AST types from the `Astlib.Ast_502.Parsetree` module, including module expressions, value bindings, and structure items, enabling structured code analysis or transformation. Use cases include parsing OCaml source code, inspecting syntactic components, or generating intermediate representations for tools like linters or code generators.",
+      "description_length": 559,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Attribute.Floating",
+      "description": "Offers direct access to OCaml's internal code structures, including module signatures, class fields, and type definitions through the Parsetree module. It enables manipulation and analysis of parsed OCaml code by exposing detailed representations of its elements. Operations include traversing and modifying class definitions, extracting type information, and inspecting module interfaces. For example, it can be used to generate boilerplate code, enforce coding standards, or analyze class hierarchies.",
+      "description_length": 503,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Expansion_context.Base",
+      "description": "Returns the code path associated with a context, including file paths influenced by AST locations. Retrieves the original input filename, unaffected by line directives, and identifies the tool invoking the preprocessor, such as \"ocamlc\" or \"ocaml\". Works with the `t` type to track context-specific metadata during compilation and preprocessing.",
+      "description_length": 345,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Expansion_context.Extension",
+      "description": "Returns the location of an extension point, the code path based on the input AST, and the input filename, along with the tool name used to invoke the preprocessor. Operates on a context type that tracks location, code path, and input metadata. Used to determine file origins and tool-specific behavior during preprocessing.",
+      "description_length": 323,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Expansion_context.Deriver",
+      "description": "Returns the location of the item being derived, the code path based on the input AST, and the input filename for context-aware processing. Tracks the tool name invoking the preprocessor and allows wrapping functions with location and path parameters. Used to determine inlining behavior during code generation.",
+      "description_length": 310,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Ast_builder.Default",
+      "description": "Manages location-aware data structures and AST construction by embedding source positions into values. It supports creating, transforming, and converting values with locations, and generates AST nodes with precise contextual information. Operations include wrapping data with locations, updating AST elements, and handling qualified identifiers. Examples include tracking source ranges during parsing and building ASTs with custom pattern matching constructs.",
+      "description_length": 459,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Ast_builder.Make",
+      "description": "Provides access to location information through a dedicated record type. Works with the `Location.t` data structure to track source positions. Used to retrieve and inspect file and line details during parsing or error reporting.",
+      "description_length": 228,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Context_free.Rule",
+      "description": "manages constant values through an abstract type `t`, offering creation, inspection, equality checks, and string conversion. It ensures type consistency in code generation and static analysis by enforcing strict handling of constants. Users can compare constants, convert them to strings, and verify their structure. This supports tasks like validating expressions or generating type-safe code.",
+      "description_length": 394,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Deriving.Args",
+      "description": "Provides a framework for defining and managing generator arguments through structured configuration. No data types or operations are available due to the absence of functionality in the child module. No practical use cases can be implemented with this module.",
+      "description_length": 259,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Deriving.Generator",
+      "description": "Generates output ASTs from input ASTs using context-aware rules, incorporating dependencies as lists of t. Processes structured data through functions that transform input_ast into output_ast while respecting external constraints. Supports rule-based code generation where outcomes vary based on contextual information and prior computations. Examples include translating language constructs, inserting boilerplate code, or optimizing AST structures dynamically.",
+      "description_length": 462,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Driver.Lint_error",
+      "description": "Constructs an error message with a location and descriptive string. Works with Location.t and string to represent linter findings. Used to generate structured error outputs during static analysis.",
+      "description_length": 196,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Driver.Cookies",
+      "description": "Provides functions to retrieve and set cookies in a structured format, using patterns to parse values from AST expressions. Works with a custom type `t` representing cookie state and AST expressions for value manipulation. Enables dynamic configuration during code rewriting by allowing handlers to read or set cookies based on specific patterns.",
+      "description_length": 346,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Driver.Instrument",
+      "description": "Transforms OCaml parsetrees using context-sensitive rules, allowing precise code modifications during macro expansion. Processes position data to ensure accurate insertion or alteration of code elements. Supports tasks like adding logging statements, injecting type checks, or modifying expressions based on their syntactic environment. Enables fine-grained control over code structure through context-aware rewriting.",
+      "description_length": 418,
+      "index": 29,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Driver.V2",
+      "description": "Registers callbacks to transform OCaml AST nodes during preprocessing, with access to expansion context and linting capabilities. Operates on structure and signature items from OCaml's parsetree, supporting custom rules and extensions. Used to modify code during ppx rewriters, inject instrumentation, or enforce specific syntax transformations.",
+      "description_length": 345,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Driver.Create_file_property",
+      "description": "Provides functions to generate and manipulate file metadata, including retrieving a file's name as a string. Works with file paths and properties stored in custom record types. Used to extract and validate file identifiers during system file operations.",
+      "description_length": 253,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Expansion_helpers.Quoter",
+      "description": "Generates hygienic code by transforming expressions into unique identifiers that avoid name collisions. It operates on OCaml AST expressions, ensuring quoted values remain isolated from surrounding code. Used to safely embed expressions in generated code without unintended variable captures.",
+      "description_length": 292,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Longident.Map",
+      "description": "This module offers operations for constructing, modifying, and querying maps with ordered keys, supporting key-based manipulations like adding to lists, updating values, and filtering. It includes functions for ordered traversal (e.g., `iter`, `fold`), transformation (`map`, `filter_map`), and sequence-based processing (e.g., building maps from sequences). Use cases include managing sorted data structures, incremental data aggregation, and efficient key-based lookups in applications like configuration systems or indexed databases.",
+      "description_length": 536,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Longident.Set",
+      "description": "The module provides operations for manipulating ordered sets, including adding, removing, combining elements, querying properties like size and membership, and performing searches, transformations, and splits. It supports constructing sets from sequences, iterating in order or reverse, and handling predicates, making it suitable for dynamic data management and structured data processing.",
+      "description_length": 390,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Extension.Context",
+      "description": "Provides access to and manipulation of OCaml AST nodes such as expressions, types, and module structures. Works with specific OCaml AST types from Astlib.Ast_502.Parsetree and handles attributes and extensions. Used to compare AST fragments, extract extensions, and combine attributes during parsing or transformation.",
+      "description_length": 318,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Extension.For_context",
+      "description": "Provides functions to convert AST nodes into structured data using context-aware transformations. Operates on lists of type 'a t and AST payloads with location information. Used to process and validate syntax tree elements during code expansion, handling both single and multiple results with error tracking.",
+      "description_length": 308,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Extension.Expert",
+      "description": "Provides functions to declare and convert extensions that operate on OCaml AST payloads without producing a context value. Works with AST patterns, context objects, and location-aware data structures. Used to process and validate syntax extensions during parsing, such as checking annotations or custom syntax rules.",
+      "description_length": 316,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Extension.V2",
+      "description": "Handles pattern matching on OCaml AST nodes with context, supporting both standalone and inline declarations. Operates on AST payloads, locations, and context lists to extract and process specific code structures. Used to define custom analysis rules for parsing and transforming OCaml source code.",
+      "description_length": 298,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Extension.V3",
+      "description": "Provides functions to define custom syntax extensions that match specific AST patterns, with options to handle inline expansions and path arguments. Operates on OCaml AST payloads, context objects, and location-aware identifiers. Used to create domain-specific language constructs, such as custom binding forms or macro-like transformations in code.",
+      "description_length": 349,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Ast_builder.Located",
+      "description": "Extracts location information from wrapped values, constructs new wrapped values, and transforms contained data. Operates on type `'a Loc.t` which pairs values with source location metadata. Used to annotate parsed identifiers with their original source positions during compiler or parser transformations.",
+      "description_length": 306,
+      "index": 40,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Ast_builder.Latest",
+      "description": "Provides functions to create and manipulate pattern constructors and constructor declarations with support for updated compiler features. Works with location-annotated strings, core types, and pattern structures. Used to generate patterns and declarations that reflect new language constructs not available in standard functions.",
+      "description_length": 329,
+      "index": 41,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_ast.Select_ast.Ast",
+      "description": "Processes and analyzes OCaml abstract syntax trees, handling expressions, patterns, and type declarations to support code transformation and type checking. Incorporates string constants to identify AST file formats during parsing and validation. Enables tasks such as generating intermediate representations and distinguishing between implementation and interface files. Supports operations on complex data structures and string-based file identification.",
+      "description_length": 455,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Select_ast.Type",
+      "description": "Provides functions to convert between JavaScript and OCaml types, including parsing and serialization. Works with the polymorphic variant type ('js, 'ocaml) t, which represents values that can be either JavaScript or OCaml specific. Used to bridge interoperability between OCaml code and JavaScript environments, such as in web assembly or node.js integrations.",
+      "description_length": 361,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Select_ast.Of_ocaml",
+      "description": "Copies OCaml AST nodes from the Ocaml.Ast.Parsetree module to the Astlib.Ast_502.Parsetree module, preserving their structure and content. It handles a wide range of language elements including expressions, patterns, type declarations, and module definitions. This enables seamless conversion between different AST representations for analysis, transformation, or code generation tasks.",
+      "description_length": 386,
+      "index": 44,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_ast.Select_ast.To_ocaml",
+      "description": "Converts OCaml 5.02 abstract syntax tree nodes to their corresponding OCaml 4.14 equivalents, preserving structural integrity. Operates on parsetree elements such as expressions, patterns, type declarations, and module structures. Used to migrate or interoperate between codebases using different OCaml versions.",
+      "description_length": 312,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Selected_ast.Type",
+      "description": "Handles conversion between JavaScript and OCaml values, supporting nested structures like lists, arrays, objects, and variants. Provides functions to serialize OCaml values to JavaScript-compatible formats and deserialize JavaScript data into OCaml types. Works with polymorphic variants, records, and recursive data structures for interoperability.",
+      "description_length": 349,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Selected_ast.Of_ocaml",
+      "description": "Translates OCaml AST nodes from version 501 to 502, preserving syntax and structure. Operates on parsetree elements such as expressions, patterns, type declarations, and module definitions. Enables migration of code representations between different OCaml compiler versions.",
+      "description_length": 274,
+      "index": 47,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_ast.Selected_ast.To_ocaml",
+      "description": "Converts OCaml AST nodes from version 502 to 501, preserving syntax and structure. Operates on parsetree elements such as expressions, patterns, type declarations, and module definitions. Used to migrate code between OCaml versions while maintaining semantic equivalence.",
+      "description_length": 271,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Parse.Of_ocaml",
+      "description": "Translates OCaml AST nodes between versions 501 and 502, preserving syntax and structure. Operates on parsetree elements such as expressions, patterns, type declarations, and module definitions. Enables migration of code representations between compiler versions without manual rewriting.",
+      "description_length": 288,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Const",
+      "description": "Constructs OCaml AST constants from primitive values, including characters, strings, integers, and floating-point numbers. Accepts optional suffixes for integer types and handles location metadata for strings. Generates parsetree.constant nodes suitable for AST manipulation or code generation tasks.",
+      "description_length": 300,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Attr",
+      "description": "Creates an attribute with a specified location, identifier, and payload, used to annotate AST nodes in OCaml parsers. Operates on location-aware strings and AST payload structures. Enables injection of metadata into parsed code for tools like type checkers or code generators.",
+      "description_length": 276,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Typ",
+      "description": "Constructs and manipulates type expressions for OCaml abstract syntax trees, including type variables, arrows, tuples, constructors, objects, and polymorphic types. Operates on core_type, row_field, and related AST structures, supporting attributes and location metadata. Used to generate and transform type representations in compiler or code analysis tools.",
+      "description_length": 359,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Pat",
+      "description": "Constructs and manipulates pattern expressions for OCaml abstract syntax trees, including variables, constants, tuples, records, and variants. Operates on types like `Astlib.Ast_502.Parsetree.pattern`, `constant`, and `attribute` to build or modify pattern structures. Used to generate pattern matching constructs in code transformation tools or compilers.",
+      "description_length": 356,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Exp",
+      "description": "This module provides functions for constructing and manipulating OCaml abstract syntax tree (AST) nodes, focusing on expressions, patterns, and bindings with support for annotations. It works with types like `expression`, `pattern`, `core_type`, and `module_expr` to build complex language constructs such as conditionals, loops, object-oriented features, and module operations. Use cases include code generation, transformation, and analysis tools requiring precise control over OCaml's internal representation.",
+      "description_length": 512,
+      "index": 54,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Val",
+      "description": "Creates value descriptions with location, attributes, and primitive hints, using a name and core type. Operates on location data, attribute lists, and core type structures. Used to construct OCaml value declarations in abstract syntax trees during parsing or transformation.",
+      "description_length": 274,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Type",
+      "description": "Constructs type declarations, constructor declarations, and label declarations for OCaml abstract syntax trees, incorporating location information, attributes, and type parameters. Operates on core type representations, constructor arguments, and mutable fields within the AST structure. Used to generate precise type metadata for compiler or code analysis tools.",
+      "description_length": 363,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Te",
+      "description": "Constructs type extensions and their components, including constructors with location and attribute metadata, exception definitions, and rebinding entries. Operates on OCaml AST types such as extension constructors, core types, and location-aware identifiers. Used to generate type extension declarations for compiler plugins or code transformation tools.",
+      "description_length": 355,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Mty",
+      "description": "Constructs and manipulates module type expressions with location and attribute annotations. Operates on OCaml AST nodes such as module type descriptions, signatures, functors, and with constraints. Used to build abstract syntax trees for module types in compiler or code transformation pipelines.",
+      "description_length": 296,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Mod",
+      "description": "Constructs and manipulates module expressions with location and attribute metadata. Operates on OCaml AST nodes such as module expressions, structures, functors, and identifiers. Enables building abstract syntax trees for module definitions, applications, and constraints in compiler or code generation tools.",
+      "description_length": 309,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Sig",
+      "description": "Constructs signature items from various AST components, including value descriptions, type declarations, module bindings, and extensions. Operates on types like `value_description`, `type_declaration`, `module_declaration`, and `extension` from the OCaml AST. Used to build abstract syntax trees for module signatures in code transformation or analysis tools.",
+      "description_length": 359,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Str",
+      "description": "Constructs and wraps AST nodes for various language elements, including values, types, modules, and expressions, with optional location and attribute annotations. Operates on OCaml's internal AST structures like `structure_item_desc`, `value_binding`, `type_declaration`, and `module_binding`. Used to generate structured AST fragments for code generation or transformation pipelines.",
+      "description_length": 384,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Md",
+      "description": "Creates a module type declaration with optional location and attributes, taking a module type and an optional name. Operates on module types and location-aware strings. Used to construct module declarations in abstract syntax trees during parsing or transformation.",
+      "description_length": 265,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Ms",
+      "description": "Creates a module substitution with location and attributes, using a qualified identifier. Operates on location-aware strings and long identifiers. Used to represent module renamings in abstract syntax tree transformations.",
+      "description_length": 222,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Mtd",
+      "description": "Constructs module type declarations with optional location, attributes, and type specifications. Operates on location-aware strings, attributes, and module type structures from the Astlib library. Used to generate abstract syntax tree nodes for module types in parser implementations.",
+      "description_length": 284,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Mb",
+      "description": "Creates module bindings with optional location and attributes, using a module expression and a located identifier. Operates on module expressions, located strings, and attribute lists. Used to construct module bindings in abstract syntax tree transformations.",
+      "description_length": 259,
+      "index": 65,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Opn",
+      "description": "Creates open declarations with location, attributes, and override flags, supporting custom type representations. Operates on AST nodes and metadata structures from the Astlib library. Used to generate parsed open constructs in compiler front-ends.",
+      "description_length": 247,
+      "index": 66,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Incl",
+      "description": "Creates include information with optional location and attributes, used to construct include directives in OCaml abstract syntax trees. Operates on location data, attribute lists, and arbitrary values wrapped in include structures. Enables precise manipulation of include statements during AST generation or transformation.",
+      "description_length": 323,
+      "index": 67,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Vb",
+      "description": "Creates value bindings with optional location, attributes, and value constraints, using a pattern and expression. Works with OCaml AST structures including patterns, expressions, and attributes. Used to construct typed variable bindings during AST manipulation or code generation.",
+      "description_length": 280,
+      "index": 68,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Cty",
+      "description": "Constructs and manipulates class type expressions with location and attribute metadata. Operates on OCaml AST nodes such as class_type_desc, class_signature, core_type, and extensions. Enables building class types with constraints, arrows, signatures, and open declarations in compiler or tooling contexts.",
+      "description_length": 306,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Ctf",
+      "description": "Constructs and manipulates class type fields with location and attribute annotations. Creates value, method, inheritance, and constraint entries in class type definitions. Adds attributes to existing fields and handles extensions for custom syntax.",
+      "description_length": 248,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Cl",
+      "description": "Constructs and manipulates class expressions with location and attribute metadata. Operates on OCaml AST nodes such as class structures, core types, patterns, and expressions. Enables building class definitions, applying constraints, adding attributes, and incorporating open declarations within abstract syntax trees.",
+      "description_length": 318,
+      "index": 71,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Cf",
+      "description": "Constructs and manipulates class field structures in OCaml abstract syntax trees, including methods, values, constraints, and initializers. Operates on types such as `class_field_desc`, `class_field_kind`, `core_type`, and `expression`. Enables creation of class fields with attributes, location information, and override flags for compiler or code generation tasks.",
+      "description_length": 366,
+      "index": 72,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Ci",
+      "description": "Creates class definitions with location information, attributes, virtual status, and type parameters, using a given name and value. Operates on OCaml AST structures including location markers, attributes, and type parameters. Used to generate class declarations in code transformation or analysis tools.",
+      "description_length": 303,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Csig",
+      "description": "Constructs a class signature from a core type and a list of class type fields, using OCaml's parsetree structures. Operates on Astlib.Ast_502.Parsetree types to represent class definitions. Used to generate abstract syntax for class interfaces during code analysis or transformation pipelines.",
+      "description_length": 293,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Cstr",
+      "description": "Creates a class structure from a pattern and a list of class fields, using OCaml's parsetree representation. Operates on pattern and class_field types from the Astlib library. Used to generate abstract syntax trees for class definitions during parsing or transformation workflows.",
+      "description_length": 280,
+      "index": 75,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Rf",
+      "description": "Creates and manipulates row fields for type definitions, including labeled tags with optional attributes and inheritance from core types. Operates on location-aware labels, boolean flags, and lists of core types. Used to construct variant-like row fields in abstract syntax trees for OCaml code generation.",
+      "description_length": 306,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper.Of",
+      "description": "Constructs object fields with optional location and attributes, creates labeled object fields with associated types, and generates inherited object fields from core types. Works with OCaml AST structures including object_field_desc, core_type, and labeled identifiers. Used to build abstract syntax trees for object-oriented constructs in compiler tools.",
+      "description_length": 354,
+      "index": 77,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_ast.Convert.Ast",
+      "description": "Manages OCaml AST elements through core types, expressions, and module structures, enabling code analysis and transformation. Includes utilities to extract version-specific identifiers for AST validation and file differentiation. Operations on string-based magic numbers ensure compatibility checks during parsing. Supports tasks like type checking, code generation, and format verification.",
+      "description_length": 391,
+      "index": 78,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast.Parsetree",
+      "description": "Handles parsing and representation of OCaml abstract syntax trees, including expressions, types, patterns, and module structures. Operates on complex data types such as core_type, expression, and module_expr to model program components. Used to analyze and transform code during compilation or static analysis tasks.",
+      "description_length": 316,
+      "index": 79,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast.Config",
+      "description": "Provides string-based magic numbers for AST implementations and interfaces. Works with raw string data to identify or validate AST formats. Used to ensure compatibility between generated code and parser implementations.",
+      "description_length": 219,
+      "index": 80,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Stdppx.String.Map",
+      "description": "This module offers operations for managing key-value associations, including insertion, deletion, lookup, and traversal, with support for custom merging and list-valued entries. It works with map structures that can have arbitrary key types, particularly emphasizing string-keyed maps for flexible data organization. Use cases include transforming hierarchical data, aggregating sequence-based information, and efficiently querying structured datasets.",
+      "description_length": 452,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Stdppx.String.Set",
+      "description": "This module offers set operations such as element addition, removal, combination, and property checks, along with iteration, transformation, and membership verification, all tailored for generic element types. It supports sequence-based manipulations, including converting sets to reversed sequences and building sets from sequences, with specific applications in handling unique string collections and element-wise processing. Key use cases involve set theory computations, data deduplication, and efficient membership queries.",
+      "description_length": 528,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_409.Asttypes",
+      "description": "Provides operations to construct and manipulate abstract syntax tree nodes, including handling of constants, flags for record and method definitions, and location-aware data. Works with types such as labeled arguments, variadic parameters, and annotated values. Used to represent and analyze parsed code structures in compilers and static analysis tools.",
+      "description_length": 354,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_409.Parsetree",
+      "description": "This module defines the internal structure of OCaml's abstract syntax tree (AST), encompassing operations for representing expressions, patterns, types, modules, and class components through nested, recursively defined data structures like `class_expr`, `module_type`, and `signature`. It enables tasks such as compiler analysis, code transformation, and tooling by providing detailed type definitions for parsing and manipulating OCaml code elements, including top-level phrases and module declarations.",
+      "description_length": 504,
+      "index": 84,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_409.Config",
+      "description": "Provides string-based magic numbers for AST implementations and interfaces. Works with raw string data to identify AST formats. Used to validate and distinguish between different AST versions during parsing.",
+      "description_length": 207,
+      "index": 85,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_501.Asttypes",
+      "description": "Provides operations for working with OCaml abstract syntax tree elements, including handling labels, flags for recursion, mutability, and visibility, and type variance and injectivity. Works with types such as `constant`, `rec_flag`, `label`, `arg_label`, and parameterized `loc` structures. Used in parser and type-checker implementations to represent and manipulate syntactic and semantic information.",
+      "description_length": 403,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_501.Parsetree",
+      "description": "This module defines and manipulates abstract syntax tree (AST) nodes for OCaml's parser and type-checker, handling constants (integers, floats, strings, characters), patterns (tuples, variants, object matches), expressions (function applications, let bindings, object constructions), and module/type structures (signatures, functors, class definitions). It works with hierarchical data structures like `Pexp_let`, `Ppat_construct`, `Ptyp_constr`, and `Pmod_functor`, representing OCaml's syntactic elements and their type-checked forms. Use cases include parsing source code into structured representations, enforcing type constraints during compilation, and analyzing complex module or class hierarchies.",
+      "description_length": 705,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_501.Config",
+      "description": "Provides string-based magic numbers for AST implementations and interfaces. Works with raw string values to identify AST formats. Used to validate and distinguish between different AST representations during parsing or serialization.",
+      "description_length": 233,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_411.Asttypes",
+      "description": "Provides operations to represent and manipulate abstract syntax tree nodes, including constants, flags for record and method definitions, and location-aware types. Works with labeled arguments, variadic types, and annotated data structures used in OCaml's parser and type-checker. Used to encode type information and syntax elements during code analysis and transformation.",
+      "description_length": 373,
+      "index": 89,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_411.Parsetree",
+      "description": "The module provides internal representations for OCaml's abstract syntax trees, handling complex nested structures like core_type, expressions, and patterns to capture code elements such as types, classes, and modules. It supports operations focused on parsing, type checking, and code analysis by working with hierarchical data that includes location-aware records and parameterized components. Use cases include static analysis, code transformation, and module system implementations, leveraging detailed AST structures for accurate manipulation of OCaml programs.",
+      "description_length": 566,
+      "index": 90,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_411.Config",
+      "description": "Provides string constants used to identify AST (Abstract Syntax Tree) implementation and interface files. Works with string data types to ensure consistency in file format recognition. Used during parsing to validate that loaded files match the expected AST structure.",
+      "description_length": 268,
+      "index": 91,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Location.Error",
+      "description": "Provides functions to construct, inspect, and modify location errors, including setting and retrieving main and sub-messages with their associated locations. Works with the `t` type, which represents errors containing located strings. Used to handle compiler-like error messages with precise location tracking and message customization.",
+      "description_length": 336,
+      "index": 92,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_503.Asttypes",
+      "description": "Provides operations for working with abstract syntax tree elements, including labels, annotations, and flags such as `rec`, `private`, and `mutable`. Operates on types like `label`, `arg_label`, `loc`, and variance indicators. Used to represent and manipulate parsed language constructs in compilers and static analysis tools.",
+      "description_length": 326,
+      "index": 93,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_503.Parsetree",
+      "description": "This module provides operations for constructing and manipulating abstract syntax tree (AST) nodes representing OCaml's core language elements, including constants (integers, floats, strings), patterns (variable, alias, constructor, record), expressions (function applications, let-bindings, object expressions), and module structures (type declarations, functor definitions, module aliases). It works with specialized data structures like `Pexp_let`, `Ptyp_arrow`, `Pmod_ident`, and `Pstr_value` to encode syntactic constructs, type constraints, and module compositions, enabling precise representation of OCaml code during parsing and type-checking. Specific use cases include handling complex patterns, enforcing type annotations, and modeling module hierarchies with constraints.",
+      "description_length": 783,
+      "index": 94,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Astlib.Ast_503.Config",
+      "description": "Provides string-based magic numbers for AST implementations and interfaces. Works with raw string values to identify AST formats. Used to validate and distinguish between different AST representations during parsing or serialization.",
+      "description_length": 233,
+      "index": 95,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_502.Asttypes",
+      "description": "Provides operations for working with abstract syntax tree elements, including labels, annotations, and flags such as `rec`, `private`, and `mutable`. Operates on types like `label`, `arg_label`, `loc`, and variance indicators. Used to represent and manipulate parsed language constructs in compilers and static analysis tools.",
+      "description_length": 326,
+      "index": 96,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_502.Parsetree",
+      "description": "The module provides operations for constructing and manipulating OCaml's abstract syntax tree (AST) nodes, including constants, patterns, expressions, types, and module constructs, using tagged data types to represent language elements like tuples, objects, and type constraints. It handles structured data such as identifiers, constructors, and module signatures, enabling tasks like parsing, type checking, and code analysis by modeling complex language features such as pattern matching, module systems, and polymorphic types. Specific use cases include building ASTs for compiler passes, validating code semantics, and supporting tools for static analysis or transformation.",
+      "description_length": 678,
+      "index": 97,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Astlib.Ast_502.Config",
+      "description": "Provides string-based magic numbers for AST implementations and interfaces. Works with raw string values to identify AST formats. Used to validate and distinguish between different AST versions during parsing and serialization.",
+      "description_length": 227,
+      "index": 98,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_500.Asttypes",
+      "description": "Provides operations for working with abstract syntax tree (AST) metadata, including labels, flags for recursion, mutability, and visibility, and type variance information. It defines types such as labels, location-aware values, and flags that represent structural and semantic properties within OCaml's AST. Used to annotate and inspect elements like function parameters, type declarations, and module interfaces during parsing or transformation.",
+      "description_length": 446,
+      "index": 99,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_500.Parsetree",
+      "description": "This module provides operations for representing and manipulating OCaml's abstract syntax tree (AST), including parsing and type-checking of literals, identifiers, type constructors, object fields, and module declarations. It works with structured data types like `Ptyp_arrow`, `Pexp_let`, `Ppat_construct`, and `Pmod_functor`, which encode expressions, patterns, types, and module structures. Use cases include compiler internals for handling polymorphism, type constraints, module substitutions, and recursive definitions in OCaml programs.",
+      "description_length": 542,
+      "index": 100,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_500.Config",
+      "description": "Provides string constants representing magic numbers used to identify AST implementation and interface files. Works with string data types to ensure consistency in file format recognition. Used during parsing to validate and differentiate between AST file types.",
+      "description_length": 262,
+      "index": 101,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_413.Asttypes",
+      "description": "Provides operations to construct and manipulate abstract syntax tree nodes, including handling of constants, flags for recursion, direction, mutability, and visibility. Works with labeled arguments, located values, and type variance information. Used to represent and analyze OCaml language constructs during parsing and type checking.",
+      "description_length": 335,
+      "index": 102,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Astlib.Ast_413.Parsetree",
+      "description": "The module provides internal representations of OCaml's abstract syntax trees (ASTs), including types, expressions, classes, modules, and their components through nested records and variants. It models program elements with location-aware data structures, enabling parsing, type-checking, and analysis of OCaml code. Use cases include compiler development, static analysis tools, and transformations requiring precise manipulation of OCaml's syntactic constructs.",
+      "description_length": 463,
+      "index": 103,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_413.Config",
+      "description": "Provides string-based magic numbers for AST implementations and interfaces. Works with raw string values to identify AST formats. Used to validate and distinguish between different AST versions during parsing and serialization.",
+      "description_length": 227,
+      "index": 104,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_408.Asttypes",
+      "description": "Provides operations to represent and manipulate abstract syntax tree nodes, including constants, flags for record and method definitions, and location-aware types. Works with structured data like labeled arguments, variadic types, and annotated expressions. Used to encode and analyze parsed program structures in compilers and static analysis tools.",
+      "description_length": 350,
+      "index": 105,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Astlib.Ast_408.Parsetree",
+      "description": "The module provides functions and types for constructing and manipulating OCaml's internal syntax tree, utilizing nested, recursively defined data structures like labeled records and variants to represent language elements. It handles expressions, patterns, types, classes, modules, and top-level constructs, enabling tasks such as parsing, analysis, and transformation of OCaml code in tools like compilers or linters. The consistent use of structured type definitions facilitates precise representation and processing of source code components.",
+      "description_length": 546,
+      "index": 106,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_408.Config",
+      "description": "Provides string-based magic numbers for AST implementations and interfaces. Works with raw string data to identify AST formats. Used to validate and distinguish between different AST versions during parsing.",
+      "description_length": 207,
+      "index": 107,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_414.Asttypes",
+      "description": "Provides operations for working with abstract syntax tree elements, including labels, annotations, and flags such as `rec`, `mutable`, and `virtual`. Operates on types like `label`, `arg_label`, `loc`, and variance indicators. Used to represent and manipulate parsed language constructs in compilers and static analysis tools.",
+      "description_length": 326,
+      "index": 108,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_414.Parsetree",
+      "description": "This module defines data structures for representing OCaml syntax elements, including constants, patterns, expressions, types, and modules, through abstract syntax tree (AST) nodes. It handles operations like parsing literals with suffixes (e.g., 3l, 3n), managing type constraints, and constructing complex types such as variant types, object types, and module signatures, supporting use cases like type checking and code analysis. Specific examples include representing pattern matching constructs, module declarations, and polymorphic type variants with detailed location tracking and syntactic validation.",
+      "description_length": 609,
+      "index": 109,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_414.Config",
+      "description": "Provides string-based magic numbers for AST implementations and interfaces. Works with raw string values to identify file formats. Used to validate and distinguish between different AST file types during parsing.",
+      "description_length": 212,
+      "index": 110,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_410.Asttypes",
+      "description": "Provides operations to construct and manipulate abstract syntax tree nodes, including handling of constants, flags for record and method definitions, and location-aware data structures. Works with types such as labeled arguments, variadic parameters, and annotated expressions. Used to represent and annotate parsed code elements in compilers and static analysis tools.",
+      "description_length": 369,
+      "index": 111,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_410.Parsetree",
+      "description": "<think> Okay, let's tackle this query. The user wants a 2-3 sentence description of the Parsetree module based on the given summaries. They specified to identify main operations, data structures, and mention use cases without generic phrases or repeating the module name. First, I need to parse each of the four function/type summaries. The key points from each: 1. Internal AST data structures for OCaml code, including types, expressions, patterns, annotations. Uses recursive, tagged data types for parsing and type-checking. 2. Internal syntax structures for OCaml programs, including types, classes, components. Nested, typed records for parsing and type-checking. 3. AST structures for classes, modules, signatures, including class defs, module types, open/include. Complex nested data with location info and metadata. 4. AST structures for modules, expressions, bindings, top-level phrases. Hierarchical data like module expressions, value bindings, structure items. Recursive, variant-based. So the main operations are defining AST structures, parsing, type-checking. Data structures include recursive tagged types, nested records, variant types. Use cases would be parsing OCaml code, type-checking, code analysis, transformations. Need to avoid generic terms. Instead of \"data structures\", maybe specify \"recursive tagged data types\" or \"nested records\". Mention specific elements like expressions, types, classes, modules. Use cases could be analyzing code, generating code, or implementing tools. Check if the module name is mentioned. The user said not to repeat the module name, so avoid \"Parsetree\" in the description. Instead, refer to it as \"the module\" or \"this module\" if necessary, but maybe not even that. The user's example response uses \"the module\" but the instruction says not to repeat the module name. Wait, the original instruction says \"Do NOT use generic phrases or repeat the module name.\" So the module name is \"Parsetree\", so the description shouldn't mention it. So the example response starts with \"The module...\" but the user says not to repeat the module name. Wait, the user's instruction says \"Do NOT use generic phrases or repeat the module name.\" So the module name is Parsetree, so the description shouldn't include that. So the example response might have a mistake, but the user's instruction says not to repeat the module name. So I need to avoid saying \"the module\" as well? Or is \"the module\" allowed? The instruction says \"Do NOT use generic phrases or repeat the module name.\" So \"the module\" would be repeating the module name? Maybe not. The module name is Parsetree, so \"the module\" refers to it. But the user says not to repeat the module name. So perhaps avoid using \"the module\" as well. Hmm, tricky. But the example given by the user in their own response starts with \"The module...\" but maybe that's allowed. Wait, the user's instruction says \"Do NOT use generic phrases or repeat the module name.\" So \"the module\" is not a generic phrase, but it's referring to the module. However, the user might not want the actual name \"Parsetree\" to be used. So perhaps the description should refer to it as \"this module\" or \"the module\" but not the actual name. But the user's example response uses \"the module\" so maybe that's acceptable. But the user's instruction says \"Do NOT use generic phrases or repeat the module name.\" So \"the module\" is not a generic phrase, but it's referring to the module. However, the user might not want the actual name \"Parsetree\" to be used. So the answer should avoid using \"Parsetree\" but can refer to it as \"the module\" or \"this module\". But the user's example response starts with \"The module...\" so maybe that's acceptable. So I'll proceed with that. Now, compiling the info: Main operations: defining AST structures for OCaml code elements, parsing, type-checking. Data structures: recursive tagged data types, nested records, variant-based structures, encapsulating declarations with location info and metadata. Use cases: analyzing OCaml code, implementing compilers, tools for code transformation or analysis. So putting it together in 2-3 sentences without mentioning the module name. Let me try: The module defines internal representations of OCaml code elements through recursive, tagged data types and nested records, encompassing expressions, types, classes, modules, and annotations. It structures abstract syntax trees with location information and metadata, enabling parsing, type-checking, and analysis of complex language constructs. These data structures support use cases like compiler development, code transformation, and static analysis tools. Wait, but the user said not to use generic phrases. \"Compiler development\" might be too generic. Maybe specify \"implementing OCaml compilers\" or \"analyzing OCaml programs\". Alternatively: The module provides recursive, tagged data types and nested records to represent OCaml",
+      "description_length": 4922,
+      "index": 112,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Astlib.Ast_410.Config",
+      "description": "Provides string-based magic numbers for AST implementations and interfaces. Works with raw string values to identify AST formats. Used to validate and distinguish between different AST versions during parsing and serialization.",
+      "description_length": 227,
+      "index": 113,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_412.Asttypes",
+      "description": "Provides operations to represent and manipulate abstract syntax tree nodes, including constants, flags for record and method definitions, and location-aware types. Works with types such as labeled arguments, variadic annotations, and positioned data structures. Used to construct and analyze parsed code elements in compiler pipelines.",
+      "description_length": 335,
+      "index": 114,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_412.Parsetree",
+      "description": "This module defines recursive, tagged data structures for representing OCaml's abstract syntax tree (AST), encompassing expressions, types, classes, modules, and top-level constructs. It employs nested records and polymorphic variants to model complex language elements like bindings, annotations, and open declarations, enabling precise parsing and transformation of source code. These structures are critical for tasks such as type-checking, code analysis, and compiler transformations, providing a foundational representation for manipulating OCaml programs programmatically.",
+      "description_length": 578,
+      "index": 115,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Astlib.Ast_412.Config",
+      "description": "Provides string-based magic numbers for AST implementations and interfaces. Works with raw string values to identify AST formats. Used to validate and distinguish between different AST representations during parsing or serialization.",
+      "description_length": 233,
+      "index": 116,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Ast_builder",
+      "description": "Processes and annotates values with source location data, enabling precise tracking of parsed elements through transformations. Supports creation and manipulation of patterns and constructor declarations, incorporating modern language features. Operates on location-annotated values and types, allowing for the generation of structured, annotated code elements. Can be used to insert source positions into identifiers or construct complex pattern matches with updated syntax.",
+      "description_length": 475,
+      "index": 117,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Ast_pattern",
+      "description": "Provides functions to construct, parse, and validate data structures using a polymorphic type ('a, 'b) t, enabling conversion between input and output values with location tracking. It supports pattern-like matching on abstract syntax trees, allowing extraction of embedded values without direct use of Parsetree constructors. Operations include parsing, validation, and transformation of structured data, such as converting raw input into typed representations. Examples include extracting expressions from a parsed module or validating type annotations during parsing.",
+      "description_length": 570,
+      "index": 118,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Deriving",
+      "description": "Transforms input abstract syntax trees (ASTs) into output ASTs using context-sensitive rules, with dependencies managed as lists of t. Applies structured data transformations through functions that modify input_ast to produce output_ast while respecting external constraints. Enables rule-based code generation, allowing dynamic adjustments based on context, such as translating language constructs or inserting boilerplate code. Supports complex AST manipulations where outcomes depend on prior computations and contextual information.",
+      "description_length": 536,
+      "index": 119,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Extension",
+      "description": "manages OCaml AST manipulation through context-aware transformations, enabling pattern matching, extension declaration, and attribute handling. it works with AST nodes, payloads, locations, and context objects to process and validate code structures. it supports tasks like extracting annotations, combining attributes, and defining custom syntax extensions. examples include parsing custom syntax rules, validating annotations, and transforming code fragments during expansion.",
+      "description_length": 478,
+      "index": 120,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Expansion_context",
+      "description": "Tracks context-specific metadata including code paths, input filenames, and tool names, enabling precise control over preprocessing and code generation. Provides operations to extract and manipulate location data, file origins, and tool identifiers from a context type. Allows for context-aware inlining and behavior customization based on source locations and preprocessing tools. Examples include determining the original source file, identifying the preprocessor tool, and adjusting code generation based on AST-derived paths.",
+      "description_length": 529,
+      "index": 121,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Code_path",
+      "description": "Provides functions to extract file paths, module names, and value names from code paths, along with operations to navigate and format paths within OCaml modules. Works with a custom type representing paths to AST nodes, including submodules and values. Used to track references to specific modules or values in code analysis tools or IDE integrations.",
+      "description_length": 351,
+      "index": 122,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Expansion_helpers",
+      "description": "Injects quoted expressions into code while preserving lexical scope, using unique identifiers to prevent name clashes. Operates on OCaml ASTs, supporting safe embedding of expressions in generated code. Supports transformations that isolate variables, ensuring correct behavior in nested or expanded contexts. For example, it can safely quote a function argument so it remains distinct when inserted into a larger module.",
+      "description_length": 421,
+      "index": 123,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Merlin_helpers",
+      "description": "Adds attributes to AST nodes to control Merlin's handling of code branches by marking them as hidden or prioritized. Operates on OCaml AST elements such as patterns, expressions, and attributes. Used to refine symbol resolution and navigation in IDEs by influencing which AST nodes are considered during analysis.",
+      "description_length": 313,
+      "index": 124,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Spellcheck",
+      "description": "Calculates the Levenshtein distance between two strings with a maximum allowed distance, returning an optional integer. Identifies potential correct spellings from a list of known strings based on proximity to a given input. Used to suggest fixes for misspelled identifiers in PPX expansion.",
+      "description_length": 291,
+      "index": 125,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Keyword",
+      "description": "Checks if a given string matches any of the predefined OCaml keyword set. Operates on raw string inputs and returns a boolean result. Used to validate identifier names in parser implementations or syntax highlighters.",
+      "description_length": 217,
+      "index": 126,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Pp_ast",
+      "description": "Prints OCaml AST elements including structure items, signature items, expressions, patterns, and core types using configured printer functions. Operates on Parsetree data structures from the Astlib.Ast_502 module. Used to generate human-readable representations of parsed OCaml code for debugging or analysis.",
+      "description_length": 309,
+      "index": 127,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Driver",
+      "description": "manages code transformation and analysis by combining error reporting, cookie management, AST rewriting, and metadata handling. it operates on location data, custom state types, and OCaml parsetrees to enable dynamic configuration, structured error outputs, and context-aware code modifications. it supports tasks like injecting logging, enforcing syntax rules, and validating file identifiers during preprocessing. examples include generating linter messages, setting configuration cookies, and rewriting expressions based on their syntactic context.",
+      "description_length": 551,
+      "index": 128,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Caller_id",
+      "description": "Provides a mechanism to trace function callers through a set of helper functions and data structures. Includes a `caller` type representing caller information and functions like `get` to retrieve it. Allows inspection of call stacks and identification of originating function names. Can be used to debug execution flow or log function invocations with caller context.",
+      "description_length": 367,
+      "index": 129,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Ast_io",
+      "description": "Reads binary-annotated files and extracts the abstract syntax tree (AST) along with the original input file name. Operates on binary file paths and internal state structures representing parsed annotations. Used to process compiler-generated binary files for analysis or transformation tasks.",
+      "description_length": 292,
+      "index": 130,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib.Attribute",
+      "description": "Provides hygiene for OCaml attributes by enabling structured manipulation of parsed code elements. It exposes AST nodes for types, expressions, and modules, along with operations to traverse, modify, and analyze these structures. Users can inspect class fields, extract type definitions, or generate intermediate representations for tooling. Examples include enforcing attribute usage rules, detecting malformed attributes, or transforming code during static analysis.",
+      "description_length": 468,
+      "index": 131,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Reserved_namespaces",
+      "description": "Reserve specific attribute namespaces to prevent conflicts with other tools or rewriters, ensuring attributes in these namespaces are ignored by checks like unused attribute detection. It operates on string identifiers representing namespace names and provides a check to determine if a namespace is reserved. This is used to maintain compatibility between the rewriter and external systems like merlin or ocamlformat.",
+      "description_length": 418,
+      "index": 132,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.With_errors",
+      "description": "Provides monadic operations for handling computations that may accumulate errors, including binding, mapping, and error aggregation. Works with a tuple type containing a value and a list of location-based errors. Used to chain error-aware computations and collect multiple errors from a list of operations.",
+      "description_length": 306,
+      "index": 133,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Location",
+      "description": "Handles error construction and manipulation with location-aware payloads, supporting exception-to-error conversion and location updates. Core data types include error records and location structures, with operations for creating, modifying, and inspecting these elements. It allows raising errors at specific source positions and integrating errors into AST extensions. Examples include tracking error origins in compiler output and adjusting error positions during transformation passes.",
+      "description_length": 488,
+      "index": 134,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Longident",
+      "description": "Provides ordered data manipulation through map and set operations, enabling efficient key-value and element management. Supports constructing, traversing, and transforming maps with ordered keys and sets with ordered elements, including additions, deletions, and predicate-based queries. Functions like `iter`, `fold`, `map`, `filter_map`, and set operations like `union` and `split` allow for structured data processing and dynamic updates. Ideal for applications requiring sorted data handling, such as configuration management or indexed data retrieval.",
+      "description_length": 556,
+      "index": 135,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib.Loc",
+      "description": "Provides operations to wrap values with location information, extract the wrapped value, and transform the value while preserving its location. Works with a polymorphic type that associates a value with a Location.t. Used to track source positions in parsed data structures during compilation or analysis.",
+      "description_length": 305,
+      "index": 136,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_traverse_builtins.T",
+      "description": "Provides higher-order functions for transforming, iterating, and folding over values with context, including mapping with context, fold operations that accumulate and transform, and lifting functions that wrap values. Operates on polymorphic types such as functions, iterators, and accumulators, enabling complex data processing pipelines. Used to implement context-aware transformations in parsing, data serialization, and stateful computation workflows.",
+      "description_length": 455,
+      "index": 137,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast",
+      "description": "Manages OCaml abstract syntax trees through core types, expressions, and module structures, enabling code analysis and transformation. Incorporates string-based identifiers to validate and recognize AST formats for compatibility checks. Supports tasks like syntax validation, code rewriting, and format verification. Examples include parsing expressions, checking AST version compatibility, and modifying module structures.",
+      "description_length": 423,
+      "index": 138,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_ast.Ast_helper",
+      "description": "Provides a comprehensive set of functions for constructing and manipulating OCaml's abstract syntax tree (AST), covering constants, attributes, types, patterns, expressions, modules, classes, and more. Main data types include `constant`, `core_type`, `pattern`, `expression`, `module_expr`, `class_type`, and `object_field`, with operations for creating, annotating, and transforming these structures. Examples include generating type declarations, building pattern matching constructs, and inserting metadata into AST nodes for analysis or code generation. Supports precise control over OCaml's internal representation for compiler tools, code transformers, and static analysis utilities.",
+      "description_length": 689,
+      "index": 139,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_ast.Find_version",
+      "description": "Provides a function to convert a magic number string into a version identifier. Works with string inputs and an abstract type representing frontend versions. Used to map magic numbers from configuration files to specific frontend implementations.",
+      "description_length": 246,
+      "index": 140,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Convert",
+      "description": "Handles OCaml abstract syntax tree (AST) elements using core types, expressions, and module structures, allowing for analysis, transformation, and validation. It manages version-specific identifiers and magic numbers to ensure compatibility and correct parsing. Operations include type checking, code generation, and format verification. Examples include extracting AST nodes, validating file versions, and generating transformed code.",
+      "description_length": 435,
+      "index": 141,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_ast.Extra_warnings",
+      "description": "Handles conditional branch tracking during parsing, using location-aware callbacks to signal specific code paths. Operates on location data from Astlib to mark or log branches in abstract syntax trees. Used to instrument code analysis tools for branch coverage or error detection.",
+      "description_length": 280,
+      "index": 142,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Location_error",
+      "description": "Provides functions to create, manipulate, and convert error objects tied to specific source locations, including extracting and setting messages, updating locations, and converting between exception types and error representations. Works with location data from the Astlib library and error structures that include source positions and diagnostic messages. Used to handle parsing or type-checking errors by associating them with precise code locations and converting them into compiler-compatible extension types.",
+      "description_length": 513,
+      "index": 143,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_ast.Parse",
+      "description": "Converts OCaml abstract syntax tree nodes between versions 501 and 502, maintaining semantic integrity. Handles expressions, patterns, type declarations, and module definitions during version transitions. Supports automated code adaptation by preserving structure and syntax during migration. Allows developers to update codebases without manually adjusting parsetree elements.",
+      "description_length": 377,
+      "index": 144,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Select_ast",
+      "description": "Processes and analyzes OCaml ASTs, handling expressions, patterns, and type declarations to enable code transformation and type checking. It uses string constants to identify AST file formats and supports operations on complex data structures. Tasks include generating intermediate representations and distinguishing between implementation and interface files. It allows precise manipulation of AST nodes and file-type validation through string-based checks.",
+      "description_length": 458,
+      "index": 145,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppxlib_ast.Selected_ast",
+      "description": "Handles conversion between OCaml and JavaScript values, supporting complex nested structures and interoperability with polymorphic variants and recursive types. Translates OCaml AST nodes between versions 501 and 502, maintaining syntax and semantics for code migration. Enables serialization, deserialization, and version-aware manipulation of OCaml code representations. Examples include converting OCaml records to JSON, migrating parsetree elements between compiler versions, and preserving variant structures during data exchange.",
+      "description_length": 535,
+      "index": 146,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Stdppx.Poly",
+      "description": "Compares values using standard ordering and equality checks, returning integers or booleans based on the relationship between two inputs. Handles any type that supports comparison operators and provides min/max selection. Used to determine order in sorting algorithms or enforce constraints in data validation.",
+      "description_length": 310,
+      "index": 147,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Stdppx.Bool",
+      "description": "Converts boolean values to strings, compares them, and defines relational and equality operations. Works with the bool type, supporting logical comparisons and ordering. Used to generate human-readable representations, sort boolean values, and evaluate logical conditions in conditional logic.",
+      "description_length": 293,
+      "index": 148,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Stdppx.Bytes",
+      "description": "This module offers low-level, unsafe operations for converting between byte sequences and strings, encoding/decoding integers (8-bit to 64-bit) with endianness control (big-endian, little-endian, native), and manipulating byte-level data directly. It works with byte sequences and strings, enabling tasks like network protocol parsing, file format handling, or direct memory manipulation where performance is critical. Specific use cases include UTF-8/UTF-16 encoding, binary data serialization, and scenarios requiring precise control over byte representation, though it demands careful synchronization to avoid data races or immutability violations.",
+      "description_length": 651,
+      "index": 149,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Stdppx.Char",
+      "description": "Converts characters to and from ASCII codes, escapes special characters for string representation, and performs case conversion within the ASCII set. Handles character comparison, equality checks, and hashing for use in data structures. Processes individual characters as core data type, supporting operations like escaping, case manipulation, and ordering.",
+      "description_length": 357,
+      "index": 150,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Stdppx.Exn",
+      "description": "Provides a mechanism to execute a function with a resource, ensuring a cleanup action is performed afterward. It works with arbitrary values and functions that take and return these values. Used to safely manage resources like file handles or network connections, guaranteeing release even if an exception occurs.",
+      "description_length": 313,
+      "index": 151,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Stdppx.Float",
+      "description": "Converts floating-point numbers to strings, compares values, and checks equality or ordering. Performs arithmetic minimum and maximum operations on pairs of floats. Used for numerical output formatting, sorting, and value comparison in scientific or financial computations.",
+      "description_length": 273,
+      "index": 152,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Stdppx.Fn",
+      "description": "Returns the input value unchanged. Works with any data type. Useful for passing as a default function in higher-order operations.",
+      "description_length": 129,
+      "index": 153,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Stdppx.Hashtbl",
+      "description": "Provides a hash table implementation with support for custom comparison and hashing, enabling efficient key-value storage and lookup. Main data types include tables with specific key types and operations like insertion, lookup, and counting occurrences. For example, a specialized table can count character frequencies in a sequence or track bindings with defined hash and comparison functions. The module offers histogram analysis and ensures type safety through functorial interfaces.",
+      "description_length": 486,
+      "index": 154,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Stdppx.In_channel",
+      "description": "Provides functions to create and manage input channels, read entire files into strings, and handle file content with a focus on binary or text mode. Works with file paths and in_channel values to process data streams. Used to load file contents directly into strings for immediate processing or analysis.",
+      "description_length": 304,
+      "index": 155,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Stdppx.Int",
+      "description": "Provides operations for comparing integers, checking equality, and determining minimum and maximum values. Works with the int data type and supports standard comparison operators. Used to enforce ordering constraints or compute extremal values in numerical computations.",
+      "description_length": 270,
+      "index": 156,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Stdppx.Either",
+      "description": "Handles success and failure states with `ok` and `error` constructors, and provides `map`, `bind`, and `fold` for transforming and extracting values. Works with the sum type `('a, 'b) t` to represent computations that may produce a value of type 'a or an error of type 'b. Used to propagate errors in parsing workflows and handle optional results in network request handlers.",
+      "description_length": 375,
+      "index": 157,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Stdppx.List",
+      "description": "This module offers a comprehensive set of operations for list manipulation, including length calculation, element access, reversal, comparison, and transformation, alongside predicate-based checks, filtering, and sorting with options for efficiency or early termination. It handles lists of arbitrary elements and related structures like sequences, enabling functional workflows such as bulk element processing, data validation, and structured data transformations. Specific use cases include filtering nested lists, sorting with custom comparators, and converting between list and sequence representations for flexible data handling.",
+      "description_length": 634,
+      "index": 158,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Stdppx.Option",
+      "description": "Checks if a value is present, applies a function to the value if it exists, transforms the value within an option, extracts the value with a fallback, and converts an option to a list. Works with the option type, representing values that may be absent. Used to safely handle optional results, conditionally execute code, and integrate optional data into list operations.",
+      "description_length": 370,
+      "index": 159,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Stdppx.Result",
+      "description": "Processes success or failure values by applying functions to the successful value, transforming the error value, or handling errors by converting them to success. Operates on the `('a, 'b) result` type, which represents computations that may fail with a value of type 'b. Used to chain operations that may fail, such as parsing input or performing I/O, while preserving error information.",
+      "description_length": 388,
+      "index": 160,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Stdppx.NonEmptyList",
+      "description": "Provides operations to manipulate a tuple-based non-empty list structure, including appending elements, extracting the head, converting to a standard list, and mapping over elements. Works with tuples where the first element is the head and the second is the tail list. Used to safely handle lists that must contain at least one element, such as in parsing or configuration processing.",
+      "description_length": 385,
+      "index": 161,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Stdppx.Out_channel",
+      "description": "Writes a string to a file or output stream, supporting binary mode, appending, and file creation options. Operates on file paths and out_channel values, ensuring proper handling of file permissions and existence checks. Used to atomically write data to a file, such as logging or exporting structured text content.",
+      "description_length": 314,
+      "index": 162,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Stdppx.String",
+      "description": "Provides string manipulation and binary decoding capabilities, including concatenation, integer extraction, and endianness handling. Supports operations on maps and sets with string keys and generic elements, enabling data organization, transformation, and set-theoretic computations. Functions include inserting and retrieving key-value pairs, adding and removing set elements, and converting between sequences and collections. Examples include parsing binary data, building indexed data structures, and performing efficient set intersections or unions.",
+      "description_length": 554,
+      "index": 163,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_408",
+      "description": "Represents and manipulates abstract syntax trees with structured data types for expressions, patterns, types, and language constructs, supporting operations like encoding, analysis, and transformation. Includes location-aware nodes, labeled arguments, and variadic structures, enabling precise handling of OCaml source code in compilers and linters. Utilizes string-based identifiers to validate and distinguish AST formats during parsing. Examples include analyzing method definitions, annotating expressions, and verifying AST version compatibility.",
+      "description_length": 551,
+      "index": 164,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Astlib.Ast_409",
+      "description": "Manages OCaml code structures through a set of interrelated components that handle abstract syntax tree (AST) construction, representation, and validation. It includes operations for working with labeled arguments, variadic parameters, annotated values, and recursive data types like `class_expr` and `module_type`, enabling detailed analysis and transformation of code. String-based identifiers are used to detect and validate AST formats during parsing. It supports tasks such as compiler development, static analysis, and code generation by providing precise control over parsed language elements.",
+      "description_length": 600,
+      "index": 165,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_410",
+      "description": "The module defines recursive, tagged data types and nested records to represent OCaml code elements, including expressions, types, classes, modules, and annotations with location metadata. It supports operations for constructing and traversing abstract syntax trees, enabling parsing, type-checking, and analysis of program structures. Examples include validating AST formats with string-based identifiers, annotating expressions with metadata, and transforming code during compilation.",
+      "description_length": 486,
+      "index": 166,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_411",
+      "description": "Handles abstract syntax tree construction, manipulation, and validation, with support for OCaml's complex type and expression structures. Includes operations for working with labeled arguments, variadic types, and location-aware records, along with string constants for file format identification. Enables tasks such as static analysis, code transformation, and module system implementation by providing detailed representations of OCaml programs. Examples include parsing source code into structured ASTs, annotating nodes with location data, and verifying file consistency through string identifiers.",
+      "description_length": 602,
+      "index": 167,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_412",
+      "description": "Represents and manipulates OCaml's abstract syntax tree through recursive, tagged data structures that model expressions, types, classes, and modules using nested records and polymorphic variants. Supports location-aware operations, labeled arguments, variadic annotations, and positioned data structures for precise code analysis and transformation. Includes string-based identifiers to validate and distinguish AST formats during parsing and serialization. Enables construction, inspection, and modification of parsed code elements for compiler and tooling tasks.",
+      "description_length": 565,
+      "index": 168,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_413",
+      "description": "Manages OCaml abstract syntax trees with operations for constructing, traversing, and analyzing nodes, incorporating metadata like location, variance, and flags. Supports core language elements such as expressions, types, and modules through structured, location-aware data types. Enables version validation via string identifiers and facilitates tasks like compiler development and code analysis by providing precise manipulation of syntactic constructs. Examples include parsing OCaml code, checking type consistency, and transforming program structures.",
+      "description_length": 556,
+      "index": 169,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_414",
+      "description": "Handles abstract syntax tree manipulation with support for labels, annotations, and language flags, using types like `label`, `arg_label`, and `loc`. Enables construction and analysis of OCaml syntax elements including expressions, patterns, and module declarations, with capabilities for parsing literals, managing type constraints, and tracking locations. Supports validation of AST file formats through string-based identifiers. Can represent pattern matching, module signatures, and variant types with precise syntactic and semantic information.",
+      "description_length": 549,
+      "index": 170,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_500",
+      "description": "Handles AST metadata, node structures, and file identification, enabling detailed inspection and manipulation of OCaml programs. It includes types like labels, location-aware values, and structured AST nodes such as `Ptyp_arrow` and `Pmod_functor`, along with string constants for file validation. Operations allow annotation, transformation, and analysis of function parameters, type declarations, and module interfaces. Examples include checking mutability flags, parsing object fields, and validating AST file formats.",
+      "description_length": 521,
+      "index": 171,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_501",
+      "description": "Handles OCaml AST elements with precise control over syntax and semantics, supporting operations on constants, labels, recursion flags, and type variance. Manages complex hierarchical structures like expressions, patterns, and module definitions, enabling parsing, type-checking, and analysis of OCaml code. Uses string identifiers to validate and differentiate AST formats during serialization and parsing. Examples include constructing typed expressions, analyzing object hierarchies, and ensuring correct type variance in generic definitions.",
+      "description_length": 545,
+      "index": 172,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Astlib.Ast_502",
+      "description": "Manages abstract syntax tree elements through operations on labels, annotations, and flags, along with structured data like identifiers, constructors, and module signatures. Supports construction and manipulation of AST nodes for constants, expressions, types, and module constructs, enabling tasks such as parsing and type checking. Handles version identification through string-based magic numbers to validate and distinguish AST formats during serialization and parsing. Examples include building compiler intermediate representations, analyzing code structure, and ensuring compatibility between different AST versions.",
+      "description_length": 623,
+      "index": 173,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_503",
+      "description": "Handles abstract syntax tree elements, including labels, annotations, and language constructs like patterns, expressions, and module structures. Operates on types such as `label`, `arg_label`, `Pexp_let`, `Ptyp_arrow`, and string-based identifiers for AST formats. Enables manipulation of parsed code, validation of AST representations, and precise modeling of OCaml's syntax and type system. Examples include constructing complex patterns, enforcing type constraints, and distinguishing AST versions during serialization.",
+      "description_length": 522,
+      "index": 174,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Ast_metadata",
+      "description": "Adds and removes attributes containing context information for ppx rewriters, operating on OCaml structure and signature items. Retrieves or sets cookie values within expressions to communicate state between stages of processing. Used to pass compiler-specific data to external tools during code transformation.",
+      "description_length": 311,
+      "index": 175,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Config",
+      "description": "Handles magic numbers used to identify files containing OCaml interface and implementation syntax trees. Works with string values representing binary file signatures. Used to validate file types during parsing and loading processes.",
+      "description_length": 232,
+      "index": 176,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Keyword",
+      "description": "Checks if a string matches OCaml's reserved keywords and applies keyword configurations from environment variables or command-line arguments to the compiler's lexer. Operates on strings and modifies the lexer's keyword set dynamically. Used to customize compiler behavior based on keyword definitions provided at runtime.",
+      "description_length": 321,
+      "index": 177,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Astlib.Location",
+      "description": "Manages error tracking with precise location data, using the `t` type to store errors linked to specific positions. Supports creating, examining, and adjusting error messages, including main and sub-messages with their respective locations. Allows for detailed error reporting by associating messages with source code ranges. Enables customization of error outputs for compiler-like diagnostics.",
+      "description_length": 395,
+      "index": 178,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Longident",
+      "description": "Flattens a long identifier structure into a list of string components, handling Lident and Ldot cases. Parses a string representation of a module path into a structured long identifier. Used to process and analyze module and value paths in OCaml abstract syntax trees.",
+      "description_length": 268,
+      "index": 179,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Parse",
+      "description": "Parses OCaml source code into abstract syntax tree nodes, handling structures, signatures, expressions, patterns, core types, and toplevel phrases. Accepts lexing buffers and returns structured representations for further processing. Used to convert raw input into parse trees for compilation or analysis.",
+      "description_length": 305,
+      "index": 180,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Pprintast",
+      "description": "The module offers pretty-printing functions for OCaml AST elements, including expressions, types, and structure items, operating on Parsetree data structures and a custom format type to control output. It enables precise formatting of syntax tree components, aiding in code analysis, debugging, and transformation workflows by generating readable representations of abstract syntax.",
+      "description_length": 382,
+      "index": 181,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Astlib.Compiler_pprintast",
+      "description": "The module provides pretty-printing functions for OCaml AST nodes, including expressions, patterns, types, modules, and signature items, operating on Parsetree and Longident structures. It employs a custom format type to manage precise output formatting, such as handling type variables and generating human-readable string representations. These capabilities are essential for tasks like code generation, debugging, or visualizing abstract syntax trees in development workflows.",
+      "description_length": 479,
+      "index": 182,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_metaquot.Expr",
+      "description": "Converts OCaml AST nodes into expression representations, supporting a wide range of language constructs like patterns, types, and module structures. It handles primitive types, lists, options, and complex AST elements with location-aware transformations. Used to generate or manipulate abstract syntax trees during code analysis or transformation pipelines.",
+      "description_length": 358,
+      "index": 183,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_metaquot.Patt",
+      "description": "Provides pattern constructors and transformers for OCaml AST nodes, including literals, expressions, types, and module structures. Handles recursive traversal and transformation of complex data like lists, tuples, and nested patterns. Used to generate or modify abstract syntax trees during code analysis or transformation tasks.",
+      "description_length": 329,
+      "index": 184,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "ppxlib",
+      "description": "Processes and transforms OCaml AST nodes using pattern matching and rewriting rules. Operates on core OCaml data types such as expressions, patterns, and type declarations. Enables customization of code generation and syntax manipulation in ppx rewriters.",
+      "description_length": 255,
+      "index": 185,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_traverse",
+      "description": "The module provides a framework for traversing and transforming OCaml abstract syntax trees. It includes data types for representing nodes and operations for visiting and modifying them recursively. Users can define custom traversal logic to inspect or alter syntax structures. Example tasks include pretty-printing, type checking, or code transformation.",
+      "description_length": 355,
+      "index": 186,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_print_diff",
+      "description": "Compares two files using a specified diff command or falls back to `patdiff` and `diff -u`. Accepts custom arguments and color options for output. Designed for precise textual comparison in build or verification workflows.",
+      "description_length": 222,
+      "index": 187,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_ast",
+      "description": "Handles OCaml AST manipulation using core types, expressions, and module structures, with support for string-based identifiers to ensure format compatibility. Provides operations for syntax validation, code rewriting, and structure modification. Users can parse expressions, verify AST versions, and alter module layouts. Examples include transforming pattern matches and checking compatibility between AST representations.",
+      "description_length": 423,
+      "index": 188,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Stdppx",
+      "description": "Provides comparison and ordering operations for a type `t`, including standard relational operators and functions to determine minimum and maximum values. Works with any type that supports these operations, enabling direct comparison and selection between instances. Used to implement custom ordering logic in data structures or algorithms requiring ordered comparisons.",
+      "description_length": 370,
+      "index": 189,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Astlib",
+      "description": "Provides structured representation and manipulation of OCaml abstract syntax trees through recursive, tagged data types and location-aware nodes. Supports operations on expressions, types, patterns, and module structures, with labeled arguments, variadic annotations, and string-based identifiers for format validation. Enables tasks like parsing, type-checking, code analysis, and transformation, including annotating expressions, validating AST versions, and constructing module interfaces. Examples include analyzing method definitions, generating human-readable AST representations, and ensuring type consistency during compilation.",
+      "description_length": 636,
+      "index": 190,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppxlib_metaquot",
+      "description": "Converts and manipulates OCaml AST nodes into expression forms, supporting patterns, types, and module structures with location-aware transformations. Provides pattern constructors and transformers for recursive traversal and modification of complex data, including literals, lists, and nested structures. Enables code analysis and transformation by generating or altering abstract syntax trees. Examples include converting type definitions to expressions or rewriting pattern matches during macro expansion.",
+      "description_length": 508,
+      "index": 191,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 557,
+    "meaningful_modules": 192,
+    "filtered_empty_modules": 365,
+    "retention_rate": 0.34470377019748655
+  },
+  "statistics": {
+    "max_description_length": 4922,
+    "min_description_length": 129,
+    "avg_description_length": 399.9583333333333,
+    "embedding_file_size_mb": 0.6870765686035156
+  }
+}

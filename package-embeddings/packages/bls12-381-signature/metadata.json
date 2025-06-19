@@ -1,0 +1,91 @@
+{
+  "package": "bls12-381-signature",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 10,
+  "creation_timestamp": "2025-06-18T16:32:14.454519",
+  "modules": [
+    {
+      "module_path": "Bls12_381_signature.MinPk.Basic",
+      "description": "Provides signing and verification functions for individual messages using a secret and public key pair, along with an aggregate verification function that ensures all messages in a list are unique before validating a combined signature. Operates on secret keys, public keys, byte sequences, and signatures. Used to enforce uniqueness of messages in aggregate signatures to prevent rogue key attacks.",
+      "description_length": 399,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bls12_381_signature.MinPk.Aug",
+      "description": "Signs and verifies messages using a scheme where signatures are generated over the concatenation of a public key and message, ensuring uniqueness across different keys. Processes raw byte sequences and cryptographic signatures, validating individual and aggregated signatures. Used to confirm the authenticity of messages in a multi-key environment, ensuring that aggregated signatures correctly represent multiple distinct signers.",
+      "description_length": 432,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bls12_381_signature.MinPk.Pop",
+      "description": "Generates and verifies cryptographic proofs of possession using a secret key, and validates aggregated signatures over a shared message. Operates on secret and public keys, byte strings, and proof values derived from cryptographic operations. Enables efficient verification of multiple signatures on the same message in a single step.",
+      "description_length": 334,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bls12_381_signature.MinSig.Basic",
+      "description": "Provides signing and verification functions for individual messages using a secret and public key pair, along with an aggregate verification function that checks a set of message-signature pairs against a single aggregated signature. Operates on secret keys, public keys, byte sequences, and signatures. Ensures security in scenarios where multiple distinct messages must be validated under a single aggregate signature.",
+      "description_length": 420,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bls12_381_signature.MinSig.Aug",
+      "description": "Signs and verifies messages using a scheme where signatures are generated over the concatenation of a public key and message, ensuring uniqueness across different keys. Processes raw byte sequences and cryptographic signatures, validating individual and aggregated signatures. Used to confirm the authenticity of messages in a multi-key environment, ensuring that aggregated signatures are valid across multiple public keys and a single message.",
+      "description_length": 445,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bls12_381_signature.MinSig.Pop",
+      "description": "Generates and verifies digital signatures using a specific key pair, and validates proof of possession to prevent rogue key attacks. Processes byte sequences as inputs and outputs, and supports aggregate verification of multiple proofs on a single message. Implements cryptographic operations for secure authentication and batch validation in protocols requiring key authenticity.",
+      "description_length": 380,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bls12_381_signature.MinPk",
+      "description": "combines signing, verification, and proof-of-possession mechanisms for BLS signatures, focusing on compact public keys and extended signatures. It handles secret and public keys, byte sequences, and signatures, supporting individual and aggregate validation with message uniqueness checks. It ensures authenticity across multiple keys, prevents duplicate message attacks, and enables efficient batch verification of signatures on shared messages. Examples include verifying a single message with a key, validating an aggregate signature with unique messages, and confirming possession of a key through cryptographic proofs.",
+      "description_length": 623,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bls12_381_signature.MinSig",
+      "description": "provides signing and verification for individual and aggregated messages using secret and public keys, with support for verifying multiple proofs on a single message. It handles byte sequences, signatures, and public keys, ensuring secure authentication and batch validation. Operations include generating signatures over key-message concatenations and validating aggregate signatures across multiple keys. Examples include verifying a single message signed by multiple parties or confirming a batch of proofs with a single check.",
+      "description_length": 530,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "bls12-381-signature",
+      "description": "Provides operations for generating and verifying BLS signatures, including key generation, signing, and aggregation. Works with elliptic curve points, private keys, and signature structures defined by the BLS specification. Used to implement cryptographic protocols requiring compact signatures or public keys.",
+      "description_length": 310,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bls12_381_signature",
+      "description": "Handles signing, verification, and proof-of-possession for BLS signatures, supporting compact public keys, extended signatures, and aggregate validation. It manages secret and public keys, byte sequences, and signatures, enabling secure authentication and batch processing. Operations include verifying individual or aggregate signatures, ensuring message uniqueness, and validating multiple proofs on a single message. Examples include confirming a single signature, validating an aggregate with distinct messages, and checking batch proofs efficiently.",
+      "description_length": 554,
+      "index": 9,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 10,
+    "meaningful_modules": 10,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 623,
+    "min_description_length": 310,
+    "avg_description_length": 442.7,
+    "embedding_file_size_mb": 0.03677082061767578
+  }
+}

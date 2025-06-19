@@ -1,0 +1,63 @@
+{
+  "package": "FPauth",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 6,
+  "creation_timestamp": "2025-06-18T16:29:05.032970",
+  "modules": [
+    {
+      "module_path": "FPauth.Make_Auth.Variables",
+      "description": "Provides functions to access and update authentication state, including whether a request is authenticated, the current user entity, and any authentication errors. Operates on `entity` type and `Dream.field` structures to manage session data during a request. Used to track user sessions and handle authentication failures within a single request lifecycle.",
+      "description_length": 357,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "FPauth.Make_Auth.Session_manager",
+      "description": "Handles session-based authentication by extracting and validating auth strings, setting up helper functions, and managing authentication status for each request. Works with session data and entity types derived from M.t. Used to secure endpoints by ensuring valid session state before processing requests, invalidating sessions on errors, and returning appropriate HTTP responses.",
+      "description_length": 380,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "FPauth.Make_Auth.Authenticator",
+      "description": "Handles authentication by executing a list of predefined strategies against a request, determining success based on their combined results. Operates on request objects and custom authentication strategies that define entity handling. Used to verify user identity before granting access to protected resources.",
+      "description_length": 309,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "FPauth.Make_Auth.Router",
+      "description": "Handles authentication and logout workflows by linking strategies to response handlers, generating routes for \"/auth\" and \"/logout\" with customizable parameters and response logic. Operates on authentication strategies and response modules, extracting request parameters to manage user sessions. Used to integrate authentication flows into web applications, routing requests based on configured strategies and response behaviors.",
+      "description_length": 429,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "FPauth.Make_Auth",
+      "description": "Provides functions to serialize and deserialize a type `t` for session storage, and to identify a user from a request, returning a promise with the result. Operates on the type `t` and base string and error types. Used to manage user authentication state across HTTP requests by converting user data to and from a string representation.",
+      "description_length": 336,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "FPauth",
+      "description": "provides serialization and deserialization functions for type `t` and operations to extract user identity from HTTP requests, enabling session management in web applications. It supports converting user data to and from string representations and returns results as promises. This module allows developers to track authenticated users across requests using a custom type `t`. Examples include storing user IDs in sessions and retrieving them to authorize subsequent actions.",
+      "description_length": 474,
+      "index": 5,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 10,
+    "meaningful_modules": 6,
+    "filtered_empty_modules": 4,
+    "retention_rate": 0.6
+  },
+  "statistics": {
+    "max_description_length": 474,
+    "min_description_length": 309,
+    "avg_description_length": 380.8333333333333,
+    "embedding_file_size_mb": 0.02221965789794922
+  }
+}

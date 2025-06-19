@@ -1,0 +1,119 @@
+{
+  "package": "opam-file-format",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 14,
+  "creation_timestamp": "2025-06-18T16:33:43.819160",
+  "modules": [
+    {
+      "module_path": "OpamPrinter.FullPos.Normalise",
+      "description": "Processes and formats Opam file content according to a strict, normalized layout. Converts values, items, and entire files into a standardized string representation with precise spacing, line endings, and sorting. Handles string escaping, list formatting, and field ordering to ensure consistent output suitable for version control or automated parsing.",
+      "description_length": 353,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OpamPrinter.FullPos.Preserved",
+      "description": "Converts Opam file items to strings while preserving original formatting and comments, handling layout differences between item lists. Works with OpamParserTypes.FullPos.opamfile_item lists and opamfile structures, ensuring consistency when modifying specific sections. Useful for generating updated Opam files without losing existing structure or annotations.",
+      "description_length": 360,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OpamPrinter.FullPos",
+      "description": "Processes and formats Opam file content with precise control over layout, spacing, and ordering, while preserving original formatting and comments during conversions. Operates on opamfile_item lists and opamfile structures, supporting string representation of values, lists, and entire files. Enables consistent output for version control and allows safe modifications without disrupting existing structure. Examples include normalizing a file's appearance, converting specific items to strings, and maintaining comments during updates.",
+      "description_length": 536,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OpamPrinter.Normalise",
+      "description": "Escapes special characters in strings for consistent representation. Converts Opam parser data structures like values, items, and opamfiles into standardized string formats. Sorts opamfile items based on predefined ordering rules.",
+      "description_length": 230,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OpamPrinter.Preserved",
+      "description": "Handles preservation of original formatting and structure when manipulating OPAM file content. Processes lists of OPAM file items and full opamfile structures, maintaining positional data. Used to generate human-readable output that reflects the original file's layout and syntax.",
+      "description_length": 280,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OpamParser.FullPos",
+      "description": "Parses OPAM file content into structured records with detailed position tracking, handling both full files and individual values from strings, channels, or files. Works with custom types like `FullPos.file_name`, `FullPos.opamfile`, and `FullPos.value` to preserve source location information. Processes OPAM data for analysis, validation, or transformation while maintaining precise line and column metadata.",
+      "description_length": 409,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OpamLexer.FullPos",
+      "description": "Converts string representations of relational, logical, prefix, and environment update operators into their corresponding full position type equivalents. Works with custom enum types for operator kinds used in parsing and printing OPAM expressions. Used to reconstruct parsed operator data from serialized string forms during processing.",
+      "description_length": 337,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OpamParserTypes.FullPos",
+      "description": "Provides operations to handle position-aware data structures, including parsing and manipulating tokens with source location metadata. Works with types like `pos`, `with_pos`, and structured opam file elements such as `opamfile_item` and `opamfile`. Used to track and validate the exact location of syntax elements during opam file parsing.",
+      "description_length": 340,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "opam-file-format",
+      "description": "Parses and prints opam file syntax, handling structured data like package metadata, dependencies, and version constraints. Works with OCaml's string, list, and associative data structures to represent and manipulate configuration details. Used to generate and analyze opam file content during package building and dependency resolution.",
+      "description_length": 336,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OpamBaseParser",
+      "description": "Parses OPAM file content by processing tokens from a lexing buffer and constructing structured value representations. It handles specific OPAM data formats, including package metadata and dependencies. The main function reads a file string and returns a fully parsed OPAM file structure.",
+      "description_length": 287,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OpamPrinter",
+      "description": "Converts parsed Opam files to formatted strings while preserving original structure, spacing, and comments. Operates on opamfile_item lists and opamfile structures, supporting stringification of values, lists, and full files, with sorting and escaping of special characters. Maintains positional data during transformations to ensure output aligns with original layout. Examples include normalizing file formatting, converting specific items to strings, and updating files without disrupting existing syntax.",
+      "description_length": 508,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OpamParser",
+      "description": "Parses OPAM content into structured records with precise location tracking, supporting input from strings, channels, or files. Uses custom types such as `FullPos.file_name`, `FullPos.opamfile`, and `FullPos.value` to retain source metadata. Enables analysis, validation, or transformation of OPAM data while preserving line and column information. Examples include extracting package names from a file or checking constraints in a specific section.",
+      "description_length": 448,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OpamLexer",
+      "description": "Handles operator conversion between string representations and structured data, enabling accurate parsing and printing of OPAM expressions. Supports relational, logical, prefix, and environment update operators through custom enum types. Operations include parsing strings into position-aware operator structures and serializing operator data back to strings. Example uses include processing constraints in package descriptions and validating operator syntax during configuration reads.",
+      "description_length": 486,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OpamParserTypes",
+      "description": "Handles position-aware data structures with operations for parsing and manipulating tokens that include source location metadata. Key types include `pos`, `with_pos`, `opamfile_item`, and `opamfile`, enabling precise tracking of syntax elements during opam file processing. It supports validation of element positions and structured manipulation of opam file content. Examples include extracting token locations, validating syntax positions, and building abstract representations of opam files.",
+      "description_length": 494,
+      "index": 13,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 14,
+    "meaningful_modules": 14,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 536,
+    "min_description_length": 230,
+    "avg_description_length": 386.0,
+    "embedding_file_size_mb": 0.051288604736328125
+  }
+}

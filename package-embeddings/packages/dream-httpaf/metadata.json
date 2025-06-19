@@ -1,0 +1,1183 @@
+{
+  "package": "dream-httpaf",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 166,
+  "creation_timestamp": "2025-06-18T16:58:34.904787",
+  "modules": [
+    {
+      "module_path": "Dream_h2.Client_connection.Scheduler.PriorityTreeNode",
+      "description": "Provides operations to manage hierarchical node structures with priority-based traversal, including inserting children, updating priorities, and retrieving the highest-priority descendant. Works with tree nodes organized as rooted or non-rooted structures, supporting parent-child relationships and stream-like traversal of nonroot nodes. Used to implement task scheduling systems where nodes represent tasks with dynamic priority adjustments.",
+      "description_length": 443,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.Client_connection.Scheduler.PriorityQueue",
+      "description": "This module provides operations for inserting, removing, and adjusting elements in a priority queue, along with traversal and inspection functions. It works with key-value pairs where keys are 32-bit integers and values are stream objects, enabling efficient priority-based management. Use cases include task scheduling systems and data processing pipelines requiring ordered element access.",
+      "description_length": 391,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.Scheduler.Make.PriorityTreeNode",
+      "description": "Provides operations to manage hierarchical node structures with priority-based traversal, including inserting children, updating priorities, and extracting the highest-priority node. Works with nested data types representing tree nodes, where each node can have a parent and multiple children. Used to implement task scheduling systems where operations must be executed in order of assigned priority.",
+      "description_length": 400,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.Scheduler.Make.PriorityQueue",
+      "description": "This module provides operations for managing priority queues where elements are key-value pairs (k, p), with k as Int32.t and p as PriorityTreeNode.stream, enabling ordered traversal by key or priority, filtering, and folding. It supports dynamic updates like key-based modifications, priority adjustments, and merging of queues while maintaining efficient access patterns. Use cases include task scheduling systems requiring priority-based processing or data aggregation scenarios needing ordered key-value management.",
+      "description_length": 519,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.H2.Body.Reader",
+      "description": "Provides functions to schedule byte reading from a data source, handle end-of-input notifications, and check if the source has been closed. Operates on a custom type `t` representing a readable channel. Used to manage asynchronous data consumption, such as processing network streams or file inputs in real time.",
+      "description_length": 312,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.H2.Body.Writer",
+      "description": "Writes characters, strings, and bigstrings to an internal buffer, merging writes when possible. Schedules bigstrings for transmission without copying, and ensures pending data is flushed or closed properly. Used to efficiently manage output streams with minimal system calls.",
+      "description_length": 275,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.Server_connection.Scheduler.PriorityTreeNode",
+      "description": "Provides operations to manage hierarchical node structures with priority-based traversal, including inserting children, updating priorities, and extracting the highest-priority node. Works with tree nodes organized as rooted or non-rooted structures, supporting parent-child relationships and stream-based processing. Used to implement task scheduling systems where nodes represent tasks with dynamic priority adjustments.",
+      "description_length": 422,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.Server_connection.Scheduler.PriorityQueue",
+      "description": "This module provides operations for dynamically managing priority queues, including insertion, removal, adjustment, and traversal of key-value pairs where priorities dictate ordering. It works with Int32.t keys and PriorityTreeNode.stream values, supporting conversions between list, sequence, and priority-ordered representations. Use cases include task scheduling systems requiring efficient priority-based access or data processing pipelines needing ordered element retrieval.",
+      "description_length": 479,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_httpaf_.Httpaf.Body.Reader",
+      "description": "Provides functions to schedule byte reading from a data source, handle end-of-input notifications, and check if the source has been closed. Operates on a custom type `t` representing a readable channel. Used to manage asynchronous data ingestion, such as processing network streams or file inputs in real time.",
+      "description_length": 310,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_httpaf_.Httpaf.Body.Writer",
+      "description": "Writes characters, strings, and bigstrings to an internal buffer, merging writes when possible. Schedules bigstrings for transmission without copying, and ensures pending data is flushed or closed. Used to efficiently manage output streams with minimal copying and controlled transmission timing.",
+      "description_length": 296,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_httpaf_.Httpaf.Response.Body_length",
+      "description": "Formats a duration in a human-readable string representation. Works with the `t` type, which represents time intervals. Used to display elapsed time in logs or user interfaces.",
+      "description_length": 176,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Httpaf.Request.Body_length",
+      "description": "Formats a time duration in a human-readable format. Works with the `t` type, which represents durations in seconds. Used to display elapsed time in logs or user interfaces.",
+      "description_length": 172,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_websocketaf.Websocketaf.Websocket.Opcode",
+      "description": "Encodes and decodes integer values to and from a custom type representing opcode values, supporting safe and unsafe conversions. Works with specialized type aliases for different opcode categories and a base type for representation. Used to serialize and deserialize instruction opcodes in a compiler or interpreter context.",
+      "description_length": 324,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_websocketaf.Websocketaf.Websocket.Close_code",
+      "description": "Provides conversion between integer values and a custom type, including safe and unsafe options for parsing and serialization. Works with integers and bigstrings, extracting or embedding values at specific offsets. Used to encode and decode structured data formats where exact integer representations are required.",
+      "description_length": 314,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2_lwt_unix.H2_lwt_unix.Server.TLS",
+      "description": "Handles TLS-secured HTTP/2 connections by establishing a server-side connection handler that authenticates clients using provided certificates and private keys. Operates on Unix socket addresses and Lwt-based file descriptors, routing requests and errors to specified handlers. Used to implement secure, multiplexed web servers with encrypted communication.",
+      "description_length": 357,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2_lwt_unix.H2_lwt_unix.Server.SSL",
+      "description": "Handles secure HTTP/2 connections by establishing SSL-based server connections, managing request and error handlers for each incoming connection. Operates on Unix socket addresses and SSL socket structures, enabling encrypted communication. Used to set up HTTPS servers with custom request routing and error management over secure channels.",
+      "description_length": 340,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_gluten_lwt.Gluten_lwt.Server",
+      "description": "Reads data into a buffer from a network socket, writes multiple buffer fragments in a single operation, and manages socket closure and reception shutdown. Operates on socket handles and address types to facilitate low-level network communication. Used for handling incoming data streams and sending structured payloads in real-time applications.",
+      "description_length": 345,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_gluten_lwt.Gluten_lwt.Client",
+      "description": "Reads data into a buffer from a network socket, writes multiple buffer fragments in a single operation, and manages socket closure and reception shutdown. Operates on socket handles and address types to facilitate low-level network communication. Used to implement reliable data transfer and connection management in networked applications.",
+      "description_length": 340,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.Settings.WindowSize",
+      "description": "Provides functions to check if a window size exceeds a maximum limit, retrieve a default initial value, and validate window size constraints. Operates on 32-bit integers to represent window dimensions. Used to enforce limits in network flow control or buffer management scenarios.",
+      "description_length": 280,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.Body.Reader",
+      "description": "Provides functions to manage reading operations on a buffer, including scheduling reads, handling end-of-file, and executing read callbacks. Works with `Bigstringaf.t` for buffer data and `Faraday.t` for underlying buffer management. Used to coordinate asynchronous read events in network or file I/O pipelines.",
+      "description_length": 311,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.Serialize.Writer",
+      "description": "The module offers low-level capabilities for constructing and writing HTTP/2 frames, including data, headers, and control frames, while managing writer state and flow control through operations like yielding, flushing, and closing. It works with protocol-specific types, bigstrings, and a stateful writer structure to encapsulate and transmit data via a Faraday buffer. This enables precise control over asynchronous I/O and stream management in HTTP/2 implementations.",
+      "description_length": 469,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.Headers.CI",
+      "description": "Provides functions to check if a character is uppercase, convert a character to lowercase, compare strings for equality, and determine if a string contains only lowercase characters. Operates on integers representing ASCII values and strings. Used to validate input formats and perform case-sensitive comparisons in text processing tasks.",
+      "description_length": 338,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.Headers.Pseudo",
+      "description": "Provides functions to check if a string is a pseudo-keyword, and retrieves lists of reserved request and response keywords. Works with strings and list structures. Used to validate and filter pseudo-identifiers in protocol parsing.",
+      "description_length": 231,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.Client_connection.Scheduler",
+      "description": "manages hierarchical task structures with dynamic priority adjustments, enabling insertion, updating, and retrieval of high-priority nodes within rooted or non-rooted trees. It also supports priority queues of 32-bit integer-keyed stream objects, allowing efficient element insertion, removal, and ordered traversal. Users can build task scheduling systems that handle both tree-based dependencies and linear priority-based processing. For example, it can track the highest-priority task in a tree or manage a queue of processed data items with assigned priorities.",
+      "description_length": 565,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.Client_connection.Queue",
+      "description": "Provides operations to add, remove, and inspect elements in a first-in, first-out structure. Works with a polymorphic queue type that stores elements in order, supporting iteration, copying, and transformation into sequences. Used to manage element flow in algorithms like BFS, where order preservation is critical.",
+      "description_length": 315,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.Frame.FrameType",
+      "description": "Encodes and decodes frame type identifiers between a custom type and integers. Works with an abstract type representing different frame categories. Used to convert frame types for network transmission and parsing incoming data.",
+      "description_length": 227,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.Parse.Reader",
+      "description": "The module provides a foundational structure for handling input sources, offering basic abstractions for reading data. It includes a type for representing input streams and operations for advancing and inspecting the current position. Simple utilities allow for checking end-of-input and retrieving characters. No functional operations are available beyond these core constructs.",
+      "description_length": 379,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.Scheduler.StreamsTbl",
+      "description": "This module offers operations for dynamically managing key-value pairs, including insertion, deletion, and lookup, alongside iteration and transformation of stored data. It works with generic hash tables and specialized stream tables where keys are of type Stream_identifier.t, enabling efficient mapping and sequence-to-table conversions. Use cases include real-time data processing pipelines and maintaining mutable state in event-driven systems.",
+      "description_length": 448,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.Scheduler.Make",
+      "description": "Provides functions to extract an identifier from a stream, check if output is required, flush a body with a byte limit, close a stream with a reason, and determine if the stream is idle. Works with a custom stream type and stream identifiers. Used to manage stream lifecycle and data transmission in network or I/O contexts.",
+      "description_length": 324,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.H2.Method",
+      "description": "Provides functions to check if a request method is safe, cacheable, or idempotent, and converts between string representations and internal types. Works with HTTP request method values defined by RFC 7231 and 7234. Used to validate HTTP semantics in server logic, enforce caching rules, and ensure consistent handling of repeated requests.",
+      "description_length": 339,
+      "index": 29,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.H2.Status",
+      "description": "Provides functions to convert between status codes and integers, check status code categories, and retrieve standard reason phrases. Works with custom types representing HTTP status code classes and a unified status type. Used to validate HTTP responses, classify server-client interactions, and generate human-readable status messages.",
+      "description_length": 336,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.H2.Headers",
+      "description": "This module provides functions to manage HTTP/2 header fields, operating on lowercase names and values with strict order preservation, enabling operations like constructing, modifying, and serializing header collections. It handles pseudo-header ordering constraints, duplicate field merging, and case-insensitive comparisons, making it suitable for implementing HTTP/2 message parsing, compression, and transmission where header fidelity is critical. The data structures support ordered lists of headers, allowing multiple values per name while adhering to protocol-specific rules for encoding and semantics.",
+      "description_length": 609,
+      "index": 31,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.H2.Body",
+      "description": "reads from and writes to data sources through a unified interface, handling asynchronous input and output operations with efficiency. It manages a custom type `t` for channels, supporting reading bytes, writing strings and bigstrings, and controlling buffer flushes. Operations include scheduling reads, merging writes, and ensuring proper closure of data streams. This enables real-time processing of network or file data with minimal overhead.",
+      "description_length": 445,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.H2.Request",
+      "description": "Creates HTTP requests with specified scheme, method, and target, supporting optional headers for client communication. Operates on `Headers.t` and returns a request object with methods to determine body length and pretty-print the request. Used to construct and inspect HTTP/2 requests with proper pseudo-header fields like :scheme and :authority.",
+      "description_length": 347,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.H2.Response",
+      "description": "Provides functions to create HTTP responses with headers and status, determine body length based on request method, and pretty-print responses. Works with status codes, headers, and HTTP methods. Used to validate request-response body lengths and generate structured HTTP responses in server implementations.",
+      "description_length": 308,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.H2.IOVec",
+      "description": "Provides operations to manipulate and query contiguous memory buffers represented as a single segment. Includes functions to calculate the length of a buffer, shift data within it, and pretty-print buffer contents. Used for efficient data handling in network I/O and binary serialization workflows.",
+      "description_length": 298,
+      "index": 35,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.H2.Reqd",
+      "description": "Provides functions to manage HTTP/2 request-response exchanges, including reading request bodies, sending responses with strings, bigstrings, or streaming, and scheduling trailers. Works with request and response objects, body readers and writers, and error tracking. Enables server push operations for promised requests, ensuring proper stream state management during transmission.",
+      "description_length": 382,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.H2.Error_code",
+      "description": "Converts error codes to human-readable strings and formats them for pretty printing. Works with a custom type representing error states. Used to generate logs and error messages in system diagnostics.",
+      "description_length": 200,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.H2.Settings",
+      "description": "Encodes and decodes configuration data using Base64, adhering to RFC7540 section 3.2.1. Processes a structured record type containing settings parameters. Provides a default configuration state for initialization.",
+      "description_length": 213,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.H2.Config",
+      "description": "Provides functions to create and convert configuration records, including setting buffer size, maximum concurrent streams, and initial window size. Works with a record type containing numeric and boolean fields for network protocol parameters. Used to initialize protocol settings for a sender in a streaming communication context.",
+      "description_length": 331,
+      "index": 39,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.H2.Server_connection",
+      "description": "Handles HTTP/1.1 and HTTP/2.0 connection state, managing read and write operations on bigstring buffers, and transitioning between `Read`, `Write`, and `Close` states based on network input and output. Processes requests using a request handler, supports error reporting, and tracks connection closure status. Used to upgrade HTTP/1.1 connections to HTTP/2.0 and manage bidirectional communication with explicit control over data flow.",
+      "description_length": 435,
+      "index": 40,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.H2.Client_connection",
+      "description": "Creates and manages HTTP/2 connections, handling stream requests, push promises, and error recovery. Processes HTTP/2 frames, including PING, GOAWAY, and PUSH_PROMISE, and supports reading/writing data through buffer operations. Used for establishing bidirectional communication with servers, managing stream-level errors, and processing pushed resources.",
+      "description_length": 355,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.Server_connection.Scheduler",
+      "description": "Manages hierarchical task structures with priority-based traversal and dynamic adjustment, supporting tree operations and stream processing. Handles Int32.t keys and PriorityTreeNode.stream values, enabling efficient insertion, removal, and ordered access. Allows extraction of highest-priority nodes, conversion between data representations, and dynamic priority updates. Used in task scheduling to organize and process elements based on evolving priorities.",
+      "description_length": 459,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_gluten_lwt_unix.Ssl_io.Io",
+      "description": "Reads data into a buffer from a socket, writes multiple buffer fragments in a single operation, and manages socket closure and reception shutdown. Operates on socket descriptors and Unix socket addresses. Used for handling low-level network communication, such as streaming data or sending multipart messages over TCP.",
+      "description_length": 318,
+      "index": 43,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_gluten_lwt_unix.Tls_io.Io",
+      "description": "Reads data into a buffer from a socket, writes multiple buffer fragments in a single call, and manages socket closure and reception shutdown. Operates on socket descriptors and Unix socket addresses. Used for efficient network communication in asynchronous I/O operations, such as handling incoming data streams or sending multipart messages.",
+      "description_length": 342,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_gluten.Gluten.Reqd",
+      "description": "Provides functions to create, check, and manipulate required fields in a record, including validation and extraction. Works with the private type 'reqd t, ensuring fields are non-optional and properly initialized. Used to enforce presence of critical data in configuration parsing and form validation workflows.",
+      "description_length": 311,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_gluten.Gluten.Server",
+      "description": "Provides operations to manage asynchronous read and write workflows, including reading data into a buffer, handling EOF, and yielding control to event loops. Works with `Bigstringaf.t` for binary data and `Faraday.iovec` for efficient I/O operations. Used to implement protocol handlers that process incoming requests and manage connection state during upgrades or shutdown.",
+      "description_length": 374,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_gluten.Gluten.Client",
+      "description": "Handles asynchronous read and write operations over a network connection, supporting direct buffer reads, EOF detection, and yield-based flow control. Operates on bigstring buffers and Iovec structures for efficient data transfer. Used to manage protocol upgrades, error reporting, and connection closure during network communication.",
+      "description_length": 334,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_gluten.Gluten.Buffer",
+      "description": "Manages buffer operations for reading from and writing to byte sequences using a custom buffer type. It supports efficient data extraction via a callback function that processes a bigstring with specified offset and length. It also enables writing data by providing a callback to fill a bigstring, allowing fine-grained control over buffer content.",
+      "description_length": 348,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_websocketaf_lwt_unix.Websocketaf_lwt_unix.Server",
+      "description": "Handles WebSocket connections by defining input handlers for messages and errors, using Unix socket addresses and file descriptors. Processes incoming data through a configured WebSocket protocol stack. Used to establish real-time communication channels in networked applications.",
+      "description_length": 280,
+      "index": 49,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_websocketaf_lwt_unix.Websocketaf_lwt_unix.Client",
+      "description": "Establishes a WebSocket connection using a provided configuration, host, port, and resource, with custom error and message handling. Operates on a file descriptor and returns a connection object that tracks the state of the WebSocket. Used to maintain real-time communication with a server, processing incoming messages and handling disconnections.",
+      "description_length": 348,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_websocketaf_lwt.Websocketaf_lwt.Client",
+      "description": "provides a set of utilities for managing client interactions, including data modeling and state transitions. it defines types such as client_id, client_info, and session_state, along with operations for creating, updating, and querying client data. functions like validate_client, update_session, and fetch_details support workflow automation. examples include initializing a new client record, updating session status, and retrieving stored information.",
+      "description_length": 454,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Httpaf.Version",
+      "description": "Represents HTTP protocol versions with a dot-separated numeric format, supporting comparison, string conversion, and pretty printing. It handles version numbers as structured values, enabling precise semantic checks and formatting. Used to validate incoming protocol versions and generate human-readable logs or error messages.",
+      "description_length": 327,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Httpaf.Method",
+      "description": "Provides functions to determine if a request method is safe, cacheable, or idempotent, and converts between string representations and internal types. Works with request method values defined by HTTP standards, including GET, POST, PUT, DELETE, and others. Used to enforce HTTP semantics in server logic, validate client requests, and manage caching behavior.",
+      "description_length": 359,
+      "index": 53,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_httpaf_.Httpaf.Status",
+      "description": "Provides functions to convert between status codes and their integer representations, check code categories, and generate reason phrases. Works with custom types representing HTTP status code classes and their numeric values. Used to validate, classify, and serialize HTTP response status codes in networked applications.",
+      "description_length": 321,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Httpaf.Headers",
+      "description": "The module provides operations for managing HTTP header fields, including adding, removing, replacing, and querying headers while preserving their order and handling multiple values for the same field name. It works with case-insensitive field names and string-based values, ensuring semantic consistency when combining repeated headers. Use cases include processing control headers like Set-Cookie, where order preservation and proper value aggregation are critical for correct message interpretation.",
+      "description_length": 502,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Httpaf.Body",
+      "description": "reads from and writes to data sources using a unified channel type, enabling efficient handling of input and output operations. It supports scheduling reads, managing buffer merges, and controlling data transmission with minimal copying. Operations include reading bytes, writing strings, and flushing buffers, suitable for real-time network or file processing. Examples include streaming log files or transmitting data over a socket with controlled flow.",
+      "description_length": 455,
+      "index": 56,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_httpaf_.Httpaf.Request",
+      "description": "Handles client-initiated HTTP messages by managing time durations in seconds, formatted for human readability. It supports operations like converting, displaying, and logging durations. For example, it can transform 3661 seconds into \"1 hour, 1 minute, 1 second\" for user-facing output. The core type `t` enables precise time manipulation and representation.",
+      "description_length": 358,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Httpaf.Response",
+      "description": "Provides functions to convert time intervals into human-readable strings, enhancing user and system communication. The core type `t` represents durations, and operations include formatting and manipulation for display purposes. Users can generate messages like \"2 hours 15 minutes\" from internal time values. This enables clear representation of elapsed time in logs, alerts, or user-facing notifications.",
+      "description_length": 405,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Httpaf.IOVec",
+      "description": "Provides operations to manipulate and query contiguous memory buffers represented as a single block or a list of blocks. Includes functions to calculate size, shift buffer positions, and pretty-print buffer structures. Used for efficient data handling in network I/O and file operations.",
+      "description_length": 287,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Httpaf.Reqd",
+      "description": "Handles HTTP request and response lifecycle, including reading request data, sending responses with strings, bigstrings, or streams, and managing connection persistence. Operates on request and response objects, headers, and error states. Used to construct and send HTTP responses, handle upgrades, and manage errors during request processing.",
+      "description_length": 343,
+      "index": 60,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_httpaf_.Httpaf.Config",
+      "description": "Provides functions to create and manipulate configuration records with default values for buffer sizes and thresholds. Works with a record type containing integer fields for sizing parameters. Used to initialize system settings for data processing pipelines with predefined limits.",
+      "description_length": 281,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Httpaf.Server_connection",
+      "description": "Handles HTTP connection lifecycle by managing read and write operations, error reporting, and state transitions. It works with `Bigstringaf.t` for byte-level input/output, `Reqd.t` for request processing, and custom error handling logic. Use cases include parsing incoming HTTP requests, flushing buffered responses, and gracefully handling connection termination or exceptions.",
+      "description_length": 378,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Httpaf.Client_connection",
+      "description": "Provides methods to manage an HTTP client connection, including creating a connection with a configuration, sending requests with custom error and response handlers, and handling read/write operations. Works with types like `Request.t`, `Response.t`, `Bigstringaf.t`, and custom error and handler types. Used to process HTTP traffic by reading from and writing to a network stream, managing buffer operations, and handling connection lifecycle events.",
+      "description_length": 451,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Body.Reader",
+      "description": "Provides functions to manage reading operations on a buffer, including scheduling reads, handling end-of-file, and executing read callbacks. Works with `Bigstringaf.t` for buffer handling and `Faraday.bigstring` for efficient data manipulation. Used to coordinate asynchronous data retrieval and ensure proper resource management during I/O operations.",
+      "description_length": 352,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Body.Writer",
+      "description": "Provides methods to construct and manipulate a writer that encodes and transmits data using specific encoding schemes like chunked, close-delimited, or fixed-size. Operates with bigstrings, Faraday buffers, and serialization writers to handle low-level data transmission. Used to efficiently write characters, strings, and bigstrings, manage output buffering, and control the lifecycle of a network or file output stream.",
+      "description_length": 421,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Serialize.Writer",
+      "description": "This module provides low-level operations for writing data structures such as strings, bytes, bigstrings, and iovecs, along with buffer management and stream control. It supports asynchronous I/O patterns, including scheduling, yielding, and flushing, through a stateful writer interface. Use cases include efficient data streaming, handling high-volume I/O operations, and managing complex buffer workflows in network or file-based applications.",
+      "description_length": 446,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Response.Body_length",
+      "description": "Formats a time duration in a human-readable format, such as \"2h30m\", using a custom type representing time intervals. Works with a variant type that encodes durations in hours, minutes, and seconds. Used to generate readable output for logging or user interfaces displaying elapsed time.",
+      "description_length": 287,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Parse.P",
+      "description": "Checks individual characters against specific lexical categories such as whitespace, carriage return, hexadecimal digits, and token components. Operates on single characters and returns boolean results for parsing and validation tasks. Used in text processing scenarios like HTTP header parsing or protocol validation.",
+      "description_length": 318,
+      "index": 68,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Parse.Reader",
+      "description": "The module provides a foundational structure for processing input streams, offering basic utilities for reading and manipulating data. It includes a core type for representing input sources and operations for advancing and inspecting the current position. Functions allow for fetching characters, checking end-of-stream conditions, and creating new readers from existing ones. It serves as a building block for more complex parsing and input-handling logic.",
+      "description_length": 457,
+      "index": 69,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_httpaf_.Request.Body_length",
+      "description": "Handles human-readable formatting of body length values. Works with the abstract type `t` representing measured lengths. Used to display structured length data in a user-friendly format during logging or output.",
+      "description_length": 211,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Respd.Request_state",
+      "description": "Handles state transitions for HTTP request processing, including tracking completion, errors, and retry counts. Operates on a custom type representing the current status of a request. Used to manage request flow in networked applications, ensuring proper handling of timeouts and server responses.",
+      "description_length": 297,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_websocketaf.Handshake.CI",
+      "description": "Provides operations to convert integers to lowercase equivalents and compare strings for equality. Works with integers and strings to perform basic transformations and checks. Used to normalize numeric values and verify string matches in input validation scenarios.",
+      "description_length": 265,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_websocketaf.Websocketaf.Payload",
+      "description": "Checks if a payload stream has reached its end and schedules asynchronous read operations with custom handlers for data and end-of-file events. Operates on a stream-like type representing data sources. Used to manage network or file-based data ingestion with precise control over reading and completion.",
+      "description_length": 303,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_websocketaf.Websocketaf.Websocket",
+      "description": "Encodes and decodes integers into specialized opcode types with safe and unsafe conversion options, supporting structured data serialization and parsing. Offers type aliases for distinct opcode categories and base representations, enabling precise manipulation of instruction sets. Operations include extracting and embedding integer values within bigstrings at specified offsets, facilitating low-level data handling. Used to manage compiler directives or protocol messages requiring exact numeric encoding.",
+      "description_length": 508,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_websocketaf.Websocketaf.Wsd",
+      "description": "Provides functions to schedule and send WebSocket frames, including text, binary, and continuation messages, with control over frame fin flags and offsets. Supports sending ping and pong frames with optional application data, and tracks connection state, errors, and closure. Works with Bigstringaf.t, Bytes.t, and IOVec.t to handle data transmission efficiently.",
+      "description_length": 363,
+      "index": 75,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_websocketaf.Websocketaf.Handshake",
+      "description": "Provides functions to construct HTTP handshake requests, validate upgrade headers using a SHA-1 transformation, and respond to upgrade requests with custom headers. Operates on HTTP headers, request methods, and nonce strings. Used to establish WebSocket connections by generating valid upgrade sequences and handling header validation.",
+      "description_length": 336,
+      "index": 76,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_websocketaf.Websocketaf.Websocket_connection",
+      "description": "type input_handlers = { on_message : string -> unit; on_close : unit -> unit; on_error : string -> unit } Provides functions to manage message handling, connection closure, and error reporting for real-time communication. Operates with string-based messages and event-driven callbacks. Used to implement interactive web applications requiring live data updates.",
+      "description_length": 361,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_websocketaf.Websocketaf.Client_connection",
+      "description": "Handles WebSocket connections by managing read and write operations, error reporting, and connection state. Operates on `Bigstringaf.t` for binary data, `Wsd.t` for WebSocket data, and custom error types. Used to process incoming messages, manage flow control during reads, and handle protocol-level errors during communication.",
+      "description_length": 328,
+      "index": 78,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_websocketaf.Websocketaf.Server_connection",
+      "description": "Provides functions to manage WebSocket connections, including creating instances, handling read/write operations with Bigstringaf buffers, and reporting results or exceptions. Operates on custom types like `t` and `error`, and uses callbacks for error handling and input processing. Used to implement real-time communication protocols with precise control over data flow and connection state.",
+      "description_length": 392,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_websocketaf.Websocket.Opcode",
+      "description": "Provides conversion between WebSocket opcode values and their corresponding variants, including mapping integers to opcode types and vice versa. Works with custom variant types representing WebSocket opcodes such as `Text`, `Binary`, `Ping`, and `Connection_close`. Used to validate and transform opcode values during WebSocket protocol handling.",
+      "description_length": 346,
+      "index": 80,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_websocketaf.Websocket.Close_code",
+      "description": "Provides conversion between status codes and their integer representations, including handling of standard and custom codes. Works with a discriminated union type representing WebSocket close codes and an array of standard codes. Enables safe and unsafe parsing of codes from integers or byte sequences, useful for protocol implementation and validation.",
+      "description_length": 354,
+      "index": 81,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_websocketaf.Websocket.Frame",
+      "description": "Applies a bitmask to a portion of a binary buffer, modifying data in place using a 32-bit key. Operates on Bigstringaf.t and bytes, allowing direct manipulation of network protocol data. Used to decrypt or process framed data streams in low-level network communication.",
+      "description_length": 269,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_websocketaf.Parse.Reader",
+      "description": "The module provides a foundational structure for handling input sources, offering basic abstractions for reading data. It includes a core type for representing input streams and operations for advancing and inspecting the current position. Simple utilities allow for checking end-of-input and retrieving characters. It serves as a base for more complex parsing and processing workflows.",
+      "description_length": 386,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2_lwt_unix.H2_lwt_unix.Server",
+      "description": "Establishes secure, multiplexed HTTP/2 servers using TLS or SSL, handling client authentication via certificates and private keys while routing requests and errors through customizable handlers. Operates on Unix socket addresses and either Lwt file descriptors or SSL socket structures, enabling encrypted communication and fine-grained control over connection management. Supports custom request routing, error handling, and secure multiplexing for web services. Examples include implementing HTTPS servers with client certificate validation or setting up encrypted APIs with per-connection handler logic.",
+      "description_length": 606,
+      "index": 84,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_hpack.Static_table.TokenIndices",
+      "description": "This module provides functions to map HTTP header fields to unique integer identifiers, enabling efficient reference and processing of metadata. It operates on structured HTTP headers, such as \"content-range,\" \"content-type,\" and \"cookie,\" by assigning numeric constants to specific fields. Use cases include optimizing header parsing in network protocols or streamlining metadata handling in web server/client implementations.",
+      "description_length": 427,
+      "index": 85,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_hpack.Hpack.Encoder",
+      "description": "Initializes a dynamic table for header compression, allowing encoding of HTTP/2 headers into a buffer. Operates on a custom type `t` and a Faraday buffer, supporting adjustments to the table's maximum size. Used to prepare headers for transmission in protocols requiring HPACK encoding.",
+      "description_length": 286,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_hpack.Hpack.Decoder",
+      "description": "Initializes a decoder with a dynamic table of specified capacity and allows adjusting that capacity dynamically. Parses HTTP/2 header blocks into a list of headers using an Angstrom parser. Designed for efficient header decoding in network protocols requiring dynamic table management.",
+      "description_length": 285,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_hpack.Encoder.HeaderFieldsTbl",
+      "description": "This module offers operations for inserting, removing, and looking up key-value pairs in a hash table, along with iteration and transformation capabilities. It works with a dictionary-like structure where keys are strings and values are polymorphic, supporting sequence-based construction and updates. Use cases include efficiently managing structured data like HTTP headers or configuration settings, where dynamic key-value manipulation and batch processing are required.",
+      "description_length": 473,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_hpack.Encoder.ValueMap",
+      "description": "The module offers operations for inserting, deleting, and querying key-value maps, along with iteration, merging, and sequence-based transformations, supporting both generic value types and string-keyed structures. It enables tasks like handling optional values, dynamic data manipulation, and converting between maps and sequences, tailored for scenarios requiring flexible data aggregation or structured data processing.",
+      "description_length": 422,
+      "index": 89,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_hpack.Encoder.BinaryFormat",
+      "description": "Provides operations to handle binary format configurations through tuples of integers representing indexing strategies. Works with integer pairs to encode or decode data based on indexing rules. Used to determine if a format supports indexing or to select an appropriate indexing method during serialization.",
+      "description_length": 308,
+      "index": 90,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_gluten_lwt.Gluten_lwt",
+      "description": "Handles bidirectional data flow over network sockets by reading into buffers, writing multiple fragments atomically, and managing connection lifecycle events. Operates on socket handles and address types to support real-time data exchange and reliable transmission. Supports tasks such as streaming large payloads, ensuring orderly shutdowns, and maintaining stable connections during data transfer. Enables efficient handling of incoming and outgoing network traffic in applications requiring low-latency communication.",
+      "description_length": 520,
+      "index": 91,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.Body",
+      "description": "manages buffer-based read operations, coordinating asynchronous I/O through `Bigstringaf.t` and `Faraday.t`, with support for scheduling, EOF handling, and callback execution. It exposes functions for managing read events and integrating them into larger I/O pipelines. Operations include initiating reads, tracking progress, and invoking handlers upon completion. For example, it can be used to stream data from a socket or file while maintaining buffer efficiency.",
+      "description_length": 466,
+      "index": 92,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.Client_connection",
+      "description": "Combines task management with priority-based processing and queue operations, offering structured task hierarchies and efficient priority queues. It supports dynamic task insertion, priority updates, and retrieval within tree structures, as well as FIFO element handling with polymorphic queues. Users can implement task schedulers that manage both dependency trees and ordered data streams. For instance, it can track the highest-priority task in a hierarchy or maintain a sequence of processed items in insertion order.",
+      "description_length": 521,
+      "index": 93,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.Config",
+      "description": "Provides functions to create a default configuration and convert configurations into settings objects. Works with a record type containing configuration parameters. Used to initialize application settings and migrate configuration data to a different structure.",
+      "description_length": 261,
+      "index": 94,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.Error",
+      "description": "Returns the human-readable message associated with an error value. Works with the abstract error type `t` to encapsulate and retrieve error details. Used to generate user-facing error messages in application logging and interface feedback.",
+      "description_length": 239,
+      "index": 95,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.Error_code",
+      "description": "Encodes and decodes error codes between an opaque type and 32-bit integers. Converts error codes to human-readable strings and formats them for pretty printing. Used to transmit and display error information in a standardized way.",
+      "description_length": 230,
+      "index": 96,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.Flags",
+      "description": "Provides bitwise operations to test and modify specific flags in an integer representation of HTTP/2 frame flags. Works with the `int` type to check and set individual flag bits such as end stream, acknowledgment, end header, padded, and priority. Used to manipulate frame behavior in network protocol implementations.",
+      "description_length": 318,
+      "index": 97,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.Frame",
+      "description": "Encodes and decodes frame type identifiers between a custom type and integers, enabling seamless conversion for network communication and data parsing. It operates on an abstract type that represents distinct frame categories, allowing for type-safe manipulation. Functions include mapping between integer representations and symbolic frame types, ensuring consistency across system components. This enables precise handling of frame types during data transmission and interpretation.",
+      "description_length": 484,
+      "index": 98,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.H2",
+      "description": "H2 provides HTTP/2 protocol support with tools for request and response handling, header management, and connection control. It includes types for methods, status codes, headers, and buffers, along with operations to validate semantics, serialize data, and manage streams. Functions enable constructing requests, parsing headers, encoding configuration, and handling errors, while supporting efficient I/O and protocol state transitions. It allows building robust HTTP/2 servers and clients with precise control over message structure and network flow.",
+      "description_length": 552,
+      "index": 99,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.Headers",
+      "description": "combines string validation, case manipulation, and keyword recognition functions. It handles ASCII character checks, string case analysis, and keyword filtering using string and list operations. Users can verify if a string is lowercase, check for pseudo-keywords, or compare strings for equality. It supports text processing tasks such as input validation and protocol parsing.",
+      "description_length": 378,
+      "index": 100,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.Message",
+      "description": "Calculates the content length from a string, returning an error for invalid requests or a fixed integer value. Parses HTTP headers to determine the body length, handling cases where the length is explicitly specified or unknown. Used to validate and process HTTP message sizes during request parsing.",
+      "description_length": 300,
+      "index": 101,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.Optional_thunk",
+      "description": "Provides functions to create and inspect a delayed execution wrapper, supporting nullary functions. Works with a custom type `t` that encapsulates either no value or a thunk. Used to conditionally execute code only when a value is present, such as in lazy initialization or event handling.",
+      "description_length": 289,
+      "index": 102,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.Parse",
+      "description": "manages input streams with position tracking, enabling precise control over data reading. It defines a stream type and supports operations to advance, check, and retrieve characters. It allows detection of end-of-input and character inspection. This module forms the basis for more complex parsing tasks by providing low-level input handling.",
+      "description_length": 342,
+      "index": 103,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.Priority",
+      "description": "Manages priority values represented as 32-bit integers, supporting bitwise operations to mark and check exclusive flags. Provides functions to compare priorities and manipulate exclusive status through setting and clearing bits. Used to enforce priority-based access control in concurrent or resource management systems.",
+      "description_length": 320,
+      "index": 104,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.Scheduler",
+      "description": "Provides operations to manage stream identifiers, check output requirements, flush data with byte limits, close streams with specific reasons, and determine if a stream is idle. Works with a custom type representing stream states. Used to control data transmission and lifecycle management in network or event-driven systems.",
+      "description_length": 325,
+      "index": 105,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.Serialize",
+      "description": "Provides low-level HTTP/2 frame construction and writing capabilities, handling data, headers, and control frames with stateful writer operations. It uses protocol-specific types, bigstrings, and Faraday buffers to manage flow control, yielding, flushing, and closing. This enables fine-grained control over asynchronous I/O and stream management in HTTP/2 protocols. Examples include generating headers, sending data frames, and managing stream states during transmission.",
+      "description_length": 473,
+      "index": 106,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.Server_connection",
+      "description": "Provides task management capabilities through hierarchical structures with priority-based processing. Supports Int32.t keys and PriorityTreeNode.stream values, enabling insertion, removal, and dynamic priority adjustments. Allows extraction of highest-priority nodes and conversion between data formats. Used for organizing and processing tasks in real-time scheduling systems.",
+      "description_length": 377,
+      "index": 107,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.Settings",
+      "description": "Handles window size validation and adjustment using 32-bit integers, ensuring values adhere to specified constraints. Includes checks for maximum limits, retrieval of default initial values, and enforcement of valid ranges. Supports scenarios requiring strict control over data transmission rates or resource allocation. For example, it can prevent a window size from exceeding 65535 or reset it to a safe default when invalid.",
+      "description_length": 427,
+      "index": 108,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2.Status",
+      "description": "Provides a structured way to represent and work with HTTP response status codes as three-digit integers, aligning with RFC7231\u00a76. Includes basic type definitions for status codes and utilities for checking their categories, such as success, redirection, client error, and server error. Examples include determining if a status code indicates success (e.g., 200) or a client error (e.g., 404). No functional operations are available beyond type definitions.",
+      "description_length": 456,
+      "index": 109,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.Stream_identifier",
+      "description": "Compares 32-bit integers using relational operators and checks stream identifier properties. Identifies connection, request, and pushed streams based on integer values. Operates on 32-bit integer representations of stream identifiers.",
+      "description_length": 234,
+      "index": 110,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2.Util",
+      "description": "Tests and modifies individual bits in integer values. Operates on 32-bit and regular integers, allowing bit-level manipulation such as checking, setting, or clearing specific positions. Used for low-level data encoding and protocol parsing where precise bit control is required.",
+      "description_length": 278,
+      "index": 111,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf.Websocket",
+      "description": "provides a framework for handling WebSocket connections through auxiliary components includes message serialization, connection management, and event handling capabilities supports sending and receiving structured data over real-time networks enables building interactive web applications with bidirectional communication",
+      "description_length": 321,
+      "index": 112,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_gluten_lwt_unix.Ssl_io",
+      "description": "Manages low-level network communication through socket operations, including reading data into buffers, writing multiple fragments, and handling closure and reception shutdown. Operates on socket descriptors and Unix socket addresses to support streaming and multipart message transmission. Provides direct control over data flow and connection management. Examples include sending large payloads in segments and reliably closing connections after data exchange.",
+      "description_length": 462,
+      "index": 113,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_gluten_lwt_unix.Tls_io",
+      "description": "Manages network communication through socket operations, enabling efficient data transfer by reading from and writing to socket descriptors, handling multiple buffer fragments, and controlling connection closure. Supports asynchronous I/O by managing socket addresses and ensuring proper shutdown of data reception. Operations include buffer-based data transmission, multi-part message handling, and socket lifecycle management. Examples include streaming data over a network connection, sending structured messages in segments, and cleanly closing communication channels.",
+      "description_length": 572,
+      "index": 114,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_gluten.Gluten",
+      "description": "Provides operations to manage asynchronous read and write workflows, including checking the next expected operation, reading data into a buffer, handling EOF, and yielding control to event loops. Works with `Bigstringaf.t` for efficient byte buffer handling and tracks state through a mutable `t` type. Used to implement non-blocking I/O protocols by coordinating between reader and writer sides with explicit control flow.",
+      "description_length": 423,
+      "index": 115,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_websocketaf_lwt_unix.Websocketaf_lwt_unix",
+      "description": "manages WebSocket communication over Unix sockets, handling message and error input through configured protocol stacks. It operates on file descriptors and socket addresses, providing connection state tracking and real-time data processing. Functions include establishing connections with custom handlers and managing disconnections. Examples include streaming real-time data from a server and responding to error conditions during message exchange.",
+      "description_length": 449,
+      "index": 116,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_websocketaf_lwt.Websocketaf_lwt",
+      "description": "provides tools for managing client interactions through defined data structures and state transitions. it includes types like client_id, client_info, and session_state, along with functions to create, update, and query client data. operations such as validate_client and update_session enable automated workflows, while fetch_details retrieves stored information. examples include setting up a new client, modifying session status, and accessing client records.",
+      "description_length": 461,
+      "index": 117,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_websocketaf_lwt.Websocketaf_lwt_intf",
+      "description": "Handles WebSocket connections by establishing a handler for incoming connections, processing messages, and managing errors. Operates on socket and address types to facilitate real-time communication over HTTP/1.1. Used to build server-side logic for interactive web applications requiring bidirectional data flow.",
+      "description_length": 313,
+      "index": 118,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Body",
+      "description": "manages reading and writing operations using efficient buffer handling, enabling asynchronous data retrieval and controlled data transmission. It supports `Bigstringaf.t` and `Faraday.bigstring` for low-level data manipulation, with read operations handling end-of-file conditions and write operations managing encoding schemes like chunked or fixed-size. Functions include scheduling reads, executing callbacks, and encoding data for output streams. Examples include reading from a socket asynchronously and writing JSON data with proper framing.",
+      "description_length": 547,
+      "index": 119,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_httpaf_.Config",
+      "description": "Provides functions to load, merge, and access configuration values from a structured record type. Works with a record type containing fields for application settings, environment variables, and runtime parameters. Used to initialize application settings from a default configuration and override them with environment-specific values during startup.",
+      "description_length": 349,
+      "index": 120,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Headers",
+      "description": "This module offers operations for managing header collections through insertion, removal, and lookup, along with conversions to and from lists and string serialization. It works with structured HTTP header data, utilizing types that represent headers as name-value pairs. Use cases include parsing and generating HTTP headers in network protocols or API interactions.",
+      "description_length": 367,
+      "index": 121,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Httpaf",
+      "description": "Provides structured handling of HTTP protocol elements, including version checks, method validation, status code management, and header manipulation. Offers buffer and I/O operations for efficient data processing, along with time formatting and configuration management. Enables construction and management of HTTP requests and responses, including connection lifecycle control. Examples include validating HTTP methods, formatting time durations, and managing header order during request parsing.",
+      "description_length": 497,
+      "index": 122,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_httpaf_.IOVec",
+      "description": "Provides operations to manipulate and query I/O vector structures, including calculating total length, shifting offsets, and adjusting lengths. Works with a custom type representing contiguous memory segments used in I/O operations. Used to manage buffer offsets and sizes when processing network packets or file data.",
+      "description_length": 318,
+      "index": 123,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_httpaf_.Input_state",
+      "description": "Manages input state transitions using a finite set of event types, supporting actions like key presses, mouse movements, and button clicks. It operates on a custom type representing the current state of input devices and their recent interactions. Used to track user interactions in real-time applications such as game controllers or interactive simulations.",
+      "description_length": 358,
+      "index": 124,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Message",
+      "description": "Handles header-based filtering and string manipulation, including extracting unique content length values from HTTP headers and ensuring list uniqueness. Processes versioned connections with optional proxy support and converts string content to 64-bit integer lengths. Used to normalize request data and validate header consistency.",
+      "description_length": 332,
+      "index": 125,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Method",
+      "description": "Checks if a method is safe, cacheable, or idempotent based on HTTP semantics. Converts between string representations and an extensible method type, supporting both standard and custom methods. Provides a human-readable pretty-printing function for method values.",
+      "description_length": 263,
+      "index": 126,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Optional_thunk",
+      "description": "Provides functions to create and inspect a delayed computation container, supporting `none` and `some` constructors where `some` wraps a unit-returning function. Works with the `t` type, which represents an optional deferred action. Used to conditionally execute a function only when a value is present, such as in event handling or lazy initialization.",
+      "description_length": 353,
+      "index": 127,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Output_state",
+      "description": "Provides functions to serialize and deserialize state information, including saving and loading from file paths. Works with custom data types representing application snapshots and error conditions. Used to persist user session data and restore it after program restarts.",
+      "description_length": 271,
+      "index": 128,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Parse",
+      "description": "Processes input streams by advancing through characters, checking end-of-stream conditions, and validating lexical properties. Provides core types for representing input sources and operations for inspecting and manipulating positions within the stream. Supports character-level checks for categories like whitespace, hex digits, and token components, enabling precise control over parsing logic. Used in scenarios such as HTTP header parsing, where incremental input handling and lexical validation are required.",
+      "description_length": 513,
+      "index": 129,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Request",
+      "description": "Provides functions to convert abstract length values into human-readable formats, enabling clear representation of measured data. The core type `t` is used to store and manipulate length values, with operations for formatting and output. It supports logging and display scenarios by transforming structured data into readable strings. For example, it can convert a length of 1500 millimeters into \"1.5 meters\" or \"1500 mm\" based on context.",
+      "description_length": 440,
+      "index": 130,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Respd",
+      "description": "Tracks the lifecycle of HTTP requests, managing status changes, errors, and retries through a custom state type. Supports operations to update and query the request's progress, including checking completion and error conditions. Examples include detecting when a request has failed after multiple attempts or determining if a response has been fully received. Provides structured control over network interactions in distributed systems.",
+      "description_length": 437,
+      "index": 131,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Response",
+      "description": "Converts time intervals into human-readable strings using a variant type that represents durations in hours, minutes, and seconds. Supports operations to combine and format these intervals into concise representations like \"2h30m\". Can be used to display elapsed time in logs or user interfaces. Examples include formatting 90 minutes as \"1h30m\" or 125 seconds as \"2m5s\".",
+      "description_length": 371,
+      "index": 132,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_httpaf_.Response_state",
+      "description": "Provides functions to extract an output state representation and to flush the response body. Works with a custom type representing the internal state of a response. Used to manage and finalize HTTP response data during server processing.",
+      "description_length": 237,
+      "index": 133,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_httpaf_.Serialize",
+      "description": "handles data serialization and transmission through low-level write operations on strings, bytes, bigstrings, and iovecs, with support for buffer management and stream control. it enables asynchronous I/O by allowing stateful writing, scheduling, and flushing, making it suitable for high-performance data streaming. operations include writing raw data, managing buffer boundaries, and coordinating I/O flow. examples include serializing large datasets to disk, streaming binary data over a network, and efficiently handling fragmented input in real-time applications.",
+      "description_length": 568,
+      "index": 134,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Status",
+      "description": "The module offers functions for converting HTTP status codes and reason phrases between symbolic representations and their numeric or string forms, categorizing codes into informational, successful, or error types, and serializing them for output. It operates on a sum type encapsulating HTTP status details, enabling structured handling of response codes. Use cases include parsing HTTP responses in web servers or clients, validating status codes, and generating human-readable logs.",
+      "description_length": 485,
+      "index": 135,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_.Version",
+      "description": "Represents version numbers with comparison, string conversion, and pretty-printing capabilities. It supports parsing and formatting version strings, and can write version data to a buffer. Used to enforce version constraints and generate human-readable version outputs.",
+      "description_length": 269,
+      "index": 136,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_websocketaf.Handshake",
+      "description": "Handles numeric and string normalization and comparison, enabling input validation through integer-to-string conversion and equality checks. Supports operations on integers and strings, such as converting numbers to their lowercase equivalents and verifying string matches. Allows for basic data transformation and verification in scenarios requiring strict input formatting. Examples include validating user input by ensuring numeric values are properly formatted and confirming string equality during authentication processes.",
+      "description_length": 528,
+      "index": 137,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_websocketaf.Optional_thunk",
+      "description": "Provides functions to create and inspect a delayed computation container, supporting nullary functions. Works with the `t` type, which encapsulates either no computation or a thunk. Enables conditional execution of a thunk only when it contains a value, and retrieves the wrapped function for direct invocation.",
+      "description_length": 311,
+      "index": 138,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_websocketaf.Parse",
+      "description": "Provides a foundation for processing input by defining a stream type with operations to navigate and inspect content. It supports checking for end-of-input and retrieving characters, enabling low-level data traversal. This module underpins more advanced parsing logic by offering controlled access to input sources. It allows developers to build custom parsers that process data sequentially and efficiently.",
+      "description_length": 408,
+      "index": 139,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_websocketaf.Serialize",
+      "description": "Serializes WebSocket frames into a buffer, handling headers, control messages, and payload data. It operates on `Faraday.t` buffers, `Bigstringaf.t`, and `Bytes.t` for efficient data manipulation. Used to construct outgoing WebSocket messages with specific opcodes, fin flags, and payload segments.",
+      "description_length": 298,
+      "index": 140,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_websocketaf.Websocket",
+      "description": "handles encoding and decoding of WebSocket protocol elements, including opcode conversion, status code mapping, and binary data manipulation. it works with custom variant types for opcodes like `Text` and `Binary`, a union type for close codes, and provides in-place bitwise operations on binary buffers. it enables precise control over WebSocket frame processing, from validating opcode values to decrypting framed data. examples include converting integer opcodes to their symbolic representations, parsing close status codes from byte sequences, and applying XOR masks to incoming data.",
+      "description_length": 589,
+      "index": 141,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_websocketaf.Websocketaf",
+      "description": "manages WebSocket communication through a set of coordinated components that handle data ingestion, encoding, framing, handshaking, and event-driven message processing. it operates on types like Bigstringaf.t, Wsd.t, and custom error structures, enabling precise control over data transmission, protocol compliance, and real-time interaction. it supports sending text, binary, and control frames, parsing opcode values, and managing connection lifecycle events such as closure and errors. examples include decoding protocol messages, sending ping frames, and handling HTTP upgrade requests with SHA-1 validation.",
+      "description_length": 612,
+      "index": 142,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2_lwt.H2_lwt_intf",
+      "description": "Handles HTTP/2 connection setup by creating a handler that processes requests and errors based on client address and socket. Operates on custom `socket` and `addr` types to manage network interactions. Used to establish server-side connections with configurable request and error handling logic.",
+      "description_length": 295,
+      "index": 143,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2_lwt_unix.H2_lwt_unix",
+      "description": "Provides secure, multiplexed HTTP/2 server capabilities with TLS/SSL support, enabling encrypted communication, client authentication via certificates, and customizable request and error routing. Operates on Unix socket addresses and uses Lwt or SSL socket structures for connection management, allowing fine-grained control over web services. Supports features like HTTPS server implementation with client certificate validation and encrypted API setups with per-connection handler logic. Includes placeholder modules with no functional content.",
+      "description_length": 546,
+      "index": 144,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_hpack.Decoder",
+      "description": "Handles decoding of HTTP headers from a byte stream, supporting incremental processing and capacity management. Operates on a mutable state type that tracks parsing progress and buffer limits. Used to parse incoming HTTP requests or responses in a streaming network application.",
+      "description_length": 278,
+      "index": 145,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_hpack.Dynamic_table",
+      "description": "Provides operations to manage a dynamically resizing table with entries consisting of string pairs and an integer size. Works with a custom type `t` that tracks entries, capacity, and eviction policies. Supports concrete actions like adding entries, evicting one based on a custom function, adjusting capacity, and retrieving specific entries.",
+      "description_length": 343,
+      "index": 146,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_hpack.Encoder",
+      "description": "Combines hash table operations, map manipulations, and binary indexing strategies to manage structured data. It supports string-keyed dictionaries, generic key-value maps, and integer-based encoding schemes, enabling insertion, lookup, transformation, and merging of data. Users can process HTTP headers, configuration files, or serialized binary formats by applying key-based operations or indexing rules. Examples include dynamically updating settings, merging multiple data sources, or encoding data according to predefined indexing schemes.",
+      "description_length": 544,
+      "index": 147,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_hpack.Hpack",
+      "description": "Manages HPACK encoding and decoding of HTTP/2 headers using a dynamic table represented by a custom type `t`. Supports encoding headers into a Faraday buffer and decoding header blocks into a list of headers with an Angstrom parser. Allows dynamic adjustment of the table's maximum size during encoding and decoding processes. Enables efficient header compression and decompression in network protocols requiring HPACK.",
+      "description_length": 419,
+      "index": 148,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_hpack.Huffman",
+      "description": "Calculates the length of a Huffman-encoded string, performs in-place encoding using a Faraday buffer, and decodes a string back to its original form with error handling. It operates on raw strings and Faraday buffers for efficient data manipulation. Used to compress log data before storage and reconstruct it during retrieval.",
+      "description_length": 327,
+      "index": 149,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_hpack.Huffman_table",
+      "description": "Generates a mapping of symbol frequencies to encoded bit patterns and a reverse lookup for decoding bits back to symbols. Operates on arrays of integer pairs for encoding and triples of integers, booleans, and characters for decoding. Used to compress data by replacing frequent symbols with shorter codes and reconstruct original data from encoded streams.",
+      "description_length": 357,
+      "index": 150,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_hpack.Static_table",
+      "description": "Maps HTTP header fields to unique integers for efficient metadata handling, supporting structured headers like \"content-range\" and \"cookie.\" It defines a mapping between string identifiers and numeric constants, enabling fast lookups and comparisons. Operations include converting headers to integers and retrieving string representations from numeric codes. This supports optimized parsing in network protocols and consistent metadata management in web applications.",
+      "description_length": 467,
+      "index": 151,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_hpack.Types",
+      "description": "Provides functions to construct and inspect HTTP headers and error representations. Works with record types containing fields for status codes, messages, and metadata. Used to parse incoming request headers and generate standardized error responses in web applications.",
+      "description_length": 269,
+      "index": 152,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "dream-httpaf",
+      "description": "Provides routing, request handling, and response generation for web applications using simple function signatures. Operates on HTTP methods, URLs, and custom data types for request bodies and headers. Enables rapid development of RESTful APIs and dynamic web pages with minimal configuration.",
+      "description_length": 292,
+      "index": 153,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_gluten_lwt",
+      "description": "Manages network communication through socket handles and address types, enabling real-time data exchange with support for streaming large payloads, atomic writes, and connection lifecycle management. Processes bidirectional data flow with features like orderly shutdowns and stable transmission during transfers. Supports low-latency applications by handling buffer reads and ensuring reliable network traffic management. Examples include streaming video data, maintaining persistent connections, and safely closing sockets after data transfer.",
+      "description_length": 544,
+      "index": 154,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2",
+      "description": "Manages asynchronous I/O, task scheduling, and HTTP/2 protocol operations through a suite of modules that handle buffer management, priority queues, configuration conversion, error handling, and protocol-specific data encoding. Key data types include `Bigstringaf.t`, `Faraday.t`, task trees, configuration records, error types, and HTTP/2 frame and stream identifiers, with operations for reading, scheduling, encoding, decoding, and manipulating these structures. Examples include streaming data from a socket, managing task priorities, converting configuration settings, and handling HTTP/2 frame flags and headers. It supports building robust network applications with precise control over I/O, task execution, and protocol compliance.",
+      "description_length": 739,
+      "index": 155,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_httpaf",
+      "description": "handles WebSocket communication by managing connections, serializing messages, and processing events supports bidirectional data exchange using structured formats for real-time interaction allows sending and receiving custom data types over persistent network links enables development of dynamic web features like live updates and real-time messaging",
+      "description_length": 351,
+      "index": 156,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_gluten_lwt_unix",
+      "description": "handles low-level network communication via socket operations, enabling data transmission, buffer management, and connection control. it works with socket descriptors and Unix addresses to support streaming, multi-part messages, and reliable closure. examples include sending large data in segments and ensuring proper shutdown of network channels. it provides direct control over data flow and connection lifecycle.",
+      "description_length": 416,
+      "index": 157,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_gluten",
+      "description": "manages asynchronous I/O workflows using `Bigstringaf.t` buffers and a mutable `t` state, enabling non-blocking read and write operations with explicit control flow. It supports checking expected operations, reading data, handling end-of-file, and yielding to event loops. This allows precise coordination between reader and writer sides in protocol implementations. Examples include streaming data over sockets or processing large files without blocking the main thread.",
+      "description_length": 471,
+      "index": 158,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_websocketaf_lwt_unix",
+      "description": "handles WebSocket communication over Unix sockets, using file descriptors and socket addresses to manage connections, message exchange, and error handling. It supports real-time data streaming and disconnection management through custom handlers. Key data types include socket addresses, file descriptors, and message payloads, with operations for connection setup, state tracking, and event-driven processing. Examples include real-time data updates from a server and automated error recovery during communication.",
+      "description_length": 515,
+      "index": 159,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_websocketaf_lwt",
+      "description": "manages WebSocket-based client interactions with structured data and real-time communication. it defines client_id, client_info, and session_state to track user sessions, and provides functions to validate, update, and retrieve client data. it also handles socket connections, message processing, and error management for bidirectional communication. examples include initializing a client session, updating status in real time, and responding to incoming WebSocket messages.",
+      "description_length": 475,
+      "index": 160,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_httpaf_",
+      "description": "manages HTTP protocol interactions through a suite of modules that handle data transmission, configuration, headers, and state tracking. it provides types like `Bigstringaf.t`, `header`, `status`, and `version`, with operations for reading, writing, parsing, and formatting HTTP elements. examples include asynchronous socket reads, header manipulation, status code conversion, and version comparison. it supports complex workflows such as request lifecycle management, data serialization, and lexical stream processing.",
+      "description_length": 520,
+      "index": 161,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_websocketaf",
+      "description": "The module offers a range of capabilities for handling WebSocket communication and data processing. It includes functions for serializing and deserializing WebSocket frames, encoding and decoding protocol elements, and managing input streams for parsing. It supports operations like converting opcodes to symbolic representations, validating close codes, and constructing outgoing messages with specific flags. It also enables controlled execution of delayed computations and provides tools for input validation and transformation.",
+      "description_length": 531,
+      "index": 162,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_h2_lwt",
+      "description": "Manages HTTP/2 server connections by initializing handlers that process requests and errors through custom socket and address types. Enables server-side communication with configurable logic for handling incoming traffic. Supports low-level network interaction by abstracting connection setup and error recovery. Can be used to build robust, customizable HTTP/2 servers with fine-grained control over network behavior.",
+      "description_length": 418,
+      "index": 163,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dream_h2_lwt_unix",
+      "description": "offers secure, multiplexed HTTP/2 server operations with TLS/SSL, handling encrypted communication and client certificate authentication. It manages Unix socket addresses and leverages Lwt or SSL socket structures for connection control, enabling custom routing of requests and errors. It supports HTTPS implementations and encrypted API setups with per-connection logic. Example uses include building a secure web service that validates client certificates and routes requests based on specific criteria.",
+      "description_length": 505,
+      "index": 164,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dream_hpack",
+      "description": "Processes HTTP/2 headers through decoding, encoding, and dynamic table management, using mutable states and custom types to track parsing progress, header mappings, and compression settings. Supports operations like adding and evicting table entries, encoding and decoding with Huffman and symbolic schemes, and manipulating structured data via maps and indexed dictionaries. Enables efficient header compression, metadata handling, and data reconstruction in network protocols and web applications. Examples include parsing incoming requests, compressing log data, and generating error responses with standardized header formats.",
+      "description_length": 630,
+      "index": 165,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 293,
+    "meaningful_modules": 166,
+    "filtered_empty_modules": 127,
+    "retention_rate": 0.5665529010238908
+  },
+  "statistics": {
+    "max_description_length": 739,
+    "min_description_length": 172,
+    "avg_description_length": 381.3614457831325,
+    "embedding_file_size_mb": 0.6034212112426758
+  }
+}

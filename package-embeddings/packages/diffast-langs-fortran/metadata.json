@@ -1,0 +1,455 @@
+{
+  "package": "diffast-langs-fortran",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 62,
+  "creation_timestamp": "2025-06-18T16:47:56.019128",
+  "modules": [
+    {
+      "module_path": "Mfortran.F_lib.Change.F",
+      "description": "This module provides operations for analyzing and transforming annotation data, including type inspection, property checks, and value extraction, working with a custom `t` type representing parsed syntax elements. It enables tasks like anonymizing sensitive information, validating node characteristics, and converting values to tagged representations for further processing. Specific use cases include static analysis of code structures, data sanitization, and configuration-driven filtering of annotated elements.",
+      "description_length": 515,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mfortran.F_lib.Change.CB",
+      "description": "Manages edit operations and their relationships through specialized hash tables, tracking removed and added edits along with parent and child dependencies. It operates on custom types like Editop.t and UID.t to represent structured changes in a document. Used to efficiently query and update the state of a collaborative editing system during conflict resolution.",
+      "description_length": 363,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mfortran.F_lib.Analyzing.Postprocessing",
+      "description": "Handles real-time adjustment of a model's output confidence scores during inference. Operates on float values representing prediction probabilities, allowing dynamic scaling of results. Used to fine-tune model responses in applications like chatbots or recommendation systems.",
+      "description_length": 276,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mfortran.F_change.F.CB",
+      "description": "Manages edit operations and their relationships through specialized hash tables, tracking removed and added edits along with parent and child node associations. It uses custom types like Editop.tag and UID to uniquely identify and reference edit operations. This supports efficient lookups and consistency checks during collaborative editing workflows.",
+      "description_length": 352,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_base.F_fact.F.FB",
+      "description": "Generates extended filenames with language-specific prefixes and computes hash-based identifiers. Operates on node representations, buffer structures, and string literals for data processing. Used to construct and manage virtualized fact storage and identifier mappings in a structured format.",
+      "description_length": 293,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_lib_base.Fact.FB",
+      "description": "Generates extended names with optional language tags using a specified hash algorithm. Operates on node representations, buffer structures, and string identifiers for fact storage. Used to construct and manage virtualized fact data in a structured format for database insertion.",
+      "description_length": 278,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.Dec.Directive",
+      "description": "Converts directive instances to various string representations, including detailed tags and shortened forms. Processes Fortran parsing labels and determines part type membership (specification or execution). Used to generate human-readable outputs and modify directives for anonymization purposes.",
+      "description_length": 297,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.Dec.Clause",
+      "description": "Provides functions to convert clause representations to various string formats, including detailed, simplified, and short forms, and to extract tagged information with associated attributes. Works with a custom type representing Fortran declaration clauses, enabling manipulation and transformation of clause data. Used to generate human-readable outputs, anonymize sensitive data, and prepare clauses for further processing or analysis.",
+      "description_length": 437,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_base.F_label.Dec.Attribute",
+      "description": "Converts attribute data between string representations, label names, and tag formats. Operates on a type encapsulating Fortran attribute information, including names and associated data. Used to generate human-readable strings, extract names, and construct attributes from keywords or labels.",
+      "description_length": 292,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.Xlf.Directive",
+      "description": "Converts directive representations to various string formats, including detailed, simplified, and short forms, and extracts or anonymizes directive names. Operates on types representing source locations, high/low directives, and directive records. Used to generate human-readable outputs for debugging or logging, and to process Fortran directive data in parsing workflows.",
+      "description_length": 373,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_base.F_label.Xlf.Assertion",
+      "description": "Provides functions to convert assertion data into various string representations, including detailed, simplified, and short forms, as well as a tagged format with associated values. Works with the internal assertion type derived from Fortran parsing data. Used to generate human-readable output for debugging and logging assertion conditions during program execution.",
+      "description_length": 367,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mfortran.F_lib.Analyzing",
+      "description": "Provides access to lists of source files from two different versions, allowing comparison and analysis of code changes between them. Works with file lists structured as lists of `Diffast_core.Lang_base.S.file` objects. Used to track modifications in specific files during code diff analysis.",
+      "description_length": 291,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mfortran.F_lib.Change",
+      "description": "Sets a specific integer value into a set structure, enabling efficient membership checks and updates. Operates on a list of changes, allowing for tracked modifications to be applied or reverted. Used to manage state transitions in configuration systems where precise control over updates is required.",
+      "description_length": 300,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mfortran.F_change.F",
+      "description": "Provides operations to manage a set of integers and track changes through a list. Works with `Xset.t` for set operations and a mutable list for recording modifications. Used to maintain an evolving collection of integer values with audit trail capabilities.",
+      "description_length": 257,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_base.F_lib_base.Tree",
+      "description": "This module handles operations for managing tree node attributes, annotations, and metadata, including mutable state for identity, source information, and anonymization. It works with tree structures involving labels, bindings, hashes, and scope metadata to support tasks like equality checks, diffing, and transformation. Specific use cases include tracking node modifications, preserving source context, and enabling efficient comparison in systems such as compilers or code analysis tools.",
+      "description_length": 492,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_base.F_lib_base.Fact",
+      "description": "Generates extended names with language-specific prefixes and constructs triples for semantic data. Operates on strings, node identifiers, and buffer structures tailored for virtualized triple storage. Used to encode and manage fact representations in knowledge graph processing workflows.",
+      "description_length": 288,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.HeaderFile",
+      "description": "Provides functions to extract and manipulate header file information, including retrieving unquoted strings, attributes, and names, as well as converting to various string representations and paths. Works with a custom type representing Fortran header files, supporting creation of user-defined, system, macro, and generated headers. Used to process and normalize header metadata for code generation and analysis tasks.",
+      "description_length": 419,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.ProgramUnit",
+      "description": "Converts program unit data to various string representations, including detailed and simplified formats, and extracts or anonymizes the program's name. Operates on a type representing Fortran program units, including labels and identifiers. Used to generate human-readable output for debugging or to prepare code for analysis without exposing specific names.",
+      "description_length": 358,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_base.F_label.InternalSubprogram",
+      "description": "Converts internal subprogram representations to various string formats, including detailed tags and anonymized versions. Operates on a type encapsulating Fortran internal subprogram data, extracting names and generating labeled strings. Used to generate human-readable labels for debugging or code analysis, and to produce simplified representations for comparison or output.",
+      "description_length": 375,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.ModuleSubprogram",
+      "description": "Converts module subprogram data to various string representations, including detailed tags and simplified forms. Operates on a type encapsulating Fortran module subprogram information, supporting name extraction and anonymization. Used to generate human-readable labels and structured metadata for code analysis tools.",
+      "description_length": 318,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.IntentSpec",
+      "description": "Converts intent specifications to various string representations, including detailed, simplified, and short forms. Extracts a tag and associated list from the specification. Constructs intent specifications from keyword strings. Used to generate human-readable output and parse intent information from Fortran code.",
+      "description_length": 315,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.AttrSpec",
+      "description": "Converts attribute specifications to various string representations, including detailed and simplified formats, and extracts tag information with associated properties. Works with Fortran attribute specification data structures derived from parsing. Used to generate human-readable output and extract metadata during code analysis.",
+      "description_length": 331,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.AccessSpec",
+      "description": "Converts access specification data into various string representations, attribute specifications, and tagged formats. Works with Fortran access specification types and related parsing structures. Used to generate human-readable output, extract attributes for parsing, and format access details for compiler or analysis tools.",
+      "description_length": 325,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.TypeAttrSpec",
+      "description": "Provides functions to convert type attribute specifications into various string representations, including detailed and anonymized forms, and to extract tags with associated labels. Works with a type representing Fortran type attribute specifications, including labels and names. Used to generate human-readable outputs and prepare data for processing or comparison.",
+      "description_length": 366,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.Stmt",
+      "description": "This module provides operations for classifying, extracting metadata, and transforming Fortran statements, including checking statement types (e.g., assignments, calls, functions) and retrieving attributes like names, labels, and variable references. It works with structured representations of Fortran statements (`_t` and `t`), enabling tasks such as code analysis, syntactic manipulation, and serialization. Specific use cases include anonymizing statements, converting between statement categories, and generating string representations for debugging or preprocessing.",
+      "description_length": 572,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_base.F_label.Ambiguous",
+      "description": "Converts an ambiguous identifier representation to various string formats, including detailed and simplified forms, and extracts or anonymizes its associated name. Operates on a type encapsulating Fortran label information, including names and metadata. Used to generate human-readable outputs, process label data, and prepare identifiers for analysis or transformation.",
+      "description_length": 370,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.Constant",
+      "description": "Converts constant values to various string representations, including labeled and tagged formats. Operates on a type representing Fortran constants, supporting numeric, logical, character, and complex values. Used to generate simplified labels for symbol tables and to anonymize constants during code processing.",
+      "description_length": 312,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.IntrinsicOperator",
+      "description": "Provides string conversion functions for intrinsic operators, including detailed, simplified, and short representations. Works with the `t` type, which represents Fortran intrinsic operators. Used to generate human-readable and machine-processable forms for debugging and code generation.",
+      "description_length": 288,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.DefinedOperator",
+      "description": "Provides functions to convert operator representations to strings, tags, and anonymized versions, and to extract names. Works with a type representing Fortran-defined operators, including their metadata. Used to generate human-readable output, serialize operator data, and handle operator identities in parsing and analysis tasks.",
+      "description_length": 330,
+      "index": 28,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_base.F_label.Dec",
+      "description": "Converts Fortran directives, clauses, and attributes into multiple string formats, supporting detailed, simplified, and anonymized representations. Processes label-based parsing, part type identification, and tagged information extraction using custom data types for directives, clauses, and attributes. Enables generation of readable outputs, data transformation, and preparation for analysis by handling label-to-string conversions and attribute manipulation. Examples include anonymizing directive labels, extracting clause attributes, and converting attribute names to tag formats.",
+      "description_length": 585,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.Xlf",
+      "description": "Transforms directive and assertion data into multiple string formats for readability and analysis, supporting detailed, simplified, and short representations. Handles source location types, directive records, and assertion structures, enabling extraction, anonymization, and formatting of metadata. Generates debug-friendly outputs and processes parsed Fortran data for logging or further analysis. Examples include converting a directive record to a short string or formatting an assertion with its associated values.",
+      "description_length": 518,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.OmpClause",
+      "description": "This module provides functions for converting OpenMP clause-related data types\u2014such as data sharing attributes, policies, map types, and dependence types\u2014into various string formats (standard, simple, short) and tag-based structures, enabling both human-readable outputs and machine-processable representations. It handles low-level manipulation and definition of these types, supporting operations like parsing, validation, and transformation within OpenMP directive processing. Use cases include compiler tooling, debugging, and analysis of parallel programming constructs.",
+      "description_length": 575,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.OmpDirective",
+      "description": "The module provides functions for converting OpenMP directive components, such as atomic sub-clauses and construct types, into human-readable or anonymized string formats, along with metadata extraction like name retrieval and type checking. It operates on structured representations of OpenMP syntax, primarily used in parsing Fortran code for semantic analysis. These capabilities support tasks like debugging, code analysis, and transformation by providing clear representations and insights into directive structures.",
+      "description_length": 521,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.AccClause",
+      "description": "Provides functions to convert a Fortran access clause representation into various string formats, including a simplified version and a tagged form with associated data. Anonymizes the clause by removing identifying elements while preserving structure. Used in code analysis tools to process and transform Fortran I/O statements.",
+      "description_length": 328,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_base.F_label.AccDirective",
+      "description": "Provides conversion functions to transform Fortran accelerator directive data structures into various string representations, including detailed, simple, and short forms. Works with `t` and `atomic_sub` types representing accelerator directives and their components. Used to generate human-readable output, anonymize directives for testing, and extract names for semantic analysis.",
+      "description_length": 381,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.AccConstruct",
+      "description": "The module provides a foundation for constructing and manipulating abstract syntax trees, offering core types and utilities for tree traversal and transformation. It includes a base node type, helper functions for tree creation, and mechanisms for recursive processing. Users can build complex structures, apply transformations, and extract information from tree-based representations. Example tasks include parsing expressions, optimizing code structures, and generating output from tree nodes.",
+      "description_length": 495,
+      "index": 35,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_base.F_label.LindaCall",
+      "description": "Provides functions to convert a Fortran Linda call representation into various string formats, including a detailed string, a simplified version, and a tagged format with associated data. Works with the `Fortran_parsing.F_linda_call.t` type, which encapsulates parsed Linda call information. Used to generate human-readable outputs for debugging or logging purposes.",
+      "description_length": 366,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_base.F_label.TypeSpec",
+      "description": "Converts type specifications to various string representations, including detailed and simplified forms, and extracts or modifies associated names. Operates on a type representing Fortran type specifications, including labels and keywords. Used to generate human-readable outputs, anonymize type information, and support parsing and transformation workflows.",
+      "description_length": 358,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_base.F_label.GenericSpec",
+      "description": "Converts Fortran record kind and generic spec data structures to various string representations, including detailed, simplified, and anonymized forms. Operates on custom types representing Fortran record kinds and generic specifications, producing labels and tags for parsing and output. Used to generate human-readable and machine-processable representations during Fortran code analysis and transformation.",
+      "description_length": 408,
+      "index": 38,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_base.F_label.IoControlSpec",
+      "description": "Provides operations to convert I/O control specifications to various string representations, extract names and labels, and anonymize data. Works with a type encapsulating Fortran I/O control specifications, including labels and identifiers. Used to generate human-readable outputs, process Fortran code metadata, and sanitize input for analysis.",
+      "description_length": 345,
+      "index": 39,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_base.F_label.InquireSpec",
+      "description": "Provides functions to convert inquiry specifications to various string representations, extract labels, and anonymize data. Operates on a type encapsulating Fortran inquiry specifications, including labels and keywords. Used to generate human-readable output, process Fortran code metadata, and sanitize input for analysis.",
+      "description_length": 323,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.ConnectSpec",
+      "description": "Provides functions to convert connection specifications to various string representations, extract labels, and transform into inquire specifications. Works with Fortran connection specification data structures and label lists. Used to generate human-readable output, extract label information for parsing, and prepare specifications for inquiry operations.",
+      "description_length": 356,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.CloseSpec",
+      "description": "Converts close specification data between string representations, label extraction, and connection specifications. Operates on Fortran close specification types and label data structures. Used to generate human-readable output, extract labels for symbol tables, and prepare specifications for compiler processing.",
+      "description_length": 313,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.PositionSpec",
+      "description": "Converts position specifications to various string representations, including detailed and simplified formats. Processes Fortran I/O position data, extracting labels and generating specialized I/O control structures. Anonymizes sensitive information and produces concise string outputs for debugging or logging.",
+      "description_length": 311,
+      "index": 43,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_base.F_label.Format",
+      "description": "Provides functions to convert format objects to various string representations, including detailed and simplified forms, and to extract or anonymize labels. Works with format objects that encapsulate Fortran format specifications and associated labels. Used to generate human-readable output for debugging or to process format definitions in code analysis tools.",
+      "description_length": 362,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.PrefixSpec",
+      "description": "Converts prefix specifications to various string representations, including labeled and anonymized forms. Operates on a type encapsulating Fortran prefix data, supporting extraction of names and keyword-based construction. Used to generate concise labels for symbol tracking and to handle anonymous or keyword-defined prefixes in parsing workflows.",
+      "description_length": 348,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.CaseSelector",
+      "description": "Converts case selector data into various string representations, including a detailed tag format with associated values. Operates on a type encapsulating Fortran case selector information. Used to generate human-readable output and structured tags for parsing or analysis.",
+      "description_length": 272,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.CaseValueRange",
+      "description": "Provides functions to convert case value range representations into various string formats, including detailed, simplified, and short forms, and to extract a tag along with associated data. Works with the Fortran_parsing.F_case_value_range.t type, which represents ranges in Fortran case statements. Used to generate human-readable output for debugging or logging purposes and to prepare data for further processing in compiler tools.",
+      "description_length": 434,
+      "index": 47,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_base.F_label.ControlEditDesc",
+      "description": "Provides string conversion functions for control edit descriptors, including detailed, simplified, and short formats. Works with a type representing Fortran control edit descriptors, supporting anonymization and tag extraction. Used to generate human-readable representations and process Fortran format strings in compiler or parser contexts.",
+      "description_length": 342,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.FormatItem",
+      "description": "Converts format item representations to various string formats, including detailed, simplified, and short forms, and extracts tag information. Operates on custom types representing Fortran format items and their edit descriptors. Used to generate human-readable output, anonymize data, and prepare format items for processing or display.",
+      "description_length": 337,
+      "index": 49,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_base.F_label.WaitSpec",
+      "description": "Converts wait specification data into various string representations, including detailed and anonymized forms. Processes internal label structures and extracts specific label information for analysis. Used to generate human-readable output and prepare data for further processing in parsing workflows.",
+      "description_length": 301,
+      "index": 50,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_base.F_label.FlushSpec",
+      "description": "Converts Fortran flush specification data into various string representations, including detailed and anonymized forms. Operates on a type encapsulating Fortran flush specifications, extracting labels and generating structured output. Used to generate human-readable or machine-processable representations during parsing or code analysis.",
+      "description_length": 338,
+      "index": 51,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_base.F_label.BindingAttr",
+      "description": "Converts binding attribute data to various string representations, including detailed tags and anonymized versions. Operates on a type encapsulating Fortran binding attributes, extracting names and generating formatted outputs. Used to generate human-readable labels and debug information from parsed Fortran code.",
+      "description_length": 314,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.ProcComponentAttrSpec",
+      "description": "Handles parsing and manipulation of Fortran procedure component attribute specifications. Provides string conversion, name extraction, and anonymization for internal representation of attributes. Used to generate tags for symbol tables and produce human-readable representations during code analysis.",
+      "description_length": 300,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base.F_label.ProcAttrSpec",
+      "description": "Converts procedure attribute specifications to various string representations, including detailed tags and anonymized forms. Operates on a type encapsulating Fortran procedure attribute data, supporting keyword-based construction. Used to generate human-readable labels and internal identifiers for procedure attributes in parsing workflows.",
+      "description_length": 341,
+      "index": 54,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_base.F_label.Annotation",
+      "description": "Provides operations to construct and manipulate specification records, including creating required and provided interfaces, converting specifications to strings, and combining multiple specifications into a single list. Works with `spec` records and lists of such records to represent module annotations. Used to generate human-readable representations of module dependencies and to aggregate annotations from multiple sources.",
+      "description_length": 427,
+      "index": 55,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_base.F_tree.Tree",
+      "description": "The module provides operations for managing tree node attributes, metadata, scope, equality checks, and hash-based integrity, working with tree nodes that include labels, weights, source locations, bindings, and hash digests. It supports use cases such as tracking source information for debugging, ensuring data consistency through hash comparisons, and managing scoped annotations in hierarchical structures.",
+      "description_length": 410,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mfortran.F_change",
+      "description": "Combines set operations and change tracking for integers using `Xset.t` and a mutable list to record modifications. Supports adding, removing, and querying elements while maintaining an audit trail of changes. Allows for efficient set management with historical tracking. Can be used to monitor evolving integer collections, such as tracking user permissions or system state changes.",
+      "description_length": 383,
+      "index": 57,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_base.F_label",
+      "description": "This module provides operations for classifying, inspecting, and transforming labeled nodes, including type-checking, property checks (e.g., boundary flags, syntactic constructs), and metadata extraction. It works with custom types like `t` and `annotation`, handling structured data such as abstract syntax tree nodes and Fortran language constructs. Use cases include analyzing program structure, anonymizing nodes, parsing preprocessor directives, and distinguishing between code elements like functions, loops, or conditional blocks.",
+      "description_length": 537,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "diffast-langs-fortran",
+      "description": "Compares abstract syntax trees (ASTs) of programming languages like Python, Java, and C/C++ by analyzing node-level differences using a tree edit distance (TED) algorithm with heuristics to manage computational complexity. Generates detailed change reports and exports syntactic and semantic information in structured formats like XML and N-Triples. These outputs enable advanced software analysis tasks such as identifying code similarities, tracking changes, and supporting debugging through semantic factbases.",
+      "description_length": 513,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mfortran",
+      "description": "Tracks integer sets with change logging, using `Xset.t` for efficient operations and a mutable list to record modifications. Supports adding, removing, and querying elements while preserving a history of changes. Can track evolving collections like user permissions or system states. Provides direct access to set operations and change audit trails.",
+      "description_length": 349,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_base",
+      "description": "provides operations for analyzing and manipulating structured Fortran language constructs through custom types like `t` and `annotation`, enabling tasks such as type-checking, metadata extraction, and node transformation. It supports use cases like parsing preprocessor directives, distinguishing code elements, and anonymizing syntax tree nodes. Other modules within the parent provide no functionality. No operations are available in empty modules.",
+      "description_length": 450,
+      "index": 61,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 165,
+    "meaningful_modules": 62,
+    "filtered_empty_modules": 103,
+    "retention_rate": 0.37575757575757573
+  },
+  "statistics": {
+    "max_description_length": 585,
+    "min_description_length": 257,
+    "avg_description_length": 372.43548387096774,
+    "embedding_file_size_mb": 0.22568321228027344
+  }
+}

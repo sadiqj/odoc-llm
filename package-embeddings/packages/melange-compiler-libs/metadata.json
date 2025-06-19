@@ -1,0 +1,966 @@
+{
+  "package": "melange-compiler-libs",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 135,
+  "creation_timestamp": "2025-06-18T16:56:05.645030",
+  "modules": [
+    {
+      "module_path": "Melange_compiler_libs.Misc.Stdlib.String.Set",
+      "description": "This module provides operations for constructing, modifying, and querying sets, including element addition, removal, membership checks, and set operations like union, intersection, and difference. It works with ordered sets of generic elements and sequences of strings, enabling efficient membership management, data transformation, and ordered traversal. Specific use cases include combining collections, filtering elements via predicates, and building sets from sequential data sources.",
+      "description_length": 488,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Misc.Stdlib.String.Map",
+      "description": "This module provides operations for managing ordered maps with string keys and generic values, including insertion, deletion, lookup, and transformation of key-value pairs. It supports advanced manipulations like merging, splitting, and iterating with sequence-based functions, while preserving ordering and offering both exception-raising and option-based variants. Use cases include configuration management, data aggregation, and scenarios requiring ordered key access or structured data processing.",
+      "description_length": 502,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Misc.Stdlib.String.Tbl",
+      "description": "This module offers hash table management functions, including insertion, deletion, lookup, and iteration, along with sequence-based conversion and construction. It works with associative tables featuring string keys and polymorphic values, enabling dynamic updates via key-value sequences. Use cases include managing configuration data, caching systems, or processing structured datasets where efficient key-based access and batch modifications are required.",
+      "description_length": 458,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Shape.Uid.T",
+      "description": "Provides equality, hashing, and ordering operations for a custom type, along with serialization and printing functions. Works with a single type `t` that represents keys in a data structure. Used to ensure consistent comparison and representation of keys in hash tables or ordered collections.",
+      "description_length": 293,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Shape.Uid.Set",
+      "description": "This module offers core set operations such as insertion, deletion, membership checks, and set-theoretic combinations (union, intersection, difference), working with structured collections of elements defined by a type `elt`. It supports querying properties like size, extremal elements, and conditional subsets, alongside serialization and transformation utilities for representing or modifying set contents. Use cases include managing unique data collections, performing efficient membership tests, and generating human-readable outputs for set-based computations.",
+      "description_length": 566,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Shape.Uid.Map",
+      "description": "This module provides operations for creating, modifying, and querying ordered maps, including adding, removing, and updating key-value pairs, as well as folding, filtering, and merging maps. It works with structured data where keys are of type T.t and values are generic, enabling transformations like key renaming, transposition, and conversions to/from sets and lists. Specific use cases include managing sorted configurations, efficient data lookup in databases, and processing hierarchical data through predicate-based searches and ordered traversals.",
+      "description_length": 555,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Shape.Uid.Tbl",
+      "description": "This module offers operations for inserting, removing, and looking up key-value pairs in hash tables, along with iteration and value transformation. It works with hash tables featuring keys of type T.t and supports conversions to and from sequences, lists, and maps, enabling interoperability. Use cases include memoization, data structure migration, and processing hash table contents via functional transformations.",
+      "description_length": 417,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Shape.Item.Map",
+      "description": "This module offers operations for creating, modifying, and querying ordered maps, including adding/removing key-value pairs, merging, folding, and filtering. It works with persistent, polymorphic map structures and key types, enabling efficient traversal and transformation of associative data. Use cases include managing sorted configurations, aggregating structured data, or processing hierarchical information while preserving order.",
+      "description_length": 436,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Includemod.Functor_inclusion_diff.Defs",
+      "description": "Provides operations to compare functor parameters, generate coercion information between module types, and handle errors arising from parameter mismatches. Works with types representing functor parameters, module coercions, and error symptoms. Used to analyze and enforce consistency in module type relationships during type checking.",
+      "description_length": 334,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Includemod.Functor_app_diff.Defs",
+      "description": "Provides operations to compare and manipulate module type descriptions, including checking functor parameter compatibility and generating coercion information between modules. Works with types such as functor argument descriptions, module types, and coercion structures. Used to validate module functor applications and detect parameter mismatches during type checking.",
+      "description_length": 369,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Misc.Stdlib.List",
+      "description": "Compares lists lexicographically using a custom comparator, checks for list equality with a custom predicate, and extracts a list of values from a list of options if all are present. It maps two lists in a way that preserves the remainder of the second list, splits lists at a given index, and checks for prefix relationships. It also finds the longest common prefix between two lists and returns the prefix along with the remaining elements of both.",
+      "description_length": 450,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Misc.Stdlib.Option",
+      "description": "Prints optional values using a custom formatter and a function to format the contained value. Works with the option type, which represents values that may be absent. Used to safely output some or none of a value in logging or debugging contexts.",
+      "description_length": 245,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Misc.Stdlib.Array",
+      "description": "Checks if all elements in an array are Some values, returning None if any element is None, otherwise Some of the array of unwrapped values. Processes arrays of options and applies a predicate with index and element to determine array validity. Iterates over two arrays in parallel, applying a binary predicate to their corresponding elements.",
+      "description_length": 342,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Misc.Stdlib.String",
+      "description": "Provides operations for handling sets, maps, and hash tables with string keys, supporting efficient data manipulation, querying, and transformation. It includes set operations like union and intersection, map transformations such as merging and splitting, and hash table management with key-value insertion and lookup. Functions enable tasks like combining collections, managing configurations, and processing structured data through ordered or sequence-based interfaces. Examples include building sets from strings, aggregating data in maps, and maintaining dynamic key-value stores.",
+      "description_length": 584,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Typemod.Signature_names",
+      "description": "Simplifies type signatures by applying environment-specific name transformations. It operates on environment contexts, signature structures, and custom type representations. Used to normalize signatures during type checking or code generation processes.",
+      "description_length": 253,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Typemod.Sig_component_kind",
+      "description": "Converts component kind values to their string representations. Works with an abstract type representing different kinds of components. Used to generate human-readable labels for component types in logging and user interfaces.",
+      "description_length": 226,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Parmatch.Compat",
+      "description": "Compares two constructor descriptions for structural equality. Operates on types defined in the Types module, specifically constructor_description. Used to verify if two constructors in a type definition are identical during serialization or reflection processes.",
+      "description_length": 263,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Typecore.Datatype_kind",
+      "description": "Returns the name of a type and the name of its label from a type representation. Works with an abstract type `t` that encapsulates type information. Used to extract metadata during code generation or type inspection.",
+      "description_length": 216,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Shape.Uid",
+      "description": "Combines equality, hashing, and ordering for a key type with set and map operations, enabling efficient data management and transformation. Provides core set operations like union and intersection, along with ordered map manipulations such as folding and merging, using keys of type T.t and generic values. Supports serialization, membership checks, and conversions between hash tables, lists, and sets, facilitating tasks like database lookups and configuration management. Examples include building ordered collections, performing set-theoretic computations, and transforming hash table contents into structured data formats.",
+      "description_length": 627,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Shape.Sig_component_kind",
+      "description": "Provides functions to convert component kinds to strings and check if they can be part of a type name. Works with an abstract type representing different kinds of components. Used to validate component names in type declarations and generate human-readable representations.",
+      "description_length": 273,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Shape.Item",
+      "description": "manages ordered, persistent maps with polymorphic keys, supporting insertion, deletion, merging, and traversal operations. It handles structured data through key-value pairs, enabling efficient manipulation and transformation. Users can build sorted configurations, aggregate data, or process hierarchical structures while maintaining order. Examples include filtering logs by timestamp or merging configuration layers.",
+      "description_length": 419,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Shape.Map",
+      "description": "Provides operations to construct and manipulate a mapping from identifiers to various symbolic representations, including values, types, modules, and classes, each associated with a shape or unique identifier. Works with a type `t` built on `Item.Map.t`, where keys are identifiers and values include Uid.t or shape. Used to track and manage symbolic information during type checking or code analysis, such as associating module definitions with their signatures or linking class names to their type representations.",
+      "description_length": 516,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Shape.Make_reduce",
+      "description": "Provides functions to retrieve a specific unit shape by name and to locate a shape within an environment, using an identifier. Operates with environment data structures and unit names to access shape information. Used to dynamically load and reference shape definitions during processing.",
+      "description_length": 288,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Subst.Lazy",
+      "description": "The module provides conversion and manipulation functions for OCaml module system elements, such as module declarations and signature items, operating on internal type representations and abstract syntax tree (AST) components. It enables scoping-aware modifications and syntax definition for module constructs, applicable in compiler transformations or code analysis tools.",
+      "description_length": 373,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Switch.CtxStore",
+      "description": "Provides functions to compare keys and generate keys from a context and a value. Operates on custom types `t`, `key`, and `context` to enable structured data lookup. Used to uniquely identify and compare entries in a context-aware storage system.",
+      "description_length": 246,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Switch.Store",
+      "description": "Compares keys using a custom ordering function. Constructs a key from a value, returning an option type. Operates on abstract types `t` and `key`, suitable for implementing ordered data stores or indexed lookups.",
+      "description_length": 212,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Switch.Make",
+      "description": "This module provides low-level operations for integer comparison and control flow construction, such as binding, conditionals, and exception handling, alongside abstract types for representing arguments, tests, and actions. It supports building and manipulating abstract syntax trees while enabling foundational structures for systems like command-line parsers or configuration handlers. The design emphasizes code generation and manipulation through abstract representations, tailored for scenarios requiring dynamic logic structuring.",
+      "description_length": 536,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Btype.TypeSet",
+      "description": "This module provides functional set operations such as union, intersection, and traversal, along with querying capabilities like finding minimum/maximum elements, splitting sets, and predicate-based searches, all operating on structured types including `Types.type_expr` and `Types.transient_expr`. It emphasizes immutability and ordered comparisons, enabling efficient membership checks and element retrieval. Use cases include symbolic computation and type analysis, where precise manipulation of heterogeneous element sets is required.",
+      "description_length": 538,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Btype.TransientTypeMap",
+      "description": "The module provides operations for constructing, modifying, and querying ordered maps with key-value pairs, including adding, removing, merging, and transforming entries via folding, filtering, and key-based traversal. It works with a polymorphic map type using keys derived from `Types.transient_expr`, tailored for handling transient data structures. This supports use cases like dynamic data processing, temporary storage management, and efficient key-based transformations in systems requiring ordered, mutable mappings.",
+      "description_length": 524,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Btype.TypeMap",
+      "description": "This module provides operations for creating, querying, updating, and transforming ordered maps, with a focus on key-value pairs where keys are ordered or polymorphic variants. It supports functions for membership checks, merging, iteration, filtering, and value mapping, working with data structures that combine type-safe storage and ordered traversal. Specific use cases include managing transient expression mappings and handling structured data with consistent key-value transformations.",
+      "description_length": 492,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Btype.TypeHash",
+      "description": "This module offers key-value pair management through hash table operations like insertion, deletion, and lookup, alongside traversal and transformation functions for bulk processing. It works with generic hash tables ('a t) and type-aware structures such as type expressions and transient expressions, enabling type-driven manipulation within polymorphic containers. Use cases include compiler infrastructure for type analysis or symbolic computation systems requiring efficient key-based and type-sensitive data handling.",
+      "description_length": 522,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Btype.TypePairs",
+      "description": "Maintains a collection of type expression pairs, supporting insertion, membership checks, and iteration. It operates on tuples of OCaml type expressions and provides methods to manage these pairs efficiently. Used to track and query type equivalences during compiler analysis.",
+      "description_length": 276,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Btype.For_copy",
+      "description": "Handles type expression copying with scope management, redirecting type descriptions during the process. Operates on `copy_scope` to track and control the copying context. Used to safely duplicate complex type structures while preserving scope-specific information.",
+      "description_length": 265,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Persistent_env.Consistbl",
+      "description": "Maintains a collection of string-to-digest mappings, supporting operations to check, add, and extract entries based on file paths. It allows filtering entries by string predicate and provides methods to retrieve or map entries to specific formats. Used to verify and manage consistent file hashes in a build or version control context.",
+      "description_length": 335,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Persistent_env.Persistent_signature",
+      "description": "Provides functions to load and manage persistent signature data, including a custom loading mechanism that can bypass standard file lookup. Works with the `t` type, which represents a parsed signature structure. Used to integrate pre-compiled signatures into a toplevel environment without external dependencies.",
+      "description_length": 312,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Patterns.Non_empty_row",
+      "description": "Provides operations to construct and transform non-empty rows of pattern bindings, where each row is a tuple of a value and a list of patterns. It includes a function to map over the first element of the row while preserving the pattern list. Used to enforce and manipulate structured data in compiler transformations.",
+      "description_length": 318,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Patterns.Simple",
+      "description": "Provides operations to manipulate and analyze pattern data structures within the OCaml compiler's internal representation. Works with tagged variant types and pattern data, enabling inspection and transformation of syntax tree nodes. Used to extract and process match case patterns during type checking or code generation.",
+      "description_length": 322,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Patterns.Half_simple",
+      "description": "Provides functions to manipulate and analyze pattern structures in the OCaml abstract syntax tree, including matching, transformation, and inspection of pattern data. Works with the `view` type and its associated `pattern` type, which represent different forms of pattern constructs. Used to process and annotate pattern matching constructs during code analysis or transformation pipelines.",
+      "description_length": 390,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Patterns.General",
+      "description": "Provides functions to transform and analyze pattern structures, including converting between typed and untyped representations and removing variable bindings. Works with OCaml's internal pattern data structures and custom view types. Used to preprocess patterns for code analysis or transformation pipelines.",
+      "description_length": 308,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Patterns.Head",
+      "description": "Extracts the head of a pattern and its sub-patterns, enabling pattern decomposition. Operates on pattern data structures containing descriptions and nested patterns. Used to generate simplified or wildcard-filled pattern representations for analysis or transformation.",
+      "description_length": 268,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Printtyp.Out_name",
+      "description": "Creates an out_name value from a string and converts it back to a string representation. Works with the Outcometree.out_name type, used in OCaml's compiler output handling. Useful for generating and inspecting name representations in compiler-related transformations.",
+      "description_length": 267,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Printtyp.Naming_context",
+      "description": "Provides operations to manage a one-to-one mapping between identifiers and names, ensuring uniqueness when enabled. Works with a internal state that tracks identifier-name associations. Used to maintain consistent name resolution during code generation or analysis phases.",
+      "description_length": 272,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Printtyp.Conflicts",
+      "description": "Tracks name conflicts during identifier attribution, providing functions to check for existing conflicts, collect and print detailed explanations, and reset the conflict state. Works with a custom `explanation` type containing information about each conflict. Used to generate precise error messages when name collisions occur during code generation or type checking.",
+      "description_length": 367,
+      "index": 42,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Printtyp.Subtype",
+      "description": "Handles error reporting for type subtyping checks, taking a formatter, environment, error details, and message. Operates on OCaml environment structures and subtyping error records. Used to generate detailed error messages during type inference or constraint solving.",
+      "description_length": 267,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Types.Transient_expr",
+      "description": "Provides operations to construct and modify transient expressions with type descriptions, levels, scopes, and IDs. Works with type_desc and type_expr data structures, enabling low-level manipulation of type representations. Used to manage type coercion and stub instantiation during compiler processing.",
+      "description_length": 303,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Types.TransientTypeOps",
+      "description": "Compares and hashes values of type `transient_expr` using lexicographical ordering and consistent hashing. Provides equality checks and hash generation for structured expressions. Used to enable sorting, grouping, and lookup operations on transient expression trees.",
+      "description_length": 266,
+      "index": 45,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Types.MethSet",
+      "description": "This module provides set manipulation operations such as adding, removing, and querying elements, along with set-theoretic operations like union, intersection, and difference, while preserving physical equality where possible. It works with ordered sets of a generic type `elt` and sequences of strings, enabling efficient membership checks, ordered traversal, and cardinality calculations. Specific use cases include managing dynamic data collections, processing structured string inputs, and performing predicate-based element filtering or partitioning.",
+      "description_length": 555,
+      "index": 46,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Types.VarSet",
+      "description": "The module offers operations for creating, modifying, and querying sets of ordered elements, including membership testing, cardinality calculation, and sorted traversal, while supporting sequence-based construction from strings. It enables efficient element selection via min/max retrieval and partitioning, with functions preserving immutability by returning new sets or boolean results. Use cases include managing unique variable collections or processing structured data requiring ordered access.",
+      "description_length": 499,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Types.Meths",
+      "description": "This module provides operations for managing ordered maps with string keys and arbitrary value types, including creation, modification, querying, and iteration. It supports key-based transformations, value manipulation, and structural operations like splitting maps or finding extremal bindings. Use cases include configuration management, data processing pipelines, and scenarios requiring ordered key-value persistence.",
+      "description_length": 421,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Types.Vars",
+      "description": "This module provides operations for managing ordered key-value maps, including insertion, deletion, lookup, and traversal, with support for custom key ordering and transformations. It works with polymorphic map structures where keys are strings and values can be of any type, enabling flexible data organization. Use cases include configuration management, data indexing, and scenarios requiring efficient key-based access and ordered processing.",
+      "description_length": 446,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Types.Variance",
+      "description": "Provides operations to manipulate variance types including union, intersection, and subset checks. Works with abstract type `t` representing variance states and type `f` for function signatures. Used to determine variance compatibility in type systems, such as checking if a type can be safely substituted in a given context.",
+      "description_length": 325,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Types.Separability",
+      "description": "Provides operations to compare, rank, and combine separability modes, and to print and construct signatures as lists of modes. Works with mode values representing different levels of separability and signatures composed of mode lists. Used to determine the most restrictive separability requirement when combining constraints in type analysis.",
+      "description_length": 343,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Parser.MenhirInterpreter",
+      "description": "This module handles low-level parser state management, stack operations, and control flow for incremental parsing, working with checkpoints, environments, and token suppliers to enable dynamic input processing. It supports actions like reducing grammar productions, checking input requirements, and transitioning between parser states, facilitating tasks such as error recovery and real-time input handling. Specific use cases include managing partial parses and coordinating token acceptance during complex language processing workflows.",
+      "description_length": 538,
+      "index": 52,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Parser.Incremental",
+      "description": "Parses various OCaml language constructs from a given position, including expressions, patterns, module types, and top-level phrases, returning parsed results wrapped in a checkpoint. Works with core OCaml AST types such as `Parsetree.expression`, `Parsetree.pattern`, and `Longident.t`. Used to incrementally process code segments during parsing, enabling partial or incremental analysis of OCaml source files.",
+      "description_length": 411,
+      "index": 53,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Includemod.Error",
+      "description": "Provides operations to compare and analyze differences in OCaml type structures, including module types, signatures, and functor parameters. Works with complex data types like module_type_diff, functor_params_diff, and various symptom records that capture mismatch details. Used to diagnose type mismatches during compilation or type-checking processes.",
+      "description_length": 353,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Includemod.FieldMap",
+      "description": "This module provides ordered key-based data manipulation, offering operations like insertion, deletion, lookup, and traversal, along with higher-order functions for transforming and combining maps. It works with abstract field types and names, enabling distinct handling of heterogeneous fields to prevent name clashes. Use cases include managing structured data in compilers or parsers where fields like values and types require separate indexing.",
+      "description_length": 448,
+      "index": 55,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Includemod.Functor_inclusion_diff",
+      "description": "Analyzes and enforces consistency in module type relationships by comparing functor parameters, generating coercion information, and handling mismatches. It operates on types such as functor parameters, module coercions, and error symptoms. Users can detect incompatible parameters, derive valid coercions between module types, and diagnose type-checking errors. This enables precise control over module instantiation and compatibility in complex type systems.",
+      "description_length": 460,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Includemod.Functor_app_diff",
+      "description": "manages module type comparisons and manipulations, focusing on functor parameter compatibility and coercion generation. It handles types like functor arguments, module types, and coercion records, enabling operations such as checking parameter consistency and deriving coercion maps. It supports validation of module functor applications by identifying mismatches during type checking. For example, it can determine if two modules can be unified under a common functor or generate conversion paths between incompatible module types.",
+      "description_length": 532,
+      "index": 57,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Errortrace.Subtype",
+      "description": "Provides functions to construct and transform error structures with specific trace types, including creating errors from nonempty subtype traces and unification error traces. Works with list-based data structures where elements are tagged with type information and error traces. Used to handle and propagate detailed error information during type checking and unification processes.",
+      "description_length": 382,
+      "index": 58,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Misc.Stdlib",
+      "description": "Processes lists and arrays with custom logic, including lexicographic comparison, safe unwrapping, and parallel iteration. Handles optional values with tailored formatting and safe extraction. Supports set, map, and hash table operations with string keys for efficient data management. Enables tasks like finding common prefixes, validating arrays, and merging configurations.",
+      "description_length": 376,
+      "index": 59,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Misc.Int_literal_converter",
+      "description": "Converts string representations of integer literals to specific integer types, including 32-bit, 64-bit, and native-sized integers. Accepts strings in decimal, hexadecimal, or octal formats with appropriate prefixes. Used to parse configuration values, command-line arguments, or data from text-based protocols.",
+      "description_length": 311,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Misc.LongString",
+      "description": "Provides operations to create, access, and manipulate sequences of characters stored as an array of bytes. Supports direct character access, in-place modification, and efficient copying between instances and strings. Used for handling large text data with low-level control over memory and I/O operations.",
+      "description_length": 305,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Misc.Color",
+      "description": "Converts a list of style attributes to an ANSI escape sequence, manages color settings and styles through mutable state, and configures formatter behavior for color tag handling. Operates on custom types for color, style, styles, and setting. Used to dynamically adjust terminal output formatting and apply predefined color schemes in command-line applications.",
+      "description_length": 361,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Misc.Error_style",
+      "description": "Provides functions to configure and apply error formatting rules, including setting severity levels and output styles. Works with a `setting` type that encapsulates error display preferences. Used to customize error messages in compiler outputs and diagnostic tools.",
+      "description_length": 266,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Misc.Magic_number",
+      "description": "The module provides functions for parsing and validating fixed-length byte sequences as magic numbers, which identify compiler object files and their versions, operating on raw byte strings and structured metadata. It includes checks to compare parsed versions against expected ones, enabling detection of incompatible file versions, and offers detailed error explanations for invalid or mismatched magic numbers. Use cases involve verifying .cmi or .cmxa files, ensuring version compatibility, and generating user-friendly error messages for parsing failures.",
+      "description_length": 560,
+      "index": 64,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Annot",
+      "description": "Provides functions to annotate function calls and identifiers with additional metadata, including source positions and type information. Operates on custom types `call` and `ident`, extending them with annotations for static analysis. Used to track call sites and variable references during code transformation pipelines.",
+      "description_length": 321,
+      "index": 65,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Ast_mapper",
+      "description": "Provides functions to transform OCaml abstract syntax trees (ASTs) using open recursion, with a default identity mapper for unmodified nodes. Operates on Parsetree structures, signatures, and expressions, enabling custom rewriting logic like replacing specific syntax extensions. Supports standalone ppx rewriters and integration with compiler tools by applying mappers to serialized ASTs and managing context attributes.",
+      "description_length": 421,
+      "index": 66,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Bs_clflags",
+      "description": "Provides flags to control compiler behavior, including handling of current directory, MLI files, event recording, and generation options. Works with boolean references, string options, and a custom mli_status type. Used to customize build processes in BuckleScript projects, such as disabling CRC unit recording or specifying type generation parameters.",
+      "description_length": 353,
+      "index": 67,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Btype",
+      "description": "combines set and map operations for type expressions and transient data, offering immutable set manipulations, ordered and hash-based maps, and type-aware storage. It supports union, intersection, key-value transformations, and type equivalence tracking, with operations tailored for symbolic computation and compiler analysis. Users can perform efficient membership checks, dynamic data processing, and safe type duplication with scope preservation. Examples include managing type relationships, transforming transient expressions, and maintaining ordered mappings for structured data.",
+      "description_length": 586,
+      "index": 68,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Builtin_attributes",
+      "description": "Processes OCaml attributes like `ocaml.warning`, `ocaml.deprecated`, and `ocaml.explicit_arity` to enforce warnings, errors, and language restrictions. Works with Parsetree attributes, signatures, and structures to extract and apply compiler directives. Used to validate deprecated mutable variables, manage warning scopes, and check for specific compiler flags in code analysis tools.",
+      "description_length": 385,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Cmi_format",
+      "description": "Writes compiled interface data to a file using a specified output channel and computes a digest. Reads and parses compiled interface data from a file or input channel, validating its structure. Handles error reporting in a formatted manner for diagnostic output. Works with file paths, input/output channels, and structured data containing interface information and persistence flags. Used to generate and verify .cmi files during OCaml compilation, and to process existing .cmi files for analysis or validation.",
+      "description_length": 512,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Cmt2annot",
+      "description": "Provides iterators and binding handlers for traversing and annotating OCaml type-checked abstract syntax trees (TAST). Operates on structures like location markers, patterns, value bindings, cases, and module bindings. Used to generate annotations from binary annotations, process module bindings, and manage scope-based traversal.",
+      "description_length": 331,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Cmt_format",
+      "description": "Provides functions to read and write .cmt and .cmti files, including extracting and saving annotated type information and binary data. Works with binary_annots, binary_part, cmt_infos, and error types to manage compiler-generated metadata. Used to process OCaml compiler output for analysis, debugging, or tooling that requires access to type annotations and dependencies.",
+      "description_length": 372,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Config",
+      "description": "<think> Okay, let's tackle this query. The user wants a 2-3 sentence description of the Config module based on the provided summaries. They specified to identify main operations, data structures, and mention use cases without generic phrases or repeating the module name. First, I need to parse the function/type summaries. The main operations are accessing system configuration values, compiler settings, linker commands, and runtime parameters. The data structures are probably low-level system parameters, compiler flags, and platform-specific settings. Use cases would involve build processes, compiler configuration, and runtime behavior adjustments. I should avoid saying \"module\" again. Need to mention the types of operations: accessing, retrieving, handling. Data structures like system parameters, compiler flags, file suffixes, magic numbers. Use cases could be configuring builds, handling platform-specific settings, ensuring compatibility. Check for repetition. Make sure each sentence covers different aspects. Maybe start with operations, then data structures, then use cases. Keep it concise. Let me draft something like: \"The module provides functions to retrieve system and compiler configuration parameters, including version numbers, paths, and platform-specific settings. It works with low-level data such as compiler flags, file suffixes, and binary format identifiers to support build processes and runtime behavior. Use cases include configuring compilation targets, managing cross-platform compatibility, and adjusting runtime options like profiling and safety checks.\" Wait, the user said not to use the module name. The original answer starts with \"The module\", but the user says not to repeat the module name. Oh, right, the instruction says \"Do NOT use generic phrases or repeat the module name.\" So I shouldn't say \"The module\" but refer to it as \"This module\" or just describe it. Wait, the example in the problem statement has the user's answer starting with \"This module provides...\" but the user's instruction says not to repeat the module name. Wait, the original query says \"Do NOT use generic phrases or repeat the module name.\" So maybe avoid using \"module\" at all. Hmm, but the user's own example in the problem statement uses \"This module provides...\" but maybe that's allowed. Wait, the user says \"Do NOT use generic phrases or repeat the module name.\" So maybe \"module\" is the name, so don't repeat it. But the user's example answer starts with \"This module provides...\" which uses \"module\". Maybe that's acceptable. But the user's instruction says \"Do NOT use generic phrases or repeat the module name.\" So perhaps avoid using the word \"module\" in the description. But the original problem says \"Module: Config\" and the user wants the description to not repeat the module name. So maybe refer to it as \"the Config module\" but the user says not to repeat the module name. Wait, the user says \"Do NOT use generic phrases or repeat the module name.\" So the module name is \"Config\", so don't repeat it. So the answer shouldn't mention \"Config\" either? But that's the module's name. Maybe the user means not to use the word \"module\" again. For example, if the module is called \"Config\", then the answer should not say \"the Config module\" but just refer to it as \"this module\" or \"it\". But the user's example answer starts with \"This module provides...\" which uses \"module\". Maybe the user is okay with that. But the instruction says \"Do NOT use generic phrases or repeat the module name.\" So perhaps \"module\" is considered a generic phrase. Hmm, this is a bit confusing. Maybe the user wants to avoid using the word \"module\" in the description. So instead of saying \"the module provides\", say \"it provides\" or \"these functions provide\". So adjusting the previous draft: \"It provides functions to retrieve system and compiler configuration parameters, including version numbers, paths, and platform-specific settings. It works with low-level data such as compiler flags, file suffixes, and binary format identifiers to support build processes and runtime behavior. Use cases include configuring compilation targets, managing cross-platform compatibility, and adjusting runtime options like profiling and safety checks.\" That avoids mentioning the module name. But the user's example answer starts with \"This module provides...\" which does mention \"module\". But maybe the user's instruction is to not repeat the module name, which is \"Config\". So the answer should not say \"Config module\" but just refer to it as \"this module\" or \"it\". However, the user's own example in the problem statement includes \"Module: Config\" and the answer starts with \"This module provides...\". So maybe it's acceptable. But the user's instruction says \"Do NOT use generic phrases or repeat the module name.\" So perhaps \"module\" is considered a generic phrase. Maybe the user wants to avoid using the word \"module\" entirely. So the answer should not have \"module\" in it. So the answer would start with \"Functions provide...\" or \"It provides...\". In that case, the answer would be:",
+      "description_length": 5095,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Ctype",
+      "description": "This module handles type expansion, unification, and manipulation of OCaml type expressions, object fields, row types, and class types, operating on structures like environments, locations, and type declarations. It supports advanced type system operations such as GADT handling, polymorphic variant management, and error tracing, with specialized functions for class inheritance checks, type generalization, and constraint analysis. Use cases include resolving type dependencies, normalizing type expressions, and managing scope during type inference and error diagnostics.",
+      "description_length": 574,
+      "index": 74,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Datarepr",
+      "description": "Provides functions to analyze type and constructor information from OCaml's abstract syntax tree. Works with type declarations, constructor descriptions, and path identifiers to extract labels, constructors, and type relationships. Used to inspect how types are structured and how constructors relate to their argument and result types.",
+      "description_length": 336,
+      "index": 75,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Env",
+      "description": "<think> Okay, let's tackle this query. The user wants a 2-3 sentence description of the Env module based on the provided chunk summaries. They specified to identify main operations, data structures, and mention use cases without generic phrases or repeating the module name. First, I need to parse all the function/type summaries. Let me go through each one: 1. Talks about managing an environment data structure 't' for type/module info, with operations like register, retrieve, compare. Also mentions iterating over types, finding shadowed types, persistent string sets, filtering CMIs, location tracking. 2. Operations for looking up and manipulating type, module, value info. Includes constructors, labels, type expansions, addresses. Operates on identifiers, paths, environment structures. Patterns like type resolution, path normalization, namespace management. 3. Symbol lookup and usage tracking in type-checking env. Operates on identifiers, paths, type declarations. Detailed lookups for values, types, modules, constructors, extensions. Marking symbols as used, checking local constraints. 4. Looking up and checking presence of identifiers in type env. Operates on type environments (t), locations, identifiers. Name-based resolution with type and scope info. 5. Adding/manipulating language elements (types, modules, etc.) in env. Operates on identifiers, module types, type declarations. Adding/modifying entries in type env, parameters like identifiers, module presence, substitution data. 6. Inserting/tracking modules, module types, classes, signatures. Operates on Types.module_presence, module_type, signature, Shape.t. Entering declarations, managing unbound refs, handling unit-level data (CRCs, imports). 7. Managing/inspecting env structure: registering opaque imports, extracting summaries, handling errors, folding over values, types, constructors. Operates on module paths, type expressions, env states. Type checking, error reporting, traversal of symbolic data. 8. Traversal/manipulation of OCaml type structures: folding over labels, modules, module types, classes, class types. Skipping modules during traversal. Operates on type descriptions, paths, module declarations. Utilities for checking value names, printing addresses, handling lookup errors. 9. Error handling for env operations, but no specific functions/data manipulation described. Now, the main operations seem to be: registering, retrieving, comparing type/module info; looking up identifiers, types, modules; managing scope, path normalization, handling unbound references; traversing structures, checking presence, error handling. Data structures: environment type 't', identifiers, paths, module paths, type expressions, module types, signatures, Shape.t, persistent string sets, locations. Use cases: type-checking environments, symbol lookup in compilers, managing module imports/exports, handling scope and namespaces, error reporting during type checking. Need to avoid generic terms. So instead of \"managing environments\", specify \"registering, retrieving, and comparing type and module declarations\". Mention data structures like 't' (environment), identifiers, paths, module types, signatures, Shape.t, persistent string sets. Use cases: type-checking, symbol resolution in compilers, managing module imports, handling scope, error detection. Now, structure into 2-3 sentences. First sentence: main operations and data structures. Second: specific use cases. Check for repetition. Make sure not to mention the module name \"Env\" again. Use terms like \"environment data structure\", \"identifiers\", \"paths\", \"module types\", etc. Possible first sentence: The module provides operations for registering, retrieving, and comparing type and module declarations, working with environment structures, identifiers, paths, and module types, including handling persistent string sets and path normalization. Second sentence: It supports use cases like symbol lookup in type-checking environments, managing module imports and scope, and error detection through detailed identifier resolution and traversal utilities. Check if that covers all points. Maybe add something about handling unbound references or namespace management. Maybe adjust the second sentence to include specific examples like \"tracking module imports, resolving type expansions, and managing namespace constraints\". Alternatively: The module offers functionalities for managing type and module information, including registering, looking up, and manipulating declarations, operating on environment structures, identifiers, paths, and module types, with support for path normalization and error handling. It is utilized in scenarios such as symbol resolution during type checking, handling module imports and unbound references, and traversing OCaml type structures for analysis or transformation. That's two sentences. Maybe combine into one, but user said 2-3. Let me check the example response they provided. Wait, the user hasn't provided an example, but the initial query says \"write a 2-3 sentence description\". So, finalizing: The module provides operations for registering, retrieving, and comparing type and module declarations, working with environment structures, identifiers, paths, and module types, including handling persistent string sets and path normalization. It supports use cases such as symbol lookup in type-checking environments, managing module imports and",
+      "description_length": 5441,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Envaux",
+      "description": "Provides functions to construct and manipulate environment structures from summaries, reset internal caches, and report errors with formatted output. Works with environment summaries, substitution maps, and custom error types. Used to rebuild environments after changes and handle error diagnostics during parsing or evaluation.",
+      "description_length": 328,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Errortrace",
+      "description": "creates and manipulates error structures with distinct trace types, including nonempty subtype and unification error traces, using list-based data with tagged elements. It defines three main error types\u2014unification_error, equality_error, and moregen_error\u2014each with specific invariants and smart constructors to ensure valid error states. Operations include building, transforming, and distinguishing between incomplete and complete error traces. For example, it can generate an equality_error with additional context or propagate a unification error through a type-checking pipeline.",
+      "description_length": 584,
+      "index": 78,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Includeclass",
+      "description": "Handles type matching and error reporting for class definitions in OCaml, comparing class types, declarations, and their compatibility. Operates on environment data, class type structures, and error lists to detect mismatches. Used to validate class definitions during type checking and provide detailed error messages.",
+      "description_length": 319,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Includecore",
+      "description": "Processes and compares value descriptions, type declarations, and extension constructors, detecting mismatches during type checking. Operates on OCaml's internal types such as `value_description`, `type_declaration`, and `extension_constructor`, along with mismatch types like `value_mismatch` and `type_mismatch`. Generates detailed error reports for type inconsistencies in modules and their implementations.",
+      "description_length": 410,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Includemod",
+      "description": "Analyzes and resolves type discrepancies in OCaml modules through comparison of module types, functor parameters, and coercion paths. It handles data types like module_type_diff, functor_params_diff, and coercion records, enabling operations such as detecting incompatibilities, generating coercion maps, and diagnosing mismatched signatures. Users can trace which definitions are used from positive or negative arguments, and resolve conflicts in complex module hierarchies. For instance, it can determine if two modules can be unified under a common functor or generate conversion paths between incompatible types.",
+      "description_length": 616,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Includemod_errorprinter",
+      "description": "Prints error messages from an inclusion explanation to a formatter, formatting each message with detailed context. Processes internal representation of inclusion errors and warnings. Used to display structured error information during compilation or validation phases.",
+      "description_length": 268,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Lambda",
+      "description": "The module offers operations for manipulating lambda expressions, including substitution, renaming, and traversal, alongside handling structured constants, tag information, and function attributes. It works with data structures like lambda terms, structured constants, tag/field debugging info, and bytecode metadata, supporting tasks such as low-level code transformation, compiler internal data modeling, and analysis of function properties. Specific use cases include optimizing code during compilation, managing debugging data, and representing bytecode metadata for memory and type management.",
+      "description_length": 598,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Lexer",
+      "description": "Handles tokenization of source code, including skipping shebang lines and managing comments and strings. Processes input through a lexing buffer and returns parsed tokens, with support for preserving documentation strings. Tracks state such as whether inside a comment or string, and allows customization of preprocessing behavior.",
+      "description_length": 331,
+      "index": 84,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Location",
+      "description": "The module provides operations for manipulating source code positions and ranges, working with lexing buffers, file paths, and location data structures to track input sources and enable reproducibility. It includes functions for error and warning reporting, formatting messages with location information, and customizing output through terminal-aware printing and formatter management, supporting use cases like deprecation alerts and exception handling.",
+      "description_length": 454,
+      "index": 85,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Matching",
+      "description": "Handles pattern matching transformations and switch construction for OCaml's lambda representation. Operates on lambda expressions, patterns, and scoped locations to generate optimized matching code. Used to process function definitions, try-with blocks, and variant pattern expansions during compilation.",
+      "description_length": 305,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Misc",
+      "description": "manages character sequences, integer parsing, and data structure manipulation with custom logic, including lexicographic comparisons, byte-level string operations, and safe extraction of optional values. It supports converting strings to integers, generating ANSI color codes, and validating binary file headers with version checks. Operations include parsing configuration values, formatting error messages, and handling terminal output dynamically. Examples include extracting integer values from command-line arguments, generating colored compiler diagnostics, and verifying object file compatibility.",
+      "description_length": 604,
+      "index": 87,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Mtype",
+      "description": "Scrape and refine module types by removing redundant or unnecessary components, such as aliases or dependencies, while preserving structural integrity. Process module declarations, type declarations, and signature items to ensure they align with specific scoping or aliasing constraints. Perform checks to determine if a module type requires code generation and extract path information for type definitions.",
+      "description_length": 408,
+      "index": 88,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Oprint",
+      "description": "Provides functions to format and print OCaml abstract syntax tree nodes using a formatter, including identifiers, values, types, labels, and module structures. Works with OCaml's internal representation types such as `out_ident`, `out_value`, `out_type`, and `out_sig_item`. Used to generate human-readable output for compiler diagnostics, pretty-printing of code, and debugging internal AST representations.",
+      "description_length": 408,
+      "index": 89,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Parmatch",
+      "description": "Detects partial matches and unused cases in pattern matching by comparing constructor structures. It operates on constructor_description types, enabling checks for structural equivalence between constructors. This allows for validation during serialization or reflection, ensuring consistency in type representations. For example, it can identify if two constructors in a variant type are functionally identical or if a match is missing relevant cases.",
+      "description_length": 452,
+      "index": 90,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Parse",
+      "description": "Parses OCaml source code into abstract syntax trees (ASTs) for structures, signatures, and top-level phrases, and extracts core types, expressions, patterns, module types, and module expressions from input streams. Processes various forms of qualified identifiers, including value paths, constructor paths, module paths, and extended module paths, with strict validation rules for each. Used to analyze and transform OCaml code during compilation or static analysis workflows.",
+      "description_length": 476,
+      "index": 91,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Parser",
+      "description": "Manages incremental parsing through state transitions, stack operations, and checkpointed evaluations, enabling dynamic input handling and error recovery. Processes OCaml constructs like expressions, patterns, and module types, producing AST nodes wrapped in checkpoints for partial analysis. Supports real-time code processing by coordinating token suppliers and environments, allowing for modular and controlled parsing workflows. Examples include parsing individual code segments, managing partial grammatical reductions, and handling input in stages during complex language operations.",
+      "description_length": 589,
+      "index": 92,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Patterns",
+      "description": "Combines operations for constructing, transforming, and analyzing pattern data structures, focusing on non-empty rows, variant types, and abstract syntax tree representations. Supports mapping over pattern components, extracting heads and sub-patterns, and converting between typed and untyped forms. Enables manipulation of pattern bindings, inspection of match cases, and preprocessing for code analysis. Examples include transforming nested patterns, extracting binding information, and generating simplified pattern representations.",
+      "description_length": 536,
+      "index": 93,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Persistent_env",
+      "description": "Maintains a registry of file paths linked to cryptographic digests, enabling checks, additions, and transformations of entries through predicates and format conversions. Supports signature management with a custom loader for embedded or external signature data, allowing direct manipulation of parsed signature structures. Users can verify file integrity by checking hashes or inject pre-compiled signatures into an environment. Operations include filtering entries by path, converting digest representations, and loading signatures without file system access.",
+      "description_length": 560,
+      "index": 94,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Predef",
+      "description": "The module provides functions for defining and manipulating type expressions, paths, and identifiers, focusing on OCaml's primitive and composite types like integers, lists, and options. It works with type expressions, path constants, and identifier tokens to support internal compiler operations, such as representing built-in types and managing predefined values. Specific use cases include constructing type representations for the compiler's runtime, handling exception paths, and initializing environments with core language constructs.",
+      "description_length": 541,
+      "index": 95,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Primitive",
+      "description": "Provides functions to create and manipulate primitive descriptions, including constructing with names, arities, and native representations, and parsing value declarations. Works with types like `boxed_integer`, `native_repr`, and `description` to represent and compare low-level language constructs. Used to generate external bindings, check equality of representations, and determine if a primitive is implemented externally.",
+      "description_length": 426,
+      "index": 96,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Printlambda",
+      "description": "Formats OCaml lambda expressions and related constructs for human-readable output. Handles comparisons, constants, primitives, and data structures like bigarrays, records, and block shapes. Used to generate debug or diagnostic representations of compiled code.",
+      "description_length": 260,
+      "index": 97,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Printpat",
+      "description": "Generates string representations of OCaml constants and patterns, formats them for output, and displays pattern lists and matrices in a structured way. Works with OCaml's internal AST types like `constant` and `general_pattern`. Used to visualize match patterns during compiler debugging or code analysis.",
+      "description_length": 305,
+      "index": 98,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Printtyp",
+      "description": "Generates and manipulates name representations for compiler output, managing identifier uniqueness and conflict tracking. Supports converting between string names and internal representations, maintaining mappings, and reporting subtyping errors with detailed explanations. Operations include name creation, conflict detection, and error formatting using custom types. Enables precise control over name resolution and error diagnostics in compiler workflows.",
+      "description_length": 458,
+      "index": 99,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Printtyped",
+      "description": "Generates formatted output of OCaml type information from signature and structure data. Processes Typedtree types to produce human-readable representations suitable for debugging or documentation. Outputs include type definitions, module interfaces, and implementation details with coercion handling.",
+      "description_length": 300,
+      "index": 100,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Rec_check",
+      "description": "Checks whether a recursive expression or class expression references only identifiers from a given list, ensuring proper scoping in OCaml's type-checked AST. Operates on OCaml's internal representation of expressions and class expressions, specifically `Typedtree.expression` and `Typedtree.class_expr`. Used to validate recursive definitions in type-checking phases, preventing unintended variable captures.",
+      "description_length": 408,
+      "index": 101,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Rescript_cpp",
+      "description": "Handles lexical analysis and preprocessing directives in C++-like syntax, including checking for line beginnings, interpreting #directives, and managing macro definitions. Operates on lexing buffers and tokens, supporting operations like directive replacement, variable listing, and comment-aware token filtering. Used to process source code streams with conditional compilation and macro expansion features.",
+      "description_length": 408,
+      "index": 102,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Shape",
+      "description": "manages structured data through ordered maps and sets, with support for key-based operations, conversions, and transformations. It handles abstract component kinds, symbolic mappings, and environment-based shape lookups, enabling tasks like type validation, configuration management, and data aggregation. Operations include merging, filtering, and retrieving shapes, with examples such as building ordered logs, validating type names, and linking identifiers to symbolic representations. Core data types include keys of type T.t, abstract component kinds, and mappings from identifiers to shapes or Uid.t.",
+      "description_length": 606,
+      "index": 103,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Signature_group",
+      "description": "Provides functions to manage and traverse signatures containing ghost components, grouping them with their associated core items or recursive groups. Operates on signature items, core and recursive groups, and in-place patches to modify or inspect structured type definitions. Enables traversal, iteration, and replacement of elements within a signature while preserving the relationship between core items and their associated ghost components.",
+      "description_length": 445,
+      "index": 104,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Simplif",
+      "description": "Simplifies lambda expressions by applying transformations to reduce complexity. Processes lambda terms and function definitions, modifying their structure for optimization. Handles function wrappers and parameter lists to prepare code for further analysis or code generation.",
+      "description_length": 275,
+      "index": 105,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Stypes",
+      "description": "Records annotations and location data for later retrieval, with support for dumping stored information. Operates on annotations and location objects, enabling precise tracking of program elements. Used to capture and inspect metadata during parsing or analysis phases.",
+      "description_length": 268,
+      "index": 106,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Subst",
+      "description": "manipulates OCaml module system elements through AST and type representation, supporting scoping-aware transformations and syntax definitions. it handles module declarations, signature items, and related constructs with operations for conversion, modification, and analysis. users can rewrite module structures, track scoping rules, or generate custom syntax during compiler passes. examples include substituting module aliases, adjusting signature constraints, or extracting module dependencies.",
+      "description_length": 496,
+      "index": 107,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Switch",
+      "description": "This module provides low-level integer comparison operations and constructs for building control flow structures, such as conditionals and switches, alongside exception handling mechanisms. It works with abstract types like `arg`, `act`, `test`, and `loc` to model intermediate representations for compilers or interpreters. Specific use cases include implementing command-line argument parsing frameworks and generating structured logic for input processing.",
+      "description_length": 459,
+      "index": 108,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Tast_iterator",
+      "description": "Provides a mechanism for traversing and inspecting typed AST nodes through open recursion, with a default implementation for recursive visits. Operates on abstract syntax tree nodes represented as a polymorphic variant type. Used to implement custom analysis passes, such as type checking or code transformation, by overriding specific visit functions.",
+      "description_length": 352,
+      "index": 109,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Tast_mapper",
+      "description": "Provides a default transformation structure for traversing and modifying OCaml AST nodes, with methods for handling expressions, patterns, and type declarations. Works with OCaml's abstract syntax tree nodes and associated metadata. Used to implement custom rewriting rules during compilation or analysis phases.",
+      "description_length": 312,
+      "index": 110,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Tmc",
+      "description": "Rewrites lambda expressions to apply tail-modulo-cons optimization, transforming certain recursive calls into iterative forms. It operates on OCaml's internal lambda representation, modifying function bodies to improve stack usage. This is used during compilation to optimize tail-recursive functions that construct lists or other data structures.",
+      "description_length": 347,
+      "index": 111,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Translattribute",
+      "description": "Handles attribute manipulation and extraction during OCaml's type checking and code generation phases. Operates on typed expressions, module expressions, and lambda representations, with support for inline, specialise, and local attributes. Enables precise control over attribute application and removal in compiled code, such as managing inlining hints or tail call optimizations.",
+      "description_length": 381,
+      "index": 112,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Translclass",
+      "description": "Translclass converts typed class expressions into lambda representations, using scope information and identifier lists. It processes class expressions, virtual flags, and debug locations to generate executable code. It also outputs error messages in a formatted way for debugging purposes.",
+      "description_length": 289,
+      "index": 113,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Translcore",
+      "description": "Translates OCaml abstract syntax trees into Lambda intermediate representation, handling expressions, module structures, and object definitions. It processes scoped locations, type information, and environment data to generate executable code. Specific operations include transforming module expressions, translating let bindings, and managing record field wrapping.",
+      "description_length": 366,
+      "index": 114,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Translmod",
+      "description": "Processes OCaml module definitions by translating Typedtree structures into Lambda representations, handling recursive bindings, and managing package and toplevel definitions. Operates on structures, module coercions, and identifiers, with support for both standard and Flambda intermediate representations. Used to generate executable code from compiled module definitions and manage identifier mappings during translation.",
+      "description_length": 424,
+      "index": 115,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Translobj",
+      "description": "Provides operations to translate object-oriented constructs into lambda expressions, including method resolution, label management, and class registration. Works with lambda expressions, structured constants, and identifier sets to manipulate and transform OCaml's internal representation. Used to generate optimized code for object methods, manage label scopes during translation, and integrate class definitions into the environment.",
+      "description_length": 435,
+      "index": 116,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Translprim",
+      "description": "Provides functions to transform and track primitive operations during code translation, including inserting event hooks before and after expressions, managing exception identifiers, and checking primitive arity. Works with Lambda expressions, Typedtree expressions, environment data, and path identifiers. Used to instrument code for debugging or analysis, track primitive usage, and handle low-level translation of built-in operations.",
+      "description_length": 436,
+      "index": 117,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Typeclass",
+      "description": "Handles type checking and transformation of class declarations, descriptions, and class types within OCaml's type system. Processes Parsetree and Typedtree representations of classes, managing environment updates and error reporting. Used to analyze and manipulate class structures during compilation, including opening declarations and error diagnostics.",
+      "description_length": 355,
+      "index": 118,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Typecore",
+      "description": "Extracts type and label names from an abstract type representation, enabling metadata retrieval during code generation. The core data type is `t`, which holds type information, and operations include name and label extraction. This allows developers to inspect and manipulate type structures programmatically. For example, it can be used to generate documentation or enforce type constraints at runtime.",
+      "description_length": 403,
+      "index": 119,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Typedecl",
+      "description": "Translates OCaml type declarations, extensions, and exceptions from the parser's abstract syntax tree to the typed tree, handling environment updates and type checking. It processes type declarations, value descriptions, and type extensions, incorporating constraints and path information. It includes validation checks for type coherence and fixed types, and provides error reporting for malformed declarations.",
+      "description_length": 412,
+      "index": 120,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Typedecl_immediacy",
+      "description": "Computes the immediacy of type declarations based on environment and type information. Operates on environment data, type declarations, and properties to determine or update immediacy status. Used to analyze or modify how types are treated in compilation phases requiring immediate resolution.",
+      "description_length": 293,
+      "index": 121,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Typedecl_properties",
+      "description": "Computes fixed-point properties like variance and immediacy for mutually-recursive type declarations, using user-provided requirements or default values. Operates on type declarations and associated property configurations, returning updated declarations with computed values. Used to validate type definitions against expected properties during compilation or analysis.",
+      "description_length": 370,
+      "index": 122,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Typedecl_separability",
+      "description": "Checks whether type declarations annotated with `@@unboxed` are separable, ensuring they do not mix float and non-float values. It analyzes mutually-recursive types by inferring mode signatures that specify separability constraints on type parameters. Returns a mode list for unboxed types or raises an error if separability is violated.",
+      "description_length": 337,
+      "index": 123,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Typedecl_unboxed",
+      "description": "Provides a function to retrieve the unboxed type representation of a given type expression within an environment. Operates on OCaml's internal type expressions and environment structures. Used to inspect low-level type representations during compiler passes or type analysis.",
+      "description_length": 275,
+      "index": 124,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs.Typedecl_variance",
+      "description": "Processes variance information from type declarations and extensions, extracting and validating variance annotations for type parameters and constructors. Operates on OCaml AST structures like `Parsetree.core_type`, `Parsetree.type_declaration`, and `Typedtree.extension_constructor`, producing lists of boolean tuples representing variance properties. Used to enforce variance constraints during type checking and to track required variance in type and class declarations.",
+      "description_length": 473,
+      "index": 125,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Typedtree",
+      "description": "The module provides operations for manipulating and analyzing typed abstract syntax tree (AST) elements, including classification, transformation, and extraction of identifiers, with a focus on type-aware processing and recursive structure handling. It works with complex data structures like AST nodes, patterns, value bindings, module types, and type declarations, incorporating location information and type metadata. These functionalities support tasks such as type checking, code analysis, and internal representation management in OCaml compilers and tools.",
+      "description_length": 563,
+      "index": 126,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Typemod",
+      "description": "Transforms type signatures using environment contexts and custom types, while converting component kinds to strings for readable output. It handles signature normalization and component labeling, supporting operations on abstract type representations and environment structures. Users can standardize type information for consistent processing and generate descriptive labels for component types. This enables more transparent debugging and clearer representation of module structures in tools and interfaces.",
+      "description_length": 509,
+      "index": 127,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Typeopt",
+      "description": "Analyzes type expressions to determine function and base type relationships, extract pointer and array characteristics, and classify expression values. Works with OCaml's internal type representations, environment data, and typed tree structures. Used to optimize code generation by inferring value and array kinds during compilation.",
+      "description_length": 334,
+      "index": 128,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Types",
+      "description": "Provides operations for constructing, comparing, and manipulating type representations, transient expressions, and ordered data structures. Main data types include type_expr, transient_expr, sets, and maps, with operations for coercion, hashing, set-theoretic manipulation, and key-value management. Examples include building polymorphic variant types, managing type variable substitutions, and performing ordered set operations for efficient data processing. Supports low-level type system tasks like variance checks, separability mode combination, and dynamic data collection management.",
+      "description_length": 589,
+      "index": 129,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Typetexp",
+      "description": "Validates type variable names, constructs and checks polymorphic universal variables, and translates core types into typed tree representations. It operates on type expressions, polymorphic universal variables, and variable contexts, supporting type inference and scope management. Used to handle type schemes, delay type translations, and manage type variable scoping during OCaml compilation.",
+      "description_length": 394,
+      "index": 130,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Untypeast",
+      "description": "Converts OCaml typed AST elements back to their untyped counterparts using a customizable mapping. Operates on Typedtree structures, expressions, patterns, and signatures, as well as paths and constants. Used to generate source-compatible ASTs for code manipulation or serialization.",
+      "description_length": 283,
+      "index": 131,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Melange_compiler_libs.Warnings",
+      "description": "This module handles configuring and controlling warning settings, including parsing command-line options, enabling/disabling warnings, and checking their states, while managing internal compiler metadata and state snapshots. It operates on structured data like warning descriptions, location markers, and alert configurations to facilitate precise warning reporting and context preservation. Use cases include customizing compiler behavior during builds, debugging through targeted warning analysis, and maintaining consistent warning policies across development workflows.",
+      "description_length": 573,
+      "index": 132,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "melange-compiler-libs",
+      "description": "Provides functions for parsing and transforming OCaml abstract syntax trees, including rewriting module expressions and handling type annotations. Operates on OCaml's `typedtree` and `syntaxtree` structures, enabling manipulation of compiled code representations. Used to modify or analyze OCaml programs during the compilation process, such as inserting debug information or optimizing specific constructs.",
+      "description_length": 407,
+      "index": 133,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Melange_compiler_libs",
+      "description": "Provides functions to retrieve system and compiler configuration parameters, including version numbers, paths, and platform-specific settings. It works with low-level data such as compiler flags, file suffixes, and binary format identifiers to support build processes and runtime behavior. Use cases include configuring compilation targets, managing cross-platform compatibility, and adjusting runtime options like profiling and safety checks.",
+      "description_length": 443,
+      "index": 134,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 144,
+    "meaningful_modules": 135,
+    "filtered_empty_modules": 9,
+    "retention_rate": 0.9375
+  },
+  "statistics": {
+    "max_description_length": 5441,
+    "min_description_length": 212,
+    "avg_description_length": 473.8814814814815,
+    "embedding_file_size_mb": 0.49079227447509766
+  }
+}

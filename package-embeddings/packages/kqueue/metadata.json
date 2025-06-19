@@ -1,0 +1,84 @@
+{
+  "package": "kqueue",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 9,
+  "creation_timestamp": "2025-06-18T16:31:25.757797",
+  "modules": [
+    {
+      "module_path": "Kqueue.Event_list.Event",
+      "description": "Provides methods to retrieve and modify specific fields of an event object, including identifier, filter, flags, note, and data values. Operates on a unified event type `t` and associated types such as `Filter.t`, `Flag.t`, and `Note.t`. Used to configure and inspect event properties in system monitoring or logging contexts.",
+      "description_length": 326,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Kqueue.Timeout",
+      "description": "Provides functions to create and manage timeout values for event waiting, including a never timeout that waits indefinitely and an immediate timeout that polls without delay. Operates on a custom type `t` representing timeout durations, constructed from nanoseconds. Used to control behavior in event-driven systems, such as ensuring non-blocking checks or long waits for I/O events.",
+      "description_length": 383,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Kqueue.Note",
+      "description": "Provides operations to compare note values, retrieve time-related fields, and access flags representing system call actions or states. Works with the abstract type `t` that encapsulates low-level system note data. Used to inspect or manipulate process events, file descriptors, and signal information in system call tracing or monitoring tools.",
+      "description_length": 344,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Kqueue.Filter",
+      "description": "Provides operations to compare, format, and manipulate filter objects, including reading, writing, and tracking time or process information. Works with the abstract type `t` representing filter configurations. Used to serialize and deserialize filter states, monitor execution time, and track associated processes or nodes.",
+      "description_length": 323,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Kqueue.Flag",
+      "description": "Provides operations to compare, combine, and inspect flag values, including equality checks, set union, and intersection tests. Works with the abstract type `t` representing flag states. Used to manage flag transitions in protocol handling, such as enabling, disabling, or clearing flags during message processing.",
+      "description_length": 314,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Kqueue.Event_list",
+      "description": "Manipulates event objects through accessors and mutators for fields like identifier, filter, flags, note, and data, using types `Filter.t`, `Flag.t`, and `Note.t`. Supports configuration and inspection of event properties in system monitoring or logging workflows. Examples include extracting an event's identifier, updating its filter criteria, or modifying associated notes. Operations are performed directly on the unified event type `t`.",
+      "description_length": 441,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Kqueue.Util",
+      "description": "Converts Unix file descriptors to and from integers, enabling integration with event notification systems that require integer identifiers. Works directly with the Unix.file_descr type and primitive integers. Used to register file descriptors in kqueue-based event loops by translating them into valid event identifiers.",
+      "description_length": 320,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "kqueue",
+      "description": "Provides functions to register file descriptors for event monitoring, set filters, and retrieve events from the kqueue system. Works with file descriptors, event masks, and kqueue descriptors. Used for efficient I/O multiplexing in network servers and system monitoring tools.",
+      "description_length": 276,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Kqueue",
+      "description": "manages event-driven system interactions through a unified set of operations on event, filter, flag, and note types, along with timeout and file descriptor conversions. It supports creating and manipulating timeouts, inspecting system notes, comparing and combining flags, and configuring event properties with specific identifiers, filters, and data. Operations include setting non-blocking checks, tracking process events, serializing filter states, and translating file descriptors for event registration. Examples include modifying an event's filter to monitor specific I/O changes or extracting a note's status to determine system call outcomes.",
+      "description_length": 650,
+      "index": 8,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 9,
+    "meaningful_modules": 9,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 650,
+    "min_description_length": 276,
+    "avg_description_length": 375.22222222222223,
+    "embedding_file_size_mb": 0.03315448760986328
+  }
+}

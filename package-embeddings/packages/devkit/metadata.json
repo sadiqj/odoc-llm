@@ -1,0 +1,819 @@
+{
+  "package": "devkit",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 114,
+  "creation_timestamp": "2025-06-18T16:51:33.294093",
+  "modules": [
+    {
+      "module_path": "Devkit_core.Log.State.Put",
+      "description": "Logs messages with specified severity levels to a logger facility, accepting a format string and arguments. It operates on log levels, logger facilities, and formatted strings. Used to output debug information, warnings, and error messages during application runtime.",
+      "description_length": 267,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Log.State.M",
+      "description": "Provides logging operations at different severity levels, including formatted message output and direct string logging. Works with a logger facility and severity tags to route messages appropriately. Used to emit structured debug, info, warning, and error messages with flexible formatting options.",
+      "description_length": 298,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Web.Http.IO",
+      "description": "Provides monadic operations for sequencing I/O actions, including binding, resource management with `bracket`, and exception handling. Works with a polymorphic `t` type representing I/O computations, and supports asynchronous sleep and list transformations. Used for managing file handles, network requests, and error-prone operations with structured control flow.",
+      "description_length": 364,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Web.Http_blocking.IO",
+      "description": "Provides monadic operations for sequencing and handling side effects, including binding, resource management with bracket, and exception handling. Works with a generic 'a t type representing blocked I/O actions, supporting time-based delays and list transformations. Used for managing asynchronous file reads, ensuring proper resource cleanup, and handling errors in I/O workflows.",
+      "description_length": 381,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Web.Http_lwt.IO",
+      "description": "Provides monadic operations for sequencing I/O actions, including binding, resource management with `bracket`, and exception handling. Works with asynchronous I/O computations represented as `'a t` values, leveraging Lwt for concurrency. Enables safe file handling, timed delays, and structured error recovery in network or system operations.",
+      "description_length": 342,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Log.State",
+      "description": "Logs messages with severity levels and formatted content to a specified logger facility, supporting debug, info, warning, and error outputs. It handles log levels, facilities, and string formatting to route and structure messages effectively. Users can log structured data using format strings or direct strings, enabling detailed runtime diagnostics. Examples include logging error messages with context or emitting debug information with variable interpolation.",
+      "description_length": 463,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Logger.PutSimple",
+      "description": "Formats a log message with a specified level and facility, returning a string with a standardized prefix. Outputs the formatted message directly to a designated destination, such as a file or console. Works with level and facility identifiers, along with raw log strings, to generate and send structured log entries.",
+      "description_length": 316,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Logger.PutLimited",
+      "description": "Formats a log message with a specified severity level and facility, returning a string with a fixed maximum length. Outputs the formatted message to a designated destination, ensuring it does not exceed a predefined size limit. Works with severity levels, logging facilities, and arbitrary strings for structured log entries.",
+      "description_length": 325,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Devkit_core.Logger.Make",
+      "description": "Handles log message emission with specified severity levels and facilities, accepting a formatted string for output. Operates on log levels (e.g., debug, info, error) and facilities (e.g., user, daemon) to route messages appropriately. Used to integrate logging into applications by directly writing messages to the system log or custom sinks.",
+      "description_length": 343,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Network.IPv4",
+      "description": "Provides operations to compare, check equality, and convert IPv4 addresses between string, integer, and byte representations. Works with the `ipv4` type, enabling manipulation of 32-bit address values. Used to validate and transform input strings into structured address data, extract network classes, and perform bitwise operations.",
+      "description_length": 333,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Async.Internal",
+      "description": "Logs messages using a configured logger, supporting different severity levels and formatting options. Works with log records containing timestamps, modules, and message content. Used to track runtime events and debug application flow in real-time.",
+      "description_length": 247,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Devkit_core.Async.Peer",
+      "description": "Provides methods to manage peer-to-peer communication, including creating connections, adding events, sending and receiving data, and handling errors. Operates on Unix file descriptors, socket addresses, and byte sequences for low-level network interactions. Used for establishing real-time data exchange between nodes with custom timeout and error handling.",
+      "description_length": 358,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Systemd.Daemon",
+      "description": "Provides functions to detect systemd boot status, retrieve file descriptors for socket activation, and manage foreground execution. Operates on Unix file descriptors, command-line arguments, and system state. Used to integrate OCaml applications with systemd's socket activation and startup management.",
+      "description_length": 302,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Persist.Marshal",
+      "description": "Provides functions to serialize and deserialize OCaml values, including a tag function for identifying data types. Works with the value type to encode and decode complex data structures. Used to persist and retrieve objects across program runs or network transmissions.",
+      "description_length": 269,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Persist.Marshal_ext",
+      "description": "Provides functions to serialize and deserialize values using a custom tagging system, operating on the `value` type and string-based identifiers. It supports adding additional tags to serialized data and manages lists of string tags for metadata. Used to enhance serialized data with contextual information during marshaling processes.",
+      "description_length": 335,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Stre.ASCII",
+      "description": "Checks if a character is an alphabetic letter, numeric digit, or alphanumeric. Operates on individual characters to determine their ASCII classification. Used for validating input formats or parsing text streams.",
+      "description_length": 212,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.ExtThread.LockMutex",
+      "description": "Provides a mechanism to execute code within a critical section, ensuring exclusive access. Operates on a mutable state type `t` representing a lock. Used to safely perform I/O operations or modify shared state in concurrent programs.",
+      "description_length": 233,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.ExtThread.Async_fin",
+      "description": "Provides functions to manage asynchronous event callbacks within a libevent loop, including setting up the environment, scheduling callbacks, and checking system support. Operates with an opaque `t` type representing the event context and `Libevent.event_base` for event management. Used to safely execute worker thread-generated tasks in the main event loop without blocking.",
+      "description_length": 376,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.ExtThread.Workers",
+      "description": "Processes and manages asynchronous tasks, executing them and returning structured results. It supports task scheduling, cancellation, and result aggregation using task and result types. Used to handle background computations in concurrent applications, such as processing user requests or batch data operations.",
+      "description_length": 311,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.ExtThread.Pool",
+      "description": "Manages a resource pool with operations to create, check status, return resources, and wait for blocked operations. It works with a custom type `t` representing the pool state. Used to coordinate access to a fixed number of resources in concurrent applications.",
+      "description_length": 261,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Bit_struct_list.Make",
+      "description": "Provides operations to determine the bit count required for items and to format integers as strings. Works with integers and bit-based representations. Used to generate human-readable outputs for bit-width configurations and to calculate storage requirements.",
+      "description_length": 259,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Logstash.Dyn",
+      "description": "Creates and manipulates counters that track numerical values, byte counts, and time durations, each associated with custom attributes represented as key-value pairs. Operates on a private type that encapsulates these attributes and numeric data. Used to instrument performance metrics, such as tracking request counts with metadata or measuring latency with specific labels.",
+      "description_length": 374,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.HtmlStream_ragel.Raw",
+      "description": "Converts between string values and an opaque type, supporting list operations and comparisons. Works with strings and lists of strings, enabling safe manipulation and validation. Used to serialize and deserialize data while preserving structural integrity.",
+      "description_length": 256,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Devkit_core.Cache.NoLock",
+      "description": "Provides a mechanism to execute code within a lock without blocking, using a mutex-like structure. Operates on a custom type `t` representing a lock state, and allows running arbitrary functions within the lock's scope. Used to safely perform critical sections in concurrent code where blocking is undesirable.",
+      "description_length": 310,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Cache.TimeLimited2",
+      "description": "Provides a mechanism to execute functions with a time limit, returning the result or failing if the deadline is exceeded. Operates on a stateful token type that tracks execution deadlines. Used to enforce timeouts on long-running or potentially blocking operations.",
+      "description_length": 265,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Cache.LRU",
+      "description": "Provides key comparison and hashing operations for implementing a least-recently-used cache. Works with arbitrary key types through customizable equality and hash functions. Used to ensure consistent key handling in cache eviction policies.",
+      "description_length": 240,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Cache.Count",
+      "description": "The module provides functions for counting and managing element frequencies, including adding, removing, and querying counts, along with generating distributions and formatted reports. It operates on a generic type 'a paired with integer counts and a tagged type 'a t for structured data, enabling operations like extracting elements as lists. Use cases include analyzing data distributions, tracking occurrences in datasets, and generating summary reports for statistical analysis.",
+      "description_length": 482,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Cache.Group",
+      "description": "Groups values by a key function, associating each key with a list of corresponding values. It operates on a polymorphic map type where keys are of type 'b and values are of type 'a. It allows adding elements, retrieving groups by key, iterating over key-value pairs, and enumerating keys.",
+      "description_length": 288,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Cache.Assoc",
+      "description": "Provides operations to manage one-to-one mappings between keys and values, including adding, retrieving, and removing associations. Works with a polymorphic table type that stores pairs of key-value elements. Used to track unique relationships, such as mapping user IDs to session data or identifiers to configuration settings.",
+      "description_length": 327,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Cache.Lists",
+      "description": "Provides operations to manage a key-value store where each key maps to a list of values. Supports adding, retrieving, and updating entries, as well as enumerating and clearing the collection. Used to track multiple values per key in scenarios like event logging or grouped data aggregation.",
+      "description_length": 290,
+      "index": 29,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Devkit_core.Cache.Reuse",
+      "description": "Creates and manages a reusable resource object, allowing initialization and reinitialization of its internal state. Operates on a custom type `t` that encapsulates the resource's lifecycle. Used to efficiently reuse a single instance across multiple operations without frequent allocation.",
+      "description_length": 289,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Factor.Int",
+      "description": "Provides arithmetic operations such as addition, multiplication, and negation, along with comparison and conversion functions for integer values. Works with the `int` type and its wrapped representation `t`. Used for performing precise integer calculations and conversions in numerical algorithms and input parsing.",
+      "description_length": 315,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Factor.Float",
+      "description": "Compares two floating-point numbers and returns an integer indicating their relative order. Checks for equality between two floats, accounting for precision nuances. Designed for numerical analysis and comparison tasks where exact float values are critical.",
+      "description_length": 257,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Web.CurlCache",
+      "description": "Provides functions to retrieve and release a reusable CURL handle, working with the `Curl.t` type. Retrieves a pre-configured handle for HTTP requests and ensures proper resource management upon completion. Used to efficiently manage network connections in applications requiring repeated HTTP interactions.",
+      "description_length": 307,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Web.Http",
+      "description": "Performs HTTP requests using a Curl handle, returning a result wrapped in an IO monad. Operates on Curl.t values and produces outcomes based on Curl.curlCode. Used to execute network calls with error handling integrated into the IO workflow.",
+      "description_length": 241,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Web.IO_blocking",
+      "description": "Provides monadic operations for sequencing and error handling, including binding, resource management, and exception catching. Works with arbitrary values wrapped in a type constructor, enabling structured control flow. Used to manage synchronous I/O operations, ensure cleanup of resources, and handle failures in a controlled manner.",
+      "description_length": 335,
+      "index": 35,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Devkit_core.Web.IO_lwt",
+      "description": "Provides asynchronous sequencing, error handling, and resource management with Lwt promises. Operates on values wrapped in `Lwt.t` and supports list transformations with asynchronous effects. Enables safe cleanup after operations, delays execution, and handles exceptions in asynchronous workflows.",
+      "description_length": 298,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Web.Curl_blocking",
+      "description": "Performs HTTP requests using a blocking I/O model, returning a status code indicating success or failure. Operates on a `Curl.t` handle to configure and execute requests. Used to fetch remote resources synchronously in scenarios requiring immediate response handling.",
+      "description_length": 267,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Web.Curl_lwt_for_http",
+      "description": "Provides asynchronous execution of HTTP requests using Lwt, with a function to perform transfers and another to configure global multi-handle options. Operates on Lwt promises and Curl handle types. Used to manage non-blocking HTTP interactions and adjust multi-connection settings during network operations.",
+      "description_length": 308,
+      "index": 38,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Devkit_core.Web.Http_blocking",
+      "description": "manages blocked I/O operations through a monadic interface, enabling sequential execution, resource management, and error handling. It operates on a generic 'a t type, supporting delays, list transformations, and safe file read operations. Bracket ensures resources are properly released, while bind composes I/O actions. It handles exceptions and allows for structured I/O workflows like reading files with guaranteed cleanup.",
+      "description_length": 427,
+      "index": 39,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Devkit_core.Web.Http_lwt",
+      "description": "Sequencing I/O actions through monadic operations allows for structured execution of asynchronous tasks, with support for resource management via `bracket` and error handling. Key types include `'a t` for asynchronous computations, along with functions for binding, delaying, and managing side effects. Operations enable safe file reads, timed retries, and controlled cleanup of network connections. Examples include reading a file with guaranteed closure, executing a timeout-sensitive HTTP request, or chaining multiple I/O steps with error recovery.",
+      "description_length": 552,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Httpev.Hidden",
+      "description": "Provides logging functionality using a custom logger type, enabling structured message output. Operates with the Log.logger data type to manage log levels and message formatting. Used to integrate detailed runtime diagnostics into application workflows.",
+      "description_length": 253,
+      "index": 41,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Devkit_core.Httpev.Tcp",
+      "description": "Handles TCP socket connections by binding to a specified address and port, and processing incoming connections asynchronously. Operates on Unix file descriptors and socket addresses, supporting both event-based and Lwt-based concurrency models. Used to create server endpoints that accept and route incoming client connections to handler functions.",
+      "description_length": 348,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Httpev.Param",
+      "description": "Extracts and converts query parameters from HTTP requests. Handles strings, integers, floats, booleans, and lists of strings, with optional defaults. Retrieves specific parameters by name, ensuring type-safe access to request data.",
+      "description_length": 231,
+      "index": 43,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Devkit_core.Httpev.Args",
+      "description": "Provides functions to parse and validate command-line arguments, including a `req` function for handling required parameters. Works with strings, options, and custom type parsers to extract and structure input. Used to enforce argument constraints in CLI tools, such as ensuring a specific flag is present and correctly formatted.",
+      "description_length": 330,
+      "index": 44,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Devkit_core.Httpev.ReqBuffersCache",
+      "description": "Provides functions to retrieve and release buffer objects, where each buffer is represented as a Bytes.t value. The module manages the lifecycle of these buffers, ensuring they are properly allocated and freed. Used to efficiently handle temporary byte data in network or I/O operations.",
+      "description_length": 287,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Httpev.BuffersCache",
+      "description": "Provides functions to acquire and release buffer resources, where each buffer is represented as an Lwt_bytes.t value. The module manages access to shared buffer pools, ensuring safe reuse and preventing memory leaks. Used in network I/O operations to efficiently handle data transmission and reception.",
+      "description_length": 302,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Httpev.Answer",
+      "description": "Provides functions to construct HTTP responses with various content types, including text, binary, and JSON, while allowing status codes and headers to be specified. Handles error responses for common HTTP status codes and includes utilities for formatting and generating random references. Processes RESTful requests with customizable argument parsing and exception handling.",
+      "description_length": 376,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Parallel.Forks",
+      "description": "Provides functions to spawn and manage concurrent tasks, including starting a task, waiting for its completion, and retrieving results. Operates on `task` and `result` types to track and access the outcome of asynchronous operations. Used to execute background computations and collect their outputs without blocking the main thread.",
+      "description_length": 333,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Parallel.Services",
+      "description": "Handles asynchronous service initialization, controlled shutdown, and rolling restarts with timeout management. Operates on a service handle type `t` to manage lifecycle events. Used to start a service with a port, perform a graceful restart with delay, and terminate a service within a specified time.",
+      "description_length": 302,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Possibly_otel.Traceparent",
+      "description": "Provides functions to retrieve and identify a trace context identifier, working with string-based trace identifiers. Extracts ambient trace context from the current execution environment. Used to propagate distributed tracing information in networked applications.",
+      "description_length": 264,
+      "index": 50,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Devkit_core.Idn.Make",
+      "description": "Converts a string into an array of integer Unicode code points and reconstructs a string from an array of code points. Operates on ASCII and UTF-8 encoded strings, handling multi-byte characters correctly. Used to process text input for encoding or analysis tasks requiring individual character codes.",
+      "description_length": 301,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Prelude.Fresh",
+      "description": "Compares two values of type t using a lexicographical ordering. It operates on opaque type t, which represents unique identifiers. This function is used to determine the relative order of generated identifiers during program analysis.",
+      "description_length": 234,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Web.IO",
+      "description": "Provides monadic operations for sequencing and error handling in asynchronous or effectful computations, including binding, resource management, and exception catching. Works with a polymorphic effect type 'a t, supporting operations like sleeping, returning values, and mapping over lists. Used for managing I/O resources, handling asynchronous delays, and propagating errors in a structured way.",
+      "description_length": 397,
+      "index": 53,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ocamlnet_lite.Netencoding.Url",
+      "description": "Encodes and decodes strings for URL compatibility, replacing spaces with '+' or '%20' and handling special characters via '%'-substitution. Processes raw query parameters from URLs, extracting them into a list of (name, value) pairs. Supports optional behavior for '+' handling to align with different encoding standards.",
+      "description_length": 321,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocamlnet_lite.Netencoding.Html",
+      "description": "Encodes and decodes strings between character encodings while replacing unsafe characters with HTML entities or resolving HTML entities into their corresponding characters. Operates on strings and uses encoding types from Netconversion, with support for custom entity sets and substitution functions. Used to safely embed user-generated content in HTML documents or parse HTML content with special characters.",
+      "description_length": 409,
+      "index": 55,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ocamlnet_lite.Netaux.ArrayAux",
+      "description": "Provides efficient in-place copying of integer array segments using a specialized blit operation. Works with int arrays and allows precise control over source and destination indices and lengths. Optimized for performance-critical code paths involving array data migration.",
+      "description_length": 273,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Action",
+      "description": "Tracks elapsed time from a start point and records specific timestamps. Operates on a start time and a list of event timestamps, supporting JSON serialization for event data. Useful for capturing and exporting timing data from performance-critical sections of code.",
+      "description_length": 265,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Async",
+      "description": "manages asynchronous I/O operations through logging and network communication. It includes a logging system that records events with timestamps, modules, and severity levels, and a network layer for handling peer-to-peer data exchange using file descriptors and socket addresses. Functions support sending and receiving byte sequences, managing connections, and handling errors during real-time communication. It enables debugging and real-time data transfer in distributed applications.",
+      "description_length": 487,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Bit_struct_list",
+      "description": "Provides functions to calculate the number of bits required for each item in a list and to format integers as bit strings. Operates on lists of integers and individual integer values. Used to generate human-readable bit representations for data serialization and debugging.",
+      "description_length": 273,
+      "index": 59,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Devkit_core.Cache",
+      "description": "Provides a mechanism to safely execute operations on a shared resource using a lock. Works with a mutable state type `t` to ensure thread-safe access. Used to protect critical sections in concurrent code, such as accessing a shared cache or database connection.",
+      "description_length": 261,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Control",
+      "description": "Provides resource management operations that ensure proper cleanup of file handles, channels, and directories. Works with file paths, input/output channels, and directory handles, offering functions to safely open, process, and close resources. Used for handling file I/O, temporary file creation, and directory traversal with guaranteed resource release.",
+      "description_length": 355,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Devkit_ragel",
+      "description": "This module offers state machine-based parsing and validation operations for structured data, including IPv4 address validation and compact duration parsing. It works with strings and integer arrays to manage transition tables and lexical analysis, enabling efficient state transitions and error checking. Specific use cases include high-speed IPv4 parsing and detailed validation workflows requiring precise state management.",
+      "description_length": 426,
+      "index": 62,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Devkit_core.Digest_auth",
+      "description": "Initializes a structure with authentication credentials based on a realm, user, and password. Validates HTTP requests against these credentials to determine authorization status. Processes digest authentication challenges by comparing computed response values with expected results.",
+      "description_length": 282,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Exn",
+      "description": "Provides functions to handle exceptions by catching them, mapping results to tagged unions, converting exceptions to strings, and generating error messages. Works with exception values, function callbacks, and result types that distinguish between success and exception cases. Used to safely execute potentially failing operations, transform error outcomes, and generate structured error reports.",
+      "description_length": 396,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Exn_lwt",
+      "description": "Handles exception propagation and recovery in Lwt-based asynchronous code. Processes functions that return Lwt promises, capturing exceptions and returning results in a tagged format. Used to safely wrap operations that may raise exceptions, allowing for controlled error handling in asynchronous workflows.",
+      "description_length": 307,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.ExtArg",
+      "description": "The module provides command-line argument parsing and manipulation, supporting type-specific operations for booleans, strings, integers, floats, and dynamic expansion of arguments based on registered specifications. It works with command-line argument lists, mutable references, and configuration specifications to enable flexible input handling and transformation. Use cases include dynamically expanding flagged arguments, setting runtime configuration values, and generating structured usage messages from parsed inputs.",
+      "description_length": 523,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.ExtEnum",
+      "description": "The module offers operations for iterating, transforming, and merging enumerations, including indexed processing, filtering, and joining elements from multiple sources with customizable comparison and matching strategies. It supports complex sequence manipulations like grouping, aligning, and extracting sub-sequences, along with handling joins (inner, left, right, full) and managing state during transformations. Use cases include data aggregation, dataset alignment, and efficient sequence processing where operations require combining or modifying enumerated values from various sources.",
+      "description_length": 592,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.ExtEnum_merge",
+      "description": "This module offers join and merge operations for combining enumerated sequences, supporting inner, left, right, and full joins via custom key comparisons or direct value matching. It processes tuples of key-value pairs and enumerated elements, enabling structured data integration and transformation. Use cases include merging datasets with conditional associations, handling missing entries, and aggregating multi-association mappings.",
+      "description_length": 436,
+      "index": 68,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.ExtThread",
+      "description": "Provides functions to create and manage asynchronous tasks, including starting, canceling, and waiting for task completion. Operates on custom types `task` for representing work units and `result` for storing outcomes. Used to execute CPU-bound operations in the background and retrieve results without blocking the main thread.",
+      "description_length": 328,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Factor",
+      "description": "Combines integer arithmetic and comparison capabilities with float precision handling, offering operations like addition, multiplication, and negation for integers, and ordered comparisons for floating-point values. Supports conversions between integer types and provides exact equality checks for floats, accommodating numerical analysis and algorithmic computations. Users can perform precise calculations, parse numerical inputs, and compare values with controlled tolerance. Examples include calculating factorials, validating numerical inputs, and comparing floating-point results in scientific computations.",
+      "description_length": 613,
+      "index": 70,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Devkit_core.FastBase64",
+      "description": "Provides functions to decode Base64 encoded strings using a custom decoding table, with support for relaxed parsing. Operates on character arrays, integer arrays, and strings. Used to efficiently convert Base64 data from network protocols or file formats into binary representations.",
+      "description_length": 283,
+      "index": 71,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Devkit_core.Files",
+      "description": "Provides functions to enumerate directory contents, iterate over files, and safely write to files. Works with Unix directory handles, file descriptors, and channel types. Used to process files in a directory, append to existing files, and atomically save data to a file.",
+      "description_length": 270,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Gzip_io",
+      "description": "Provides functions to compress and decompress data streams using Gzip, operating on input and output channels, strings, and IO monads. It includes specialized functions for wrapping channels and converting between string representations. Used to efficiently handle compressed data in network transfers or file storage.",
+      "description_length": 318,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Gzip_stream",
+      "description": "Provides functions to read and write compressed data using Gzip, including reading bytes, integers, and characters, and writing bytes, characters, and integers. Operates on input and output channels that wrap IO sources, supporting buffered reading and writing with explicit control over compression. Used for efficiently handling compressed file I/O, such as decompressing data streams or compressing output before writing to a file.",
+      "description_length": 434,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.HtmlStream",
+      "description": "Provides a minimal interface for processing HTML streams by exposing core data types and operations for scanning and parsing. Includes a basic stream type and functions for advancing through HTML content and extracting tokens. Supports low-level manipulation of HTML input, such as reading tags, text, and comments. Designed for integration with other parsing or transformation modules.",
+      "description_length": 386,
+      "index": 75,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Devkit_core.HtmlStream_ragel",
+      "description": "Encapsulates string and list-of-strings data through an opaque type, enabling safe transformations and comparisons. Supports list operations such as mapping, filtering, and concatenation, along with validation checks during conversions. Serializes and deserializes data while maintaining structural consistency. Examples include parsing user input into structured formats and generating output from internal representations.",
+      "description_length": 424,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Httpev",
+      "description": "Extracts and validates request parameters from HTTP queries. Handles strings, integers, booleans, floats, and arrays, providing both optional and required access. Parses query strings to retrieve values like \"user=123\" or \"filter=on\" and converts them into appropriate types.",
+      "description_length": 275,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Httpev_common",
+      "description": "Provides functions to convert HTTP methods to and from strings, extract client IP and port from requests, retrieve specific headers with varying error handling, and format HTTP requests and replies. Works with request records, HTTP status codes, and header tuples. Used to process incoming HTTP traffic, validate method strings, and construct responses with custom headers.",
+      "description_length": 373,
+      "index": 78,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Idn",
+      "description": "Converts a Unicode string into an array of code points and reconstructs a Unicode string from an array of code points. Operates on strings and integer arrays representing Unicode code points. Useful for processing internationalized domain names and ensuring correct character encoding.",
+      "description_length": 285,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Logger",
+      "description": "Formats log messages with specified severity levels and facilities, returning a string with structured logging information. Outputs the formatted message to a designated destination based on the provided level and facility. Used to generate and send application logs to files, consoles, or remote servers with controlled verbosity.",
+      "description_length": 331,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Logstash",
+      "description": "Tracks numerical, byte, and time-based metrics with custom metadata through a private type, enabling detailed performance monitoring. Key operations include incrementing counters, recording durations, and aggregating values. Examples include tracking HTTP request counts with status codes or measuring response times by endpoint. Data is structured to support efficient analysis and reporting.",
+      "description_length": 393,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Lwt_engines",
+      "description": "Provides functions to access and manage an event base for asynchronous I/O operations using libevent, along with a mutable process ID for tracking associated processes. Works with event base structures and integer process identifiers. Used to integrate non-blocking I/O with process management in event-driven applications.",
+      "description_length": 323,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Lwt_flag",
+      "description": "Provides functions to create, signal, and wait on a flag-like synchronization primitive. Works with a parameterized type 'a t and returns Lwt.t values for asynchronous waiting. Used to ensure a single thread reliably receives signals after each wait, avoiding missed notifications.",
+      "description_length": 281,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Lwt_mark",
+      "description": "Provides thread marking and logging capabilities using Lwt, tracking thread IDs, names, parent relationships, and up to 10 recent log messages. Operates on Lwt threads, with functions to name threads, log messages, and capture status transitions. Used to monitor and debug concurrent operations by inspecting thread states through a structured summary.",
+      "description_length": 352,
+      "index": 84,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Devkit_core.Lwt_util",
+      "description": "Provides functions for managing timeouts, periodic execution, and task cancellation in asynchronous workflows. Operates with Lwt threads, time values, and exception handling. Enables timed execution of actions, ensures task ordering, and handles cleanup after asynchronous operations.",
+      "description_length": 284,
+      "index": 85,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.MVar",
+      "description": "Provides operations to manage a thread-safe variable that can be set, retrieved, or cleared. Works with a parameterized type 'a t to store and exchange values between threads. Used to synchronize thread communication, such as passing a result from one thread to another or signaling completion.",
+      "description_length": 294,
+      "index": 86,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Devkit_core.Memory",
+      "description": "The module provides functions to collect and analyze memory metrics, including virtual memory (VSZ), resident set size (RSS), and detailed malloc/garbage collection (GC) heap statistics, operating on process-level data and OCaml GC state. It enables tracking of application-specific memory allocations, OS-level memory usage, and GC behavior, with use cases like debugging memory leaks, optimizing resource consumption, and monitoring runtime performance. Specific metrics include malloc's \"used\" and \"heap\" values, OCaml GC heap sizes, and system-reported RSS to distinguish between allocated and resident memory.",
+      "description_length": 614,
+      "index": 87,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Devkit_core.Mtq",
+      "description": "Provides thread-safe operations for managing a shared queue, including adding items, retrieving items with blocking or non-blocking behavior, inspecting the front item, removing items, and checking queue size. Works with a parameterized queue type that holds elements of any type. Used in concurrent systems to coordinate data flow between producer and consumer threads.",
+      "description_length": 370,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Network",
+      "description": "Handles IPv4 address manipulation through comparison, equality checks, and conversions between string, integer, and byte formats. Operates on the `ipv4` type, supporting bitwise operations and network class extraction. Allows validation of input strings, transformation of address representations, and analysis of address structure. Examples include converting \"192.168.1.1\" to an integer, checking if two addresses are equal, and extracting the network portion of an address.",
+      "description_length": 476,
+      "index": 89,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Devkit_core.Nix",
+      "description": "provides basic *nix system interactions through a set of specialized modules includes types for process states, file descriptors, and system calls supports operations like spawning processes, reading file metadata, and managing signals can execute shell commands, monitor process execution, and handle low-level I/O operations",
+      "description_length": 326,
+      "index": 90,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Devkit_core.Parallel",
+      "description": "Provides functions to create, schedule, and manage concurrent tasks, and to retrieve their results. Operates on task and result types to enable parallel execution of computations. Used to process independent computations simultaneously, such as rendering multiple images or fetching data from separate APIs.",
+      "description_length": 307,
+      "index": 91,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Devkit_core.Persist",
+      "description": "Provides functions to tag and associate strings with a value type, enabling metadata attachment and retrieval. Operates on a custom `value` type and string lists to manage labeled data. Used to annotate computation results with contextual information for later inspection or filtering.",
+      "description_length": 285,
+      "index": 92,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Pid",
+      "description": "Provides operations to create, compare, and inspect process identifiers, including extracting hostnames, application names, and string representations. Works with a structured type containing integer ID, hostname, timestamp, and application name. Used to generate unique process identifiers, track process origins, and ensure consistent naming across distributed systems.",
+      "description_length": 371,
+      "index": 93,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Possibly_otel",
+      "description": "Handles trace context propagation in distributed systems by extracting and managing string-based trace identifiers. Offers operations to retrieve, inspect, and manipulate trace IDs from the execution environment. Enables consistent tracking of requests across services by embedding and forwarding trace information. For example, it can extract a trace ID from an HTTP header or generate a new one for a new request.",
+      "description_length": 415,
+      "index": 94,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Prelude",
+      "description": "Provides a lexicographical comparison function for opaque unique identifiers. The module defines an opaque type t and a comparison operation that orders values based on their internal structure. This enables sorting and ordering of generated identifiers during analysis. It supports tasks like tracking the sequence of identifier creation or enforcing constraints in symbolic execution.",
+      "description_length": 386,
+      "index": 95,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Devkit_core.Reader",
+      "description": "Reads and extracts substrings from a string based on specific delimiters or character conditions. Operates on a stateful `t` type representing the current position in the input string. Used to parse structured text by advancing through characters, extracting content up to a specified pattern, or validating exact string matches at the current position.",
+      "description_length": 353,
+      "index": 96,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Signal",
+      "description": "Provides signal handling and management with custom handlers for specific signals, including setting up event-based signal delivery and replacing existing handlers. Works with event bases, signal numbers, and state snapshots to control signal behavior. Used to integrate signal handling into asynchronous applications, manage signal reentrancy, and restore previous signal configurations.",
+      "description_length": 388,
+      "index": 97,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Stre",
+      "description": "Provides string validation and classification through character-level checks. Includes operations to determine if a character is alphabetic, numeric, or alphanumeric, enabling precise text analysis. These functions support tasks like input sanitization, data parsing, and format verification. For example, checking if a user's input contains only letters or ensuring a string segment consists of digits.",
+      "description_length": 403,
+      "index": 98,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Systemd",
+      "description": "Detects systemd boot status, handles socket activation via file descriptors, and controls foreground execution. Operates on Unix file descriptors, command-line arguments, and system state. Allows applications to start cleanly, accept connections from systemd, and manage process lifecycles. Enables seamless integration with systemd's service management and socket-based communication.",
+      "description_length": 385,
+      "index": 99,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Time",
+      "description": "The module provides functions for converting and formatting time values, operating on float timestamps and Unix.tm structures to generate standardized date strings in formats like ISO, W3C, and RFC-2822, while also supporting custom 2D/8D formats. It includes tools for manipulating time durations, such as parsing, rounding, and converting between units like seconds, nanoseconds, and days, with controls for precision and compactness. Use cases include generating human-readable timestamps for logging, calculating time differences in applications, and handling duration-based calculations in system or network protocols.",
+      "description_length": 623,
+      "index": 100,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.UnsafeBitSet",
+      "description": "Provides operations to manipulate a fixed-size bitset, including setting, unsetting, toggling, and checking individual bits. Works with an opaque type `t` representing a sequence of bits. Used to efficiently track and modify binary states, such as managing flags in low-level system programming or optimizing memory usage in data processing tasks.",
+      "description_length": 347,
+      "index": 101,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Var",
+      "description": "Registers new counter types with specified attributes and key names, enabling structured tracking of metrics. Operates on type definitions and attribute maps to enforce consistent data representation. Used to define custom counters for monitoring system events with specific metadata.",
+      "description_length": 284,
+      "index": 102,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core.Web",
+      "description": "Provides monadic operations for sequencing asynchronous or effectful web-related computations, including binding, resource management, and error handling. Works with a polymorphic effectful type 'a t, supporting operations like sleeping, failing, and mapping over lists. Used for building non-blocking web handlers, managing connections, and handling exceptions in asynchronous workflows.",
+      "description_length": 388,
+      "index": 103,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocamlnet_lite.Netaux",
+      "description": "Handles efficient in-place copying of integer array segments with precise control over indices and lengths, optimized for performance. Supports operations on int arrays, enabling direct data movement without unnecessary allocation. Can be used to rapidly transfer or rearrange portions of large datasets. Examples include shifting data within a buffer or merging segments from multiple arrays.",
+      "description_length": 393,
+      "index": 104,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocamlnet_lite.Netbuffer",
+      "description": "Provides functions to dynamically manage a buffer's size, including creating a buffer with an initial capacity, appending strings, and converting the buffer to a specific string type. Operates on a mutable buffer type that tracks logical length and can expand as needed. Used to efficiently handle variable-length network data streams or text processing where buffer size is unpredictable.",
+      "description_length": 389,
+      "index": 105,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocamlnet_lite.Netconversion",
+      "description": "Converts between string encodings using direct and cursor-based methods, handling Unicode code points and byte ranges. Processes arrays of code points and strings with specified encodings, supporting substitution for unrepresentable characters. Enables conversion of substrings with precise byte-level control, including handling of BOM and encoding-specific issues.",
+      "description_length": 366,
+      "index": 106,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ocamlnet_lite.Netencoding",
+      "description": "Encodes and decodes strings for URL and HTML compatibility, handling special characters through substitution and entity resolution. Supports parsing query parameters into name-value pairs and converting between character encodings with customizable entity mappings. Can replace spaces with '+' or '%20' in URLs and convert HTML entities like &amp; into their corresponding characters. Enables safe URL manipulation and HTML content processing with flexible encoding strategies.",
+      "description_length": 477,
+      "index": 107,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocamlnet_lite.Netstring_str",
+      "description": "Parses and manipulates regular expressions, extracting matched substrings, groupings, and positions from strings. Processes results from pattern matching to retrieve specific segments or delimiters. Enables global substitution of matched patterns using custom transformation functions.",
+      "description_length": 285,
+      "index": 108,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocamlnet_lite.Netstring_tstring",
+      "description": "Provides operations to manipulate tagged strings and buffers, including length retrieval, conversion from buffers, and string transformations with type-specific handling. Works with string, bytes, and tagged buffer data structures through specialized operation records. Enables safe, context-aware string processing in network-related tasks by abstracting underlying representations.",
+      "description_length": 383,
+      "index": 109,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ocamlnet_lite.Netsys_types",
+      "description": "Provides operations for manipulating buffer and string types used across Netsys modules, including conversion, concatenation, and length calculation. Works with custom data structures tbuffer and tstring, optimized for network-related data handling. Used in low-level network protocol implementations and data serialization tasks.",
+      "description_length": 330,
+      "index": 110,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "devkit",
+      "description": "Provides functions for instrumenting web requests with timing and contextual data, supporting both local tracing via ocaml-trace and distributed tracing through OpenTelemetry. Operates on request contexts, timestamps, and trace identifiers to capture and propagate execution flow. Used to monitor performance bottlenecks in HTTP handlers and debug distributed service interactions.",
+      "description_length": 381,
+      "index": 111,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Devkit_core",
+      "description": "Provides time tracking, asynchronous I/O, bit manipulation, thread safety, resource management, and parsing capabilities. Operates on timestamps, event lists, file handles, integer arrays, and stateful types, enabling tasks like timing critical code sections, managing network communication, formatting bit strings, and safely accessing shared resources. Examples include parsing HTTP queries, handling compressed data streams, and tracking system metrics with custom metadata. Supports complex operations such as state machine parsing, join and merge of enumerated sequences, and asynchronous task management.",
+      "description_length": 610,
+      "index": 112,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocamlnet_lite",
+      "description": "Offers efficient manipulation of arrays, buffers, and strings with support for in-place data movement, dynamic resizing, encoding conversion, URL/HTML escaping, regular expression processing, and tagged data handling. Core data types include int arrays, mutable buffers, encoded strings, and tagged buffers, with operations for copying, appending, converting, escaping, parsing, and transforming text. It enables tasks such as shifting data within a buffer, converting Unicode strings, encoding URL parameters, extracting regex matches, and managing network protocol data. Examples include merging array segments, handling variable-length network streams, and safely processing HTML content with custom entity mappings.",
+      "description_length": 719,
+      "index": 113,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 180,
+    "meaningful_modules": 114,
+    "filtered_empty_modules": 66,
+    "retention_rate": 0.6333333333333333
+  },
+  "statistics": {
+    "max_description_length": 719,
+    "min_description_length": 212,
+    "avg_description_length": 349.89473684210526,
+    "embedding_file_size_mb": 0.4145803451538086
+  }
+}

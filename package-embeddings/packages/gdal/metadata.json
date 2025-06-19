@@ -1,0 +1,203 @@
+{
+  "package": "gdal",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 26,
+  "creation_timestamp": "2025-06-18T16:37:30.500702",
+  "modules": [
+    {
+      "module_path": "Gdal.T.Defn",
+      "description": "Provides a type `t` representing a pointer to a unit, and a function `t` that returns the Ctypes type for this pointer. Works with low-level C interoperability structures, specifically for handling unit pointers. Used to define and manipulate C-compatible unit pointers in foreign function interfaces.",
+      "description_length": 301,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Gdal.Warp.Options",
+      "description": "Provides methods to configure and initialize warp options with specific settings such as resampling algorithm, memory limits, data types, source and destination datasets, and band mappings. Operates on a generic type 'a t, supporting operations like cloning and setting individual parameters. Used to customize geospatial data transformation workflows with precise control over input and output configurations.",
+      "description_length": 410,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Gdal.Warp.Operation",
+      "description": "Creates and executes warping operations on image data, using options to configure memory and processing constraints. Operates on image regions defined by offset and size parameters, supporting both single and multi-chunk processing. Enables warping from a source region to a destination buffer with customizable output storage.",
+      "description_length": 327,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Gdal.Feature.Defn",
+      "description": "Provides functions to retrieve the number of fields and individual field definitions from a feature definition structure. Operates on a type `t` representing a feature definition and returns values of type `Field.Defn.t` for specific fields. Used to inspect the schema of geographic features in spatial data processing workflows.",
+      "description_length": 329,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gdal.Field.Defn",
+      "description": "Provides functions to retrieve the data type and name from a field definition structure. Works with opaque Ctypes type `t` and a custom `field_type_t` representing OGR field types. Used to inspect and validate field metadata in geospatial data processing workflows.",
+      "description_length": 265,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Gdal.Alg.Grid",
+      "description": "Calculates interpolated values on a grid using methods like inverse distance weighting, moving average, and nearest neighbor, each with customizable parameters such as radius, angle, and no-data thresholds. Operates on lists of (x, y, z) points and generates 2D arrays representing spatial data distributions. Supports metrics like minimum, maximum, and average distance for analyzing spatial patterns.",
+      "description_length": 402,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gdal.Band.Data",
+      "description": "Returns the Bigarray.kind associated with a given data structure, enabling low-level memory representation checks. Works with the ('v, 'e) t type, which encapsulates data along with its element and value types. Used to ensure compatibility with Bigarray operations that require specific memory layouts.",
+      "description_length": 302,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gdal.Band.Block",
+      "description": "Provides functions to convert between block and pixel offsets, retrieve block dimensions and counts, and read from or write to individual blocks. Operates on block structures represented as offset_t and Bigarray arrays with specified element types. Used for efficiently processing image or grid data in tiled blocks, such as applying filters or transformations to specific regions.",
+      "description_length": 381,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gdal.Alg",
+      "description": "Calculates spatial interpolations on 2D grids using methods like inverse distance weighting, moving average, and nearest neighbor, with adjustable parameters for precision and accuracy. Processes lists of (x, y, z) points to generate 2D arrays that represent spatial distributions. Supports distance metrics such as minimum, maximum, and average to evaluate spatial relationships. Enables tasks like terrain modeling, heat map generation, and density estimation.",
+      "description_length": 462,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Gdal.Band",
+      "description": "Returns the Bigarray.kind of a data structure, enabling low-level memory checks, and provides block-based operations for efficient image or grid processing. It handles offset conversions, block dimensions, and direct block access using offset_t and Bigarray arrays. Users can apply transformations to specific regions or ensure memory compatibility with external operations. For example, it allows converting pixel coordinates to block indices or reading/write data in tiled segments.",
+      "description_length": 484,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gdal.Data_set",
+      "description": "The module provides functions for managing geospatial datasets, including handling raster bands, projections, and drivers, with operations like creating, copying, and accessing these elements. It works with data set objects, bands, and WKT projections, enabling tasks such as generating image pyramids through resampling and decimation. Specific use cases include spatial data processing and efficient large raster management.",
+      "description_length": 426,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gdal.Data_source",
+      "description": "Provides functions to create, copy, and manage data sources using OGR drivers, including opening existing sources, creating layers, and copying layers between data sources. Operates on `t` for data sources and `driver_t` for OGR drivers, supporting spatial references and geometry types. Used to initialize vector data stores, transfer layers between formats, and handle source validation and cleanup.",
+      "description_length": 401,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Gdal.Driver",
+      "description": "Provides functions to retrieve and match driver names, including fetching short and long names from a driver instance, looking up drivers by name, and identifying drivers based on a data source name with optional parameters. Works with the `t` type, representing a driver, and string-based identifiers. Used to map driver names to their corresponding implementations and validate driver existence during configuration or initialization.",
+      "description_length": 436,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gdal.Feature",
+      "description": "Manages geographic feature schemas by exposing methods to query the count and definitions of fields within a feature. It works with a type `t` for feature definitions and produces `Field.Defn.t` values that describe individual fields. Users can determine the structure of spatial data, such as identifying attribute types and quantities. This enables precise data validation and transformation in geospatial applications.",
+      "description_length": 421,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gdal.Field",
+      "description": "Handles field metadata inspection and validation by extracting data types and names from geospatial field definitions. Operates on Ctypes opaque type `t` and custom `field_type_t` to provide structured access to field properties. Allows developers to query and verify field characteristics during data processing. Enables tasks such as validating field consistency or generating schema reports.",
+      "description_length": 394,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gdal.Geo_transform",
+      "description": "Provides functions to create, manipulate, and apply geotransform matrices for raster data. Works with 1D arrays of 64-bit floats representing geotransform parameters and supports operations like extracting origin, pixel size, and rotation, as well as transforming coordinates between native and pixel spaces. Used to convert between geographic coordinates and pixel positions in geospatial data processing.",
+      "description_length": 406,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Gdal.Geometry",
+      "description": "Provides conversion between integer representations of geometry types and their WKB equivalents, along with methods to extract geometric properties such as point coordinates, type, and name. Works with geometry objects, WKB type codes, and envelope structures. Used to process vector geometry data, extract coordinate values, and duplicate geometry instances for further manipulation.",
+      "description_length": 384,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Gdal.Layer",
+      "description": "This module enables manipulation of vector layers through operations like feature querying, spatial/attribute filtering, and metadata management, alongside field definition adjustments and transaction control. It works with geospatial constructs such as features, geometries, spatial references, and attribute fields, supporting tasks like iterative data processing and schema modifications. Use cases include spatial analysis, attribute updates, and ensuring data consistency via transactional operations.",
+      "description_length": 506,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gdal.Lib",
+      "description": "Initializes a shared library, registers GDAL/OGR data sources, checks GDAL version compatibility, manages cache size settings, and retrieves or sets configuration options and error messages. Works with strings, integers, and options to interact with GDAL's internal state. Used to configure GDAL before performing geospatial data processing, validate version requirements, and monitor resource usage.",
+      "description_length": 400,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gdal.Spatial_reference",
+      "description": "Provides functions to create and convert spatial reference systems using PROJ.4, WKT, or well-known names. Operates on a custom type representing spatial reference data. Converts between different definitions, such as generating a PROJ.4 string from a WKT input or extracting a well-known name.",
+      "description_length": 294,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gdal.T",
+      "description": "Encapsulates low-level C interoperability features, focusing on unit pointers. Exposes a type `t` for C-compatible unit pointers and a function to retrieve the corresponding Ctypes type. Enables precise control over memory layouts and foreign function calls involving unit types. Allows developers to define and interact with C functions that operate on unit pointers.",
+      "description_length": 368,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Gdal.Transform",
+      "description": "Creates a transformation using data sets, WKT strings, or geotransforms, and applies coordinate transformations to arrays of float data. Operates on Bigarray arrays for coordinate data and geospatial transforms, supporting reprojection between coordinate systems. Applies forward or inverse transformations to 3D point sets, modifying input arrays in place and returning success status arrays.",
+      "description_length": 393,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Gdal.Vsi",
+      "description": "Creates virtual files from bigstring buffers and manages their removal. Operates on string paths and bigstring data structures, maintaining internal references until explicitly unlinked. Used to dynamically manage in-memory file content for temporary data storage or processing.",
+      "description_length": 278,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gdal.Warp",
+      "description": "Configures and executes geospatial data transformations by defining and applying warping operations with precise control over input settings, processing constraints, and output storage. Operates on a generic type 'a t for configuration and image regions with offset and size parameters, enabling customizable data movement between source and destination datasets. Supports cloning, parameter adjustment, and chunked processing to handle large or complex geospatial workflows. Examples include resampling satellite imagery, mapping bands between datasets, and optimizing memory usage during large-scale data transformations.",
+      "description_length": 623,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "gdal",
+      "description": "Provides functions for reading and writing raster geospatial data, including coordinate system transformations, raster band manipulation, and vector geometry handling. Works with data types such as raster datasets, vector layers, and geometric shapes. Used to process satellite imagery, perform spatial analysis, and convert between geospatial file formats.",
+      "description_length": 357,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gdal",
+      "description": "Provides spatial interpolation, geospatial dataset management, and coordinate transformation capabilities through specialized data types like 2D arrays, Bigarray, and geotransform matrices. Enables tasks such as terrain modeling, raster processing, and vector layer manipulation, with operations including interpolation, projection conversion, and feature querying. Supports low-level memory management, driver configuration, and C interoperability for precise control over geospatial workflows. Examples include generating heat maps from point data, converting between coordinate systems, and managing large raster datasets efficiently.",
+      "description_length": 637,
+      "index": 25,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 26,
+    "meaningful_modules": 26,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 637,
+    "min_description_length": 265,
+    "avg_description_length": 399.5,
+    "embedding_file_size_mb": 0.0948801040649414
+  }
+}

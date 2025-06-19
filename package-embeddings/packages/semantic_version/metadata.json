@@ -1,0 +1,252 @@
+{
+  "package": "semantic_version",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 33,
+  "creation_timestamp": "2025-06-18T16:39:45.983687",
+  "modules": [
+    {
+      "module_path": "Semantic_version.Make.Stable.V1",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot, including size calculation, writing, reading, and shape definition. Supports conversion to and from S-expressions and includes a comparator for ordered operations. Designed for use with persistent data structures and protocol buffer-like encoding.",
+      "description_length": 331,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Semantic_version.Make.Map.Key",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons in data structures.",
+      "description_length": 269,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Semantic_version.Make.Map.Diff",
+      "description": "Provides operations to construct and manipulate difference maps between two data structures, using key-based mappings. Works with typed difference maps and derived-on maps that track key comparisons. Applies diffs to update structures or converts lists of diffs into a single diff representation.",
+      "description_length": 296,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Semantic_version.Make.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Operates on Sexp.t and Key.t, enabling structured data deserialization. Used to parse configuration keys from S-expressions in domain-specific data loading.",
+      "description_length": 229,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Semantic_version.Make.Map.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and related Bin_prot type classes to enable binary I/O operations. Used to persist and reconstruct Key.t values in binary format for storage or communication.",
+      "description_length": 334,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Semantic_version.Make.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring full traversal and collision resistance. Works with custom data types and collections, incorporating size information to prevent prefix-based collisions. Used to generate consistent and unique hash values for complex structures in hashing and comparison scenarios.",
+      "description_length": 374,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Semantic_version.Make.Set.Elt",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons in data structures.",
+      "description_length": 269,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Semantic_version.Make.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting between S-expressions and internal representations. Works with sets of elements and optional difference structures representing changes between two states. Used to track and apply incremental updates to set-based data structures.",
+      "description_length": 329,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Semantic_version.Make.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type `Elt.t` using a provided function. Operates on `Sexplib0.Sexp.t` values and the `Elt.t` type. Used to deserialize structured data from S-expressions into application-specific representations.",
+      "description_length": 235,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Semantic_version.Make.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape definition. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and variant-based reading. Used to encode and decode instances of `t` in binary format for storage or communication.",
+      "description_length": 345,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Semantic_version.Make.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of a structured type into a hash state, ensuring full traversal and collision resistance. Operates on custom data types through a fold-based approach, incorporating size information to prevent prefix-based collisions. Used to generate consistent and unique hash values for complex structures like lists and variants during serialization or comparison.",
+      "description_length": 414,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Semantic_version.Make.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a specific type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports comparison, enabling direct use in sorting and decision-making logic. Used to replace polymorphic comparisons in contexts where explicit handling of equality and ordering is required, such as in custom data structures or when avoiding default OCaml comparison behavior.",
+      "description_length": 490,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Semantic_version.Make.Map",
+      "description": "Encodes and decodes values between S-expressions and a type `t`, while supporting ordered operations via a comparator. Enables difference tracking between data structures using key-based mappings and applies these differences to update or merge structures. Parses structured keys from S-expressions and serializes them in binary format for efficient storage or transmission. Computes robust hash values by folding structured data into a hash state, ensuring collision resistance and full traversal of complex types.",
+      "description_length": 515,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Semantic_version.Make.Set",
+      "description": "Encodes and decodes values between S-expressions and binary formats, while supporting ordered operations, difference tracking, and hash generation. It handles type `t` with associated comparators, differences, and custom element conversions via `Elt.t`. Operations include serializing sets, applying incremental changes, and generating collision-resistant hashes. Examples include storing sets persistently, tracking updates between states, and ensuring consistent hashing for complex data structures.",
+      "description_length": 501,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Semantic_version.Make.Stable",
+      "description": "Offers efficient serialization and deserialization for type `t` with Bin_prot, enabling storage and transmission of data. Includes size estimation, binary I/O, and S-expression conversion, along with a comparator for ordered operations. Designed for persistent data structures, it supports protocol buffer-like encoding and decoding. Example uses include saving in-memory data to disk or transmitting structured data over a network.",
+      "description_length": 432,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Semantic_version.Stable.V1",
+      "description": "Provides serialization and deserialization functions for a type using Bin_prot, including size calculation, writing, reading, and shape definition. Supports comparison and S-expressions conversion for interoperability. Designed for use with OCaml's Core library and compatible with polymorphic variants when needed.",
+      "description_length": 315,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Semantic_version.Map.Key",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons of key values in data structures.",
+      "description_length": 283,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Semantic_version.Map.Diff",
+      "description": "Provides operations to construct and manipulate difference maps between two data structures, using key-based mappings. Works with typed difference maps and derived-on maps that track key comparisons. Applies diffs to update structures or generates diffs from lists of changes.",
+      "description_length": 276,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Semantic_version.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with S-expressions and opaque key representations. Used to deserialize configuration identifiers from structured text data.",
+      "description_length": 202,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Semantic_version.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t when necessary. Used to persist or transmit Key.t values in a binary format across processes or storage.",
+      "description_length": 309,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Semantic_version.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. It operates on custom data types, particularly those defined with `Key.t`, and enforces proper folding sequences by incorporating structural metadata like size. Used to generate reliable hash values for complex structures in hashing-based data structures, such as hash tables or memoization systems.",
+      "description_length": 463,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Semantic_version.Set.Elt",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons in data structures.",
+      "description_length": 269,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Semantic_version.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting between S-expression representations and set differences. Works with sets of elements and optional difference structures representing changes between two states. Used to track and apply incremental updates between distinct set configurations.",
+      "description_length": 342,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Semantic_version.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and the module's defined type `Elt.t`. Used to parse structured data from S-expressions into application-specific representations.",
+      "description_length": 225,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Semantic_version.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and variant-based decoding. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 343,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Semantic_version.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. It operates on custom data types by recursively incorporating their elements and size into the hash computation. Used to generate reliable hash values for complex structures like lists and variants, preventing collisions that arise from partial traversal or improper ordering.",
+      "description_length": 440,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Semantic_version.Make",
+      "description": "Provides comparison, serialization, and encoding/decoding capabilities for type `t`, supporting ordered operations, difference tracking, and efficient data storage. Includes functions to compute minima and maxima, serialize to and from S-expressions and binary formats, and generate collision-resistant hashes. Enables persistent data storage, incremental updates, and structured data transmission. Examples include sorting custom types, merging state changes, and serializing sets for disk storage.",
+      "description_length": 499,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Semantic_version.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a specific type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports comparison, enabling direct use in conditional logic and sorting. Used to replace polymorphic comparisons in code, ensuring consistent behavior when comparing custom types.",
+      "description_length": 393,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Semantic_version.Map",
+      "description": "Encapsulates key-based data manipulation through serialization, comparison, and hashing, enabling storage, transformation, and consistent representation of structured values. It supports S-expression and binary serialization for key types, along with difference tracking for incremental updates. Operations include parsing, diff application, and hash folding for reliable data integrity. Examples include persisting key-value pairs, applying configuration changes, and generating stable hashes for memoization.",
+      "description_length": 510,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Semantic_version.Set",
+      "description": "offers serialization to and from S-expressions and binary formats, along with comparison, hashing, and difference computation for structured data. It supports operations on sets, custom types, and element-based data, enabling storage, comparison, and incremental updates. Users can convert between S-expressions and application-specific representations, compute set differences, and generate collision-resistant hashes. Examples include persisting sets to disk, tracking changes between configurations, and ensuring consistent hashing for complex data structures.",
+      "description_length": 563,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Semantic_version.Stable",
+      "description": "Offers serialization, deserialization, and size computation for OCaml types via Bin_prot, with support for comparison and S-expressions. Handles polymorphic variants and integrates with Core. Can write and read values to and from binary formats, compute their size, and convert between representations. Enables efficient data persistence and inter-process communication.",
+      "description_length": 370,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "semantic_version",
+      "description": "Provides functions to parse, compare, and increment semantic version numbers. Operates on strings and a custom version type with major, minor, and patch fields. Used to validate release tags and generate next version strings in deployment scripts.",
+      "description_length": 247,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Semantic_version",
+      "description": "combines comparison, serialization, and data manipulation capabilities for structured values, supporting S-expressions, binary formats, and hashing. It enables operations like sorting, diffing, and persistent storage, with functions to compare, serialize, and compute differences between complex data types. Users can persist sets, track configuration changes, and generate stable hashes for memoization. It handles custom types, polymorphic variants, and integrates with Core for efficient data handling.",
+      "description_length": 505,
+      "index": 32,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 33,
+    "meaningful_modules": 33,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 563,
+    "min_description_length": 202,
+    "avg_description_length": 361.1212121212121,
+    "embedding_file_size_mb": 0.11670494079589844
+  }
+}

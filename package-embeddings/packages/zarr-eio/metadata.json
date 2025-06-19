@@ -1,0 +1,119 @@
+{
+  "package": "zarr-eio",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 14,
+  "creation_timestamp": "2025-06-18T16:34:50.528667",
+  "modules": [
+    {
+      "module_path": "Zarr_eio.Storage.FilesystemStore.Deferred.Infix",
+      "description": "Performs monadic binding and mapping over values in a context, applying a function that returns a context-aware result or a pure value. Operates on types that implement the `t` functor, such as option or result. Used to chain computations that may fail or produce side effects, like processing user input or handling asynchronous operations.",
+      "description_length": 341,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zarr_eio.Storage.FilesystemStore.Deferred.Syntax",
+      "description": "Provides monadic binding and sequencing operations for effectful computations, where `let*` chains computations with side effects and `let+` lifts a function over a single effectful value. Works with a generic `'a t` type representing computations with effects. Used to compose asynchronous or stateful operations in a readable, sequential style.",
+      "description_length": 346,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Zarr_eio.Storage.MemoryStore.Deferred.Infix",
+      "description": "Performs monadic binding and mapping over values in a context, applying a function that returns a context-aware result or a pure value. Operates on types that implement the `t` type constructor, such as option, list, or result. Enables chaining of operations that may fail or produce multiple results, like processing a list of optional values or transforming results from asynchronous computations.",
+      "description_length": 399,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zarr_eio.Storage.MemoryStore.Deferred.Syntax",
+      "description": "Provides monadic binding and sequencing operations for values in a context, where `let*` chains computations that return wrapped values and `let+` lifts a function over a wrapped value. Works with type `'a t`, representing computations in a context such as option, list, or result. Used to handle sequential computations in a clean, readable way, such as parsing expressions with error handling or processing lists of optional values.",
+      "description_length": 434,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Zarr_eio.Storage.FilesystemStore.Deferred",
+      "description": "Combines monadic operations for chaining computations that may fail or involve side effects, supporting both pure and context-aware functions. It works with types like option, result, and generic effectful computations represented as `'a t`, enabling sequential execution with `let*` and value lifting with `let+`. This allows for handling asynchronous tasks, error-prone operations, and state transitions in a structured way. For example, it can process user input while handling potential errors or compose multiple I/O operations sequentially.",
+      "description_length": 546,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zarr_eio.Storage.MemoryStore.Deferred",
+      "description": "Combines monadic operations for chaining and transforming values within contextual types like option, list, or result. Supports `let*` for sequencing computations that return wrapped values and `let+` for applying functions to wrapped inputs, enabling clean handling of failures or multiple outcomes. Allows for processing lists of optional values, parsing with error tracking, or composing asynchronous operations. Operations work seamlessly with any type implementing the `t` type constructor.",
+      "description_length": 495,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Zarr_eio.Storage.MemoryStore",
+      "description": "Provides a monadic framework for composing and transforming values within contextual types such as option, list, or result. Supports `let*` for sequential computation and `let+` for function application over wrapped values, enabling robust error handling and list processing. Operations work with any type implementing the `t` type constructor, allowing for flexible data manipulation. Examples include parsing structured data with error tracking, handling optional values in sequences, and composing asynchronous workflows.",
+      "description_length": 524,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zarr_eio.Storage.FilesystemStore",
+      "description": "Provides a monadic framework for handling I/O and error-prone operations in a structured, sequential manner using `let*` and `let+`. It supports types like `option`, `result`, and `'a t` to manage side effects, failures, and state transitions. Operations include reading, writing, and navigating a Zarr V3 hierarchy on the local filesystem. For example, it can safely traverse directory structures, handle missing files, or compose multiple file operations with error recovery.",
+      "description_length": 477,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Zarr_eio.Deferred.Infix",
+      "description": "Performs monadic binding and mapping over values in a context, applying a function that returns a context-aware result or a pure value. Operates on types that implement the `t` type constructor, such as option, result, or custom monadic structures. Used to chain computations that may fail or produce side effects, like processing optional configuration values or handling error-prone I/O operations.",
+      "description_length": 400,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zarr_eio.Deferred.Syntax",
+      "description": "Provides monadic binding and sequencing operations for values in a context, where `let*` chains computations that return wrapped values and `let+` lifts a function over a wrapped value. Works with type `'a t`, representing computations in a context such as option, list, or result. Used to handle sequential computations in a clean, readable way, such as parsing nested expressions or processing optional values in a pipeline.",
+      "description_length": 426,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zarr_eio.Deferred",
+      "description": "Combines monadic operations for chaining and transforming values within a context, supporting both failure-aware and side-effecting computations. It defines `t` as a context-aware type, enabling `let*` for sequencing and `let+` for lifting functions over wrapped values. This allows for clean handling of optional or error-prone data, such as parsing nested structures or safely accessing configuration fields. Operations work with types like option, result, and custom monads to build reliable, composable workflows.",
+      "description_length": 517,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zarr_eio.Storage",
+      "description": "Offers a monadic interface for sequencing and transforming values within contextual types like option, list, and result, using `let*` for binding and `let+` for function application. Supports operations on `t`-typed values, enabling safe error handling, list processing, and asynchronous workflows. Includes I/O capabilities for interacting with Zarr V3 files, allowing safe traversal of directory structures, handling missing data, and composing file operations with error recovery. Examples include parsing structured data with error tracking and managing optional values in sequential computations.",
+      "description_length": 601,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "zarr-eio",
+      "description": "Handles creation and manipulation of n-dimensional arrays with flexible chunking and compression. Operates on arrays, chunks, and metadata structures defined by the Zarr v3 specification. Enables efficient storage and retrieval of large datasets in parallel computing environments.",
+      "description_length": 281,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zarr_eio",
+      "description": "Encapsulates monadic workflows for handling contextual values, supporting sequencing and transformation through `let*` and `let+` operations. It manages types such as option, result, and custom monads, enabling safe parsing, error recovery, and I/O interactions with Zarr V3 files. Operations include traversing directory structures, processing lists, and handling optional or error-prone data in a composable manner. Examples include safely accessing nested configuration fields and composing file operations with robust error tracking.",
+      "description_length": 537,
+      "index": 13,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 14,
+    "meaningful_modules": 14,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 601,
+    "min_description_length": 281,
+    "avg_description_length": 451.7142857142857,
+    "embedding_file_size_mb": 0.05129814147949219
+  }
+}

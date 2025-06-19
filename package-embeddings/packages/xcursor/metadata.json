@@ -1,0 +1,91 @@
+{
+  "package": "xcursor",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 10,
+  "creation_timestamp": "2025-06-18T16:33:09.790111",
+  "modules": [
+    {
+      "module_path": "Xcursor.Cursor.Header.Index.Type",
+      "description": "Parses structured data including image types, comments, and subtypes using custom parser combinators. Operates on types like `t` and `comment_subtype` to extract specific content from input streams. Used to validate and process image metadata and associated comment fields in parsing workflows.",
+      "description_length": 294,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xcursor.Cursor.Image.Header",
+      "description": "Provides a parser for image headers and a way to retrieve their expected length. Works with the `t` type representing an image header and the `Cursor.Image.t` structure that tracks pixel offsets. Used to validate and process image data by parsing header information and determining pixel positions.",
+      "description_length": 298,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xcursor.Cursor.Header.Index",
+      "description": "Processes structured data by extracting image metadata and comments through custom parser combinators, operating on types such as `t` and `comment_subtype`. It enables validation and transformation of input streams into organized data structures. Users can isolate specific image subtypes or comment fields during parsing. Examples include parsing EXIF data or filtering comment types from binary streams.",
+      "description_length": 405,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xcursor.Cursor.Card32.Parser",
+      "description": "Parses 32-bit integer values from input using specific parsing rules. Accepts raw integers and validates them against card32 constraints. Used to process binary data streams where exact integer representation is critical.",
+      "description_length": 221,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xcursor.Cursor.Card32",
+      "description": "Handles 32-bit integer parsing and validation from binary data, ensuring exact representation according to defined constraints. Processes raw integer inputs and enforces bit-level accuracy during conversion. Supports operations like byte-level extraction, endianness conversion, and range checking. Can be used to decode network packets, file formats, or binary protocols requiring precise 32-bit integer handling.",
+      "description_length": 414,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Xcursor.Cursor.Header",
+      "description": "Extracts and organizes image metadata and comments from structured data using custom parser combinators, working with types like `t` and `comment_subtype` to validate and transform input streams. It allows precise isolation of image subtypes or specific comment fields during parsing. Operations include parsing EXIF data, filtering comment types from binary streams, and restructuring raw input into defined data models. Users can apply targeted transformations based on defined parsing rules.",
+      "description_length": 494,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xcursor.Cursor.Image",
+      "description": "Encapsulates image header parsing and pixel position tracking, enabling validation and data processing. It defines a `t` type for headers and utilizes a cursor structure to manage pixel offsets during traversal. Operations include extracting header details and calculating pixel locations based on parsed data. This allows for precise manipulation of image data, such as determining byte ranges for specific pixels or verifying header consistency.",
+      "description_length": 447,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Xcursor.Cursor",
+      "description": "Parses and validates 32-bit integers from binary data, handling endianness, byte extraction, and range checks for precise data interpretation. Extracts and organizes image metadata and comments using custom parsers, isolating specific fields and subtypes from structured input. Manages image headers and tracks pixel positions, enabling accurate data retrieval and validation. Together, they support tasks like decoding cursor files, extracting EXIF information, and calculating pixel locations from parsed headers.",
+      "description_length": 515,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "xcursor",
+      "description": "Provides functions to create, modify, and query cursor positions within a text buffer, supporting operations like moving forward, backward, and checking boundaries. Works with a custom `cursor` type and associated `buffer` structures that track text content and positions. Used to implement navigation features in a text editor, such as moving the cursor by words or lines.",
+      "description_length": 373,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xcursor",
+      "description": "Processes binary data to extract and validate 32-bit integers, accounting for endianness and byte alignment, while parsing image metadata, comments, and headers to locate pixel positions. Key data types include parsed integers, metadata structures, and header records, with operations for byte extraction, validation, and field isolation. It enables decoding cursor files, retrieving EXIF data, and calculating pixel coordinates from structured binary inputs. Specific tasks include parsing image headers, validating integer ranges, and extracting comment subtypes from binary streams.",
+      "description_length": 585,
+      "index": 9,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 10,
+    "meaningful_modules": 10,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 585,
+    "min_description_length": 221,
+    "avg_description_length": 404.6,
+    "embedding_file_size_mb": 0.036742210388183594
+  }
+}

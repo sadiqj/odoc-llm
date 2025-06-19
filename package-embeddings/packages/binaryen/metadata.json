@@ -1,0 +1,448 @@
+{
+  "package": "binaryen",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 61,
+  "creation_timestamp": "2025-06-18T16:43:24.539021",
+  "modules": [
+    {
+      "module_path": "Binaryen.Expression.Block",
+      "description": "Provides operations to construct and manipulate hierarchical node structures, including setting and retrieving names, managing child nodes through indexing, and modifying the tree structure dynamically. Works with a custom `t` type representing nodes and interacts with `Module.t` and `Type.t` for context. Used to build and modify abstract syntax trees or similar nested data representations in compiler or parser implementations.",
+      "description_length": 431,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.If",
+      "description": "Provides conditional branching logic using a three-argument structure, allowing retrieval and modification of the condition, true branch, and optional false branch. Operates on a custom type `t` that encapsulates control flow decisions. Used to dynamically construct and manipulate conditional expressions in program logic.",
+      "description_length": 323,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Binaryen.Expression.Loop",
+      "description": "Creates loops with named bodies, allowing modification and retrieval of names and internal structures. Operates on a custom type representing loop constructs, including nested loops. Used to build and manipulate loop hierarchies in code generation or transformation pipelines.",
+      "description_length": 276,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Binaryen.Expression.Break",
+      "description": "Provides operations to construct and manipulate break points with named conditions and values. Works with a custom type representing break points, allowing retrieval and modification of names, conditions, and values. Used to manage debugging states by setting and querying specific break conditions during program execution.",
+      "description_length": 324,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Switch",
+      "description": "Provides operations to manage a collection of named values associated with a module, including adding, removing, and modifying names by index, retrieving default names, and setting conditions and values. Works with module objects and string-based name lists. Used to dynamically configure and query switch-like behaviors in a system's configuration or state management.",
+      "description_length": 369,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Binaryen.Expression.Call",
+      "description": "Provides functions to construct and manipulate call expressions, including creating calls with targets and operands, modifying operands at specific indices, and querying call properties. Operates on a custom `t` type representing call nodes, along with lists of operands and module-specific metadata. Used to build and transform low-level intermediate representation in compiler pipelines.",
+      "description_length": 389,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Call_indirect",
+      "description": "Provides functions to construct and manipulate indirect call operations within a module, including setting and retrieving targets, managing operand lists, and specifying return behavior. Operates on module instances, strings, and typed values, supporting dynamic function invocation. Used to dynamically adjust function calls at runtime, such as in plugin systems or dispatch tables.",
+      "description_length": 383,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Local_get",
+      "description": "Provides functions to construct a local retrieval context from a module, an index, and a type. Operates on module representations, integer indices, and type descriptors. Used to initialize lookups for specific values within a localized scope during compilation or analysis.",
+      "description_length": 273,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Local_set",
+      "description": "Creates and manipulates a local state container tied to a specific module instance, allowing retrieval and modification of a value within that context. Operates on module-specific state objects and integer identifiers to manage isolated data slots. Used to store and access per-module configuration or runtime data without global interference.",
+      "description_length": 343,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Binaryen.Expression.Local_tee",
+      "description": "Provides operations to create a new instance that duplicates output to a specified module and a target type, using an integer as a configuration parameter. Works with module interfaces, integers, and type descriptors to manage data flow. Used to route logging or data processing outputs to multiple destinations within a system.",
+      "description_length": 328,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Binaryen.Expression.Global_get",
+      "description": "Provides functions to create a named reference to a module type, retrieve the name associated with the reference, and update the name in place. Works with module types and strings to track symbolic names for modules. Used to dynamically assign and access identifiers for module instances in a runtime environment.",
+      "description_length": 313,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Global_set",
+      "description": "Creates and manages named values associated with a module, allowing storage and retrieval of arbitrary values. Operates on module instances and string identifiers to store and access values of a generic type. Used to maintain global state specific to a module instance across different parts of an application.",
+      "description_length": 310,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Load",
+      "description": "Provides functions to construct and manipulate memory load operations, including creating a load with specified module, offset, sign, size, type, and value, and accessing or updating the pointer associated with the load. Works with module representations, integers, types, and pointers. Used to model memory access in low-level code generation or analysis.",
+      "description_length": 356,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Store",
+      "description": "Provides operations to construct and manipulate a store structure with pointers and values, including setting and retrieving pointer and value references. Works with custom types representing module states, memory addresses, and type information. Used to manage runtime state in a compiler or interpreter, such as tracking variable locations and their associated values.",
+      "description_length": 370,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Const",
+      "description": "Creates a constant value from a module and a literal, ensuring it is bound to a specific execution context. Works with module definitions and literal values to construct immutable constants. Used to embed fixed values into compiled code for optimization or configuration purposes.",
+      "description_length": 280,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Unary",
+      "description": "Provides operations to construct a wrapper around a value using a module and operation, retrieve the wrapped value, and update it. Works with module and operation types alongside a generic value type. Used to encapsulate and manipulate single-value computations within a structured interface.",
+      "description_length": 292,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Binary",
+      "description": "Constructs and manipulates binary structures using operations defined by a module and an operation type. Works with custom binary types that encapsulate left and right components. Used to build and modify binary trees or paired data elements in algorithmic contexts.",
+      "description_length": 266,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Select",
+      "description": "Handles conditional state management by allowing the retrieval and modification of true/false values and the underlying condition. Operates on a custom type `t` representing a selectable state with distinct true, false, and condition components. Used to dynamically control application behavior based on runtime conditions, such as enabling/disabling features or routing execution paths.",
+      "description_length": 387,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Drop",
+      "description": "Provides operations to create a modified version of a module instance, retrieve a specific value from it, and update that value in place. Works with module instances and their internal state representations. Used to dynamically adjust configuration parameters during runtime without reconstructing the entire module.",
+      "description_length": 316,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Return",
+      "description": "Provides operations to create a wrapped value, extract its contents, and update it. Works with a custom type representing a container for a value. Used to manage state transitions in a controlled manner during computation.",
+      "description_length": 222,
+      "index": 19,
+      "embedding_norm": 1.0000001192092896
+    },
+    {
+      "module_path": "Binaryen.Expression.Memory_size",
+      "description": "Provides operations to create a memory size representation from a module, a name, and a boolean flag. Works with module types, strings, and booleans to construct and manage memory size configurations. Used to define custom memory constraints for specific system components during initialization.",
+      "description_length": 295,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Memory_grow",
+      "description": "Provides functions to create a memory-growing structure from a module, retrieve a delta value, and update it with a new value. Operates on module instances and custom state types. Used to dynamically adjust memory allocation based on runtime conditions.",
+      "description_length": 253,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Memory_init",
+      "description": "Initializes memory structures by setting module, segment, destination, offset, and size values through dedicated setters. Operates on custom types representing memory segments and configuration parameters. Used to configure memory mappings in low-level system initialization routines.",
+      "description_length": 284,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Data_drop",
+      "description": "Provides methods to create a structured data container from a module and an integer, retrieve or modify a specific segment within the container. Operates on module-specific data structures and integer-indexed segments. Used to manage and manipulate segmented data in application-specific contexts.",
+      "description_length": 297,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Memory_copy",
+      "description": "Manages memory copy operations by encapsulating source, destination, and size parameters, allowing precise control over data transfer. Provides accessors and mutators to inspect and modify these values directly. Used to configure and query memory copy configurations in low-level system operations.",
+      "description_length": 298,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Memory_fill",
+      "description": "Provides operations to construct and manipulate memory-related structures, including setting and retrieving destination, value, and size fields. Works with custom data types representing memory configurations. Used to initialize and modify memory blocks in low-level system operations.",
+      "description_length": 285,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Tuple_make",
+      "description": "Creates tuples from a module and a list of elements, allowing dynamic manipulation of tuple contents. Operates on custom tuple structures that store a sequence of values, supporting indexed access and modification. Enables adding, removing, and replacing elements within a tuple at specific positions.",
+      "description_length": 301,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Tuple_extract",
+      "description": "Extracts and manipulates tuples within a structured data type, allowing for the creation of new instances with modified tuple elements. Operates on a custom type that encapsulates a tuple and an integer index. Used to dynamically adjust tuple components in data processing pipelines.",
+      "description_length": 283,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Nop",
+      "description": "Creates a module that suppresses all side effects by wrapping another module's operations without altering their behavior. Operates on module types and abstract values, ensuring no actions are executed. Used to simulate environments where operations are defined but not applied, such as in testing or logging frameworks.",
+      "description_length": 320,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Unreachable",
+      "description": "Provides a way to create a representation of a module's unreachable code paths by taking a module signature and generating an object that tracks these paths. Works with module signatures and custom types representing code flow. Used to analyze and verify that certain code branches are never executed during program analysis.",
+      "description_length": 325,
+      "index": 29,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Binaryen.Expression.Pop",
+      "description": "Creates a population of individuals based on a module and type, initializing them with default values. Operates on module and type specifications to generate structured data. Used to set up initial conditions for simulation or evolutionary algorithms.",
+      "description_length": 251,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Binaryen.Expression.I31",
+      "description": "Creates a 31-bit integer from a module and a value, and retrieves a 31-bit integer from a module with optional signedness. Works with module contexts and 32-bit integers. Used to enforce 31-bit constraints in low-level system interactions and bit manipulation tasks.",
+      "description_length": 266,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Null",
+      "description": "Creates a null value representing the absence of a meaningful value, useful for initializing optional fields or signaling undefined states. Works with the `t` type, a singleton type with only one value. Used to safely represent missing data in contexts where `option` types are not appropriate.",
+      "description_length": 294,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Ref",
+      "description": "Provides operations to create and manipulate references within a module, including checking nullity, casting values to specific types, defining functions with associated types, and comparing values for equality. Works with module contexts, type descriptors, operation objects, and reference values. Used to construct and validate type-safe references in low-level code generation or symbolic execution environments.",
+      "description_length": 415,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Table",
+      "description": "Provides operations to retrieve, update, and manage table data within a module. Works with module instances, string keys, and indexed values of varying types. Used to dynamically adjust table dimensions and access specific entries during runtime.",
+      "description_length": 246,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Binaryen.Expression.Table_get",
+      "description": "Provides functions to retrieve and modify the table name and index expression within a `Table.get` operation. Works with abstract syntax tree nodes representing table access expressions. Used to analyze or transform queries in a query compiler or interpreter.",
+      "description_length": 259,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Table_set",
+      "description": "Retrieves and modifies the table name, index, and value expressions within a `Table.set` construct. Operates on abstract syntax tree nodes representing assignment operations. Used to analyze or transform SQL-like table update statements during code generation or optimization.",
+      "description_length": 276,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression.Table_size",
+      "description": "Provides functions to retrieve and update the name of a database table referenced in a `Table.size` expression. Operates on a custom type `t` that encapsulates table metadata. Used to dynamically track and modify table names during query execution.",
+      "description_length": 248,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Binaryen.Expression.Table_grow",
+      "description": "Provides methods to inspect and modify the table name, value expression, and delta in a `Table.grow` construct. Operates on a custom type representing a table growth operation, allowing direct manipulation of its components. Used to dynamically adjust table references and update growth parameters during code analysis or transformation.",
+      "description_length": 337,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Module.Feature",
+      "description": "Provides boolean flags for specific WebAssembly feature support, including atomic operations, SIMD, memory64, and exception handling. Works with a type `t` representing feature states. Used to check and enable individual WebAssembly extensions during module validation or compilation.",
+      "description_length": 284,
+      "index": 39,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Binaryen.Array_type",
+      "description": "Returns the element type of a heap, the packed version of that type, and whether the element is mutable. Works with heap type representations and type metadata. Used to analyze memory layout and mutability constraints in low-level data structures.",
+      "description_length": 247,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Element_segment",
+      "description": "Provides functions to extract a name, table, offset expression, and length from a structured data element. Works with a custom type `t` that encapsulates element metadata and supports indexed data retrieval. Used to process low-level memory or file segment information during parsing or analysis.",
+      "description_length": 296,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Export",
+      "description": "Provides functions to add and retrieve exports of different kinds\u2014functions, tables, memories, and globals\u2014within a module. Works with a custom type `t` representing an export, along with module and string types for identification. Used to manage WebAssembly module exports, such as exposing host functions or accessing imported values by name or index.",
+      "description_length": 353,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Expression",
+      "description": "The module offers a comprehensive set of tools for constructing and manipulating complex program structures, including hierarchical nodes, conditionals, loops, and memory operations. It defines custom types for nodes, control flow, loops, memory loads, stores, and tables, along with operations to modify their properties, manage their contents, and query their components. Users can build abstract syntax trees, control flow expressions, and memory configurations, while dynamically adjusting values, conditions, and structures within a module's context. Examples include creating conditional branches, modifying loop bodies, managing memory loads, and inspecting table operations in a compiler or interpreter.",
+      "description_length": 711,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Function",
+      "description": "Provides operations to create, modify, and query functions within a module, including setting start points, debug locations, and function bodies. Works with function types, parameter and result types, and variable indices. Used to construct and manipulate control flow graphs and intermediate representations in compiler pipelines.",
+      "description_length": 331,
+      "index": 44,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Binaryen.Global",
+      "description": "Manages global variables within a module, allowing addition, retrieval, and removal by name or index. It handles types, mutability, and initialization expressions for each global. Used to inspect or modify global state during compilation or analysis.",
+      "description_length": 250,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Heap_type",
+      "description": "This module provides operations for constructing and analyzing type representations, including basic types, structural types, arrays, and strings, along with utilities for string manipulation via views and iterators. It enables subtype checks and property validation through predicate functions, such as determining type hierarchies or retrieving bottom types. These capabilities are particularly useful in type system implementations, static analysis, or scenarios requiring dynamic type validation and transformation.",
+      "description_length": 519,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Import",
+      "description": "Handles the registration and retrieval of imported functions, tables, memories, and globals within a module. Operates on module, function, and global objects, using strings for names and modules, and types for function signatures. Used to define external dependencies in WebAssembly modules, such as linking a host function or importing a memory region from another module.",
+      "description_length": 373,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Literal",
+      "description": "Converts integer and floating-point values to a unified type `t`, supporting 32-bit and 64-bit representations for both integers and floating points. Accepts raw bit patterns for 32-bit and 64-bit floats, enabling precise control over numeric serialization. Used to construct typed numeric literals for binary encoding or protocol definitions.",
+      "description_length": 343,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Memory",
+      "description": "Provides operations to configure and query memory attributes, including setting memory parameters, checking presence of memory, retrieving initial and maximum values, and inspecting segment properties like byte offset, passivity, and data. Works with module objects, segments represented as lists, and byte sequences. Used to manage memory configurations in low-level system interactions, such as setting up virtual memory regions or validating memory constraints.",
+      "description_length": 464,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Module",
+      "description": "Encapsulates WebAssembly feature support through a type `t` that tracks boolean flags for atomic operations, SIMD, memory64, and exception handling. Offers operations to query and activate specific extensions during module processing. Can determine if a module requires memory64 support or validate SIMD inclusion. Used to enforce feature constraints during compilation or runtime validation.",
+      "description_length": 392,
+      "index": 50,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Binaryen.Op",
+      "description": "The module provides bitwise, arithmetic, and type conversion operations for 32-bit and 64-bit integers, floats, and SIMD vectors, including shifts, rotations, comparisons, and element-wise manipulations. It handles numeric precision adjustments, sign extensions, and vectorized operations on types like `vec_f64x2`, `vec_i8x16`, and `vec_i32x4`, alongside string encoding/decoding for UTF-8, UTF-16, and code point-based representations. Specific use cases include high-performance numerical computations, low-level bit manipulation, and efficient handling of heterogeneous data formats in systems programming.",
+      "description_length": 610,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Packed_type",
+      "description": "Provides operations to create and manipulate packed type representations, including a constant for \"not packed\" and specific integer type values. Works with the abstract type `t` to encode low-level type information. Used in binary serialization and deserialization to enforce type constraints during encoding.",
+      "description_length": 310,
+      "index": 52,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Binaryen.Passes",
+      "description": "This module specializes in low-level code optimizations and transformations, including control flow simplification, redundancy removal, type refinement, and IR manipulation, targeting intermediate representations and WebAssembly modules. It operates on program structures, locals, globals, and abstract syntax trees, enabling tasks like memory consolidation, asyncify adjustments, and JavaScript integration. Specific use cases involve enhancing performance under memory constraints, preparing code for debugging, and adapting modules for target-specific optimizations.",
+      "description_length": 569,
+      "index": 53,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Binaryen.Settings",
+      "description": "Provides functions to retrieve and modify compiler optimization settings, including inline size thresholds, debug information flags, memory usage preferences, and argument passing configurations. Works with primitive types such as integers, booleans, and strings to control compilation behavior. Used to adjust compiler parameters for performance tuning, debugging, and resource management during code generation.",
+      "description_length": 413,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Signature_type",
+      "description": "Extracts parameter and result types from heap-allocated function signatures, operating on `Heap_type.t` to derive `Type.t` representations. Used to analyze function contracts in type-checking pipelines. Enables precise handling of function signatures during code transformation workflows.",
+      "description_length": 288,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Struct_type",
+      "description": "Provides operations to inspect the structure of heap-allocated data, including the number of fields, individual field types, packed types, and mutability status. Works with heap type representations and type metadata. Used to analyze and validate the layout of complex data structures during runtime inspection or serialization processes.",
+      "description_length": 338,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Table",
+      "description": "Provides operations to manage a collection of element segments within a module, including adding segments with specific attributes, removing segments, and retrieving them by name or index. Works with strings, integers, expressions, and custom types like Element_segment.t. Used to dynamically build and query structured data representations in a simulation or modeling context.",
+      "description_length": 377,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Binaryen.Type",
+      "description": "This module provides foundational type definitions and operations for a low-level type system, including primitive types like integers and floats, vector types, and reference types, alongside heap type conversions. It enables creating, inspecting, and manipulating type representations through a custom `t` type and associated heap type patterns. Use cases include static type enforcement, runtime type checks, and structured type management in compiled or interpreted environments.",
+      "description_length": 482,
+      "index": 58,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "binaryen",
+      "description": "Provides functions to construct and manipulate WebAssembly modules, including adding functions, expressions, and control flow constructs. Works with data types such as module records, function definitions, and WebAssembly instructions. Used to generate optimized WebAssembly code from OCaml programs.",
+      "description_length": 300,
+      "index": 59,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Binaryen",
+      "description": "Provides tools for analyzing and manipulating low-level program structures, including heap types, function signatures, memory layouts, and module exports. It supports custom types for elements, functions, globals, and memory segments, enabling operations like extracting metadata, modifying control flow, and managing numeric and type representations. Users can inspect function contracts, adjust memory configurations, and perform bitwise or arithmetic operations on numeric and SIMD data. Examples include validating heap layouts, constructing abstract syntax trees, and optimizing control flow for performance.",
+      "description_length": 613,
+      "index": 60,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 61,
+    "meaningful_modules": 61,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 711,
+    "min_description_length": 222,
+    "avg_description_length": 343.39344262295083,
+    "embedding_file_size_mb": 0.2220134735107422
+  }
+}

@@ -1,0 +1,1197 @@
+{
+  "package": "js_of_ocaml-compiler",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 168,
+  "creation_timestamp": "2025-06-18T16:57:34.253116",
+  "modules": [
+    {
+      "module_path": "Js_of_ocaml_compiler.Code.Var.Tbl.DataSet",
+      "description": "Iterates over and accumulates results from a collection of elements of type 'a. Processes values using a provided function, supporting both traversal and reduction. Used to apply side effects or compute aggregate values from structured data.",
+      "description_length": 241,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Dgraph.Make.Solver",
+      "description": "Compares two instances of type t for structural equality. Constructs a minimal element of type t representing the bottom value. Used to determine equivalence between constraint states and initialize default values in logical deduction processes.",
+      "description_length": 245,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Dgraph.Make_Imperative.Solver",
+      "description": "Compares two instances of type t for structural equality. Constructs the bottom element representing an unsatisfiable state. Used to implement constraint satisfaction algorithms where logical consistency must be checked and maintained.",
+      "description_length": 235,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Code.Var.Set",
+      "description": "This module offers foundational set operations like insertion, deletion, and membership checks, along with set algebra (union, intersection, difference) and ordered traversal, working with ordered collections of elements (t) defined by a comparison function. It supports advanced manipulation through predicate-based queries, transformation functions (map, filter), and splitting operations, enabling efficient data processing and structured iteration. Additionally, it facilitates sequence-driven set construction and reverse-order traversal, catering to scenarios requiring ordered element management or batch processing.",
+      "description_length": 623,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Code.Var.Map",
+      "description": "This module offers comprehensive operations for managing ordered maps, including insertion, deletion, merging, and traversal of key-value pairs, with support for custom merging logic and optional values. It works with ordered data structures, enabling efficient searches, transformations, and filters while preserving key order, and supports sequence-based manipulation for dynamic data processing. Use cases include maintaining sorted datasets, incremental map construction from streams, and structured data analysis requiring ordered access.",
+      "description_length": 543,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Code.Var.Hashtbl",
+      "description": "This module offers operations for managing key-value mappings through hash tables, including insertion, deletion, lookup, and iteration, along with sequence-based construction and modification via functions like `of_seq` and `replace_seq`. It works with hash tables that associate keys to values, enabling efficient data retrieval and transformation. Use cases include dynamically building configurations or updating datasets from sequential inputs.",
+      "description_length": 449,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Code.Var.Tbl",
+      "description": "Processes collections of elements by applying a function to each, supporting both traversal and reduction. It handles type 'a and offers operations like map, fold, and iter for transforming or aggregating data. Users can compute sums, filter elements, or perform side effects during iteration. Examples include counting items, summing values, or generating new structures from existing ones.",
+      "description_length": 391,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Code.Var.ISet",
+      "description": "Provides operations to manage a set of elements, including creating an empty set, iterating over elements, checking membership, adding and removing elements, and copying the set. Works with a custom set type and its elements. Used to dynamically maintain and query a collection of unique values in applications like tracking active users or managing configuration flags.",
+      "description_length": 370,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Code.Addr.Set",
+      "description": "This module offers operations for adding, removing, and combining elements, along with querying properties like size, membership, and extremal values, while supporting set theory operations such as union, intersection, and difference. It works with ordered sets and sequences, enabling tasks like predicate-based element selection, ordered iteration, and converting between sequences and sets. Use cases include managing dynamic data with efficient lookups, processing structured collections, and transforming data through filtering or mapping.",
+      "description_length": 544,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Code.Addr.Map",
+      "description": "The module provides operations for creating, modifying, and querying ordered maps with key-value pairs, including additions, removals, merges, and sequence-based processing. It supports structured traversal, transformation, and filtering of elements in key order, enabling efficient data manipulation and analysis. Use cases include maintaining sorted datasets, incremental updates, and complex transformations requiring ordered access or conditional filtering.",
+      "description_length": 461,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Subst.Including_Binders.And_Continuations",
+      "description": "Provides a function to transform code blocks by substituting continuation addresses and variable bindings. Operates on maps of address-to-address mappings and code blocks containing variables. Used to modify control flow in compiled code during optimization passes.",
+      "description_length": 265,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Strongly_connected_components.Make.Map",
+      "description": "<think> Okay, let's tackle this. The user wants a 2-3 sentence description of the OCaml module based on the given chunk summaries. The main points to cover are the main operations, the data structures, and specific use cases. First, looking at the function summaries. The first chunk mentions adding, updating, removing, querying key-value bindings. It also talks about ordered maps with a comparison function and safe access, merging, traversal. So the main operations here are manipulation operations like add, update, remove, query. The data structure is ordered maps with keys ordered by a comparison function. The second chunk adds more operations: searching (find_last, etc.), traversal (iter, fold, to_list), transformation (map, mapi), filtering (filter, etc.), and structural ops like split, is_empty, mem, equal, compare. These functions process bindings in increasing or decreasing order. So the data structures are ordered maps, and the operations include traversal, transformation, filtering, etc. Third chunk mentions creating and manipulating maps using sequences, adding bindings, building from sequences, iterating subsets. So sequences are involved here as well. The data structures are key-value pairs processed via sequences. Putting this together, the main operations are adding, updating, removing, querying, searching, traversing, transforming, filtering, and structural operations. The data structures are ordered maps with key ordering, and they work with sequences for processing. Use cases would be scenarios needing ordered data manipulation, like maintaining sorted data, efficient lookups, or processing in specific orders. Need to avoid generic phrases. So instead of \"various operations\", specify the types. Mention the ordered maps and sequences. Use cases could be things like maintaining sorted key-value pairs, efficient querying, or processing data in order. Now, structure into 2-3 sentences. First sentence: main operations and data structures. Second: specific functions and use cases. Maybe third sentence for additional details like sequences. Check for repetition of module name. The user said not to use the module name, so avoid \"Map\" in the description. Also, avoid generic terms like \"functions\" if possible. Use specific terms like \"operations\" or \"methods\". So, possible sentences: The module provides operations for managing ordered key-value maps, including insertion, deletion, and querying, with support for ordered traversal, transformation, and filtering. It works with ordered maps and sequences, enabling efficient manipulation of structured data and use cases like maintaining sorted collections or processing bindings in specific orders. Specific functions include safe access, merging, and structural checks, facilitating tasks such as data aggregation and ordered data analysis. Wait, maybe that's three sentences. Let me check the requirements. 2-3 sentences. Maybe combine the first two. Also, need to mention specific use cases. The example use cases could be maintaining sorted data, efficient lookups, or processing in order. Also, the third chunk mentions building maps from sequences, so that's a use case. Another approach: The module offers a range of operations for manipulating ordered key-value maps, including adding, updating, removing, and querying bindings, along with traversal, transformation, and filtering capabilities. It works with ordered maps and sequences, enabling efficient data processing and use cases like maintaining sorted data structures or performing ordered transformations. Specific functions support safe access, merging, and structural checks, making it suitable for tasks requiring precise control over key ordering and data integrity. That's three sentences. Maybe condense. Let me check the original summaries again to ensure all key points are covered. The main operations are adding, updating, removing, querying, searching (find_last), traversal (iter, fold, to_list), transformation (map, mapi), filtering (filter, etc.), structural operations (split, is_empty, mem, equal, compare). Data structures: ordered maps with keys ordered by comparison function, and sequences. Use cases: efficient lookups, sorted data, processing in order, data aggregation, etc. So the final answer should encapsulate all that without being too wordy. Let me try again: The module provides operations for managing ordered key-value maps, including insertion, deletion, querying, and advanced transformations like filtering, mapping, and traversal, with functions that process bindings in increasing or decreasing key order. It works with ordered maps and sequences, enabling efficient data manipulation for tasks such as maintaining sorted collections, structured data processing, and ordered transformations. Specific features like safe access, merging, and structural checks support use cases requiring precise control over key ordering and data integrity. That's three sentences. Maybe the user wants 2-3, so this is acceptable. Check for repetition and generic phrases. \"Efficient data manipulation\" is a bit generic, but maybe acceptable. Alternatively, \"enabling efficient handling of ordered data structures\" might be better. Also, \"structured data processing\" could be more specific. Maybe \"processing key-value pairs in specific orders\" instead. Let me adjust: The module provides operations for managing ordered key-value maps, including insertion, deletion, querying, and advanced transformations like",
+      "description_length": 5497,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Strongly_connected_components.Make.Set",
+      "description": "This module offers set theory operations like union, intersection, and difference, along with element insertion, deletion, and membership checks, all while maintaining ordered data structures for sorted traversal. It supports predicate-based querying, transformation, and partitioning of elements, enabling tasks such as filtering or mapping over sets. Additionally, it facilitates set construction from sequences and reverse-order iteration, catering to scenarios requiring structured data manipulation and sequential processing.",
+      "description_length": 530,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Strongly_connected_components.Id.Map",
+      "description": "The module offers operations for creating, modifying, and querying ordered maps with key-value pairs, including adding, updating, removing, and merging entries, alongside specialized functions like `find_last` and `split` for ordered traversal and structural manipulation. It supports transformations (e.g., `map`, `mapi`), filtering (e.g., `filter`, `filter_map`), and sequence-based interactions (e.g., `of_list`, `to_seq`), enabling efficient handling of sorted data structures and key-dependent computations. Use cases include dynamic data organization, incremental updates, and structured processing of ordered collections.",
+      "description_length": 628,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Strongly_connected_components.Id.Set",
+      "description": "This module provides standard set operations such as union, intersection, and difference, along with element insertion, removal, and membership checks, all tailored for ordered sets that maintain sorted element sequences. It includes traversal mechanisms like iteration, mapping, and filtering, preserving order during transformations, and supports sequence-to-set conversions for structured data processing. Use cases include managing dynamic datasets with sorted constraints, optimizing query performance through ordered access, and preprocessing sequences for deduplication or hierarchical analysis.",
+      "description_length": 602,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Ocaml_compiler.Symtable.Global",
+      "description": "Provides functions to extract a string representation of an identifier and to convert an identifier into a specific type, returning an option. Works with the `Ident.t` type and a custom type `t` used to represent global identifiers. Used to safely retrieve and validate global names in a compiler or interpreter context.",
+      "description_length": 320,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Ocaml_compiler.Symtable.GlobalMap",
+      "description": "Maintains a mapping from Global.t values to integers, supporting operations to create an empty map, filter entries based on a predicate, look up values, iterate over key-value pairs, and accumulate results. It works with Global.t as keys and integers as associated values. Used to track and manipulate global variable assignments during program analysis.",
+      "description_length": 354,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.Uchar.Utf_decode",
+      "description": "Provides functions to check validity of UTF decoding, retrieve the decoded Unicode character, and determine the number of source elements consumed. Works with Unicode characters and a custom `utf_decode` type representing decoding results. Used to validate and inspect UTF-8 or UTF-16 decoding outcomes, such as determining byte lengths for encoding or handling invalid sequences.",
+      "description_length": 380,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Dgraph.Make",
+      "description": "This module offers a suite of operations for managing ordered key-value maps, including insertion, modification, querying, merging, and traversal, with support for sequence-based construction and conversion. It works with maps featuring ordered keys (e.g., type N.t) and flexible value types, enabling structured data manipulation. Use cases include dynamic data aggregation, efficient key-based transformations, and processing hierarchical or sorted datasets.",
+      "description_length": 460,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Dgraph.Make_Imperative",
+      "description": "Provides operations to retrieve and update values in a mutable structure using integer keys, and to initialize a structure of a given size with a default value. Works with a custom type 'a t, integer keys of type N.t, and size values. Used to manage dynamic data collections where elements are accessed and modified by index.",
+      "description_length": 325,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Dgraph.Solver",
+      "description": "Retrieves and stores values associated with unique keys in a structured container, initializing it with a specified size and default value. Operates on key-value pairs where keys are derived from a numeric type and the container holds elements of a generic type. Used to manage dynamic mappings in scenarios requiring efficient lookup and updates, such as configuration settings or state tracking.",
+      "description_length": 397,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Js_parser.MenhirInterpreter",
+      "description": "This module offers low-level operations for managing parser state, token validation, and control flow, working with structures like checkpoints, environments, token suppliers, and production rules to enable precise manipulation of parsing processes. It supports use cases such as incremental parsing, custom reduction strategies, and fine-grained state management in complex grammar implementations.",
+      "description_length": 399,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Js_parser.Incremental",
+      "description": "Provides functions to parse standalone expressions and programs, starting from a given lexical position. Operates on abstract syntax tree nodes wrapped in MenhirInterpreter checkpoints. Used to initialize parsing contexts for incremental or interactive processing of OCaml-like input.",
+      "description_length": 284,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Code.Addr",
+      "description": "manages ordered collections through set and map operations, supporting efficient insertion, deletion, and query of elements, with capabilities for union, intersection, and key-based transformations. It handles ordered sets and maps, enabling tasks like filtering, mapping, and converting between data structures. Operations include checking membership, retrieving extremal values, and traversing elements in sorted order. Examples include maintaining sorted user data, combining datasets, and processing structured information with conditional logic.",
+      "description_length": 550,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Code.DebugAddr",
+      "description": "Converts between an address type and a private integer representation, with a constant for no address. Provides bidirectional mapping between network addresses and integer identifiers. Used to serialize and deserialize address data in low-level network protocols.",
+      "description_length": 263,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Code.Var",
+      "description": "combines set and map operations with functional transformations, offering ordered and hash-based data structures for efficient element and key-value management. It supports insertion, deletion, membership checks, and algebraic operations on sets, while providing ordered and hash-based maps with custom merging and lookup capabilities. Functional operations like map, fold, and iter enable data transformation and aggregation, and sequence-based construction allows dynamic data processing. Users can manage sorted datasets, build configurations from streams, or perform structured analysis on ordered or hashed collections.",
+      "description_length": 624,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Code.Native_string",
+      "description": "Converts OCaml strings and bytestrings into an opaque string type, and provides equality comparison between instances. Operates on internal representations that encapsulate textual data. Used to ensure consistent string handling in low-level operations or when interfacing with C libraries.",
+      "description_length": 290,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Code.Constant",
+      "description": "Provides operations to compare constants for equality using OCaml's native equality operator, returning a boolean result wrapped in an option. Works with the `t` type, which represents constant values. Used to optimize equality checks in contexts where direct comparison is required.",
+      "description_length": 283,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Code.Print",
+      "description": "Formats OCaml expressions, constants, variable lists, instructions, and program structures for output. Works with types like `expr`, `constant`, `Var.t`, `instr`, `block`, `program`, `last`, and `cont`. Outputs assembly-like representations with custom address mappings for instructions and program blocks.",
+      "description_length": 306,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Builtins.File",
+      "description": "Provides functions to retrieve a file's name, content, and optional fragments, and to create new file instances. Works with a custom type `t` representing file data. Used to manage file metadata and content in a structured way during processing tasks.",
+      "description_length": 251,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Source_map.Source_content",
+      "description": "Creates a source content object from a string or a string literal, enabling precise handling of source code representations. Works with string-based data and tagged variants to distinguish between raw strings and embedded literals. Used to construct and manipulate source code snippets in parsing or transformation workflows.",
+      "description_length": 325,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Source_map.Offset",
+      "description": "Provides functions to manipulate and compute offsets, including adding, subtracting, and comparing offset values. Works with the `t` type, which represents a structured offset with a base and a delta. Used to adjust positions in a file or data stream during parsing or transformation tasks.",
+      "description_length": 290,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Source_map.Mappings",
+      "description": "Provides operations to create, inspect, and convert mappings between a string representation and a list of map entries. Works with `t` for encoded mappings and `decoded` for list-based map structures. Used to parse and generate source maps, and to encode mappings with offset adjustments for compact storage.",
+      "description_length": 308,
+      "index": 32,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Source_map.Standard",
+      "description": "Provides functions to manipulate debug mappings, including filtering and mapping lines with a function, merging multiple mapping lists, and constructing mappings from strings or files. Operates on a type representing debug source maps, which track line number relationships between generated and source code. Used to refine or combine source map data during code transformation processes.",
+      "description_length": 388,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Source_map.Index",
+      "description": "Provides functions to create, query, and update a mapping from unique identifiers to structured data. Operates on a `section` type containing indexed entries and a `t` type representing the overall index structure. Used to efficiently retrieve and manage document sections by ID in a static analysis tool.",
+      "description_length": 305,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Parse_bytecode.Debug",
+      "description": "Provides functions to create and manage debugging contexts, retrieve location information based on positions and addresses, and filter unit paths. Operates on custom types `t` and `position`, along with string sets for unit tracking. Used to inspect code locations during parsing and track relevant units in a debug session.",
+      "description_length": 324,
+      "index": 35,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Parse_bytecode.Toc",
+      "description": "Reads a structured document outline from an input channel, parsing section headers and their hierarchy into a tree-like structure. Works with a custom type representing nested sections and their metadata. Used to generate table of contents for documentation or dynamically navigate large text files.",
+      "description_length": 299,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Javascript.Num",
+      "description": "Converts numeric values between strings, floats, and target integers, and performs arithmetic operations like addition and negation on arbitrary-precision numbers. Handles comparisons for zero, one, and negative values. Used to process user input as numbers, perform precise calculations, and generate string representations for output.",
+      "description_length": 336,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Javascript.Label",
+      "description": "Generates unique labels with `fresh` and converts UTF-8 strings to labels with `of_string`. Works with an opaque type `t` representing label identifiers. Used to create distinct symbolic names in compiler intermediate representations.",
+      "description_length": 234,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Javascript.IdentSet",
+      "description": "This module offers standard set operations\u2014such as union, intersection, difference, and membership checks\u2014on ordered collections of generic elements, alongside transformation utilities like mapping and folding that preserve ordering. It works with ordered set structures parameterized by a type `elt` and an associated ordering `Ord`, enabling efficient manipulation of structured data. Specific use cases include managing identifier sequences with guaranteed order or performing complex set queries in applications requiring deterministic element traversal.",
+      "description_length": 558,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Javascript.IdentMap",
+      "description": "This module provides operations for managing ordered maps with identifier keys and generic values, including insertion, deletion, updates, and merging. It supports ordered traversal, filtering, and transformation of key-value pairs, enabling efficient manipulation of structured data. Use cases include configuration management, symbol table handling, and scenarios requiring ordered, mutable key-value associations.",
+      "description_length": 416,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Subst.Excluding_Binders",
+      "description": "Replaces variable names in code structures while preserving binders, which are identified as variables on the right-hand side of let bindings. Operates on program components such as expressions, instructions, blocks, and continuations, using types like Code.Var.t, Code.expr, and Code.instr. Used to rename variables in generated code to avoid conflicts without altering the binding structure of the program.",
+      "description_length": 408,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Subst.Including_Binders",
+      "description": "transforms code blocks by replacing variable bindings and continuation addresses according to specified mappings, enabling precise control over program execution flow. it handles variable substitution in let bindings, block parameters, closure parameters, and exception handlers. operations include applying address mappings to code structures and updating variable references within instructions. examples include renaming variables during optimization or redirecting control flow in compiled code.",
+      "description_length": 499,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Js_token.Annot",
+      "description": "Provides functions to manipulate and inspect pairs of strings and primitive values, including extracting components, comparing pairs, and converting to strings. Works with the `t` type, which represents a labeled primitive value. Used to annotate AST nodes with source positions during parsing and type checking.",
+      "description_length": 312,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Strongly_connected_components.Make",
+      "description": "The module provides operations for managing ordered key-value maps, including insertion, deletion, querying, and advanced transformations like filtering, mapping, and traversal, with functions that process bindings in increasing or decreasing key order. It supports safe access, merging, and structural checks, enabling tasks such as maintaining sorted data, aggregating values, or transforming key-value pairs. Specific functions allow building maps from sequences, iterating subsets, and performing ordered comparisons for precise data control.",
+      "description_length": 546,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Mlvalue.Block",
+      "description": "Provides functions to construct and manipulate block expressions using a tag and associated arguments, extract the tag from a block, and access specific fields within a block. Works with JavaScript expressions and integer indices to navigate structured data. Used to decode and process tagged unions in JavaScript interop scenarios.",
+      "description_length": 332,
+      "index": 45,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Mlvalue.Array",
+      "description": "Provides functions to create arrays with a specified tag and arguments, retrieve array lengths, and access elements by index. Works with JavaScript expressions representing array structures. Used to generate and manipulate array data in JavaScript interop contexts.",
+      "description_length": 265,
+      "index": 46,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Flow_lexer.Lex_mode",
+      "description": "Provides functions to switch between lexical modes, check current mode, and apply mode-specific parsing rules. Works with the `t` type, representing distinct lexical states such as string, comment, or code. Used to manage context during tokenization in a parser that handles multiple language constructs.",
+      "description_length": 304,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Flow_lexer.Parse_error",
+      "description": "Converts error details into a human-readable string representation. Works with internal error representations to provide clear diagnostics. Used to generate user-facing messages when parsing fails.",
+      "description_length": 197,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Flow_lexer.Lex_env",
+      "description": "Creates a lexical environment from a lexer buffer, enabling scoped symbol lookups during parsing. It manages bindings for identifiers and keywords, supporting nested scopes and shadowing. Used to track variable and function declarations in a parser's context.",
+      "description_length": 259,
+      "index": 49,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Flow_lexer.Lex_result",
+      "description": "Returns the parsed token, source location, and any associated parse errors for a given input. Operates on a custom type `t` that encapsulates the results of a lexical analysis. Used to inspect the output of a lexer, extract meaningful tokens, and diagnose parsing issues during language processing.",
+      "description_length": 298,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Linker.Fragment",
+      "description": "Provides functions to extract strings from a structured data type, parse content from files or strings into a list of structured elements, and pack elements into a unified format. Works with a custom type `t` representing parsed or structured data. Used to process configuration fragments, extract metadata, and prepare data for further transformation or output.",
+      "description_length": 362,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Ocaml_compiler.Symtable",
+      "description": "manages identifier conversion and global variable tracking through two complementary functionalities. It handles `Ident.t` and `Global.t` types, offering string extraction, type conversion, and integer mapping operations. Functions include safe identifier validation, global name lookup, and manipulation of variable assignments. Examples include converting identifiers to strings for error messages and tracking variable indices during compilation.",
+      "description_length": 449,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Ocaml_compiler.Cmo_format",
+      "description": "Extracts metadata from compiled OCaml modules, including the module name, dependencies, exported symbols, primitive operations, link requirements, and imported identifiers. Operates on compiled unit structures representing OCaml bytecode files. Used to analyze module dependencies and symbol visibility during linking or static analysis.",
+      "description_length": 337,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.Poly",
+      "description": "Provides comparison and equality operations for arbitrary types, including less-than, greater-than, and equality checks. Works with any type that supports these operations, enabling direct comparison of values. Used to implement custom ordering logic in data structures like trees and lists.",
+      "description_length": 291,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.Int_replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for integers, including standard relational operators, equality checks, and functions to determine maximum and minimum values. Works exclusively with integer data types and returns boolean or integer results based on input. Used to implement custom sorting logic or conditional branching based on numeric relationships.",
+      "description_length": 363,
+      "index": 55,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.List",
+      "description": "This module offers a comprehensive set of operations for manipulating lists, including transformations like mapping, filtering, and folding, as well as structural operations such as reversal, concatenation, and partitioning. It handles lists of arbitrary elements, key-value pairs, and sequences, supporting tasks like data transformation, algorithm implementation, and associative lookups. Specific use cases include processing pairwise elements, maintaining tail recursion during traversal, and converting between lists and sequences for flexible data handling.",
+      "description_length": 563,
+      "index": 56,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.Nativeint",
+      "description": "This module offers arithmetic operations, bitwise manipulations, and comparisons for platform-dependent integers (nativeint), enabling low-level integer handling and conversions between types like int, int32, and float. It supports tasks such as bit shifting, sign extension, and parsing/serializing nativeint values, making it suitable for system-level programming or interfacing with hardware-specific data formats. Its focus on signed/unsigned interpretations and min/max value management caters to scenarios requiring precise control over integer representations.",
+      "description_length": 567,
+      "index": 57,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.Int32",
+      "description": "This module offers arithmetic, bitwise, and comparison operations on 32-bit integers, including shifts, conversions between types like `int`, `float`, and strings, and handling of signed and unsigned values. It supports overflow-aware conversions and utilities for hashing and string formatting, making it suitable for low-level data manipulation, serialization, or systems programming tasks. Specific use cases include precise integer arithmetic in constrained environments or interoperability between different numeric representations.",
+      "description_length": 537,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.Option",
+      "description": "Provides operations to transform, inspect, and manipulate optional values. Works with the option type, enabling safe handling of absent or present values. Maps over contained values, converts options to lists, chains computations, and checks for presence or absence of data.",
+      "description_length": 274,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.Int64",
+      "description": "The module includes arithmetic operations (addition, subtraction, multiplication, division, remainder), bitwise manipulations (shifts, logical operations), and comparisons on 64-bit integers, alongside conversions between int64 and types like int, int32, nativeint, and floats, as well as string parsing/serialization. It enables use cases such as precise numerical computations, data serialization, and efficient hash table operations through hashing and equality checks. Specific functions like signed/unsigned division, logical shifts, and seeded hashing support scenarios requiring low-level bit control or interoperability with heterogeneous integer types.",
+      "description_length": 661,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.Float",
+      "description": "Compares floating-point values using IEEE equality checks, bitwise equality, or standard relational operators. Handles special floating-point classifications such as infinities and NaNs. Used for precise numerical comparisons in scientific computing and numerical analysis.",
+      "description_length": 273,
+      "index": 61,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.Bool",
+      "description": "Compares two boolean values for equality or inequality, returning a boolean result. Supports direct comparison using operators and a dedicated equality function. Used to evaluate logical differences or matches in conditional branching.",
+      "description_length": 235,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.Char",
+      "description": "Returns the ASCII code of a character or the character corresponding to an ASCII code. Escapes special characters in a string representation, provides comparison and equality operations, and checks if a character is alphabetic or numeric. Supports case conversion for ASCII characters and hash functions for use in hash tables.",
+      "description_length": 327,
+      "index": 63,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.Uchar",
+      "description": "Handles UTF decoding validation, character retrieval, and byte consumption tracking. Operates on Unicode data using a `utf_decode` type to represent decoding outcomes. Supports tasks like verifying input validity, extracting characters, and calculating byte lengths for encoding. Can identify invalid sequences or determine how many bytes were processed for a given character.",
+      "description_length": 376,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.Buffer",
+      "description": "The module offers functions for appending binary-encoded integers (8-bit, 16-bit, 32-bit, 64-bit) in little-endian, big-endian, or native-endian formats, alongside operations to manage mutable buffers storing binary data, handle string substitutions, and perform byte-level manipulations. It supports use cases like network protocol serialization (leveraging big-endian for compatibility) and efficient data concatenation from input channels or sequences, with explicit handling of integer truncation and synchronization requirements for concurrent access.",
+      "description_length": 556,
+      "index": 65,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.Bytes",
+      "description": "This module offers low-level operations for manipulating byte sequences, including encoding/decoding integers in various endianness formats, converting between bytes and strings, and performing binary data transformations. It works with byte sequences (bytes type) and strings, handling 8-bit to 64-bit integers, UTF-8/16 encodings, and direct memory access for efficient binary processing. Use cases include network protocol implementation, binary file parsing, and high-performance data serialization where precise control over byte-level representation is required.",
+      "description_length": 568,
+      "index": 66,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.String",
+      "description": "The module provides string manipulation, binary decoding of integers (8-bit, 16-bit, 32-bit, 64-bit) with endianness options, and UTF-8/UTF-16 decoding. It operates on strings, bytes, and integer types, enabling tasks like network protocol parsing, binary data processing, and encoding validation. Specific use cases include handling ASCII/UTF-8 encoding rules, character-level transformations, and endianness-specific integer extraction.",
+      "description_length": 438,
+      "index": 67,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.Utf8_string",
+      "description": "Converts a standard OCaml string to an opaque UTF-8 encoded string type, compares two instances lexicographically, and checks for equality. Works with an opaque type representing UTF-8 encoded strings. Used to ensure consistent UTF-8 handling in text processing pipelines.",
+      "description_length": 272,
+      "index": 68,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.Int",
+      "description": "Compares two integers using a lexicographical ordering function, checks equality between an integer and another value, and computes a hash value for an integer. Works exclusively with the built-in integer type. Used to implement custom hash tables and sorting logic based on integer values.",
+      "description_length": 290,
+      "index": 69,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.IntSet",
+      "description": "The module provides set manipulations like adding, removing, and querying elements, along with transformations and conversions between integer sets (t), lists, and sequences. It supports functional operations such as iteration, filtering, and membership checks, useful for tasks like data processing and efficient set comparisons. Additionally, it enables sequence-based construction and reversal of integer sets, facilitating flexible handling of integer collections in functional programming workflows.",
+      "description_length": 504,
+      "index": 70,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.IntMap",
+      "description": "This module provides operations for managing integer-keyed maps, including insertion, deletion, lookup, iteration, and transformation, with support for folding, mapping, and filtering key-value pairs. It works with IntMap data structures that associate integer keys to generic values, enabling conversions to and from lists and sequences for flexible data manipulation. Specific use cases include processing dynamic datasets, aggregating values through folding, and restructuring data via sequence-based transformations.",
+      "description_length": 520,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.StringSet",
+      "description": "This module offers set operations such as union, intersection, and difference, along with element insertion, removal, and property queries like size and membership, working with structured collections of strings. It supports functional transformations through iteration, mapping, and folding, enabling efficient manipulation of string-based sets and sequence conversions. Specific use cases include processing ordered data streams, optimizing set intersections for large datasets, and integrating set operations within functional pipelines.",
+      "description_length": 540,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.StringMap",
+      "description": "This module provides operations for manipulating string-keyed maps, including adding, removing, updating, and querying entries, along with transformations, filtering, and iteration over key-value pairs. It supports polymorphic value types and offers functionalities like safe access, custom merging, and sequence conversion, suitable for tasks such as configuration management or dynamic data aggregation. Use cases include processing structured data, building dictionaries, or managing settings with string-based identifiers.",
+      "description_length": 526,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.Utf8_string_set",
+      "description": "This module supports standard set operations\u2014such as adding, removing, intersecting, and unioning\u2014on collections of UTF-8 strings, enabling efficient membership checks and element retrieval. It provides functional transformations like iteration, mapping, and filtering, alongside sequence-based manipulations for constructing and modifying sets. Use cases include processing text data, ensuring unique string storage, or performing set-theoretic analysis in applications requiring UTF-8 encoding compatibility.",
+      "description_length": 510,
+      "index": 74,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.Utf8_string_map",
+      "description": "This module offers a suite of operations for managing key-value mappings with UTF-8 string keys and arbitrary value types, including insertion, deletion, lookup, merging, and traversal. It supports advanced transformations, filtering, and conversions between maps, lists, and sequences, while handling list-valued entries and optional results. It is particularly suited for applications requiring efficient string-based data management, such as internationalized text processing or configuration systems.",
+      "description_length": 504,
+      "index": 75,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.BitSet",
+      "description": "Provides operations to manage a set of integers using a bit-based representation, including checking membership, setting and unsetting bits, and iterating over set elements. Works with an opaque type `t` that efficiently stores and manipulates individual bits. Used to track available resources, manage flags, or optimize memory usage in systems requiring fast set operations.",
+      "description_length": 376,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.Array",
+      "description": "The module offers array manipulation through element-wise processing, iteration, sorting, and transformation, along with operations for creating, copying, and querying arrays. It handles arbitrary-type arrays, float arrays, and multi-dimensional structures, supporting both in-place and fresh array generation. Use cases include data processing pipelines, parallel computations (requiring explicit synchronization to avoid race conditions), and structured data manipulation where precise control over array bounds and memory is critical.",
+      "description_length": 537,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.Filename",
+      "description": "The module offers functions for manipulating file paths and names, including constructing, splitting, and modifying them, along with handling extensions and temporary files, while adhering to POSIX conventions and platform-specific nuances. It provides utilities for safely quoting command-line arguments, generating temporary file names, and managing file operations through output channels, ensuring cross-platform compatibility in tasks like script execution and file processing. Specific use cases include secure command-line invocation, temporary file generation, and robust file handling in diverse environments.",
+      "description_length": 618,
+      "index": 78,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib.Fun",
+      "description": "Provides identity, constant, and flipped function creation, predicate negation, exception-safe resource management, and function memoization. Operates on functions, booleans, and arbitrary values. Used to simplify function composition, enforce cleanup guarantees, and cache results of expensive computations.",
+      "description_length": 308,
+      "index": 79,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Config.Flag",
+      "description": "The module provides functions to access and modify compiler-related flags, including enabling/disabling features via boolean returns or listing available settings. It interacts with internal compiler state to manage configurations such as diagnostics, warning levels, and language-specific behaviors. Use cases include customizing stack trace generation, controlling string handling, and toggling optimization options during compilation.",
+      "description_length": 437,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Config.Param",
+      "description": "Provides functions to set and retrieve configuration parameters, including accessors for optimization thresholds and control flags. Works with strings, integers, and a custom type `tc` representing tail call optimization settings. Used to adjust compiler behavior at runtime via command-line inputs, such as limiting inlining or controlling tail call handling.",
+      "description_length": 360,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Flow.Info",
+      "description": "Provides operations to retrieve, update, and check the mutability of variable definitions within code structures. Works with a custom type `t` that encapsulates variable information and interacts with `Code.Var.t` and `Code.expr` for symbolic representation. Used to track variable assignments and determine if a variable can be modified during analysis.",
+      "description_length": 354,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Parse_js.Lexer",
+      "description": "Provides functions to construct a lexer from a file, string, or channel, and includes error handling and reporting. Operates on text input and error representations, supporting position tracking and file context. Used to process source code inputs and generate structured lexical analysis results.",
+      "description_length": 297,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Var_printer.Alphabet",
+      "description": "Produces a JavaScript-compatible representation of a character set. Operates on the `t` type, which encapsulates encoded character data. Used to generate browser-compatible character sequences for encoding and decoding operations.",
+      "description_length": 230,
+      "index": 84,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Strongly_connected_components.Id",
+      "description": "manages ordered collections through map and set operations, offering key-value storage with efficient traversal and modification, and element-based sets with sorted integrity. It supports adding, removing, and querying elements, along with transformations like mapping, filtering, and sequence conversions. Functions such as `find_last`, `split`, `union`, and `intersection` enable precise control over data structure manipulation. Examples include maintaining sorted logs, processing hierarchical data, and efficiently merging or comparing datasets.",
+      "description_length": 550,
+      "index": 85,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Jsoo_runtime.Sys.Config",
+      "description": "Returns a boolean indicating whether JavaScript strings are in use. Retrieves a string representing the effects configuration and returns an enumerated value specifying the effect backend, such as `Cps`, `Disabled`, or `Double_translation`. Used to control behavior in code generation based on runtime settings.",
+      "description_length": 311,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Jsoo_runtime.Typed_array.Bigstring",
+      "description": "Converts between a bigstring and JavaScript array buffer or Uint8 array, enabling efficient binary data manipulation. Works with the Bigarray-based bigstring type, which represents a contiguous block of 8-bit unsigned integers. Used for low-level data serialization, network communication, and file I/O operations.",
+      "description_length": 314,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Annot_lexer",
+      "description": "Processes annotated input streams, extracting tokens that represent code annotations. It operates on Lexing.lexbuf and produces tokens defined by Annot_parser. Used to parse source files with inline comments marked for documentation generation.",
+      "description_length": 244,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Annot_parser",
+      "description": "Parses annotated input streams, extracting tokens and associating them with primitive values. It processes lexing buffers and maps each token to a corresponding primitive type. Used to transform source code with annotations into structured data for further analysis.",
+      "description_length": 266,
+      "index": 89,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Base64",
+      "description": "Encodes and decodes binary data using Base64 encoding with customizable alphabets, including default and URI-safe variants. Processes strings and subarrays, supporting padding control and error handling through result types. Handles specific input ranges and returns decoded or encoded data as strings or subarrays.",
+      "description_length": 315,
+      "index": 90,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Build_info",
+      "description": "Provides functions to convert and manipulate build configuration data, including converting between a custom type and strings, maps, and merging configurations. Works with a polymorphic variant type for build kinds and an opaque configuration type. Used to generate human-readable output, parse configuration strings, and combine multiple build settings into a single configuration.",
+      "description_length": 382,
+      "index": 91,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Build_path_prefix_map",
+      "description": "Encodes and decodes path prefixes, pairs, and maps between string representations and internal structures, handling errors through a result type. Rewrites paths by substituting known prefixes with their corresponding targets, returning an option or forcing a result. Used to transform file paths during build processes to ensure consistency and reproducibility.",
+      "description_length": 361,
+      "index": 92,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Builtins",
+      "description": "manages file metadata and content through a structured `t` type, offering retrieval and creation functions for files and their components. It supports operations like extracting filenames, reading content, and handling optional fragments. Users can construct new file instances with defined properties and manipulate existing ones. Examples include parsing file contents, generating new files from templates, and extracting specific sections of a file's data.",
+      "description_length": 459,
+      "index": 93,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Code",
+      "description": "manages ordered and hashed data structures with set and map operations, enabling efficient manipulation of elements and key-value pairs through insertion, deletion, and transformation. Converts addresses to integers and vice versa, and handles string and constant comparisons with specialized types and operations. Supports functional transformations, data aggregation, and structured output formatting for program elements. Examples include maintaining sorted user data, serializing network addresses, and generating assembly-like representations of OCaml code.",
+      "description_length": 562,
+      "index": 94,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Compiler_version",
+      "description": "Provides string-based access to the compiler's version and Git commit hash. Operates on raw string data to expose build-time metadata. Used to embed version information in compiled binaries for debugging or logging purposes.",
+      "description_length": 224,
+      "index": 95,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Config",
+      "description": "manages compiler configuration through parameter access and modification, supporting boolean flags, optimization thresholds, and a custom `tc` type for tail call settings. It enables runtime adjustments to compiler behavior, such as controlling inlining, tail call handling, and diagnostic levels. Functions allow retrieving and updating settings via command-line inputs or internal state. Examples include disabling warnings, adjusting stack trace generation, and toggling optimization strategies.",
+      "description_length": 498,
+      "index": 96,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Deadcode",
+      "description": "Removes unused variables from a program by analyzing their usage, returning the cleaned program and an array tracking which variables were removed. Operates on abstract syntax trees represented as Code.program and uses an integer array to mark variable usage status. Used to optimize code size in compiler pipelines by eliminating redundant declarations.",
+      "description_length": 354,
+      "index": 97,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Debug",
+      "description": "Provides functions to manage and query debugging flags, including enabling, disabling, and checking the status of specific debug categories. Works with strings to identify debug targets and boolean flags to control behavior. Used to dynamically control debug output and profiling during runtime.",
+      "description_length": 295,
+      "index": 98,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Dgraph",
+      "description": "Provides functions to query and mutate graph structures represented by the type `t`, including adding edges, traversing nodes, and checking connectivity. Operates on directed graphs with labeled nodes and weighted edges. Used to analyze social network connections and optimize pathfinding in routing systems.",
+      "description_length": 308,
+      "index": 99,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Driver",
+      "description": "Provides functions to optimize code based on a profile, generate JavaScript output with customizable wrapping and linking strategies, and process bytecode into formatted source. Works with code programs, source maps, pretty-printing configurations, and custom profiles. Used to transform and bundle JavaScript code for deployment with specific optimization and packaging settings.",
+      "description_length": 380,
+      "index": 100,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Duplicate",
+      "description": "Provides functions to rename variables within a program's closure, ensuring bound variables are replaced with fresh names. Operates on OCaml code structures, including variable sets, program bodies, and continuation tuples. Used to manage variable scoping during program transformation or optimization.",
+      "description_length": 302,
+      "index": 101,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Effects",
+      "description": "Removes unused blocks from a program based on live variable analysis. Transforms a program with effect handlers into one using only function calls, applying a partial CPS conversion and tracking call sites that require trampolining or CPS execution. Operates on program structures, variable use maps, and sets of variables indicating trampolined or CPS-invoked calls.",
+      "description_length": 367,
+      "index": 102,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Eval",
+      "description": "Clears the static environment and sets a new one with key-value pairs. Operates on flow information and code programs, modifying the program structure based on environment settings. Used to dynamically adjust code execution context during analysis or transformation.",
+      "description_length": 266,
+      "index": 103,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Findlib",
+      "description": "Provides functions to locate package directories by name, with `set_find_pkg_dir` customizing the lookup mechanism and `find_pkg_dir` retrieving a single directory. Operates on strings and lists of strings to represent package names and paths. Used to dynamically resolve library locations in build systems or runtime environments.",
+      "description_length": 331,
+      "index": 104,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Flow",
+      "description": "tracks variable definitions and their mutability through custom type `t`, integrating with `Code.Var.t` and `Code.expr` to analyze code structures. It supports retrieving variable info, updating assignments, and checking mutability status. Users can trace variable usage and enforce immutability constraints during static analysis. For example, it can identify if a variable is reassigned or remains constant throughout a function.",
+      "description_length": 431,
+      "index": 105,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Flow_lexer",
+      "description": "manages lexical states, error reporting, and symbol resolution to support complex parsing workflows. It defines a `t` type for tracking tokenized data, error details, and lexical contexts, with operations to switch modes, generate diagnostics, and resolve symbols. Users can inspect parsed tokens with their locations, handle multi-mode lexing, and track scoped declarations during analysis. Examples include detecting syntax errors in embedded code blocks, managing nested variable scopes, and extracting structured token streams for further processing.",
+      "description_length": 554,
+      "index": 106,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Freevars",
+      "description": "Iterates over free variables in code blocks, instructions, and last expressions, applying a given function to each. Processes data types such as blocks, instructions, and addresses, extracting variable sets for specific program locations. Used to analyze variable bindings in closures and track mutable variables within program segments.",
+      "description_length": 337,
+      "index": 107,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Fs",
+      "description": "Provides functions to locate files in a search path, resolve absolute file paths, read and write file contents, generate temporary files with custom processing, and handle intermediate files with a callback. Operates on strings representing file paths and content. Used to manage file I/O in build processes, configuration loading, and temporary file generation during data processing.",
+      "description_length": 385,
+      "index": 108,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Generate",
+      "description": "Generates a JavaScript program from an OCaml bytecode program, incorporating live variable analysis, effect tracking, and CPS conversion. It processes program structures, variable uses, and debugging information to produce a transformed output. Used to compile OCaml code with specific runtime behaviors and debugging support.",
+      "description_length": 326,
+      "index": 109,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Generate_closure",
+      "description": "Generates a closure by transforming a given program structure, incorporating free variables into the closure's environment. It operates on the `Code.program` type, which represents abstract syntax trees of OCaml code. This is used to implement lexical scoping in a custom interpreter or compiler pass.",
+      "description_length": 301,
+      "index": 110,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Global_constant",
+      "description": "Provides string constants for global identifiers and module exports, including UTF-8 encoded variants. Works with standard string types and UTF-8 encoded strings. Used to reference global object names and module exports in environment-specific contexts.",
+      "description_length": 253,
+      "index": 111,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Global_deadcode",
+      "description": "Computes precise liveness information for variables and function return values using flow analysis, annotating each block with live fields. Processes the program IR to propagate liveness data and substitutes dead variables with a sentinel value. Used to identify unused function definitions in functors, enabling their removal in subsequent passes.",
+      "description_length": 348,
+      "index": 112,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Global_flow",
+      "description": "Provides functions to analyze program flow, including determining exact call sites and function arities from a program's information structure. Operates on custom types representing definitions, approximations, escape statuses, and program metadata. Used to check if a variable call is exact and to retrieve the arity of a function within a given analysis context.",
+      "description_length": 364,
+      "index": 113,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Inline",
+      "description": "Processes a program by removing dead code based on variable usage information, transforming the abstract syntax tree to eliminate unreachable or unused elements. Operates on OCaml's internal program representation and a mapping of variable usages. Used to optimize compiled code by pruning unnecessary definitions and expressions.",
+      "description_length": 330,
+      "index": 114,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Instr",
+      "description": "Provides operations to extract signed and unsigned integers (8-bit, 32-bit) and strings from a binary buffer, along with a method to retrieve instruction descriptions based on a parsed structure. Works with binary data represented as strings and internal instruction structures containing descriptors, kinds, and metadata. Used to parse and analyze low-level instruction encodings in disassembly or bytecode processing.",
+      "description_length": 419,
+      "index": 115,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Javascript",
+      "description": "manages numeric conversions, label generation, ordered sets, and ordered maps, enabling precise numerical operations, symbolic name creation, and efficient data structure manipulation. It supports arbitrary-precision arithmetic, label uniqueness, set and map operations with ordered elements, and transformations that maintain structure. Users can convert between numeric types, generate distinct identifiers, perform set intersections, and manage ordered key-value pairs. Examples include parsing user input as exact numbers, creating unique variable names, and maintaining ordered collections for deterministic processing.",
+      "description_length": 624,
+      "index": 116,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Js_assign",
+      "description": "Adds a unique identifier to the top-level scope of a JavaScript program, ensuring no name collisions. Operates on the abstract syntax tree representation of JavaScript code. Used to inject a global variable for module initialization in browser environments.",
+      "description_length": 257,
+      "index": 117,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Js_output",
+      "description": "Generates JavaScript code with optional source maps and support for unnamed variables, using a pretty-printing interface. It operates on `Pretty_print.t` and `Javascript.program` types to produce structured output. It is used to emit compiled JavaScript from an abstract syntax tree while preserving debugging information.",
+      "description_length": 322,
+      "index": 118,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Js_parser",
+      "description": "manages parsing workflows through state manipulation, token validation, and AST construction, enabling precise control over incremental and interactive parsing. It handles abstract syntax trees via MenhirInterpreter checkpoints and supports expression and program parsing from specific lexical positions. Key data types include checkpoints, environments, and token suppliers, with operations for state restoration and custom reduction. Examples include building custom parsers for OCaml-like syntax and implementing interactive code evaluation.",
+      "description_length": 544,
+      "index": 119,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Js_simpl",
+      "description": "Handles conditional and block statement construction in JavaScript ASTs, with functions to create if statements, wrap sequences in blocks, and decompose blocks into sequences. Operates on tuples of statements and their locations, preserving positional information. Used to generate structured JavaScript code from abstract syntax trees during transformation pipelines.",
+      "description_length": 368,
+      "index": 120,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Js_token",
+      "description": "manipulates labeled primitive values through the `t` type, enabling operations like component extraction, comparison, and string conversion. It supports annotating AST nodes with source positions by pairing values with contextual labels. Functions allow precise inspection and transformation of these labeled pairs. Examples include tracking location data in parsers and comparing annotated values during type checking.",
+      "description_length": 419,
+      "index": 121,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Lambda_lifting",
+      "description": "Transforms higher-order functions in a program by converting nested functions into top-level definitions, preserving their behavior. Operates on abstract syntax trees represented as Code.program values. Enables optimization of function calls in compilers or code analyzers.",
+      "description_length": 273,
+      "index": 122,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Lambda_lifting_simple",
+      "description": "Lifts specified functions from a program into top-level closures, preserving their environment by capturing free variables. Operates on OCaml abstract syntax trees and variable sets, producing a modified program and a mapping from original to lifted function names. Used to transform recursive functions into non-recursive forms with explicit environment passing, enabling easier analysis or optimization.",
+      "description_length": 405,
+      "index": 123,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Link_js",
+      "description": "Handles linking of OCaml bytecode files into a single output, supporting options for linking all files, creating libraries, and generating source maps. Operates on OCaml bytecode files and source map data structures. Used to produce standalone JavaScript outputs with source map integration for debugging.",
+      "description_length": 305,
+      "index": 124,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Linker",
+      "description": "Processes structured data by extracting, parsing, and packing elements into a unified format using a custom type `t`. Supports operations to retrieve strings, convert file or string content into lists of structured elements, and normalize data for downstream use. Can extract metadata from configuration fragments or transform unstructured text into organized data. Examples include parsing log entries, isolating key-value pairs, and preparing data for serialization.",
+      "description_length": 468,
+      "index": 125,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Loc",
+      "description": "Tracks source code positions with detailed line and column information, supporting creation from Lexing positions and extraction of filename, line numbers, and column offsets. Operates on custom line and position types, enabling precise location tracking in parsing and error reporting. Used to annotate tokens with their exact source location for accurate error messages and debugging.",
+      "description_length": 386,
+      "index": 126,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Macro",
+      "description": "Processes JavaScript programs by applying a transformation based on a boolean flag, returning the modified program and an updated flag. Operates on JavaScript program structures represented as abstract syntax trees. Used to conditionally inject or remove code segments during build processes.",
+      "description_length": 292,
+      "index": 127,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Magic_number",
+      "description": "Provides operations to compare, check equality, and convert magic numbers between string representation and a structured type. Works with a private type encapsulating a string and an integer, used to identify file formats. Enables precise handling of executable and object file types like CMO, CMA, and EXE in compiler and build systems.",
+      "description_length": 337,
+      "index": 128,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Mlvalue",
+      "description": "Manages structured data through tag-based access and manipulation, enabling extraction and modification of fields within blocks and arrays. Supports operations like building tagged structures, retrieving lengths, and indexing elements using JavaScript-compatible types. Allows for precise navigation of nested data, such as accessing a specific field in a tagged union or iterating over array elements. Facilitates seamless interaction between OCaml and JavaScript by handling structured data representations directly.",
+      "description_length": 518,
+      "index": 129,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Ocaml_compiler",
+      "description": "handles identifier conversion and metadata extraction from compiled OCaml modules, working with `Ident.t` and `Global.t` for name management and compiled unit structures for module analysis. It enables string representation of identifiers, global variable tracking, and retrieval of module metadata such as dependencies and exported symbols. Operations include validating identifiers, looking up global names, and extracting link-time information for analysis. Examples include generating human-readable error messages from identifiers and resolving symbol dependencies during linking.",
+      "description_length": 585,
+      "index": 130,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Ocaml_version",
+      "description": "Provides operations to create, compare, and manipulate version numbers as lists of integers. Accepts a string input to parse into a version structure and returns the current version as a pre-defined list. Used to enforce version constraints and perform semantic comparisons in package management systems.",
+      "description_length": 304,
+      "index": 131,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Parse_bytecode",
+      "description": "handles debugging context creation, location retrieval, and unit path filtering using custom types `t` and `position`, enabling precise code inspection during parsing. it also parses structured document outlines into hierarchical section trees, supporting dynamic navigation and table-of-contents generation. operations include filtering unit paths, extracting location data, and building nested section metadata. examples include tracking debug information across code segments and organizing large documents into navigable structures.",
+      "description_length": 536,
+      "index": 132,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Parse_info",
+      "description": "Provides functions to create and manipulate position-aware data structures, including converting lexing buffers and positions into a custom type, extracting start positions, and generating string representations. Works with lexing positions and a custom type encapsulating source information. Used to track and report exact locations in source code during parsing.",
+      "description_length": 364,
+      "index": 133,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Parse_js",
+      "description": "Processes text inputs to generate lexical analysis results through customizable lexers with detailed error reporting and position tracking. Supports file, string, and channel-based input sources, enabling precise source code parsing. Includes mechanisms for error representation, file context management, and position-aware processing. Examples include parsing JavaScript source files, analyzing string literals, and handling input streams with error diagnostics.",
+      "description_length": 463,
+      "index": 134,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Partial_cps_analysis",
+      "description": "Analyzes control flow and variable usage in code to generate annotations and flow information. It processes instruction sequences and programs, incorporating variable set data to produce structured output. Used to track variable dependencies and execution paths in compiled code.",
+      "description_length": 279,
+      "index": 135,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Phisimpl",
+      "description": "Transforms OCaml abstract syntax trees by applying a series of simplification rules to eliminate redundant code constructs. Operates on OCaml's `Code.program` type, which represents parsed source code. Used to optimize intermediate representations before further processing or code generation.",
+      "description_length": 293,
+      "index": 136,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Pretty_print",
+      "description": "Provides operations for formatting and outputting text with control over spacing, line breaks, and indentation. Works with a stateful type `t` and a position type `pos` to track output position. Used to generate formatted output to channels or buffers, with precise control over layout and spacing rules.",
+      "description_length": 304,
+      "index": 137,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Primitive",
+      "description": "Provides operations to check and manage primitive functions, including determining purity, existence, and kind, as well as registering and resolving primitives. Works with strings, kind representations, and lists of kind arguments to enforce constraints and track external dependencies. Used to validate function signatures, manage aliases, and control access to named values during execution.",
+      "description_length": 393,
+      "index": 138,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Pseudo_fs",
+      "description": "Provides functions to construct code instructions for file system operations, including creating files, embedding files, and initializing a pseudo file system. Works with sets of CMIS identifiers, file paths, and lists of instructions. Used to generate low-level code for simulating file system interactions in a controlled environment.",
+      "description_length": 336,
+      "index": 139,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Pure_fun",
+      "description": "Checks if an expression or instruction is free of side effects based on variable usage. Operates on OCaml AST nodes and variable sets. Determines pure code segments for optimization or analysis in compiler pipelines.",
+      "description_length": 216,
+      "index": 140,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Reserved",
+      "description": "Provides set operations for checking reserved and provided identifiers in a language parser. Works with string sets to represent keyword and provided name collections. Used to validate symbol usage and enforce naming constraints during code analysis.",
+      "description_length": 250,
+      "index": 141,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Source_map",
+      "description": "Encapsulates tools for handling source code representations, offset calculations, and mapping conversions, enabling precise control over code transformations. It manages structured offsets, source maps, debug line mappings, and indexed data through specialized types like `t`, `decoded`, and `section`. Operations include adjusting positions, parsing and generating maps, filtering debug data, and retrieving sections by ID. It supports tasks such as converting between string and list-based mappings, refining line relationships, and efficiently accessing document fragments.",
+      "description_length": 576,
+      "index": 142,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Specialize",
+      "description": "Provides functions to analyze and transform code by determining the arity of functions and applying transformations based on that information. Works with `Flow.Info.t`, `Code.Var.t`, and `Code.program` data structures. Used to optimize function calls by modifying programs based on detected function parameters.",
+      "description_length": 311,
+      "index": 143,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Specialize_js",
+      "description": "Processes JavaScript code by applying type-specific transformations based on flow information, then performs a single-pass optimization on the abstract syntax tree. Operates on Flow.Info.t for type context and Code.program for AST representations. Used to refine type annotations and simplify expressions in transpiled code.",
+      "description_length": 324,
+      "index": 144,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Stdlib",
+      "description": "Provides comparison, arithmetic, and manipulation capabilities across multiple data types, including integers, floats, strings, and lists. Offers operations for handling optional values, sets, maps, and binary data, with support for custom ordering, hashing, and encoding/decoding. Enables tasks such as sorting lists, parsing UTF-8 strings, serializing integers, and managing key-value mappings. Specific examples include converting between numeric types, processing binary data streams, and performing set operations on string collections.",
+      "description_length": 541,
+      "index": 145,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Strongly_connected_components",
+      "description": "Provides ordered collection management through map and set operations, enabling efficient key-value storage and element-based set handling with sorted integrity. It supports adding, removing, and querying elements, along with transformations like mapping, filtering, and sequence conversions. Functions such as `find_last`, `split`, `union`, and `intersection` allow precise data manipulation. Users can maintain sorted logs, process hierarchical data, and merge or compare datasets efficiently.",
+      "description_length": 495,
+      "index": 146,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Structure",
+      "description": "Provides operations to analyze and manipulate control flow graphs, including retrieving edges, determining backward/forward edges, building graphs from blocks, and extracting dominator trees. Works with graph representations and address sets to track code blocks and their relationships. Used to identify loop headers, merge nodes, and traverse graphs in post-order for program analysis tasks.",
+      "description_length": 393,
+      "index": 147,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Subst",
+      "description": "manipulates code structures by substituting variable names and control flow addresses, maintaining binding integrity while enabling dynamic reconfiguration of program execution. it works with types such as Code.Var.t, Code.expr, and Code.instr, supporting operations like variable renaming and address mapping. it allows for safe code transformation, such as avoiding name collisions during code generation or redirecting control flow in compiled programs. examples include updating variable references in let bindings or modifying continuation addresses during optimization.",
+      "description_length": 575,
+      "index": 148,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Tailcall",
+      "description": "Processes and transforms abstract syntax trees of OCaml programs by inlining tail-recursive calls into loops. Operates on Code.program, a custom data structure representing parsed OCaml code. Rewrites recursive function calls to enable efficient execution in environments that optimize tail calls.",
+      "description_length": 297,
+      "index": 149,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Target_env",
+      "description": "Provides functions to retrieve all instances, compare them for equality, convert to and from string representations. Works with an opaque type representing target environments. Used to serialize and deserialize environment configurations and validate user input against known values.",
+      "description_length": 283,
+      "index": 150,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Targetint",
+      "description": "This module offers arithmetic operations (addition, multiplication, division), bitwise manipulations (AND, OR, shifts), and comparisons on abstract integer types with fixed bit-width, alongside conversions to and from primitive types like int, float, and string with error handling. It supports low-level bit management, overflow control, and utilities for retrieving min/max values, making it suitable for systems programming or numerical algorithms requiring precise integer handling. Equality checks and specialized operators like `<>` enable straightforward value comparisons within this constrained integer framework.",
+      "description_length": 622,
+      "index": 151,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Timer",
+      "description": "Creates and manages time measurements, providing a way to start a timer and retrieve elapsed time in seconds. Operates on a custom type `t` representing a timer instance. Used to track duration of specific code segments, such as benchmarking function execution or measuring I/O operations.",
+      "description_length": 289,
+      "index": 152,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Unit_info",
+      "description": "Provides operations to construct and manipulate unit information from CMO files or primitive strings, combine units with union, and generate string representations. Works with a custom type encapsulating compilation unit data and string prefixes. Used to merge module metadata during linking or analysis phases.",
+      "description_length": 311,
+      "index": 153,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Var_printer",
+      "description": "Generates JavaScript-compatible character sequences from encoded data. Processes values of type `t` to produce readable, browser-ready outputs. Supports encoding and decoding by transforming internal representations into usable strings. Example: converting a set of Unicode characters into a JSON-safe string for client-side use.",
+      "description_length": 329,
+      "index": 154,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler.Vlq64",
+      "description": "Provides functions to encode and decode integers using a variable-length quantity format, with support for single values and lists. Operates on characters, buffers, and strings, ensuring efficient serialization of integer data. Used to compress numeric data in binary formats, such as encoding integers in protocol buffers or custom binary file structures.",
+      "description_length": 356,
+      "index": 155,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Jsoo_runtime.Js",
+      "description": "This module facilitates bidirectional conversion between OCaml values and JavaScript-compatible types, supporting strings, numbers, arrays, objects, and booleans, while enabling dynamic property access and type checks. It provides low-level primitives for invoking JavaScript functions, creating objects, and managing callbacks, with specialized abstractions for handling arrays and method invocations. Use cases include integrating OCaml with JavaScript environments, manipulating dynamic data structures, and bridging functional programming with JavaScript's object model.",
+      "description_length": 574,
+      "index": 156,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Jsoo_runtime.Sys",
+      "description": "controls runtime behavior through configuration checks, exposing flags for JavaScript string usage and effect backend selection. It defines types like `effect_backend` with variants `Cps`, `Disabled`, and `Double_translation`. Functions include checking JavaScript string flags and retrieving the current effect backend. This enables dynamic adjustments in code generation based on runtime settings.",
+      "description_length": 399,
+      "index": 157,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Jsoo_runtime.Error",
+      "description": "Raises an exception with a custom error type, allowing for controlled error propagation. It handles JavaScript errors by attaching and retrieving stack traces, enabling detailed debugging information. This is particularly useful when integrating OCaml with JavaScript environments.",
+      "description_length": 281,
+      "index": 158,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Jsoo_runtime.For_compatibility_only",
+      "description": "Converts between OCaml strings and JavaScript values, including byte strings and arrays. Translates JavaScript arrays to OCaml lists and vice versa. Retrieves global JavaScript variables by name.",
+      "description_length": 195,
+      "index": 159,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Jsoo_runtime.Typed_array",
+      "description": "Converts between bigstrings and JavaScript array buffers or Uint8 arrays, enabling low-level binary data handling. It operates on bigstrings, which are contiguous 8-bit unsigned integer arrays, and supports serialization, network transmission, and file operations. Functions include converting between OCaml bigstrings and JavaScript typed arrays, as well as reading/writing binary data. This allows seamless integration of binary data between OCaml and JavaScript environments.",
+      "description_length": 478,
+      "index": 160,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Jsoo_runtime.Int64",
+      "description": "Creates a 64-bit integer from three 32-bit components, combining the lower, middle, and higher parts. Operates on 32-bit integers and returns a value of type Int64.t. Used to construct large integer values from segmented data sources.",
+      "description_length": 234,
+      "index": 161,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Jsoo_runtime.Effect",
+      "description": "Provides a mechanism to enforce direct-style execution of a function, bypassing CPS transformation, ensuring that any effect invocation within the function raises `Effect.Unhandled` unless explicitly handled. Operates on functions with a unit argument and arbitrary return type. Useful for optimizing performance-critical code paths where effect handling is not required.",
+      "description_length": 371,
+      "index": 162,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "js_of_ocaml-compiler",
+      "description": "Converts OCaml bytecode into executable JavaScript, enabling deployment of OCaml code in web browsers and Node.js environments. Processes OCaml modules, functions, and data structures, including integers, strings, and custom types, into equivalent JavaScript representations. Supports integration with browser APIs through generated bindings, allowing manipulation of DOM elements and event handling directly from OCaml code.",
+      "description_length": 425,
+      "index": 163,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler_dynlink",
+      "description": "Evaluates OCaml code strings by invoking a function stored in a reference, allowing dynamic execution of generated OCaml code. It operates with string literals representing OCaml expressions and functions that return JavaScript values. This is used to dynamically load and execute code in a web environment, such as in interactive OCaml-to-JavaScript applications.",
+      "description_length": 364,
+      "index": 164,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler",
+      "description": "The module provides a comprehensive set of tools for processing and transforming OCaml and JavaScript code, handling annotations, data encoding, configuration management, and code optimization. It includes data types like `Annot_parser.token`, `Code.program`, `t` for lexical states, and `Flow.Info.t` for flow analysis, with operations for parsing, encoding, renaming, and optimizing code structures. Examples include removing unused variables, generating JavaScript from OCaml bytecode, encoding binary data with Base64, and managing build configurations.",
+      "description_length": 557,
+      "index": 165,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_compiler_runtime_files",
+      "description": "This module handles operations related to OCaml runtime file management, including defining references to standard library modules and compiler components. It works with `Js_of_ocaml_compiler.Builtins.File.t` objects, focusing on specialized files like \"weak\" and \"zstd\" for low-level resource handling. Use cases include compiling OCaml libraries for JavaScript environments and managing internal compiler structures such as compression utilities.",
+      "description_length": 448,
+      "index": 166,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Jsoo_runtime",
+      "description": "This module enables seamless interaction between OCaml and JavaScript by providing type conversion, runtime configuration, error handling, and low-level data manipulation. It supports converting strings, arrays, objects, and bigstrings between the two environments, while offering control over execution styles and error propagation. Functions include creating JavaScript objects, managing effect backends, and constructing 64-bit integers from 32-bit components. It allows developers to integrate OCaml logic into JavaScript applications, handle binary data, and debug errors with stack traces.",
+      "description_length": 595,
+      "index": 167,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 171,
+    "meaningful_modules": 168,
+    "filtered_empty_modules": 3,
+    "retention_rate": 0.9824561403508771
+  },
+  "statistics": {
+    "max_description_length": 5497,
+    "min_description_length": 195,
+    "avg_description_length": 418.29761904761904,
+    "embedding_file_size_mb": 0.6107587814331055
+  }
+}

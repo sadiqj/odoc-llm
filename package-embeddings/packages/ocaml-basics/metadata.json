@@ -1,0 +1,777 @@
+{
+  "package": "ocaml-basics",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 108,
+  "creation_timestamp": "2025-06-18T16:50:52.453254",
+  "modules": [
+    {
+      "module_path": "Basics.Map.Result.Make.Applicative.Core",
+      "description": "Performs function application and transformation on values wrapped in a context, supporting sequencing and lifting of operations. Operates on a generic type that pairs a value with a context, enabling composition of computations. Used to apply functions to values within a structured context, such as handling optional or error-prone computations.",
+      "description_length": 347,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Map.Result.Make.Applicative.Infix",
+      "description": "Applies a function to the value inside a context, sequences operations by transforming results, and combines two contexts by applying a function from the first to the value of the second. Works with monadic structures that carry an additional context. Used to chain parsing steps, handle optional values with error tracking, and compose effectful computations.",
+      "description_length": 360,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Map.Result.Make.Monad.Core",
+      "description": "Provides monadic binding and lifting operations for computations that may fail, using a result type with error tracking. Works with the `('a, 'b) t` type, where 'a represents success values and 'b represents error values. Enables sequential composition of error-prone operations, such as parsing input or handling external data sources.",
+      "description_length": 336,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Map.Result.Make.Monad.Infix",
+      "description": "Performs monadic binding, chaining computations that produce results wrapped in a context. Operates on types with a monadic structure, such as option, result, or custom effectful types. Enables sequential processing of computations where each step depends on the successful outcome of the previous.",
+      "description_length": 298,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Deferred.Make.Applicative.Core",
+      "description": "Performs function application and transformation on values wrapped in a context, supporting sequencing and lifting of operations. Operates on a generic type that pairs a value with a context or state. Used to chain computations that carry additional information, such as error handling or logging, through function composition.",
+      "description_length": 327,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Deferred.Make.Applicative.Infix",
+      "description": "Applies a function to the value inside a context, sequences operations that transform values within a context, and combines two contexts by applying a function from one to a value in another. Works with monadic structures that carry an additional context type. Used to chain transformations in parsing or effectful computations where context preservation is required.",
+      "description_length": 367,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Deferred.Make.Monad.Core",
+      "description": "Provides monadic binding and lifting operations for computations that may fail, using a result type with error tracking. Works with a parameterized type that encapsulates either a successful value or an error. Enables sequential composition of error-prone operations, such as parsing input or handling external data sources.",
+      "description_length": 324,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Deferred.Make.Monad.Infix",
+      "description": "Performs monadic binding on a result type, taking a computation and a function that returns a new computation. Operates on types wrapped in a result container, preserving error context through chained operations. Enables sequential processing of computations that may fail, such as parsing or database queries.",
+      "description_length": 310,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Map.Result.Make.Monad",
+      "description": "Combines monadic operations for handling computations with potential failure, supporting sequential execution of error-prone steps using a result type that tracks success and error states. It allows chaining of operations that return values wrapped in contexts like option or result, enabling dependent processing where each step relies on the prior. For example, parsing a JSON string, validating its structure, and extracting a field can be composed as a single flow. The core type is ('a, 'b) t, with bind and map as primary operations for transforming and combining computations.",
+      "description_length": 583,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Map.Result.Make.Applicative",
+      "description": "Encapsulates computations within a context, allowing functions to be applied and composed while preserving the context. It handles operations like mapping, sequencing, and combining values within structured environments, such as optionals or error states. Examples include chaining parser steps, applying functions to wrapped values, and managing computations with side effects. Core operations include lifting functions, applying them within contexts, and merging contexts through function application.",
+      "description_length": 503,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Map.Result.Make.Infix",
+      "description": "Adds two elements of a type supporting concatenation, such as strings or lists, producing a new combined element. Works with any type that implements the `t` interface for binary operations. Used to efficiently merge sequences in parsing or data transformation tasks.",
+      "description_length": 267,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Map.Result.ListMonoid.Infix",
+      "description": "Concatenates two lists by appending the elements of the second list to the end of the first. Operates on lists of any type, allowing seamless combination of heterogeneous elements. Used to build extended lists from smaller components in data processing pipelines.",
+      "description_length": 263,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Map.Result.Accu.Infix",
+      "description": "Adds two elements of a type supporting concatenation, such as lists or strings, producing a new combined element. Operates on structures that implement the `t` type, enabling inline composition. Used to merge sequences in parsing or data transformation workflows.",
+      "description_length": 263,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Map.Result.Applicative.Core",
+      "description": "Performs function application and transformation on values wrapped in a context, supporting sequencing and lifting of operations. Operates on a generic type that pairs a value with a context, enabling composition of computations. Used to apply functions to values within a structured context, such as handling optional or error-prone computations.",
+      "description_length": 347,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Map.Result.Applicative.Infix",
+      "description": "Applies a function to the value inside a context, sequences operations by transforming results, and combines two contexts by applying a function from one to a value in another. Works with monadic structures that carry an additional context. Used to chain parsing steps, handle optional values with error tracking, and compose effectful computations.",
+      "description_length": 349,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Map.Result.Monad.Core",
+      "description": "Provides monadic binding and lifting operations for computations that may fail, using a result type with a fixed error variant. Works with the `( 'a, 'b ) t` type, representing computations that produce a value of type `'a` or an error of type `'b`. Enables sequential composition of error-prone operations, such as parsing input or handling external API responses.",
+      "description_length": 365,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Map.Result.Monad.Infix",
+      "description": "Performs monadic binding, chaining computations that produce results wrapped in a context. Operates on types with a monadic structure, such as option, result, or custom effectful types. Enables sequential processing of operations where each step depends on the successful outcome of the previous.",
+      "description_length": 296,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Result.Make.Applicative.Core",
+      "description": "Performs function application and transformation on values wrapped in a context, supporting sequencing and lifting of operations. Operates on a generic type that pairs a value with a context, enabling composition of computations. Used to apply functions to values within a structured context, such as handling optional or error-prone computations.",
+      "description_length": 347,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Result.Make.Applicative.Infix",
+      "description": "Applies a function to the value inside a context, sequences operations by transforming results, and combines two contexts by applying a function from one to a value in another. Works with tagged tuples representing computations with potential errors or side effects. Used to chain validation steps and combine parsed values from a parser combinator library.",
+      "description_length": 357,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Result.Make.Monad.Core",
+      "description": "Provides monadic binding and lifting operations for computations that may fail, using a result type with a fixed error variant. Works with the `( 'a, 'b ) t` type, where 'a is the success value and 'b is the error. Enables chaining of error-prone operations in a clean, sequential manner, such as parsing and validating user input.",
+      "description_length": 331,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Result.Make.Monad.Infix",
+      "description": "Performs monadic binding, chaining computations that produce results wrapped in a context. Operates on type `'a t` and propagates errors through the same context. Used to sequence effectful operations in a pipeline, such as parsing or stateful transformations.",
+      "description_length": 260,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Deferred.Make.Monad",
+      "description": "Encapsulates computations that may fail, using a result type that holds either a value or an error, enabling sequential execution of operations while preserving error context. Supports binding and lifting operations to chain error-prone tasks like parsing or database access. Functions take a computation and a transformation, returning a new computation in the same context. Examples include safely parsing user input or handling external API responses.",
+      "description_length": 454,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Deferred.Make.Applicative",
+      "description": "Encapsulates computations that carry additional context, enabling function application, sequencing, and combination within structured environments. It operates on a type that pairs values with context, supporting operations like mapping, binding, and lifting. This allows chaining of effectful or conditional operations, such as parsing with error tracking or stateful transformations. Examples include composing parsers that maintain state or handling computations that propagate context through function calls.",
+      "description_length": 512,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Deferred.Make.Infix",
+      "description": "Performs monadic binding, chaining operations that return wrapped values. Operates on types conforming to the `t` functor interface. Used to sequence effectful computations in a clean, readable way.",
+      "description_length": 198,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Deferred.Make.Core",
+      "description": "Provides a monadic interface for chaining computations, with `return` wrapping values into a context and `bind` sequencing operations that produce contextual results. Operates on a parameterized type `'a t` representing computations with context. Used to handle effectful operations in a structured, composable way, such as parsing or stateful transformations.",
+      "description_length": 360,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Deferred.Backend.Core",
+      "description": "Provides monadic operations for chaining computations, with `return` wrapping values into a context and `bind` sequencing operations that produce contextual results. Works with a parameterized type `'a t` representing computations in a context. Used to handle effectful operations like parsing, state management, or error propagation in a structured way.",
+      "description_length": 354,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Deferred.Backend.Infix",
+      "description": "Performs sequential composition of monadic operations, taking a value in a context and a function that returns another context. Operates on types conforming to the monad interface, such as option, result, or custom wrapped types. Used to chain computations that may fail or require context, like parsing nested JSON structures or handling asynchronous workflows.",
+      "description_length": 362,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Deferred.Applicative.Core",
+      "description": "Performs function application and transformation on wrapped values, supporting context preservation through a monadic-like structure. Operates on a type that pairs a value with a context, enabling sequencing and lifting of functions. Used to apply functions to values within a computational context while maintaining associated metadata.",
+      "description_length": 337,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Deferred.Applicative.Infix",
+      "description": "Applies a function to the value inside a context, sequences operations by transforming results, and combines two contexts by applying a function from one to a value in another. Works with monadic structures that carry an additional context type. Used to chain parsing steps, handle optional values with error tracking, and compose effectful computations.",
+      "description_length": 354,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Deferred.Monad.Core",
+      "description": "Provides monadic binding and lifting operations for computations that may fail, working with a result type that encapsulates either a value or an error. Allows chaining of operations where each step depends on the successful outcome of the previous one. Used to handle error-prone workflows such as parsing input or processing external data sources.",
+      "description_length": 349,
+      "index": 29,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Deferred.Monad.Infix",
+      "description": "Performs monadic binding, chaining computations that produce results wrapped in a context. Operates on type `'a t` and propagates errors through the same context. Used to sequence effectful operations in a pipeline, such as parsing or stateful transformations.",
+      "description_length": 260,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Map.Result.Make",
+      "description": "Combines elements of types supporting concatenation, such as strings or lists, using a binary operation defined by the `t` interface. It enables efficient merging of sequences in parsing or data transformation workflows. Operations include appending, merging, and combining elements in a type-safe manner. For example, it can concatenate two lists into one or merge string fragments into a single output.",
+      "description_length": 404,
+      "index": 31,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Map.Result.ListMonoid",
+      "description": "Combines lists through concatenation, enabling the seamless merging of elements from two input lists into a single unified list. Supports lists of any type, allowing flexible manipulation of heterogeneous data structures. Operations include appending, merging, and building complex lists from simpler ones. For example, it can combine a list of integers with a list of strings into a single list, or concatenate multiple sublists into a final result.",
+      "description_length": 450,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Map.Result.Accu",
+      "description": "Combines elements of types supporting concatenation, such as lists or strings, into a single unified structure through inline composition. It operates on values of type `t`, allowing seamless merging of sequences during parsing or data processing. This enables tasks like concatenating parsed tokens or building complex data structures incrementally. For example, it can merge multiple string fragments or append lists during transformation pipelines.",
+      "description_length": 451,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Map.Result.Monad",
+      "description": "Provides monadic operations for chaining computations that may fail, using a result type with a fixed error variant to represent success or failure. Supports sequential composition of operations, allowing dependent steps to proceed only if prior steps succeed, and handles contexts like option and result. Examples include parsing input, handling API responses, and processing data with error recovery. Operations include binding, lifting, and chaining across effectful computations.",
+      "description_length": 483,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Map.Result.Applicative",
+      "description": "Encapsulates computations within a context, allowing functions to be applied and composed while preserving the context. It handles operations like mapping, sequencing, and combining values within structured environments, such as optional or error-prone data. It enables chaining of parsing steps, transforming results, and applying functions across contexts. For example, it can apply a function to a value inside an option, sequence multiple error-prone operations, or combine two contexts using a function.",
+      "description_length": 508,
+      "index": 35,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Map.Result.Infix",
+      "description": "Provides monadic binding and applicative operations for composing computations that carry error or accumulation contexts. Works with monadic and applicative structures that encapsulate values alongside error or accumulation states. Enables chaining of error-aware transformations and combining results from multiple computations.",
+      "description_length": 329,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Traversable.Make1.Core",
+      "description": "Provides monadic operations for chaining computations, including lifting values into a context and binding subsequent actions to results. Works with a parameterized type 'a t to encapsulate values and computations. Used to sequence I/O operations, handle optional values, or manage state transformations in a structured way.",
+      "description_length": 324,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Traversable.Make1.Infix",
+      "description": "Performs monadic binding, chaining operations that return wrapped values. Operates on types conforming to the `t` functor interface. Used to sequence effectful computations in a clean, readable manner.",
+      "description_length": 201,
+      "index": 38,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Traversable.Make2.Core",
+      "description": "Provides monadic binding and lifting operations for computations that may fail, using a result type with error tracking. Works with a parameterized type that encapsulates either a success value or an error. Enables sequential composition of error-prone operations, such as parsing input or handling external data sources.",
+      "description_length": 321,
+      "index": 39,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Traversable.Make2.Infix",
+      "description": "Performs monadic binding, chaining computations that produce results wrapped in a context. Operates on type `'a t` and propagates errors through the `t` structure. Used to sequence database queries that may fail, handling errors consistently between steps.",
+      "description_length": 256,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Foldable.Make1.Core",
+      "description": "Provides monadic operations for chaining computations, with `return` wrapping values into a context and `bind` sequencing operations that produce contextual results. Works with a parameterized type `'a t` representing computations in a context. Used to handle effectful operations like parsing, state management, or error propagation in a structured way.",
+      "description_length": 354,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Foldable.Make1.Infix",
+      "description": "Performs monadic binding, chaining operations that return wrapped values. Works with any type that implements the `t` monadic interface. Enables sequential computation in contexts like parsing or stateful transformations.",
+      "description_length": 221,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Foldable.Make2.Core",
+      "description": "Provides monadic binding and lifting operations for computations that may fail, working with a result type that encapsulates either a value or an error. Allows chaining of operations where each step depends on the successful outcome of the previous one. Used to handle error-prone workflows such as parsing input or processing external data sources.",
+      "description_length": 349,
+      "index": 43,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Foldable.Make2.Infix",
+      "description": "Performs monadic binding, chaining computations that produce results wrapped in a context. Operates on type `'a t` and propagates errors through the `b` type parameter. Used to sequence operations in error-prone workflows, such as parsing or stateful transformations.",
+      "description_length": 267,
+      "index": 44,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Applicative.Make1.Core",
+      "description": "Applies a function to values within a context, transforms elements using a given function, and lifts a value into a context. It operates on a generic container type that wraps values. Used to sequence computations and handle values in a structured way, such as applying a function to a list of results or wrapping a single value for further processing.",
+      "description_length": 352,
+      "index": 45,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Applicative.Make1.Infix",
+      "description": "Provides lifted function application and sequencing for functorial structures, enabling composition of functions over wrapped values. Operates on type constructors that support mapping and sequencing, such as option, list, and result. Allows for concise transformation and combination of values in contexts like parsing, error handling, and asynchronous computations.",
+      "description_length": 367,
+      "index": 46,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Applicative.Make2.Core",
+      "description": "Performs function application and transformation on values wrapped in a context, supporting sequencing and lifting of operations. Operates on a generic type that pairs a value with a context, enabling composition of computations. Used to apply functions to values within a structured context, such as handling optional or error-prone computations.",
+      "description_length": 347,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Applicative.Make2.Infix",
+      "description": "Applies a function to the value inside a context, sequences operations that transform values within a context, and combines two contexts by applying a function from the first to the value of the second. Works with monadic structures that carry an additional context, such as error or state. Used to chain computations that may fail or require shared state, like parsing or effectful operations.",
+      "description_length": 394,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Monoid.Make.Infix",
+      "description": "Combines two K.t values by appending their contents, preserving the structure of the underlying data. Operates on values of type 'a K.t, which represent ordered collections with specific traversal semantics. Used to concatenate sequences in a way that maintains their original order and integrity.",
+      "description_length": 297,
+      "index": 49,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Option.Applicative.Core",
+      "description": "Applies a function to values within a context, transforms elements using a given function, and lifts a value into a context. It operates on a generic container type that wraps values. Used to sequence computations and handle values in a structured way, such as applying a function to a list of results or wrapping a single value for further processing.",
+      "description_length": 352,
+      "index": 50,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Option.Applicative.Infix",
+      "description": "Provides lifted function application and sequencing for functorial structures, enabling composition of functions over wrapped values. Operates on type constructors that support functorial mapping and applicative behavior. Allows for concise transformation and combination of values within contexts like option, list, or result.",
+      "description_length": 327,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Option.Monad.Core",
+      "description": "Provides monadic operations for chaining computations, with `return` wrapping values into a context and `bind` sequencing operations that produce contextual results. Works with the `Kernel.t` type, which encapsulates computations that may carry additional state or effects. Used to manage sequential workflows in systems requiring explicit control over computation flow, such as parsing or stateful transformations.",
+      "description_length": 415,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Option.Monad.Infix",
+      "description": "Performs sequential composition of kernel operations, taking a value wrapped in a kernel and a function that transforms it into another kernel. Operates on values of type 'a Kernel.t and returns values of type 'b Kernel.t. Used to chain asynchronous or effectful computations in a monadic style.",
+      "description_length": 295,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Result.Make.Monad",
+      "description": "Provides monadic operations for sequencing computations that may fail, using a result type with a fixed error variant. Supports chaining of error-prone steps, such as parsing user input, by binding values of type `'a t` and propagating errors through the computation pipeline. Allows lifting of functions into the monadic context, enabling clean composition of effectful or conditional operations. For example, it can sequentially validate and transform data, or handle stateful computations with automatic error propagation.",
+      "description_length": 525,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Result.Make.Applicative",
+      "description": "Encapsulates computations within a context, allowing functions to be applied and composed while preserving the structure of the context. It handles operations on tagged tuples, enabling error propagation, validation chaining, and parser combination. Key operations include mapping, sequencing, and combining contexts using functions. For example, it can apply a transformation to a parsed value or combine two error-prone computations into a single result.",
+      "description_length": 456,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Result.Make.Infix",
+      "description": "Adds two elements of a type supporting concatenation, such as lists or strings, producing a new combined element. Works with any type that implements the `t` interface and defines the `++` operation. Used to merge sequences in parsing or data transformation tasks.",
+      "description_length": 264,
+      "index": 56,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Result.ListMonoid.Infix",
+      "description": "Concatenates two lists by appending the elements of the second list to the end of the first. Operates on lists of any type, allowing seamless combination of heterogeneous or homogeneous elements. Used to build extended sequences in data processing pipelines.",
+      "description_length": 258,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Result.Accu.Infix",
+      "description": "Adds two elements of a type supporting concatenation, such as strings or lists, producing a new combined element. Works with any type that implements the `t` interface and defines the `++` operation. Used to efficiently merge sequences in parsing or data transformation tasks.",
+      "description_length": 276,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Result.Applicative.Core",
+      "description": "Performs function application and transformation on values wrapped in a context, supporting sequencing and lifting of operations. Operates on a generic type that pairs a value with a context, enabling composition of computations. Used to apply functions to values within a structured context, such as handling optional or error-prone computations.",
+      "description_length": 347,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Result.Applicative.Infix",
+      "description": "Applies a function to the value inside a context, sequences operations that transform values within a context, and combines two contexts by applying a function from one to a value in another. Works with monadic structures that carry an additional context type. Used to chain transformations in parsing or effectful computations where context preservation is critical.",
+      "description_length": 367,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Result.Monad.Core",
+      "description": "Provides monadic binding and lifting operations for computations that may fail, using a result type with a fixed error variant. Works with the `( 'a , 'b ) t` type, where 'a is the success value and 'b is the error. Enables chaining of error-prone operations in a clean, sequential manner, such as parsing and validating input data.",
+      "description_length": 332,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Result.Monad.Infix",
+      "description": "Performs monadic binding, chaining computations that produce results wrapped in a context. Operates on types parameterized with a result and an error, typically used for error handling. Enables sequential processing of operations where each step depends on the successful outcome of the previous.",
+      "description_length": 296,
+      "index": 62,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Monad.Make1.Core",
+      "description": "Provides monadic operations for chaining computations, with `return` wrapping values into a context and `bind` sequencing operations that produce context-aware results. Works with the `K.t` type, a monadic container. Used to handle effectful computations in a structured, composable way, such as parsing or stateful transformations.",
+      "description_length": 332,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Monad.Make1.Infix",
+      "description": "Performs monadic binding, chaining computations that return values wrapped in a context. Operates on values of type 'a K.t and functions transforming 'a into 'b K.t. Used to sequence effectful operations in a pipeline, such as parsing followed by validation.",
+      "description_length": 258,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Monad.Make2.Core",
+      "description": "Provides monadic operations for chaining computations that may fail, using a result type. Works with the K.t type, which represents computations returning either a value or an error. Used to handle error-prone operations like parsing or file I/O in a structured, sequential manner.",
+      "description_length": 281,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Monad.Make2.Infix",
+      "description": "Performs monadic binding, taking a computation that may fail and a function to transform its result into another computation. Operates on type `('a, 'b) K.t`, representing computations with error tracking. Used to chain error-prone operations, such as parsing input and validating results.",
+      "description_length": 289,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Deferred.Make",
+      "description": "Encapsulates effectful computations through a monadic structure, allowing values to be wrapped with `return` and chained with `bind` over a parameterized type `'a t`. Supports sequential execution of operations that produce contextual results, enabling structured handling of parsing, state, or other side-effecting processes. Operations are defined on types implementing the `t` functor interface, ensuring compatibility and composability. For example, it can link a series of parsers or state transformations into a single, coherent workflow.",
+      "description_length": 544,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Map.Result",
+      "description": "Combines sequenceable types into a unified structure for incremental building and merging, supports monadic error handling and context-aware computation, and enables chaining of error-aware and effectful operations. It works with values of type `t`, offers binding, lifting, and sequencing, and handles tasks like parsing, data transformation, and error recovery. Operations include merging lists or strings, chaining failed computations, and applying functions within optional or error contexts. Examples include concatenating parsed tokens, processing API responses with fallbacks, and transforming values inside nested contexts.",
+      "description_length": 631,
+      "index": 68,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Traversable.Make1",
+      "description": "Encapsulates values and effectful computations using a parameterized type 'a t, enabling structured sequencing of operations through monadic binding and lifting. Supports chaining of I/O, optional values, and state transformations by binding results of wrapped computations. Allows for clean composition of actions that return wrapped values, ensuring predictable flow and error handling. Example: chaining a series of database queries where each step depends on the previous result.",
+      "description_length": 483,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Traversable.Make2",
+      "description": "Encapsulates computations that may fail, using a parameterized result type to represent success or error states. Supports sequential composition of operations through monadic binding, allowing error propagation and handling in workflows like parsing or database queries. Provides operations on `'a t` to chain and lift computations within a context that tracks failures. Enables reliable processing of error-prone tasks by ensuring errors are consistently managed across multiple steps.",
+      "description_length": 486,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Foldable.Make1",
+      "description": "Encapsulates monadic computation pipelines, allowing values to be wrapped in a context and sequentially processed using binding operations. Operates on parameterized types `'a t`, enabling structured handling of effectful processes such as parsing or state transitions. Supports chaining of operations that produce contextual results, facilitating error handling and state management. Examples include parsing input streams or managing mutable state through a sequence of context-aware steps.",
+      "description_length": 492,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Foldable.Make2",
+      "description": "Combines monadic operations for error-handling and context-aware computation, enabling sequential execution of failure-prone tasks. It works with type `'a t`, supporting binding and lifting to manage results wrapped in a context or error state. Operations allow chaining where each step depends on the success of the prior, such as parsing structured data or transforming stateful inputs. Examples include safely parsing nested JSON fields or processing user input with cumulative error tracking.",
+      "description_length": 496,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Applicative.Make1",
+      "description": "Provides monadic operations for chaining computations, including lifting values into a context and binding functions that produce new contexts. Works with a parameterized type 'a t representing a computational context. Used to sequence I/O operations and handle side effects in a structured way.",
+      "description_length": 295,
+      "index": 73,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Applicative.Make2",
+      "description": "Provides monadic operations for chaining computations that may fail, including lifting values into the context and binding functions that produce new computations. Works with a parameterized type that represents computations yielding a value or an error. Used to handle sequential operations where each step depends on the success of the previous one, such as parsing or validation pipelines.",
+      "description_length": 392,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Monoid.Make",
+      "description": "Adds two values of the same type using a binary operation, supporting any type that implements the required interface. Works with a generic type 'a t, enabling operations on structured data. Used to combine configuration settings or accumulate results in a monoidal context.",
+      "description_length": 274,
+      "index": 75,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Option.Kernel",
+      "description": "Provides monadic operations for chaining computations that may fail, including binding a function to the value inside an option and returning a wrapped value. Works with the option type to handle presence or absence of values explicitly. Used to safely compose database queries that may not find results or process user input with optional fields.",
+      "description_length": 347,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Option.Monad",
+      "description": "Encapsulates monadic computation sequencing, allowing values of type 'a Kernel.t to be transformed and combined through `bind`, enabling structured handling of stateful or effectful operations. Supports chaining of asynchronous or contextual computations, with `return` embedding values into the kernel context. Examples include parsing pipelines and state transformations where each step depends on the previous result. Operations maintain context across steps, ensuring predictable flow in complex workflows.",
+      "description_length": 510,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Option.Applicative",
+      "description": "Encapsulates function application and value transformation within contextual wrappers, enabling operations on structures like option, list, and result. Supports lifting values into contexts, applying functions to wrapped elements, and sequencing computations while preserving context. It allows for chaining operations, such as mapping a function over a list of options or combining multiple wrapped values. Examples include safely applying a function to a value inside an option or transforming elements of a list while maintaining the list structure.",
+      "description_length": 552,
+      "index": 78,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Option.Infix",
+      "description": "Performs monadic binding, applicative mapping, and function application within effectful contexts. Operates on types like Kernel.t and Applicative.t to sequence computations and lift functions. Enables concise chaining of asynchronous or effectful operations in a functional style.",
+      "description_length": 281,
+      "index": 79,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Result.Make",
+      "description": "Combines elements of types supporting concatenation, such as lists or strings, using a `++` operation to produce a unified result. It operates on values conforming to the `t` interface, enabling seamless merging of sequences. This allows for building complex data structures by appending smaller components. For example, it can concatenate parsed tokens into a full expression or combine string fragments into a complete message.",
+      "description_length": 429,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Result.ListMonoid",
+      "description": "Combines list operations into a unified framework for manipulating sequences. Supports concatenation, mapping, and folding over lists, with functions that handle arbitrary element types. For example, it can merge multiple data segments or transform elements in bulk. Operations are designed for efficient sequence composition and processing.",
+      "description_length": 341,
+      "index": 81,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Result.Accu",
+      "description": "Combines elements of types supporting concatenation, such as strings or lists, using the `++` operator to produce a unified result. It operates on values of type `t` and enables efficient sequence merging during parsing or data processing. For example, it can concatenate two list segments or combine string fragments. This functionality is particularly useful when building complex data structures incrementally.",
+      "description_length": 413,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Result.Monad",
+      "description": "Provides monadic operations for chaining computations that may fail, using a result type with a fixed error variant. It supports sequential execution of operations where each step depends on the success of the prior, handling errors gracefully. The core type is ('a, 'b) t, allowing for lifting and binding of functions that return results. For example, it can be used to parse and validate input data step by step, ensuring errors are propagated and handled appropriately.",
+      "description_length": 473,
+      "index": 83,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Result.Applicative",
+      "description": "Encapsulates computations within a context, allowing functions to be applied and composed while preserving contextual information. It handles operations like mapping, sequencing, and combining values within structured contexts, such as optional or error-prone values. It enables chaining transformations, like parsing nested data or handling multiple error states. For example, it can apply a function to a value inside an option or combine two error-prone computations with a given function.",
+      "description_length": 492,
+      "index": 84,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Result.Infix",
+      "description": "Provides monadic binding and applicative operations for composing computations that carry error or accumulation contexts. Works with monadic and applicative structures that encapsulate values alongside error or accumulation states. Enables chaining of error-aware transformations and combining results from multiple computations with shared error handling.",
+      "description_length": 356,
+      "index": 85,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Monad.Make1",
+      "description": "Provides monadic operations for chaining computations, including lifting values into a context and binding functions that produce new contexts. Works with a parameterized type 'a t representing a computational context. Used to sequence I/O operations and handle side effects in a structured way.",
+      "description_length": 295,
+      "index": 86,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Monad.Make2",
+      "description": "Provides monadic operations for chaining computations that may fail, including lifting values into the context and binding subsequent actions. Works with a type constructor that represents computations producing a value of type 'a or an error of type 'b. Used to handle sequential operations where each step depends on the success of the previous, such as parsing structured data with error tracking.",
+      "description_length": 400,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Deferred.Backend",
+      "description": "Encapsulates effectful computations through a parameterized type `'a t`, enabling structured handling of operations like parsing, state changes, and error propagation. Supports sequential execution of context-aware functions using `bind`, allowing for chained operations on types such as option or result. Enables complex workflows like nested JSON parsing or asynchronous task composition by linking computations that produce contextual results. Provides `return` to lift values into a context and `bind` to compose operations that depend on prior results.",
+      "description_length": 557,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Deferred.Monad",
+      "description": "Encapsulates computations that may fail, offering binding and lifting operations to chain steps that depend on successful outcomes, using a result type that holds either a value or an error. It supports sequencing of effectful operations on values of type `'a t`, propagating errors through the computation pipeline. For example, it can be used to parse a series of input fields, where each step depends on the previous one succeeding. Operations include binding, lifting, and error propagation across a sequence of transformations.",
+      "description_length": 532,
+      "index": 89,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Deferred.Applicative",
+      "description": "Encapsulates values with contextual information, allowing functions to be applied and transformed while preserving and propagating context. Supports sequencing, lifting, and combining operations on structures that hold values alongside additional metadata. Enables chaining of parsing steps, handling of optional or error-prone computations, and composition of effectful workflows. Examples include applying a function to a parsed input, combining two optional values with error tracking, and transforming results within a context-aware computation.",
+      "description_length": 549,
+      "index": 90,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Deferred.Infix",
+      "description": "Performs monadic binding, function application, and sequencing on a parameterized type representing computations with a shared error or context. Applies functions to values within the structure, combines computations, and transforms results while preserving the context. Used to chain asynchronous operations, handle optional values, and manage error-prone computations in a compositional way.",
+      "description_length": 393,
+      "index": 91,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Applicative.Core",
+      "description": "Performs function application and transformation on values wrapped in a context, supporting sequencing and lifting of operations. Operates on a generic type that pairs a value with a context, enabling composition of computations. Used to apply functions to values within a structured context, such as handling optional or error-prone computations.",
+      "description_length": 347,
+      "index": 92,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Applicative.Infix",
+      "description": "Applies a function to the value inside a context, sequences operations that transform values within a context, and combines two contexts by applying a function from one to a value in another. Works with monadic structures that carry an additional context value. Used to chain transformations in parsing or effectful computations where context preservation is required.",
+      "description_length": 368,
+      "index": 93,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Monoid.Infix",
+      "description": "Adds two elements of a type supporting concatenation, such as strings or lists, producing a new combined element. Works with any type that implements the `t` interface and defines the `++` operator. Used to efficiently merge sequences in parsing or data transformation tasks.",
+      "description_length": 275,
+      "index": 94,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Monad.Core",
+      "description": "Provides monadic binding and lifting operations for computations that may fail, working with a result type that encapsulates either a value or an error. Allows chaining of operations where each step depends on the successful outcome of the previous one. Used to handle error-prone workflows such as parsing input or processing external data sources.",
+      "description_length": 349,
+      "index": 95,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Monad.Infix",
+      "description": "Performs monadic binding, chaining computations that produce results wrapped in a context. Operates on types with a monadic structure, such as option, result, or custom effectful types. Enables sequential processing of operations where each step depends on the successful outcome of the previous.",
+      "description_length": 296,
+      "index": 96,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Applicative",
+      "description": "Encapsulates computations within a context, allowing functions to be applied and composed while preserving contextual information. It handles operations like mapping, sequencing, and combining values within structured contexts, such as optional or error-bearing types. Functions can be lifted into the context, enabling chained transformations without unwrapping the underlying value. For example, it can apply a parsing function to a result while maintaining error state or combine two optional values using a binary function.",
+      "description_length": 527,
+      "index": 97,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Deferred",
+      "description": "Encapsulates effectful, error-prone, or context-aware computations using a parameterized type `'a t`, supporting sequential execution, value lifting, and error propagation through operations like `bind`. It enables chaining of dependent steps, such as parsing nested JSON, handling optional values, or composing asynchronous tasks, while preserving contextual information throughout the workflow. Functions can be applied to wrapped values, and computations can be combined to build complex, reliable pipelines. Examples include parsing input fields with error tracking, transforming results within a context, and composing asynchronous operations.",
+      "description_length": 648,
+      "index": 98,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Map",
+      "description": "Encapsulates sequenceable types into a flexible structure for building and merging data incrementally, supporting error handling and context-aware operations. It operates on values of type `t`, enabling binding, lifting, and sequencing to manage computations with optional or error states. Tasks such as parsing, data transformation, and API processing are streamlined through chaining and fallback mechanisms. For example, it can concatenate parsed tokens, handle failed API requests with defaults, or apply functions within nested contexts.",
+      "description_length": 542,
+      "index": 99,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Monad",
+      "description": "Provides operations to sequence computations that carry context, including lifting values into the context and chaining functions that produce new context-aware results. Works with a parameterized type that encapsulates values and an associated context. Used to manage side effects in a controlled way, such as handling optional values or accumulating errors during a computation.",
+      "description_length": 380,
+      "index": 100,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Monoid",
+      "description": "Combines elements of types supporting concatenation, such as strings or lists, using a defined `++` operator to produce a unified result. It operates on values of type `t` and enables efficient sequence merging in processing workflows. For example, it can concatenate multiple string fragments or merge list segments during data parsing. This functionality is essential for building composite structures from smaller, compatible components.",
+      "description_length": 440,
+      "index": 101,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics.Option",
+      "description": "Combines monadic and applicative operations for handling optional, contextual, and effectful computations, supporting chaining, transformation, and combination of values within wrapped types. It provides binding, mapping, and lifting capabilities across structures like option, list, and kernel, enabling safe and structured processing of uncertain or stateful results. Users can compose database queries, parse pipelines, or transform lists of optional values while preserving context and handling failures gracefully. Examples include safely applying a function to an optional input or sequencing asynchronous steps with predictable state flow.",
+      "description_length": 646,
+      "index": 102,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Result",
+      "description": "Combines values of type `t` using `++` to merge sequences like strings or lists, enabling efficient data assembly. Supports monadic operations on (`'a`, `'b`) t for failure-aware computation chains, allowing stepwise validation and error propagation. Incorporates context-aware transformations for applying functions within optional or error-prone structures, facilitating nested parsing and error handling. Enables complex workflows such as incremental data building, stepwise validation, and combining error-prone computations with shared handling logic.",
+      "description_length": 556,
+      "index": 103,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Traversable",
+      "description": "Applies a function that returns a monadic value to each element of a list, accumulating results in a monad. Transforms a list of monadic values into a monadic list. Used for processing collections while maintaining context, such as error handling or asynchronous operations.",
+      "description_length": 274,
+      "index": 104,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Basics.Foldable",
+      "description": "Performs left-associative folding over a container, accumulating values of type 'a while processing elements of type 'b. Operates on a parameterized container type ('a, 'b) t, allowing traversal and aggregation of structured data. Used to compute summaries or transformations of list-like structures, such as summing elements or building strings from sequences.",
+      "description_length": 361,
+      "index": 105,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "ocaml-basics",
+      "description": "Provides functions for manipulating lists with custom folding, filtering, and mapping operations. Works with polymorphic lists and recursive data structures. Enables transformation of nested list formats and extraction of specific elements from complex list hierarchies.",
+      "description_length": 270,
+      "index": 106,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Basics",
+      "description": "Encapsulates context-aware computations with support for sequencing, lifting, and combining values within structured types like option, error, or asynchronous workflows. It provides operations such as bind, map, and ++ to manage transformations, error propagation, and data merging across optional or effectful values. Users can chain parsing steps, handle failed API calls with defaults, or concatenate string fragments while preserving context. Examples include parsing nested JSON, transforming lists of optional values, and building composite data structures incrementally.",
+      "description_length": 577,
+      "index": 107,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 111,
+    "meaningful_modules": 108,
+    "filtered_empty_modules": 3,
+    "retention_rate": 0.972972972972973
+  },
+  "statistics": {
+    "max_description_length": 648,
+    "min_description_length": 198,
+    "avg_description_length": 379.2037037037037,
+    "embedding_file_size_mb": 0.38547801971435547
+  }
+}

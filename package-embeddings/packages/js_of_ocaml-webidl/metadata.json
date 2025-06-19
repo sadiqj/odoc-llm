@@ -1,0 +1,168 @@
+{
+  "package": "js_of_ocaml-webidl",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 21,
+  "creation_timestamp": "2025-06-18T16:36:52.009382",
+  "modules": [
+    {
+      "module_path": "Js_of_ocaml_webidl.Runtime.Union.Unsafe",
+      "description": "Extracts values from a tagged union structure, specifically retrieving the first or second element based on its type. Operates on a custom type wrapped in Js_of_ocaml's JavaScript interoperability layer. Used to safely access fields in JavaScript objects with known type annotations.",
+      "description_length": 283,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_webidl.Runtime.Promise",
+      "description": "Provides asynchronous resolution and rejection of values through a `t` type, supporting chaining with `_then` and error handling via `_catch`. Operates on JavaScript promises using `Js_of_ocaml.Js.t` and array structures of promises for concurrent execution. Enables race conditions with `race` and aggregation of multiple promises with `all`.",
+      "description_length": 343,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_webidl.Runtime.Lwt_promise",
+      "description": "Converts a JavaScript Promise to an Lwt promise and vice versa, enabling asynchronous control flow between JavaScript and OCaml. Operates on JavaScript Promises and Lwt promises, facilitating integration with web APIs and OCaml concurrency. Used to bridge event-driven JavaScript code with Lwt-based OCaml logic in web applications.",
+      "description_length": 332,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_webidl.Runtime.Union",
+      "description": "Provides safe access to elements within a tagged union by extracting the first or second value based on its type, leveraging JavaScript interoperability. Supports custom types that represent structured data from JavaScript objects. Allows developers to reliably retrieve and manipulate specific fields without runtime errors. For example, it can extract a string from a union that may contain either a string or an object.",
+      "description_length": 422,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Webidl_syntax.Parser_extend.Make",
+      "description": "Provides functions to control build processes with strict mode enforcement. Operates on boolean flags and build configurations. Used to ensure error-free compilation by halting on warnings.",
+      "description_length": 189,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Webidl_syntax.Parser.Make",
+      "description": "Provides a way to enforce strict evaluation of build steps by checking a boolean flag. Operates on build configurations and execution states. Used to ensure dependencies are fully resolved before proceeding with compilation.",
+      "description_length": 224,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_webidl.Bindings",
+      "description": "Creates and manages parsed web IDL data, providing access to generated interface definitions and error logs. Processes data structures derived from IDL specifications, extracting MLI and ML code fragments. Used to generate type-safe bindings from web interface descriptions.",
+      "description_length": 274,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Js_of_ocaml_webidl.Runtime",
+      "description": "manages asynchronous operations through a `t` type, enabling chaining, error handling, and concurrent execution of JavaScript promises, with support for aggregating and racing multiple promises. facilitates bidirectional conversion between JavaScript and Lwt promises, allowing seamless integration of web API calls with OCaml's concurrency model. provides type-safe access to tagged unions, enabling reliable extraction of specific values from structured JavaScript data. for example, it can safely retrieve a string from a union type that may contain either a string or an object.",
+      "description_length": 582,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Webidl_syntax.Ast",
+      "description": "This module enables bidirectional serialization and deserialization of OCaml values into and out of S-expressions, focusing on custom abstract syntax tree (AST) types, domain-specific constructs like nullable, union, and extended types, and web IDL-related structures such as interfaces, attributes, and dictionaries. It handles hierarchical data representations, including static members, read-only members, and collection types (maplike, setlike), with consistent conversion patterns for structured programming language definitions and type systems. Use cases include modeling complex type relationships, converting between OCaml and S-expression formats for data exchange, and supporting tools for parsing or generating IDL specifications.",
+      "description_length": 742,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Webidl_syntax.Keyword",
+      "description": "This module provides functions that generate and return predefined string literals representing programming language keywords, data types, and syntax elements, such as \"boolean\", \"serializer\", and parentheses. It operates on abstract syntax tree nodes and code elements, offering consistent identifiers for compiler or parser workflows. Use cases include parsing, serialization, and syntax construction, with specific applications in handling metadata, object-oriented patterns, and language-specific constructs.",
+      "description_length": 512,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Webidl_syntax.Lexer",
+      "description": "Provides functions to read and skip tokens from a lexing buffer, including handling comments and mapping string representations to token values. Operates with lexing buffers, token tables, and integer state markers. Used to parse input streams and extract structured token data during lexical analysis.",
+      "description_length": 302,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Webidl_syntax.Parser",
+      "description": "Enforces strict evaluation of build steps through a boolean flag, operating on build configurations and execution states to ensure dependencies are resolved before compilation. Key data types include build configurations and execution states, with operations that check and enforce evaluation policies. This allows developers to control the order and completeness of build processes. For example, it can prevent partial builds by halting execution until all dependencies are fully processed.",
+      "description_length": 491,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Webidl_syntax.Parser_extend",
+      "description": "Controls build processes by enforcing strict mode through boolean flags and configuration settings, halting compilation on warnings. Manages build states and validation checks using typed configurations. Performs actions such as aborting builds, logging warnings, and validating input parameters. Enables precise control over compilation flow and error handling.",
+      "description_length": 362,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Webidl_syntax.Tokens",
+      "description": "Provides functions to parse, compare, and transform tokens, including checking for keyword status and extracting associated values. Works with a discriminated union type representing lexical elements such as identifiers, operators, and literals. Used to process input streams during compiler front-end stages, enabling accurate syntax analysis.",
+      "description_length": 344,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Webidl.Ast_to_data",
+      "description": "The module provides a foundation for processing abstract syntax trees by defining core data structures and conversion utilities. It includes types such as `ast` and `data`, along with operations to traverse and transform tree nodes. Functions like `convert` and `map` enable manipulation of tree structures into alternative representations. It serves as a base for extending syntax tree analysis and transformation workflows.",
+      "description_length": 425,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Webidl.Data",
+      "description": "The module provides basic data handling capabilities through simple type definitions and operations. It includes a `t` type for representing data structures and functions for creating and inspecting instances. Users can construct empty data elements and perform basic checks on their properties. Example uses include initializing data containers and verifying their state.",
+      "description_length": 372,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Webidl.Parse",
+      "description": "The module provides a foundation for parsing operations through a set of specialized components. It includes types for representing parsed structures and functions for constructing and manipulating these structures. Operations such as token recognition, syntax validation, and input transformation are supported. Examples include parsing arithmetic expressions, validating input formats, and generating abstract syntax trees.",
+      "description_length": 425,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "js_of_ocaml-webidl",
+      "description": "Generates JavaScript bindings from WebIDL definitions using a custom parser and code generator. Processes interface definitions and type signatures to produce OCaml-compatible modules. Enables integration of WebGPU APIs into OCaml projects by translating low-level JavaScript interfaces into typed OCaml abstractions.",
+      "description_length": 317,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Js_of_ocaml_webidl",
+      "description": "parses and manages web IDL specifications, generating type-safe interface definitions and code fragments while tracking errors. it handles asynchronous operations via a `t` type, supporting promise chaining, error recovery, and concurrency, with bidirectional conversion between JavaScript and Lwt promises. it enables safe extraction of specific values from tagged unions, such as retrieving a string from a type that may contain a string or an object. this allows for robust integration of web APIs into OCaml applications with precise control over asynchronous behavior and data handling.",
+      "description_length": 591,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Webidl_syntax",
+      "description": "handles bidirectional conversion between OCaml values and S-expressions, with support for complex AST structures, web IDL elements, and collection types; provides string literals for language constructs, token parsing and skipping, and build process enforcement with strict evaluation and error handling; key data types include AST nodes, tokens, build configurations, and execution states; examples include converting IDL definitions to S-expressions, generating syntax elements for parsers, and ensuring complete dependency resolution during builds.",
+      "description_length": 551,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Webidl",
+      "description": "defines core data structures and transformation utilities for working with abstract syntax trees, including `ast` and `data` types, and functions like `convert` and `map` for node manipulation. it supports basic data handling through a `t` type, enabling creation and inspection of data elements. it also includes parsing capabilities, with types and functions for token recognition, syntax validation, and tree generation. users can process arithmetic expressions, validate input formats, and transform tree structures into alternative representations.",
+      "description_length": 553,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 24,
+    "meaningful_modules": 21,
+    "filtered_empty_modules": 3,
+    "retention_rate": 0.875
+  },
+  "statistics": {
+    "max_description_length": 742,
+    "min_description_length": 189,
+    "avg_description_length": 411.23809523809524,
+    "embedding_file_size_mb": 0.0767507553100586
+  }
+}

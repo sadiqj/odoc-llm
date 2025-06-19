@@ -1,0 +1,91 @@
+{
+  "package": "merlin-extend",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 10,
+  "creation_timestamp": "2025-06-18T16:31:33.438287",
+  "modules": [
+    {
+      "module_path": "Extend_protocol.Reader",
+      "description": "Loads a buffer into an internal representation and parses it into an abstract syntax tree. Provides methods to analyze code structure, extract identifiers, and generate completion information based on cursor position. Supports line-by-line parsing and pretty-printing of both parse and outcome trees.",
+      "description_length": 300,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Extend_main.Description",
+      "description": "Creates a structured representation of a software component with a name and version. Operates on string-based identifiers and returns a typed value encapsulating these attributes. Used to generate versioned object identifiers for configuration management and dependency tracking.",
+      "description_length": 279,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Extend_main.Utils",
+      "description": "Prints messages to the console for notification and debugging purposes. Accepts string inputs to convey information or trace execution flow. Used to alert developers of key events during runtime or to log intermediate state changes.",
+      "description_length": 232,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Extend_main.Reader",
+      "description": "Provides operations to construct a reader instance from a module conforming to the Extend_protocol.Reader.V0 signature. Works with the abstract type t, which encapsulates reader state and behavior. Used to initialize a reader for processing structured data streams in a protocol-specific manner.",
+      "description_length": 295,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Extend_main.Handshake",
+      "description": "Provides functions to retrieve a magic number string, access supported protocol versions, and negotiate a driver using input and output channels. Works with string, in_channel, out_channel, and a versions record type containing protocol version details. Used to establish communication protocols by validating initial handshake data and selecting compatible driver capabilities.",
+      "description_length": 378,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "merlin-extend",
+      "description": "Provides functions to integrate a custom parser with Merlin, including a functor for generating a binary from a reader implementation. Works with parser interfaces and abstract syntax tree representations. Used to add support for alternative syntaxes like Reason within the Merlin environment.",
+      "description_length": 293,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Extend_protocol",
+      "description": "Converts raw code input into structured representations, enabling analysis, navigation, and editing support. Processes buffers into abstract syntax trees, allowing extraction of symbols, code inspection, and intelligent completion. Supports incremental parsing and visualizing both original and transformed code structures. Enables tasks like finding variable declarations, generating auto-complete suggestions, and displaying parsed code in readable formats.",
+      "description_length": 459,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Extend_helper",
+      "description": "Provides functions to handle custom syntax extensions and attributes in OCaml ASTs, including generating syntax error nodes, adjusting location information for completion, and marking nodes for exclusion or focus during analysis. Works with Parsetree extensions, attributes, and location data to influence how Merlin processes code. Used to manage generated code annotations and improve accuracy in IDE features like autocompletion and error reporting.",
+      "description_length": 452,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Extend_driver",
+      "description": "Provides functions to start, stop, and query the capabilities of a driver process, and to handle reader requests with specific protocol responses. Operates on a stateful handle of type `t` and interacts with protocol-defined request and response types. Used to manage real-time data streaming and feature availability checks within a development environment.",
+      "description_length": 358,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Extend_main",
+      "description": "Encapsulates software components with named, versioned identifiers and supports console logging, reader initialization, and protocol negotiation. Operates on strings, channels, and abstract reader types to manage configuration, debugging, and data processing. Enables creation of versioned object IDs, logging of runtime events, and setup of protocol-specific data readers. Facilitates protocol validation through magic number checks and version negotiation using input and output channels.",
+      "description_length": 490,
+      "index": 9,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 10,
+    "meaningful_modules": 10,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 490,
+    "min_description_length": 232,
+    "avg_description_length": 353.6,
+    "embedding_file_size_mb": 0.03679084777832031
+  }
+}

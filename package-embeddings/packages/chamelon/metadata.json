@@ -1,0 +1,119 @@
+{
+  "package": "chamelon",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 14,
+  "creation_timestamp": "2025-06-18T16:34:10.788517",
+  "modules": [
+    {
+      "module_path": "Chamelon.Tag.Magic",
+      "description": "Provides operations to access and manipulate bitfield constants and tag-related values, including directory structure flags, inline data indicators, trailing markers, and invalid tag lists. Works with integer constants and Cstruct.t lists to represent low-level data structures. Used for parsing and validating binary formats with specific tagging and layout requirements.",
+      "description_length": 372,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Chamelon.Block.IdSet",
+      "description": "This module offers set operations for integer-based collections, including creation, modification, and querying through standard set theory principles. It handles integer sets and sequences, supporting ordered iteration (increasing or reverse) and transformations via predicates or mappings. Use cases include managing unique identifiers, filtering ranges, or processing ordered data structures efficiently.",
+      "description_length": 407,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Chamelon.Block",
+      "description": "manages integer-based collections with set operations, enabling creation, modification, and querying using set theory. It supports ordered iteration, transformations via mappings, and predicates, working with sets and sequences. Users can filter ranges, process ordered data, or manage unique identifiers efficiently. Operations include union, intersection, difference, and custom transformations.",
+      "description_length": 397,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Chamelon.Commit",
+      "description": "Provides functions to extract tags and entries from a commit structure, create new commits from filtered entry lists, and generate or parse commit data into Cstructs. Works with commit objects containing entry lists, CRC values, and XOR tags. Used to construct commits from prior commit data and serialize/deserialize commit content with specific offset and block size parameters.",
+      "description_length": 380,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Chamelon.Content",
+      "description": "Calculates the size of a content item, returning a tagged sum that indicates either a directory with byte and entry counts or a file with a size. It processes tuples containing a tag and a Cstruct buffer, interpreting the data based on the tag's type. This is used to determine the storage footprint of items in a file system representation.",
+      "description_length": 341,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Chamelon.Dir",
+      "description": "Provides functions to manipulate directory entries and block pairs, including extracting block pairs from entries, creating directory entries with specific targets, and converting between Cstruct and block pairs. Works with types like Entry.t, Tag.t, and int64 pairs to represent directory structures and links. Used to construct and interpret directory entries in file system operations, such as creating directories or resolving hard links.",
+      "description_length": 442,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Chamelon.Entry",
+      "description": "Provides functions to extract link information and entry metadata from tagged data structures. Operates on tuples of tag and Cstruct, supporting operations like compaction, byte counting, and serialization. Used to manage entry records in a storage system, including creating time entries and converting between in-memory representations and binary data.",
+      "description_length": 354,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Chamelon.File",
+      "description": "Handles low-level file chunk management and pointer operations, including inline and compressed (ctz) data encoding. Works with Cstruct.t, Tag.t, and unsigned 32-bit integers to manipulate file structures and metadata. Used for creating and parsing file blocks, calculating block indices, and extracting pointer information from binary data.",
+      "description_length": 341,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Chamelon.Superblock",
+      "description": "This module provides functions for accessing and modifying specific fields of a superblock data structure, such as version numbers, block sizes, and name/file limits, through structured getter and setter operations on `Cstruct.t` buffers. It also includes parsing, validation, and serialization capabilities, leveraging `Cstruct.t` and `Tag.t` to ensure data integrity and format consistency. These operations are critical for low-level file system management, enabling efficient manipulation of structured binary data in storage systems.",
+      "description_length": 538,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Chamelon.Tag",
+      "description": "Manages low-level bitfield and tag operations, enabling manipulation of integer constants and Cstruct.t lists to represent structured binary data. Supports directory flags, inline data markers, and invalid tag detection. Allows parsing and validation of binary formats by inspecting and modifying tag-based layouts. Examples include extracting flag values from bitfields and identifying trailing markers in data streams.",
+      "description_length": 420,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Kv.Make",
+      "description": "Provides pretty-printers for error and write error types. Manages block device interactions including disconnection, information retrieval, and reading/writing data using sector-based operations. Works with `t` for device handles, `Cstruct.t list` for buffer management, and custom error types for I/O feedback.",
+      "description_length": 311,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "chamelon",
+      "description": "Provides atomic write, read, and delete operations on key-value pairs, with support for persistent storage using block devices. Operates on byte arrays and custom key structures, ensuring data integrity and wear leveling. Designed for high-throughput environments where reliability and performance are critical, such as embedded systems or large-scale data logging.",
+      "description_length": 365,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Chamelon",
+      "description": "manages structured binary data through set operations, commit processing, size calculation, directory manipulation, link extraction, chunk handling, superblock access, and bitfield management. It works with types like Cstruct.t, Tag.t, int64, and sets to perform operations such as union, commit creation, size tagging, entry extraction, block conversion, and field modification. Users can build commits from filtered entries, calculate directory sizes, manage file blocks, and parse superblock metadata with precise control over binary formats. Examples include generating commit objects, determining storage footprints, resolving hard links, and validating bitfield tags.",
+      "description_length": 673,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Kv",
+      "description": "provides low-level block device interaction with detailed error handling, using `t` for device handles and `Cstruct.t list` for data buffers. It supports sector-based read and write operations, device disconnection, and error reporting through custom types. Functions integrate with the Fs module for on-disk operations, enabling direct manipulation of storage structures. Examples include reading data from a specific sector, handling I/O errors, and managing device lifecycle events.",
+      "description_length": 485,
+      "index": 13,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 14,
+    "meaningful_modules": 14,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 673,
+    "min_description_length": 311,
+    "avg_description_length": 416.14285714285717,
+    "embedding_file_size_mb": 0.05130290985107422
+  }
+}

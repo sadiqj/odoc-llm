@@ -1,0 +1,98 @@
+{
+  "package": "glicko2",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 11,
+  "creation_timestamp": "2025-06-18T16:32:31.930229",
+  "modules": [
+    {
+      "module_path": "Glicko2.Make.LowLevel",
+      "description": "Converts a player to an opponent structure, generates a default player with optional rating and deviation, and updates a player's rating based on game results. It processes game outcomes and player data to compute rating changes using the Glicko-2 algorithm. Handles player results and errors, including scenarios where a player is not part of a rating period.",
+      "description_length": 360,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Glicko2.Make.SingleGame",
+      "description": "Provides functions to create and update player ratings based on game outcomes, using the Glicko-2 algorithm. It works with player data structures that include rating, rating deviation, and volatility, and processes game results to compute new ratings. Specifically handles scenarios like initializing a player with default values, updating ratings after a game, and adjusting players who did not participate in a rating period.",
+      "description_length": 427,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Glicko2.Default.LowLevel",
+      "description": "Converts a player to an opponent structure, generates a default player with optional rating and deviation, and updates a player's state when they are not part of a rating period. It processes game results to compute updated player ratings using the Glicko-2 algorithm. Works with player, opponent, game_results, and error-prone player_result types to manage rating adjustments and outcomes.",
+      "description_length": 390,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Glicko2.Default.SingleGame",
+      "description": "Provides functions to create and update player ratings based on game outcomes, using the Glicko-2 algorithm. It works with player data structures that include rating, rating deviation, and volatility, and processes game results to compute new ratings. Used to adjust player rankings after a match or tournament, incorporating performance and uncertainty in ratings.",
+      "description_length": 365,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Glicko2.Default",
+      "description": "Manages player ratings and adjustments using the Glicko-2 algorithm through player, opponent, and game_result types. It updates player states, computes new ratings based on match outcomes, and handles uncertainty via deviation and volatility. Functions include converting players to opponents, processing results, and generating default player configurations. Examples include updating a player's rating after a match or adjusting rankings when a player is inactive.",
+      "description_length": 466,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Glicko2.Make",
+      "description": "Handles configuration parameters for volatility and rating calculations, including custom thresholds for iteration limits, deviation, and volatility values. Accepts enumerated types for default behavior or explicit numeric inputs. Used to fine-tune risk assessment models in financial or statistical applications.",
+      "description_length": 313,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Glicko2_types.LowLevel",
+      "description": "Handles conversion between player and opponent entities, and manages player rating updates based on game results. Operates on structured data including player profiles, game outcomes, and rating results. Used to adjust player ratings after a game or when a player is excluded from a rating period.",
+      "description_length": 297,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Glicko2_types.SingleGame",
+      "description": "Provides functions to create and update player ratings based on game outcomes, including initializing players with default statistics and adjusting ratings after matches. Works with player records containing rating, deviation, and volatility, and game results that track match outcomes. Used to compute updated player rankings after a single game or handle players absent from a rating period.",
+      "description_length": 393,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "glicko2",
+      "description": "Calculates and updates Glicko-2 rating values using a set of mathematical operations including rating deviation, volatility, and match outcome evaluation. It processes player data represented as tuples containing rating, rating deviation, and volatility. Used to dynamically adjust player rankings in competitive gaming environments based on match results.",
+      "description_length": 356,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Glicko2_types",
+      "description": "manages player and opponent entity conversions and updates ratings using structured data like profiles, game outcomes, and rating results. It works with player records containing rating, deviation, and volatility, and supports initializing, adjusting, and recalculating rankings based on match results or absence. Functions include updating ratings after a single game or when a player is excluded from a rating period. Examples include adjusting a player's rating after a win, loss, or draw, and recalculating ratings when a player skips a rating cycle.",
+      "description_length": 554,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Glicko2",
+      "description": "Calculates and updates player ratings using the Glicko-2 algorithm, incorporating match outcomes, opponent data, and uncertainty metrics like deviation and volatility. It supports dynamic adjustments through functions that process game results, convert players to opponents, and generate default configurations. Configuration parameters allow customization of volatility thresholds, iteration limits, and rating scales for precise risk modeling. Users can refine player rankings after matches or calibrate models for financial or statistical analysis.",
+      "description_length": 551,
+      "index": 10,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 11,
+    "meaningful_modules": 11,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 554,
+    "min_description_length": 297,
+    "avg_description_length": 406.54545454545456,
+    "embedding_file_size_mb": 0.04035377502441406
+  }
+}

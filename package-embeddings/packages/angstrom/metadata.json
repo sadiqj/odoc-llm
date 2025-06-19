@@ -1,0 +1,91 @@
+{
+  "package": "angstrom",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 10,
+  "creation_timestamp": "2025-06-18T16:32:11.603334",
+  "modules": [
+    {
+      "module_path": "Angstrom.Let_syntax.Let_syntax",
+      "description": "Provides operations to sequence and transform values within a monadic context, including lifting values, applying functions, and combining multiple monadic values. Works with a generic type 'a t, supporting chaining and parallel execution of computations. Enables concise handling of asynchronous or effectful workflows, such as combining results from multiple API calls or processing nested data structures.",
+      "description_length": 408,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Angstrom.BE",
+      "description": "Parses big-endian encoded integers and floating-point values from byte sequences, supporting 16-bit, 32-bit, and 64-bit signed and unsigned integers, as well as 32-bit and 64-bit floats. Functions like `int16` and `any_int16` process specific byte lengths and interpret them as signed or unsigned values. Used for decoding binary data in network protocols or file formats requiring precise byte ordering.",
+      "description_length": 404,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Angstrom.LE",
+      "description": "Parses little-endian encoded integers and floating-point values from byte sequences, supporting 16, 32, and 64-bit signed and unsigned integers, as well as 32 and 64-bit floats. Functions like `int16`, `int32`, and `int64` validate exact byte matches for specific integer values, while `any_int16`, `any_uint16`, and `any_float` extract values from arbitrary byte inputs. Used for decoding binary data in network protocols or file formats that use little-endian byte ordering.",
+      "description_length": 476,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Angstrom.Let_syntax",
+      "description": "Sequences and transforms values in a monadic context using 'a t, enabling chaining and parallel execution of effectful operations. Supports lifting values, applying functions, and combining multiple computations, ideal for handling asynchronous workflows or nested data. Examples include merging results from several API calls or flattening complex data structures. Operations are designed for concise, readable manipulation of monadic values.",
+      "description_length": 443,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Angstrom.Unsafe",
+      "description": "Provides functions to read and inspect raw buffer data from a parser's internal storage, allowing direct access to byte ranges and character sequences. Operates on bigstring buffers with offset and length parameters to extract specific portions of input. Used for low-level parsing optimizations, such as extracting exact byte counts, scanning character patterns, or performing lookahead without advancing the input stream.",
+      "description_length": 423,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Angstrom.Consume",
+      "description": "Provides functions to parse and process input streams, including reading tokens, skipping whitespace, and extracting values from structured data. Operates on input sources represented as a stateful type, tracking position and error handling. Used to build custom parsers for configuration files and data serialization formats.",
+      "description_length": 326,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Angstrom.Buffered",
+      "description": "Provides functions to manage buffered parsing, including parsing with automatic buffer allocation, feeding incremental input to a parser state, and extracting results or unconsumed data from a state. Operates on input streams, parser states, and buffers that track unconsumed data. Used to process large or streaming input efficiently, allowing parsers to resume after partial consumption and reuse buffers for performance.",
+      "description_length": 423,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Angstrom.Unbuffered",
+      "description": "Provides functions to parse input with explicit control over memory, using a state machine that tracks consumed input and requires manual buffer management. Operates on custom state types that represent parsing progress, including partial results and error conditions. Used in scenarios where low-level memory handling is critical, such as network protocol parsing or real-time data processing.",
+      "description_length": 394,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "angstrom",
+      "description": "Provides combinators for constructing parsers that process byte sequences and strings, with support for backtracking, lookahead, and incremental input handling. Offers low-level control over IO through buffered and unbuffered interfaces, enabling zero-copy operations in performance-critical scenarios. Used to implement protocol parsers such as HTTP and JSON, where precise input handling and efficiency are essential.",
+      "description_length": 419,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Angstrom",
+      "description": "Parses binary data using big-endian and little-endian encodings, supporting integers and floats of various sizes with precise byte handling. Provides monadic operations for sequencing and transforming parsed values, enabling complex workflows and asynchronous processing. Offers low-level buffer access and state management for efficient, incremental parsing of streams and structured data. Examples include decoding network packets, extracting fields from binary files, and building custom serializers with fine-grained control over input and memory.",
+      "description_length": 551,
+      "index": 9,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 10,
+    "meaningful_modules": 10,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 551,
+    "min_description_length": 326,
+    "avg_description_length": 426.7,
+    "embedding_file_size_mb": 0.03679656982421875
+  }
+}

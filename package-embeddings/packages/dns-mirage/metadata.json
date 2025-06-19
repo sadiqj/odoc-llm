@@ -1,0 +1,70 @@
+{
+  "package": "dns-mirage",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 7,
+  "creation_timestamp": "2025-06-18T16:31:06.075213",
+  "modules": [
+    {
+      "module_path": "Dns_mirage.Make.IPM",
+      "description": "This module handles key-value operations on a map structured with tuples of IP addresses and ports as keys, enabling efficient management of network-related bindings. It supports ordered traversal, filtering, and transformation of these mappings, along with bulk operations like list-based additions and merging. Use cases include maintaining routing tables, tracking active sessions, or managing port-forwarding configurations where precise IP-port associations are critical.",
+      "description_length": 476,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dns_mirage.Make.UDP",
+      "description": "Provides functions to manage UDP communication, including listening for packets on specific ports, handling incoming datagrams, and writing data with optional source and destination addresses. Operates on types such as IP addresses, Cstruct.t for packet data, and custom error types. Used to establish and manage UDP connections, route packets, and send data with controlled network parameters like TTL.",
+      "description_length": 403,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dns_mirage.Make.TCP",
+      "description": "This module offers TCP connection management and data transfer functionalities, including establishing connections, reading/writing data, and handling shutdowns or closures. It works with network flows, IP addresses, ports, and a type `t` for managing connection states, supporting buffered or nodelay writes and error reporting. Use cases include building reliable networked applications, streaming data, or implementing custom protocols requiring precise flow control.",
+      "description_length": 470,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dns_mirage.Make.IP",
+      "description": "Provides pretty-printers for errors, IP addresses, and prefixes. Handles IP layer operations such as demultiplexing incoming packets, sending data with configurable options, and generating pseudoheaders for checksums. Works with IP addresses, prefixes, and connection state, enabling network communication and address management.",
+      "description_length": 329,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dns_mirage.Make",
+      "description": "Manages network communication through UDP and TCP protocols, handling packet reception, transmission, and connection state tracking. Supports IP address manipulation, error reporting, and packet formatting with types like Cstruct.t, IP addresses, and connection states. Enables tasks such as sending datagrams with custom TTL, streaming TCP data with flow control, and generating checksum pseudoheaders. Provides tools for network debugging and protocol implementation through pretty-printing and packet demultiplexing.",
+      "description_length": 519,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "dns-mirage",
+      "description": "Processes DNS queries and constructs responses using strict protocol adherence. Operates on packet structures, domain names, and resource records. Enables implementation of recursive DNS resolvers and authoritative name servers for custom zone configurations.",
+      "description_length": 259,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dns_mirage",
+      "description": "handles network communication via UDP and TCP, managing packet reception, transmission, and connection states with support for IP address manipulation and error reporting. it defines data types such as Cstruct.t, IP addresses, and connection states, enabling operations like sending datagrams with custom TTL, streaming TCP data, and generating checksum pseudoheaders. it also includes tools for packet demultiplexing and pretty-printing to aid in network debugging and protocol development. examples include establishing TCP streams with flow control, constructing custom UDP packets, and inspecting network traffic at the protocol level.",
+      "description_length": 639,
+      "index": 6,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 7,
+    "meaningful_modules": 7,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 639,
+    "min_description_length": 259,
+    "avg_description_length": 442.14285714285717,
+    "embedding_file_size_mb": 0.025869369506835938
+  }
+}

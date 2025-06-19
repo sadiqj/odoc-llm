@@ -1,0 +1,56 @@
+{
+  "package": "gluten-mirage",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 5,
+  "creation_timestamp": "2025-06-18T16:27:47.332144",
+  "modules": [
+    {
+      "module_path": "Gluten_mirage.Buffered_flow",
+      "description": "Creates a buffer that holds a single value and provides access to it. Works with a polymorphic type 'a t that encapsulates a value of type 'a. Used to manage state transitions in event-driven systems, such as maintaining the current input buffer in a parser.",
+      "description_length": 258,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gluten_mirage.Server",
+      "description": "Provides functions to read from and write to network flows, with explicit handling of errors and shutdown states. Operates on flow objects and custom error types, including write-specific errors. Supports asynchronous data transmission and proper cleanup of network connections.",
+      "description_length": 278,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Gluten_mirage.Client",
+      "description": "Provides functions to read from and write to a flow, with explicit handling of errors and write errors through pretty-printers. Operates on `flow` objects and `Cstruct.t` buffers, supporting both single and vectorized writes. Used to manage network communication, ensuring proper closure and error recovery after I/O failures.",
+      "description_length": 326,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "gluten-mirage",
+      "description": "Provides functions for managing protocol state transitions and handling protocol upgrades in network connections, including support for HTTP/1.1 to Websocket and HTTP/2 over plaintext TCP. Operates on connection state objects and protocol-specific data structures. Used to implement protocol negotiation and transition logic in network applications.",
+      "description_length": 349,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gluten_mirage",
+      "description": "Manages state and network communication through a set of interrelated utilities. Maintains a single-value buffer with read/write access, enabling state management in event-driven systems, and supports network I/O with error handling, flow control, and proper resource cleanup. Operations include reading and writing data using `Cstruct.t` buffers, handling write-specific errors, and managing asynchronous transmission. Examples include tracking input state in a parser, sending data over a network, and recovering from I/O failures.",
+      "description_length": 533,
+      "index": 4,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 5,
+    "meaningful_modules": 5,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 533,
+    "min_description_length": 258,
+    "avg_description_length": 348.8,
+    "embedding_file_size_mb": 0.01859760284423828
+  }
+}

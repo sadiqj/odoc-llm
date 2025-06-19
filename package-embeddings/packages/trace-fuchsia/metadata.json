@@ -1,0 +1,210 @@
+{
+  "package": "trace-fuchsia",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 27,
+  "creation_timestamp": "2025-06-18T16:37:53.396509",
+  "modules": [
+    {
+      "module_path": "Trace_fuchsia_write.Metadata.Magic_record",
+      "description": "Provides functions to access and encode a record's value as an int64, determine its size in words, and write it to an output buffer. Works with binary data structures representing trace records. Used to serialize specific trace entries during low-level logging or debugging.",
+      "description_length": 274,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Trace_fuchsia_write.Metadata.Initialization_record",
+      "description": "Provides functions to encode initialization data into an output stream, using a specified ticks per second value. Operates on integers and 64-bit integers to represent time units and configuration parameters. Used to prepare hardware or system initialization data with precise timing information.",
+      "description_length": 296,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Trace_fuchsia_write.Metadata.Provider_info",
+      "description": "Provides operations to determine the size of a string and to encode an identifier and name into an output buffer. Works with strings, integers, and output buffers. Used to prepare data for serialization by calculating required space and writing structured information.",
+      "description_length": 268,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Trace_fuchsia_write.Event.Instant",
+      "description": "Calculates the size of a structured argument list for a specific thread, handling boolean, float, integer, kid, null, and string types. Encodes the same argument types into a binary format using an output buffer, including timestamps. Used to prepare and serialize data for inter-thread communication or logging.",
+      "description_length": 312,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Trace_fuchsia_write.Event.Counter",
+      "description": "Provides functions to retrieve the size of structured data and to encode data into a binary format. Operates on custom types representing boolean, float, integer, string, and null values, along with thread references. Used to prepare metrics for logging or transmission in a performance-critical application.",
+      "description_length": 308,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Trace_fuchsia_write.Event.Duration_begin",
+      "description": "Calculates the size of a structured argument payload based on its type and content, and encodes the payload into a binary format with a timestamp. It handles boolean, float, integer, string, and null values, along with custom type markers. Used to prepare trace data for logging or transmission in a performance-critical system.",
+      "description_length": 328,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Trace_fuchsia_write.Event.Duration_end",
+      "description": "Calculates the size of a structured argument payload based on its type and content, and encodes it into an output buffer with timing information. It handles various data types including booleans, floats, integers, strings, and custom identifiers. Used to prepare and size telemetry data for logging or transmission.",
+      "description_length": 315,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Trace_fuchsia_write.Event.Duration_complete",
+      "description": "Calculates the size of argument data structures based on their type and thread reference, and encodes time-based metrics along with arguments into an output buffer. It handles boolean, float, integer, string, and specialized identifier types, along with timing information in nanoseconds. Used to prepare structured logs with precise size and timing data for performance tracking.",
+      "description_length": 380,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Trace_fuchsia_write.Event.Async_begin",
+      "description": "Calculates the size of a structured argument payload using type-specific rules. Encodes the payload into a binary format with metadata including a timestamp and unique identifier. Operates on custom argument types and thread references to support asynchronous communication.",
+      "description_length": 274,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Trace_fuchsia_write.Event.Async_end",
+      "description": "Calculates the size of a structured argument bundle for asynchronous operations, handling boolean, float, integer, string, and null values. Encodes these arguments into a binary format using a provided output stream, including timestamps and unique identifiers. Designed for low-level communication in concurrent systems requiring precise data serialization.",
+      "description_length": 358,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Trace_fuchsia_write.Buf_pool.List_with_len",
+      "description": "Maintains a list alongside its length, ensuring constant-time access to the size. Provides operations to create an empty list, prepend elements, and retrieve the length. Useful for scenarios requiring frequent length checks without traversing the list.",
+      "description_length": 252,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Trace_fuchsia_write.Util",
+      "description": "Calculates the number of bytes needed to reach the next multiple of 8 and rounds an integer up to the nearest multiple of 8. Operates on integer values representing byte counts or memory sizes. Used to align data structures to word boundaries in low-level memory operations.",
+      "description_length": 274,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Trace_fuchsia_write.Buf",
+      "description": "Provides operations to manage a buffer for binary data, including creating, clearing, and appending 64-bit integers and strings. Works with a custom buffer type that tracks available space and current size. Used to efficiently build and serialize data structures in network protocols or file formats.",
+      "description_length": 300,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Trace_fuchsia_write.Output",
+      "description": "Provides functions to create, manage, and dispose of output buffers, including allocating buffers with a specified minimum size and flushing pending data. Operates with buffer pools and raw buffer structures, enabling efficient message transmission. Used to prepare data for network sending by reserving and managing buffer space dynamically.",
+      "description_length": 342,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Trace_fuchsia_write.Buf_pool",
+      "description": "Maintains a list with an associated length, enabling constant-time size access through built-in operations. Supports creating empty lists, prepending elements, and retrieving the current length. This structure allows efficient manipulation and tracking of list sizes during dynamic data processing. For example, it can track the number of incoming network buffers without recalculating the length each time.",
+      "description_length": 407,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Trace_fuchsia_write.I64",
+      "description": "This module offers arithmetic and bitwise operations on 64-bit integers, including signed/unsigned division, shifts, and logical operations, alongside conversions between int64, int, int32, nativeint, and floats. It supports string parsing/serialization and hash functions, enabling efficient low-level integer manipulation and integration with hash tables. Use cases include handling large numerical ranges, platform-independent integer conversions, and precise control over bitwise data representation.",
+      "description_length": 504,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Trace_fuchsia_write.Str_ref",
+      "description": "Provides functions to create and handle inline references, including a function to raise an exception immediately. Works with the `int` type to represent reference positions. Used to manage low-level string manipulation and error handling in parsing contexts.",
+      "description_length": 259,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Trace_fuchsia_write.Thread_ref",
+      "description": "Provides operations to create and manipulate thread references, including fetching the 8-bit integer value of a reference and determining its size in words. Works with an opaque type representing thread identifiers. Used to access low-level thread data in system-level programming contexts.",
+      "description_length": 290,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Trace_fuchsia_write.Metadata",
+      "description": "Handles serialization of trace data, initialization parameters, and identifiers by providing size calculations, encoding operations, and buffer writing. Key data types include int64, strings, and output buffers, with operations to convert values, compute sizes, and write structured data. For example, it can encode a trace record's value as an int64, calculate the space needed for a string, or write initialization ticks to a stream. Unused modules contribute no functionality.",
+      "description_length": 479,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Trace_fuchsia_write.Argument",
+      "description": "Provides functions to validate, check, and encode values wrapped in a variant type that includes booleans, floats, integers, strings, and custom identifiers. Works with a tagged tuple type that associates a string with either user-defined data or a kid ID. Used to ensure data integrity during serialization and to determine the size of encoded representations.",
+      "description_length": 361,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Trace_fuchsia_write.Arguments",
+      "description": "Provides operations to determine the length of a tagged value, validate its structure, compute its size in words, and encode it into a buffer. Works with a list of tagged values representing boolean, float, integer, string, or null types. Used to process command-line arguments or structured data inputs during serialization and validation.",
+      "description_length": 340,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Trace_fuchsia_write.Thread_record",
+      "description": "Tracks thread references with associated process and thread IDs. Operates on integers representing process and thread identifiers and a fixed-size word. Encodes records into an output buffer using specific metadata for thread tracking.",
+      "description_length": 235,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Trace_fuchsia_write.Event",
+      "description": "Calculates and encodes structured argument data into binary formats, incorporating timestamps, unique identifiers, and thread references. Handles boolean, float, integer, string, null, and custom types, with operations to determine size and serialize data into output buffers. Used to prepare telemetry, trace, and log data for inter-thread communication, performance tracking, and asynchronous messaging. Examples include serializing metric payloads, generating trace records, and encoding argument bundles for concurrent systems.",
+      "description_length": 531,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Trace_fuchsia_write.Kernel_object",
+      "description": "Provides functions to determine the size of encoded data, process type information, and encode structured arguments into a binary format. Works with custom argument types including booleans, floats, integers, strings, and kernel identifiers. Used to serialize and manage kernel object metadata during low-level system operations.",
+      "description_length": 329,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "trace-fuchsia",
+      "description": "Provides functions to create and manipulate message logs and numeric counters, supporting increment, retrieval, and reset operations. Works with custom types for messages, including severity levels and timestamps, and counter structures with named identifiers. Used to track runtime events and performance metrics in real-time systems.",
+      "description_length": 335,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Trace_fuchsia_write",
+      "description": "Manages binary data serialization and alignment for trace events, offering buffer manipulation, integer arithmetic, and structured data encoding. Key types include custom buffers, int64, and tagged values, with operations to append data, calculate sizes, and encode complex structures. It supports tasks like aligning memory, serializing trace records, and handling thread references with precise control over binary formats. Examples include writing timestamped telemetry data, encoding argument bundles, and managing buffer pools for efficient data transmission.",
+      "description_length": 564,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Trace_fuchsia",
+      "description": "Collects and writes trace data to a file, standard output, or standard error using the compact Fuchsia trace format. It supports configuring the output via a file path or environment variable, and ensures proper cleanup after trace collection. Used to minimize tracing overhead in performance-critical applications by directly emitting binary trace data.",
+      "description_length": 354,
+      "index": 26,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 29,
+    "meaningful_modules": 27,
+    "filtered_empty_modules": 2,
+    "retention_rate": 0.9310344827586207
+  },
+  "statistics": {
+    "max_description_length": 564,
+    "min_description_length": 235,
+    "avg_description_length": 343.2962962962963,
+    "embedding_file_size_mb": 0.09850692749023438
+  }
+}

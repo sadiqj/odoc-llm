@@ -1,0 +1,56 @@
+{
+  "package": "pci-db",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 5,
+  "creation_timestamp": "2025-06-18T16:28:27.520720",
+  "modules": [
+    {
+      "module_path": "Pci_db_types.Id",
+      "description": "Converts unique identifiers to string representations and compares them for ordering. Works with a custom type representing unique values. Used to generate consistent keys for data structures and enforce ordering in sorted collections.",
+      "description_length": 235,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pci_db_types.IdMap",
+      "description": "This module provides a suite of operations for managing associative arrays with keys of type `Id.t` and generic values, including insertion, deletion, lookup, and transformation. It supports advanced functionalities like filtering, merging, and iterating over key-value pairs, along with conversions to and from sequences. These capabilities are suited for scenarios requiring efficient management of identifier-based mappings, such as symbol tables or configuration settings.",
+      "description_length": 476,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "pci-db",
+      "description": "Provides functions to parse, query, and manipulate PCI device database entries, including vendor and device ID lookups. Operates on structured data such as lists of tuples representing vendor names and device identifiers. Used to generate human-readable device names from numeric PCI IDs in system diagnostic tools.",
+      "description_length": 315,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pci_db",
+      "description": "Provides functions to retrieve names for PCI classes, subclasses, vendors, devices, and subdevices from a structured database. Operates on a custom type `t` that encapsulates PCI ID mappings and supports merging with custom resolution functions. Loads data from a file and converts the database to a human-readable string.",
+      "description_length": 322,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pci_db_types",
+      "description": "Manages identifier-based mappings with efficient operations for insertion, deletion, lookup, and transformation. Supports ordered comparisons and string conversion for unique identifiers, enabling consistent key generation and sorted collection handling. Provides filtering, merging, and iteration over key-value pairs, suitable for applications like symbol tables or configuration management. Allows conversion between associative arrays and sequences for flexible data manipulation.",
+      "description_length": 484,
+      "index": 4,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 5,
+    "meaningful_modules": 5,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 484,
+    "min_description_length": 235,
+    "avg_description_length": 366.4,
+    "embedding_file_size_mb": 0.018599510192871094
+  }
+}

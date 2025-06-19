@@ -1,0 +1,147 @@
+{
+  "package": "testo-util",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 18,
+  "creation_timestamp": "2025-06-18T16:34:47.077462",
+  "modules": [
+    {
+      "module_path": "Testo_util.Fpath_.Operators",
+      "description": "Combines file paths using custom operators, appending strings to paths, and extracting base names. It operates on `Fpath.t` values, which represent file system paths. Used to construct and manipulate file paths in build systems and file processing workflows.",
+      "description_length": 258,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Testo_util.Worker.Client",
+      "description": "Provides functions to manage a collection of worker processes, including creating, iterating, and closing them. Operates on `t` for the client manager and `worker` for individual process handles. Enables sending messages to specific workers and receiving messages from any worker.",
+      "description_length": 280,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Testo_util.Worker.Server",
+      "description": "Handles message exchange between server components, providing a blocking read operation for incoming messages and a direct write function for sending responses. Operates with custom message types Msg_from_master.t and Msg_from_worker.t to facilitate inter-process communication. Used to manage critical error termination by logging and exiting the process abruptly.",
+      "description_length": 365,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Testo_util.CPU",
+      "description": "Returns the number of CPU cores available, or None if the information is unavailable. Works with system-level data retrieved from the operating system. Used to determine hardware concurrency for parallel task scheduling.",
+      "description_length": 220,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Testo_util.Debug",
+      "description": "Toggles debug output by modifying a boolean reference and logs messages by evaluating a thunk to produce a string. It operates with a reference to a boolean and functions that return strings. Used to conditionally print detailed execution traces during development.",
+      "description_length": 265,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Testo_util.Diff",
+      "description": "Compares two files or text lines, highlighting differences with optional color formatting. It processes file paths and string arrays to generate a diff output. Used to detect changes between versions of code files or text content.",
+      "description_length": 230,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Testo_util.Error",
+      "description": "Generates error values with custom messages, including location-aware error reporting. Handles invalid arguments, user-facing errors, and internal failures, each with distinct semantics. Used to terminate execution with specific error contexts in testing and validation workflows.",
+      "description_length": 280,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Testo_util.Filename_",
+      "description": "Creates a temporary file path by combining a base name and suffix, using a specified or default temporary directory. Operates on Fpath.t values to construct and retrieve paths. Used to generate unique temporary file names during build processes or file manipulation tasks.",
+      "description_length": 272,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Testo_util.Fpath_",
+      "description": "Provides operations for constructing and modifying file paths using custom operators and functions that work with `Fpath.t` values. It supports appending strings to paths, extracting base names, and combining paths in a type-safe manner. This enables precise control over file system interactions in build tools and script-like processing. For example, it allows transforming `/home/user` into `/home/user/file.txt` or extracting `file.txt` from `/path/to/file.txt`.",
+      "description_length": 466,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Testo_util.Helpers",
+      "description": "Provides functions to transform and manipulate lists, including mapping and flattening. Operates on lists, strings, and file paths, enabling file system interactions like directory creation, file reading/writing, and pattern matching. Supports tasks such as checking if a string contains a substring or a regular expression, and recursively removing files or directories.",
+      "description_length": 371,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Testo_util.Msg_from_master",
+      "description": "Converts between a custom message type and its string representation. Handles parsing and serialization of structured data exchanged between components. Used to decode incoming messages from a master process and prepare responses for transmission.",
+      "description_length": 247,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Testo_util.Msg_from_worker",
+      "description": "Converts between a custom message type and its string representation. Handles serialization and deserialization for inter-process communication. Used to transmit structured data between worker processes and a central handler.",
+      "description_length": 225,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Testo_util.Slice",
+      "description": "Provides operations to split a list into sublists using a given size, convert between strings and a custom type, apply transformations to specific indices, and apply multiple slices to a list. Works with a private type representing slice configurations and lists of any type. Used to process structured data segments, such as parsing formatted text or manipulating indexed data structures.",
+      "description_length": 389,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Testo_util.Style",
+      "description": "Formats text with color and styling, applying options like color, framing, and alignment. Operates on strings and a color type representing terminal color codes. Used to generate styled console output, such as highlighting errors or formatting code blocks.",
+      "description_length": 256,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Testo_util.Tag",
+      "description": "Creates and manages tags as private strings, ensuring they follow a strict format of lowercase alphanumeric identifiers separated by dots. Provides operations to compare, convert, and retrieve tags, as well as to list all registered tags. Used to filter and organize tests based on specific criteria during execution.",
+      "description_length": 317,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Testo_util.Worker",
+      "description": "manages a set of worker processes, allowing creation, iteration, and termination, while enabling message passing between clients and workers through `t` and `worker` types. It supports blocking reads and direct writes for custom message types `Msg_from_master.t` and `Msg_from_worker.t`, facilitating reliable inter-process communication. Operations include sending targeted messages, receiving global messages, and handling critical errors through logging and immediate termination. Examples include coordinating task execution across workers and managing error recovery during communication failures.",
+      "description_length": 602,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "testo-util",
+      "description": "Provides functions for parsing and manipulating tag structures, extracting metadata from text streams, and handling lightweight thread-safe operations. Works with custom tag records, byte sequences, and asynchronous event handlers. Used to process structured log entries and manage concurrent data parsing in networked applications.",
+      "description_length": 332,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Testo_util",
+      "description": "Provides utilities for system interaction, debugging, file comparison, error handling, path manipulation, list operations, message serialization, text formatting, tag management, and process coordination. Key data types include boolean references, Fpath.t, custom message types, tags, and worker process handles, with operations for toggling debug output, generating diffs, creating temporary files, transforming lists, serializing data, formatting text, and managing processes. Examples include generating unique temporary file paths, comparing code versions, formatting colored console output, and coordinating task execution across worker processes. Supports precise control over file systems, structured data processing, and inter-process communication in testing and build workflows.",
+      "description_length": 788,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 18,
+    "meaningful_modules": 18,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 788,
+    "min_description_length": 220,
+    "avg_description_length": 342.3888888888889,
+    "embedding_file_size_mb": 0.06581878662109375
+  }
+}

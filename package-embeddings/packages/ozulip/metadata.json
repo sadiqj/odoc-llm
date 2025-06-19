@@ -1,0 +1,56 @@
+{
+  "package": "ozulip",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 5,
+  "creation_timestamp": "2025-06-18T16:30:08.286743",
+  "modules": [
+    {
+      "module_path": "Ozulip.Events.Message",
+      "description": "Provides functions to extract message content, sender mentions, and destinations, along with checks for message flags, trustworthiness, and message type (private, group, self, or own). Works with message records, recipient structures, and flag types to determine interaction behavior. Used to generate replies, verify message origins, and handle private or group messaging contexts.",
+      "description_length": 382,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ozulip.Messages",
+      "description": "Creates message destinations for private or stream-based messaging using email lists, user IDs, stream names, or stream IDs. Sends, edits, or deletes messages using a configuration and message content, and handles file uploads from paths or strings. Manages message propagation modes and notification settings during edits.",
+      "description_length": 323,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ozulip.Events",
+      "description": "handles message processing by analyzing content, sender information, and message properties. it operates on message records, recipients, and flags to determine behavior, such as generating replies or validating message sources. it supports checks for message type, trust, and visibility, enabling actions like routing private messages or identifying mentions. examples include extracting sender details, verifying message origin, and determining appropriate response strategies.",
+      "description_length": 478,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "ozulip",
+      "description": "Provides functions to send and receive messages, manage subscriptions, and handle user presence through the Zulip API. Works with JSON-encoded data structures representing messages, users, and streams. Used to integrate real-time chat functionality into applications, such as notifying users of updates or automating message posting.",
+      "description_length": 333,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ozulip",
+      "description": "manages message creation, delivery, and processing by handling destinations, content, and recipient logic. it works with message records, user and stream identifiers, and file data to send, edit, or delete messages while enforcing visibility and trust rules. it extracts sender information, validates message sources, and determines response strategies based on content and context. examples include routing private messages, verifying message origins, and generating automated replies.",
+      "description_length": 486,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 5,
+    "meaningful_modules": 5,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 486,
+    "min_description_length": 323,
+    "avg_description_length": 400.4,
+    "embedding_file_size_mb": 0.01861858367919922
+  }
+}

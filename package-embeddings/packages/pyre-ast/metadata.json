@@ -1,0 +1,420 @@
+{
+  "package": "pyre-ast",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 57,
+  "creation_timestamp": "2025-06-18T16:43:16.994346",
+  "modules": [
+    {
+      "module_path": "PyreAst.TaglessFinal.Position",
+      "description": "Creates positions from line and column integers, allowing association of values with specific locations in text. Works with integer line and column pairs, enforcing line numbers starting at 1 and columns starting at 0. Used to track the origin of parsed tokens or errors within a source file.",
+      "description_length": 292,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal.Location",
+      "description": "Provides functions to create and manipulate ranges using Position.t values, with start inclusive and end exclusive. Operates on tuples of positions to define spans within a text input. Used to track the exact span of tokens during parsing or lexing processes.",
+      "description_length": 259,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal.Identifier",
+      "description": "Provides a type constructor for wrapping functions that take a string and return a value of arbitrary type. Works with string-based inputs and function transformations. Used to encapsulate identifier validation and transformation logic in Python syntax parsing.",
+      "description_length": 261,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal.Constant",
+      "description": "Encapsulates Python-like constant values with constructors for boolean, integer, float, string, and other types. Supports creation of immutable values through specialized builders for each data type. Used to model Python literals in OCaml code for interoperability or serialization purposes.",
+      "description_length": 291,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal.ExpressionContext",
+      "description": "Provides a constructor to create context-aware expression types for Python-like syntax, distinguishing between load, store, and delete operations. Works with custom types representing expressions such as name, attribute, subscript, list, tuple, and starred expressions. Used to accurately model expression contexts in assignments, deletions, and iteration targets within parsed Python code.",
+      "description_length": 390,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal.BooleanOperator",
+      "description": "Represents Python-style boolean operations with custom conjunction and disjunction behaviors. Works with arbitrary data types wrapped in a private record structure. Used to model conditional logic in domain-specific languages or custom evaluation pipelines.",
+      "description_length": 257,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal.BinaryOperator",
+      "description": "Represents Python numerical binary operators through a structured type that encapsulates operations like addition, subtraction, multiplication, and bitwise shifts. It works with a polymorphic type 'a t, where each operator is associated with a value of type 'a. Used to model operator behavior in code generation or interpreter implementations where operator semantics need to be explicitly tracked.",
+      "description_length": 399,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal.UnaryOperator",
+      "description": "Represents Python unary operators through a constructor that takes functions for inversion, logical not, unary add, and unary subtract. Works with arbitrary data types through function parameters. Used to encapsulate operator behavior in contexts requiring symbolic representation of unary operations.",
+      "description_length": 301,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal.ComparisonOperator",
+      "description": "Encapsulates Python comparison operators as a typed structure, supporting equality, inequality, ordering, and membership checks. Works with arbitrary data types through parameterized type 'a. Used to generate operator-based logic in interpreters or code generators that need to represent Python's rich comparison set.",
+      "description_length": 317,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal.Comprehension",
+      "description": "Represents Python-like comprehension structures with targets, iterators, conditional expressions, and async flags. Works with expressions and lists of expressions to model complex iteration and filtering logic. Used to parse and manipulate comprehensions from source code, such as filtering pairs in asynchronous loops.",
+      "description_length": 319,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal.Keyword",
+      "description": "Handles keyword argument parsing and representation, with operations to construct and deconstruct keyword entries. Works with expressions, identifiers, locations, and keyword types to track argument names and values. Used to process function calls with named parameters, including cases where arguments are passed without explicit names.",
+      "description_length": 337,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal.Argument",
+      "description": "Represents function parameters with associated identifiers, type annotations, and Python2-style type comments. Works with expressions, identifiers, locations, and argument structures. Used to track parameter details during parsing or analysis of function definitions.",
+      "description_length": 267,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal.Arguments",
+      "description": "Represents and organizes parameter lists from function definitions, distinguishing between positional-only, regular, and keyword-only parameters, along with special vararg and kwarg parameters. It works with lists of parameter objects, default expressions, and optional arguments to capture the structure of Python function signatures. Used to parse and analyze function definitions for tools that need precise parameter handling, such as linters or code generators.",
+      "description_length": 466,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal.Expression",
+      "description": "Represents and constructs nodes for Python expressions, supporting operations like binary and unary operations, conditionals, function calls, and comprehensions. It works with structured data including locations, expressions, identifiers, and context markers. Used to build abstract syntax tree nodes for parsing or analyzing Python code.",
+      "description_length": 338,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal.WithItem",
+      "description": "Provides a structured way to represent Python with statements, where each item includes a context expression and an optional variable binding. Works with expressions and a specific with_item type that enforces constraints on variable assignments. Used to model the components of a with block in Python syntax analysis or transformation.",
+      "description_length": 336,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal.ImportAlias",
+      "description": "Represents Python import statements with a name, optional alias, and associated location. Operates on identifiers, locations, and optional alias identifiers. Used to track and manipulate import targets and their renamed equivalents during code analysis.",
+      "description_length": 253,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal.TypeParam",
+      "description": "Represents Python type parameters used in function, class, and type alias definitions, capturing location, name, and bounds. It works with tuples containing expression, identifier, location, and type parameter data. Used to parse and model type parameters within Python source code blocks enclosed in square brackets.",
+      "description_length": 317,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal.ExceptionHandler",
+      "description": "Handles exception patterns in Python code by capturing the exception type, variable name, and associated statements. Works with expression, identifier, location, statement, and exception handler types. Used to parse and represent `try...except` blocks for static analysis or code transformation.",
+      "description_length": 295,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal.MatchCase",
+      "description": "Represents a single branch from a Python match statement, including its pattern, optional guard expression, and associated statements. Operates on polymorphic types for expressions, patterns, statements, and the overall match case structure. Used to model and manipulate match case branches in code analysis or transformation tools.",
+      "description_length": 332,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal.Pattern",
+      "description": "Constructs and manipulates pattern structures used in match expressions, handling constants, expressions, identifiers, locations, and nested patterns. It supports operations for matching single values, sequences, mappings, classes, stars, as patterns, and or patterns. Used to build complex pattern matching logic in code analysis or transformation tools.",
+      "description_length": 355,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal.Statement",
+      "description": "Provides constructors for building abstract syntax tree nodes representing Python statements, including function definitions, class definitions, control flow, assignments, and expressions. Operates on polymorphic types such as locations, identifiers, expressions, and statement lists. Used to construct and manipulate parsed Python code for analysis or transformation.",
+      "description_length": 368,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal.TypeIgnore",
+      "description": "Tracks line numbers and additional tags from Python type ignore comments, storing them alongside a value of any type. Works with integers for line numbers and strings for tags, preserving contextual information from source code comments. Used to annotate code analysis tools with precise locations and metadata of type ignore directives.",
+      "description_length": 337,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal.Module",
+      "description": "Represents a Python module with a list of statements and type ignore items, enabling structured handling of module contents. Operates on typed lists of statements and type ignore annotations. Used to parse and manipulate Python module structures during static analysis or code transformation.",
+      "description_length": 292,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal.FunctionType",
+      "description": "Represents Python function type signatures using a structured format that captures argument types and return type. It works with lists of expression types and a function type identifier. Used to encode and analyze function signatures during parsing.",
+      "description_length": 249,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.Concrete.Position",
+      "description": "Represents a position in a text document using line and column numbers, supporting serialization to and from S-expressions, comparison, and hashing. It works with a private record type containing line and column integers. Used to track cursor positions or parse error locations in text processing workflows.",
+      "description_length": 307,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "PyreAst.Concrete.Location",
+      "description": "Encodes and decodes location data using S-expressions, with conversion functions for sexp representation. Compares and hashes location instances based on their start and stop positions. Constructs location objects from position pairs, representing ranges in source code.",
+      "description_length": 270,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.Concrete.Identifier",
+      "description": "Provides operations to convert between a unique identifier type and S-expressions, compare identifiers, and compute hash values. Works with a custom type `t` representing unique identifiers, constructed from strings. Used to serialize, compare, and hash identifiers in a type-safe manner.",
+      "description_length": 288,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.Concrete.Constant",
+      "description": "Provides conversion between a private type `t` and S-expressions, along with comparison and hashing functions. Offers constructors for creating values representing boolean, integer, float, string, and ellipsis literals. Used to encode and decode constant values in a typed, serializable format.",
+      "description_length": 294,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "PyreAst.Concrete.ExpressionContext",
+      "description": "Provides operations to convert values to and from S-expressions, compare instances, and compute hash values. Works with a private type representing contextual expressions. Used to serialize, deserialize, and manage expression states in a tagged final interpreter.",
+      "description_length": 263,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.Concrete.BooleanOperator",
+      "description": "Provides operations to create and compare boolean operators, including `make_and_of_t` and `make_or_of_t` for generating operator instances. Works with the private type `t` representing boolean logic constructs. Serializes and deserializes values using S-expressions and supports hashing for efficient storage and comparison.",
+      "description_length": 325,
+      "index": 29,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "PyreAst.Concrete.BinaryOperator",
+      "description": "Provides operations for creating and comparing binary operators, including arithmetic and bitwise functions like addition, subtraction, multiplication, division, and bit shifts. Works with a private type representing operator instances. Used to encode operator semantics in domain-specific languages or symbolic computation systems.",
+      "description_length": 332,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.Concrete.UnaryOperator",
+      "description": "Provides operations to create and manipulate unary operators, including inversion, negation, and unary addition/subtraction. Works with a private type `t` representing operator instances. Used to construct and compare operators in expression parsing and transformation pipelines.",
+      "description_length": 279,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.Concrete.ComparisonOperator",
+      "description": "Provides comparison and logical operation constructors and serialization for a private type, including equality, inequality, ordering, and membership checks. Supports S-expression conversion, hashing, and comparison operations. Used to generate and manipulate condition expressions in query or rule systems.",
+      "description_length": 307,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.Concrete.ImportAlias",
+      "description": "Provides serialization and deserialization via S-expressions, along with comparison and hashing capabilities. Works with a private type representing imported aliases, including a location, name, and optional as-name. Used to encode and compare import mappings in a compiler or code analysis tool.",
+      "description_length": 296,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.Concrete.Comprehension",
+      "description": "Provides operations to construct and manipulate comprehension expressions, including creating with iteration and conditional filters, and converting to and from S-expressions. Works with custom type `t` representing structured comprehension data. Used to generate code representations for list or sequence comprehensions in a typed domain-specific language.",
+      "description_length": 357,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.Concrete.Keyword",
+      "description": "Provides operations for converting between a keyword representation and S-expressions, comparing keywords, and computing hash values. Works with a private type representing keywords, which include a location, optional argument, and expression value. Used to serialize and deserialize keyword data during parsing and analysis workflows.",
+      "description_length": 335,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.Concrete.Argument",
+      "description": "Handles parsing and serialization of argument representations using S-expressions. Operates on location, identifier, and optional expression or string annotations. Used to construct and compare argument structures in compiler or parser contexts.",
+      "description_length": 245,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.Concrete.Arguments",
+      "description": "Provides operations to serialize and deserialize values using S-expressions, compare instances, and compute hash values. Works with a private type representing function arguments, including positional, keyword, and variable arguments. Used to construct and manipulate argument structures for function definitions in a parser or code generation context.",
+      "description_length": 352,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.Concrete.Expression",
+      "description": "The module offers serialization, comparison, and hashing capabilities for structured expression types, alongside constructors for building AST nodes such as boolean operations, function calls, and conditionals, all incorporating location metadata. It operates on typed expression components and abstract syntax tree structures to support tasks like code analysis, transformation, and compiler development. Specific use cases include manipulating parsed code representations for static analysis or generating intermediate forms in language processing pipelines.",
+      "description_length": 560,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.Concrete.WithItem",
+      "description": "Provides serialization and deserialization between S-expressions and a private type representing a context-aware expression with optional variables. Implements comparison, hashing, and a constructor for building instances with specific expression contexts. Used to encode and decode structured data in a format compatible with Sexp parsing and manipulation.",
+      "description_length": 357,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.Concrete.TypeParam",
+      "description": "Provides operations for serializing and deserializing type parameters using S-expressions, comparing them, and generating hash values. Works with a custom type `t` representing type variables, parameter specifications, and type variable tuples. Used to construct and manipulate type metadata during parsing and type checking in a compiler or type inference system.",
+      "description_length": 364,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.Concrete.ExceptionHandler",
+      "description": "Provides operations to serialize and deserialize exception data using S-expressions, compare exceptions, and compute hash values. Works with a private type representing exception details, including location, type, name, and body. Used to encode exception information for debugging or persistence, and to ensure consistent handling during parsing or transformation workflows.",
+      "description_length": 374,
+      "index": 41,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "PyreAst.Concrete.MatchCase",
+      "description": "Provides functions to convert between a custom type and S-expressions, compare instances, and compute hash values. Works with a private type representing structured patterns, guards, and bodies. Used to construct and serialize abstract syntax elements for pattern matching.",
+      "description_length": 273,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.Concrete.Pattern",
+      "description": "Provides pattern matching constructs for parsing and analyzing structured data, including match values, singletons, sequences, mappings, classes, stars, as patterns, and or patterns. Operates on types like Location.t, Expression.t, Constant.t, Identifier.t, and internal pattern representations. Used to build and manipulate pattern structures during syntax analysis or transformation pipelines.",
+      "description_length": 395,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.Concrete.Statement",
+      "description": "This module provides functions for constructing abstract syntax tree (AST) nodes representing Python statements, including control flow, assignments, function/class definitions, and exception handling, operating on types like `Location.t`, `Identifier.t`, `Expression.t`, and `Arguments.t`. It enables the creation of structured program elements such as matches, asserts, imports, and flow control constructs, facilitating tasks like code parsing, static analysis, and transformation. Specific use cases include building typed representations for compiler passes or linters that require detailed syntactic information.",
+      "description_length": 618,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.Concrete.TypeIgnore",
+      "description": "Provides serialization and comparison operations for a private type, including conversion to and from S-expressions, hashing, and a constructor that initializes instances with line numbers and optional tags. Works with a hidden type that encapsulates internal state and metadata. Used to create and manipulate structured data in a way that preserves source location information and supports efficient hashing and comparison.",
+      "description_length": 424,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.Concrete.Module",
+      "description": "Provides serialization and deserialization between `t` and S-expressions, along with comparison and hashing capabilities. Works with the `t` type, which encapsulates statements and type ignores. Used to convert abstract syntax structures into a format suitable for persistence or communication.",
+      "description_length": 294,
+      "index": 46,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "PyreAst.Concrete.FunctionType",
+      "description": "Provides functions to serialize and deserialize values between S-expressions and a custom type, along with comparison and hashing capabilities. Works with a structured type that includes argument types and a return type, derived from an expression system. Used to encode and compare function signatures in a symbolic computation context.",
+      "description_length": 337,
+      "index": 47,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "PyreAst.Parser.Context",
+      "description": "Encapsulates and manages global state information necessary for parser initialization. Operates on a custom type representing contextual data specific to parsing environments. Used to maintain and pass configuration and environment variables during the parsing process.",
+      "description_length": 269,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.Parser.Error",
+      "description": "type t = { message : string; position : int } Provides functions to create error instances with specific messages and positions, and to retrieve error details. Works with structured error data containing a message string and an integer position. Used to track and report issues during text parsing processes.",
+      "description_length": 308,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.Parser.TaglessFinal",
+      "description": "Provides parsing functions for Python modules, expressions, and function type signatures using a tagless-final approach, with control over type comment inclusion. Operates on custom AST node types defined by the specification, ensuring consistent traversal order for nested structures. Used to generate structured ASTs from source strings, supporting both modern and legacy Python syntax conventions.",
+      "description_length": 400,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.Parser.Concrete",
+      "description": "Parses Python source strings into concrete abstract syntax tree nodes, including modules, expressions, and function type signatures. Operates on context objects and returns results with error handling. Used to convert raw code into structured representations for analysis or transformation.",
+      "description_length": 290,
+      "index": 51,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "PyreAst.TaglessFinal",
+      "description": "The module provides a set of tagless-final interfaces for representing and processing Python syntax, enabling the construction of abstract syntax trees through function-based embeddings rather than explicit data structures. It includes types for positions, ranges, expressions, constants, operators, comprehensions, and statements, along with operations to build and manipulate these structures while preserving contextual information. For example, it allows creating expressions with specific evaluation contexts, modeling boolean operations with custom behaviors, and tracking source locations for error reporting or analysis.",
+      "description_length": 628,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst.Concrete",
+      "description": "Provides a structured representation of Python syntax through a series of modules that define and manipulate abstract syntax tree nodes, locations, identifiers, constants, expressions, and statements. Key data types include location, identifier, constant, expression, and statement, with operations for S-expression serialization, comparison, and hashing. It enables tasks such as constructing typed AST nodes, encoding source positions, serializing function signatures, and managing pattern matching structures for code analysis and transformation.",
+      "description_length": 549,
+      "index": 53,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "PyreAst.Parser",
+      "description": "provides parsing capabilities for Python source code, transforming strings into structured abstract syntax trees using the CPython parser via C bindings. it manages context state, handles errors with position and message tracking, and supports module, expression, and signature parsing with configurable type comment handling. it enables precise error reporting and faithful representation of Python syntax, including legacy and modern constructs. examples include parsing a module string into an AST node or extracting function signatures with error tracking.",
+      "description_length": 560,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "pyre-ast",
+      "description": "Parses Python source files into abstract syntax trees that exactly match the output of Python's `ast.parse` function, including line and column numbers. Supports both tagless-final and concrete algebraic data type representations of Python syntax. Enables precise static analysis and transformation of Python code in OCaml environments.",
+      "description_length": 336,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PyreAst",
+      "description": "Encapsulates Python syntax representation and parsing through function-based AST construction, location tracking, and CPython-driven parsing. It defines core types like expressions, statements, locations, and identifiers, along with operations for building, serializing, and comparing AST nodes. It supports creating expressions with contextual metadata, parsing module strings into structured trees, and extracting function signatures with error tracking. Examples include modeling boolean operations, encoding source positions, and generating S-expressions for analysis.",
+      "description_length": 572,
+      "index": 56,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 57,
+    "meaningful_modules": 57,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 628,
+    "min_description_length": 245,
+    "avg_description_length": 347.12280701754383,
+    "embedding_file_size_mb": 0.20748138427734375
+  }
+}

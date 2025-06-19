@@ -1,0 +1,49 @@
+{
+  "package": "openbsd",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 4,
+  "creation_timestamp": "2025-06-18T16:28:23.392590",
+  "modules": [
+    {
+      "module_path": "Openbsd.Pledge",
+      "description": "Provides functions to invoke the pledge(2) system call on OpenBSD, allowing processes to restrict their capabilities. Accepts strings representing pledge promises and executes them in either promise-only or exec-only modes. Raises specific exceptions for invalid input or system errors, enabling fine-grained control over process permissions.",
+      "description_length": 342,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Openbsd.Unveil",
+      "description": "Provides functions to interact with the unveil(2) system call on OpenBSD, allowing fine-grained control over file access permissions. Works with file paths and permission strings to restrict or lock access to resources. Used to secure application environments by limiting file system exposure after initialization.",
+      "description_length": 314,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "openbsd",
+      "description": "Provides functions to invoke the pledge(2) and unveil(2) system calls, allowing fine-grained control over process capabilities and file system access. Works with boolean flags and string paths to enforce security policies at runtime. Used to restrict application behavior in sandboxed environments or secure daemons.",
+      "description_length": 316,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Openbsd",
+      "description": "Controls process capabilities and file access on OpenBSD through system calls. Accepts pledge promises and unveil permissions to restrict operations and file exposure, with mode-specific execution. Raises exceptions for invalid inputs, enabling precise error handling. Can secure applications by limiting permissions at runtime or restricting file access after initialization.",
+      "description_length": 376,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 4,
+    "meaningful_modules": 4,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 376,
+    "min_description_length": 314,
+    "avg_description_length": 337.0,
+    "embedding_file_size_mb": 0.014937400817871094
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "package": "metrics",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 8,
+  "creation_timestamp": "2025-06-18T16:31:32.800231",
+  "modules": [
+    {
+      "module_path": "Metrics.Data",
+      "description": "Provides functions to create and manipulate time-series data, including setting and retrieving timestamps, extracting field lists, and appending fields. Works with a custom `t` type and string-based timestamps. Used to construct metrics with specific keys and values, ensuring valid character constraints are enforced during creation.",
+      "description_length": 334,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Metrics.Tags",
+      "description": "Creates typed tags for metrics with specific data types, enabling runtime control over data collection. Works with primitive types like string, float, int, and their variants, wrapped in a typed structure. Used to annotate metrics with identifiable, typed metadata for dynamic filtering and monitoring.",
+      "description_length": 302,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Metrics.Src",
+      "description": "Provides functions to create and manage metric sources with tagged data, including enabling/disabling, retrieving names and documentation, and inspecting tag and data field names. Works with tagged data structures, including strings, integers, and custom types, and supports dynamic field updates. Used to track system metrics like CPU and memory usage, indexed by machine identifiers and process details.",
+      "description_length": 405,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Metrics.Graph",
+      "description": "Provides operations to create, modify, and query graph objects, including setting titles, labels, and units, as well as managing fields from sources. Works with a `t` type representing graphs, which contain fields linked to specific sources. Used to dynamically add or remove data fields from a graph and check its active state.",
+      "description_length": 328,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Metrics.Key",
+      "description": "Provides string-based accessors for retrieving specific metrics related to memory and garbage collection, including durations, status indicators, and heap statistics. Works with internal representations of memory usage, collection counts, and fragmentation data. Used to monitor and analyze runtime behavior in systems requiring detailed memory profiling.",
+      "description_length": 355,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Metrics.SM",
+      "description": "This module offers a range of operations for managing ordered maps, including insertion, updating, deletion, and querying of key-value pairs, alongside advanced functions for merging, traversing, and transforming maps. It works with ordered key-value structures, particularly those utilizing `Src.t` as the key type, enabling efficient sequence-based manipulations and conversions between maps and lists or sequences. Use cases include dynamic data aggregation, configuration management, and processing ordered datasets where key-based filtering or sequential transformations are required.",
+      "description_length": 589,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "metrics",
+      "description": "Tracks and aggregates numeric data from labeled sources, supporting counters, gauges, and timers. Operates on tagged metrics, enabling dynamic activation or deactivation of data collection. Used to monitor system performance, track request latencies, and measure resource usage in real-time applications.",
+      "description_length": 304,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Metrics",
+      "description": "tracks and manages time-series metrics through sources, tags, and graphs, enabling dynamic monitoring and filtering of system data. it handles typed fields, tags, and sources, with operations for building, updating, and querying metric structures. it supports memory and garbage collection analysis, as well as graph-based visualization of metric data. examples include tracking CPU usage with tagged identifiers or monitoring heap statistics through string-based accessors.",
+      "description_length": 474,
+      "index": 7,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 8,
+    "meaningful_modules": 8,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 589,
+    "min_description_length": 302,
+    "avg_description_length": 386.375,
+    "embedding_file_size_mb": 0.02947998046875
+  }
+}

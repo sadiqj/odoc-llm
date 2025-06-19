@@ -1,0 +1,63 @@
+{
+  "package": "caqti-eio",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 6,
+  "creation_timestamp": "2025-06-18T16:29:14.505663",
+  "modules": [
+    {
+      "module_path": "Caqti_eio.Stream",
+      "description": "Provides operations to process and transform streams, including folding with error handling, iterating with potential errors, and converting streams to lists in forward or reverse order. Works with stream nodes that represent elements, failures, or continuations, and supports error propagation through result types. Converts lists to streams, applies functions that return results, and accumulates values while preserving error contexts.",
+      "description_length": 438,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Caqti_eio.Pool",
+      "description": "Provides operations to manage a pool of resources, including retrieving the current size, using a resource with priority-based scheduling, and draining all resources while maintaining pool usability. Works with a parameterized type representing a pool of resources and associated errors. Used to efficiently manage database connections or thread pools where resource allocation and prioritization are critical.",
+      "description_length": 410,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Caqti_eio.Response",
+      "description": "Returns the count of rows from a database response or the number of affected rows, with error handling. Processes single or multiple rows, supporting iteration, folding, and streaming of results. Used to validate query outcomes, handle optional results, and process large datasets efficiently.",
+      "description_length": 293,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "caqti-eio",
+      "description": "Provides functions for connecting to and querying relational databases using a unified API, with support for parameterized SQL templates and type-safe data encoding/decoding. Operates on database connection URIs, query strings, and structured data types like tuples and records. Enables dynamic database interaction in applications requiring multi-backend support, such as migration tools or reporting systems.",
+      "description_length": 410,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Caqti_eio",
+      "description": "Provides row count or affected row information from database responses, with support for error handling, iteration, and streaming. Offers operations to process single or multiple results, including folding and optional value extraction. Examples include validating query success, counting returned rows, and efficiently handling large datasets. Main data types include result counts, error types, and streamable row structures.",
+      "description_length": 427,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Caqti_eio_unix",
+      "description": "Establishes database connections using Eio's event loop, supporting driver-specific URI parsing and configuration. Operates on `Uri.t` and returns connection objects implementing `Caqti_connection_sig.S`, with pool management for repeated use. Handles connection setup, environment variable expansion, and post-connection initialization tasks.",
+      "description_length": 343,
+      "index": 5,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 6,
+    "meaningful_modules": 6,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 438,
+    "min_description_length": 293,
+    "avg_description_length": 386.8333333333333,
+    "embedding_file_size_mb": 0.022210121154785156
+  }
+}

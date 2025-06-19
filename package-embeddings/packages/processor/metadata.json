@@ -1,0 +1,70 @@
+{
+  "package": "processor",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 7,
+  "creation_timestamp": "2025-06-18T16:30:20.422174",
+  "modules": [
+    {
+      "module_path": "Processor.Query",
+      "description": "Returns the total number of logical CPUs, physical cores, and physical sockets on the system. Operates on system-level hardware metrics, providing low-level hardware configuration data. Used to determine system resource allocation and performance characteristics in runtime environments.",
+      "description_length": 287,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Processor.Affinity",
+      "description": "Retrieves and modifies the set of logical CPUs a process can execute on, using either CPU identifiers or a custom Cpu.t type. Provides functions to fetch and update affinity based on integer IDs or structured CPU objects. Useful for optimizing performance in multi-core environments by restricting or directing process execution to specific cores.",
+      "description_length": 347,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Processor.Topology",
+      "description": "Provides functions to access and analyze CPU core and thread relationships, including retrieving all logical CPUs and determining physical core affiliations. Works with CPU identifiers and hierarchical groupings derived from system information. Used to optimize thread placement and resource allocation in multi-core environments.",
+      "description_length": 330,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Processor.Cpu",
+      "description": "Provides operations to construct and query CPU objects, including creating with specific attributes, extracting subsets based on SMT, core, or socket, and dumping CPU details. Works with the `t` type, which encapsulates CPU identifiers and hierarchical relationships. Used to filter and inspect CPU resources in systems with multiple sockets, cores, and SMT threads.",
+      "description_length": 366,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "processor",
+      "description": "Provides functions to retrieve and manipulate CPU topology, including thread, core, and socket information, and to set process affinity to specific CPU units. Works with data types such as CPU identifiers, topology hierarchies, and affinity masks. Used to optimize task scheduling in multi-core systems, isolate processes to specific cores, and leverage heterogeneous CPU architectures like P-cores and E-cores.",
+      "description_length": 411,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Processor",
+      "description": "Provides system-level hardware insights and CPU management capabilities, enabling retrieval and manipulation of CPU configurations. It handles data types such as CPU identifiers, affinity sets, and structured CPU objects, supporting operations like affinity adjustment, core mapping, and resource filtering. Users can determine system topology, restrict process execution to specific cores, and analyze thread relationships. Examples include setting CPU affinity for performance tuning, extracting SMT subsets, and identifying physical core groupings.",
+      "description_length": 551,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amd64",
+      "description": "Provides functions to retrieve CPU information via CPUID instructions, decompose APIC IDs into processor components, and convert register values to byte representations. Works with integers representing CPU registers, APIC IDs, and strings for vendor and model identifiers. Used to extract detailed processor architecture data for system diagnostics or low-level hardware interaction.",
+      "description_length": 384,
+      "index": 6,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 7,
+    "meaningful_modules": 7,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 551,
+    "min_description_length": 287,
+    "avg_description_length": 382.2857142857143,
+    "embedding_file_size_mb": 0.025838851928710938
+  }
+}

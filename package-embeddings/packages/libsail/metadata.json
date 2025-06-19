@@ -1,0 +1,1064 @@
+{
+  "package": "libsail",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 149,
+  "creation_timestamp": "2025-06-18T16:56:14.375377",
+  "modules": [
+    {
+      "module_path": "Libsail.Smt_exp.SimpSet.SimpVar",
+      "description": "Compares two variables for ordering, returning an integer result. Works with the abstract type `t` representing variables in a simplified symbolic computation context. Used to sort variables during expression normalization or to enforce consistent variable ordering in algebraic manipulations.",
+      "description_length": 293,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Smt_exp.SimpSet.SimpVarMap",
+      "description": "This module offers a range of operations for managing key-value mappings, including insertion, deletion, updates, and merging, with support for both strict and optional access patterns. It works with maps structured around `SimpVar.t` keys and generic values, enabling functional transformations like folding, mapping, and filtering. Use cases include efficiently handling variable bindings, converting between map and sequence representations, and performing predicate-based queries on structured data.",
+      "description_length": 503,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Smt_exp.SimpSet.SimpVarSet",
+      "description": "The module offers set operations like addition, removal, combination, and property queries (e.g., cardinality, min, max) for collections of `elt` elements, with strict and optional variants. It manipulates sets and sequences, enabling conversions between them and supporting functional transformations such as iteration and filtering. Specific use cases include managing symbolic variable domains or processing ordered data streams in constraint-solving contexts.",
+      "description_length": 463,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Pretty_print_sail.Printer",
+      "description": "Handles formatting and transformation of abstract syntax trees with options to insert braces for imperative style, resugar expressions to revert certain AST transformations, and hide attributes in output. Operates on AST nodes and attributes, modifying how code is represented. Used to prepare transformed code for human readability or further processing by restoring original syntax elements.",
+      "description_length": 393,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Pretty_print_sail.Default_print_config",
+      "description": "Controls formatting of AST output by managing brace insertion, syntax restoration, and attribute visibility. Operates on boolean flags that influence how the AST is rendered. Used to produce human-readable code from transformed or optimized ASTs, particularly after theorem prover transformations.",
+      "description_length": 297,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Pretty_print_sail.Document",
+      "description": "Outputs a pretty-printed document to a channel or converts it to a string, respecting specified line width constraints. Works with PPrint.document type, which represents structured text formatting. Used to generate human-readable output for logs, configuration files, or debug information.",
+      "description_length": 289,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Sail_file.In_channel",
+      "description": "Provides an iterator-style interface for reading file contents line by line, supporting both optional and mandatory line retrieval. Operates on file handles and returns a stateful object for sequential access. Used to process large input files incrementally without loading them entirely into memory.",
+      "description_length": 300,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Ast_util.Id",
+      "description": "Compares two AST identifiers based on their lexical order. Operates on the internal representation of identifiers used in the abstract syntax tree. Used to determine equality or ordering during type checking and code generation.",
+      "description_length": 228,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Ast_util.Kid",
+      "description": "Compares two AST nodes representing child elements, returning an integer based on their positional order. Operates on the `Ast.kid` type, which encodes hierarchical relationships in parsed source code. Used to determine the relative placement of nodes during tree traversal and transformation.",
+      "description_length": 293,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Ast_util.Kind",
+      "description": "Compares two AST kind representations, returning an integer indicating their relative order. Operates on the internal representation of type `t`, which corresponds to `Ast.kind`. Used to enforce ordering constraints during type checking or code generation.",
+      "description_length": 256,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Ast_util.KOpt",
+      "description": "Compares two kinded identifiers based on their names and kinds, returning an integer indicating their relative order. It operates on the `t` type, which is an alias for `Ast.kinded_id`. This is used to sort or order kinded identifiers in type-checking or code analysis workflows.",
+      "description_length": 279,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Ast_util.Nexp",
+      "description": "Compares two normalized expressions for structural equality and ordering. Operates on abstract syntax tree nodes representing numerical expressions. Used to enforce consistent ordering in symbolic computation pipelines.",
+      "description_length": 219,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Ast_util.NC",
+      "description": "Compares two normalized constraint objects for ordering based on their internal structure. Operates on the `Ast.n_constraint` type, representing constraints in a normalized form. Used to determine equality or ordering during constraint validation and transformation processes.",
+      "description_length": 276,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Ast_util.Typ",
+      "description": "Compares two type representations from the AST to determine equality or ordering. Operates on the internal type structure used to represent type information during parsing. Used to check type compatibility in type inference or during semantic analysis.",
+      "description_length": 252,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Ast_util.IdSet",
+      "description": "The module offers operations for manipulating ordered sets of elements, including union, intersection, difference, and predicate-based queries, alongside functional transformations like mapping, filtering, and folding. It works with structured data such as AST identifiers and ordered collections, enabling tasks like symbolic computation or program analysis through efficient set management and reverse iteration. Specific use cases include constructing sets from sequences, processing elements in order, and splitting sets based on criteria.",
+      "description_length": 543,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Ast_util.NexpSet",
+      "description": "This module provides comprehensive set operations such as addition, removal, union, intersection, and predicate-based element selection, along with traversal and transformation utilities for ordered collections. It works with ordered sets of elements, specifically `Ast.nexp` in sequence-based manipulations, leveraging a comparison function for ordering. Use cases include managing dynamic collections of abstract syntax tree nodes, efficiently querying subsets, and converting between sets and lists/sequences for processing.",
+      "description_length": 527,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Ast_util.NexpMap",
+      "description": "This module provides operations for manipulating ordered maps with `Ast.nexp` keys and generic values, including adding, updating, removing, and merging bindings, as well as iterating and filtering based on key order or predicates. It supports sequence-based construction and traversal, enabling efficient handling of structured data like symbolic expressions or configurations. Specific use cases include managing dynamic key-value relationships where ordered access or conditional transformations are required.",
+      "description_length": 512,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Ast_util.KOptSet",
+      "description": "This module offers core set operations like insertion, deletion, and membership checks, along with set-theoretic operations such as union, intersection, and difference, while supporting optional variants to handle edge cases gracefully. It works with ordered sets of generic elements, including specialized handling for `Ast.kinded_id` sequences, preserving ordering during additions and reverse iteration. Use cases include efficient element manipulation in structured data processing, predicate-based filtering, and maintaining ordered collections in applications requiring deterministic traversal.",
+      "description_length": 600,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Ast_util.KOptMap",
+      "description": "This module provides operations for constructing, modifying, and traversing ordered maps with keys of type `Ast.kinded_id` and arbitrary values, including adding, removing, updating, querying, and merging bindings. It supports sequence-based processing, ordered key traversal, and efficient key-based lookups, making it suitable for tasks like managing structured data with ordered constraints or transforming map contents while preserving key order.",
+      "description_length": 450,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Ast_util.KidSet",
+      "description": "The module provides standard set operations like union, intersection, and difference, along with traversal and transformation functions for ordered collections, enabling efficient querying and safe access to elements. It specializes in handling structured data types such as `Ast.kid`, supporting ordered additions, reverse iteration, and predicate-based searches for tasks involving hierarchical or sequential data manipulation.",
+      "description_length": 429,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Ast_util.KBindings",
+      "description": "This module provides operations for managing ordered key-value maps, including adding, removing, updating, and querying bindings, with support for both imperative and functional workflows. It works with maps featuring keys of type `Ast.kid` and values of a generic type, enabling ordered traversal, filtering, and transformation based on key sequences. Specific use cases include constructing maps from sequences, processing structured data with ordered keys, and efficiently querying bindings in sorted or conditional key ranges.",
+      "description_length": 530,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Ast_util.Bindings",
+      "description": "The module provides operations for managing key-value bindings in ordered maps, including addition, removal, updates, and queries, with support for ordered traversal and transformation. It works with maps structured around specific key types and generic values, alongside sequences of (Ast.id * 'a) pairs for map construction. Use cases include symbolic processing tasks and configuration management, where ordered data manipulation and efficient key-based access are critical.",
+      "description_length": 477,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Ast_util.NCMap",
+      "description": "The module provides operations for constructing, modifying, and querying maps with ordered keys of type `Ast.n_constraint` and values of a generic type, supporting actions like insertion, filtering, transformation, and traversal. It enables use cases such as managing constraint-based data structures in compilers or static analysis tools, where ordered key processing and efficient value manipulation are critical. Functions include key-conditioned searches, bidirectional iteration, and merging, with emphasis on preserving equality and handling optional bindings.",
+      "description_length": 566,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Ast_util.TypMap",
+      "description": "This module provides operations for manipulating key-value maps, including adding, removing, updating, and merging bindings, as well as iterating, filtering, and transforming entries. It works with maps where keys are of type `Ast.typ` and values are generic, supporting ordered traversal and predicate-based queries. Use cases include constructing maps from sequences, processing structured data with conditional logic, and maintaining efficient key-value relationships in type-sensitive contexts.",
+      "description_length": 498,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Ast_util.Scanner",
+      "description": "Scans and validates location data within a parsed AST, returning a boolean indicating match success. It operates on a custom type `t` representing scan state and a parsed location structure. Used to filter and process specific AST nodes during parsing validation.",
+      "description_length": 263,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Project_lexer.M",
+      "description": "The module offers operations for inserting, deleting, updating, and merging key-value stores, alongside traversal, transformation, and querying functions tailored for associative data structures with specific key types and generic values. It enables conversion between these stores and sequences of key-value pairs, particularly handling string-based keys for serialization and deserialization. Use cases include managing configuration data, processing structured datasets, and implementing efficient data transformation pipelines.",
+      "description_length": 531,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Effects.EffectSet",
+      "description": "The module offers operations for managing ordered collections, including adding, removing, and combining elements via set operations like union and intersection, as well as traversing, filtering, and transforming elements within ordered structures. It handles both generic ordered elements and sequences of side effects, enabling tasks such as structured data manipulation, predicate-based queries, and conversion between sets and lists or sequences for flexible data processing.",
+      "description_length": 479,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Smt_exp.SimpSet",
+      "description": "provides a framework for handling symbolic variables and their relationships through ordered comparisons, key-value mappings, and set operations. It supports `SimpVar.t`-based maps and sets, enabling efficient manipulation of variable bindings, ordered data, and symbolic domains. Operations include sorting variables, managing bindings with insertions and deletions, and performing set-based queries like cardinality and membership. It facilitates tasks such as normalizing expressions, tracking variable dependencies, and processing constraint-based data structures.",
+      "description_length": 568,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Smt_exp.Simplifier",
+      "description": "The module provides rewriting strategies for simplifying SMT expressions, focusing on logical equivalence, term flattening, and inequality handling through operations like `append_to_and`, `append_to_or`, and `rule_ite_literal`. It manipulates `smt_exp` and `SimpSet.t` structures, addressing Boolean logic, equality substitution, and bit-vector function simplification. Use cases include optimizing logical constructs, restructuring complex expressions, and eliminating redundancies in symbolic reasoning tasks.",
+      "description_length": 512,
+      "index": 28,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Smt_exp.Counterexample",
+      "description": "Provides operations to determine the maximum width of an integer that cannot be represented in a given system. Works with integer widths and bit-level constraints. Used to identify overflow limits in custom numeric types.",
+      "description_length": 221,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Constant_fold.StringMap",
+      "description": "This module provides operations for managing string-keyed maps, including adding, removing, and updating key-value pairs, as well as querying bindings, cardinality, and extreme values. It supports functional transformations like folding, mapping, and filtering, enabling efficient data processing and manipulation. Use cases include configuration management, data aggregation, and scenarios requiring fast lookup and modification of structured data.",
+      "description_length": 449,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Name_generator.Overrides",
+      "description": "The module offers functions for manipulating ordered maps with key-value bindings, including insertion, deletion, updates, and complex operations like merging and transformation. It works with maps featuring ordered keys, such as tuples of three strings, and supports sequence-based construction, filtering, and conversion to lists or sequences. Use cases include managing hierarchical configurations, processing structured data, and optimizing data aggregation workflows.",
+      "description_length": 472,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Name_generator.Make",
+      "description": "Checks if a name is permissible and generates styled, mangled, or variant forms of names based on a specified style. Operates on strings and a custom style type to transform identifiers according to predefined rules. Used to generate consistent naming conventions in code generation or data processing pipelines.",
+      "description_length": 312,
+      "index": 32,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Parse_ast.Attribute_data",
+      "description": "Provides functions to construct and deconstruct attribute data, including parsing and serialization operations. Works with the `attribute_data` and `attribute_data_aux` types, which represent structured metadata in abstract syntax trees. Used to ensure consistent attribute handling between parsed and main AST representations.",
+      "description_length": 327,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Type_check.Env",
+      "description": "The module provides operations for managing type-checking environments, including retrieving and updating type specifications, constraints, and bindings, as well as handling module access and type abstractions through identifier and metadata manipulation. It works with data structures like kinded identifiers, type quantifiers, and AST types, enabling tasks such as type inference, constraint tracking, and resolution of complex structures like unions and bitfields. Specific use cases include validating type relationships, managing shadowing, and analyzing constructor properties during compilation.",
+      "description_length": 602,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Callgraph.Node",
+      "description": "Compares two nodes based on their internal identifiers, returning an integer indicating their relative order. Operates on the `t` type, which represents individual nodes in a graph structure. Used to sort node collections or determine adjacency relationships during graph traversal.",
+      "description_length": 282,
+      "index": 35,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Callgraph.NodeSet",
+      "description": "The module offers set-theoretic operations such as addition, removal, and combination of elements, alongside querying, transformation, and ordered traversal functions for managing collections of nodes. It works with sorted set structures (t) containing elements of type `elt`, enabling efficient manipulation through predicates, mappings, and sequence-based construction. Use cases include hierarchical data processing, dynamic node management, and scenarios requiring ordered or reverse iteration for structured data traversal.",
+      "description_length": 528,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Callgraph.NodeMap",
+      "description": "This module offers key-based manipulation of node-keyed maps, including adding, removing, and updating bindings, along with ordered traversal and filtering operations. It works with structured data where keys are of type `node` and values are arbitrary, supporting sequence-based construction and transformation. Use cases include efficiently processing sorted key-value pairs, building maps from iterative sources, and applying predicate-driven queries on ordered datasets.",
+      "description_length": 474,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Callgraph.G",
+      "description": "This module offers graph manipulation capabilities such as edge management, reachability analysis, pruning, reversal, and topological sorting, working with graph structures composed of node sets and edge relationships. It supports tasks like dependency resolution and network analysis by enabling traversal, transformation, and visualization of graph data through node-centric operations and set-based representations.",
+      "description_length": 418,
+      "index": 38,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Callgraph.FCG",
+      "description": "This module handles graph manipulation and analysis tasks, including edge management, node extraction, reachability checks, topological sorting, and strongly connected component identification, operating on graphs composed of `Ast.id` nodes and sets of AST identifiers. It supports operations critical for compiler workflows, such as abstract syntax tree traversal and transformation, enabling tasks like dependency analysis and code optimization. The functions emphasize graph transformation patterns, making them suitable for applications requiring structured data flow analysis.",
+      "description_length": 581,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Format_sail.Make",
+      "description": "Provides access to a configuration record, allowing retrieval of build settings and environment variables. Operates on a custom config type containing flags, paths, and compiler options. Used to customize build processes and inject external parameters during compilation.",
+      "description_length": 271,
+      "index": 40,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Lexer.M",
+      "description": "This module provides operations for managing key-value entries, including insertion, deletion, modification, and aggregation, alongside sequence-based transformations and conversions. It works with parameterized key-value structures using string keys, enabling functional and imperative processing of pairs through mapping, filtering, and folding. Use cases include dynamic data aggregation, configuration management, and pipeline-based data processing where key-value relationships need frequent restructuring.",
+      "description_length": 511,
+      "index": 41,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Property.Event",
+      "description": "Compares two event instances based on their internal state, returning an integer indicating their relative order. It operates on the `t` type, which represents event objects with unique identifiers and timestamps. This function is used to sort event logs or determine processing order in real-time systems.",
+      "description_length": 306,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Util.Option_monad",
+      "description": "Performs binding and mapping operations on optional values, allowing sequential computation with error propagation. It works with the `option` type, enabling safe composition of functions that may fail. Used to chain operations where each step depends on the success of the previous, such as parsing nested data or handling optional configuration parameters.",
+      "description_length": 358,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Util.State_monad",
+      "description": "Provides operations to bind stateful computations, extract current state, and update state with new values. Works with the `t` type to represent stateful actions that transform a value and maintain an associated state. Used to manage application state in a pure functional way, such as tracking configuration changes or maintaining a counter across function calls.",
+      "description_length": 364,
+      "index": 44,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Util.IntSet",
+      "description": "The module provides set operations for integers and strings, including adding, removing, combining elements, and querying membership, with support for ordered iteration, predicate-based searches, and transformation via mapping and filtering. It handles structured data processing tasks like sequence conversion, reverse iteration, and property checks, enabling efficient management of dynamic collections in scenarios requiring safe access or ordered traversal.",
+      "description_length": 461,
+      "index": 45,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Util.IntMap",
+      "description": "The module provides operations for managing integer-keyed maps, including insertion, deletion, lookup, and advanced manipulations like merging, union, and traversal. It works with ordered sequences of key-value pairs and supports efficient transformations, filtering, and iterative processing. Use cases include building dynamic data structures, optimizing key-based queries, and handling batch updates through sequence-based constructions.",
+      "description_length": 440,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Util.StringSet",
+      "description": "The module provides set operations such as union, intersection, and element insertion/removal, along with traversal and transformation functions for ordered collections. It works with ordered sets of elements defined by a comparison function, enabling efficient querying and conversion to lists or sequences. Use cases include managing dynamic string collections where ordered membership checks and structured data transformations are required.",
+      "description_length": 444,
+      "index": 47,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Util.StringMap",
+      "description": "This module provides operations for creating, modifying, and querying ordered key-value maps with string keys, supporting insertion, deletion, merging, and traversal. It includes specialized functions for searching (e.g., finding last entries), transforming values, filtering, and converting between maps, lists, and sequences, suitable for tasks like configuration management or data processing with ordered string keys.",
+      "description_length": 421,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Util.IntIntSet",
+      "description": "The module provides set operations such as addition, removal, and querying for integer collections, along with set algebra (union, intersection, difference) and ordered traversal capabilities. It handles both single integer sets and sequences of integer pairs, enabling transformations, filtering, and conversions between sets and lists. Use cases include managing ordered data structures, efficiently querying relationships in coordinate-based systems, or processing structured integer tuples in algorithmic workflows.",
+      "description_length": 519,
+      "index": 49,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Graph.Make",
+      "description": "Compares two values of type t using a custom ordering function. It operates on the abstract type t, which represents build configurations. This function is used to determine the precedence of build targets during incremental compilation.",
+      "description_length": 237,
+      "index": 50,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Interactive.State",
+      "description": "Provides functions to initialize a state structure containing an abstract syntax tree, effect information, and a type-checking environment, using a JSON configuration and a directory path. Works with the `istate` type, which encapsulates runtime context for command execution. Used to set up initial execution environments for interactive commands in a compiler or interpreter.",
+      "description_length": 377,
+      "index": 51,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Reporting.Position",
+      "description": "Moves a lexical position to the first non-whitespace character in a string or advances it past the string's content, optionally accounting for trailing characters. Operates on `Lexing.position` and `string` to adjust or extract positional information. Used to track accurate source locations during parsing, especially when handling trimmed or extended string content.",
+      "description_length": 368,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Jib_util.Name",
+      "description": "Compares two name representations based on lexical order, returning an integer indicating their relative position. It operates on the `Jib.name` type, which encapsulates string-based identifiers. This is used to sort or order names within a system that tracks entity identifiers.",
+      "description_length": 279,
+      "index": 53,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Jib_util.NameSet",
+      "description": "The module provides operations for managing collections of elements, including set manipulations like union, intersection, and difference, as well as functional transformations such as mapping, filtering, and folding. It works with structured data like Jib names and abstract set types, enabling tasks such as sequence processing and property checks. Specific use cases include constructing name sets, iterating over ordered elements, and safely handling optional operations during set modifications.",
+      "description_length": 500,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Jib_util.NameMap",
+      "description": "This module provides operations for creating, modifying, and querying ordered maps with Jib.name keys and generic values, including adding, removing, updating, merging, and retrieving entries. It supports sequence-based manipulation, ordered iteration, and transformations like filtering, folding, and converting between maps and lists, suitable for tasks such as configuration management or structured data processing. Custom merging logic and predicate-based queries enable flexible handling of key-value relationships in ordered contexts.",
+      "description_length": 541,
+      "index": 55,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Jib_util.CTSet",
+      "description": "This module supports standard set operations such as union, intersection, and element manipulation, along with iteration, transformation, and conversion between sets and sequences, all tailored for ordered data structures. It works with generic ordered elements and sequences, enabling efficient deterministic operations and reverse iteration. Use cases include managing structured data like `Jib.ctyp` elements, optimizing set queries, and integrating set logic with functional transformations.",
+      "description_length": 495,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Jib_util.CTMap",
+      "description": "The module offers key-based manipulation of ordered maps, including insertion, update, deletion, and merge operations, with support for custom combining functions during merges. It works with maps featuring keys of type `Jib.ctyp` and generic values, enabling sequence-driven construction and ordered traversal. Use cases include building structured data from key-value sequences, merging maps with tailored logic, and processing bindings in sorted key order.",
+      "description_length": 459,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Jib_util.CTListSet",
+      "description": "This module offers ordered set operations such as element insertion, deletion, union, intersection, and ordered traversal, along with predicate-based search, transformation, and splitting. It works with ordered sets of type `t` containing elements of type `elt`, as well as sequences for set construction and reverse iteration. Specific use cases include efficiently managing sorted collections, processing structured data like `Jib.ctyp list`, and implementing algorithms requiring set algebra or ordered data manipulation.",
+      "description_length": 524,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Jib_util.NameCTSet",
+      "description": "This module offers standard set operations like insertion, deletion, and membership checks, along with set algebra (union, intersection, difference) and predicate-based queries, all tailored for ordered elements via a comparison function. It supports functional transformations such as mapping, filtering, and folding, alongside iteration and partitioning of sets, particularly useful for managing structured data like name-ctype pairs. Applications include efficient data aggregation, ordered traversal, and safe manipulation of heterogeneous element collections.",
+      "description_length": 564,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Jib_util.NameCTMap",
+      "description": "This module offers operations for constructing, modifying, and querying key-value maps with keys structured as tuples of Jib.name and Jib.ctyp, supporting ordered traversal and sequence-based manipulations. It enables tasks like merging entries, filtering bindings, and transforming maps while preserving key order, making it suitable for scenarios requiring precise control over structured data hierarchies. Functions also handle physical equality checks and metadata retrieval, ideal for environments where exact key matching and ordered processing are critical.",
+      "description_length": 564,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Pattern_completeness.Make",
+      "description": "Provides functions to extract a type from a structure and modify a list of attributes by adding a new one with associated data. Operates on abstract syntax tree types and attribute lists. Used to annotate or transform AST nodes during parsing or code generation.",
+      "description_length": 262,
+      "index": 61,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Libsail_sites.Sites",
+      "description": "Provides access to a list of plugin locations using Dune_site's private location type. Operates on site-specific plugin configurations stored in a structured list. Used to dynamically load and manage site plugins during build processes.",
+      "description_length": 236,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Jib_compile.IdGraph",
+      "description": "The module provides directed graph operations such as edge manipulation, reachability checks, strongly connected component detection, and topological sorting, primarily working with nodes of type `Ast.id` and identifier sets represented by `Ast_util.IdSet.t`. It supports tasks like dependency analysis, cycle detection, and structural visualization in contexts such as program analysis or data flow tracking. The functionality enables efficient traversal and transformation of graph structures built from identifier relationships.",
+      "description_length": 531,
+      "index": 63,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Jib_compile.Make",
+      "description": "Converts AST types to Jib type representations, optimizes ANF expressions, and unrolls loops for SMT generation. Handles bitvector size restrictions, struct and tuple value generation, real literals, and branch coverage tracking. Controls function call precision, void type usage, and eager evaluation of control flow for backend compatibility.",
+      "description_length": 344,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Sail_lib.Mem",
+      "description": "This module offers a range of operations for manipulating key-value stores, including insertion, deletion, querying, and transformation, with support for traversal, filtering, and sequence-based conversions. It works with maps featuring big integer keys and generic values, enabling efficient handling of structured data. Use cases include dynamic data management, batch processing of key-value pairs, and integrating with systems requiring serialized or streamed data representations.",
+      "description_length": 485,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Jib_ssa.NameGraph",
+      "description": "This module provides directed graph operations such as edge manipulation, reachability checks, strongly connected component detection, and topological sorting, leveraging graph structures where nodes are represented by `Jib.name` or `Jib_util.Name` types. It supports traversal and transformation workflows, along with set-based operations for managing collections of named entities. Use cases include dependency analysis, entity relationship modeling, and visualizing graph hierarchies.",
+      "description_length": 487,
+      "index": 66,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Value.StringMap",
+      "description": "This module supports operations on string-keyed maps, including insertion, deletion, lookup, and transformation, with capabilities for handling lists as values and custom merging. It enables sequence-based manipulation, allowing conversion between maps and sequences, and provides functions like `find_last`, `filter`, and `map` for querying and modifying key-value pairs. Use cases include managing configuration data, processing structured datasets, and efficiently traversing or converting associative structures.",
+      "description_length": 516,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Infix_parser.MenhirInterpreter",
+      "description": "This module offers low-level control over parser execution through operations like checkpoint management, stack manipulation, and reduction handling, enabling precise state analysis and context maintenance. It works with parser environments, checkpoints, token positions, and internal states to support tasks such as debugging, custom parsing logic, and dynamic input handling. Specific use cases include tracking production rules, inspecting stack contents, and managing incremental parsing workflows.",
+      "description_length": 502,
+      "index": 68,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Infix_parser.Incremental",
+      "description": "Provides functions to mark the end of input for type and expression parsing, using position data to create checkpoints. Works with `Lexing.position` and `Parse_ast` types wrapped in `MenhirInterpreter.checkpoint`. Used to signal parsing completion and handle error recovery in incremental parsing scenarios.",
+      "description_length": 307,
+      "index": 69,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Interpreter.Printer",
+      "description": "Converts specific AST nodes from the language's syntax tree into formatted documents using the PPrint library. It handles identifiers, types, bindings, expressions, blocks, and type definitions, producing structured textual representations. Each function maps a distinct AST component to a printable format suitable for pretty-printing code.",
+      "description_length": 341,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Project.ModId",
+      "description": "Converts module identifiers to their underlying integer representation. Works with a private integer type to encapsulate module identities. Used to serialize or compare modules in a safe, opaque manner.",
+      "description_length": 202,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Project.ModSet",
+      "description": "This module offers a range of set operations, including union, intersection, and element-based queries, along with traversal and transformation functions for ordered processing. It handles generic sets of elements and specialized sets of module identifiers, supporting sequence-based construction and reverse iteration. Use cases include managing dynamic collections, filtering elements via predicates, and efficiently processing module dependencies in reverse order.",
+      "description_length": 467,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Smt_gen.Make",
+      "description": "Processes bit-level representations of values from parsed AST nodes and type information, generating formatted strings for binary, decimal, and hexadecimal outputs. Handles list operations such as checking emptiness, accessing head and tail elements, and comparing lists. Performs bitwise counting and vector storage operations for low-level data manipulation.",
+      "description_length": 360,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Anf",
+      "description": "This module handles transformations and analyses of A-normal form (ANF) expressions, focusing on binding tracking, type extraction, and purity checking. It operates on structured expressions (`aexp`) and trivial values (`aval`), using a generic type parameter to manage annotated or untyped constructs. Key use cases include converting nested function calls into let-bound variables and performing static analysis to infer types or ensure expression purity.",
+      "description_length": 457,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Ast",
+      "description": "This module provides operations for constructing and manipulating abstract syntax tree (AST) elements, including expressions, types, patterns, and annotations, with a focus on recursive, parameterized, and nested structures. It works with polymorphic data structures like bindings, type schemas, and metadata to model program components and their relationships. Use cases include parsing, analysis, and transformation of programming language constructs, as well as internal AST processing for type checking and code generation.",
+      "description_length": 527,
+      "index": 75,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Ast_defs",
+      "description": "Converts lazy-defined AST nodes into fully resolved definitions or AST structures, enabling safe access to deferred computations. Operates on typed AST nodes and lazy representations that encapsulate delayed parsing or evaluation. Used to finalize partially constructed syntax trees during incremental processing or error recovery.",
+      "description_length": 331,
+      "index": 76,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Ast_util",
+      "description": "Provides comparison and set/map operations for AST elements, including identifier, node, kind, and type comparisons, as well as ordered set and map manipulations. Operates on types like `Ast.kid`, `Ast.kinded_id`, `Ast.n_constraint`, and `Ast.typ`, enabling tasks such as ordering nodes, managing symbolic expressions, and validating constraints. Supports structural equality checks, set-theoretic operations, and ordered data processing for program analysis and transformation. Examples include sorting kinded identifiers, merging constraint maps, and validating AST locations.",
+      "description_length": 578,
+      "index": 77,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Bitfield",
+      "description": "Creates L-expressions for setting specific or all bits in a bitfield, and expressions for converting between bitvectors and bitfield types. Operates on annotated lexp, exp, and nexp structures, along with index_range and binding mappings. Used to generate low-level bit manipulation code for hardware description or binary data parsing.",
+      "description_length": 336,
+      "index": 78,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Callgraph",
+      "description": "provides graph operations for managing node relationships, including sorting, set manipulation, key-based maps, and edge-level transformations. It works with node types, sorted sets, and maps, enabling tasks like reachability analysis, topological sorting, and dependency resolution. Functions support efficient traversal, filtering, and modification of graph structures, such as extracting connected components or reversing edge directions. It facilitates compiler-related analyses by handling AST node interactions and structured data flow.",
+      "description_length": 542,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Chunk_ast",
+      "description": "Provides functions to extract keywords from AST elements like binders and match expressions, and to handle comment delimiters. Works with custom types representing AST nodes, comments, and structured chunks of code. Used to format code by separating and reordering syntactic elements while preserving original structure.",
+      "description_length": 320,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Config",
+      "description": "Rewrites configuration nodes in an abstract syntax tree using values from a JSON file, replacing E_config nodes with corresponding JSON values or leaving them for runtime resolution. It generates JSON schemas for types associated with configuration nodes, ensuring type safety at runtime. This enables structured configuration management and validation within the Sail model.",
+      "description_length": 375,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Constant_fold",
+      "description": "This module performs constant folding by identifying function applications with all literal arguments, evaluating them using an interpreter, and replacing them with their computed results while maintaining type safety. It includes operations for managing string-keyed maps, supporting additions, lookups, and transformations like folding and mapping. For example, it can replace `add 1 2` with `3` or manage configuration data through efficient key-value operations. Exceptions during evaluation are caught, ensuring the original expression remains in the AST.",
+      "description_length": 560,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Constant_propagation",
+      "description": "Performs constant propagation on expressions by substituting known values from immutable and type variable bindings, while respecting mutable variable assignments and tracking referenced variables. Operates on typed ASTs, substitutions, and sets of referenced identifiers. Used to optimize code by replacing variables with their constant values in contexts where references are not present.",
+      "description_length": 390,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Constant_propagation_mutrec",
+      "description": "Processes and transforms abstract syntax trees by identifying and replacing constant expressions and function applications with their computed values. Operates on annotated expressions, function expressions, and AST nodes, using environment and type information to ensure correctness. Rewrites recursive and mutually recursive definitions, substituting known constants and simplifying expressions during analysis.",
+      "description_length": 413,
+      "index": 84,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Constraint",
+      "description": "Provides an interface for interacting with SMT solvers by exposing methods to create and manipulate constraints, check satisfiability, and retrieve results. Key data types include constraints, contexts, and solver states, with operations for adding assertions, solving, and querying models. Users can construct logical expressions, validate their consistency, and extract satisfying assignments. Example tasks include verifying logical formulas, solving constraint systems, and analyzing symbolic execution paths.",
+      "description_length": 513,
+      "index": 85,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Effects",
+      "description": "Manages ordered collections with set operations, traversal, and transformation, supporting both generic elements and sequences of side effects. It enables structured data manipulation, predicate-based filtering, and conversion between sets, lists, and sequences. Operations include adding, removing, combining, and transforming elements within ordered structures. Examples include merging effectful operations, filtering side-effect sequences, and converting between data representations for analysis.",
+      "description_length": 501,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Error_format",
+      "description": "This module offers functions for formatting error messages with positional accuracy, including line-skipping, code underlining, and handling unprintable characters, while working with file channels, lexing positions, and structured message templates. It enables precise error reporting by integrating parse location data with severity levels through a custom formatter, suitable for compiler or linter tools. Specific use cases include generating styled diagnostics and contextual code snippets for debugging.",
+      "description_length": 509,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Flag",
+      "description": "Creates a flag with customizable prefix, visibility, and debugging options, and converts it into an argument specification for command-line parsing. Operates on strings and a custom flag type representing configuration settings. Used to define and integrate command-line flags with specific behaviors into an application's argument parser.",
+      "description_length": 339,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Format_sail",
+      "description": "Provides functions to parse and generate configuration files using a custom format, including reading key-value pairs and handling nested sections. Works with strings, maps, and lists to represent structured data. Used to load project-specific settings and serialize them back to disk during build processes.",
+      "description_length": 308,
+      "index": 89,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Frontend",
+      "description": "Handles parsing and type checking of custom file formats, generating Sail ASTs with specific function and register tracking. Processes files to identify defined functions and uninitialized registers, supporting target-specific configuration. Accepts parsed input and returns type-checked ASTs along with environment updates.",
+      "description_length": 324,
+      "index": 90,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Graph",
+      "description": "The module offers graph manipulation operations like edge management, reachability analysis, pruning, reversal, and topological sorting, along with node set handling. It works with custom `graph` and `node_set` types to enable tasks such as dependency resolution, network analysis, and path optimization. Specific use cases include simplifying complex relationships in data structures or processing hierarchical workflows.",
+      "description_length": 422,
+      "index": 91,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Infix_parser",
+      "description": "manages parser state and input termination with low-level control over execution, using checkpoints and stack operations to track and modify parsing contexts. It handles `Lexing.position` and `Parse_ast` types through `MenhirInterpreter.checkpoint` to mark input ends and support error recovery. Users can inspect stack contents, track production rules, and manage incremental parsing workflows. Examples include debugging by analyzing internal states and implementing custom error handling during parsing.",
+      "description_length": 506,
+      "index": 92,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Initial_check",
+      "description": "This module handles low-level AST transformations, including context merging, type argument conversion, and register initialization, while generating undefined values and enum conversions through direct manipulation of AST nodes, type contexts, and identifiers. It also facilitates parsing and desugaring of OCaml source code, converting strings and files into structured ASTs with support for expressions, types, and error-tracking utilities. Key use cases involve preprocessing code for compilation pipelines and augmenting ASTs with runtime-specific constructs.",
+      "description_length": 564,
+      "index": 93,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Interactive",
+      "description": "Initializes a runtime context for interactive command execution by constructing an `istate` type from a JSON configuration and directory path, incorporating an abstract syntax tree, effect data, and type environment. Supports setting up execution environments for compiler or interpreter workflows. Allows loading and preparing source files for dynamic evaluation. Enables interactive sessions by providing structured access to parsed and type-checked program components.",
+      "description_length": 471,
+      "index": 94,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Interpreter",
+      "description": "Transforms specific abstract syntax tree components into structured textual outputs using PPrint, supporting identifiers, types, expressions, and blocks. Each element is mapped to a printable format, enabling clear code representation. Functions handle distinct AST nodes, ensuring consistent formatting across language constructs. Examples include pretty-printing function bindings or type definitions for readability.",
+      "description_length": 419,
+      "index": 95,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Jib",
+      "description": "Provides operations for manipulating parsed annotations, type definitions, and intermediate representation constructs, including lifting, merging, and transforming type and value expressions. Works with custom types such as integer annotations, channel definitions, operation tags, and instruction structures. Used to process and analyze abstract syntax tree elements during compilation or semantic analysis.",
+      "description_length": 408,
+      "index": 96,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Jib_compile",
+      "description": "Converts Sail types to Jib types and optimizes ANF expressions, with options to unroll loops, control call precision, and manage bitvector sizes. Handles ANF expressions, type contexts, and bitvector constraints, while influencing code generation for SMT and verification tasks. Enables precise control over value representations, real literals, and eager evaluation of control flow constructs.",
+      "description_length": 394,
+      "index": 97,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Jib_optimize",
+      "description": "Removes redundant unit assignments and flattens nested instructions to produce a simplified control flow. Operates on lists of Jib instructions and cdef structures, eliminating dead code, unused labels, and unnecessary constructs. Optimizes function bodies by inlining, removing mutual recursion, and restructuring control flow.",
+      "description_length": 328,
+      "index": 98,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Jib_ssa",
+      "description": "Provides graph operations using named nodes, enabling edge management, reachability analysis, and topological sorting. Supports set-based manipulations and traversal for named entities, facilitating dependency tracking and relationship modeling. Operations include detecting strongly connected components and transforming graph structures. Examples include analyzing control flow in code and visualizing hierarchical relationships.",
+      "description_length": 431,
+      "index": 99,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Jib_util",
+      "description": "provides ordered operations for managing sets and maps of Jib identifiers and structured data, supporting set algebra, key-value manipulations, and functional transformations. It handles Jib.name and Jib.ctyp types, enabling tasks like sorting names, merging maps, and querying structured data with custom logic. Operations include set unions, map insertions, and ordered traversals, allowing efficient data processing and transformation. Examples include building name sets, managing configuration maps, and processing sorted collections with predicate-based filters.",
+      "description_length": 568,
+      "index": 100,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Lexer",
+      "description": "manages key-value pairs with string keys, supporting insertion, deletion, modification, and aggregation through both functional and imperative operations. It enables sequence transformations, conversions, and data restructuring via mapping, filtering, and folding. Users can dynamically aggregate data, manage configurations, or process pipelines by reorganizing key-value relationships. Examples include updating configuration settings, summarizing data sets, or transforming structured data streams.",
+      "description_length": 501,
+      "index": 101,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Libsail_sites",
+      "description": "Manages site-specific plugin configurations through a structured list, enabling dynamic plugin loading during builds. Utilizes a private location type to access plugin paths, supporting configuration-based site management. Allows for retrieval, modification, and application of plugin settings at build time. Examples include loading custom build steps or injecting site-specific dependencies.",
+      "description_length": 393,
+      "index": 102,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Lint",
+      "description": "Checks for variables that are declared but not modified within their scope, raising a warning when detected. It operates on abstract syntax trees (ASTs) representing OCaml code. This helps identify potential logical errors in variable usage during static analysis.",
+      "description_length": 264,
+      "index": 103,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Mappings",
+      "description": "Rewrites abstract syntax trees by applying type-aware transformations to expressions and declarations. It operates on typed AST structures generated by the type checking module. This is used to optimize or modify code structure while preserving type integrity.",
+      "description_length": 260,
+      "index": 104,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Monad_params",
+      "description": "Provides functions to extract monadic parameter information from a type-checking environment, focusing on bind and return operations. Works with type representations and monadic structures defined in the type-checking context. Used to analyze and infer monadic behavior during type inference or code transformation.",
+      "description_length": 315,
+      "index": 105,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Monomorphise",
+      "description": "Provides functions to transform typed ASTs by expanding polymorphic constructs, rewriting top-level expressions, and inserting bitvector casts. Operates on typed ASTs, environment data, and configuration options. Used to specialize generic code, optimize record parameter handling, and ensure type consistency in low-level representations.",
+      "description_length": 339,
+      "index": 106,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Name_generator",
+      "description": "Checks if a name is permissible and transforms it into a styled format or a mangled variant based on a specified style. Operates on strings and a style type to generate formatted or altered name versions. Used to standardize identifiers in code generation or data processing pipelines.",
+      "description_length": 285,
+      "index": 107,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Nl_flow",
+      "description": "Provides functions to analyze expressions for non-lexical flow properties, inserting assertions based on discovered constraints. Operates on lists of annotated expressions, using a boolean flag to enable or disable analysis. Used to detect and enforce control flow dependencies that bypass standard syntax-directed typing.",
+      "description_length": 322,
+      "index": 108,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Parse_ast",
+      "description": "manages attribute data through construction, deconstruction, parsing, and serialization operations, utilizing `attribute_data` and `attribute_data_aux` types to represent structured metadata. It ensures consistency between parsed and main AST representations by handling attribute transformations. Functions allow for converting attributes between different formats and embedding them in AST nodes. Examples include parsing attribute strings into structured data and serializing attributes for output or storage.",
+      "description_length": 512,
+      "index": 109,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Parser",
+      "description": "Parses lexical input into abstract syntax tree nodes for type schemes, types, expressions, definitions, and attribute data. Processes lexing buffers using a provided tokenization function, returning structured AST elements. Used to convert raw source text into typed representations for further analysis or code generation.",
+      "description_length": 323,
+      "index": 110,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Parser_combinators",
+      "description": "Parses structured input by combining token recognition, mapping results, and handling lists of parsed elements. It processes lists of split string results, applying functions to extract and transform values from matched tokens. Used to build complex parsing logic for structured text, such as parsing configuration files or query languages.",
+      "description_length": 340,
+      "index": 111,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Pattern_completeness",
+      "description": "Provides operations to extract type information from a structure and modify attributes within a labeled AST node. Works with abstract syntax tree nodes and attribute data to manage type and metadata relationships. Used to ensure type consistency when extending or annotating AST elements during parsing or analysis.",
+      "description_length": 315,
+      "index": 112,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Pragma",
+      "description": "Provides access to a set of recognized pragmas and allows registering new ones. Operates on strings and a set structure for tracking known pragmas. Used to validate pragma usage and ensure unrecognized ones trigger warnings.",
+      "description_length": 224,
+      "index": 113,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Preprocess",
+      "description": "Handles symbol management and argument preprocessing for parsing. Operates on strings, symbol sets, and AST nodes, providing functions to add, check, and clear symbols. Processes command-line arguments and positions, and transforms source code with custom preprocessing logic.",
+      "description_length": 276,
+      "index": 114,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Pretty_print_common",
+      "description": "provides a foundation for formatting and printing values with customizable output. it defines basic types such as format_t and operations for building and manipulating formatted strings. users can create simple outputs, combine fragments, and control indentation and spacing. examples include generating aligned text, nested structures, and pretty-printed data representations.",
+      "description_length": 377,
+      "index": 115,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Pretty_print_sail",
+      "description": "Provides functions to control brace insertion, attribute hiding, and syntax restoration during code output. Operates on abstract syntax trees with attributes and transformation hints. Enables precise control over the visual representation of transformed code, such as restoring vector notation and operator syntax after semantic analysis passes.",
+      "description_length": 345,
+      "index": 116,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Profile",
+      "description": "Tracks performance metrics by maintaining a stack of profiling data, allowing start and finish timestamps for specific operations. It works with a record type containing identifiers, timestamps, and duration data. Used to measure and log execution times of critical code sections during program runtime.",
+      "description_length": 303,
+      "index": 117,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Project",
+      "description": "Encapsulates module identities as opaque integers for safe comparison and serialization, while providing set operations for managing collections of elements and module identifiers. Supports union, intersection, and element queries, along with ordered traversal and reverse iteration for efficient processing. Can filter module dependencies using predicates or construct sets from sequences. Enables precise control over dynamic collections and module relationships in project workflows.",
+      "description_length": 486,
+      "index": 118,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Project_lexer",
+      "description": "manages associative data structures with string-based keys, supporting insertion, deletion, update, and merge operations, along with traversal and transformation functions. It handles conversion between key-value stores and sequences, enabling efficient data manipulation and serialization. Users can process configuration files, transform structured data, and build data pipelines. Operations include querying, merging, and converting between different representations.",
+      "description_length": 470,
+      "index": 119,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Project_parser",
+      "description": "Parses project definition files by scanning tokens and constructing a list of spanned project definitions. It processes input through a lexer function that generates tokens, which are then analyzed to build structured project data. The output includes detailed spans for error tracking and syntax analysis.",
+      "description_length": 306,
+      "index": 120,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Property",
+      "description": "Provides utilities for handling property and counterexample pragmas by comparing event instances, sorting logs, and determining processing order. It works with the `t` type, which encapsulates events with unique IDs and timestamps, and includes a comparison function that returns an integer. This enables ordered processing in real-time systems or analysis of event sequences. For example, it can be used to prioritize events by time or detect anomalies in event ordering.",
+      "description_length": 472,
+      "index": 121,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Reporting",
+      "description": "handles lexical position adjustments and extraction, enabling precise tracking of source locations during parsing. It operates on `Lexing.position` and `string` to move or advance positions, ignoring whitespace or accounting for trailing content. This supports accurate error reporting by ensuring locations reflect actual parsed content. For example, it can adjust a position to the start of a token after whitespace or skip over a string's content entirely.",
+      "description_length": 459,
+      "index": 122,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Rewriter",
+      "description": "provides a framework for defining and applying transformations to Sail code through a set of structured rules and operations. it includes data types for representing code patterns and rewrite rules, along with functions for matching and substituting these patterns. users can define custom rewrite strategies, such as inlining functions or simplifying expressions. examples include transforming recursive calls into loops or optimizing conditionals.",
+      "description_length": 449,
+      "index": 123,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Rewrites",
+      "description": "This module includes operations for transforming abstract syntax trees (ASTs) through techniques like loop unrolling and identifier generation, as well as type rewriting functions that modify type structures using context-aware transformations. It works with typed ASTs, environment data, and type contexts, supporting tasks such as code optimization and type-checking during compilation. Specific use cases involve enhancing performance through structural modifications and ensuring type consistency in compiled code.",
+      "description_length": 518,
+      "index": 124,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Sail2_instr_kinds",
+      "description": "This module provides type-class instances for enumerating and converting custom types representing ARM64 instruction semantics, including barrier domains, cache operations, and memory access kinds, along with string serialization for debugging. It defines structured representations for low-level architectural features like memory barriers and translation modes, enabling precise manipulation of instruction behaviors. These utilities are particularly useful in compiler or emulator contexts where accurate modeling of ARM64 memory operations and instruction categories is required.",
+      "description_length": 583,
+      "index": 125,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Sail2_operators",
+      "description": "This module provides low-level bitwise and arithmetic operations on bitvectors and machine words, including concatenation, shifts, rotations, division, modulus, and slice manipulation. It works with custom types like `Nat_big_num.num`, `Lem.mword`, and `Sail2_values.bitvector_class`, enabling precise control over bit-level transformations and numeric representations. Specific use cases include implementing cryptographic algorithms, optimizing numerical computations, and handling hardware-level data structures with fine-grained bit manipulation.",
+      "description_length": 550,
+      "index": 126,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Sail2_operators_bitlists",
+      "description": "The module offers arithmetic operations (addition, multiplication), bitwise manipulations (shifting, rotating), and data transformations (conversion between bitlists and numeric types, slicing, endianness reversal) on `bitU` lists and `Nat_big_num.num` values. It supports precise bit-level control through indexing, truncation, and subrange updates, enabling tasks like low-level bitvector arithmetic and safe operations with optional returns. Specific use cases include encoding/decoding data, performing scalar-vector arithmetic, and managing bit-level representations in formal verification contexts.",
+      "description_length": 604,
+      "index": 127,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Sail2_prompt",
+      "description": "This module enables monadic operations for sequencing stateful computations, including boolean conversions, bitvector manipulations, and nondeterministic value selection, operating on lists, bitU values, and stateful variables. It supports probabilistic or register-based selection via functions like `choose_nat` and list element picking through `internal_pick`, all within a custom monadic context parameterized by error handling and value classes. These capabilities are suited for tasks requiring symbolic execution, verification, or stateful probabilistic reasoning.",
+      "description_length": 571,
+      "index": 128,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Sail2_prompt_monad",
+      "description": "This module offers monadic sequencing with error handling, including operations for binding, returning, and exception management, alongside functions to manipulate register contexts using option and either types. It works with bitvectors, memory bytes, register values, events, and program states, encapsulating low-level access and control flow. Specific use cases include tracking execution traces, validating register classes, and managing failures through exception checks in a structured computational context.",
+      "description_length": 515,
+      "index": 129,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Sail2_values",
+      "description": "The module provides arithmetic operations on big integers, bitwise manipulations on bitvectors and bitU values, and list transformations, including slicing, padding, and conversions between numeric types and boolean lists. It enables low-level data processing tasks like endianness conversion, register state management, and hexadecimal encoding, with applications in compiler design and hardware simulation. Specific functions handle numeric bounds, sign/zero extension, and index-based element access, supporting precise control over binary and numeric data structures.",
+      "description_length": 571,
+      "index": 130,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Sail_file",
+      "description": "reads file contents line by line using a stateful iterator, allowing optional or required line retrieval from open file handles. It supports incremental processing of large files by maintaining internal state between calls. Key operations include `next` for fetching the next line and `close` for releasing resources. Example use cases include parsing log files, streaming data processing, and handling input without excessive memory usage.",
+      "description_length": 440,
+      "index": 131,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Sail_lib",
+      "description": "Provides bitwise operations for manipulating values of type `t`, including constants for zero and one. Works with abstract numeric types representing bit patterns. Used to construct and evaluate logical expressions in low-level system programming.",
+      "description_length": 247,
+      "index": 132,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Scattered",
+      "description": "Extracts identifiers from function clauses, identifies the last scattered definition in a list of type definitions, and filters union or enum clauses by ID. Operates on AST nodes, type annotations, and bindings from parsed OCaml code. Used to process and restructure type definitions during type checking or code transformation workflows.",
+      "description_length": 338,
+      "index": 133,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Smt_exp",
+      "description": "Provides operations to analyze and manipulate symbolic expressions used in SMT solvers, including retrieving the maximum width of unknown integer variables. Works with abstract representations of logical formulas and bitvector constraints. Used to determine resource limits when processing unbounded integer variables in verification tasks.",
+      "description_length": 340,
+      "index": 134,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Smt_gen",
+      "description": "Provides functions to constrain arbitrary precision integers, bitvectors, and generic vectors by setting maximum widths and lengths for safe SMT representation. Includes a classification function for handling SystemVerilog unions and a registration mechanism for backend-specific register references. Used to generate valid SMT expressions with runtime checks for unbounded types.",
+      "description_length": 380,
+      "index": 135,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Spec_analysis",
+      "description": "Extracts mutable variables assigned in AST expressions, function expressions, and patterns. Processes type annotations and substitutions within patterns and expressions, focusing on variable bindings and constraint equality checks. Identifies bound variables and performs type-level substitutions in abstract syntax trees.",
+      "description_length": 322,
+      "index": 136,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Specialize",
+      "description": "Provides functions to remove polymorphism from specifications by specializing type- and int-kinded definitions, including handling of initial calls and multiple specialization passes. Operates on typed ASTs, environments, and type bindings to generate concrete instantiations. Used to transform polymorphic functions into monomorphic forms for analysis or code generation.",
+      "description_length": 372,
+      "index": 137,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Splice",
+      "description": "Scans and analyzes an abstract syntax tree to extract identifier bindings and value specifications, then filters and reorganizes AST nodes based on identifier sets. It processes and annotates ASTs with type information, enabling the insertion of external code fragments into the structure. Used to integrate and modify code structures during type-checked transformations.",
+      "description_length": 371,
+      "index": 138,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Target",
+      "description": "Provides functions to register and manipulate custom compiler backends, including hooks for pre-parsing, pre-rewrites, and post-processing, along with configuration options and termination assertions. Operates on a `target` type that encapsulates backend-specific behavior and metadata. Used to define targets like Coq or OCaml, enabling custom output generation and control over frontend processing steps.",
+      "description_length": 406,
+      "index": 139,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Type_check",
+      "description": "Manages type-checking environments with operations for retrieving and updating type specifications, constraints, and bindings, using kinded identifiers, type quantifiers, and AST types. Supports tasks like type inference, constraint tracking, and resolving unions and bitfields by manipulating identifiers and metadata. Enables validation of type relationships, handling of shadowing, and analysis of constructor properties. Examples include tracking type dependencies and ensuring consistency in complex type structures during compilation.",
+      "description_length": 540,
+      "index": 140,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Type_env",
+      "description": "<think> Okay, let's tackle this. The user wants a 2-3 sentence description of the Type_env module based on the given summaries. They specified to identify main operations, data structures, and mention use cases without generic phrases or repeating the module name. First, I need to parse each of the seven function/type summaries. Let me go through them one by one. Summary 1: Talks about managing module contexts, visibility, type environments. Operations include setting/navigating modules, controlling access, manipulating type bindings and default orders. Data structures: module identifiers, type specs, scope states. Summary 2: Focuses on type environment 't' storing type specs, outcomes, abstract types, variant types. Operations: define, retrieve, modify elements like quantifiers, kinded identifiers, instantiations. Use cases: type inference, scoping, user-defined types. Summary 3: Variant types, unions, records, local variables. Operations: add, retrieve, query type info (constructors, fields, accessors). Data: identifiers, quantifiers, unions. Structured type representations. Summary 4: Retrieve/modify local variables, registers, type variables, constraints, shadowing. Data structures: environment 't', bindings, sets, lists. Focus on type inference and scope tracking. Summary 5: Shadowing checks, adding type variables/synonyms, return type tracking, overload resolution. Operates on AST nodes and type bindings. Patterns: type inference, name resolution, symbol tables. Summary 6: Adding/querying enums, scattered IDs, bitfields, expanding synonyms, resolving references. Data: AST identifiers, type structures, bindings. Patterns: type lookup, expansion, constraints. Summary 7: Checking well-formedness, constraints, setting SMT prover. Data: annotations, constraints, environment structures. Focus on type checking and validation. Now, I need to consolidate these into main operations, data structures, and use cases. Main operations: Managing type environments, defining/retrieving type elements, handling bindings, constraints, shadowing, type inference, scoping, name resolution, symbol tables, type checking, validation. Data structures: Type environment 't', module identifiers, type specifications, scope states, bindings, sets, lists, AST nodes, type structures, constraints, annotations, prover settings. Use cases: Type inference, scoping, managing user-defined types, handling structured types (unions, records), overload resolution, SMT-based validation, symbol table management. Avoid generic terms. Don't repeat module name. Need to make sure each sentence covers different aspects. Maybe first sentence on operations and data structures, second on use cases and specific features. Check for repetition. For example, type inference is mentioned multiple times. Also, handling different type constructs like variant types, unions, records, enums, bitfields. Also, shadowing, constraints, SMT solving. So, possible structure: The module provides operations for managing type environments, including defining, retrieving, and modifying type bindings, handling constraints, and tracking scope states, working with data structures like type environments, bindings, and AST nodes. It supports use cases such as type inference, scoping, overload resolution, and SMT-based validation, with features for structured type representations, shadowing checks, and managing user-defined types and their properties. Wait, that's two sentences. Maybe combine into three. Let me check the exact requirements. 2-3 sentences. Let me make sure to mention specific data structures and use cases. Another pass: The module handles type environment management through operations like defining, retrieving, and modifying type bindings, constraints, and scope states, utilizing data structures such as type environments, AST nodes, and bindings. It supports tasks including type inference, scoping, overload resolution, and SMT-based validation, with features for structured types like unions, records, and variant types, as well as shadowing checks and user-defined type management. That's two sentences. Maybe add a third for specific use cases. Alternatively, ensure that each sentence covers different aspects. Maybe the first sentence covers operations and data structures, the second use cases and specific features. Yes, that should work. Need to avoid generic terms like \"managing\" but the summaries use \"managing\" so maybe it's okay. But the user said not to use generic phrases. Hmm. Maybe rephrase \"managing\" as \"operating on\" or \"handling\". But the original summaries use \"managing\", so perhaps it's acceptable. Alternatively, use \"operations for defining, retrieving, and modifying type bindings...\" as in the summaries. Final check: Make sure not to repeat the module name. The user said \"Do NOT use generic phrases or repeat the module name.\" So the description should not mention \"Type_env\" again. The initial instruction says \"based on the chunk summaries below, write a 2-3 sentence description that...\" so the module name is given, but the description shouldn't repeat it. So the answer should not have \"Type_env\" in it",
+      "description_length": 5150,
+      "index": 141,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Type_error",
+      "description": "Provides functions to analyze unresolved quantifiers, convert type errors into reporting exceptions, and generate human-readable error messages. Works with type constraints, quantifier items, and type error representations. Used to handle and explain type mismatches, unresolved variables, and overload failures during type checking.",
+      "description_length": 333,
+      "index": 142,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsail.Util",
+      "description": "provides a suite of functional utilities for handling optional values, stateful computations, and structured data collections. it supports operations on options, stateful actions, integer and string sets, and ordered maps, enabling safe function chaining, state management, and efficient data manipulation. users can perform tasks like parsing nested data, tracking application state, managing dynamic collections, and querying key-value structures with ordered traversal. examples include safely composing failure-prone operations, maintaining counters across function calls, and efficiently merging and transforming sets and maps.",
+      "description_length": 632,
+      "index": 143,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Value",
+      "description": "Provides string-keyed map operations with insertion, deletion, lookup, and transformation, supporting lists as values and custom merging. Offers sequence-based manipulation, including conversion between maps and sequences, and functions like `find_last`, `filter`, and `map` for querying and modifying key-value pairs. Enables efficient handling of configuration data, structured datasets, and associative structures. Examples include merging configuration layers, filtering key-value pairs, and converting maps to list representations.",
+      "description_length": 536,
+      "index": 144,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Value2",
+      "description": "Provides functions to parse, evaluate, and manipulate symbolic expressions represented as `vl` type, including substitution and simplification of algebraic terms. Works with nested variants that encode numbers, variables, and operations like addition and multiplication. Used to process mathematical expressions in a symbolic computation pipeline.",
+      "description_length": 347,
+      "index": 145,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail.Visitor",
+      "description": "Provides functions to traverse and transform data structures while controlling child node processing. Operates on lists, options, and custom node structures with visit actions. Rebuilds nodes only when children change, enabling efficient expression rewriting and transformation.",
+      "description_length": 278,
+      "index": 146,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "libsail",
+      "description": "Provides functions for parsing, type-checking, and generating documentation from ISA specifications written in the Sail language. Operates on abstract syntax trees, bitvector constraints, and textual documentation templates. Used to validate ISA correctness and produce structured, machine-readable documentation for processor architectures.",
+      "description_length": 341,
+      "index": 147,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsail",
+      "description": "The module provides operations for managing type environments, including defining, retrieving, and modifying type bindings, constraints, and scope states, utilizing data structures such as type environments, AST nodes, and bindings. It supports tasks like type inference, scoping, overload resolution, and SMT-based validation, with features for structured types like unions, records, and variant types, as well as shadowing checks and user-defined type management. Specific use cases include handling type constraints, resolving symbol references, and ensuring consistency in complex type structures during compilation.",
+      "description_length": 620,
+      "index": 148,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 170,
+    "meaningful_modules": 149,
+    "filtered_empty_modules": 21,
+    "retention_rate": 0.8764705882352941
+  },
+  "statistics": {
+    "max_description_length": 5150,
+    "min_description_length": 202,
+    "avg_description_length": 447.0469798657718,
+    "embedding_file_size_mb": 0.541656494140625
+  }
+}

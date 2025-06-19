@@ -4,7 +4,7 @@ Generate embeddings for OCaml module descriptions using OpenAI-compatible API.
 
 This script processes module descriptions from the module-descriptions/ directory
 and generates embeddings using a local vLLM server. Embeddings are stored as
-numpy arrays with JSON metadata in the package_embeddings/ directory.
+numpy arrays with JSON metadata in the package-embeddings/ directory.
 """
 
 import argparse
@@ -59,7 +59,7 @@ class EmbeddingConfig:
     workers: int = 12
     batch_size: int = 32
     rate_limit: float = 10.0  # requests per second
-    output_dir: str = "package_embeddings"
+    output_dir: str = "package-embeddings"
     checkpoint_interval: int = 100
     log_level: str = "INFO"
     max_retries: int = 3
@@ -644,7 +644,7 @@ def main():
     parser.add_argument("--workers", type=int, default=12, help="Number of worker threads")
     parser.add_argument("--batch-size", type=int, default=32, help="Batch size for API requests")
     parser.add_argument("--rate-limit", type=float, default=10.0, help="API requests per second")
-    parser.add_argument("--output-dir", default="package_embeddings", help="Output directory")
+    parser.add_argument("--output-dir", default="package-embeddings", help="Output directory")
     parser.add_argument("--resume", action="store_true", help="Resume from checkpoint")
     parser.add_argument("--log-level", default="INFO", help="Logging level")
     parser.add_argument("--packages", help="Comma-separated list of specific packages to process")

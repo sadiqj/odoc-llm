@@ -1,0 +1,63 @@
+{
+  "package": "poll",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 6,
+  "creation_timestamp": "2025-06-18T16:30:12.412902",
+  "modules": [
+    {
+      "module_path": "Poll.Event",
+      "description": "Provides operations to create and manipulate event objects representing I/O readiness states. Works with a record type `t` containing fields for read, write, and error flags. Used to monitor file descriptors for readability, writability, or both in asynchronous I/O contexts.",
+      "description_length": 275,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Poll.Backend",
+      "description": "Provides functions to parse, validate, and execute backend-specific commands using a custom type `t` that represents structured request data. Includes operations to transform input data into internal representations and generate corresponding output responses. Used to process API requests and manage state transitions within the application's core logic.",
+      "description_length": 355,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Poll.Timeout",
+      "description": "Provides functions to create and manipulate time-based events, including an immediate event, a never-expiring event, and an event that triggers after a specified duration. Works with a custom time type `t` representing timeouts. Used to manage asynchronous operations with precise timing controls.",
+      "description_length": 297,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Poll.Poll_intf",
+      "description": "Provides operations to monitor file descriptors for I/O events, including setting up monitored descriptors, waiting for events with a timeout, and iterating over ready events. Works with file descriptors and event states represented by `Event.t`. Used to efficiently manage multiple I/O sources in event-driven applications, such as handling network connections or file operations.",
+      "description_length": 381,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "poll",
+      "description": "Provides functions to register and poll for I/O readiness events, handling one-shot notifications that require re-registration after each event. Operates on file descriptors and event masks to track read, write, and error conditions. Used to implement event-driven I/O in network servers and asynchronous applications.",
+      "description_length": 318,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Poll",
+      "description": "Combines I/O event monitoring, command processing, and timed event management through specialized data types. It handles event states with a record type for I/O readiness, processes structured requests with a command type, and manages timeouts using a custom time type. It enables efficient handling of network connections, execution of API commands, and scheduling of delayed actions. Examples include detecting readable file descriptors, parsing and responding to API requests, and triggering actions after a set interval.",
+      "description_length": 524,
+      "index": 5,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 6,
+    "meaningful_modules": 6,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 524,
+    "min_description_length": 275,
+    "avg_description_length": 358.3333333333333,
+    "embedding_file_size_mb": 0.02225017547607422
+  }
+}

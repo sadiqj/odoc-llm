@@ -1,0 +1,63 @@
+{
+  "package": "happy-eyeballs-mirage",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 6,
+  "creation_timestamp": "2025-06-18T16:29:34.793288",
+  "modules": [
+    {
+      "module_path": "Happy_eyeballs_mirage.Make.UDP",
+      "description": "Provides functions to manage UDP communication, including listening for packets on specific ports, handling incoming datagrams, and sending data with optional source addresses and TTL. Operates on types such as IP addresses, Cstruct.t for packet data, and custom error types. Used to establish and terminate UDP connections, route packets based on destination ports, and transmit data with fine-grained control over network parameters.",
+      "description_length": 435,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Happy_eyeballs_mirage.Make.TCP",
+      "description": "The module provides TCP connection management and data transfer operations, including creating, reading, writing, and shutting down connections, along with error handling and lifecycle control. It operates on network flows, IP addresses, and ports, supporting both blocking and non-blocking transmission. A type `t` is defined but lacks implemented functions.",
+      "description_length": 359,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Happy_eyeballs_mirage.Make.IP",
+      "description": "Provides pretty-printers for errors, IP addresses, and prefixes. Handles IP layer operations such as demultiplexing incoming packets, sending data with configurable options, and generating pseudoheaders for checksums. Works with IP addresses, prefixes, and connection state, enabling tasks like packet routing and network interface configuration.",
+      "description_length": 346,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Happy_eyeballs_mirage.Make",
+      "description": "Manages network communication through UDP and TCP protocols, handling packet reception, transmission, and error reporting. Supports IP address manipulation, packet demultiplexing, and custom error formatting, with operations for sending and receiving data over network flows. Enables precise control over packet routing, connection lifecycle, and checksum generation. Examples include routing UDP packets by port, establishing TCP data streams, and generating IP pseudoheaders for checksum calculations.",
+      "description_length": 503,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "happy-eyeballs-mirage",
+      "description": "Provides functions to establish a connection to a remote host by evaluating available IP addresses, prioritizing IPv6, and managing connection attempts with a state machine. Works with DNS resolution results, socket addresses, and connection states. Used to implement resilient network connections in applications requiring fallback between IPv4 and IPv6.",
+      "description_length": 355,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Happy_eyeballs_mirage",
+      "description": "Provides functions to establish network connections with timeout and retry controls, supporting both hostname resolution and direct IP address connections. Operates with types like `t`, `stack`, `flow`, and `getaddrinfo` to manage connection attempts and DNS lookups. Enables injecting custom DNS resolvers and connects to specified ports on hosts or IP addresses with configurable delays and timeouts.",
+      "description_length": 402,
+      "index": 5,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 6,
+    "meaningful_modules": 6,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 503,
+    "min_description_length": 346,
+    "avg_description_length": 400.0,
+    "embedding_file_size_mb": 0.022249221801757812
+  }
+}

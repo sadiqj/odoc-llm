@@ -1,0 +1,42 @@
+{
+  "package": "proc-smaps",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 3,
+  "creation_timestamp": "2025-06-18T16:28:34.835352",
+  "modules": [
+    {
+      "module_path": "Smaps.Fields",
+      "description": "The module provides functions for converting strings to predefined keys used in memory metrics and checking if a key is locked, focusing on system/process memory analysis and resource locking mechanisms. It operates on a `key` type representing identifiers or resources, with operations tailored for monitoring memory statistics and enforcing access control. Use cases include tracking memory usage patterns and managing locked resources in concurrent environments.",
+      "description_length": 465,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "proc-smaps",
+      "description": "Provides functions to parse and extract memory mapping details from the `/proc/self/smaps` file, including permissions, file paths, and size values. Works with structured data types representing memory mappings, such as `Smaps.t`, which includes fields like `pathname`, `perms`, and methods to retrieve specific metrics. Used to inspect memory usage of processes, such as determining the size of the `/bin/bash` executable in a running process.",
+      "description_length": 444,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Smaps",
+      "description": "manages memory-related keys and their lock states, enabling tracking of resource usage and access control. It defines a `key` type and offers conversions from strings to these keys, along with checks for lock status. This supports tasks like monitoring memory metrics and preventing race conditions in multi-threaded applications. For example, it can identify which memory regions are locked or map string identifiers to internal tracking keys.",
+      "description_length": 444,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 3,
+    "meaningful_modules": 3,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 465,
+    "min_description_length": 444,
+    "avg_description_length": 451.0,
+    "embedding_file_size_mb": 0.0113067626953125
+  }
+}

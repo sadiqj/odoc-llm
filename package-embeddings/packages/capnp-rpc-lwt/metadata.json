@@ -1,0 +1,77 @@
+{
+  "package": "capnp-rpc-lwt",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 8,
+  "creation_timestamp": "2025-06-18T16:30:55.340235",
+  "modules": [
+    {
+      "module_path": "Capnp_rpc_lwt.Capability.Request",
+      "description": "Provides functions to create and manage request payloads with customizable size and content, and to release resources when no longer needed. Works with typed message structures and reference-counted slices. Used to construct Capnp-based requests with controlled memory allocation and cleanup.",
+      "description_length": 292,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc_lwt.Service.Response",
+      "description": "Provides functions to create and manage response structures using Capnp.Message.rw Slice.t, including initializing with a message size and building content. Works with typed response structures ('b t) that encapsulate message data and references. Used to construct and release responses in Capnp-based serialization workflows, such as generating RPC replies or handling binary data streams.",
+      "description_length": 390,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc_lwt.StructRef",
+      "description": "Provides operations to manage reference counts on a structure that holds a response, allowing safe access and cancellation. Works with a parameterized type 'a t representing a promise for a response structure. Used to pipeline messages to a capability inside a promise without waiting for the full response to arrive.",
+      "description_length": 317,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc_lwt.Capability",
+      "description": "Manages capability-based communication by enabling the creation, manipulation, and cleanup of request payloads with precise control over memory and data structure. It supports typed message formats and reference-counted slices, allowing safe and efficient handling of asynchronous object references. Operations include payload construction, resource release, and method invocation on pending objects. Examples include building Capnp-encoded requests, managing memory-intensive data transfers, and invoking methods on unresolved promises.",
+      "description_length": 537,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc_lwt.Sturdy_ref",
+      "description": "Provides functions to connect to and interact with remote services via sturdy references, including handling results and exceptions. Works with capability objects, message slices, and structured storage readers and builders. Used to access and modify sturdy references in Capnp messages, enabling remote service interactions.",
+      "description_length": 325,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc_lwt.Service",
+      "description": "Manages response structures using Capnp.Message.rw Slice.t, enabling creation, initialization, and content building for typed response types ('b t). Supports lifecycle operations like constructing and releasing responses within Capnp serialization pipelines. Examples include generating RPC replies and processing binary data streams. Provides direct control over message data and references for low-level serialization tasks.",
+      "description_length": 426,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "capnp-rpc-lwt",
+      "description": "Processes and manipulates JSON data through parsing, serialization, and field extraction. Operates on OCaml's native data types such as lists, variants, and records. Enables efficient data transformation in API request handling and configuration file parsing.",
+      "description_length": 259,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc_lwt",
+      "description": "Provides operations for managing RPC communication using Cap'n Proto serialization and Lwt concurrency. It includes types like 'a t for response promises, operations for reference counting, payload management, and response construction with Capnp.Message.rw Slice.t. It enables pipeline messaging, memory-safe handling of asynchronous objects, and interaction with remote services via sturdy references. Examples include building requests, managing response lifecycles, and processing binary data streams in RPC workflows.",
+      "description_length": 522,
+      "index": 7,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 15,
+    "meaningful_modules": 8,
+    "filtered_empty_modules": 7,
+    "retention_rate": 0.5333333333333333
+  },
+  "statistics": {
+    "max_description_length": 537,
+    "min_description_length": 259,
+    "avg_description_length": 383.5,
+    "embedding_file_size_mb": 0.02948760986328125
+  }
+}

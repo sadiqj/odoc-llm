@@ -1,0 +1,77 @@
+{
+  "package": "colibrics",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 8,
+  "creation_timestamp": "2025-06-18T16:30:57.306541",
+  "modules": [
+    {
+      "module_path": "Colibrics.Var.I",
+      "description": "Creates a bounded integer value with a specified minimum and maximum, using a context for validation. Operates on Z.t for integer values and Model.t for model context. Used to enforce range constraints during model validation and data processing.",
+      "description_length": 246,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Colibrics.Var.B",
+      "description": "Provides operations to create a boolean value from a context, check if a model evaluates to true, and return a constant true value. Works with the `Context.t` and `Model.t` types alongside the `t` type representing boolean states. Used to evaluate model conditions and construct boolean literals within a validation framework.",
+      "description_length": 326,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Colibrics.Model",
+      "description": "Provides functions to construct, validate, and serialize instances of type t, which represents a domain-specific model object. Includes methods to extract nested attributes and perform type-specific transformations. Used to process user input data into a structured format for downstream analysis.",
+      "description_length": 297,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Colibrics.Context",
+      "description": "Creates and manages a computational context used to execute model-solving operations. Operates on a custom opaque type `t` that encapsulates state for problem resolution. Used to initialize a solving environment and trigger the resolution process for a specific model.",
+      "description_length": 268,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Colibrics.Var",
+      "description": "Manages bounded integer and boolean values within a validation context, ensuring constraints are enforced during model processing. Supports Z.t for integer ranges and Model.t for condition evaluation, with operations to validate, check, and construct values. Enables precise control over allowed values and logical conditions in model validation. For example, it can restrict an input to a specific range or evaluate whether a model satisfies a given boolean condition.",
+      "description_length": 469,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Colibrics.Constraint",
+      "description": "Provides operations to enforce integer variable constraints, logical reifications, and boolean equivalences within a constraint satisfaction context. Works with integer variables, boolean variables, and integer values to model relationships such as equality, inequality, and logical combinations. Used to encode problem-specific constraints like \"variable A must equal 5\" or \"either condition B or C must hold.\"",
+      "description_length": 411,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "colibrics",
+      "description": "Handles constraint propagation and backtracking search for satisfiability problems, with dedicated functions for clause management and variable assignment tracking. Operates on data structures like clauses, literals, and assignment stacks to model logical constraints. Used to solve Boolean satisfiability instances and verify logical formulas in automated reasoning tasks.",
+      "description_length": 373,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Colibrics",
+      "description": "combines model construction, validation, and constraint solving into a unified workflow. It handles structured data through type t, supports integer and boolean validation with Z.t and Model.t, and enforces constraints using logical and arithmetic relationships. Users can transform input data, validate against ranges or conditions, and encode complex constraints for problem resolution. For example, it can ensure an input falls within a specified range or enforce that a boolean condition holds during model execution.",
+      "description_length": 521,
+      "index": 7,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 8,
+    "meaningful_modules": 8,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 521,
+    "min_description_length": 246,
+    "avg_description_length": 363.875,
+    "embedding_file_size_mb": 0.029474258422851562
+  }
+}

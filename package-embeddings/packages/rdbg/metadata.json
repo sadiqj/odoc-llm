@@ -1,0 +1,175 @@
+{
+  "package": "rdbg",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 22,
+  "creation_timestamp": "2025-06-18T16:35:48.392624",
+  "modules": [
+    {
+      "module_path": "Tagcov.Tags",
+      "description": "This module offers set-based operations for manipulating collections of elements, including adding, removing, combining, and querying properties like size and membership, while supporting transformations through filtering, mapping, and folding. It works with generic element types and custom set representations, enabling conversions between sets, lists, and sequences for flexible data processing. Specific use cases include managing tag hierarchies, optimizing data filtering pipelines, and handling ordered data transformations via sequence operations.",
+      "description_length": 555,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "rdbg",
+      "description": "Provides functions for parsing and inspecting core dump files, including reading memory regions, symbol tables, and stack traces. Works with binary data, process memory maps, and debug information structures. Used to analyze crash dumps and diagnose runtime errors in compiled applications.",
+      "description_length": 290,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "RdbgVersion",
+      "description": "Provides string representations for version, SHA, and branch of a debugging tool. Works with basic string types to encode build metadata. Used to embed version details in logs and error messages.",
+      "description_length": 195,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "LutinRdbg",
+      "description": "Provides conversion between RdbgEvent kinds and a custom lut_evt type, and includes tools for debugging and profiling Lutin programs. Includes functionality to explain failure reasons at specific event points and manage profiling data collection and output. Works with event structures and boolean flags to control diagnostic features.",
+      "description_length": 335,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "RifRun",
+      "description": "Handles substitution and execution of RIF-based commands, using a list of variable bindings to process and transform input data. Operates on lists of string pairs for variables and substitution lists for data processing. Used to manage command execution flows where input data may be dynamically generated or missing.",
+      "description_length": 317,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "RdbgEvent",
+      "description": "Provides functions to create, inspect, and manipulate event records with source information, variable bindings, and event kinds. Works with types such as variable identifiers paired with data values, source location atoms, and structured source information. Used to track and analyze program execution states during debugging sessions.",
+      "description_length": 335,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Expr",
+      "description": "Converts abstract syntax tree nodes to human-readable strings, prints internal representations for debugging, and applies algebraic simplifications to expressions. Works with a recursive type representing mathematical operations and operands. Used to generate readable output for user feedback and optimize expressions before evaluation.",
+      "description_length": 337,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "ExtTool",
+      "description": "Provides a function to dynamically create and return an output channel, enabling real-time data streaming. Works with OCaml's out_channel type to manage file or network output. Used to redirect simulation outputs to a dynamic destination during runtime.",
+      "description_length": 253,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "RdbgWrapperArgs",
+      "description": "This module handles command-line parameters and configuration settings for debugging tools, focusing on parsing and storing runtime flags. It works with boolean flags, strings, integers, and structured lists to control aspects like verbosity, output formatting, and test environment specifications. Use cases include customizing tool behavior during analysis, managing system under test configurations, and enabling detailed logging for diagnostic purposes.",
+      "description_length": 457,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "RdbgArg",
+      "description": "This module handles argument parsing, string conversion, and error management for command-line interfaces, operating on strings, arrays, and program state structures. It enables debugging configuration and CLI argument processing, supporting tasks like reactive program initialization and option validation. Specific use cases include managing debugger settings and formatting user inputs.",
+      "description_length": 389,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "RdbgPlugin",
+      "description": "Provides functions to create and manipulate debugging event records, including a placeholder value for testing. Works with custom types such as `sl` (a list of string-value pairs) and `e` (a debugging event type). Used to log and inspect runtime state during program execution.",
+      "description_length": 277,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Callgraph",
+      "description": "Generates visual call graphs in DOT and PDF formats from debugging events, with options for detailed sub-call exploration. Operates on `RdbgEvent.t` values to trace function invocations and their relationships. Displays the resulting graphs using a configured PDF viewer.",
+      "description_length": 271,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcamlRM",
+      "description": "Registers a plugin with a given name and retrieves plugins by name, enabling dynamic plugin management. Works with the RdbgPlugin.t type to handle debugger extensions. Used to integrate custom debugging tools into the runtime environment.",
+      "description_length": 238,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "RdbgStdLib",
+      "description": "This module offers control flow operations like `goto`, `continue`, and `break`, along with data inspection functions such as `v`, `vi`, `vf`, and `vb`, enabling detailed manipulation and analysis of debugger events. It works with `RdbgEvent.t` structures, boolean flags, and debugging artifacts like breakpoints, checkpoints, and hooks to manage event navigation, simulation steps, and state tracking. Specific use cases include conditional event traversal, real-time program state inspection, and configuring event logging or time-travel debugging scenarios.",
+      "description_length": 560,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "RdbgRun",
+      "description": "Provides functions to initiate and manage a debugging session, including starting the session, handling variable substitutions, and terminating cleanly. Operates with event types, data substitutions, and reference cells for variable tracking. Used to dynamically supply missing input values during execution when standard input methods are unavailable.",
+      "description_length": 352,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "LucioleRun",
+      "description": "Handles substitution and execution of configuration scripts by applying variable bindings and processing substitution lists. Accepts a string identifier, a list of variable assignments, and another list of substitution data to generate a control mechanism for script execution. Used to manage dynamic configuration updates and state transitions in a controlled, deterministic manner.",
+      "description_length": 383,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcamlRun",
+      "description": "Creates and returns a plugin instance for interacting with OCaml code, accepting a string identifier. Operates with the RdbgPlugin.t type, enabling integration with debugging or runtime environments. Used to initialize plugins that execute or analyze OCaml snippets within a larger system.",
+      "description_length": 289,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "StdioRun",
+      "description": "Constructs RdbgPlugin.t instances from system commands or network sockets, supporting both standard I/O and TCP communication. Accepts command strings and port numbers to configure plugin behavior. Used to integrate external processes or network services into a debugging framework.",
+      "description_length": 282,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tagcov",
+      "description": "Provides set-based operations for managing and transforming collections of elements, supporting additions, removals, unions, intersections, and property queries. It handles generic types and offers conversions between sets, lists, and sequences, enabling efficient data manipulation. Users can filter, map, and fold over elements, making it suitable for tasks like tag hierarchy management and data pipeline optimization. Examples include merging tag sets, extracting unique elements, and applying custom transformations to ordered data streams.",
+      "description_length": 545,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "RdbgMain",
+      "description": "Provides functions to control a debugging session, display information, and manage documentation entries. Operates with event types, strings, and file paths to handle command-line interactions and function metadata. Used to start debugging, retrieve help, list functions by keyword, and access documentation details.",
+      "description_length": 316,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "RdbgMisc",
+      "description": "Returns the value of an environment variable or a default string, and converts a character to a dro (data reduction object) flag. Works with strings and booleans. Used to handle configuration defaults and process character-based flags in debugging contexts.",
+      "description_length": 257,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Coverage",
+      "description": "Provides functions to initialize coverage data, retrieve file names, compute coverage statistics, update coverage with substitutions, and generate oracle I/O dumps or save coverage data to files. Operates on a custom type `t` that encapsulates coverage information, along with lists of substitutions. Used to track and report code coverage during testing or analysis workflows.",
+      "description_length": 377,
+      "index": 21,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 22,
+    "meaningful_modules": 22,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 560,
+    "min_description_length": 195,
+    "avg_description_length": 345.90909090909093,
+    "embedding_file_size_mb": 0.08034610748291016
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "package": "tidy_email",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 4,
+  "creation_timestamp": "2025-06-18T16:28:52.395518",
+  "modules": [
+    {
+      "module_path": "Tidy_email.Email",
+      "description": "Generates a structured email message with sender, recipient, subject, and body fields. Operates on custom types for email content and the email record itself. Used to construct outgoing emails with explicit sender and recipient information.",
+      "description_length": 240,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tidy_email.List_backend",
+      "description": "Sends email messages while accumulating them in a reference to a list of email records. It operates on an email type and a configuration that holds a mutable list of emails. This is used to capture and inspect sent emails during testing.",
+      "description_length": 237,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "tidy_email",
+      "description": "Handles email composition and delivery through abstracted backend interfaces. Operates on email records containing headers, body, and recipient information. Enables seamless switching between SMTP, SendGrid, and Mailgun providers with provider-specific configuration.",
+      "description_length": 267,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tidy_email",
+      "description": "Constructs and transmits email records, tracking sent messages in a mutable list. Operates on custom email types with sender, recipient, subject, and body fields, enabling message creation and delivery. Supports testing by storing sent emails for inspection. Can generate a message, send it, and later retrieve the record for verification.",
+      "description_length": 339,
+      "index": 3,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 4,
+    "meaningful_modules": 4,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 339,
+    "min_description_length": 237,
+    "avg_description_length": 270.75,
+    "embedding_file_size_mb": 0.014923095703125
+  }
+}

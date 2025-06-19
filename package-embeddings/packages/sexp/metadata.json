@@ -1,0 +1,483 @@
+{
+  "package": "sexp",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 66,
+  "creation_timestamp": "2025-06-18T16:46:01.139850",
+  "modules": [
+    {
+      "module_path": "Sexp_app.Syntax.Var.Map.Key",
+      "description": "Provides serialization and deserialization functions for a type using Bin_prot, including size calculation, writing, reading, and shape definition. Supports S-expressions conversion and a comparator for ordered operations. Designed for use with binary and textual data interchange in systems requiring precise type handling.",
+      "description_length": 324,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Var.Map.Diff",
+      "description": "Provides serialization and deserialization routines for a type representing differences between two maps, using Bin_prot and Sexp formats. Operates on a map-based structure that tracks key-value changes, where each entry has a value and a corresponding difference type. Enables applying diffs to reconstruct a modified map or converting a list of diffs into a combined difference structure.",
+      "description_length": 390,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Var.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with Sexp.t and Key.t data structures. Used to deserialize configuration keys from S-expression formatted data.",
+      "description_length": 190,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Var.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t. Used to persist or transmit Key.t values in a binary format across processes or storage.",
+      "description_length": 294,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Var.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information to prevent prefix-based collisions. Used to generate reliable hash values for complex structures in hashing and equality checks.",
+      "description_length": 369,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Var.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key by parsing its structure and extracting the relevant value. Works with `Sexplib0.Sexp.t` and returns a custom key type. Used to deserialize structured data from S-expressions into a specific domain model.",
+      "description_length": 240,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Var.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, including polymorphic variants. Used to enable efficient binary persistence of data structures in applications needing fast serialization.",
+      "description_length": 349,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Var.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific type using a provided constructor function. Operates on S-expressions and custom data types defined with the `elt` type. Used to parse structured data from S-expression representations in configuration or serialization contexts.",
+      "description_length": 268,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Var.Hash_set.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, including polymorphic variants. Used to enable efficient binary serialization in data exchange or persistent storage scenarios.",
+      "description_length": 343,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Var.Set.Elt",
+      "description": "Provides serialization and deserialization functions for converting values to and from S-expressions and binary formats using Bin_prot. Works with a generic type `t` and its associated comparator. Used to enable persistent storage and network transmission of values with efficient binary encoding.",
+      "description_length": 297,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Var.Set.Diff",
+      "description": "Provides operations to serialize and deserialize values using Bin_prot and Sexp formats, and to compute and apply diffs between sets of elements. Works with set-based diff structures and concrete set implementations for comparison. Enables transformation of list-based data into structured diffs and application of changes to original sets.",
+      "description_length": 340,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Var.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and the module's defined `Elt.t` type. Used to parse structured data from S-expressions into application-specific values.",
+      "description_length": 216,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Var.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a specific type `t` defined by the `Elt` module, supporting both direct and variant-based reading. Used to persist and reconstruct instances of `t` in binary format, such as storing structured data in files or over networks.",
+      "description_length": 386,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Var.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, requiring explicit handling of structure size during folding. Used to generate reliable hash values for complex types in hashing-based data structures.",
+      "description_length": 361,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Var.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports the `compare` function to establish order. Used to implement custom sorting logic and decision-making based on value relationships.",
+      "description_length": 350,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Var.Map",
+      "description": "offers serialization, deserialization, and hashing capabilities for structured data, with support for binary, S-expressions, and difference tracking. It handles key types, map diffs, and custom data with size-aware operations, enabling precise data interchange and reconstruction. Functions include writing and reading binary formats, applying map changes, and generating collision-resistant hashes. Examples include converting configuration keys from S-expressions, persisting map differences, and hashing complex nested structures.",
+      "description_length": 533,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Var.Set",
+      "description": "offers serialization, deserialization, and diff operations for structured data, supporting S-expressions, binary formats, and set-based transformations. It handles generic and concrete types, including `t`, `Sexp.t`, and `Elt.t`, with operations for encoding, decoding, and applying changes. It enables efficient storage, transmission, and comparison of data, such as converting S-expressions to custom types or computing set diffs. Hash folding is also supported for reliable hashing of complex structures.",
+      "description_length": 507,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Var.Table",
+      "description": "Transforms S-expressions into domain-specific keys and enables binary serialization/deserialization of custom types with support for polymorphic variants. Operates on `Sexplib0.Sexp.t` and Bin_prot-compatible types, offering parsing, size estimation, and I/O operations. Examples include converting structured data into a key for lookup and persisting complex data efficiently in binary format. Supports both deserialization from textual S-expressions and binary storage for performance-critical applications.",
+      "description_length": 509,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Var.Hash_set",
+      "description": "Converts S-expressions to custom types using a constructor function and supports binary serialization and deserialization with Bin_prot, including size, write, read, and shape operations. Handles structured data parsing and efficient binary I/O for custom types, including polymorphic variants. Parses configuration data from S-expressions and serializes values for storage or transmission. Enables seamless conversion between textual and binary representations of complex data structures.",
+      "description_length": 489,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Var.Hash_queue",
+      "description": "This module offers operations for managing key-value pairs in an ordered queue, including insertion, lookup, reordering, and modification with both safe and unsafe variants. It supports traversal, aggregation, and transformation of elements while maintaining key uniqueness and ordered access. Use cases include scenarios requiring ordered processing with fast lookups, such as task scheduling or maintaining a history with deduplication.",
+      "description_length": 438,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Csv_lexeme.T",
+      "description": "Provides functions to create, compare, and serialize instances of a custom type representing geometric shapes. Operates on structures like points, lines, and polygons with specific mathematical operations. Used to validate shape intersections and generate JSON representations for visualization tools.",
+      "description_length": 301,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Parts.Path",
+      "description": "Converts path values to their string representation. Operates on path structures representing file system or module paths. Used to generate human-readable representations for logging or user output.",
+      "description_length": 198,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Template",
+      "description": "Converts S-expressions into structured values using a custom deserialization function, applies transformations to wrapped data, and embeds raw S-expressions as immutable values. Works with a generic container type that holds values of any type. Used to build and manipulate abstract syntax trees during parsing and transformation workflows.",
+      "description_length": 340,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Quotation",
+      "description": "Converts between a custom type and S-expression representations using provided serialization and deserialization functions. Operates on polymorphic variants wrapped in a type constructor. Enables structured data exchange in parsing and serialization workflows.",
+      "description_length": 260,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Var",
+      "description": "provides comparison, serialization, and key-value management for custom data types, enabling ordered operations, efficient data interchange, and structured storage. It supports binary and S-expression formats, hash generation, and set-based diffs, along with functions to convert between textual and binary representations. Operations include sorting, hashing, parsing, and managing ordered key-value pairs with efficient lookups and modifications. Examples include converting configuration data to custom types, persisting map differences, and maintaining ordered task queues with unique keys.",
+      "description_length": 594,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Pattern",
+      "description": "Handles pattern matching and instantiation of templated variable structures. Operates on templated variables represented as `Var.t Template.t`, enabling S-expression serialization and deserialization. Used to match against S-expressions and generate bindings, or to substitute variables within S-expressions using a binding table.",
+      "description_length": 330,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Pattern_record",
+      "description": "Provides functions to convert between a pattern representation and S-expressions, match patterns against S-expressions with variable binding, and instantiate patterns with variable substitutions. Operates on a type representing templated variables. Used to implement symbolic pattern matching in code analysis tools.",
+      "description_length": 316,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Record_field",
+      "description": "Provides functions to access and update specific fields of a record type, including getters and setters for individual fields. Works with polymorphic variants and labeled records, enabling fine-grained manipulation of structured data. Used to dynamically modify configuration settings in a parser or adjust state properties in a game engine.",
+      "description_length": 341,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Unroll",
+      "description": "Processes nested change operations by flattening them in a top-down or bottom-up order. Accepts a custom type representing structured modifications. Used to simplify complex update sequences in configuration parsing or transformation pipelines.",
+      "description_length": 244,
+      "index": 28,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Query",
+      "description": "Handles serialization and deserialization of query structures using S-expressions. Operates on the `t` type, which represents parsed query expressions. Used to convert between in-memory query representations and S-expression formats for storage or transmission.",
+      "description_length": 261,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Syntax.Change",
+      "description": "Handles serialization and deserialization of change records using S-expressions. Operates on the `t` type, which represents a single change. Used to convert change data between OCaml values and S-expression format for storage or transmission.",
+      "description_length": 242,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app_pattern.Output_method.Format",
+      "description": "Provides serialization and deserialization between a custom type and S-expressions, and converts strings into lists of parsed elements. Works with S-expressions and string-based data structures to extract and embed captured values. Used to parse log entries and extract structured information from formatted text.",
+      "description_length": 313,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app_pattern.Output_method.Wrap_mode",
+      "description": "Converts a wrapped value into an S-expression using a provided conversion function for the captured value. Operates on polymorphic types that encapsulate a value along with a mode of wrapping. Used to serialize custom wrapped data structures in a format compatible with Sexp parsing and generation.",
+      "description_length": 298,
+      "index": 32,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_app_pattern.Query.Set_kind",
+      "description": "Provides operations to construct and serialize a set-like structure with optional matching and first-element constraints, using a record type that includes flags for optional matching and first-only behavior. Works with a custom type `t` that encapsulates these flags and is convertible to and from S-expressions. Used to control matching logic in query processing where optional terms and selective element matching are required.",
+      "description_length": 430,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_app_pattern.Query.Capture_count",
+      "description": "type t = { count : int; mutable captured : string list } Provides operations to increment a counter, capture strings, and retrieve the current state. Works with a mutable record type containing an integer and a list of strings. Used to track and collect event occurrences during program execution.",
+      "description_length": 297,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lazy_list.Let_syntax.Let_syntax",
+      "description": "The module provides a set of syntactic extensions for working with monadic computations. It introduces custom syntax for binding and sequencing operations, enhancing readability in complex workflows. Basic operations such as `let%bind` and `let%map` allow for cleaner handling of effectful computations. It is particularly useful for writing concise, composable code in a monadic style.",
+      "description_length": 386,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lazy_list.Of_container.Make",
+      "description": "Processes a sequence by applying a function to each element and an accumulated value, using lazy evaluation to defer computation until needed. Operates on a custom list-like structure `'a t` and returns a final accumulated value of type `'b`. Useful for efficiently handling large or infinite sequences where intermediate results should not be evaluated immediately.",
+      "description_length": 366,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Csv_file",
+      "description": "Reads and writes CSV data, ensuring all rows have consistent lengths. Operates on lazy lists of CSV records. Used to process large datasets without loading entire files into memory.",
+      "description_length": 181,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_app.Csv_lexeme",
+      "description": "Handles the lexical structure of CSV data, focusing on proper parsing and manipulation of quoted fields. Defines core types for tokens and quoted values, with operations for escaping, unescaping, and tokenizing CSV content. Supports tasks such as extracting quoted strings, validating delimiter placement, and generating properly formatted CSV output. Examples include parsing a quoted email field or safely embedding commas within a quoted cell.",
+      "description_length": 446,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Csv_record",
+      "description": "Reads a CSV record from a lexing buffer, returning a list of strings representing the fields. Writes a list of strings to an output channel using a specified delimiter. Used to parse and generate CSV lines in data processing workflows.",
+      "description_length": 235,
+      "index": 39,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_app.Manifest",
+      "description": "Maintains a dynamic collection that allows appending elements and converting the result to a static list. Operates on a mutable list structure where elements are added in sequence. Useful for building lists incrementally during program execution.",
+      "description_length": 246,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Parse_everything",
+      "description": "Provides functions to convert an input channel into a lexical buffer, transform strings through custom logic, and read input character by character with staged evaluation. Operates on input channels, strings, and character generators. Used for parsing structured text streams and processing input incrementally with precise control over reading.",
+      "description_length": 345,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Parts",
+      "description": "Handles conversion of path structures into human-readable strings, enabling clear representation of file system or module paths. Supports operations that traverse and serialize path components, such as joining segments or extracting base names. Examples include converting a module path to \"Core.List.map\" or a file path to \"/usr/local/bin/app\". Provides direct access to path manipulation functions for output generation and debugging.",
+      "description_length": 436,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Semantics",
+      "description": "Processes query expressions to generate sequences of S-expressions, supporting both standard and extended syntax formats. Transforms S-expressions based on change operations defined in syntax, preserving structural integrity. Used to dynamically evaluate queries and apply targeted modifications in a parser-driven context.",
+      "description_length": 323,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Sexp_ext",
+      "description": "Provides serialization and deserialization between a custom type and S-expressions, along with equality checks, string case conversion, and extraction of sub-expressions. Works with a custom type wrapped around S-expressions from the Sexplib0 library. Used to process and transform structured data in parsing or code generation workflows.",
+      "description_length": 338,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Sexps",
+      "description": "Provides operations to create and convert sets of S-expressions, including initializing empty sets, building from lists, and serializing/deserializing with Sexp formats. Works with hash sets containing Core.Sexp.t elements. Used to manage collections of parsed S-expressions in a structured, efficient manner.",
+      "description_length": 309,
+      "index": 45,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_app.String_pad",
+      "description": "Provides operations to construct and manipulate padded string buffers, including adding strings, single characters, and generating a final string output. Works with a custom type `t` representing the buffer state. Used to build formatted output incrementally, such as aligning text or generating fixed-width fields.",
+      "description_length": 315,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Syntax",
+      "description": "Handles term manipulation using a template-based variable system. Converts between Sexp representations and internal term structures, enabling pattern matching and substitution. Used to apply variable bindings to terms and extract matched patterns during parsing or transformation.",
+      "description_length": 281,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.To_csv",
+      "description": "Converts a lazy list of S-expressions into a lazy list of CSV records, handling nested structures by flattening atoms or preserving them as strings based on a flag. Processes data in one or two passes depending on the complexity of the input. Designed for exporting structured data to CSV format with customizable parsing behavior.",
+      "description_length": 331,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app.Utils",
+      "description": "Processes and transforms S-expressions by querying, modifying, and restructuring their content. Operates on Core.Sexp.t and association lists to extract, replace, or remove fields in recursive or immediate scopes. Used to manipulate OCaml record-like data structures and perform targeted transformations on nested S-expressions.",
+      "description_length": 328,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app_pattern.Compiled_query",
+      "description": "Compiles a query into an executable form, associating it with an output method and extracting capture labels. It operates on `Query.t` and `Output_method.t`, producing a compiled query structure and a list of capture identifiers. This is used to generate structured output from queries with dynamic captures, such as in templating or SQL generation.",
+      "description_length": 349,
+      "index": 50,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_app_pattern.Engine",
+      "description": "Processes S-expressions by matching queries and applying transformations. Operates on Core.Sexp.t and employs output methods to format or replace captured elements. Replaces labeled subsexps based on query matches, supports custom replacement logic via functions, and handles nested or overlapping matches with defined wrapping strategies.",
+      "description_length": 339,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app_pattern.Help",
+      "description": "Provides functions to retrieve predefined help content for query patterns. Operates on string data to return documentation and example text. Used to display README-style information and sample inputs during interactive sessions.",
+      "description_length": 228,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app_pattern.Internal_parser",
+      "description": "Parses input streams into query structures using a provided lexer function that maps lexing buffers to tokens. Operates on lexing buffers and custom token types defined within the module. Used to convert raw input text into structured query representations for further processing.",
+      "description_length": 280,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app_pattern.Lexer",
+      "description": "Processes input streams to identify and return the next lexical token according to predefined rules. Operates on `Lexing.lexbuf` structures to parse sequences of characters into structured token representations. Used to drive the parsing process by feeding tokens sequentially to the parser.",
+      "description_length": 291,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app_pattern.Output_method",
+      "description": "Encapsulates captured values from pattern matching into structured S-expressions, supporting multiple output formats. Handles polymorphic wrapped values, converting them into S-expressions with custom serialization functions, and manages sequences of captures by concatenating or labeling results based on unwrap mode. Can parse log entries into structured data, extract named captures, and generate maps from capture names to their values. Supports operations like converting wrapped values to S-expressions, embedding captures into lists or records, and handling nested or repeated captures.",
+      "description_length": 593,
+      "index": 55,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_app_pattern.Parser",
+      "description": "Parses a string input into a structured Query.t representation, handling syntax errors by raising exceptions. It processes raw query strings and converts them into an abstract syntax tree for further evaluation. This is used to transform user-entered search terms into a format that can be executed against a database.",
+      "description_length": 318,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app_pattern.Query",
+      "description": "Encapsulates query logic for matching and extracting subsexps through a structured set of operations. Contains a record type for managing optional matching and first-element constraints, and another for tracking counts and captured strings during execution. Supports building complex queries with controlled matching behavior and event logging. Can be used to parse and analyze structured data while collecting specific information during processing.",
+      "description_length": 450,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lazy_list.Monad_infix",
+      "description": "Sequences monadic computations and transforms their results using bind and map operations. Works with monadic types that support binding and lifting. Enables chaining of effectful operations and transformation of wrapped values in a concise syntax.",
+      "description_length": 248,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lazy_list.Let_syntax",
+      "description": "Introduces custom syntax for monadic composition, enabling cleaner handling of effectful operations through constructs like `let%bind` and `let%map`. Supports sequential and parallel binding, allowing for structured manipulation of values within monadic contexts. Operations include chaining computations, transforming results, and managing side effects in a readable format. Example: binding multiple monadic values in a single expression or mapping over nested monadic structures.",
+      "description_length": 482,
+      "index": 59,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lazy_list.Of_container",
+      "description": "Processes elements of a container using a lazy fold, applying a function that accumulates results while deferring computation. Operates on polymorphic container types wrapped in a specific abstract type. Enables efficient traversal of large or infinite sequences by postponing intermediate computations.",
+      "description_length": 303,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lazy_list.Iterator",
+      "description": "Generates and traverses elements from a lazy list, allowing sequential access with `next` and applying functions to each element via `iter`. It operates on a custom lazy list type that defers computation until needed. Used to process large or infinite data streams without loading them entirely into memory.",
+      "description_length": 307,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "sexp",
+      "description": "Parses and manipulates s-expressions through command-line subcommands, supporting queries using example patterns and formal semantics. Operates on nested list structures and atomic values representing symbolic expressions. Enables in-place modification of Sexp files and conversion to JSON or EDN formats.",
+      "description_length": 305,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app",
+      "description": "Processes CSV and S-expression data through a suite of interrelated utilities, including parsing, serialization, and transformation. Provides core types for tokens, quoted values, and S-expressions, along with operations for reading, writing, and manipulating structured data. Examples include converting a module path to a string, flattening nested S-expressions into CSV, and building padded buffers for formatted output. Supports incremental processing of large datasets and dynamic query evaluation on structured data.",
+      "description_length": 522,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_app_pattern",
+      "description": "Processes S-expressions by matching queries and applying transformations, using compiled query structures derived from `Query.t` and `Output_method.t` to replace labeled subsexps with custom logic. Parses input streams into structured query representations, extracting and encapsulating captured values into S-expressions with support for multiple output formats and nested captures. Retrieves help content for query patterns and handles lexical tokenization to drive the parsing process. Can generate structured output from queries, parse log entries into maps, and transform user-entered search terms into executable query forms.",
+      "description_length": 631,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lazy_list",
+      "description": "Combines monadic operations with lazy evaluation to handle effectful computations and traverse large data structures efficiently. Provides custom syntax for chaining and transforming values within monadic contexts, along with lazy folding and iteration over deferred sequences. Supports operations like binding multiple monadic values, mapping over nested structures, and processing elements without upfront computation. Examples include sequentially resolving asynchronous values or iterating over an infinite stream of generated data.",
+      "description_length": 536,
+      "index": 65,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 68,
+    "meaningful_modules": 66,
+    "filtered_empty_modules": 2,
+    "retention_rate": 0.9705882352941176
+  },
+  "statistics": {
+    "max_description_length": 631,
+    "min_description_length": 181,
+    "avg_description_length": 348.57575757575756,
+    "embedding_file_size_mb": 0.24018192291259766
+  }
+}

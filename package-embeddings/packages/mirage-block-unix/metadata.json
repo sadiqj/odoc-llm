@@ -1,0 +1,42 @@
+{
+  "package": "mirage-block-unix",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 3,
+  "creation_timestamp": "2025-06-18T16:28:09.513647",
+  "modules": [
+    {
+      "module_path": "Block.Config",
+      "description": "Provides functions to construct and serialize configurations for file operations, including options for buffering, synchronization behavior, file locking, and sector size. Works with types representing synchronization policies, file paths, and configuration states. Used to generate URL-like strings for persistent storage or transmission of file access settings.",
+      "description_length": 363,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "mirage-block-unix",
+      "description": "Provides raw read and write operations on files and block devices using Unix system calls. Works with file descriptors, byte arrays, and block offsets to ensure minimal caching and direct access. Used for low-level disk operations in networked storage systems and virtualized environments.",
+      "description_length": 289,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Block",
+      "description": "manages block device configurations with customizable options for buffering, locking, and synchronization. It handles types such as synchronization policies, file paths, and configuration states, enabling the creation of serialized settings. Operations include generating URL-like representations for storing or transmitting file access parameters. Examples include setting up a buffered read-only file with mandatory locking or exporting a configuration with custom sector size for network transfer.",
+      "description_length": 500,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 3,
+    "meaningful_modules": 3,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 500,
+    "min_description_length": 289,
+    "avg_description_length": 384.0,
+    "embedding_file_size_mb": 0.011332511901855469
+  }
+}

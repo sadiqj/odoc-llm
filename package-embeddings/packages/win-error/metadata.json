@@ -1,0 +1,56 @@
+{
+  "package": "win-error",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 5,
+  "creation_timestamp": "2025-06-18T16:28:59.685680",
+  "modules": [
+    {
+      "module_path": "win-error",
+      "description": "Handles error code translation between system-specific representations and human-readable messages. Works with error codes and exception types from the Unix module, particularly Unix.Unix_error. Converts obscure error codes like Unix.EUNKNOWNERR into descriptive strings, improving diagnostics on Windows and other platforms.",
+      "description_length": 325,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Win_error_to_string",
+      "description": "Converts Windows error codes to their corresponding human-readable string representations. Works with the Win_error_t.t type, which encapsulates error code values. Used to generate error messages for system-level failures in Windows application logging.",
+      "description_length": 253,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Win_error",
+      "description": "Provides functions to convert Unix errors into Windows-specific error representations and format them as human-readable strings. Works with Unix.error and a custom error type `t` that encapsulates Windows error codes. Used to decode unknown Unix errors into meaningful Windows error messages on Windows systems.",
+      "description_length": 311,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Win_error_t",
+      "description": "Provides functions to create, inspect, and convert Windows error codes into descriptive strings. Works with the `t` type, which represents error codes from the Windows API. Used to translate system call failures into human-readable messages for debugging and logging.",
+      "description_length": 267,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Win_error_of_int",
+      "description": "Converts an integer to a specific error type, returning None for invalid values. Works with the Win_error_t.t type, which represents Windows error codes. Used to safely map system error numbers to typed error representations in Windows API interactions.",
+      "description_length": 253,
+      "index": 4,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 5,
+    "meaningful_modules": 5,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 325,
+    "min_description_length": 253,
+    "avg_description_length": 281.8,
+    "embedding_file_size_mb": 0.018625259399414062
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "package": "universo",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 26,
+  "creation_timestamp": "2025-06-18T16:41:08.482257",
+  "modules": [
+    {
+      "module_path": "Checking.Checker.MakeRE",
+      "description": "Checks for term convertibility and constraint satisfaction within a signature, generating new obligations during reduction steps. Operates on terms, rules, and signatures to validate equality under specific constraints. Used to enforce type consistency during term rewriting and rule application.",
+      "description_length": 296,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Checking.Checker.RE",
+      "description": "Provides operations for checking term convertibility, constraint satisfaction, and reduction steps using a signature. Works with terms, rules, and constraints from the kernel module. Used to verify term equivalence during type checking and to evaluate terms to their normal forms in a formal system.",
+      "description_length": 299,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Checking.Checker.Typing",
+      "description": "Infers and checks types for terms and rules using a signature and context, ensuring correctness through explicit type annotations. Operates on kernel terms, typed contexts, and substitution structures to enforce type discipline. Validates rule applications and performs type inference for unannotated expressions.",
+      "description_length": 313,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Common.Oracle.Util",
+      "description": "Generates all possible combinations of elements from two or three lists by applying a given function to each tuple of elements. Operates on lists of arbitrary types, producing lists of results based on the function's output. Used to create cross-product mappings in scenarios like generating test cases or combinatorial configurations.",
+      "description_length": 335,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Common.Logic.MakeLraSpecif",
+      "description": "Provides functions to create specifications for axioms, rules, and cumulative definitions, each taking a list of strings and a term. Works with labeled terms and structured string annotations. Used to encode logical constraints and inference rules in formal verification contexts.",
+      "description_length": 280,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Common.Universes.C",
+      "description": "This module offers set-like operations for managing collections, including element manipulation (addition, removal, combination) and property queries (cardinality, min/max, membership), alongside functional transformations like mapping, folding, and filtering. It works with abstract types `t` and sequences of `cstr`, enabling conversions between these representations and supporting tasks such as dynamic data aggregation or stream processing. Specific use cases include efficiently handling evolving datasets and integrating with systems requiring sequence-based data exchange.",
+      "description_length": 580,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Solving.Z3cfg.Make",
+      "description": "Generates SMT expressions for logical constructs using a Z3 context, including variables, universes, axioms, cumulativity, and rules. Operates on Z3 expression, model, and context types to encode and query logical relationships. Used to translate Dedukti names into SMT-compatible representations and extract universe solutions from SMT solver models.",
+      "description_length": 351,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Solving.Z3cfg.Syn",
+      "description": "Provides operations to construct and manipulate SMT expressions for logical reasoning, including variables, universes, axioms, cumulativity, and rewrite rules. Works with Z3 expression, model, and context types to encode and query logical constraints. Used to translate Dedukti names and constraints into SMT-compatible representations for automated verification.",
+      "description_length": 363,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Solving.Z3cfg.Arith",
+      "description": "Performs logical construction of axioms, rules, and cumulative expressions using a custom logic kernel. Operates on abstract types representing logical contexts and terms. Used to build formal systems where inference steps and derived truths are explicitly structured.",
+      "description_length": 268,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Solving.Solver.Make",
+      "description": "Adds a constraint to a solver for reasoning about universe levels in type theory. Processes environments to determine the minimal number of universes required to satisfy constraints, generating a corresponding model. Utilizes a theory-building function that adapts based on the number of universes considered.",
+      "description_length": 309,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Solving.Solver.MakeUF",
+      "description": "Adds a constraint to a solver and solves it by determining the minimum number of universes required, using a provided theory-building function. Operates on constraints and environments, returning a model that satisfies the constraints. Used to verify logical consistency and derive valid configurations under specific universe limits.",
+      "description_length": 334,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Solving.Z3arith.Make",
+      "description": "Generates logical constructs by combining a context, a term, and multiple premises into derived conclusions. Operates on a context-type and a term-type, producing new terms based on logical rules. Used to build axioms, inference rules, and cumulative statements within a formal system.",
+      "description_length": 285,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Checking.Checker",
+      "description": "Combines term conversion, constraint validation, and type inference across signatures, terms, and rules to ensure consistency during type checking and rewriting. Processes kernel terms, typed contexts, and substitution structures to verify equivalence, enforce constraints, and infer types. Supports operations like checking term equality under constraints, reducing terms to normal forms, and validating rule applications. Enables precise type discipline by ensuring annotations align with inferred types during formal system evaluations.",
+      "description_length": 539,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Common.Files",
+      "description": "Provides a structured interface for handling file-based operations in an OCaml application. Includes types for file paths, input/output channels, and data containers for universe declarations, constraints, and solutions. Supports reading from and writing to specific files, replacing variables in output files with computed solutions. Enables modular file management through dedicated components for each stage of data processing.",
+      "description_length": 430,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Common.Logic",
+      "description": "Generates lists of universe levels and constructs logical theories based on given integers. Operates on universe lists and theory representations. Used to initialize logical frameworks and explore hierarchical structures in formal systems.",
+      "description_length": 239,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Common.Oracle",
+      "description": "Generates all possible combinations from two or three lists by applying a function to each tuple, producing results of arbitrary types. Supports scenarios such as test case generation and combinatorial configurations. Accepts lists of any type and a user-defined function to transform elements. For example, combines user roles with permissions to generate access configurations or pairs numbers with operations to compute results.",
+      "description_length": 431,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Common.Universes",
+      "description": "manages collections through set-like operations, supporting addition, removal, and combination of elements, along with queries for cardinality, min/max, and membership. It handles abstract types `t` and sequences of `cstr`, enabling conversions and transformations via mapping, folding, and filtering. This allows for dynamic data aggregation, stream processing, and integration with sequence-based systems. Examples include efficiently managing evolving datasets and performing real-time data filtering.",
+      "description_length": 504,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Solving.Solver",
+      "description": "manages constraints to determine the minimum universe count needed for type-theoretic consistency, operating on environments and constraints to produce valid models. It supports operations like constraint addition, environment processing, and model generation. Users can verify logical consistency, derive valid configurations, and analyze universe requirements under varying assumptions. The core data types include constraints, environments, and models, with functions to build theories and solve for minimal universe counts.",
+      "description_length": 527,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Solving.Utils",
+      "description": "Provides functions to construct SMT expressions for logical reasoning, including variables, universes, axioms, cumulativity, and rewrite rules. Operates on context objects, SMT models, and custom types representing logical terms and universes. Used to encode and solve constraints in a dependent type system, such as verifying universe bounds or inference rules.",
+      "description_length": 362,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Solving.Z3arith",
+      "description": "Provides logical derivation by combining contexts, terms, and premises to generate new terms through inference. Operates on context and term types, applying rules to construct axioms and cumulative statements. Supports the creation of formal proofs and structured logical expressions. Example tasks include deriving new theorems from existing premises or validating logical consistency within a system.",
+      "description_length": 402,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Solving.Z3cfg",
+      "description": "Provides functions to construct SMT expressions for logical theories, including variables, universes, axioms, cumulativity, and rules. Operates on SMT expressions, models, and contexts, translating Dedukti names and constraints into SMT-compatible representations. Used to encode and solve constraints in dependent type systems, such as checking universe bounds and deriving valid type hierarchies.",
+      "description_length": 398,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "universo",
+      "description": "Provides functions for parsing and serializing Dedukti terms, including conversion between abstract syntax trees and JSON representations. Works with custom data types such as term, context, and proof, enabling interaction with the Dedukti proof system. Used to integrate Dedukti's logical framework with external tools and scripts for theorem proving tasks.",
+      "description_length": 358,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Elaboration",
+      "description": "provides a structural foundation for type system management, focusing on universe declarations and meta rules without implementing functional components. no data types or operations are available, as all child modules are empty or placeholder-based. the module is intended for future extension rather than immediate use. no computations or transformations can be performed with the current setup.",
+      "description_length": 396,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Checking",
+      "description": "Perform checks on term equivalence, constraint satisfaction, and type consistency using kernel terms, contexts, and substitutions. Supports term reduction, rule validation, and type inference across formal systems. Examples include verifying term equality under constraints, normalizing expressions, and ensuring rule applications adhere to inferred types. Key data types include terms, contexts, substitutions, and rules, with operations focused on validation and transformation.",
+      "description_length": 480,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Common",
+      "description": "provides a framework for file handling, universe generation, combinatorial operations, and set management. it includes types for file paths, universe levels, combinations, and abstract sets, along with operations for reading/writing files, generating theories, creating tuples, and manipulating collections. it enables tasks such as replacing variables in output files, initializing logical systems, and generating test configurations. it supports dynamic data processing through set operations and combinatorial expansion.",
+      "description_length": 523,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Solving",
+      "description": "combines constraint management, SMT encoding, and logical inference to enable the construction and verification of type-theoretic systems. it handles environments, constraints, SMT expressions, and logical terms, supporting operations like model generation, axiom derivation, and universe bound checking. users can encode complex logical relationships, derive new theorems, and ensure consistency in dependent type systems. examples include verifying type hierarchies, checking cumulativity, and generating valid configurations under specified constraints.",
+      "description_length": 556,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 85,
+    "meaningful_modules": 26,
+    "filtered_empty_modules": 59,
+    "retention_rate": 0.3058823529411765
+  },
+  "statistics": {
+    "max_description_length": 580,
+    "min_description_length": 239,
+    "avg_description_length": 390.6923076923077,
+    "embedding_file_size_mb": 0.09488296508789062
+  }
+}

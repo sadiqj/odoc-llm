@@ -1,0 +1,1729 @@
+{
+  "package": "vcaml",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 244,
+  "creation_timestamp": "2025-06-18T17:01:37.623661",
+  "modules": [
+    {
+      "module_path": "Vcaml.Expert.Notifier.Notification.Defun.Vim",
+      "description": "Provides functions to construct and manipulate type-safe callbacks and notifications, using a custom type `t` that tracks function signatures and input types. Operates on type-level representations of functions and notifications, enabling safe composition of input and output types. Used to define and enforce type constraints in event-driven or callback-based systems, such as handling Vim plugin events with precise type checking.",
+      "description_length": 432,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Ui.Options.Fields.Direct",
+      "description": "Provides operations to iterate over, fold, check, or transform specific fields within a structured data type representing application state. Works with a custom type `t` that encapsulates various UI-related components and color settings. Used to update or query elements like command line interfaces, message displays, and color configurations in a terminal-based application.",
+      "description_length": 376,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Position.One_indexed_row.Fields.Direct",
+      "description": "Processes a structured data type by applying row and column operations to its fields. Accepts functions that manipulate or inspect field values and indices, supporting iteration, folding, filtering, and transformation. Used to update mutable fields or generate lists based on row and column-specific logic.",
+      "description_length": 306,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Api_call.Or_error.Let_syntax.Let_syntax",
+      "description": "The module provides a set of syntactic extensions for working with monadic computations. It introduces custom syntax for binding and sequencing operations, enhancing readability in complex workflows. Basic operations such as `let%bind` and `let%return` allow for cleaner handling of effectful computations. It is particularly useful for writing concise, readable code in contexts involving option types, lists, or other monadic structures.",
+      "description_length": 439,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim.Key_modifier.Map.Key",
+      "description": "Provides serialization to S-expression format and a comparator for ordered operations. Works with the abstract type `t` and its associated comparator witness. Used to enable ordered comparisons and S-expression encoding in data structures requiring custom key types.",
+      "description_length": 266,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim.Key_modifier.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with S-expressions and the Key module's internal representation. Used to deserialize configuration keys from structured text data.",
+      "description_length": 209,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim.Key_modifier.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t, a custom type that may include polymorphic variants. Used to persist and reconstruct Key.t values in binary format for storage or communication.",
+      "description_length": 316,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim.Key_modifier.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information during folding to prevent prefix-based collisions. Used to generate reliable hash values for complex structures like lists and records in hashing algorithms.",
+      "description_length": 398,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Nvim.Key_modifier.Set.Elt",
+      "description": "Provides serialization to S-expression format and a type-safe comparator for values of type `t`. Operates on the abstract type `t` and its associated comparator witness. Used to enable consistent ordering and S-expression representation in data processing pipelines.",
+      "description_length": 266,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Nvim.Key_modifier.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Works with Sexp.t and a specific Elt.t type. Used to parse structured data from S-expressions into application-specific values.",
+      "description_length": 201,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Nvim.Key_modifier.Set.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type `Elt.t` using Bin_prot, including size calculation, writing, reading, and shape inspection. Operates on custom types that implement the Bin_prot interface, supporting both direct and variant-based encoding. Used to persist and reconstruct complex data structures in binary format for efficient storage or communication.",
+      "description_length": 382,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim.Key_modifier.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Works with custom data types defined using the `Elt` module, supporting recursive and composite structures. Used to generate consistent, collision-resistant hash values for complex types in serialization and comparison contexts.",
+      "description_length": 426,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Defun.Ocaml.Sync.Expert",
+      "description": "Handles variable argument lists for interoperability with Vimscript, accepting a list of arbitrary types and returning a deferred value with error handling. Operates on lists of values and asynchronous results, enabling callback-based interactions with external scripts. Designed for precise control over argument passing in mixed-language environments.",
+      "description_length": 353,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Defun.Ocaml.Async.Expert",
+      "description": "Handles dynamic argument parsing by accepting a type specification and a handler function that processes a list of values, returning a deferred result. Operates on type representations and lists of arbitrary values. Used to implement command-line interfaces that accept variable numbers of arguments with type validation.",
+      "description_length": 321,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Expert.Notifier.Notification.Untested",
+      "description": "Adds highlights to a buffer using a specified namespace and range, supporting asynchronous updates for performance. Operates on buffer identifiers, namespaces, and line/column ranges. Used to dynamically apply syntax or semantic highlighting in real-time editors.",
+      "description_length": 263,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Expert.Notifier.Notification.Defun",
+      "description": "Encapsulates type-safe mechanisms for defining and managing callbacks and notifications through a custom type `t` that enforces function signature consistency. Supports operations that analyze, compose, and validate function and notification types at the type level. Allows precise control over event handling, such as ensuring a Vim plugin event handler matches the expected input and output types. Enables safe integration of asynchronous or event-driven components with strong type guarantees.",
+      "description_length": 496,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml_plugin.Persistent.Make.For_testing.State",
+      "description": "type t = { state: string; data: int; transitions: (string * t) list } Provides functions to create, update, and traverse state machines with labeled transitions. Operates on a record type containing a state identifier, associated data, and a list of transition pairs. Used to model finite state machines in game logic and protocol implementations.",
+      "description_length": 347,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Window.Untested.When_this_is_the_buffer's_last_window",
+      "description": "Provides functions to check if the current buffer is the last window in a split layout, and to manipulate window arrangements based on buffer state. Works with buffer identifiers and window configuration records. Used to control focus behavior when closing buffers in a multi-window setup.",
+      "description_length": 289,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Window.Untested.Expert",
+      "description": "Provides functions to manipulate Vim windows by setting their buffer and invoking Lua callbacks. Operates on window handles, buffers, and Lua references. Used to directly control window content and execute plugin-specific Lua logic without triggering standard event handlers.",
+      "description_length": 275,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Ui.Options.Fields",
+      "description": "manages and manipulates specific fields within a structured application state, enabling traversal, transformation, and querying of components such as UI elements and color settings. It supports operations like iteration, folding, and condition checks on a custom `t` type that represents terminal-based application state. Users can modify command line interfaces, message displays, or color configurations through targeted field updates. Examples include adjusting text color schemes or updating displayed messages without altering other state components.",
+      "description_length": 555,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim_version.Stable.V1",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot, including size calculation, writing, reading, and shape definition. Supports conversion to and from S-expressions and includes a comparator for ordered operations. Designed for use with persistent data structures and protocol buffers.",
+      "description_length": 318,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Nvim_version.Map.Key",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons in data structures.",
+      "description_length": 269,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim_version.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with S-expressions and key data structures derived from a specific domain model. Used to deserialize configuration data from a structured text format into an internal key representation.",
+      "description_length": 265,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim_version.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t when necessary. Used to persist or transmit Key.t values in a binary format across processes or storage.",
+      "description_length": 309,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim_version.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Works with custom data types and collections, using Base.Hash.state as the intermediate hash accumulator. Ensures consistent hashing for comparable values, preventing collisions in nested or composite structures like lists and records.",
+      "description_length": 433,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Nvim_version.Fields.Direct",
+      "description": "Processes version components and metadata by applying custom operations to each field, such as modifying major, minor, and patch versions or updating pre-release tags and build metadata. Operates on a structured version type containing integers for version numbers and lists for tags and metadata. Used to transform version data during parsing, validation, or serialization workflows.",
+      "description_length": 384,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Nvim_version.Set.Elt",
+      "description": "Provides serialization and deserialization between a type and S-expressions, along with a comparator for ordered operations. Works with the abstract type `t` and its associated comparator witness. Used to enable persistent storage and ordered comparisons in data structures.",
+      "description_length": 274,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim_version.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and transforms it into values of type `Elt.t`. Used to deserialize structured data from S-expressions into domain-specific types.",
+      "description_length": 224,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim_version.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and variant-based reading. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 342,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim_version.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Works with custom data types defined using the `Elt` module, supporting recursive and composite structures. Used to generate consistent, collision-resistant hash values for serialization, equality checks, and deterministic data indexing.",
+      "description_length": 435,
+      "index": 29,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Namespace.Map.Key",
+      "description": "Provides serialization to S-expression format and a comparator for ordered operations. Works with the abstract type `t` and its associated comparator witness. Used to enable ordered comparisons and S-expression encoding in data structures requiring custom typing.",
+      "description_length": 263,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Namespace.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with S-expressions and key data structures derived from a specific domain model. Used to deserialize configuration data from S-expressions into typed key representations for application logic.",
+      "description_length": 271,
+      "index": 31,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Namespace.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t, supporting efficient binary I/O operations. Used to persist and reconstruct key structures in binary format for storage or communication.",
+      "description_length": 343,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Namespace.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information to prevent prefix-based collisions. Used to generate reliable hash values for complex structures in hashing-based data structures.",
+      "description_length": 371,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Namespace.Fields.Direct",
+      "description": "Processes records by applying custom operations to specific fields, iterating, folding, and filtering based on integer and optional string identifiers. Works with a structured type `t` containing read-only fields for id and name. Extracts elements into lists by traversing these fields with user-defined functions.",
+      "description_length": 314,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Namespace.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key value by parsing and extracting the first element. Works with S-expressions and string-based keys. Used to transform serialized data into lookup keys for efficient data retrieval.",
+      "description_length": 215,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Namespace.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, including polymorphic variants. Used to enable efficient binary persistence of data structures in applications needing fast serialization.",
+      "description_length": 349,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Namespace.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific type using a provided constructor function. Operates on S-expressions and custom data types defined with the `elt` type. Used to parse structured data from S-expression representations in configuration or serialization contexts.",
+      "description_length": 268,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Namespace.Hash_set.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, including polymorphic variants. Used to enable efficient binary serialization in data exchange or persistent storage scenarios.",
+      "description_length": 343,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Namespace.Set.Elt",
+      "description": "Provides serialization to S-expression format and a comparator for ordering values. Works with the abstract type `t` and its associated comparator witness. Used to enable ordered comparisons and S-expression encoding in data structures requiring custom typing.",
+      "description_length": 260,
+      "index": 39,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Namespace.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and the module's defined `Elt.t` type. Used to parse structured data from S-expressions into application-specific values.",
+      "description_length": 216,
+      "index": 40,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Namespace.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and variant-based reading. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 342,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Namespace.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of a structured type into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Operates on custom types defined with `Elt.t`, using a stateful approach to build consistent and unique hash values. Used to generate reliable hash values for complex data structures like lists and variants, preventing collisions that arise from incomplete or sequential folding.",
+      "description_length": 479,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Position.Fields.Direct",
+      "description": "Processes a structured data type by applying custom operations to each row and column. Operates on a type `t` that represents a tabular structure with fields and indices. Performs actions like iterating over elements, folding values, checking predicates, converting to lists, transforming data, and updating mutable fields.",
+      "description_length": 323,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Position.One_indexed_row.Fields",
+      "description": "Processes structured data by applying row and column operations to fields, enabling manipulation of values and indices through iteration, folding, filtering, and transformation. Key data types include rows and columns, with operations that modify mutable fields or generate lists based on positional logic. Functions can inspect or alter field content, such as updating a specific cell or extracting column summaries. Examples include recalculating totals per row or filtering entries based on column criteria.",
+      "description_length": 510,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Mode.Map.Key",
+      "description": "Provides serialization to S-expression format and a comparator for equality and ordering. Works with the abstract type `t` and its associated comparator witness. Used to enable structured data representation and deterministic comparisons in data processing pipelines.",
+      "description_length": 267,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Mode.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with S-expressions and key representations derived from a specific domain model. Used to deserialize configuration data from S-expressions into typed key structures for application logic.",
+      "description_length": 266,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Mode.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t. Used to persist and reconstruct key data structures in binary format for storage or communication.",
+      "description_length": 304,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Mode.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information to prevent prefix-based collisions. Used to generate reliable hash values for complex structures in hashing and equality checks.",
+      "description_length": 369,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Mode.Set.Elt",
+      "description": "Provides serialization to S-expression format and a comparator for type `t`. Works with the abstract type `t` and its associated comparator witness. Used to enable ordered comparisons and S-expression encoding in data structures requiring custom typing.",
+      "description_length": 253,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Mode.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and the module's defined type `Elt.t`. Used to parse structured data from S-expressions into application-specific representations.",
+      "description_length": 225,
+      "index": 50,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Mode.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` defined by `Elt`, supporting both direct and variant-based reading. Used to encode and decode instances of `t` in binary format for storage or communication.",
+      "description_length": 330,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Mode.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types through a fold-based approach, incorporating size information to prevent prefix-based collisions. Used to generate reliable hash values for complex structures like lists and variants during serialization or equality checks.",
+      "description_length": 416,
+      "index": 52,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Api_call.Let_syntax.Let_syntax",
+      "description": "The module provides a set of syntactic extensions for working with monadic computations. It introduces custom syntax for binding and sequencing operations, enhancing readability in complex workflows. Basic operations such as `let%bind` and `let%map` allow for cleaner handling of effectful computations. It is typically used to simplify code that involves monadic structures like option, result, or async.",
+      "description_length": 405,
+      "index": 53,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Api_call.Or_error.Applicative_infix",
+      "description": "Applies a function wrapped in a context to a value in the same context, and lifts functions into contexts for sequential transformation. Operates on monadic types such as option, list, and result. Enables chaining of computations where side effects or context propagation are required, like validating and transforming user input.",
+      "description_length": 330,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Api_call.Or_error.Let_syntax",
+      "description": "Introduces custom syntax for monadic operations, enabling cleaner handling of effectful computations through constructs like `let%bind` and `let%return`. Supports sequencing and binding in contexts such as option types, lists, and other monadic structures. Allows for more readable and structured code when managing chained operations. Example: chaining multiple `let%bind` steps to process nested options or list transformations.",
+      "description_length": 430,
+      "index": 55,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Nvim.Untested.Log_level",
+      "description": "Provides functions to compare, convert, and check log severity levels, including parsing from strings and determining if a level is above a threshold. Works with the `t` type, which represents log severity levels such as debug, info, warning, error, and critical. Used to filter log messages based on configured severity and to format log entries for output.",
+      "description_length": 358,
+      "index": 56,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Nvim.Untested.Expert",
+      "description": "Handles Lua script execution with typed arguments and results using Msgpack, enabling integration with external scripts for dynamic behavior. Registers callback handlers for specific events within a namespace, allowing customization of script interactions at different stages. Used to inject Lua logic into application workflows, such as modifying buffer content or responding to window events.",
+      "description_length": 394,
+      "index": 57,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Nvim.Key_modifier.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a specific type `t`, including standard relational operators and functions to determine minimum and maximum values. Works with any data type that supports ordered comparisons, enabling direct use in sorting and decision-making logic. Used to replace polymorphic comparisons in contexts where explicit ordering is required, such as custom data structures or deterministic algorithm behavior.",
+      "description_length": 438,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim.Key_modifier.Map",
+      "description": "Encodes and decodes custom key types using S-expressions and binary protocols, while supporting ordered comparisons and hash generation. It handles serialization, deserialization, and hashing of structured data, including polymorphic variants and nested collections. Operations include parsing from S-expressions, writing to binary formats, and folding data into hash states. This enables efficient storage, comparison, and unique identification of complex key structures.",
+      "description_length": 472,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim.Key_modifier.Set",
+      "description": "offers a comprehensive set of tools for handling structured data, including S-expression and binary serialization, parsing, hashing, and ordering. it works with custom types such as `t` and `Elt.t`, providing operations like comparison, conversion, and hash generation. users can serialize data to S-expressions, parse them back into custom values, and encode/decode binary representations efficiently. it supports recursive structures and ensures consistent hashing and ordering across data processing workflows.",
+      "description_length": 513,
+      "index": 60,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Nvim.Fast.Untested",
+      "description": "Handles mouse input events with specific button, action, and modifier configurations, mapping them to grid coordinates for interactive applications. Operates on mouse button states, action types, key modifier sets, and integer grid positions. Used to trigger precise user interactions in game interfaces or graphical editors.",
+      "description_length": 325,
+      "index": 61,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Nvim.Mouse.Button",
+      "description": "Provides serialization of button states to S-expressions. Works with a custom type representing button interactions, including press and release events. Used to encode user input data for logging and inter-process communication.",
+      "description_length": 228,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim.Mouse.Action",
+      "description": "Provides serialization of action data to S-expressions using a custom type `t` that represents discrete user or system actions. Works with structured event data including timestamps, action types, and associated payloads. Used to generate human-readable logs and facilitate debugging in event-driven applications.",
+      "description_length": 313,
+      "index": 63,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Defun.Ocaml.Sync",
+      "description": "Manages flexible argument passing between OCaml and Vimscript, processing lists of heterogeneous values and returning asynchronous results with error handling. Supports callback mechanisms for integrating with external scripts and handling mixed-language interactions. Key operations include argument unpacking, deferred value resolution, and error propagation. Examples include invoking Vim functions with OCaml data structures and managing asynchronous script responses.",
+      "description_length": 472,
+      "index": 64,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Defun.Ocaml.Async",
+      "description": "Processes dynamic argument lists by validating types against a specification and executing handler functions, returning asynchronous results. Operates on type representations and value lists, enabling flexible command-line parsing. Supports type-safe extraction and processing of arguments in asynchronous workflows. Example: parsing a list of integers and strings into a structured record, then performing an async computation based on the input.",
+      "description_length": 447,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Expert.Notifier.Notification",
+      "description": "Manages asynchronous API notifications with type-safe callback and event handling. Processes buffer highlights using namespace and range specifications, enabling real-time editor updates. Supports type-level analysis and composition of notifications and functions, ensuring compatibility in event-driven systems. Allows precise control over Vim plugin events and efficient, non-blocking API interactions.",
+      "description_length": 404,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Expert.Notifier.For_testing",
+      "description": "Sends raw messages over a connected client using a specified function name and parameters encoded in MessagePack. It operates on a client state and a list of MessagePack-encoded values. Used to directly invoke remote procedures in a protocol-driven communication setup.",
+      "description_length": 269,
+      "index": 67,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml_plugin.Persistent.Make.For_testing",
+      "description": "Models finite state machines using a record type with state, data, and transitions. Supports creating, modifying, and navigating state machines through labeled transitions. Can track game states, manage protocol flows, and execute transitions based on defined rules. Operations include adding transitions, updating state data, and traversing the machine structure.",
+      "description_length": 364,
+      "index": 68,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml_plugin.Persistent.For_testing.State",
+      "description": "type t = { state : string; value : int; transitions : (string * t) list } Provides functions to create a state with a name and integer value, add transitions between states, and retrieve the current state's value. Operates on a structured record type that includes state identifiers, numeric values, and transition mappings. Used to model finite state machines where each state has a specific value and defined transitions to other states.",
+      "description_length": 439,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Window.Map.Key",
+      "description": "Provides serialization to S-expression format and a comparator for equality and ordering. Works with the abstract type `t` and its associated comparator witness. Used to enable consistent ordering and external representation in data structures and serialization pipelines.",
+      "description_length": 272,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Window.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with S-expression data and the Key module's internal representation. Used to deserialize configuration keys from structured text formats.",
+      "description_length": 216,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Window.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t. Used to persist or transmit Key.t values across different parts of a system or between processes.",
+      "description_length": 303,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Window.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information to prevent prefix-based collisions. Used to generate reliable hash values for complex structures in hashing-based data structures.",
+      "description_length": 371,
+      "index": 73,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nvim_internal.Window.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key by parsing and validating its structure. Works with S-expressions and custom key types defined in the module. Used to deserialize configuration data from S-expressed files into typed keys for lookup operations.",
+      "description_length": 246,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Window.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of a specific type using the Bin_prot library, including size calculation, writing, and reading operations. Works with custom types that require binary I/O support, including polymorphic variants through specialized reader functions. Used to enable efficient binary persistence of data structures in applications requiring fast serialization.",
+      "description_length": 402,
+      "index": 75,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Window.Hash_set.Provide_of_sexp",
+      "description": "Converts an S-expression into a specific type using a provided constructor function. Works with S-expressions and custom data types defined by the user. Used to parse structured data from S-expression representations into typed values.",
+      "description_length": 235,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Window.Hash_set.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of type `elt` using the Bin_prot format, including size calculation, writing, reading, and shape information. Works with custom types that require binary encoding, supporting polymorphic variants through a constructor tag reader. Used to enable efficient binary I/O for data structures in network protocols or persistent storage.",
+      "description_length": 389,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Window.Set.Elt",
+      "description": "Provides serialization to S-expression format and a type-safe comparator for values of type `t`. Operates on the abstract type `t` and its associated comparator witness. Used to enable consistent ordering and S-expression representation in data processing pipelines.",
+      "description_length": 266,
+      "index": 78,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nvim_internal.Window.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and the module's defined type `Elt.t`. Used to parse structured data from S-expressions into application-specific representations.",
+      "description_length": 225,
+      "index": 79,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nvim_internal.Window.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and variant-based reading. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 342,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Window.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Works with custom data types defined using the `Elt` module, supporting recursive and composite structures. Used to generate consistent, collision-resistant hash values for serialization, equality checks, and deterministic data processing.",
+      "description_length": 437,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Tabpage.Map.Key",
+      "description": "Provides serialization to S-expression format and a comparator for ordering values. Works with abstract type `t` and its associated comparator witness. Used to enable ordered comparisons and S-expression encoding in data structures requiring custom typing.",
+      "description_length": 256,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Tabpage.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with S-expressions and a specific key data structure. Used to deserialize configuration keys from textual S-expression representations.",
+      "description_length": 214,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Tabpage.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with the Key.t type, supporting both direct and variant-based reading. Used to persist or transmit Key.t values in a binary format across processes or storage.",
+      "description_length": 319,
+      "index": 84,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nvim_internal.Tabpage.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information during the folding process. Used to generate reliable hash values for complex structures like lists and records in hashing algorithms.",
+      "description_length": 375,
+      "index": 85,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nvim_internal.Tabpage.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key by parsing its structure and extracting the relevant value. Works with S-expressions and custom key types defined in the codebase. Used to deserialize configuration data from S-expressions into a structured key format for lookup operations.",
+      "description_length": 276,
+      "index": 86,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nvim_internal.Tabpage.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, including polymorphic variants. Used to enable efficient binary persistence and communication of data structures across processes or storage.",
+      "description_length": 352,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Tabpage.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific type using a provided constructor function. Works with S-expressions and custom data types defined by the user. Used to parse structured data from S-expression representations into typed values.",
+      "description_length": 234,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Tabpage.Hash_set.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with polymorphic variants and custom types that require explicit constructor tags during reading. Used to enable binary persistence of data structures in applications requiring efficient, compact storage.",
+      "description_length": 374,
+      "index": 89,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Tabpage.Set.Elt",
+      "description": "Provides serialization to S-expression format and a type-safe comparator for values of type `t`. Operates on the abstract type `t` and its associated comparator witness. Used to enable consistent ordering and S-expression representation in data processing pipelines.",
+      "description_length": 266,
+      "index": 90,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nvim_internal.Tabpage.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and transforms it into values of type `Elt.t`. Used to deserialize structured data from S-expressions into application-specific representations.",
+      "description_length": 239,
+      "index": 91,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Tabpage.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and variant-based reading. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 342,
+      "index": 92,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Tabpage.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of a data structure into a hash state, ensuring collision resistance and consistency with comparison. It operates on custom data types through a dedicated hash_fold_t function, which incorporates the structure's size before recursively folding elements. Used to generate reliable hash values for complex types in scenarios requiring deterministic and collision-free hashing, such as in persistent data structures or serialization.",
+      "description_length": 493,
+      "index": 93,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Ui_options.Fields.Direct",
+      "description": "Provides operations to iterate over, fold, check, and transform specific fields within a structured data type representing application state. Works with a custom type `t` that encapsulates various UI and configuration fields, including command line, highlight state, and color settings. Used to update or query mutable state components across different UI elements in a controlled manner.",
+      "description_length": 388,
+      "index": 94,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Buffer.Map.Key",
+      "description": "Handles serialization of key values to S-expressions and provides a comparator for ordered operations. Works with the abstract type `t` and its associated comparator witness. Used to enable ordered data structures and external representation of key objects.",
+      "description_length": 257,
+      "index": 95,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Buffer.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Operates on S-expressions and the Key module's type. Used to deserialize configuration keys from structured text data.",
+      "description_length": 191,
+      "index": 96,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Buffer.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t. Used to persist and reconstruct key data structures in binary format for storage or communication.",
+      "description_length": 304,
+      "index": 97,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Buffer.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information to prevent prefix-based collisions. Used to generate reliable hash values for complex structures like lists and records in hashing algorithms.",
+      "description_length": 383,
+      "index": 98,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nvim_internal.Buffer.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key value by parsing and extracting the first element. Works with S-expressions and string-based keys. Used to transform serialized data from S-expresssions into lookup keys for maps or tables.",
+      "description_length": 225,
+      "index": 99,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Buffer.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, particularly those involving polymorphic variants. Used to enable efficient binary persistence of data structures in applications like network protocols or file storage.",
+      "description_length": 390,
+      "index": 100,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Buffer.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific element type using a provided constructor. Works with S-expressions and custom data types defined by the user. Used to parse structured data from S-expression representations into typed values.",
+      "description_length": 233,
+      "index": 101,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nvim_internal.Buffer.Hash_set.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with polymorphic variants and custom types that require explicit constructor tags during reading. Used to enable binary persistence of data structures in applications requiring efficient serialization.",
+      "description_length": 371,
+      "index": 102,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Buffer.Set.Elt",
+      "description": "Provides serialization to S-expression format and a comparator for type `t`. Works with the abstract type `t` and its associated comparator witness. Used to enable ordered comparisons and S-expression encoding in data structures requiring custom types.",
+      "description_length": 252,
+      "index": 103,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Buffer.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and the module's defined `Elt.t` type. Used to parse structured data from S-expressions into application-specific representations.",
+      "description_length": 225,
+      "index": 104,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Buffer.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` defined by the `Elt` module, supporting both direct and variant-based encoding. Used to persist and reconstruct instances of `t` in binary format for storage or communication.",
+      "description_length": 348,
+      "index": 105,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nvim_internal.Buffer.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of a structured type into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Operates on custom types defined with `Elt.t`, applying a deterministic and collision-avoiding hashing strategy. Used to generate consistent and unique hash values for complex data structures in hashing-based algorithms.",
+      "description_length": 420,
+      "index": 106,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Highlighted_text.Chunk",
+      "description": "Encodes a chunked data structure into a MessagePack format. It operates on a record type containing payload and metadata fields. Used to serialize data for network transmission or persistent storage.",
+      "description_length": 199,
+      "index": 107,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Keymap.Mode",
+      "description": "Provides comparison, equality checks, and string conversion for a type representing distinct modes. Works with a custom type `t` and a list of all possible instances. Used to serialize, compare, and convert mode values in configuration and state management contexts.",
+      "description_length": 266,
+      "index": 108,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Window.Untested",
+      "description": "Manages window layouts and buffer interactions by checking buffer states, rearranging windows, and controlling focus during closures. Handles window handles, buffers, and Lua callbacks to set window content and execute custom logic. Allows precise control over multi-window setups, such as switching buffers without triggering default events or reordering windows based on active buffers. Enables direct manipulation of Vim's interface for advanced plugin interactions.",
+      "description_length": 469,
+      "index": 109,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Color.True_color",
+      "description": "Provides operations to convert a color representation to a string, an S-expression, and from a 24-bit integer with error handling. Works with a structured type representing true color values, typically used for RGB color encoding. Used to serialize color data for logging or configuration and to parse color values from integer representations in image processing tasks.",
+      "description_length": 370,
+      "index": 110,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Color.Color256",
+      "description": "Converts 8-bit integer values to a color representation, ensuring they fall within valid ranges. Provides string serialization and S-expression conversion for the color type. Used to safely encode and decode color values in terminal applications and data serialization pipelines.",
+      "description_length": 279,
+      "index": 111,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Color.Kind",
+      "description": "Converts values of a parameterized type to S-expression format using a provided converter function. Operates on polymorphic variants wrapped in a type constructor. Used to serialize custom data structures for debugging or configuration purposes.",
+      "description_length": 245,
+      "index": 112,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Color.Highlight",
+      "description": "Converts values of a wrapped type to S-expressions using a provided conversion function. Operates on a polymorphic variant type that encapsulates values of any type. Used to serialize structured data for debugging or configuration purposes.",
+      "description_length": 240,
+      "index": 113,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Ui.Options",
+      "description": "manages and manipulates specific fields within a terminal-based application state, offering traversal, transformation, and querying capabilities for UI elements and color settings. It defines a custom `t` type and provides operations like iteration, folding, and condition checks to modify or inspect components. Users can adjust color schemes or update messages while preserving other state elements. Examples include dynamically changing text colors or refreshing displayed content without affecting overall application structure.",
+      "description_length": 532,
+      "index": 114,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Ui.Description",
+      "description": "Provides serialization of a record type to S-expression format using the sexp_of_t function. Works with a concrete record type containing fields of various standard OCaml types. Used to generate human-readable representations for debugging or configuration purposes.",
+      "description_length": 266,
+      "index": 115,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Ui.Untested",
+      "description": "Resizes a grid by adjusting its dimensions, with error handling for invalid inputs. Adjusts the visible item count in a popup menu and defines its positional bounds using floating-point coordinates. These functions are used to dynamically control UI elements within a graphical application.",
+      "description_length": 290,
+      "index": 116,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim_version.Fields",
+      "description": "manipulates version data by applying transformations to its components, including numeric version parts and textual metadata. it handles structured version types with integers for major, minor, and patch values, and lists for pre-release and build information. operations include updating version numbers, modifying tags, and refining metadata during processing. examples include incrementing the patch level or replacing outdated build identifiers.",
+      "description_length": 449,
+      "index": 117,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim_version.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports comparison, enabling direct use in sorting and decision-making logic. Used to replace polymorphic comparisons in scenarios requiring explicit type-specific behavior.",
+      "description_length": 384,
+      "index": 118,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim_version.Map",
+      "description": "Combines serialization and comparison capabilities for a type `t` with S-expressions and a comparator, enabling ordered data handling and persistence. Supports converting S-expressions to domain-specific key types and serializing key values in binary format using Bin_prot for efficient transmission or storage. Incorporates a structured hash folding mechanism that ensures collision resistance by accounting for data size and content. Together, these components allow for robust data manipulation, including storing configuration data, persisting key-value pairs, and generating consistent hashes for complex structures.",
+      "description_length": 621,
+      "index": 119,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim_version.Set",
+      "description": "Encapsulates serialization, deserialization, and hashing for custom data types, supporting S-expressions, binary formats, and ordered comparisons. It handles conversions from S-expressions to domain-specific types, binary persistence with size and shape tracking, and structured hash generation. Operations include comparator-based ordering, constructor-based deserialization, and hash folding for recursive data. Examples include saving data to binary files, parsing structured text, and generating unique hash identifiers for complex objects.",
+      "description_length": 544,
+      "index": 120,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim_version.Stable",
+      "description": "offers serialization, deserialization, and ordered operations for arbitrary types, with support for Bin_prot, S-expressions, and persistent data structures. It defines type `t` with methods to compute size, write to, read from, and describe binary formats, along with comparison functions. Conversions between binary and S-expressions enable flexible data handling. Examples include storing structured data in files, transmitting objects over networks, and performing ordered operations on immutable collections.",
+      "description_length": 512,
+      "index": 121,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Tabpage.Untested",
+      "description": "Retrieves a list of window handles from the current session, fetches and modifies session-specific variables with type safety, and validates session state. Operates on session state objects, window handles, and typed variables. Used to inspect active windows, manage session configuration, and ensure session integrity before performing actions.",
+      "description_length": 345,
+      "index": 122,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Namespace.Fields",
+      "description": "provides a system for manipulating structured data by targeting specific fields through integer and optional string keys. It supports operations like iteration, folding, and filtering on a read-only type `t` that includes id and name fields. Users can extract elements into lists by applying custom functions during traversal. For example, it can aggregate values from named fields or collect all ids matching a condition.",
+      "description_length": 422,
+      "index": 123,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Namespace.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators and functions to determine minimum and maximum values. Works with any data type that supports the `compare` function to establish order. Used to implement custom sorting logic and conditional branching based on value relationships.",
+      "description_length": 338,
+      "index": 124,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Namespace.Map",
+      "description": "Encodes and decodes values using S-expressions and binary protocols, supporting ordered comparisons and hash generation. It handles key types derived from domain-specific models, enabling serialization, deserialization, and safe hashing of structured data. Operations include parsing S-expressions into typed keys, writing and reading binary representations, and folding data into hash states. This allows for efficient storage, communication, and consistent comparison of custom data structures.",
+      "description_length": 496,
+      "index": 125,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Namespace.Set",
+      "description": "Encodes and decodes values between S-expressions and custom types, while supporting ordered comparisons and binary persistence. It handles serialization, parsing, and hashing for structured data, with operations on `t`, `Elt.t`, and `Sexp.t`. Users can convert data to and from S-expressions, serialize to binary, and generate collision-resistant hashes. This enables efficient storage, comparison, and transformation of complex, custom-typed data.",
+      "description_length": 448,
+      "index": 126,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Namespace.Table",
+      "description": "Processes S-expressions to generate key-value pairs for fast lookups and supports binary serialization and deserialization of custom types with Bin_prot, enabling efficient data storage and retrieval. Key types include parsed S-expression keys and serialized binary data, with operations for parsing, converting, and handling binary I/O. It allows transforming structured data into searchable keys and persisting complex types in binary format. For example, it can extract a string key from an S-expression or serialize a polymorphic variant for disk storage.",
+      "description_length": 559,
+      "index": 127,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Namespace.Hash_set",
+      "description": "Converts S-expressions to custom types using a constructor function and supports binary serialization and deserialization with Bin_prot, including size, write, read, and shape operations. Handles structured data parsing and efficient binary I/O for custom types, including polymorphic variants. Can parse configuration data from S-expressions and serialize objects to binary formats for storage or transmission. Enables seamless conversion between textual and binary representations of complex data structures.",
+      "description_length": 510,
+      "index": 128,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Namespace.Hash_queue",
+      "description": "The module offers operations for managing key-value queues that preserve insertion order while enabling efficient hash-based lookups, including enqueueing at both ends, dequeuing, element movement, and safe/unsafe modifications. It supports traversal, aggregation (e.g., folding, filtering), and inspection of elements, tailored for scenarios like task scheduling, caching, or ordered data processing where ordered access and rapid key-based operations are critical. The functions handle generic key-data structures, balancing ordered queue semantics with hash table efficiency.",
+      "description_length": 578,
+      "index": 129,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Namespace.Untested",
+      "description": "Creates a namespace registry that manages named namespaces, allowing retrieval or creation based on a provided name. Operates on a map of string names to namespace objects, returning errors for conflicts or missing entries. Used to ensure unique namespace identifiers during API call processing.",
+      "description_length": 295,
+      "index": 130,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Position.Fields",
+      "description": "provides a set of operations for manipulating tabular data represented by type `t`, enabling row and column-wise processing. It supports iteration, folding, predicate checking, list conversion, data transformation, and field updates. For example, it can filter rows based on a condition or aggregate column values. The module allows for both immutable transformations and in-place modifications of structured data.",
+      "description_length": 414,
+      "index": 131,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Position.One_indexed_row",
+      "description": "manages row-based data structures with operations that traverse, transform, and aggregate elements by position, using rows and columns as primary constructs. it supports mutable updates, list generation, and conditional filtering, allowing tasks like adjusting cell values or computing column statistics. functions can iterate over elements to apply transformations or extract summaries, such as recalculating row totals or isolating entries meeting specific column conditions. it enables precise control over data layout and content through positional and functional operations.",
+      "description_length": 579,
+      "index": 132,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Mode.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators and functions to determine minimum and maximum values. Works with any data type that supports comparison via the `compare` function. Used to implement custom sorting logic and value comparisons in data structures like trees and lists.",
+      "description_length": 341,
+      "index": 133,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Mode.Map",
+      "description": "Encodes and decodes structured data using S-expressions and binary formats, supporting typed keys and custom data structures. Enables deterministic comparisons, hash generation, and deserialization of domain-specific configurations. Operations include serialization, deserialization, hashing, and size-based collision prevention. Examples include converting configuration data to typed keys, persisting key structures in binary, and generating consistent hashes for complex objects.",
+      "description_length": 482,
+      "index": 134,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Mode.Set",
+      "description": "offers serialization to S-expressions and binary formats, along with comparison, parsing, and hashing capabilities for custom types. It supports operations on abstract types `t` and `Elt.t`, enabling ordered comparisons, S-expression parsing, binary encoding, and secure hash generation. Users can convert between structured data representations, serialize and deserialize data efficiently, and ensure consistent hashing for complex data structures. Examples include parsing S-expressions into application-specific types, encoding data for storage, and generating collision-resistant hashes for equality checks.",
+      "description_length": 611,
+      "index": 135,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Mode.With_blocking_info",
+      "description": "Provides serialization to S-expression format for a record type containing a boolean flag and a list of strings. Works with a custom type that includes a blocking status and associated information. Used to generate structured data for logging or configuration output.",
+      "description_length": 267,
+      "index": 136,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Client_info.Version",
+      "description": "type t = { major : int; minor : int; patch : int; pre_release : string list; build : string list } Provides functions to parse version strings into structured representations, compare versions for semantic ordering, and increment specific version components. Works with tuples and lists to represent pre-release and build metadata. Used to enforce version constraints in package dependencies and manage software release cycles.",
+      "description_length": 427,
+      "index": 137,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Client_info.Client_type",
+      "description": "Provides functions to parse, validate, and compare client identifiers, including conversion from string representations and checking against predefined client categories. Works with the `t` type, which represents distinct client classifications, and string inputs for initialization. Used to enforce access control rules and route requests based on client type in a service-oriented architecture.",
+      "description_length": 396,
+      "index": 138,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Client_info.Client_method",
+      "description": "type t = { method_ : string; headers : (string * string) list; body : string option } Provides functions to create HTTP method configurations, add headers, and set request bodies for API interactions. Operates on structured data including strings, lists of headers, and optional body content. Used to construct precise client-side requests for specific API endpoints with custom headers and payloads.",
+      "description_length": 400,
+      "index": 139,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Client.Connection_type",
+      "description": "Provides functions to construct and inspect connection configurations for interfacing with Neovim, including parsing command-line arguments and validating socket paths. Works with types representing Unix sockets, standard input/output streams, and embedded execution contexts. Used to set up synchronous communication for one-shot plugins via Stdio, establish long-running Unix connections, or launch Neovim as a child process with Embed.",
+      "description_length": 438,
+      "index": 140,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Api_call.Applicative_infix",
+      "description": "Applies a function wrapped in a context to a value in the same context, and sequences computations while discarding intermediate results. Operates on monadic types, enabling chaining of effectful operations. Used to transform results within a computation context while maintaining side-effect order.",
+      "description_length": 299,
+      "index": 141,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Api_call.Let_syntax",
+      "description": "Introduces custom syntax for monadic operations, enabling cleaner handling of effectful computations through constructs like `let%bind` and `let%map`. Supports sequencing and binding within monadic contexts, simplifying workflows involving option, result, or async types. Allows for more readable and maintainable code when chaining operations that involve side effects or error handling. Example: chaining asynchronous API calls with error recovery using `let%bind` and `let%map`.",
+      "description_length": 481,
+      "index": 142,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Api_call.Or_error",
+      "description": "Provides monadic operations for sequencing and transforming values within contexts like option, list, and result. Supports lifting functions into these contexts and offers custom syntax for cleaner effectful computation handling. Enables chaining of validated transformations, such as processing nested options or list comprehensions. Examples include safely extracting values from option types or applying transformations across list elements with error propagation.",
+      "description_length": 467,
+      "index": 143,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim.Mouse",
+      "description": "Encodes user interaction data into S-expressions using custom types for button states and action events, including timestamps and payloads. Supports logging and communication by serializing press, release, and discrete action events. Enables debugging through structured, human-readable output of user and system interactions. Examples include capturing mouse clicks, tracking input sequences, and generating event logs for analysis.",
+      "description_length": 433,
+      "index": 144,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim.Key_modifier",
+      "description": "Provides comparison, serialization, and hashing capabilities for custom key types, enabling ordered operations, efficient storage, and consistent data handling. It supports S-expression and binary formats, allowing conversion between structured data and serialized representations, while ensuring proper ordering and hash generation for complex types. Users can sort, compare, and uniquely identify custom data structures, including nested and polymorphic variants. Examples include serializing a key to binary for storage, parsing an S-expression back into a structured value, and generating a hash for fast lookup.",
+      "description_length": 616,
+      "index": 145,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Nvim.Fast",
+      "description": "Processes mouse input events with customizable button actions and modifiers, translating them into grid coordinates for precise user interaction. Supports operations on button states, action types, modifier sets, and integer positions. Enables real-time response to mouse clicks, drags, and key combinations in graphical applications. Examples include selecting grid cells, initiating drag-and-drop, or activating context-sensitive tools.",
+      "description_length": 438,
+      "index": 146,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim.Untested",
+      "description": "Manages log severity levels through comparison, conversion, and threshold checks, using the `t` type to represent levels like debug and error, enabling message filtering and formatting. Executes Lua scripts with typed arguments and results via Msgpack, supporting event-driven customization and dynamic behavior injection. Allows registration of callback handlers to modify application flow, such as altering buffer content or responding to window events. Combines logging control with script integration for flexible, event-based application logic.",
+      "description_length": 549,
+      "index": 147,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Vcaml_error.Nvim_error_event",
+      "description": "The module provides a structured way to handle error events within a Nvim context, offering a foundation for error tracking and reporting. It includes a basic error type and methods for creating and inspecting error instances. Users can generate error records with associated messages and statuses, and retrieve details for logging or display. Example uses include capturing plugin failures and formatting error outputs for user feedback.",
+      "description_length": 438,
+      "index": 148,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Defun.Vim",
+      "description": "Wraps Vimscript function signatures into OCaml-compatible types, supporting argument and return type definitions through `@->` and `return`. It works with type representations like `Integer`, `String`, and `Buffer`, enabling precise function arity modeling. Used to convert Vimscript functions into OCaml functions with matching types, such as `int -> string -> int -> buffer`.",
+      "description_length": 377,
+      "index": 149,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Defun.Ocaml",
+      "description": "Handles bidirectional communication between OCaml and Vimscript by unpacking and validating heterogeneous arguments, executing handlers, and returning asynchronous results with error support. Operates on type representations, value lists, and callback mechanisms to enable seamless integration of OCaml functions into Vim workflows. Examples include invoking Vim functions with OCaml data, parsing mixed-type argument lists into structured records, and managing async script responses through deferred execution. Key data types include type specifications, value lists, and handler functions, with operations focused on argument processing and asynchronous result resolution.",
+      "description_length": 675,
+      "index": 150,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Expert.Notifier",
+      "description": "Handles asynchronous notification delivery and raw message transmission in event-driven systems. Provides types for client states, message packs, and event handlers, with operations for sending encoded messages and managing callback execution. Enables real-time updates through precise event control and supports direct remote procedure calls. Can be used to trigger Vim plugin actions or update editor buffers based on API events.",
+      "description_length": 431,
+      "index": 151,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Msgpack.Map.Key",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons in data structures.",
+      "description_length": 269,
+      "index": 152,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Msgpack.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with S-expressions and key data structures derived from a specific domain model. Used to deserialize configuration data from a textual format into an internal key representation.",
+      "description_length": 257,
+      "index": 153,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Msgpack.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t. Used to persist or transmit Key.t values across different parts of a system or between processes.",
+      "description_length": 303,
+      "index": 154,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Msgpack.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Works with custom data types and key structures, using Base.Hash.state to accumulate hash values. Used to generate consistent, collision-resistant hashes for complex types in serialization and comparison contexts.",
+      "description_length": 411,
+      "index": 155,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Msgpack.Internal.Parser",
+      "description": "Parses a string into a message structure using a custom error handling mechanism. Processes binary data into a typed message representation through a parser combinator. Accepts raw input and returns a structured message suitable for further processing in network protocols.",
+      "description_length": 273,
+      "index": 156,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Msgpack.Internal.Serializer",
+      "description": "Converts a message pack message to a string with a specified buffer size. Operates on Msgpack__.Message.t data structures. Used to serialize structured data for network transmission or storage.",
+      "description_length": 193,
+      "index": 157,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Msgpack.Set.Elt",
+      "description": "Provides serialization and deserialization between a type and S-expressions, along with a comparator for ordered operations. Works with a generic type `t` and its associated comparator witness. Enables structured data handling in contexts requiring symbolic representation and ordering.",
+      "description_length": 286,
+      "index": 158,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Msgpack.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a value of type Elt.t using a provided constructor. Operates on Sexp.t values generated from parsed S-expressions. Used to deserialize structured data into domain-specific types during parsing workflows.",
+      "description_length": 233,
+      "index": 159,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Msgpack.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and variant-based reading. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 342,
+      "index": 160,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Msgpack.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of a structured type into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Operates on custom data types defined with `Elt.t`, preserving hash consistency with their comparison function. Used to generate reliable hash values for complex types in hash tables and serialization, avoiding common pitfalls in recursive or composite data structures.",
+      "description_length": 469,
+      "index": 161,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml_plugin.Oneshot.Rpc",
+      "description": "Creates and manages RPC endpoints with a specified name and function signature, handling client connections and keyboard interruption signals. Operates with asynchronous deferred values and client state representations. Used to implement server-side handlers for remote procedure calls in networked applications.",
+      "description_length": 312,
+      "index": 162,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml_plugin.Oneshot.Make",
+      "description": "Provides functions to handle RPC communication, error responses, and event callbacks in a Neovim plugin. Works with strings, error types, and a list of one-shot RPC handlers. Used to define custom commands, manage asynchronous errors, and route specific Neovim requests to appropriate handlers.",
+      "description_length": 294,
+      "index": 163,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml_plugin.Persistent.Rpc",
+      "description": "Handles synchronous and asynchronous remote procedure calls with custom state management. Operates on stateful handler types that encapsulate client connections and shutdown signals. Used to implement server-side endpoints for real-time data processing and event-driven interactions.",
+      "description_length": 283,
+      "index": 164,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml_plugin.Persistent.For_testing",
+      "description": "Encapsulates state machine configurations using a record type that tracks a state identifier, associated integer value, and transition links. Supports creating states, defining transitions between them, and accessing state values. Allows modeling of systems with defined behavioral paths based on state changes. Example tasks include simulating state transitions or evaluating state values during execution.",
+      "description_length": 407,
+      "index": 165,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml_plugin.Persistent.Make",
+      "description": "Provides functions to serialize state to S-expressions, manage RPC handlers, and handle startup and shutdown sequences for a Neovim plugin. Works with a custom `state` type, error handling configurations, and Vimscript function notifications. Used to initialize plugin behavior, respond to Neovim errors, and signal readiness after startup.",
+      "description_length": 340,
+      "index": 166,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Msgpack_debug.Man_in_the_middle_debugger.Peer",
+      "description": "type t = { id : string; address : string; port : int } Provides functions to create, compare, and serialize peer information. Operates on structured data including unique identifiers, network addresses, and port numbers. Used to manage active connections in a distributed system, such as tracking nodes in a peer-to-peer network.",
+      "description_length": 329,
+      "index": 167,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nvim_internal.Window.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a type `t`, including standard relational operators, equality checks, and functions to determine the minimum and maximum of two values. Works with any data type that supports comparison, enabling direct use in conditional logic and sorting. Used to replace polymorphic comparisons in code, ensuring consistent behavior when comparing custom types.",
+      "description_length": 395,
+      "index": 168,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Window.Map",
+      "description": "Encodes and decodes structured data using S-expressions and Bin_prot, supporting key-based serialization and deserialization. Implements comparator and hash functions for consistent ordering and hashing of custom types. Enables reliable data persistence, transmission, and comparison across system components. Examples include serializing configuration keys, generating hash values for nested data, and ensuring ordered representation of abstract types.",
+      "description_length": 453,
+      "index": 169,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Window.Set",
+      "description": "Encapsulates type-safe operations for serialization, parsing, and hashing of structured data. Supports S-expression and binary formats, along with comparator and hash functions for custom types. Enables parsing S-expressions into application-specific values, serializing to binary, and generating collision-resistant hashes. Facilitates data processing pipelines with consistent ordering, representation, and integrity checks.",
+      "description_length": 426,
+      "index": 170,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nvim_internal.Window.Table",
+      "description": "Parses and validates S-expressions into typed keys for structured data access, while enabling efficient binary serialization and deserialization of custom types with size tracking and I/O operations. Key types include parsed S-expression structures and binary-serializable values, with operations for conversion, size calculation, and reading/writing. This allows for seamless configuration loading from S-expressed files and persistent storage of complex data structures in binary format. For example, it can convert a configuration file into a key for lookup or save a polymorphic variant to a binary stream for later reconstruction.",
+      "description_length": 635,
+      "index": 171,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Window.Hash_set",
+      "description": "Converts S-expressions into typed values using a custom constructor and supports binary serialization and deserialization of `elt` values with Bin_prot, including size, write, read, and shape operations. Handles structured data parsing and efficient binary I/O for custom types, including polymorphic variants. Parses JSON-like S-expressions into domain-specific types and encodes data for network transmission or storage. Enables seamless conversion between textual and binary representations of user-defined data structures.",
+      "description_length": 526,
+      "index": 172,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Window.Hash_queue",
+      "description": "This module provides operations for managing key-value queues, including enqueueing, dequeuing, checking membership, and transforming elements while maintaining ordered structure. It supports traversal, filtering, and aggregation on structured key-data pairs, with variants for safe or exception-raising behavior. Use cases include scenarios requiring ordered access and modification of elements by key, such as task scheduling or priority-based data processing.",
+      "description_length": 462,
+      "index": 173,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Window.Or_current",
+      "description": "Provides conversion between a custom type and S-expressions, and serialization/deserialization to/from MessagePack format. Works with a specific opaque type representing a current value. Used to encode and decode data for network transmission or storage.",
+      "description_length": 254,
+      "index": 174,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nvim_internal.Tabpage.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports the `compare` function to establish order. Used to implement custom sorting logic or decision-making based on value relationships.",
+      "description_length": 349,
+      "index": 175,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nvim_internal.Tabpage.Map",
+      "description": "Encodes and decodes values using S-expressions and binary formats, supporting ordered comparisons and hash generation. Key operations include parsing S-expressions into key types, serializing and deserializing key values, and folding structured data into hash states. Functions handle custom types, ensuring consistency between serialization, comparison, and hashing. Examples include converting configuration data from text to key objects, persisting keys in binary files, and generating stable hashes for complex records.",
+      "description_length": 523,
+      "index": 176,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Tabpage.Set",
+      "description": "combines serialization to S-expressions, deserialization into custom types, binary persistence via Bin_prot, and hash folding for deterministic hashing. It handles type `t` with comparator witnesses, `Sexp.t` for parsing, and `Elt.t` for structured data conversion. Operations include ordering, S-expression encoding/decoding, binary writing/reading, and hash generation. This enables efficient data processing, storage, and comparison across heterogeneous data representations.",
+      "description_length": 478,
+      "index": 177,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Tabpage.Table",
+      "description": "Extracts and constructs keys from S-expressions, enabling structured data lookup, while supporting binary serialization and deserialization of custom types with Bin_prot, including size computation and data shape inspection. Key types and custom data structures are manipulated through parsing, conversion, and I/O operations. Examples include converting configuration S-expressions into lookup keys and persisting complex data types in binary format. Operations support both in-memory processing and external storage or transmission.",
+      "description_length": 534,
+      "index": 178,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nvim_internal.Tabpage.Hash_set",
+      "description": "Converts S-expressions to typed values using a constructor function and supports binary serialization and deserialization with Bin_prot, including size, write, read, and shape operations. Handles polymorphic variants and custom types with explicit constructor tags during reading. Parses structured data from S-expressions into specific types and persists complex data structures in binary format. Enables efficient data storage and retrieval while maintaining type safety and structure.",
+      "description_length": 487,
+      "index": 179,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Tabpage.Hash_queue",
+      "description": "This module provides operations for managing key-value queues with ordered insertion and retrieval, including enqueueing, dequeuing, lookup, and modification of elements based on keys. It supports traversal, transformation, and filtering of elements through folding, counting, and conditional checks, while maintaining key uniqueness and positional order. Use cases include scenarios requiring efficient key-based access and ordered data manipulation, such as task scheduling or session management.",
+      "description_length": 498,
+      "index": 180,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nvim_internal.Tabpage.Or_current",
+      "description": "Provides functions to convert between a type `t` and S-expressions, and to encode/decode instances of `t` as MessagePack messages. Works with a custom type `t` and MessagePack message structures. Used to serialize and deserialize data in a binary format for network transmission or storage.",
+      "description_length": 290,
+      "index": 181,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Ui_options.Fields",
+      "description": "manages structured application state by enabling traversal, transformation, and querying of specific fields within a custom `t` type. It supports operations like iteration, folding, and condition checks on UI and configuration elements such as command line inputs, highlight states, and color settings. Users can selectively update or inspect these fields without modifying the entire state structure. For example, it allows adjusting color settings or checking if a specific UI element is highlighted.",
+      "description_length": 502,
+      "index": 182,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Buffer.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a specific type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports polymorphic comparison, enabling direct use in sorting and decision-making logic. Used to replace default polymorphic comparisons in scenarios requiring custom ordering or type-specific behavior.",
+      "description_length": 416,
+      "index": 183,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Buffer.Map",
+      "description": "Encapsulates key handling through serialization to and from S-expressions, binary formats, and hash generation. Supports ordered operations via comparator witnesses, custom parsing, and binary persistence for Key.t. Enables reliable hashing of complex data structures by integrating content and size into hash states. Facilitates configuration deserialization, data persistence, and consistent hashing across structured key types.",
+      "description_length": 430,
+      "index": 184,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Buffer.Set",
+      "description": "offers serialization to S-expressions, binary encoding via Bin_prot, and hash folding for custom types, along with parsing and comparison capabilities. It supports operations on `t` and `Elt.t`, including encoding, decoding, comparison, and hashing. Users can convert data to and from S-expressions, serialize to binary, and generate collision-resistant hashes. This enables efficient data persistence, structured parsing, and use in hash-based data structures.",
+      "description_length": 461,
+      "index": 185,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Buffer.Table",
+      "description": "Extracts key-value pairs from S-expressions for map lookups and supports binary serialization/deserialization of custom types with Bin_prot, including size, write, read, and shape operations. Handles string-based keys and polymorphic variants, enabling efficient data persistence and transformation. Examples include converting serialized data into lookup keys and storing complex data structures in binary format. Supports both in-memory data manipulation and long-term storage needs.",
+      "description_length": 485,
+      "index": 186,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Buffer.Hash_set",
+      "description": "Converts S-expressions to typed values using user-defined constructors and supports binary serialization and deserialization of custom types with Bin_prot, including size, write, read, and shape operations. Handles polymorphic variants and user-defined data structures by requiring explicit constructor tags during reading. Parses structured data from S-expressions into specific element types and persists complex data structures in binary format. Enables efficient data handling in applications needing both textual and binary representations.",
+      "description_length": 545,
+      "index": 187,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Buffer.Hash_queue",
+      "description": "The module provides operations for inserting, looking up, and manipulating elements in a key-value queue, including dequeuing from front/back, removing, replacing, and transforming elements, all operating on `Core.Hash_queue.t` structures. It supports use cases requiring ordered access and modification of key-value pairs, such as managing caches or priority queues where elements need to be efficiently accessed and updated from both ends.",
+      "description_length": 441,
+      "index": 188,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Buffer.Or_current",
+      "description": "Provides conversion between a custom type and S-expressions, and serialization/deserialization to and from MessagePack format. Works with a specific opaque type representing a current value. Used to encode and decode data for network transmission or storage.",
+      "description_length": 258,
+      "index": 189,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml_debug.Toplevel_client",
+      "description": "Provides functions to open and manage a Msgpack RPC connection to a Neovim instance, send requests and notifications, and handle responses and incoming messages. Operates on a connection handle `t`, message IDs, and Msgpack-encoded data structures. Used to debug communication issues between OCaml code and Neovim by directly testing RPC interactions.",
+      "description_length": 351,
+      "index": 190,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Channel_info",
+      "description": "Provides functions to convert a structured data type to an S-expression and to parse a message pack buffer into the same type, returning an error if parsing fails. Works with a record type containing structured data and a message pack representation. Used to serialize and deserialize channel metadata in network communication protocols.",
+      "description_length": 337,
+      "index": 191,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Client_info",
+      "description": "encapsulates versioning, client identification, and HTTP request configuration into a unified interface for managing neovim client interactions. it handles version tuples with semantic comparison, client type validation, and HTTP method construction with headers and bodies. operations include parsing version strings, validating client identifiers, and building API requests with custom headers. examples include enforcing version compatibility, restricting access by client type, and sending authenticated API calls with specific payloads.",
+      "description_length": 541,
+      "index": 192,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Color",
+      "description": "Combines color serialization and conversion utilities, supporting RGB values, 8-bit integers, and polymorphic variants. Offers string, S-expression, and integer-based encoding/decoding with range checks and error handling. Enables safe representation of color data in logs, configurations, and terminal outputs. Allows custom type serialization through converter functions for flexible debugging and data handling.",
+      "description_length": 414,
+      "index": 193,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Highlighted_text",
+      "description": "Encodes structured data into a compact binary format suitable for transmission or storage. It processes records with payload and metadata, converting them into MessagePack bytes. Deserialization reconstructs the original record from the binary stream. This enables efficient data exchange between systems while preserving data integrity.",
+      "description_length": 337,
+      "index": 194,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Keymap",
+      "description": "Encapsulates mode management through a custom type `t` with support for comparison, equality, and string conversion. Offers operations to handle lists of all defined modes, enabling serialization and consistent representation across configurations. Allows for precise mode identification and transformation in stateful applications. Examples include checking if a mode is valid, converting modes to strings for logging, and comparing modes during configuration updates.",
+      "description_length": 469,
+      "index": 195,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Mark",
+      "description": "Provides serialization of internal state to S-expression format. Works with a record type containing structured data elements. Used to generate human-readable representations for debugging or configuration output.",
+      "description_length": 213,
+      "index": 196,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Mode",
+      "description": "combines comparison, serialization, and data encoding capabilities for custom types, enabling ordered operations, structured data representation, and deterministic hashing. It supports operations on types like `t` and `Elt.t`, allowing conversion between S-expressions and binary formats, parsing, and secure hash generation. Users can sort custom data, serialize configurations, and ensure consistent comparisons across complex structures. Examples include generating hashes for object equality, encoding logging data, and parsing structured configurations.",
+      "description_length": 558,
+      "index": 197,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Namespace",
+      "description": "Combines structured data manipulation, comparison, serialization, and namespace management into a unified system. It handles read-only data types with field access, supports ordered operations and custom comparisons, and enables encoding/decoding between S-expressions, binary formats, and custom types. Key operations include extracting values from structured data, generating hashes, and managing ordered key-value collections. It allows tasks like aggregating field values, serializing polymorphic variants, and ensuring unique namespace identifiers during runtime.",
+      "description_length": 568,
+      "index": 198,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Nvim",
+      "description": "Encodes user interactions, mouse events, and log levels into structured data formats, enabling detailed tracking and analysis of application behavior. Provides custom types for events, keys, and severity levels, along with operations for comparison, serialization, and hashing. Supports real-time input processing, event logging, and script integration for dynamic application control. Examples include capturing mouse grid positions, serializing keys for storage, and filtering log messages based on severity.",
+      "description_length": 510,
+      "index": 199,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Position",
+      "description": "manages structured tabular data with row and column operations, supporting iteration, transformation, and aggregation. it handles type `t` with functions to filter, update, and summarize data either immutably or with in-place modifications. examples include filtering rows by condition, recalculating totals, or extracting column statistics. it enables precise manipulation of data layout through positional and functional operations.",
+      "description_length": 434,
+      "index": 200,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Tabpage",
+      "description": "Provides session management and window handling capabilities through session state objects, window handles, and typed variables. Supports retrieving active window lists, modifying session variables, and validating session integrity. Enables precise control over active sessions and their associated resources. Can be used to inspect open windows, adjust session settings, and verify state before executing operations.",
+      "description_length": 417,
+      "index": 201,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Ui",
+      "description": "manages terminal-based application state by allowing manipulation of UI elements, color settings, and grid dimensions through custom types and operations like traversal, transformation, and resizing. It supports serialization of UI records to S-expressions for debugging and includes functions to adjust color schemes, refresh content, and resize popup menus with coordinate-based positioning. Operations such as iteration, folding, and condition checks enable precise control over state modifications. Examples include dynamically updating text colors, adjusting menu visibility, and recalculating grid layouts based on user input.",
+      "description_length": 632,
+      "index": 202,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Vcaml_error",
+      "description": "Encapsulates error handling for Nvim, defining a custom error type with methods to construct and analyze error instances. Supports message and status tracking, enabling detailed logging and user-facing error presentation. Users can capture plugin failures and format outputs for debugging or display. Operations include creating error records, extracting messages, and checking error states.",
+      "description_length": 391,
+      "index": 203,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Window",
+      "description": "Provides low-level control over window management and buffer interactions, enabling precise manipulation of Vim's interface. Supports operations like checking buffer states, rearranging windows, and managing focus during closures. Offers direct access to window handles, buffers, and Lua callbacks for custom content setting and logic execution. Allows advanced actions such as switching buffers without default event triggers or reordering windows based on active buffer configurations.",
+      "description_length": 487,
+      "index": 204,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Nvim_version",
+      "description": "handles version data through structured transformations, comparison, and serialization, enabling precise control over version numbers, metadata, and ordered operations. it defines type `t` with integer-based version components, lists for metadata, and supports incrementing versions, modifying tags, and comparing values. serialization features include S-expressions, binary formats, and hash folding for reliable data persistence and comparison. examples include storing versioned configurations, generating consistent hashes, and sorting versioned objects.",
+      "description_length": 558,
+      "index": 205,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Client",
+      "description": "Handles configuration and management of Neovim connections through Unix sockets, stdin/stdout streams, and embedded processes. Supports constructing, parsing, and validating connection parameters for synchronous or long-running interactions. Enables setup of one-shot plugins via standard input/output or persistent connections using Unix sockets. Examples include launching Neovim as a child process, establishing a socket-based session, or parsing command-line options for plugin execution.",
+      "description_length": 492,
+      "index": 206,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml.Api_call",
+      "description": "Encapsulates neovim API interactions as thunked operations that execute on demand, supporting sequential execution and side-effect ordering. Provides monadic combinators for chaining effectful computations, with custom syntax for cleaner workflow management. Transforms and sequences values within contexts like option, list, and result, enabling safe extraction and error-aware processing. Examples include safely unwrapping nested options or executing a series of API calls in a guaranteed order.",
+      "description_length": 498,
+      "index": 207,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Defun",
+      "description": "Encapsulates Vimscript functions as typed OCaml functions, using constructs like `@->` and `return` to model argument and return types, supporting types such as `Integer`, `String`, and `Buffer`. Enables bidirectional interaction by unpacking heterogeneous arguments, executing handlers, and returning asynchronous results with error handling, allowing tasks like converting Vimscript functions to OCaml signatures, parsing mixed-type arguments into records, and managing async responses through deferred execution. Key data types include type specifications, value lists, and handler functions, with operations focused on argument validation, execution, and result resolution. Examples include invoking Vim functions with OCaml data, structuring complex argument lists, and handling asynchronous script outputs.",
+      "description_length": 812,
+      "index": 208,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Expert",
+      "description": "Manages real-time communication in event-driven systems by handling message encoding, delivery, and callback execution. It defines client states, message packs, and event handlers, enabling direct remote procedure calls and Vim plugin interactions. Operations include sending encoded messages and controlling event flow for precise updates. Examples include updating editor buffers on API changes or invoking plugin commands through asynchronous notifications.",
+      "description_length": 460,
+      "index": 209,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml.Private",
+      "description": "Registers asynchronous and blocking request handlers for a client, accepting a name, function type, handler function, and wrapper. It operates with client connections, function types from Defun.Ocaml, and asynchronous deferreds from Async. Used to implement custom RPC methods that respond to specific named requests from a server.",
+      "description_length": 331,
+      "index": 210,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml_semantics_test.Import",
+      "description": "Provides functions for managing process cleanup, waiting for NVIM socket creation, writing files, and attempting to quit a client. Operates with Pid, string, and client data types. Used to ensure proper resource handling during NVIM interactions and file operations.",
+      "description_length": 266,
+      "index": 211,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Msgpack.Custom",
+      "description": "Compares two values of type t using a custom ordering defined by the compare function. Converts values of type t to and from Sexp representations for serialization and parsing. Used to enable ordered comparisons and S-expression encoding in data processing pipelines.",
+      "description_length": 267,
+      "index": 212,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Msgpack.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a specific type `t`, including standard relational operators and functions to determine minimum and maximum values. Works with any data type that supports polymorphic comparison, enabling direct comparison of values without explicit type-specific implementations. Used to enforce consistent ordering in data structures like sorted lists or priority queues.",
+      "description_length": 404,
+      "index": 213,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Msgpack.Map",
+      "description": "offers serialization and deserialization capabilities for type `t` using S-expressions and Bin-prot, along with hash folding and key conversion for structured data. It supports ordered operations via a comparator, key parsing from S-expressions, and efficient transmission of key values. Users can store and retrieve complex data structures, generate collision-resistant hashes, and convert configuration data into internal representations. Examples include persisting a data structure to disk, comparing keys in ordered collections, and hashing custom types for consistent identification.",
+      "description_length": 589,
+      "index": 214,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Msgpack.Set",
+      "description": "Encapsulates operations for serializing, deserializing, and hashing structured data types, supporting both S-expression and binary formats. It handles ordered comparisons, domain-specific type reconstruction from S-expressions, and efficient binary persistence with size and shape tracking. Hashing integrates structural information to ensure consistency and collision resistance. Examples include converting a data structure to an S-expression, reconstructing it with a custom parser, and generating a stable hash for use in hash tables.",
+      "description_length": 538,
+      "index": 215,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Msgpack.Internal",
+      "description": "Transforms raw input into structured message formats using custom parsing logic, then serializes these messages into compact string representations suitable for transmission. Handles binary data through a parser combinator and produces Msgpack__.Message.t structures for efficient encoding. Supports operations like converting between raw strings and typed message formats, enabling seamless data handling in networked applications. Examples include parsing incoming network packets and generating serialized output for storage or further processing.",
+      "description_length": 550,
+      "index": 216,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml_plugin.Oneshot",
+      "description": "Provides functions to manage one-time asynchronous operations, including starting and aborting tasks with unique identifiers. Works with job identifiers and command structures to coordinate execution and cancellation. Used to integrate with Vim's job control system for transient, non-blocking processes.",
+      "description_length": 304,
+      "index": 217,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml_plugin.Persistent",
+      "description": "Tracks state configurations through a record type containing identifiers, integer values, and transition links, enabling the modeling of systems with defined behavioral paths. Provides operations to create states, define transitions, and retrieve state values, supporting tasks like simulating state changes or evaluating system behavior. Allows for structured representation of state-dependent logic and dynamic system interactions. Example applications include tracking user interface states or managing workflow progression.",
+      "description_length": 527,
+      "index": 218,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Msgpack_debug.Man_in_the_middle_debugger",
+      "description": "Man_in_the_middle_debugger manages networked peer interactions through structured data representing unique identifiers, IP addresses, and ports. It supports creating, comparing, and serializing peer records, enabling tracking of active connections in distributed systems. Operations include validating peer configurations and exporting data for monitoring. For example, it can log peer activity or detect duplicate entries in a peer-to-peer network.",
+      "description_length": 449,
+      "index": 219,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml_test_helpers.Test_ui",
+      "description": "Manages interactive test interfaces by attaching and detaching from a client, using source code positions to track context. Operates on client connections and asynchronous operations, supporting UI-enabled test execution. Enables scoped UI interactions within specific code locations during test runs.",
+      "description_length": 301,
+      "index": 220,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml_test_helpers.For_debugging",
+      "description": "Attaches to an active Neovim instance to observe test behavior, allowing real-time inspection through a client connection. It handles client setup, error recovery, and optional delays to ensure visibility. Works with socket paths, client states, and test UI elements to facilitate interactive debugging.",
+      "description_length": 303,
+      "index": 221,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Msgpack_rpc.Event",
+      "description": "Provides serialization of event data to S-expressions using `sexp_of_t`. Works with a record type containing event-specific fields like timestamp and payload. Used to convert event instances into a format suitable for logging or configuration files.",
+      "description_length": 249,
+      "index": 222,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Msgpack_rpc.Error",
+      "description": "Provides conversion from error values to Sexp and Base.Error types. Works with a custom error type representing distinct error conditions. Used to serialize errors for debugging and interoperate with Base's error handling mechanisms.",
+      "description_length": 233,
+      "index": 223,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nvim_internal.Api_version",
+      "description": "Provides conversion of version identifiers to S-expressions and string representations. Works with a structured type containing version components like major, minor, and patch. Used to serialize version data for logging and API communication.",
+      "description_length": 242,
+      "index": 224,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nvim_internal.Ui_options",
+      "description": "manages application state through field-specific operations, enabling traversal, transformation, and querying of a custom `t` type. It supports iteration, folding, and condition checks on UI and configuration elements like command line inputs and color settings. Users can update or inspect individual fields, such as modifying highlight states or adjusting color schemes. It allows targeted modifications without altering the full state structure.",
+      "description_length": 448,
+      "index": 225,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nvim_internal.Luaref",
+      "description": "Converts between a custom type and Msgpack message structures, supporting error handling during parsing. Operates on Msgpack__.Message.t and a specific opaque type t. Used to serialize and deserialize data in protocols requiring Msgpack encoding.",
+      "description_length": 246,
+      "index": 226,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Buffer",
+      "description": "combines comparison, serialization, and key-value manipulation capabilities for custom types, enabling efficient data handling, sorting, and persistence. It supports S-expressions, binary formats, and hash operations on types like `t` and `Key.t`, with functions for encoding, decoding, and ordering. Users can serialize complex structures, perform key lookups, and manage queues with ordered access. Examples include converting data to MessagePack for transmission, generating consistent hashes for storage, and maintaining ordered key-value pairs in a queue.",
+      "description_length": 560,
+      "index": 227,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nvim_internal.Window",
+      "description": "Offers type-safe serialization, deserialization, and comparison capabilities for structured data, supporting S-expressions, binary formats, and MessagePack. It includes operations to parse, encode, and hash custom types, with functions for ordering, size tracking, and key-based data access. Key types include parsed S-expressions, binary-serializable values, and opaque representations, enabling tasks like configuration loading, network data transmission, and ordered data processing. Examples include converting S-expressions to domain-specific types, serializing polymorphic variants to binary, and managing key-value queues with ordered operations.",
+      "description_length": 653,
+      "index": 228,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Tabpage",
+      "description": "Manages custom data types with comparison, serialization, and key-value operations. Supports S-expression and binary encoding/decoding, hash generation, and ordered data manipulation. Enables conversion between structured data and binary formats, key extraction, and efficient queue management. Examples include serializing configuration data, generating stable hashes, and handling task scheduling with ordered key access.",
+      "description_length": 423,
+      "index": 229,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nvim_internal.Phantom",
+      "description": "Converts values of abstract types to S-expressions using a provided converter function. Operates on polymorphic variants wrapped in a phantom type. Used to serialize custom data structures with explicit type information during parsing or debugging.",
+      "description_length": 248,
+      "index": 230,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Api_result",
+      "description": "Provides serialization of result types to S-expressions using a custom converter function. Works with a polymorphic variant type that wraps a result value. Used to encode API responses or errors in a format suitable for debugging or configuration files.",
+      "description_length": 253,
+      "index": 231,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Error_type",
+      "description": "Provides conversion from integer to error type and serialization to S-expressions. Works with a custom type representing error states. Used to encode and serialize error codes in a structured format for logging or communication.",
+      "description_length": 228,
+      "index": 232,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nvim_internal.Ui_event",
+      "description": "Handles conversion of event data between internal representation and S-expression format. Parses message pack input into a list of event objects, supporting error handling. Used to process user interface interaction logs for analysis or replay.",
+      "description_length": 244,
+      "index": 233,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "vcaml",
+      "description": "Provides functions for interacting with Neovim's API, including handling messages, buffers, and window operations. Works with data types such as lists, strings, and opaque handles representing Neovim entities. Enables creation of plugin functions that respond to Vim commands and events, like autocommands or key mappings.",
+      "description_length": 322,
+      "index": 234,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml_debug",
+      "description": "Manages a Msgpack RPC connection to Neovim, enabling sending requests and notifications, handling responses, and processing incoming messages through a connection handle `t`. Supports message IDs and Msgpack-encoded data for precise interaction and debugging. Allows testing RPC behavior, inspecting message flows, and troubleshooting communication between OCaml and Neovim. Examples include invoking Neovim functions, monitoring event streams, and validating message serialization.",
+      "description_length": 482,
+      "index": 235,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml",
+      "description": "Provides serialization, deserialization, and data manipulation capabilities across multiple formats, including MessagePack, S-expressions, and binary. It handles structured data types, versioning, color encoding, event logging, and terminal state management, with operations for comparison, hashing, and configuration handling. Functions include converting between data representations, managing session states, and handling Neovim API interactions. Examples include serializing channel metadata, enforcing version compatibility, and tracking user interactions.",
+      "description_length": 561,
+      "index": 236,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml_semantics_test",
+      "description": "Manages process lifecycle and NVIM interactions through functions that handle cleanup, socket waiting, file writing, and client termination, using Pid, string, and client types. Provides controlled execution and resource management during testing scenarios. Examples include ensuring a client exits gracefully or verifying file content after operations. Other modules contribute no additional functionality.",
+      "description_length": 407,
+      "index": 237,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Msgpack",
+      "description": "Converts between a custom data type and MessagePack binary format, enabling serialization and deserialization. Operates on a specific type `t` and MessagePack message structures. Used to encode application data for network transmission or storage and decode incoming MessagePack payloads.",
+      "description_length": 288,
+      "index": 238,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vcaml_plugin",
+      "description": "manages asynchronous tasks with unique identifiers and integrates with Vim's job system, while also modeling state transitions through structured records. It supports creating and navigating states with integer values and links, enabling dynamic system behavior simulation. Operations include task initiation, cancellation, state creation, and transition management. Examples include handling non-blocking Vim processes and tracking UI state changes.",
+      "description_length": 450,
+      "index": 239,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Msgpack_debug",
+      "description": "Man_in_the_middle_debugger handles networked peer interactions by managing structured records containing unique identifiers, IP addresses, and ports. It provides operations to create, compare, serialize, and validate peer configurations, along with exporting data for monitoring. It enables tasks such as logging peer activity or identifying duplicate entries in a peer-to-peer network. The primary data types include peer records and serialized byte streams for network communication.",
+      "description_length": 485,
+      "index": 240,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vcaml_test_helpers",
+      "description": "Manages interactive test environments by attaching to a client, tracking source positions, and enabling scoped UI interactions during test execution. Observes Neovim instances through client connections, handling setup, errors, and delays to support real-time test inspection. Operates on client states, socket paths, and test UI elements to facilitate debugging. Allows for asynchronous test execution with context-aware UI updates and interactive debugging capabilities.",
+      "description_length": 472,
+      "index": 241,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Msgpack_rpc",
+      "description": "Encapsulates serialization and error handling for event data and error conditions. Supports converting event records and custom error types to S-expressions for logging, configuration, and debugging. Operations include `sexp_of_t` for events and error-specific serialization. Examples include logging events with timestamps or serializing error messages for inter-process communication.",
+      "description_length": 386,
+      "index": 242,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nvim_internal",
+      "description": "Encapsulates version, state, and error data through serialization and conversion utilities, supporting S-expressions, MessagePack, and binary formats. It handles structured type manipulation, including version component extraction, state field updates, and error code encoding, with operations for parsing, encoding, and key-based data access. Functions include converting version numbers to strings, modifying UI configurations, and serializing event logs. It enables efficient data handling for logging, API communication, and configuration management.",
+      "description_length": 554,
+      "index": 243,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 283,
+    "meaningful_modules": 244,
+    "filtered_empty_modules": 39,
+    "retention_rate": 0.8621908127208481
+  },
+  "statistics": {
+    "max_description_length": 812,
+    "min_description_length": 191,
+    "avg_description_length": 378.29918032786884,
+    "embedding_file_size_mb": 0.8869075775146484
+  }
+}

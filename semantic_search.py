@@ -287,8 +287,8 @@ Examples:
     parser.add_argument(
         '--embeddings-dir',
         type=Path,
-        default=Path('package_embeddings'),
-        help='Directory containing package embeddings (default: package_embeddings)'
+        default=Path('package-embeddings'),
+        help='Directory containing package embeddings (default: package-embeddings)'
     )
     
     parser.add_argument(

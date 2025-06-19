@@ -1,0 +1,49 @@
+{
+  "package": "catapult-sqlite",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 4,
+  "creation_timestamp": "2025-06-18T16:29:13.357648",
+  "modules": [
+    {
+      "module_path": "Catapult_sqlite.Backend.Make",
+      "description": "Writes formatted output using a custom writer type, supporting incremental and buffered writing operations. Operates on strings, buffers, and output channels. Used to generate structured text outputs like logs, configuration files, or code snippets.",
+      "description_length": 249,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Catapult_sqlite.Backend",
+      "description": "Writes structured data to a specified output using a configured writer instance. Operates on custom data types generated during processing pipelines. Used to persist intermediate results to disk during batch transformation workflows.",
+      "description_length": 233,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "catapult-sqlite",
+      "description": "Tracks and records event-based data for performance analysis, supporting structured logging of timestamps, durations, and metadata. It processes and serializes data into JSON format, compatible with the Perfetto tracing viewer. Users can instrument applications to capture detailed execution flow and system events.",
+      "description_length": 315,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Catapult_sqlite",
+      "description": "handles database interactions by writing structured data to a SQLite file, using a configured writer to persist intermediate results during processing workflows. it manages trace IDs and database paths, supporting operations like setting directories, trace IDs, and writing custom data types. examples include storing transformation outputs or logging trace-specific data in a structured format. it relies on external modules for data handling and writing logic.",
+      "description_length": 462,
+      "index": 3,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 8,
+    "meaningful_modules": 4,
+    "filtered_empty_modules": 4,
+    "retention_rate": 0.5
+  },
+  "statistics": {
+    "max_description_length": 462,
+    "min_description_length": 233,
+    "avg_description_length": 314.75,
+    "embedding_file_size_mb": 0.014942169189453125
+  }
+}

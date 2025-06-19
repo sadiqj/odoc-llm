@@ -1,0 +1,112 @@
+{
+  "package": "OCanren",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 13,
+  "creation_timestamp": "2025-06-18T16:33:10.790900",
+  "modules": [
+    {
+      "module_path": "OCanren.Env.Monad.Syntax",
+      "description": "Provides monadic binding and sequencing operations for effectful computations, where `let*` chains computations with side effects and `let+` lifts a function over a single effectful value. Works with a generic type `'a t` representing computations that may carry effects. Used to structure asynchronous or stateful code in a readable, sequential style.",
+      "description_length": 352,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OCanren.Env.Monad",
+      "description": "chains effectful computations using `let*` for sequencing and `let+` for applying functions to wrapped values, with `'a t` as the core type for effectful operations. Supports asynchronous and stateful programming by enabling clean, sequential code structure. Examples include chaining API calls, managing state transitions, or handling I/O operations. Provides a uniform interface for composing computations that carry side effects.",
+      "description_length": 432,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OCanren.Reifier",
+      "description": "Reifies logic values into a monadic representation and projects them back, supporting composition and transformation of mappings between logic and concrete values. It operates on monadic functions that convert between abstract logic structures and concrete types. Use cases include translating between embedded logic expressions and runtime values, and adapting logic contexts during evaluation.",
+      "description_length": 395,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OCanren.State",
+      "description": "Provides functions to create, update, and query a stateful value, including binding operations that chain state transformations. Works with the abstract type `t` to encapsulate mutable or immutable state representations. Used to manage application-specific state in event-driven workflows or reactive systems.",
+      "description_length": 309,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OCanren.Fresh",
+      "description": "Provides goal constructors for logic programming, generating streams of state transitions based on variable bindings. Operates with logic variables and state streams within the OCanren framework. Enables expression of constraints with varying numbers of variables, such as binding two variables simultaneously or managing sequences of logical conditions.",
+      "description_length": 354,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OCanren.NUMERAL_TYPS",
+      "description": "Provides operations for manipulating nested logic expressions and state streams within a constraint-solving framework, including reification of logic values, tuple decomposition, and function application. Works with complex type combinations involving logic variables, environments, and stream-based state transitions. Used to implement multi-level constraint propagation and backtracking in logical programming contexts.",
+      "description_length": 421,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OCanren.Tabling",
+      "description": "Provides higher-order functions for composing and manipulating logic goals with nested tuple structures, including operations for sequencing and combining goal transformations. Works with logic state streams and nested tuples of varying arities, enabling complex constraint-based computations. Supports tabling of results to avoid redundant computations in recursive logic programs.",
+      "description_length": 382,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OCanren.PrunesControl",
+      "description": "Resets internal counters and state for prune tracking. Manages a counter for skipped prunes, allowing activation of skip tracking, setting a maximum allowed skips, incrementing the counter, and checking if the limit has been exceeded. Used to enforce constraints on the number of allowed pruning operations during a process.",
+      "description_length": 324,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OCanren.Stream",
+      "description": "Creates and manipulates lazy, potentially infinite sequences with operations like prepending elements, mapping, filtering, and zipping. Works with a custom stream type that supports deferred evaluation and traversal. Enables processing of large datasets incrementally, such as reading from a file line by line or generating values on demand.",
+      "description_length": 341,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OCanren.Runconf",
+      "description": "Checks whether occurrence constraints are enabled during type inference, and toggles their enforcement. Operates on internal state flags that control the behavior of the type-checking process. Used to dynamically enable or disable occurrence checks in specific compilation phases.",
+      "description_length": 280,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OCanren.Env",
+      "description": "Sequencing and function application for effectful operations are handled through `let*` and `let+`, with `'a t` representing computations that carry side effects. It enables structured handling of asynchronous tasks, state changes, and I/O by linking operations in a readable, sequential manner. For example, it can chain multiple API requests, update application state in a controlled way, or manage resource allocation. The module provides a consistent interface for composing complex workflows with clear control flow.",
+      "description_length": 521,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_ocanren",
+      "description": "Provides operations for folding lists with binary functions, transforming strings to lowercase, and manipulating abstract syntax tree nodes. Works with lists, strings, and OCaml AST expressions from the MLast module. Used for parsing operator precedence, modifying type annotations, and processing symbolic characters in grammar rules.",
+      "description_length": 335,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tester",
+      "description": "Provides functions for executing and testing logic programs with customizable reification and output. Operates on logic expressions, state transitions, and environment transformations, supporting multiple argument configurations. Used to run goals, collect results, reify them, and print formatted outputs for debugging or verification.",
+      "description_length": 336,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 21,
+    "meaningful_modules": 13,
+    "filtered_empty_modules": 8,
+    "retention_rate": 0.6190476190476191
+  },
+  "statistics": {
+    "max_description_length": 521,
+    "min_description_length": 280,
+    "avg_description_length": 367.84615384615387,
+    "embedding_file_size_mb": 0.047661781311035156
+  }
+}

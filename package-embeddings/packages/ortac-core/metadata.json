@@ -1,0 +1,84 @@
+{
+  "package": "ortac-core",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 9,
+  "creation_timestamp": "2025-06-18T16:32:50.264550",
+  "modules": [
+    {
+      "module_path": "Ortac_core.Builder.Located",
+      "description": "Returns a location record from a wrapped value, constructs new wrapped values, and transforms values within the context of a location. Operates on type-annotated locations containing arbitrary data. Used to attach source positions to parsed identifiers and transform location-aware data during syntax tree manipulation.",
+      "description_length": 319,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ortac_core.Builder.Latest",
+      "description": "Provides functions to construct and declare pattern matching constructs with updated semantics for new compiler features. Works with OCaml AST types such as location-annotated identifiers, patterns, and constructor declarations. Used to create or modify pattern matching cases and constructor definitions when standard functions lack required functionality.",
+      "description_length": 357,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ortac_core.Builder",
+      "description": "Manages location-aware data transformations and pattern matching constructs, enabling precise manipulation of annotated identifiers and AST elements. Supports creating and modifying pattern matching cases and constructor definitions with custom logic. Operates on location records, identifiers, and patterns, allowing for source position tracking and syntax tree adjustments. Can attach positions to parsed elements or update matching rules during compiler passes.",
+      "description_length": 464,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ortac_core.Context",
+      "description": "Initializes a translation context for an OCaml module based on a Gospel namespace, and provides methods to retrieve and map logical symbols and types to their OCaml equivalents. It supports looking up symbols and types by qualified names, checking if a symbol represents a function with an implementation, and adding custom function mappings. Used to generate OCaml code from Gospel specifications by resolving names and function references.",
+      "description_length": 441,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ortac_core.Ocaml_of_gospel",
+      "description": "Translates Gospel patterns, terms, and types into OCaml patterns, expressions, and core types, with support for exception handling and type substitutions. Processes Gospel.Tterm.pattern, Gospel.Tterm.term, and Gospel.Ttypes.ty structures, generating equivalent OCaml AST nodes. Enables safe evaluation of Gospel terms within OCaml by wrapping exceptions and converting type declarations for use in ppx rewriters.",
+      "description_length": 412,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ortac_core.Utils",
+      "description": "Generates string representations of terms using location data and a fallback pretty printer, extracts module names from file paths, and performs type checking on OCaml signatures with specified load paths. Operates on Ppxlib locations, file paths, and Gospel abstract syntax trees. Used to validate and inspect OCaml module structures during parsing and compilation workflows.",
+      "description_length": 376,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "ortac-core",
+      "description": "Generates test programs using QCheck-STM to validate module behavior against Gospel specifications by executing random function calls and comparing results to a model. Operates on OCaml module interfaces and Gospel annotations. Validates concurrent and stateful implementations through randomized execution and consistency checks.",
+      "description_length": 330,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ortac_core",
+      "description": "Combines location-aware transformations, name resolution, and AST translation to support parsing, modifying, and generating OCaml code from Gospel specifications. It handles annotated identifiers, patterns, and types, enabling precise control over syntax tree manipulation and code generation. Operations include mapping logical symbols to OCaml equivalents, translating Gospel terms into OCaml expressions, and validating module structures with location tracking. Examples include generating OCaml code with correct type mappings, adjusting pattern matching rules during compilation, and extracting module names from file paths.",
+      "description_length": 629,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Registration",
+      "description": "Provides functions to manage command-line plugins, register commands, and process command-line arguments. Works with command-line structures, formatter options, and plugin collections. Used to configure logging, output formatting, and command registration during CLI execution.",
+      "description_length": 277,
+      "index": 8,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 11,
+    "meaningful_modules": 9,
+    "filtered_empty_modules": 2,
+    "retention_rate": 0.8181818181818182
+  },
+  "statistics": {
+    "max_description_length": 629,
+    "min_description_length": 277,
+    "avg_description_length": 400.55555555555554,
+    "embedding_file_size_mb": 0.03314208984375
+  }
+}

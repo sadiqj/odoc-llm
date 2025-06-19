@@ -1,0 +1,56 @@
+{
+  "package": "mirage-unix",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 5,
+  "creation_timestamp": "2025-06-18T16:28:14.443924",
+  "modules": [
+    {
+      "module_path": "Unix_os.Lifecycle",
+      "description": "Handles shutdown and reboot requests in a concurrent environment. Accepts boolean flags to specify supported actions and returns the requested operation as a tagged value. Used to coordinate graceful termination or restart of services in response to external signals.",
+      "description_length": 267,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Unix_os.Main",
+      "description": "Provides a single entry point to start asynchronous operations using Lwt. Accepts a unit-producing Lwt promise and executes it synchronously. Used to initialize and run the main event loop of an application.",
+      "description_length": 207,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Unix_os.Time",
+      "description": "Provides sleep functionality with nanosecond precision, allowing threads to pause execution for exact durations. Operates on 64-bit integers to represent time intervals. Used to synchronize tasks in real-time applications or control execution timing in concurrent systems.",
+      "description_length": 272,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "mirage-unix",
+      "description": "Handles event loop management and precise timer operations for Unix-based MirageOS applications. Operates on event channels, time intervals, and callback functions. Used to implement asynchronous I/O processing and scheduled task execution in networked services.",
+      "description_length": 262,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Unix_os",
+      "description": "manages system shutdown, startup, and timing in concurrent applications. it supports boolean-configured shutdown/reboot operations, executes Lwt-based entry points synchronously, and enables precise nanosecond-level sleep intervals. operations include graceful termination, event loop initialization, and real-time task synchronization. examples include handling SIGTERM signals, launching background processes, and enforcing strict timing constraints in distributed systems.",
+      "description_length": 475,
+      "index": 4,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 5,
+    "meaningful_modules": 5,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 475,
+    "min_description_length": 207,
+    "avg_description_length": 296.6,
+    "embedding_file_size_mb": 0.018602371215820312
+  }
+}

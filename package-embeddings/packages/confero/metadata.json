@@ -1,0 +1,63 @@
+{
+  "package": "confero",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 6,
+  "creation_timestamp": "2025-06-18T16:29:18.618450",
+  "modules": [
+    {
+      "module_path": "Confero.Collation_mapping",
+      "description": "Processes Unicode characters through a predefined mapping structure, transforming each input character into a sequence of collation elements based on defined rules. Operates on sequences of Unicode code points and employs a tree-like node structure for efficient lookup and traversal. Used to generate collation sequences for sorting or comparison operations in multilingual text processing.",
+      "description_length": 391,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Confero.Collation_element",
+      "description": "Provides functions to create and manipulate collation elements, including checking if an element is variable, determining ignorable and total weight depths, and encoding/decoding between strings and collation elements. Works with arrays of integers representing weights and opaque string-based collation elements. Used to process and compare strings according to specific collation rules in text sorting and searching.",
+      "description_length": 418,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Confero.Sort_key",
+      "description": "Provides functions to create and compare compact collation key representations from sequences of collation elements, Unicode characters, or strings. Operates on private string types that encode collation order through byte-level lexicographic ordering. Used to enable consistent sorting of text according to specific linguistic rules, such as locale-based ordering in internationalized applications.",
+      "description_length": 399,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "confero",
+      "description": "Provides functions for comparing and sorting strings according to the Unicode Collation Algorithm, including custom weighting and normalization. Works with OCaml strings and collation keys generated from the Default Unicode Collation Element Table. Used to implement locale-aware sorting in applications requiring accurate international string ordering.",
+      "description_length": 353,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Confero_ducet",
+      "description": "Provides a function to generate a collation mapping, which translates character sequences into ordered keys for sorting. Works with `Confero.Collation_mapping.t` to define custom sorting rules. Used to implement locale-aware string comparisons in data processing pipelines.",
+      "description_length": 273,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Confero",
+      "description": "Transforms Unicode input into collation sequences using a tree-based mapping, enabling multilingual text sorting and comparison. It supports creating, modifying, and comparing collation elements through integer arrays and opaque strings, with operations to assess element properties and weights. It also generates compact collation keys that allow efficient, lexicographically ordered comparisons of text based on linguistic rules. This enables consistent sorting in internationalized applications, such as locale-aware string comparisons or indexed search results.",
+      "description_length": 565,
+      "index": 5,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 6,
+    "meaningful_modules": 6,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 565,
+    "min_description_length": 273,
+    "avg_description_length": 399.8333333333333,
+    "embedding_file_size_mb": 0.02223968505859375
+  }
+}

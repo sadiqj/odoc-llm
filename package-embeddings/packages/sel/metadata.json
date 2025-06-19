@@ -1,0 +1,56 @@
+{
+  "package": "sel",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 5,
+  "creation_timestamp": "2025-06-18T16:28:40.661667",
+  "modules": [
+    {
+      "module_path": "Sel.Event",
+      "description": "Provides functions to transform events using mapping, generate human-readable representations, and manage cancellation through handles. Operates on event types parameterized by arbitrary data and cancellation handles. Used to safely manage event lifecycles, such as interrupting long-running tasks or removing pending actions.",
+      "description_length": 326,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sel.On",
+      "description": "Provides event-based synchronization and data handling for file descriptors, processes, and queues. Handles line-based, byte-based, and HTTP content-length encoded input, process termination, and OCaml value marshaling. Supports queue synchronization for task processing and batch operations.",
+      "description_length": 292,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sel.Todo",
+      "description": "Provides operations to manage a set of events, including adding events while preserving order and checking emptiness. Works with a polymorphic type representing a collection of events. Used to track pending actions in a system requiring ordered event processing.",
+      "description_length": 262,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "sel",
+      "description": "Provides functions to manage event-driven computation through an explicit state machine, handling events that generate new events in a controlled flow. Operates on a custom ADT representing events, each carrying necessary context for processing. Used to implement servers that manage multiple asynchronous inputs without relying on threads or Lwt, ensuring deterministic state transitions.",
+      "description_length": 389,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sel",
+      "description": "manages event lifecycles, synchronization, and ordered processing through a unified interface. It handles event transformation, cancellation, file and process I/O, line-by-byte parsing, and queue management, using types like event handles, file descriptors, and event sets. Operations include mapping events, reading structured data, and maintaining ordered execution of tasks. Examples include safely interrupting tasks, parsing HTTP requests, and managing batched queue operations.",
+      "description_length": 483,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 5,
+    "meaningful_modules": 5,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 483,
+    "min_description_length": 262,
+    "avg_description_length": 350.4,
+    "embedding_file_size_mb": 0.018609046936035156
+  }
+}

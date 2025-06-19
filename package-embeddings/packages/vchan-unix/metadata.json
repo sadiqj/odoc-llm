@@ -1,0 +1,63 @@
+{
+  "package": "vchan-unix",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 6,
+  "creation_timestamp": "2025-06-18T16:30:42.967301",
+  "modules": [
+    {
+      "module_path": "Vchan_lwt_unix.M",
+      "description": "Provides server and client creation for network communication using domain IDs and ports, with support for reading and writing data buffers, handling errors, and managing flow shutdown and closure. Operates on flow objects, port identifiers, and custom error types for network operations. Used to establish and manage bidirectional data transfer between endpoints, ensuring proper error handling and resource cleanup.",
+      "description_length": 417,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vchan_lwt_unix.IO",
+      "description": "Provides monadic operations for asynchronous I/O, including binding computations, lifting values, and iterating over lists with I/O effects. Works with Lwt-based I/O channels and asynchronous computations wrapped in Lwt.t. Enables reading from and writing to input/output channels, such as reading lines, exact byte counts, or writing strings atomically.",
+      "description_length": 354,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "vchan-unix",
+      "description": "Provides functions for establishing and managing bidirectional communication channels using shared memory, including binding to a port, connecting to a remote domain, and sending/receiving data. Works with domain IDs, port strings, and byte sequences for data transfer. Used to enable low-latency communication between Xen virtual machines for tasks like real-time data exchange or coordination.",
+      "description_length": 395,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Events_lwt_unix",
+      "description": "Provides functions to manage event channels and ports for inter-domain communication, including converting between string representations and port types, sending and receiving events, and establishing connections. Works with custom types `port`, `channel`, and `event` to coordinate asynchronous operations. Used to synchronize processes across domains, such as notifying a listener when data is available or signaling the start of a program.",
+      "description_length": 442,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vchan_lwt_unix",
+      "description": "Provides asynchronous I/O operations for reading from and writing to file descriptors, including line-by-line reading, buffered reads, and exact byte reads. Works with input and output channels (`ic`, `oc`) and asynchronous actions wrapped in a monadic type (`'a t`). Used to handle non-blocking network or file operations in Lwt-based applications.",
+      "description_length": 349,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Memory_lwt_unix",
+      "description": "Provides functions to convert between integers and grant references, manage shared memory regions, and create and destroy mappings. Operates on types such as grant, share, mapping, and Io_page.t to facilitate low-level memory manipulation in a virtualized environment. Used to establish shared memory access between domains, map memory regions for reading/writing, and release resources after use.",
+      "description_length": 397,
+      "index": 5,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 6,
+    "meaningful_modules": 6,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 442,
+    "min_description_length": 349,
+    "avg_description_length": 392.3333333333333,
+    "embedding_file_size_mb": 0.02222728729248047
+  }
+}

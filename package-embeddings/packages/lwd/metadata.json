@@ -1,0 +1,84 @@
+{
+  "package": "lwd",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 9,
+  "creation_timestamp": "2025-06-18T16:31:29.257441",
+  "modules": [
+    {
+      "module_path": "Lwd.Infix",
+      "description": "Provides monadic binding and applicative operations for transforming and combining values within a context. Works with functor and monad types, enabling sequential computation and function application. Enables chaining of transformations in a readable, composable manner, such as parsing nested data or handling asynchronous workflows.",
+      "description_length": 335,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lwd_seq.Balanced",
+      "description": "Provides operations to construct and combine sequences with logarithmic depth, ensuring efficient transformations. Works with a private sequence type that supports concatenation and viewing elements without exposing internal structure. Used to maintain performance in pipelines where frequent updates could otherwise cause linear recomputation.",
+      "description_length": 344,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lwd_seq.Reducer",
+      "description": "Provides functions to construct and manipulate a reducer that maps input values to intermediate results and combines them using a reduction function. Operates on sequences of 'a values and accumulates 'b results, supporting updates, reductions, and tracking of dropped elements. Used to process streams of data, aggregate results incrementally, and handle partial computations with explicit control over dropped items.",
+      "description_length": 418,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "lwd",
+      "description": "Tracks dynamic values and their dependencies, enabling reactive updates when inputs change. It operates on streams and events, supporting real-time data flow in interactive applications. Used to create responsive terminal interfaces by linking user input to visual output.",
+      "description_length": 272,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lwd_table",
+      "description": "The module provides operations for inserting, deleting, and traversing rows in a doubly-linked list-like structure, along with modifying their values. It works with a table of bound or unbound rows, enabling efficient recomputation of map/reduce results when the sequence changes, making it suitable for dynamic, interactive applications requiring real-time updates.",
+      "description_length": 366,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lwd_utils",
+      "description": "Provides balanced reduction operations using monoids, including tree-based reductions for efficient parallel computation and sequential reductions for linear processing. Works with monoids defined as a value and an associative binary operation, and handles lists, sequences, and Lwd-typed values. Used for UI-related computations such as combining state updates, clamping values, and managing list transformations within a lazy, reactive context.",
+      "description_length": 446,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lwd",
+      "description": "Combines monadic and applicative operations to transform and sequence values within a context, supporting functor and monad types for structured computation. Allows chaining of transformations to parse nested data or manage asynchronous workflows with clear, composable syntax. Key operations include binding, mapping, and lifting, enabling seamless integration of side-effecting or context-dependent functions. Examples include parsing hierarchical data structures or orchestrating asynchronous tasks in a functional style.",
+      "description_length": 524,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lwd_seq",
+      "description": "creates a sequence system that supports efficient transformations and updates through logarithmic-depth structures and reducer-based aggregation. It handles sequences of values with operations like map, filter, and fold, while reusing unchanged elements during updates. Reducers allow incremental aggregation of results, tracking dropped elements and supporting partial computations. Examples include building efficient data pipelines and processing streaming data with controlled state management.",
+      "description_length": 498,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lwd_infix",
+      "description": "Provides combinators for sequencing and combining lazy workflows, including binding values, pairing results, and updating variables. Operates on `Lwd.t`, `Lwd.var`, and `Lwd_table.row` types to manage asynchronous or deferred computations. Enables concise manipulation of reactive data structures in user interface or event-driven contexts.",
+      "description_length": 340,
+      "index": 8,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 9,
+    "meaningful_modules": 9,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 524,
+    "min_description_length": 272,
+    "avg_description_length": 393.6666666666667,
+    "embedding_file_size_mb": 0.03311347961425781
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "package": "xapi-stdext-threads",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 6,
+  "creation_timestamp": "2025-06-18T16:30:47.000103",
+  "modules": [
+    {
+      "module_path": "Xapi_stdext_threads.Threadext.Mutex",
+      "description": "Executes a function atomically with exclusive access to a shared resource, preventing concurrent modifications. It operates on a mutex data structure that enforces mutual exclusion. This is used to safely update shared state in multi-threaded applications, such as incrementing a counter or modifying a shared cache.",
+      "description_length": 316,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xapi_stdext_threads.Threadext.Delay",
+      "description": "Provides a mechanism to block and unblock threads with timed waits. Operates on a mutable state type `t` that tracks waiting threads and signals. Used to coordinate asynchronous events, such as interrupting a long-running operation or managing timeouts in concurrent tasks.",
+      "description_length": 273,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xapi_stdext_threads.Semaphore",
+      "description": "Provides operations to manage a counting semaphore, including creating with an initial value, acquiring and releasing resources in bulk, and executing functions with a specified resource weight. Works with integer-based resource counts and a opaque semaphore type. Used to control access to shared resources in concurrent programs, such as limiting the number of simultaneous database connections or thread pool usage.",
+      "description_length": 418,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Xapi_stdext_threads.Threadext",
+      "description": "ensures safe concurrent access to shared resources using a mutex, and supports timed thread synchronization through a mutable state tracker. it enables atomic updates to shared data and allows threads to wait or resume with time constraints. operations include locking, unlocking, waiting, and signaling. examples include safely incrementing a counter or managing timeouts in asynchronous workflows.",
+      "description_length": 399,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "xapi-stdext-threads",
+      "description": "Provides functions for string manipulation, list transformations, and optional value handling. Works with basic types like strings, lists, and option types. Used to clean and normalize input data before processing in higher-level services.",
+      "description_length": 239,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Xapi_stdext_threads",
+      "description": "manages concurrent resource access through semaphore and mutex abstractions, enabling controlled sharing of limited resources and synchronized thread operations. it defines opaque semaphore and mutex types with operations like acquire, release, lock, unlock, wait, and signal, supporting both integer-based resource management and atomic state updates. users can limit database connections with semaphores or safely update shared counters with mutexes, while also handling timed synchronization in asynchronous tasks. examples include regulating thread pool usage and enforcing timeouts during shared data access.",
+      "description_length": 613,
+      "index": 5,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 6,
+    "meaningful_modules": 6,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 613,
+    "min_description_length": 239,
+    "avg_description_length": 376.3333333333333,
+    "embedding_file_size_mb": 0.022217750549316406
+  }
+}

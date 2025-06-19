@@ -1,0 +1,91 @@
+{
+  "package": "streaming",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 10,
+  "creation_timestamp": "2025-06-18T16:33:04.843498",
+  "modules": [
+    {
+      "module_path": "Streaming.Sink.Syntax",
+      "description": "Provides binding and sequencing operations for composable syntax structures, allowing nested transformations and combinations of parsed elements. Works with tagged tuples representing syntax states and transformations. Used to construct complex parsing rules by chaining bindings and combining parsed results.",
+      "description_length": 309,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Streaming.Sink.Functor",
+      "description": "Applies a function to the contents of a structured value, transforming elements while preserving the overall structure. Operates on a type that wraps values with an associated input context. Used to adjust data within a pipeline without altering the flow or context of processing.",
+      "description_length": 280,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Streaming.Sink.Applicative",
+      "description": "Provides functions to lift values into a context and apply functions within that context. Operates on a sink type that wraps input and output values, enabling sequential and parallel composition of operations. Used to construct complex data processing pipelines, such as calculating averages by combining sum and length computations.",
+      "description_length": 333,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Streaming.Stream.Syntax",
+      "description": "Produces a stream containing a single element using `yield`, and enables sequencing of stream operations with `let*`, which binds the result of one stream to a function producing another. Works with the `'a t` type, representing a stream of elements of type `'a`. Used to construct and chain asynchronous or lazy computations in a monadic style.",
+      "description_length": 345,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Streaming.Source",
+      "description": "This module provides operations for transforming, filtering, and combining elements from lazy, single-use sources, working with data structures such as lists, arrays, sequences, and custom generators. It enables streaming processing through functions like `drop_while`, `fold`, and `each`, ideal for handling large datasets or on-demand element generation. Use cases include decoupled producer-consumer workflows and efficient memory management in data pipelines.",
+      "description_length": 463,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Streaming.Sink",
+      "description": "combines binding, transformation, and lifting operations to enable structured data processing. it works with tagged syntax states, context-aware values, and wrapped sink types to support nested transformations, context preservation, and pipeline composition. it allows tasks like parsing complex syntax, adjusting data within processing flows, and calculating aggregates by combining operations. examples include building nested parsing rules, modifying values without disrupting context, and aggregating data through sequential computation.",
+      "description_length": 541,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Streaming.Flow",
+      "description": "Processes streams by applying transformations, filters, and buffering, with support for composing operations into pipelines. Operates on elements of type 'a, producing outputs of type 'b, and handles array buffers and sink-based processing. Used to build efficient data processing pipelines, such as filtering even numbers after incrementing values from a range.",
+      "description_length": 362,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Streaming.Stream",
+      "description": "Provides a monadic interface for constructing and chaining streams, allowing single-element streams to be created with `yield` and operations to be sequenced with `let*`. Operates on the `'a t` type, enabling asynchronous or lazy computations to be combined seamlessly. Examples include building pipelines that process data incrementally or handling event-driven workflows. Supports complex transformations by binding stream results to functions that generate new streams.",
+      "description_length": 472,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "streaming",
+      "description": "Processes streams by combining, transforming, and reducing sequential data with constant memory usage. Operates on lazy lists and iterators, ensuring resource safety during large-scale data processing. Enables efficient pipeline construction for real-time data analysis and log aggregation.",
+      "description_length": 290,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Streaming",
+      "description": "combines lazy processing, structured transformations, and monadic composition to handle sequential data efficiently. it operates on elements of type 'a, supporting operations like filtering, mapping, and folding, while preserving context and enabling pipeline composition. it allows building complex workflows such as parsing nested syntax, buffering data, or incrementally processing event streams. examples include filtering and transforming elements in a range, aggregating values through chained operations, and managing context-aware data flows.",
+      "description_length": 550,
+      "index": 9,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 10,
+    "meaningful_modules": 10,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 550,
+    "min_description_length": 280,
+    "avg_description_length": 394.5,
+    "embedding_file_size_mb": 0.03677177429199219
+  }
+}

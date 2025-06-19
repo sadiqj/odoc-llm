@@ -1,0 +1,56 @@
+{
+  "package": "moonpool-lwt",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 5,
+  "creation_timestamp": "2025-06-18T16:29:57.957276",
+  "modules": [
+    {
+      "module_path": "Moonpool_lwt.IO",
+      "description": "Reads from and writes to non-blocking file descriptors using asynchronous suspension with Lwt, ensuring operations complete only when the FD is ready. Suspends fibers using await_readable and await_writable to avoid busy-waiting, and provides a sleep function to delay execution. Handles full data transfers by looping over partial writes, suitable for network or event-driven I/O tasks.",
+      "description_length": 387,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Moonpool_lwt.TCP_server",
+      "description": "Establishes a TCP server using either Lwt or IO for handling client connections, accepting a socket address and a handler function that processes incoming data. Operates on Unix socket addresses and input/output channels, supporting both asynchronous and synchronous client handling. Used to create scalable network services with controlled resource management through a runner.",
+      "description_length": 378,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Moonpool_lwt.TCP_client",
+      "description": "Establishes a TCP connection to a specified address and provides interfaces for non-blocking I/O using `IO` and `Lwt_io` for asynchronous communication. Operates on `Unix.sockaddr` to define the target endpoint and returns file descriptors or channel pairs for data exchange. Used to build responsive network clients that handle data transmission without blocking the main execution thread.",
+      "description_length": 390,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "moonpool-lwt",
+      "description": "Manages thread pools within a fixed set of domains, enabling efficient reuse of domain resources. Provides functions to create, schedule, and manage threads within these pools, along with synchronization primitives like barriers and locks. Used to execute concurrent tasks with controlled resource allocation, such as processing batches of I/O operations or parallel computations.",
+      "description_length": 380,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Moonpool_lwt",
+      "description": "provides asynchronous I/O and network communication capabilities through Lwt-based event loops, enabling non-blocking read/write operations on file descriptors and TCP connections. It includes functions for waiting on readable/writable FDs, sleeping, and handling full data transfers, along with TCP server and client setup using Unix socket addresses. Operations are performed via fiber suspension, avoiding busy-waiting and ensuring efficient resource use. Examples include building scalable network services, handling client data asynchronously, and managing I/O without blocking the main thread.",
+      "description_length": 599,
+      "index": 4,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 9,
+    "meaningful_modules": 5,
+    "filtered_empty_modules": 4,
+    "retention_rate": 0.5555555555555556
+  },
+  "statistics": {
+    "max_description_length": 599,
+    "min_description_length": 378,
+    "avg_description_length": 426.8,
+    "embedding_file_size_mb": 0.018610000610351562
+  }
+}

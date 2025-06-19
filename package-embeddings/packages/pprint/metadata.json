@@ -1,0 +1,91 @@
+{
+  "package": "pprint",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 10,
+  "creation_timestamp": "2025-06-18T16:31:45.448679",
+  "modules": [
+    {
+      "module_path": "PPrintEngine.ToChannel",
+      "description": "Produces formatted text output to an OCaml out_channel, using a document structure that encodes layout information. It supports two rendering modes: `pretty` for line-wrapped output with controlled indentation and `compact` for flat, unindented output. The document type allows precise control over spacing and line breaks in the generated text.",
+      "description_length": 345,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PPrintEngine.ToBuffer",
+      "description": "Produces formatted output by rendering a document into a buffer, using either a pretty-printing strategy that respects line width and indentation or a compact format that preserves newlines without indentation. Operates on a buffer as the output channel and a structured document representation. Used to generate human-readable text layouts or minimalistic output with precise control over formatting.",
+      "description_length": 401,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PPrintEngine.ToFormatter",
+      "description": "Formats documents into a specified output channel using two distinct layout strategies. It supports floating-point and integer parameters to control line width and formatting precision, and operates on document structures that represent formatted content. It is used to generate neatly aligned output for reports or structured text in applications requiring precise control over line wrapping and spacing.",
+      "description_length": 405,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PPrint.ToChannel",
+      "description": "Produces formatted text output to an OCaml out_channel, using a document structure that represents formatted content. It supports line-wrapping with a specified width and ribbon constraint, and also outputs compact representations without indentation. Used to render structured text in applications requiring precise control over line breaks and spacing.",
+      "description_length": 354,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "PPrint.ToBuffer",
+      "description": "Generates formatted text output by pretty-printing documents into a buffer, respecting line width and indentation constraints. Operates on a custom document type and buffer channels, preserving newline structure in compact mode. Used to produce human-readable output for debugging or logging purposes.",
+      "description_length": 301,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PPrint.ToFormatter",
+      "description": "Formats a document into a specified output channel using either a pretty-printing strategy that respects line width and indentation or a compact strategy that preserves newlines without indentation. Works with formatter channels and document structures representing formatted content. Used to generate human-readable output with controlled line wrapping or to produce minimal, structured text without additional formatting.",
+      "description_length": 423,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PPrint.OCaml",
+      "description": "This module provides functions to generate OCaml syntax-compatible documents for a wide range of data types, including variants, records, lists, arrays, and custom types, with specialized handling for collections and primitive values. It operates on OCaml values and employs string/integer identifiers to construct valid OCaml code, focusing on type and field representations. Use cases include serializing values for debugging, code generation, or interoperability where parseable OCaml syntax is required.",
+      "description_length": 507,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "pprint",
+      "description": "Generates formatted text output with controlled indentation and line wrapping, using a tree-based structure to represent document elements. Operates on a hierarchy of nodes that encode text, spaces, and layout directives. Used to produce human-readable code representations in compilers and interpreters.",
+      "description_length": 304,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "PPrintEngine",
+      "description": "Generates pretty-printed output by formatting nested structures with controlled indentation and line breaks. It operates on custom objects that define layout and rendering behavior, using a tree-like representation of content. Used to produce structured text outputs such as code listings, configuration files, or debug logs with consistent formatting.",
+      "description_length": 352,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "PPrint",
+      "description": "Generates pretty-printed representations of OCaml values by converting them to a structured document format. It handles complex data types such as lists, variants, and nested records with controlled formatting. Used to produce human-readable output for debugging or logging purposes.",
+      "description_length": 283,
+      "index": 9,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 10,
+    "meaningful_modules": 10,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 507,
+    "min_description_length": 283,
+    "avg_description_length": 367.5,
+    "embedding_file_size_mb": 0.036765098571777344
+  }
+}

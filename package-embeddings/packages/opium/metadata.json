@@ -1,0 +1,168 @@
+{
+  "package": "opium",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 21,
+  "creation_timestamp": "2025-06-18T16:36:16.905890",
+  "modules": [
+    {
+      "module_path": "Opium.Context.Key",
+      "description": "Provides operations to create and inspect keys with associated information, and to convert keys into an existential type for comparison. Works with typed information and existential key representations. Used to establish equality and ordering between keys in context-sensitive operations.",
+      "description_length": 288,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opium.Auth.Challenge",
+      "description": "Converts a challenge to and from an s-expression for serialization and deserialization. Works with the abstract type `t` representing a challenge. Used to store and retrieve challenge data in a structured, human-readable format.",
+      "description_length": 228,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Opium.Auth.Credential",
+      "description": "Parses and serializes credentials using s-expressions, converting between the internal representation and textual format. Works with the opaque type `t` that encapsulates credential data. Used to store and retrieve credentials in a structured, human-readable format.",
+      "description_length": 266,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opium.Cookie.Signer",
+      "description": "Generates and verifies signed cookie values using a secret and optional salt. Operates on strings, appending a hash to the original value for signing and validating it during unsigning. Used to ensure cookie integrity by detecting tampering during HTTP request processing.",
+      "description_length": 272,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opium.Context",
+      "description": "Manages heterogeneous values through key-based access, enabling comparisons and ordering via existential types. Supports creation, inspection, and conversion of keys, along with operations on typed information. Allows for context-sensitive equality checks and structured data manipulation. Example uses include tracking request metadata and enforcing type-safe comparisons in dynamic environments.",
+      "description_length": 397,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opium.Headers",
+      "description": "This module handles operations for managing HTTP header fields, including adding, removing, and querying headers while preserving their order and supporting case-insensitive name comparisons. It works with a `t` type representing ordered collections of headers, each with case-insensitive names and values, and provides conversions to and from association lists and string representations. Use cases include constructing HTTP messages, debugging header structures, and ensuring proper handling of repeated headers in proxies or servers.",
+      "description_length": 536,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opium.Cookie",
+      "description": "Manages signed cookie values by appending cryptographic hashes to strings, ensuring data integrity during HTTP transactions. Supports signing and unsigning operations, with optional salt for added security. Accepts and returns raw string values, making it suitable for secure session management. Can prevent tampering in user authentication flows by validating cookie signatures on each request.",
+      "description_length": 395,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Opium.Method",
+      "description": "Determines properties of HTTP request methods such as safety, cacheability, and idempotency. Operates on custom types representing standard HTTP methods and their string equivalents. Used to validate and serialize HTTP method values in protocol implementations.",
+      "description_length": 261,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opium.Version",
+      "description": "Compares, converts, and parses HTTP protocol versions represented as structured records. Handles string serialization and deserialization, along with pretty-printing in both s-expression and human-readable formats. Used to validate and manipulate HTTP version numbers in network protocol interactions.",
+      "description_length": 301,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opium.Status",
+      "description": "The module provides functions for converting between HTTP status codes and their integer/string representations, retrieving associated reason phrases, classifying codes into categories like informational or server errors, and serializing/deserializing status values. It works with a custom `t` type for HTTP status codes and type aliases such as `server_error` and `standard` to organize semantic classifications. Use cases include validating HTTP responses, generating error messages, and handling request fulfillment logic in networked applications.",
+      "description_length": 551,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Opium.Body",
+      "description": "Provides functions to construct HTTP bodies from strings, bigstrings, streams, or files, and to convert bodies to strings, streams, or s-expressions. Works with fixed-length data, streams, and file-based content. Used to handle request and response payloads in web applications, including streaming large files or converting between data representations.",
+      "description_length": 354,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Opium.Request",
+      "description": "This module enables construction and manipulation of HTTP requests, offering specialized functions to handle methods, headers, bodies, cookies, and query parameters across formats like JSON, URL-encoded, and multipart/form-data. It supports operations such as parsing request bodies, extracting form data, managing content types, and pretty-printing request structures for debugging or logging. Use cases include initializing API requests, processing incoming HTTP traffic, and validating or modifying request components during web application development.",
+      "description_length": 556,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opium.Response",
+      "description": "This module enables creation and manipulation of HTTP responses through type-specific constructors for bodies like JSON, HTML, or files, alongside header and cookie management. It supports operations to set status codes, modify headers (e.g., Content-Type, Location), and handle cookies, while parsing response bodies efficiently. Use cases include building structured API responses, managing redirects, and enforcing caching policies.",
+      "description_length": 435,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Opium.App",
+      "description": "This module facilitates constructing Opium web applications through server configuration, route definition, and middleware integration, operating on a custom `t` type and builder patterns. It enables handling HTTP methods, managing server parameters, and embedding command line functionality, tailored for building scalable web services and CLI-driven servers. Specific use cases include creating route-based handlers and automating server startup with configurable parameters.",
+      "description_length": 477,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opium.Route",
+      "description": "Converts route strings to structured representations and vice versa, extracts match details from URLs based on predefined route patterns. Operates on string inputs and a custom `t` type representing route configurations. Parses and matches URLs against routes to extract structured data.",
+      "description_length": 287,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opium.Auth",
+      "description": "Encapsulates authentication logic by handling challenge and credential data through s-expression-based serialization. It manages two core types: one for challenges and one for credentials, enabling structured storage and retrieval. Operations include parsing, converting, and reconstructing authentication data from text. This allows for persistent storage of authentication states and seamless exchange between systems.",
+      "description_length": 420,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opium.Router",
+      "description": "Provides functions to construct and query a route mapping system, supporting adding routes with methods and actions, and extracting parameters and splats from requests. Works with route definitions, HTTP methods, and request objects to map incoming requests to specific actions. Used to dynamically handle URL patterns and extract dynamic segments during request processing.",
+      "description_length": 374,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Opium.Handler",
+      "description": "Handles HTTP requests by serving content based on a provided read function, supporting ETag validation and custom headers. Works with MIME types, HTTP headers, and body data structures. Used to deliver static files or remote content, such as from S3, with conditional GET support.",
+      "description_length": 280,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Opium.Middleware",
+      "description": "Provides routing based on URI patterns, error handling with HTML error pages, request logging with detailed verbosity levels, CORS header injection, static file serving with ETag support, method overriding, and request method validation. Operates on HTTP requests and responses, handling URI segments, headers, and body content. Used to build dynamic web applications with authenticated endpoints, serve static assets, and manage cross-origin requests.",
+      "description_length": 452,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "opium",
+      "description": "Provides functions for parsing and validating HTTP request headers, extracting query parameters, and routing incoming requests based on URL paths. Works with strings, lists, and custom record types representing HTTP methods and status codes. Used to build lightweight web handlers that process form data and redirect users based on dynamic URL segments.",
+      "description_length": 353,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opium",
+      "description": "Manages HTTP requests and responses with structured data handling, including headers, cookies, bodies, and status codes, while supporting route matching, method validation, and authentication. Provides typed operations for manipulating protocol elements, converting between representations, and enforcing security constraints like signature validation and content integrity. Enables construction of web applications with server configuration, middleware, and route-based dispatch, along with utilities for logging, error handling, and static file serving. Examples include parsing form data, generating secure cookies, validating HTTP methods, and routing requests to appropriate handlers.",
+      "description_length": 689,
+      "index": 20,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 21,
+    "meaningful_modules": 21,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 689,
+    "min_description_length": 228,
+    "avg_description_length": 389.14285714285717,
+    "embedding_file_size_mb": 0.07674217224121094
+  }
+}

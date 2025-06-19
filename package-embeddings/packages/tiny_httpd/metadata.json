@@ -1,0 +1,287 @@
+{
+  "package": "tiny_httpd",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 38,
+  "creation_timestamp": "2025-06-18T16:41:10.444179",
+  "modules": [
+    {
+      "module_path": "Tiny_httpd_unix.Dir.Embedded_fs",
+      "description": "Provides functions to create and manage a virtual file system, including adding files with specified paths and modification times. Operates on a custom type `t` representing the file system state, using strings for paths and file contents. Used to generate a VFS module for embedding files into an OCaml application.",
+      "description_length": 316,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_core.Route.Private_",
+      "description": "Evaluates a sequence of string commands against a stateful computation, returning an optional result. It operates on a custom monadic type and a value of arbitrary type. Used to execute interpreted commands in a controlled, state-aware environment.",
+      "description_length": 248,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tiny_httpd_core.IO.Writer",
+      "description": "Writes data to an output channel using a provided writer function. Accepts input sources like strings or other input channels, and supports writing directly to an output. Used to construct and manipulate output streams in I/O operations.",
+      "description_length": 237,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tiny_httpd_core.IO.TCP_server",
+      "description": "Handles incoming TCP connections by accepting clients, reading data, and dispatching to handler functions. Operates on socket descriptors, byte buffers, and connection-specific state. Processes real-time data streams, such as parsing HTTP requests or managing chat protocols.",
+      "description_length": 275,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_core.Server.Middleware",
+      "description": "Provides a handler function that processes HTTP requests and responses, wrapping them with additional behavior. Works with request and response types from the IO and Request modules. Used to implement logging, authentication, or request transformation in web applications.",
+      "description_length": 272,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_core.Server.Head_middleware",
+      "description": "Handles HTTP requests by focusing solely on the head and headers, discarding the body. Processes request data using a custom type that encapsulates headers and method. Converts to a full middleware structure for integration with web frameworks.",
+      "description_length": 244,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tiny_httpd_prometheus.Registry",
+      "description": "Provides functions to create a metrics registry, register callbacks to execute before emitting metrics, and write metrics to a buffer or return them as a string. Operates on a buffer and a registry state type. Used to collect and output metrics in a controlled manner, such as during application shutdown or periodic checks.",
+      "description_length": 324,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_prometheus.Counter",
+      "description": "Tracks numeric values with methods to increment, increment by a specific amount, or set a new value if higher than the current. Operates on a counter type that is associated with a registry and can include tags and descriptions. Used to monitor event frequencies, track request counts, or measure performance metrics in real-time systems.",
+      "description_length": 338,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_prometheus.Gauge",
+      "description": "Tracks numeric values with increment, decrement, and direct set operations. Works with a gauge type that stores integer values and integrates with a registry for metric collection. Used to monitor dynamic system metrics like current connections or memory usage.",
+      "description_length": 261,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_prometheus.Histogram",
+      "description": "Creates a histogram with specified buckets and tags, allowing for the accumulation of numerical values. Operates on float lists and numeric data to track distribution patterns. Used to collect and analyze measurement data, such as response times or error rates, for monitoring and reporting purposes.",
+      "description_length": 300,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tiny_httpd_prometheus.GC_metrics",
+      "description": "Tracks garbage collection statistics by updating metrics upon request. Operates on a registry and a mutable metric state, capturing GC data at specific intervals. Used to monitor memory usage patterns during application runtime.",
+      "description_length": 228,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tiny_httpd_unix.Dir",
+      "description": "Provides operations to manage a virtual file system, including checking if a path is a directory, listing directory contents, creating and deleting files, and reading file metadata. Works with strings representing file paths and byte-based file writing. Used to serve bundled resources in a web server by simulating file system behavior in pure OCaml.",
+      "description_length": 351,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_unix.Sem",
+      "description": "Manages semaphore operations to control access to shared resources, supporting acquire and release with a specified maximum count. Works with a custom type representing the semaphore state, tracking the number of active acquisitions. Used to coordinate access in concurrent programs, such as limiting the number of database connections or API requests.",
+      "description_length": 352,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_unix.Unix_tcp_server_",
+      "description": "Provides functions to manage TCP server operations, including retrieving connection addresses, shutting down, and closing file descriptors gracefully. Works with Unix file descriptors and inet addresses to handle network communication. Used to integrate with HTTP server implementations by converting to a TCP server builder with controlled concurrency.",
+      "description_length": 353,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_core.Atomic_",
+      "description": "Provides atomic operations for modifying and reading values in a thread-safe manner, including compare-and-set, fetch-and-add, and exchange. Works with atomic references and integer counters, enabling safe concurrent updates across threads. Used to manage shared metrics, coordinate thread termination, and implement lock-free data structures like a Treiber stack.",
+      "description_length": 364,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_core.Buf",
+      "description": "Provides methods to manage a mutable byte buffer, including adding characters, strings, and byte sequences, as well as retrieving and clearing contents. Operates on a custom type `t` that wraps an underlying byte array. Used to efficiently accumulate data from streams or parse requests without frequent memory allocation.",
+      "description_length": 322,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_core.Common_",
+      "description": "Provides string formatting with type-safe error handling, including a function for constructing formatted error messages with status codes and a function to extract values from a result type that encodes HTTP response status and reason. Works with format strings, integers, and a custom result type that pairs a value with a status code and message. Used to generate structured error responses in web applications and safely extract successful results from HTTP calls.",
+      "description_length": 468,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_core.Headers",
+      "description": "Provides functions to manage a list of string key-value pairs representing HTTP headers. Includes operations to retrieve, set, remove, and check for specific headers, as well as parse headers from a buffer. Supports transforming header values during retrieval and pretty-printing the entire header set.",
+      "description_length": 302,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_core.IO",
+      "description": "provides low-level I/O operations for writing data and handling TCP connections. It includes functions for writing to output channels using custom writers and for accepting and processing TCP client connections. Data can be sourced from strings or other input channels, and connections can be managed with buffer handling and state tracking. Examples include streaming data over networks, parsing incoming messages, and building custom protocol handlers.",
+      "description_length": 454,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_core.Log",
+      "description": "Provides functions to log messages at different severity levels\u2014info, debug, and error\u2014using a formatted string interface. Works with format strings and formatter objects to generate structured log output. Enables or disables debug logging through a setup function, and includes a dummy flag for conditional logging in production builds.",
+      "description_length": 337,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_core.Meth",
+      "description": "Represents HTTP methods with operations to convert between string and internal representations, and to pretty-print method values. Works with a sum type that includes common HTTP methods like GET, POST, PUT, and DELETE. Used to validate and serialize HTTP method strings in request handling and API routing.",
+      "description_length": 307,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_core.Parse_",
+      "description": "Parses structured data from strings using a stateful approach, tracking position with an integer reference. It handles integers, hexadecimal values, words, and exact string matches. Used to process line-based input with precise control over parsing flow.",
+      "description_length": 254,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_core.Pool",
+      "description": "Manages a collection of reusable resources, allowing allocation and release without blocking. It works with arbitrary data types through a factory function and a cleanup callback. Used to efficiently handle temporary buffers, ensuring resources are recycled but not retained beyond a configured limit.",
+      "description_length": 301,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_core.Request",
+      "description": "The module provides functions for manipulating HTTP request data, including header management, metadata extraction, and body handling, with operations like size limitation and content retrieval. It works with request objects, byte data, and input streams to process client inputs, enabling tasks such as secure payload validation and query parameter parsing. Specific use cases include server-side processing of web requests and handling structured data from client transmissions.",
+      "description_length": 480,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_core.Response",
+      "description": "Provides functions to construct and modify HTTP responses with specific status codes, headers, and body content. Works with types like `Response_code.t`, `Headers.t`, and various body representations including strings, streams, and writers. Used to generate structured HTTP replies, handle errors with custom messages, and manage response bodies in web server implementations.",
+      "description_length": 376,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tiny_httpd_core.Response_code",
+      "description": "Provides functions to create and check HTTP response codes, including 200 OK and 404 Not Found. Works with integer types representing HTTP status codes and includes a description function for selected codes. Used to validate API responses and handle error conditions in networked applications.",
+      "description_length": 293,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_core.Route",
+      "description": "Routes provides a type-safe mechanism for mapping URL paths to handler functions, enabling structured and composable routing. It supports stateful execution of command sequences using a custom monadic type, allowing for controlled, environment-aware operations. Users can define nested routes, handle dynamic segments, and manage request processing with precise control. For example, it can parse a URL like \"/users/123\" into a handler with extracted parameters and execute associated commands within a shared state.",
+      "description_length": 516,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tiny_httpd_core.Server",
+      "description": "Handles HTTP server-sent events by allowing precise control over response headers, sending structured events with optional fields like ID and retry, and closing the connection. Operates on headers, event parameters, and string data to stream real-time updates. Used to implement live notifications, status updates, or interactive web features.",
+      "description_length": 343,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_core.Util",
+      "description": "Encodes and decodes strings using RFC 3986 percent-encoding, splits paths and queries, and parses query parameters into key-value pairs. Processes strings and socket addresses, extracting components like non-query paths or query segments. Validates IPv6 address formats and converts socket addresses to human-readable strings.",
+      "description_length": 326,
+      "index": 28,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tiny_httpd_html.Out",
+      "description": "Produces a string efficiently from a tree of HTML combinators by managing character and string additions, formatting, and buffer flushing. Works with buffer objects and output streams, supporting low-level string manipulation. Used to generate HTML content dynamically during web requests.",
+      "description_length": 289,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_html.A",
+      "description": "This module provides functions to create, manage, and extract HTML attributes, operating on typed representations of attribute names and values, such as `t` for attribute identifiers and string-based values. It supports standard attributes like \"class\", \"src\", and \"data-*\", as well as special cases like \"novalidate\" and \"required\", enabling structured manipulation of HTML element properties. Use cases include building type-safe HTML elements, handling dynamic attribute values, and ensuring consistent attribute naming in web development workflows.",
+      "description_length": 552,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "tiny_httpd",
+      "description": "Handles HTTP request routing, URL decoding, and static file serving using thread-based concurrency. Processes stream-based data with support for server-sent events and optional compression. Efficiently manages memory for long-running servers through integration with jemalloc.",
+      "description_length": 276,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_ws",
+      "description": "Handles WebSocket protocol upgrades and route management for HTTP requests. Processes byte streams using framing and supports custom protocol acceptance and middleware. Used to establish WebSocket connections and manage incoming messages on specific endpoints.",
+      "description_length": 260,
+      "index": 32,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tiny_httpd_prometheus",
+      "description": "provides a system for collecting and exposing metrics via HTTP in Prometheus format, supporting counters, gauges, histograms, and garbage collection data. It enables registering metrics, tracking numeric values with increments, decrements, and sets, and aggregating distribution data through histograms. Metrics can be emitted to buffers or strings, with support for tags and descriptions to enrich monitoring. Examples include tracking request counts, monitoring memory usage, and analyzing response time distributions.",
+      "description_length": 520,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_unix",
+      "description": "Manages virtual file systems, semaphores, and TCP servers, enabling web server functionality through pure OCaml. Supports path checks, directory listings, file operations, semaphore coordination, and network connection control. Operations include reading metadata, acquiring locks, and handling TCP addresses. Can serve static content, limit concurrent database access, and manage graceful shutdowns of network connections.",
+      "description_length": 423,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd",
+      "description": "Provides a simple HTTP/1.1 server with route-based request handling, thread management, and basic file upload capabilities. Core types include requests, responses, and route definitions, with operations for adding handlers, parsing routes, and managing server lifecycle. Examples include greeting endpoints, echoing request data, and handling file uploads via PUT. The server supports custom routing and error handling for robust HTTP interactions.",
+      "description_length": 448,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_core",
+      "description": "Manages HTTP server operations with thread-safe atomic operations, byte buffer manipulation, and type-safe string formatting. Supports header parsing, request and response construction, logging, and routing with stateful execution. Enables low-level I/O, resource management, and URL path routing, along with HTTP event streaming and query parameter parsing. Examples include building secure web endpoints, handling concurrent metrics, and streaming real-time updates.",
+      "description_length": 468,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tiny_httpd_html",
+      "description": "Generates HTML content dynamically by combining tree structures into efficient string outputs, using buffer management and stream handling. Provides typed attribute manipulation, supporting standard and custom attributes with safe naming and value handling. Enables creation of structured, attribute-rich HTML elements with precise control over properties. Examples include generating dynamic web pages, constructing form elements with validation attributes, and embedding data-driven content.",
+      "description_length": 493,
+      "index": 37,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 58,
+    "meaningful_modules": 38,
+    "filtered_empty_modules": 20,
+    "retention_rate": 0.6551724137931034
+  },
+  "statistics": {
+    "max_description_length": 552,
+    "min_description_length": 228,
+    "avg_description_length": 349.2368421052632,
+    "embedding_file_size_mb": 0.13846206665039062
+  }
+}

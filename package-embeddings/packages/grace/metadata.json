@@ -1,0 +1,938 @@
+{
+  "package": "grace",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 131,
+  "creation_timestamp": "2025-06-18T16:52:50.087028",
+  "modules": [
+    {
+      "module_path": "Grace.Diagnostic.Message.Map.Key",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons in data structures.",
+      "description_length": 269,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Message.Map.Diff",
+      "description": "Provides operations to serialize and deserialize difference data between two maps, using Sexp format. Works with map-based structures where keys are compared via a witness and values are transformed through diff functions. Enables applying diffs to derive a new map state from an original and a list of differences.",
+      "description_length": 315,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Message.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Operates on S-expressions and the Key module's type. Used to deserialize structured data from S-expression format into a typed key representation.",
+      "description_length": 219,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Diagnostic.Message.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t, a custom type typically representing identifiers or keys in a system. Used to persist or transmit Key.t values across different parts of an application or between processes.",
+      "description_length": 345,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Message.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information to prevent prefix-based collisions. Used to generate reliable hash values for complex structures in hashing-based data structures.",
+      "description_length": 371,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Diagnostic.Message.Set.Elt",
+      "description": "Provides serialization and deserialization between a type and S-expressions, along with a comparator for ordered operations. Works with the abstract type `t` and its associated comparator witness. Enables structured data handling in contexts requiring symbolic representation and ordered comparisons.",
+      "description_length": 300,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Message.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting between S-expressions and internal representations. Works with sets of elements and optional difference structures representing changes between two states. Used to track modifications in set data, such as adding or removing elements between versions.",
+      "description_length": 350,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Message.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and the module's defined type `Elt.t`. Used to parse structured data from S-expressions into typed values for further processing.",
+      "description_length": 224,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Diagnostic.Message.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape definition. Operates on a user-defined type `Elt.t` and its polymorphic variants when necessary. Enables efficient storage and retrieval of structured data in binary format.",
+      "description_length": 310,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Diagnostic.Message.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of a structured type into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Operates on custom types defined with `Elt.t`, preserving equality-based hash consistency. Used to generate reliable hash values for complex data structures like lists and trees, preventing collision patterns that arise from naive folding.",
+      "description_length": 439,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Diagnostic.Priority.Map.Key",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons in data structures.",
+      "description_length": 269,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Priority.Map.Diff",
+      "description": "Provides operations to convert between S-expressions and a diff structure representing changes between two maps, and to compute and apply differences between maps of key-value pairs. Works with maps where keys are of type Key.t and values are paired with their corresponding diff types. Used to generate and apply incremental updates between two versions of a structured data map.",
+      "description_length": 380,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Diagnostic.Priority.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with S-expressions and a specific key data structure. Used to deserialize configuration keys from textual representations in parsing workflows.",
+      "description_length": 222,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Diagnostic.Priority.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t, a custom type that may include polymorphic variants. Used to persist or transmit Key.t values efficiently in binary format.",
+      "description_length": 295,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Diagnostic.Priority.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information to prevent prefix-based collisions. Used to generate reliable hash values for persistent data structures and serialized formats.",
+      "description_length": 369,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Priority.Set.Elt",
+      "description": "Provides serialization and deserialization between a type and S-expressions, along with a comparator for ordered operations. Works with the abstract type `t` and its associated comparator witness. Used to enable persistent storage and ordered comparisons in data structures.",
+      "description_length": 274,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Priority.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting between S-expressions and internal representations. Works with sets of elements and optional difference structures representing changes between two states. Used to track modifications between versions of a dataset and apply those changes to a base set.",
+      "description_length": 352,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Priority.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor function. Operates on `Sexplib0.Sexp.t` and the module's defined type `Elt.t`. Used to parse structured data from S-expressions into application-specific representations.",
+      "description_length": 243,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Priority.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and variant-based decoding. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 343,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Diagnostic.Priority.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of a structured type into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Operates on custom data types defined with `Elt.t`, supporting recursive and nested structures. Used to generate consistent, collision-resistant hash values for complex types in serialization and equality checks.",
+      "description_length": 412,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Severity.Map.Key",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons of key values in data structures.",
+      "description_length": 283,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Severity.Map.Diff",
+      "description": "Provides operations to convert between S-expressions and a diff structure representing changes between two maps, and to compute and apply diffs between maps of key-value pairs. Works with maps where keys are of type Key.t and values are paired with their corresponding diff types. Enables precise tracking of additions, removals, and modifications in map-based data structures.",
+      "description_length": 377,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Severity.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with S-expressions and the Key module's internal representation. Used to deserialize configuration keys from structured text data.",
+      "description_length": 209,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Severity.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t. Used to persist and reconstruct key data structures in binary format for storage or communication.",
+      "description_length": 304,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Severity.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information to prevent prefix-based collisions. Used to generate reliable hash values for persistent data structures and serialized formats.",
+      "description_length": 369,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Severity.Set.Elt",
+      "description": "Provides serialization and deserialization between a type and S-expressions, along with a comparator for ordered operations. Works with the abstract type `t` and its associated comparator witness. Enables structured data handling in contexts requiring symbolic representation and ordered comparisons.",
+      "description_length": 300,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Severity.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting between S-expressions and internal representations. Works with sets of elements and optional difference structures representing changes between two states. Used to track and apply modifications between distinct versions of a set.",
+      "description_length": 329,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Severity.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type `Elt.t` using a provided deserialization function. Operates on `Sexplib0.Sexp.t` values to produce instances of `Elt.t`. Used to parse structured data from S-expression formats into application-specific types.",
+      "description_length": 253,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Severity.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and variant-based reading. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 342,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Severity.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Works with custom data types defined using the `Elt` module, supporting recursive and composite structures. Used to generate consistent, collision-resistant hash values for complex types in serialization and equality checks.",
+      "description_length": 422,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Column_index.Map.Key",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons of key values in data structures.",
+      "description_length": 283,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Column_index.Map.Diff",
+      "description": "Provides operations to convert between S-expressions and a diff structure representing changes between two maps, and to compute and apply differences between maps of key-value pairs. Works with maps where keys are compared using a witness and values are transformed via custom functions. Computes diffs between derived maps and applies patches to update values based on recorded changes.",
+      "description_length": 387,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Column_index.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Operates on S-expressions and the Key module's type. Used to deserialize configuration keys from structured text data.",
+      "description_length": 191,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Column_index.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with the Key.t type, supporting both direct and variant-based reading. Used to persist or transmit Key.t values in a binary format across processes or storage.",
+      "description_length": 319,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Column_index.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information during the folding process. Used to generate reliable hash values for complex structures like lists and records in hashing algorithms.",
+      "description_length": 375,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Column_index.Set.Elt",
+      "description": "Provides serialization and deserialization between a type and S-expressions, along with a comparator for ordered operations. Works with a generic type `t` and its associated comparator witness. Used to enable persistent storage and ordered comparisons for custom data types.",
+      "description_length": 274,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Column_index.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting between S-expressions and internal representations. Works with sets of elements and optional difference structures derived from set comparisons. Used to track changes between two versions of a set and apply those changes to produce a new set.",
+      "description_length": 342,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Column_index.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and the module's defined `Elt.t` type. Used to parse structured data from S-expressions into application-specific values.",
+      "description_length": 216,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Column_index.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and variant-based reading. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 342,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Column_index.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of a data structure into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, requiring explicit handling of structure size during folding. Used to generate reliable hash values for complex types in hashing-based data structures.",
+      "description_length": 362,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Range.Map.Key",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons in data structures.",
+      "description_length": 269,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Range.Map.Diff",
+      "description": "Provides operations to convert between S-expressions and a diff structure representing changes between two maps. Works with key-value maps and their corresponding diff types, enabling precise tracking of additions, removals, and modifications. Applies diffs to update maps or generates diffs from lists of changes.",
+      "description_length": 314,
+      "index": 41,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Range.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with S-expressions and a specific key data structure. Used to deserialize configuration keys from textual representations in parsing workflows.",
+      "description_length": 222,
+      "index": 42,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Range.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t. Used to persist and reconstruct key data structures in binary format for storage or communication.",
+      "description_length": 304,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Range.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. It operates on custom data types, particularly those defined with `Key.t`, and enforces proper handling of collections by incorporating their size before element-wise folding. Used to generate reliable hash values for complex structures in hashing-based data structures like hash tables.",
+      "description_length": 451,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Range.Set.Elt",
+      "description": "Provides serialization and deserialization between `t` and S-expressions, along with a comparator for ordered operations. Works with the abstract type `t` and its associated comparator witness. Used to enable persistent storage and ordered comparisons in data structures.",
+      "description_length": 271,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Range.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting between S-expressions and internal representations. Works with sets of elements and optional difference structures representing changes between two states. Used to track modifications between versions of a dataset and apply those changes to a base set.",
+      "description_length": 352,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Range.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Works with S-expressions and a specific element type defined elsewhere. Used to parse structured data from S-expression representations into application-specific values.",
+      "description_length": 243,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Range.Set.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Elt.t using Bin_prot, including size calculation, writing, reading, and shape inspection. Works with binary representations of data structures and supports polymorphic variants through tag-based reading. Used to persist and reconstruct complex data types in binary format for storage or communication.",
+      "description_length": 364,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Range.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of a structured type into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Operates on custom data types defined with `Elt.t`, supporting recursive and composite structures. Used to generate consistent, collision-resistant hash values for custom types in hashing-based data structures like hash tables.",
+      "description_length": 427,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Message.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators and functions to determine minimum and maximum values. Works with any data type that supports the `compare` function to establish order. Used to implement custom sorting logic or decision-making based on value relationships.",
+      "description_length": 331,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Message.Map",
+      "description": "offers serialization and deserialization capabilities for a type `t` and its associated comparator, enabling ordered operations and persistent storage. It supports diff operations between maps, allowing state transitions through Sexp-encoded changes, and includes key parsing and binary serialization for typed identifiers. Hash folding is provided to generate collision-resistant hashes for structured data, incorporating size information for consistency. This enables efficient data persistence, versioning, and hashing in complex systems.",
+      "description_length": 541,
+      "index": 51,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Diagnostic.Message.Set",
+      "description": "Combines serialization, comparison, and difference tracking for set-like structures, operating on abstract types and S-expressions. Supports parsing S-expressions into custom types, binary serialization with Bin_prot, and hash folding for structured data. Enables efficient data manipulation, version tracking, and reliable hashing of complex types. Examples include converting sets to and from S-expressions, computing element differences, and generating collision-resistant hashes.",
+      "description_length": 483,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Priority.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports comparison, enabling direct use in sorting and conditional logic. Used to replace polymorphic comparisons in scenarios requiring explicit type-specific behavior.",
+      "description_length": 380,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Priority.Map",
+      "description": "Encapsulates operations for serializing, deserializing, and comparing structured data, with support for S-expressions, diffs, and binary formats. Handles key parsing, value serialization, and hash generation for custom types, enabling efficient storage, transmission, and version control. Supports ordered comparisons, incremental updates, and collision-resistant hashing for complex data structures. Examples include converting maps to and from S-expressions, applying diffs to update configurations, and generating hashes for persistent data.",
+      "description_length": 544,
+      "index": 54,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Diagnostic.Priority.Set",
+      "description": "Encapsulates operations for serializing, comparing, and tracking changes in structured data, supporting both S-expression and binary formats. It handles set differences, custom type parsing, and hash folding for robust data management. Key types include `t`, `Elt.t`, and difference structures, with operations like `compare`, `diff`, `of_sexp`, `read`, and `hash_fold`. It enables efficient storage, version control, and consistent hashing for complex, nested data structures.",
+      "description_length": 477,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Severity.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a specific type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports the `compare` function, enabling direct comparison between instances. Used to implement custom ordering logic in data structures like sorted lists or priority queues.",
+      "description_length": 387,
+      "index": 56,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Diagnostic.Severity.Map",
+      "description": "Encapsulates operations for serializing, comparing, and tracking changes in key-value maps, supporting S-expressions, diffs, and binary formats. Handles key deserialization from structured text, binary persistence of key data, and hash generation for consistent data representation. Enables precise modification tracking, ordered comparisons, and reliable storage of map-based structures. Examples include converting maps to diffs, restoring keys from S-expressions, and generating hashes for versioned data.",
+      "description_length": 508,
+      "index": 57,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Diagnostic.Severity.Set",
+      "description": "manages structured data through serialization, comparison, and versioning, offering operations to convert between S-expressions, binary formats, and custom types while tracking set differences and generating collision-resistant hashes. It supports ordered comparisons using a comparator witness, applies set deltas, and folds hash states for complex data types. Functions include parsing S-expressions into `Elt.t`, computing set differences, and serializing to binary with Bin_prot. Examples include converting configuration data, tracking changes in a set of elements, and generating stable hashes for equality checks.",
+      "description_length": 620,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Byte_index.Map.Key",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons in data structures.",
+      "description_length": 269,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Byte_index.Map.Diff",
+      "description": "Provides operations to convert between S-expressions and a diff structure representing changes between two maps, and to compute and apply diffs between maps of key-value pairs. Works with maps where keys are of type Key.t and values are paired with their corresponding diff types. Enables precise tracking of additions, removals, and modifications when transforming one map into another.",
+      "description_length": 387,
+      "index": 60,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Byte_index.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with S-expressions and key data structures derived from a specific domain model. Used to deserialize configuration data from textual S-expression formats into typed key representations.",
+      "description_length": 264,
+      "index": 61,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Byte_index.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with the Key.t data type, supporting both direct and variant-based reading. Used to persist and reconstruct Key.t values in binary format for storage or communication.",
+      "description_length": 327,
+      "index": 62,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Byte_index.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information to prevent prefix-based collisions. Used to generate reliable hash values for complex structures in hashing-based data structures.",
+      "description_length": 371,
+      "index": 63,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Byte_index.Set.Elt",
+      "description": "Provides serialization and deserialization between a type and S-expressions, along with a comparator for ordered operations. Works with a generic type `t` and its associated comparator witness. Enables structured data handling in contexts requiring symbolic representation and ordered comparisons.",
+      "description_length": 297,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Byte_index.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting between S-expressions and set differences, and applying a difference to a base set. Works with set differences and base sets of a specific element type. Used to track changes between two versions of a set and reconstruct a modified set from a base and a difference.",
+      "description_length": 365,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Byte_index.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and the module's defined type `Elt.t`. Used to parse structured data from S-expressions into application-specific values.",
+      "description_length": 216,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Byte_index.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and variant-based decoding. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 343,
+      "index": 67,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Byte_index.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, requiring explicit handling of structure size during folding. Used to generate reliable hash values for complex types in hashing-based data structures.",
+      "description_length": 361,
+      "index": 68,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Line_index.Map.Key",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons in data structures.",
+      "description_length": 269,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Line_index.Map.Diff",
+      "description": "Provides operations to convert between S-expressions and a diff structure, and to compute and apply differences between maps. Works with key-value maps and optional diff representations for tracking changes. Enables precise transformation of map states using difference applications and list-based diff aggregation.",
+      "description_length": 315,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Line_index.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with Sexp.t and Key.t data structures. Used to deserialize configuration keys from S-expression formatted data.",
+      "description_length": 190,
+      "index": 71,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Line_index.Map.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with binary I/O operations for efficient data persistence and transmission. Used to encode Key.t values into binary format for storage or network transfer and decode them back accurately.",
+      "description_length": 352,
+      "index": 72,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Line_index.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information during the folding process. Used to generate reliable hash values for complex structures like lists and records in hashing algorithms.",
+      "description_length": 375,
+      "index": 73,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Line_index.Set.Elt",
+      "description": "Provides serialization and deserialization between a type and S-expressions, along with a comparator for ordered operations. Works with the abstract type `t` and its associated comparator witness. Enables efficient sorting and comparison in data structures requiring ordered semantics.",
+      "description_length": 285,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Line_index.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting between S-expressions and internal representations. Works with sets of elements and optional difference structures representing changes between two states. Used to track modifications in set data, such as adding or removing elements between versions.",
+      "description_length": 350,
+      "index": 75,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Line_index.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and the module's defined `Elt.t` type. Used to parse structured data from S-expressions into application-specific representations.",
+      "description_length": 225,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Line_index.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a user-defined type `Elt.t` and its polymorphic variants when necessary. Enables efficient storage and retrieval of structured data in binary format.",
+      "description_length": 311,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Line_index.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of a structured type into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Operates on custom types defined with `Elt.t`, preserving equality-based hash consistency. Used to generate reliable hashes for complex data structures like lists and trees, preventing collision patterns that arise from naive folding.",
+      "description_length": 434,
+      "index": 78,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace_source_reader.Source_descr.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key by parsing and extracting the underlying value. Works with `Sexplib0.Sexp.t` and returns a typed key. Used to deserialize structured data from S-expressions into a specific key type for lookup or comparison.",
+      "description_length": 243,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace_source_reader.Source_descr.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of a specific type using the Bin_prot library, including size calculation, writing, and reading operations. Works with custom types that require binary encoding and decoding, particularly those involving polymorphic variants. Used to enable efficient binary persistence of data structures in applications requiring fast I/O operations.",
+      "description_length": 395,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace_source_reader.Source_descr.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific type using a provided constructor function. Works with S-expressions and custom data types defined by the user. Used to parse structured data from S-expression formats into typed values during deserialization.",
+      "description_length": 249,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace_source_reader.Source_descr.Hash_set.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, including polymorphic variants. Used to enable efficient binary serialization in data exchange or persistent storage scenarios.",
+      "description_length": 343,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Column_index.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports the `compare` function to establish order. Used to implement custom sorting logic or decision-making based on value relationships.",
+      "description_length": 349,
+      "index": 83,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Column_index.Map",
+      "description": "Encodes and decodes values between S-expressions and key types, with support for diffs, comparisons, and binary serialization. Enables ordered operations, change tracking, and efficient storage of key-value maps. Provides custom parsing for configuration keys and hash folding for structured data. Can serialize keys to binary, compute differences between maps, and generate consistent hashes for complex types.",
+      "description_length": 411,
+      "index": 84,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Column_index.Set",
+      "description": "Encapsulates operations for serializing, comparing, and tracking changes in custom data structures, supporting both S-expression and binary formats. It handles set differences, type conversion from S-expressions, and hash folding for consistent hashing. Key types include `t`, `Elt.t`, and `Sexp.t`, with operations like `compare`, `diff`, `of_sexp`, `read`, and `fold_hash`. Examples include persisting sets to disk, applying incremental updates, and generating stable hashes for complex objects.",
+      "description_length": 497,
+      "index": 85,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Range.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports the `compare` function to establish order. Used to implement custom sorting logic and decision-making based on value relationships.",
+      "description_length": 350,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Range.Map",
+      "description": "offers serialization, deserialization, and comparison capabilities for a type `t` using S-expressions and a comparator, enabling ordered operations and persistent storage. It supports diff operations for key-value maps, allowing precise tracking of changes and applying diffs to update or reconstruct maps. It includes custom parsing for keys from S-expressions and binary serialization for key types, facilitating configuration parsing and efficient data transmission. It also provides hash folding for structured data, ensuring consistent and collision-resistant hashing for complex types like `Key.t`.",
+      "description_length": 604,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Range.Set",
+      "description": "Encapsulates operations for serializing, deserializing, and comparing sets, with support for tracking changes between states and converting between S-expressions and custom types. Provides binary serialization via Bin_prot, hash folding for structured types, and element-specific parsing. Enables persistent storage, version control, and efficient hashing of complex data. Can convert sets to and from S-expressions, apply diffs, and generate collision-resistant hashes for custom structures.",
+      "description_length": 492,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Severity",
+      "description": "Provides ordered comparison, serialization, and versioning for structured data, enabling precise control over data representation and modification tracking. It supports relational operations on custom types, key-value map manipulation with diff generation, and set-based operations with collision-resistant hashing. Functions include converting between S-expressions and binary formats, computing set differences, and generating hashes for consistent comparisons. Examples include sorting elements by severity, tracking changes in configuration maps, and serializing sets for persistent storage.",
+      "description_length": 595,
+      "index": 89,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Diagnostic.Priority",
+      "description": "Encapsulates comparison, serialization, and version control for structured data, offering ordered operations, S-expression and binary support, and change tracking. Key types include `t`, `Elt.t`, and difference structures, with operations like `compare`, `diff`, `of_sexp`, and `hash_fold`. It enables tasks such as converting maps to S-expressions, applying diffs to configurations, and generating collision-resistant hashes. Used for efficient data management, sorting, and consistent representation across storage and transmission.",
+      "description_length": 534,
+      "index": 90,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Message",
+      "description": "Provides comparison, serialization, and set operations for custom data types, enabling ordered processing, persistent storage, and versioned data manipulation. It supports relational operations, S-expression parsing, binary serialization, and hash folding for structured data. Users can sort custom types, track changes between sets, and generate collision-resistant hashes. Examples include converting sets to S-expressions, computing set differences, and serializing data for storage or transmission.",
+      "description_length": 502,
+      "index": 91,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic.Label",
+      "description": "Provides operations to create and manipulate labeled ranges with specific priorities and messages, including formatted message construction and continuation-passing variants. Works with `Range.t`, `Priority.t`, and `Message.t` to represent diagnostic labels. Used to generate structured diagnostic information for code analysis tools.",
+      "description_length": 334,
+      "index": 92,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Byte_index.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports comparison via the `compare` function. Used to implement custom sorting logic and decision-making based on value relationships.",
+      "description_length": 346,
+      "index": 93,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Byte_index.Map",
+      "description": "Encodes and decodes values between S-expressions and typed data, supporting ordered operations, diffs, and custom key parsing. Offers binary serialization for keys, diff computation for map transformations, and hash folding for structured data. Key types include `t`, `Key.t`, and domain-specific keys, with operations for comparison, serialization, and change tracking. Examples include persisting maps to disk, applying incremental updates, and generating consistent hashes for complex records.",
+      "description_length": 496,
+      "index": 94,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Byte_index.Set",
+      "description": "Combines serialization to and from S-expressions and binary formats, along with set difference operations and hash folding. Supports ordered comparisons, element parsing, and efficient data persistence through type-specific operations. Enables structured data manipulation, version tracking, and hash-based lookups. Converts between symbolic representations, applies set changes, and generates consistent hashes for custom types.",
+      "description_length": 429,
+      "index": 95,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Line_index.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators and functions to determine minimum and maximum values. Works with any data type that supports structural comparison, enabling direct use in sorting and decision-making logic. Used to replace polymorphic comparisons in scenarios requiring explicit control over equality and ordering semantics.",
+      "description_length": 399,
+      "index": 96,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Line_index.Map",
+      "description": "Encodes and decodes values between S-expressions and a type `t`, supporting ordered operations via a comparator. Enables tracking and applying changes to maps through diff structures, and facilitates key deserialization from S-expressions. Supports binary serialization of `Key.t` values for efficient storage and transmission. Incorporates hash folding for structured data, ensuring consistent and collision-resistant hashing.",
+      "description_length": 427,
+      "index": 97,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Line_index.Set",
+      "description": "Encapsulates operations for handling ordered, serializable sets with support for differences, parsing, binary I/O, and secure hashing. It manages `t` and `Elt.t` types, enabling sorting, version tracking, S-expression conversion, binary storage, and collision-resistant hashing. Users can track set changes, parse structured data, and generate reliable hashes for complex types. Examples include efficiently comparing sets, applying diffs, converting between formats, and ensuring consistent hashing for data integrity.",
+      "description_length": 519,
+      "index": 98,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Map.Key",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons in data structures.",
+      "description_length": 269,
+      "index": 99,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Map.Diff",
+      "description": "Provides operations to convert between a structured data type and S-expressions, and to compute and apply differences between maps. Works with key-value maps where values can be modified through delta updates. Computes changes between two maps and applies them to generate a new map state.",
+      "description_length": 289,
+      "index": 100,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with Sexp.t and Key.t data structures. Used to deserialize configuration keys from textual S-expression formats.",
+      "description_length": 191,
+      "index": 101,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t when necessary. Used to persist or transmit Key.t values in a binary format across processes or storage.",
+      "description_length": 309,
+      "index": 102,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information to prevent prefix-based collisions. Used to generate reliable hash values for complex structures in hashing and equality checks.",
+      "description_length": 369,
+      "index": 103,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Set.Elt",
+      "description": "Provides serialization and deserialization between a type and S-expressions, along with a comparator for ordered operations. Works with the abstract type `t` and its associated comparator witness. Used to enable persistent storage and ordered comparisons in data structures.",
+      "description_length": 274,
+      "index": 104,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting between S-expressions and internal representations. Works with sets of elements and optional difference structures derived from set comparisons. Used to track changes between two versions of a set and apply those changes to produce a new set.",
+      "description_length": 342,
+      "index": 105,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor function. Operates on `Sexp.t` and the module's defined type `Elt.t`. Used to parse structured data from S-expressions into application-specific representations.",
+      "description_length": 234,
+      "index": 106,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape definition. Operates on a user-defined type `Elt.t` and its polymorphic variants when necessary. Enables efficient storage and retrieval of structured data in binary format.",
+      "description_length": 310,
+      "index": 107,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Operates on custom data types defined with `Elt.t`, supporting recursive and composite structures. Used to generate consistent, collision-resistant hash values for complex types in serialization and equality checks.",
+      "description_length": 413,
+      "index": 108,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace_ansi_renderer.Config.Style_sheet",
+      "description": "Provides functions to manipulate and query style configurations, including filtering out color attributes, applying transformations, and retrieving predefined or context-specific styles. Operates on a style type that represents ANSI escape sequences for text formatting and color, and a configuration type that holds these styles. Used to generate terminal output with specific visual attributes based on diagnostic severity and priority.",
+      "description_length": 438,
+      "index": 109,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace_ansi_renderer.Config.Chars",
+      "description": "Provides operations to create and manipulate character representations, including ASCII and Unicode constants. Works with the `t` type, which encapsulates character data. Used to generate specific character values in text processing tasks.",
+      "description_length": 239,
+      "index": 110,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace_source_reader.Source_descr.Table",
+      "description": "Parses and extracts typed keys from S-expressions for structured data lookup, while enabling binary serialization and deserialization of custom types with efficient I/O. Supports operations like size calculation, writing, and reading for polymorphic variants and other complex types. Converts S-expressions into usable key formats and persists data in binary form for quick access. Examples include deserializing a configuration from an S-expression and storing a variant type in a binary file.",
+      "description_length": 494,
+      "index": 111,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace_source_reader.Source_descr.Hash_set",
+      "description": "Converts S-expressions to custom types using a constructor function and supports binary serialization and deserialization with Bin_prot, including size, write, read, and shape operations. Handles structured data parsing and efficient binary I/O for user-defined types, including polymorphic variants. Parses S-expressions into typed values and encodes/decodes data for storage or transmission. Enables seamless conversion between textual and binary representations of custom data structures.",
+      "description_length": 491,
+      "index": 112,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace_source_reader.Source_descr.Hash_queue",
+      "description": "The module provides operations for traversing, aggregating, and modifying key-value pairs in a hash queue, including folding, filtering, and element lookup, while maintaining ordered access and key-based modifications. It works with structured `(key, data)`-typed queues, offering both safe (option-returning) and unsafe (exn-throwing) variants for managing elements, such as enqueuing, dequeuing, and relocating items. Use cases include scenarios requiring ordered key-value management, like task scheduling or caching systems where efficient key-based access and traversal are critical.",
+      "description_length": 588,
+      "index": 113,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Line_index",
+      "description": "Provides comparison, encoding, and set operations for a type `t`, supporting ordered manipulations, S-expression and binary serialization, and secure hashing. It enables sorting, version tracking, diff application, and efficient data conversion, with support for structured data through hash folding. Users can compare and manipulate sets, deserialize keys, and ensure data integrity via collision-resistant hashing. Examples include tracking set changes, converting between formats, and generating consistent hashes for complex types.",
+      "description_length": 535,
+      "index": 114,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Column_index",
+      "description": "Offers comparison, serialization, and change-tracking capabilities for custom data types, enabling ordered operations, efficient storage, and structured data manipulation. It supports S-expression and binary formats, with key operations such as `compare`, `diff`, `of_sexp`, and `fold_hash` applied to types like `t`, `Elt.t`, and `Sexp.t`. Users can serialize sets to disk, apply incremental updates, and generate consistent hashes for complex objects. It also facilitates custom sorting, configuration parsing, and efficient key-value map management.",
+      "description_length": 552,
+      "index": 115,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace.Byte_index",
+      "description": "Provides comparison, serialization, and data transformation capabilities for custom types, enabling ordered operations, efficient persistence, and structured data manipulation. Key data types include `t`, `Key.t`, and domain-specific keys, with operations for encoding, decoding, set differences, and hash folding. It supports tasks such as sorting custom values, persisting maps to disk, and tracking incremental changes in structured data. Examples include generating consistent hashes for records, applying diffs to maps, and converting between S-expressions and binary formats.",
+      "description_length": 581,
+      "index": 116,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Range",
+      "description": "Encapsulates source code range operations, including comparison, serialization, and set management, with support for ordered data handling and change tracking. Provides functions to compare ranges, serialize and deserialize them using S-expressions and binary formats, and manage sets of ranges with diff operations. Enables efficient storage, versioning, and hashing of range data, allowing for precise manipulation and reconstruction of source code intervals. Examples include sorting ranges by position, persisting range data to disk, and tracking changes in a set of source locations.",
+      "description_length": 588,
+      "index": 117,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Source",
+      "description": "This module provides operations for comparing, hashing, and serializing in-memory file abstractions, including types like `reader`, `string_source`, and `t`, enabling consistent handling of virtual files and cached data. It supports metadata retrieval, such as source names and lengths, facilitating scenarios like test input simulation, command-line interface processing, and efficient error reporting in tools like LSP. These features are optimized for managing temporary or dynamically generated content where in-memory representation and caching are critical.",
+      "description_length": 563,
+      "index": 118,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Diagnostic",
+      "description": "Combines comparison, serialization, and versioning capabilities for structured data, supporting ordered operations, S-expression and binary conversion, and change tracking through diffs. It handles custom types, maps, and sets with relational operations, hash folding, and collision-resistant comparisons, enabling tasks like sorting by severity, tracking configuration changes, and serializing data for storage. Labeled ranges with priorities and messages allow structured diagnostic output, facilitating code analysis and error reporting. Key operations include `compare`, `diff`, `of_sexp`, and `hash_fold`, with examples such as generating hashes for consistent comparisons and applying diffs to configurations.",
+      "description_length": 715,
+      "index": 119,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace_ansi_renderer.Config",
+      "description": "manipulates style configurations and character representations, combining ANSI escape sequence handling with character data management. It supports filtering, transforming, and applying styles, as well as creating and encoding characters using ASCII and Unicode. Operations include generating terminal output with severity-based formatting and constructing specific character values for text processing. Examples include applying bold red text for errors and generating special symbols like arrows or emojis.",
+      "description_length": 508,
+      "index": 120,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace_source_reader.Source_descr",
+      "description": "Provides structured data handling through S-expression parsing and binary serialization, enabling efficient I/O for custom types and polymorphic variants. Offers key-based operations on hash queues, including traversal, modification, and ordered access, with support for safe and unsafe element management. Deserializes S-expressions into typed values and persists complex data structures in binary format. Examples include converting configuration data from S-expressions to binary storage and managing ordered task queues with key-based updates.",
+      "description_length": 547,
+      "index": 121,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace_source_reader.Line_starts",
+      "description": "Provides functions to determine line start positions in source code, operating on source descriptions and returning structured line data. Processes text input to identify beginning positions of lines for parsing or analysis. Used to support syntax highlighting and error reporting in code editors.",
+      "description_length": 297,
+      "index": 122,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace_source_reader.Line",
+      "description": "Provides methods to convert line representations to and from S-expressions, and to retrieve line information from source descriptors using line or byte indices. Operates on line objects that track byte ranges and are tied to specific source descriptors. Enables extraction of line content as a string and retrieval of line start and end positions for text processing tasks.",
+      "description_length": 373,
+      "index": 123,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a specific type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports polymorphic comparison, enabling direct comparison of values without explicit type-specific implementations. Used to enforce consistent ordering in data structures like sorted lists or priority queues.",
+      "description_length": 422,
+      "index": 124,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Map",
+      "description": "Encapsulates operations for serializing, deserializing, and comparing structured data, with support for S-expressions and binary formats. Enables delta updates on key-value maps, custom key parsing from S-expressions, and hash generation that accounts for data content and size. Provides tools to transform and compare complex types, including persistent storage and efficient difference computation. Examples include converting maps to S-expressions, applying incremental changes, parsing configuration keys, and generating collision-resistant hashes.",
+      "description_length": 552,
+      "index": 125,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace.Set",
+      "description": "Encapsulates operations for serializing, comparing, and tracking changes in structured data, supporting both textual (S-expressions) and binary formats. It handles ordered comparisons via a comparator, difference computation between sets, and custom type conversion using constructors and hash folding. Key types include `t`, `Elt.t`, and `Sexp.t`, with operations for parsing, diffing, and hashing. Examples include storing sets persistently, applying diffs to update data, and generating secure hashes for complex structures.",
+      "description_length": 527,
+      "index": 126,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "grace",
+      "description": "Provides functions for creating and formatting compiler error messages, including inline and multi-line annotations with priority levels. Works with custom error records, source positions, and text spans to structure diagnostic information. Used to generate detailed, user-friendly error outputs during parsing and type-checking phases.",
+      "description_length": 336,
+      "index": 127,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace",
+      "description": "offers comparison, serialization, and change-tracking capabilities for structured data, enabling ordered operations, efficient storage, and delta computation. It supports S-expressions and binary formats, with types like `t`, `Elt.t`, and `Sexp.t` and operations for parsing, diffing, and hashing. Users can apply incremental updates to maps, generate secure hashes, and maintain consistent ordering in sorted collections. Examples include converting configurations to S-expressions, tracking set modifications, and comparing complex data structures.",
+      "description_length": 550,
+      "index": 128,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grace_ansi_renderer",
+      "description": "Handles style configuration and character manipulation, integrating ANSI escape sequences with ASCII and Unicode character encoding. It enables operations such as style application, character transformation, and terminal output generation with severity-based formatting. Users can apply bold red text for errors or generate symbols like arrows and emojis. Key data types include style configurations, character encodings, and formatted output streams.",
+      "description_length": 451,
+      "index": 129,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grace_source_reader",
+      "description": "manages source code analysis by tracking line positions, converting between line data and S-expressions, and handling structured data through parsing and serialization. It supports operations on hash queues with key-based access and provides tools to convert between binary and S-expression formats for custom types. Line information can be retrieved using byte or line indices, enabling tasks like syntax highlighting and error reporting. Examples include serializing configuration data, managing ordered task queues, and extracting line content for text processing.",
+      "description_length": 567,
+      "index": 130,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 131,
+    "meaningful_modules": 131,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 715,
+    "min_description_length": 190,
+    "avg_description_length": 372.53435114503816,
+    "embedding_file_size_mb": 0.4763755798339844
+  }
+}

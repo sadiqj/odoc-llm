@@ -1,0 +1,203 @@
+{
+  "package": "touist",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 26,
+  "creation_timestamp": "2025-06-18T16:37:55.396969",
+  "modules": [
+    {
+      "module_path": "Touist.Types.Ast",
+      "description": "Provides operations to handle propositions with unexpanded variables and fully evaluated propositions, including location tracking for AST elements and parenthesis management for LaTeX output. Works with types `var` representing variables and `t` for abstract syntax tree nodes. Used to preserve positional information during parsing and to accurately render expressions with proper formatting.",
+      "description_length": 394,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Touist.Types.AstSet",
+      "description": "This module provides set operations for managing collections of elements, including standard set manipulations like union, intersection, and difference, as well as combinatorial generation of subsets, combinations, and partitions. It works with ordered sets, particularly tailored for `Ast.t` elements, enabling efficient querying, transformation, and traversal through predicates and sequence generation. Use cases include symbolic computation tasks, data analysis workflows, and scenarios requiring exhaustive enumeration of set-based structures.",
+      "description_length": 548,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Touist.Parser.MenhirInterpreter",
+      "description": "This module enables low-level control over parser execution through state management, stack manipulation, and input handling, focusing on incremental parsing workflows. It operates on parser environments, checkpoints, and token positions, allowing precise adjustments to parsing contexts and recovery from partial computations. Use cases include resuming interrupted parses, dynamically supplying tokens, and inspecting internal state for debugging or custom processing.",
+      "description_length": 470,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Touist.Parser.Incremental",
+      "description": "Processes input streams to generate abstract syntax trees for SMT, simple, and QBF formats, using position-aware parsing. Accepts lexical positions to track source locations during parsing. Designed for incremental analysis of logical formulas in formal verification workflows.",
+      "description_length": 277,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Touist.SatSolve.Model",
+      "description": "Generates human-readable representations of SAT solver assignments and mappings. Processes lists of literal-value pairs and hash tables mapping arbitrary keys to strings, producing formatted output for debugging or logging. Used to serialize solver states and translate internal data structures into traceable formats.",
+      "description_length": 318,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Touist.SatSolve.ModelSet",
+      "description": "This module provides set operations such as union, intersection, difference, and membership testing, along with higher-order functions for transforming and filtering elements, and utilities for querying min/max values, counting, and partitioning. It works with a set type `t` parameterized by a custom `elt` type, supporting both exception-raising and option-based variants for robust handling. Use cases include managing dynamic data collections, efficient element manipulation, and serialization for storage or communication.",
+      "description_length": 527,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Touist_qbf.QbfSolve",
+      "description": "Converts an AST to a QCNF format and an error table, then solves the quantified Boolean formula using Quantor, returning the result as a string or `None`. Works with AST nodes and error mappings, supporting the translation from CNF to QCNF for logical deduction. Processes input to determine satisfiability under quantifier constraints.",
+      "description_length": 336,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Touist.Cnf",
+      "description": "Translates an abstract syntax tree with logical operators into a conjunctive normal form (CNF) structure, handling nested logical expressions and negations. Converts the CNF AST into a list of clauses, mapping literals to user-defined names and managing generated identifiers. Outputs DIMACS format by printing clauses and a corresponding literal-to-name table, with support for custom prefixes and dummy literal detection.",
+      "description_length": 423,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Touist.Err",
+      "description": "Handles error and warning messages with detailed formatting options. Processes `msg` structures containing type, context, text, and location information, and converts them to colored, wrapped strings. Used to generate human-readable error outputs during parsing, evaluation, or analysis, with control over line wrapping and colorization.",
+      "description_length": 337,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Touist.Eval",
+      "description": "Evaluates an abstract syntax tree (AST) by checking types, resolving TouIST-specific constructs, and producing a semantically valid formula, with options to limit evaluation to type checks or enable SMT mode. Processes AST nodes representing logical expressions, variables, and quantifiers, returning a transformed AST. Detects the presence of top or bottom elements in the formula to identify trivially true or false expressions.",
+      "description_length": 430,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Touist.Latex",
+      "description": "Generates LaTeX from an abstract syntax tree, handling variables as bold text and tuples as subscripted expressions. It supports two output formats tailored for different LaTeX processors. The module includes utilities to traverse formula nodes, check for binary operations, and detect newline presence in AST elements.",
+      "description_length": 319,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Touist.Lexer",
+      "description": "Processes input streams to identify and categorize lexical elements, including handling of reserved keywords and comments. Operates on `Lexing.lexbuf` and returns lists of `Parser.token` instances. Used to parse source code lines, extract tokens, and manage comment structures during lexical analysis.",
+      "description_length": 301,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Touist.Parse",
+      "description": "Parses input strings into an AST representing logical expressions, supporting SAT, SMT, and QBF formats. Processes raw text from files or channels, generating an abstract syntax tree that can be further evaluated or converted to CNF, SMT2, or QDIMACS. Accepts debug and filename options to enhance error reporting during parsing.",
+      "description_length": 329,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Touist.Parser",
+      "description": "manages parser state, checkpoints, and token positions to support incremental parsing, enabling resumption of partial parses, dynamic token injection, and internal state inspection. It processes input streams to construct position-aware abstract syntax trees for SMT, simple, and QBF formats, linking source locations to parsed structures. Operations include manipulating parser environments, tracking token positions, and generating structured representations of logical formulas. Examples include resuming a parse after an error, injecting new tokens mid-parsing, and analyzing formula structure with precise source tracking.",
+      "description_length": 627,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Touist.ParserMsgs",
+      "description": "Provides a way to generate error messages based on line numbers, using integers to map to specific string descriptions. Works with line numbers and error strings to produce contextual feedback. Used to display syntax errors during parsing with precise location information.",
+      "description_length": 273,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Touist.ParserReport",
+      "description": "Handles error reporting and diagnostics for parsing operations, aggregating and formatting issues from the incremental parser. Contains core data types such as error positions, messages, and context information, with operations to collect, filter, and display errors. Supports tasks like identifying syntax issues in input streams or generating structured error summaries. Example uses include highlighting problematic tokens or tracing error origins in complex grammars.",
+      "description_length": 471,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Touist.Pprint",
+      "description": "Converts abstract syntax trees to formatted strings with options for debugging, variable display, and Unicode symbols. Handles single AST nodes and lists, preserving operator precedence with optional parentheses. Outputs type information for AST elements.",
+      "description_length": 255,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Touist.Qbf",
+      "description": "Transforms an evaluated AST into Prenex Normal Form, then converts it to Conjunctive Normal Form, and outputs QDIMACS format. Works with ASTs, quantifier lists, and integer mappings for literals. Processes logical formulas by rewriting XOR and equivalence, extracting quantifiers, and generating DIMACS-compatible clauses and metadata.",
+      "description_length": 335,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Touist.SatSolve",
+      "description": "Manages SAT problem solving by converting CNF abstract syntax trees into clauses for Minisat, with support for set operations and assignment serialization. Provides a set type `t` with union, intersection, and transformation functions, alongside tools to format solver outputs from literal-value pairs or key-string mappings. It enables efficient data manipulation and state tracking during SAT solving. Examples include generating debug logs from solver results and combining constraint sets for incremental problem solving.",
+      "description_length": 525,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Touist.Smt",
+      "description": "Converts an evaluated abstract syntax tree into a string formatted in SMT-LIB2, using a provided context string. It operates on a string representing the context and an AST element from the Eval module. This is used to generate SMT-LIB2 representations for logical assertions or constraints.",
+      "description_length": 291,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Touist.Types",
+      "description": "Manages abstract syntax trees and their sets with operations for tracking variable positions, handling parentheses in output, and performing set-based manipulations. Supports `var` for variables and `Ast.t` for tree nodes, enabling precise parsing and formatting. Offers union, intersection, and subset generation for structured data processing. Facilitates tasks like symbolic expression analysis and combinatorial exploration of tree-based representations.",
+      "description_length": 458,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Touist_yices2.SmtSolve",
+      "description": "Converts an AST element to a Yices2 term and symbol table, then solves logical formulas using Yices2 based on specified logics. Processes models generated by Yices2 and formats them into strings. Validates supported logics and checks if Yices2 integration is available.",
+      "description_length": 269,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "touist",
+      "description": "Handles parsing and manipulation of logical formulas in a format compatible with the TouIST tool, including conversion between string representations and internal structures. Operates on custom data types such as propositions, logical connectives, and formula trees. Used to preprocess input for theorem proving or validation within automated reasoning workflows.",
+      "description_length": 363,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Touist_qbf",
+      "description": "Translates AST nodes into QCNF format and error tables, then uses Quantor to evaluate quantified Boolean formulas, returning a result string or `None`. Supports logical deduction through CNF-to-QCNF conversion and handles quantifier constraints during satisfiability checks. Processes input to determine validity under specified logical structures. Examples include verifying formula consistency, detecting contradictions, and analyzing variable dependencies under quantifiers.",
+      "description_length": 477,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Touist",
+      "description": "Converts logical expressions through multiple stages, from parsing and evaluation to CNF and QDIMACS output, while managing errors, diagnostics, and formatting. Processes ASTs to generate LaTeX, SMT-LIB2, and DIMACS formats, with support for variable tracking, quantifier handling, and clause generation. Handles tokenization, error messages, and incremental parsing, enabling precise control over formula analysis and solver integration. Examples include generating human-readable error reports, converting formulas to SAT-compatible formats, and producing structured diagnostics for complex logical expressions.",
+      "description_length": 613,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Touist_yices2",
+      "description": "Translates abstract syntax tree elements into Yices2 terms and symbol tables, enabling logical formula solving and model extraction. Supports logic validation and provides formatted model outputs. Can check Yices2 availability and convert between internal representations and Yices2 structures. Examples include solving constraints, validating logic compatibility, and generating human-readable model summaries.",
+      "description_length": 411,
+      "index": 25,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 27,
+    "meaningful_modules": 26,
+    "filtered_empty_modules": 1,
+    "retention_rate": 0.9629629629629629
+  },
+  "statistics": {
+    "max_description_length": 627,
+    "min_description_length": 255,
+    "avg_description_length": 399.11538461538464,
+    "embedding_file_size_mb": 0.0948801040649414
+  }
+}

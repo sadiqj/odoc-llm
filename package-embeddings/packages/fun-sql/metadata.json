@@ -1,0 +1,56 @@
+{
+  "package": "fun-sql",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 5,
+  "creation_timestamp": "2025-06-18T16:27:45.193478",
+  "modules": [
+    {
+      "module_path": "Fun_sql.Make.Arg",
+      "description": "Encodes various data types\u2014strings, booleans, integers, floats, and blobs\u2014into a structured argument format suitable for query parameters. Handles optional values by wrapping them in a specific encoding that distinguishes presence from absence. Used to construct URL query strings with typed values for API requests or form submissions.",
+      "description_length": 336,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fun_sql.Make",
+      "description": "Encodes OCaml values into query-compatible formats, supporting strings, booleans, integers, floats, and blobs, with optional values explicitly marked. Provides functions to transform these into structured parameter representations for URL encoding. Allows precise control over how data is serialized for API interactions or form data. For example, it can convert a `Some \"user\"` into `\"user\"` and `None` into an empty string, or encode a float `3.14` as `\"3.14\"` in a query.",
+      "description_length": 474,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fun_sql.Arg",
+      "description": "Encodes various data types\u2014strings, booleans, integers, floats, and blobs\u2014into query parameters. Handles optional values by wrapping them in a query-compatible format. Supports nativeint, int32, and int64 types for precise numeric encoding.",
+      "description_length": 240,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "fun-sql",
+      "description": "Processes SQL query strings into abstract syntax trees, extracts table and column references, and generates optimized query plans. Operates on strings, lists, and custom AST nodes representing SQL constructs. Used to analyze query structure for performance tuning and schema validation.",
+      "description_length": 286,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fun_sql",
+      "description": "Constructs SQL queries using formatted strings with placeholders, applies migration scripts in lexicographical order to a database, and manages transactions. It operates on database connections, formatted SQL templates, and sequence-like structures representing query results. Used to ensure consistent migration execution, safely handle database transactions, and extract single or optional values from query results.",
+      "description_length": 418,
+      "index": 4,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 5,
+    "meaningful_modules": 5,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 474,
+    "min_description_length": 240,
+    "avg_description_length": 350.8,
+    "embedding_file_size_mb": 0.01858234405517578
+  }
+}

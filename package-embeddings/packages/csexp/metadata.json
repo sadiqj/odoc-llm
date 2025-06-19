@@ -1,0 +1,126 @@
+{
+  "package": "csexp",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 15,
+  "creation_timestamp": "2025-06-18T16:34:13.701482",
+  "modules": [
+    {
+      "module_path": "Csexp.Make.Parser.Lexer",
+      "description": "Processes character streams to identify and classify tokens as either atoms or other elements. Operates on character inputs and maintains internal state to track parsing progress. Used to tokenize input sequences, such as parsing command-line arguments or structured text formats.",
+      "description_length": 280,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Csexp.Make.Parser.Stack",
+      "description": "Extracts a list of S-expressions from a stack, adds atoms or lexer tokens, and manages parentheses by opening or closing them, ensuring valid S-expression structure. Works with a custom stack type representing nested S-expressions and open parentheses. Used to build and validate S-expressions during parsing, such as converting a stack into a list of atoms or closing an open parenthesis to form a complete list.",
+      "description_length": 413,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Csexp.Make.Make_parser.Monad",
+      "description": "Provides a framework for sequencing computations that carry context, offering `return` to wrap values into the context and `bind` to chain operations that produce context-aware results. Works with parameterized types where each value is embedded in a computational context. Enables structured handling of side effects, error propagation, and asynchronous operations within a unified interface.",
+      "description_length": 393,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Csexp.Make.Parser",
+      "description": "Processes character streams into tokens and constructs valid S-expressions from a stack-based representation. It handles atom recognition, token classification, and nested structure validation, supporting efficient parsing with minimal runtime overhead. Operations include tokenizing input, building S-expressions, and managing parentheses to ensure syntactic correctness. Examples include parsing command-line arguments into structured data or converting a stream of tokens into a list of nested expressions.",
+      "description_length": 509,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Csexp.Make.Make_parser",
+      "description": "Sequences context-aware computations using `return` to embed values and `bind` to chain operations that maintain context, supporting structured side effect management and error handling. Operates on parameterized types that encapsulate values within computational contexts, enabling compositional and predictable workflows. Allows for chaining asynchronous or error-prone operations in a unified manner, such as parsing input while tracking position or handling optional values. Examples include building parsers that accumulate state or process input with failure recovery.",
+      "description_length": 574,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Csexp.Parser.Lexer",
+      "description": "Processes character streams to identify and classify tokens as either atoms or other elements. Operates on character inputs and maintains internal state to track parsing progress. Used to tokenize input sequences in parsing workflows, such as interpreting command-line arguments or processing structured text formats.",
+      "description_length": 317,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Csexp.Parser.Stack",
+      "description": "Extracts a list of S-expressions from a stack, adds atoms or tokens, and manages parentheses to build nested S-expression structures. Operates on a custom stack type representing parsed or partially parsed S-expressions. Used to construct and validate S-expression trees during parsing, such as converting a sequence of tokens into a structured list.",
+      "description_length": 350,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Csexp.Make.Monad",
+      "description": "Provides a way to sequence computations that carry context, using `return` to wrap values into the monadic structure and `bind` to chain operations that produce new monadic values. Works with parameterized types `'a t` that encapsulate values along with associated computational context. Enables structured handling of side effects, error propagation, or asynchronous operations in a compositional manner.",
+      "description_length": 405,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Csexp.Make_parser.Monad",
+      "description": "Provides operations to sequence computations that carry context, including lifting values into the context and chaining functions that produce context-aware results. Works with a parameterized type representing computations wrapped in a context. Used to handle optional values, manage side effects, or track state in a compositional way.",
+      "description_length": 337,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Csexp.Make",
+      "description": "Provides functions to construct and manipulate build configurations, including parsing input specifications, generating dependency graphs, and executing build steps. Operates on custom types representing targets, dependencies, and build rules. Used to automate software compilation processes by defining precise build sequences and handling incremental builds.",
+      "description_length": 360,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Csexp.Parser",
+      "description": "Processes character streams to identify and classify tokens, then constructs and validates S-expression trees by managing a custom stack of parsed elements. It handles atom recognition, token sequencing, and nested structure building, enabling efficient parsing of structured text. Operations include tokenization, stack manipulation, and S-expression extraction. Examples include parsing command-line arguments into a structured format or converting a stream of characters into a validated list of nested S-expressions.",
+      "description_length": 520,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Csexp.Make_parser",
+      "description": "Encapsulates context-aware computations using a parameterized type, enabling sequential execution with context preservation. Supports lifting values into context and composing functions that return context-sensitive results. Handles optional values, state tracking, and side effects through monadic operations. Example: chaining parsing steps that may fail or depend on prior results.",
+      "description_length": 384,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Csexp.Monad",
+      "description": "Provides operations to sequence computations with context, including lifting values into a context and chaining functions that produce contextual results. Works with a parameterized type 'a t representing computations with side effects or additional context. Used to handle optional values, manage state, or propagate errors in a composable way.",
+      "description_length": 345,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "csexp",
+      "description": "Parses and prints S-expressions in a binary format adhering to a canonical encoding scheme. It handles nested lists and atomic values such as integers, strings, and symbols. Used to serialize and deserialize structured data in a compact, deterministic binary form.",
+      "description_length": 264,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Csexp",
+      "description": "Encapsulates computations with context, enabling chaining of operations that may carry side effects, state, or errors through a parameterized type 'a t. Supports lifting values into this context and applying functions that return similar contextual results. Can manage optional values, track state, or handle error propagation in a compositional manner. For example, it allows safely combining a series of operations that might fail, ensuring errors are passed along without explicit checks at each step.",
+      "description_length": 504,
+      "index": 14,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 15,
+    "meaningful_modules": 15,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 574,
+    "min_description_length": 264,
+    "avg_description_length": 397.0,
+    "embedding_file_size_mb": 0.054884910583496094
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "package": "capnp-rpc-unix",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 12,
+  "creation_timestamp": "2025-06-18T16:32:18.694590",
+  "modules": [
+    {
+      "module_path": "Capnp_rpc_unix.Network.Location",
+      "description": "Provides functions to create and validate Unix and TCP address representations, including converting strings to addresses and checking if a address is publicly accessible. Works with a sum type representing different address kinds, such as Unix paths and TCP endpoints. Used to parse command-line arguments into address structures and ensure Unix paths are absolute before use.",
+      "description_length": 377,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc_unix.Network.Types",
+      "description": "Provides functions to generate, compare, and serialize unique identifiers for provisions, recipients, third-party capabilities, and join key parts. Operates on opaque type wrappers around string representations of these identifiers. Used to ensure type-safe handling of entity references in authentication and data sharing workflows.",
+      "description_length": 333,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc_unix.Network.Address",
+      "description": "Extracts network address and service ID from a URI, and reconstructs a URI from those components. Works with a type representing a location and authentication digest. Used to serialize and deserialize addresses in network communication and verify endpoint authenticity.",
+      "description_length": 269,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc_unix.Unix_flow",
+      "description": "Provides read and write operations for handling data buffers over Unix file descriptors, with support for shutdown and close actions to manage connection states. Works with Cstruct.t buffers and custom error types for reporting read/write failures. Used to implement network communication layers, such as establishing bidirectional data transfer between endpoints or managing TCP connections with proper error handling.",
+      "description_length": 419,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc_unix.Network",
+      "description": "Encapsulates network communication by handling address parsing, identifier management, and URI manipulation. It uses a sum type for address representations, opaque identifiers for entity references, and a location type for URI construction and extraction. Functions include validating addresses, generating unique IDs, and ensuring secure endpoint authentication. It enables parsing command-line arguments, serializing network data, and verifying URI authenticity.",
+      "description_length": 464,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc_unix.CapTP",
+      "description": "Provides functions to establish and manage CapTP connections over a network, including bootstrapping capabilities and graceful disconnection with error reasons. Operates on endpoint objects and capability identifiers to enable remote object interaction. Used to initialize peer connections, retrieve bootstrap objects, and terminate sessions with explicit failure reasons.",
+      "description_length": 372,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc_unix.Vat",
+      "description": "Creates and manages CapTP network actors, enabling connection setup, address configuration, and capability exchange. Operates with network endpoints, sturdy references, and URIs to facilitate inter-Vat communication. Used to establish secure connections, expose services via URIs, and import remote capabilities for distributed object interaction.",
+      "description_length": 347,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc_unix.Vat_config",
+      "description": "Creates a Vat configuration with a secret key sourced from a file, PEM data, or generated ephemeral key, and specifies listening and public addresses. Works with Network.Location.t, Capnp_rpc_net.Auth.Secret_key.t, and Capnp_rpc_net.Restorer.Id.t. Used to generate a sturdy URI for a service, derive a stable ID from a name and secret key, and extract a hashed secret for restoration purposes.",
+      "description_length": 393,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc_unix.File_store",
+      "description": "Stores Cap'n Proto structs on disk using a directory-based structure, with operations to save, load, and remove data by digest. Works with a directory path and base64-encoded digests to manage serialized data. Saves and retrieves structured data for persistent service storage.",
+      "description_length": 277,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc_unix.Cap_file",
+      "description": "Loads and saves capability references and URIs to files, handling file permissions and error reporting. Works with Vat, Sturdy_ref, Restorer.Id, and Uri types. Saves service identifiers, capability references, and URIs to specified paths for persistent storage.",
+      "description_length": 261,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "capnp-rpc-unix",
+      "description": "Processes and validates JSON input, extracts specific fields, and constructs typed records. Operates on strings, JSON values, and custom record types with defined fields. Used to parse configuration files and transform API responses into structured data for further processing.",
+      "description_length": 277,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc_unix",
+      "description": "provides network communication and data management capabilities for Capnp_rpc_lwt, handling buffer I/O, address parsing, connection setup, and persistent storage. It supports Cstruct.t buffers, network endpoints, CapTP connections, and Cap'n Proto serialization, with operations for reading, writing, validating, and storing data. Examples include establishing TCP connections, parsing URIs, generating secure URIs, and saving structured data to disk. It enables distributed object interaction, secure authentication, and persistent service state management.",
+      "description_length": 558,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 12,
+    "meaningful_modules": 12,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 558,
+    "min_description_length": 261,
+    "avg_description_length": 362.25,
+    "embedding_file_size_mb": 0.04397869110107422
+  }
+}

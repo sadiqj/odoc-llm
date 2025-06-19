@@ -1,0 +1,63 @@
+{
+  "package": "mirage-solo5",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 6,
+  "creation_timestamp": "2025-06-18T16:29:57.537597",
+  "modules": [
+    {
+      "module_path": "Solo5_os.Lifecycle",
+      "description": "Handles shutdown and reboot requests in a concurrent environment. Accepts optional flags to specify supported actions and returns a promise that resolves to the requested operation. Used to gracefully terminate or restart processes in response to external signals.",
+      "description_length": 264,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Solo5_os.Main",
+      "description": "Handles asynchronous work coordination by waiting for a specific number of operations to complete and initiating a processing loop. Operates with Lwt promises and integer counters to manage concurrency. Used to synchronize background tasks before starting a server or processing pipeline.",
+      "description_length": 288,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Solo5_os.Memory",
+      "description": "Returns memory allocation statistics, including detailed heap information and a faster alternative. Releases unused memory from the heap to optimize resource usage. Generates metrics data for monitoring, using either detailed or quick statistics based on configuration. Works with heap data and metrics tags to provide system-level memory insights.",
+      "description_length": 348,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Solo5_os.Solo5",
+      "description": "Provides functions to convert and manipulate the C enum solo5_result_t into OCaml values, including error checking and status code interpretation. Works with the solo5_result type, which represents outcomes of low-level system calls. Used to handle return values from unikernel interactions, ensuring proper error handling in trusted execution environments.",
+      "description_length": 357,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "mirage-solo5",
+      "description": "Handles the main loop and timer management for MirageOS on Solo5 targets, with support for low-level C integration. Operates on OCaml's runtime structures and C stubs to enable system-level execution. Used to initialize and manage application execution in embedded or unikernel environments.",
+      "description_length": 291,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Solo5_os",
+      "description": "manages system termination, concurrency coordination, memory monitoring, and low-level result conversion. It offers shutdown/reboot operations, Lwt-based task synchronization, heap statistics collection, and enum value translation. Users can gracefully terminate processes, synchronize background work, track memory usage, and interpret system call results. It enables precise control over unikernel behavior through structured data and asynchronous operations.",
+      "description_length": 461,
+      "index": 5,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 6,
+    "meaningful_modules": 6,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 461,
+    "min_description_length": 264,
+    "avg_description_length": 334.8333333333333,
+    "embedding_file_size_mb": 0.022188186645507812
+  }
+}

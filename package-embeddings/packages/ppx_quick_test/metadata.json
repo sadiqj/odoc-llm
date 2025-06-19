@@ -1,0 +1,119 @@
+{
+  "package": "ppx_quick_test",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 14,
+  "creation_timestamp": "2025-06-18T16:33:51.372840",
+  "modules": [
+    {
+      "module_path": "Ppx_quick_test_runtime_lib.Make.IO",
+      "description": "Provides operations to transform values within a context and to lift values into that context. Works with a generic type 'a t representing computations or values in a monadic structure. Used to sequence actions like reading input, processing data, and writing output in a structured way.",
+      "description_length": 287,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_quick_test_runtime_lib.File_corrections.Insertion",
+      "description": "Insertion applies a series of string modifications to an original string, combining them in sequence. It operates on a list of transformation records, each containing a start index, end index, and replacement text. This is used to incrementally build complex string edits, such as inserting code snippets into a source file at specified positions.",
+      "description_length": 347,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_quick_test_async.Ppx_quick_test_core",
+      "description": "Provides asynchronous mapping and lifting of values into deferred computations, along with a mechanism to execute quick tests that generate, shrink, and validate test cases. Operates on deferred values, test configurations, and custom generators and shrinkers for structured data. Used to automate property-based testing with detailed error reporting and controlled test execution.",
+      "description_length": 381,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_quick_test_runtime_lib.File_corrections",
+      "description": "manages sequential string transformations by applying a list of insertion records, each specifying a position and text to add. it handles operations like inserting, replacing, or modifying text segments within a larger string. examples include adding function definitions to a source file or injecting configuration values at specific offsets. the core data type is a list of records with start, end, and replacement fields.",
+      "description_length": 424,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_quick_test_runtime_lib.Sexp_examples",
+      "description": "Converts a string to an OCaml string, extracts parsed example data from a structured type, and generates insertion instructions for new examples based on S-expression input. Works with custom tagged types and Core.Sexp.t values. Used to integrate external S-expression data into code correction workflows.",
+      "description_length": 305,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_quick_test_runtime_lib.Trailing_output_error",
+      "description": "Provides conversion between a custom type and S-expressions, and attempts to construct an instance from a Core error. Works with the `Core.Error.t` type and a private type `t` used for representing trailing output and errors. Used to serialize and deserialize error states in a structured format for logging or persistence.",
+      "description_length": 323,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_quick_test_runtime_lib.Make",
+      "description": "Encapsulates monadic operations for sequencing and transforming values within a computational context. Supports lifting values into the context and applying functions to wrapped values using bind and return. Allows for structured execution of side-effecting operations such as input reading, data processing, and output writing. Example: chaining file reading, parsing, and writing operations in a clean, composable manner.",
+      "description_length": 423,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_quick_test_runtime_lib.IO",
+      "description": "Provides functions to read from and write to file descriptors, including blocking and non-blocking operations. Works with the 'a t type to represent I/O operations that can be executed in a monadic style. Used to handle asynchronous network communication and file system interactions in event-driven applications.",
+      "description_length": 313,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "ppx_quick_test",
+      "description": "Provides functions to generate and execute test cases from annotated values, supporting custom test generation and execution logic. Works with OCaml's type system to derive testable structures from variant types and records. Enables automated testing of edge cases by expanding annotated patterns into individual test scenarios.",
+      "description_length": 328,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_quick_test_async",
+      "description": "Processes deferred values through asynchronous mapping and lifting, enabling test case generation, shrinking, and validation. Supports custom generators and shrinkers for structured data, allowing precise control over test inputs. Executes property-based tests with detailed error feedback and controlled execution flow. Enables automated testing of asynchronous code with customizable test configurations.",
+      "description_length": 406,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_quick_test_core",
+      "description": "Provides monadic operations for sequencing and lifting values into an identity monad, including mapping over values and returning pure results. Works with monadic identities, source code positions, and quickcheck test configurations. Executes quickcheck tests with custom generators, shrinkers, and error reporting, supporting S-expression examples and test configuration overrides.",
+      "description_length": 382,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_quick_test_expander",
+      "description": "Provides functions to transform and enclose OCaml syntax trees during ppx expansion, handling patterns, expressions, and attributes. Operates on Ppxlib's core data types such as location, pattern, expression, and structure. Used to generate test cases by modifying and wrapping code during macro expansion.",
+      "description_length": 306,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_quick_test_runtime_lib",
+      "description": "Handles I/O operations through the 'a t type, enabling asynchronous reading and writing to file descriptors with both blocking and non-blocking modes. Supports event-driven interactions by allowing composition of I/O actions in a monadic workflow. Examples include reading data from a socket, writing to a file, or managing concurrent input/output streams. Operations are structured to facilitate network and file system tasks in reactive applications.",
+      "description_length": 452,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_quick_test_common",
+      "description": "Generates a formatted error message when a test fails, using a provided string. It operates on base string values and is used to report test outcomes in a consistent, human-readable format. This supports debugging by clearly indicating which test case did not pass.",
+      "description_length": 265,
+      "index": 13,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 15,
+    "meaningful_modules": 14,
+    "filtered_empty_modules": 1,
+    "retention_rate": 0.9333333333333333
+  },
+  "statistics": {
+    "max_description_length": 452,
+    "min_description_length": 265,
+    "avg_description_length": 353.0,
+    "embedding_file_size_mb": 0.0512847900390625
+  }
+}

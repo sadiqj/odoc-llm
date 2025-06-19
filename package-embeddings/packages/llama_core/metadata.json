@@ -1,0 +1,126 @@
+{
+  "package": "llama_core",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 15,
+  "creation_timestamp": "2025-06-18T16:36:10.141903",
+  "modules": [
+    {
+      "module_path": "Llama_core.Signal.Ctx",
+      "description": "type t = { name : string; value : int; mutable dependencies : string list } Provides functions to manage context variables with dependencies, including adding, retrieving, and updating values, and checking dependency relationships. Works with a record type containing a name, integer value, and a list of dependent variable names. Used to track and validate dependencies in a configuration system where variable values rely on other variables.",
+      "description_length": 443,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Llama_core.Signal.Raw",
+      "description": "Provides operations to manage stateful computations and transform values within a context-aware monadic structure. Works with a function type that takes a context and returns a value, supporting state modification and chaining of computations. Enables encapsulation of stateful logic and value transformations in a compositional manner.",
+      "description_length": 336,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Llama_core.Signal.Trigger",
+      "description": "Detects transitions from false to true in boolean signals, producing a trigger signal that emits true only on the first sample of each rising edge. Accepts preformatted trigger signals and converts them into trigger types, while providing methods to extract boolean values and debug trigger activity. Used to synchronize events with specific signal transitions or to filter sporadic true values from continuous signals.",
+      "description_length": 419,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Llama_core.Signal.Gate",
+      "description": "Provides functions to convert between a gate and a boolean signal, generate triggers, and sample values within a context. Operates on boolean signals and gate structures, enabling precise timing and state tracking. Used to debug signal behavior by printing sample indices when a gate is true.",
+      "description_length": 292,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Llama_core.Music.Note_name",
+      "description": "Converts musical note names between internal representation and string format. Works with an enumerated type representing pitch classes and accidentals. Used to generate human-readable labels for notes in a music notation system.",
+      "description_length": 229,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Llama_core.Music.Note",
+      "description": "Returns the frequency in hertz for a given note, converts a note to its corresponding MIDI key index, and constructs a note from a MIDI key index. Works with tuples of note names and octaves, representing musical pitches. Used to translate between acoustic frequencies, MIDI representations, and symbolic note notation in music applications.",
+      "description_length": 341,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Llama_core.Midi.Controller_table",
+      "description": "Provides access to raw signal values at specific indices, along with modulation and volume signals. Operates on a custom type `t` representing a controller state. Used to retrieve real-time audio control data during signal processing.",
+      "description_length": 234,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Llama_core.Midi.Gate_table",
+      "description": "Provides operations to retrieve specific gate elements from a structured table, using integer indices to access internal representations. Works with a custom type `t` that encapsulates a mapping of integer keys to gate objects. Used to efficiently query and manipulate circuit components during simulation or analysis.",
+      "description_length": 318,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Llama_core.Midi.Midi_sequencer",
+      "description": "Creates a table of gate signals for a specific MIDI channel, filtering out unrelated events. Operates on lists of MIDI events and signal structures to generate gate tables for polyphonic synthesis. Used to route and manage note-on/off messages for individual voices in a synthesizer.",
+      "description_length": 283,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Llama_core.Signal",
+      "description": "manages context variables with dependency tracking, stateful computations with monadic transformations, and boolean signal transitions with trigger detection. It works with records containing names, integer values, and dependencies, functions that operate within a context, and boolean signals with trigger logic. It supports updating variable values, chaining stateful operations, detecting rising edges in signals, and sampling gate states. Examples include validating configuration dependencies, composing complex stateful workflows, and triggering actions on signal transitions.",
+      "description_length": 582,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Llama_core.Float",
+      "description": "provides basic handling of floating-point numbers with distinct categories including normal values, subnormal values, zeros, infinities, and NaNs. it supports operations to classify and compare these values, such as checking for infinity or NaN. examples include detecting subnormal numbers or distinguishing between positive and negative zero. no additional functions or data types are introduced beyond standard float operations.",
+      "description_length": 431,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Llama_core.Music",
+      "description": "Translates between symbolic note names, MIDI key indices, and frequency values, using pitch class and octave information. It handles operations like converting notes to frequencies, mapping to MIDI keys, and reconstructing notes from MIDI values. The core data types include tuples representing note names and octaves, along with enumerated types for pitch classes and accidentals. For example, it can convert \"C#4\" to a frequency of 277.18 Hz or map \"E5\" to MIDI key 64.",
+      "description_length": 471,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Llama_core.Midi",
+      "description": "provides access to low-level audio control data, gate structures, and MIDI event routing through specialized operations. It includes a type `t` for controller states, another `t` for gate mappings, and tools to process MIDI events into structured signal tables. Users can extract real-time modulation values, query gate elements by index, and generate channel-specific gate tables for polyphonic synthesis. These capabilities enable precise manipulation of audio signals and circuit behavior in real-time systems.",
+      "description_length": 513,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "llama_core",
+      "description": "Provides functions to create and connect audio components like oscillators, filters, and envelope generators, enabling the construction of modular synthesizer patches. Operates on signal processing nodes and audio graphs represented as typed structures. Used to generate real-time audio output in live performance settings or to synthesize complex soundscapes programmatically.",
+      "description_length": 377,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Llama_core",
+      "description": "combines context management, float classification, note-to-frequency conversion, and audio control handling. it operates on records with named variables, boolean signals, float categories, note tuples, and MIDI structures, enabling tasks like dependency validation, signal edge detection, subnormal number checks, note-to-frequency mapping, and real-time gate querying. it supports complex workflows such as configuring dependent parameters, tracking signal changes, and routing MIDI events. examples include converting \"C#4\" to 277.18 Hz, detecting rising edges in boolean signals, and extracting modulation values from audio controllers.",
+      "description_length": 639,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 35,
+    "meaningful_modules": 15,
+    "filtered_empty_modules": 20,
+    "retention_rate": 0.42857142857142855
+  },
+  "statistics": {
+    "max_description_length": 639,
+    "min_description_length": 229,
+    "avg_description_length": 393.8666666666667,
+    "embedding_file_size_mb": 0.054938316345214844
+  }
+}

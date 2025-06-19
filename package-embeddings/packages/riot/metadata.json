@@ -1,0 +1,343 @@
+{
+  "package": "riot",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 46,
+  "creation_timestamp": "2025-06-18T16:41:10.225064",
+  "modules": [
+    {
+      "module_path": "Riot.IO.Bytes.Bytes_writer",
+      "description": "Writes binary data to a byte buffer, supporting appending bytes, strings, and integers in various formats. Operates on mutable byte arrays and tracks the current write position. Used to construct binary protocols or file formats with precise byte-level control.",
+      "description_length": 261,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Crypto.Random",
+      "description": "Generates random 8-bit integers, 16-bit integers, 32-bit integers, 64-bit integers, and floating-point numbers, along with random byte sequences, strings, and character sequences. Produces random values from a predefined alphanumeric set and fills buffers with random data. Supports creating random Cstructs, byte arrays, and Bytestring objects of specified lengths.",
+      "description_length": 366,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Hashmap.Make",
+      "description": "Generates a hash value for a given key and checks equality between two keys. Operates on a custom key type representing unique identifiers. Used to implement efficient lookups in hash tables and to compare keys in associative data structures.",
+      "description_length": 242,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Logger.Make",
+      "description": "Provides a function to retrieve the current namespace, operating on a module type that encapsulates configuration and context. Works with a custom namespace type representing scoped identifiers. Used to isolate and manage symbol visibility in compiled code generation.",
+      "description_length": 268,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.IO.Iovec",
+      "description": "Provides operations to create, manipulate, and convert buffer-like structures representing memory regions. Works with arrays of `iov` records, which encapsulate pointers and lengths, and supports conversions between bytes, strings, buffers, and Cstructs. Enables efficient handling of scatter-gather I/O operations by allowing slicing and iteration over memory segments.",
+      "description_length": 370,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Riot.IO.Writer",
+      "description": "Writes values to a specified source using a provided writer, preserving the original value. Operates on typed writer modules and source data structures. Used to chain write operations within a computation while maintaining state.",
+      "description_length": 229,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.IO.Reader",
+      "description": "Provides operations to construct and manipulate reader structures from read sources, including creating a reader from a source and defining an empty reader. Works with read sources encapsulated in modules and reader types parameterized by source. Used to build lazy or deferred data processing pipelines where data is read incrementally.",
+      "description_length": 337,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.IO.Cstruct",
+      "description": "Provides a way to convert a buffer into a writer object for sequential data writing. Operates on byte buffers represented as Cstruct.t. Used to efficiently append data to a buffer in a streaming or incremental manner.",
+      "description_length": 217,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.IO.Bytes",
+      "description": "Encapsulates binary data writing with mutable byte arrays, allowing incremental construction of binary content through append operations for bytes, strings, and integers in multiple formats. Tracks write position automatically, enabling precise control over byte-level output. Supports serialization of structured data into custom binary protocols or file formats. Examples include building network packets, writing binary file headers, or encoding complex data structures.",
+      "description_length": 473,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.IO.Buffer",
+      "description": "Creates and manipulates buffer structures capable of efficiently accumulating and retrieving text. Operates on internal buffer representations, converting them to strings, bytes, or writer interfaces. Used to build large output streams incrementally, such as generating HTTP responses or log entries.",
+      "description_length": 300,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Store.Make",
+      "description": "Provides functions to construct, modify, and query a mapping from keys to values, including insertion, lookup, and deletion. Operates on associative structures where each key is uniquely associated with a value. Used to manage configuration settings during build processes, where keys represent parameters and values represent their assigned properties.",
+      "description_length": 353,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Runtime.Stats",
+      "description": "Tracks and aggregates performance metrics at specified intervals, updating internal counters for elapsed time and event counts. It processes raw timestamp data and event logs to compute summary statistics. Used to monitor system latency and throughput during high-frequency data processing tasks.",
+      "description_length": 296,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Bytestring.Iter",
+      "description": "Provides operations to extract individual bits, bytes, and UTF-8 sequences from a binary stream, along with methods to verify expected values and retrieve remaining data. Works with a `t` type representing a binary buffer, using `bytestring` as an alias for the same type. Used to parse structured binary data, validate input against known patterns, and process encoded text streams.",
+      "description_length": 383,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Bytestring.Transient",
+      "description": "Provides methods to construct and manipulate byte sequences by appending strings, bits, and integers with specified sizes. Operates on a bytestring type, allowing precise control over data encoding. Used to build binary data structures for network protocols or file formats requiring exact byte-level representation.",
+      "description_length": 316,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Net.Addr",
+      "description": "Provides functions to parse, convert, and inspect network addresses, including extracting IP strings, ports, and Unix socket representations. Works with custom types like `tcp_addr` and `stream_addr, which encapsulate IPv4/IPv6 addresses and socket information. Used to construct addresses from URIs, convert between Unix and custom address formats, and check loopback status.",
+      "description_length": 376,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Net.Socket",
+      "description": "Provides functions to format socket representations, close sockets, and distinguishes between listen and stream socket types. Operates on file descriptor-based socket types with kind-specific variants. Used to manage network connections and ensure proper resource cleanup during communication.",
+      "description_length": 293,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Net.Tcp_stream",
+      "description": "Establishes and manages TCP connections, enabling reading from and writing to socket streams with support for buffer manipulation, vectored I/O, and file transmission. Operates on socket objects, providing low-level control over data transfer and timeout handling. Used for efficient network communication, such as streaming large files or handling multiple data buffers in a single operation.",
+      "description_length": 393,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Net.Tcp_listener",
+      "description": "Listens for incoming TCP connections, offering methods to bind to a port, accept connections with optional timeouts, and manage the listening socket. Operates on socket structures and configuration options for network listening. Used to create a server endpoint that can handle multiple client connections in a networked application.",
+      "description_length": 333,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Process.Messages",
+      "description": "Provides functions to create and inspect messages generated when a monitored process terminates, including extracting exit signals and process identifiers. Works with the `monitor` type, which encapsulates process termination events. Used to handle process exit notifications in concurrent applications where process supervision is required.",
+      "description_length": 341,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Timeout",
+      "description": "Provides functions to create, modify, and check timeout values representing durations in milliseconds. Works with the `t` type, which encapsulates time intervals for scheduling or limiting operations. Used to enforce time limits on network requests or long-running computations.",
+      "description_length": 278,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Riot.Ref",
+      "description": "Creates and manipulates references with type-safe operations, including checking for identity, proving type equality, and casting values between compatible reference types. Works with the `'a t` type, representing a reference to a value of type `'a`. Used to safely compare references, verify type consistency, and perform type-correct value conversions in heterogeneous reference scenarios.",
+      "description_length": 391,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Pid",
+      "description": "Provides operations to check equality of process identifiers, format them for output, and represent the zero PID, which denotes the initial process in a runtime system. Works with the `t` type, a custom data structure for process identifiers. Used to compare processes and display their information in debugging or logging contexts.",
+      "description_length": 332,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Message",
+      "description": "Provides functions to create, inspect, and route messages based on specific selectors. Works with message records and polymorphic selectors that extract or skip values. Used to implement event handling in a state machine, where different message types trigger distinct transitions.",
+      "description_length": 281,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Riot.Process",
+      "description": "manages process termination events and scheduling priorities, offering tools to monitor, inspect, and respond to process exits through the `monitor` type. It supports extracting exit signals, process IDs, and handling termination causes such as abnormal exits or unhandled exceptions. Functions include creating exit messages, checking termination status, and determining priority-based scheduling. Examples include detecting when a linked process dies, handling exceptions, and ensuring proper shutdown sequences in concurrent systems.",
+      "description_length": 536,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Application",
+      "description": "Starts an application instance, returning a process identifier or an error specific to application or supervisor failures. Operates with process identifiers and custom error types encapsulating application and supervisor issues. Used to initialize and manage application processes with explicit error handling.",
+      "description_length": 310,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Riot.Gen_server",
+      "description": "Provides initialization and message handling for a server process, including setting up initial state and responding to calls and messages. Operates with custom argument and state types defined by the implementation. Used to build server instances that manage internal state and respond to external requests and asynchronous messages.",
+      "description_length": 334,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Supervisor",
+      "description": "Manages a group of dynamically added processes, restarting them according to specified strategies like one_for_one, one_for_all, or rest_for_one. Accepts a list of child specifications, each defining a process and its initial state, and returns a process ID upon successful start. Handles process termination and restarts, ensuring controlled recovery based on the configured strategy.",
+      "description_length": 385,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Dynamic_supervisor",
+      "description": "Manages dynamic child processes by creating and starting them with specified constraints. It operates on process identifiers and supervisor child specifications, allowing controlled spawning of workers. Used to dynamically add workers to a supervisor while respecting limits on concurrent children.",
+      "description_length": 298,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Telemetry",
+      "description": "Starts a telemetry process and returns a PID or error, emits structured event data, and allows attaching custom handlers to process events in real time. Works with event records containing metadata and metrics. Used to monitor system behavior during runtime and trigger alerts based on specific conditions.",
+      "description_length": 306,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Logger",
+      "description": "Sets the global logging threshold to filter messages by severity. Outputs formatted log entries for debug, error, info, trace, and warning levels, using a type-safe format syntax. Used to instrument application flow, capture errors, and monitor runtime behavior with structured message formatting.",
+      "description_length": 297,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Fd",
+      "description": "Provides operations to convert file descriptors to integers, create instances from Unix file descriptors, close file descriptors, and compare them for equality. Works with Unix file descriptors as its primary data type. Used to manage low-level file operations and ensure consistent representation across system calls.",
+      "description_length": 318,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Riot.IO",
+      "description": "Reads data from a stream into a byte buffer or vectorized buffer, returning the number of bytes read or an error. Operates on a stream handle type `t` and supports timeout settings. Used for efficient network or file I/O operations where raw byte manipulation is required.",
+      "description_length": 272,
+      "index": 31,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Riot.File",
+      "description": "Provides functions to open, close, and manipulate files with read, write, or read-write access, including seeking within a file and retrieving file metadata. Works with custom file types parameterized by access mode and Unix file descriptors. Used to create file readers and writers for streaming data, check file existence, and perform low-level file operations.",
+      "description_length": 363,
+      "index": 32,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Riot.Net",
+      "description": "manages network communication through address manipulation, socket control, and connection handling. It supports parsing and converting between IP, port, and Unix socket representations, and provides operations to format, close, and distinguish socket types. It enables establishing and managing TCP connections with low-level data transfer controls, and facilitates server-side listening with binding and connection acceptance. Examples include constructing addresses from URIs, streaming large files over sockets, and handling multiple client connections in a server.",
+      "description_length": 569,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.SSL",
+      "description": "Establishes secure TLS connections by wrapping stream sockets with server or client configurations, supporting timeout settings and protocol negotiation. Operates on stream sockets and provides reader/writer interfaces for I/O operations. Used to secure network communications in applications requiring encrypted data transfer.",
+      "description_length": 327,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Riot.Timer",
+      "description": "Sends a message after a specified delay or at regular intervals using a process ID and message. Operates on a timer type and integer-based time values. Cancels scheduled timers when no longer needed.",
+      "description_length": 199,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Bytestring",
+      "description": "manages binary data through extraction and construction operations, handling bits, bytes, and UTF-8 sequences while ensuring data integrity. It works with a `t` type, enabling parsing of structured data and generation of precise byte sequences. Operations include validating expected values, appending integers and strings, and extracting encoded text. Examples include parsing network packets, validating file headers, and encoding protocol messages.",
+      "description_length": 451,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Queue",
+      "description": "Provides operations to add elements to a queue, remove them in FIFO order, and check its state. Works with a parameterized queue type that stores elements of any type. Used to manage task scheduling where items are processed in the order they are received.",
+      "description_length": 256,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Riot.Hashmap",
+      "description": "Creates and manages a hash table structure that maps keys to values, supporting insertion, retrieval, and deletion of entries. Provides operations to iterate over key-value pairs, filter entries based on predicates, and inspect the contents of the table. Used for efficiently storing and querying data where fast lookups and dynamic updates are required.",
+      "description_length": 354,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Stream",
+      "description": "Provides operations to process sequences by extracting the next element, building sequences from a generator function, and accumulating values while controlling flow. Works with sequences of arbitrary values and custom accumulation control structures. Used to implement lazy evaluation pipelines and stateful transformations in data processing workflows.",
+      "description_length": 354,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Task",
+      "description": "Provides asynchronous execution and waiting mechanisms for tasks, supporting timeout handling and error reporting. Operates on a polymorphic task type that wraps computations and their results. Enables non-blocking execution of functions and safe retrieval of their outcomes with explicit failure cases.",
+      "description_length": 303,
+      "index": 40,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Riot.Store",
+      "description": "Provides functions to start a process, retrieve values by key, and store values with a key. Operates on custom types `key` and `value` to manage state within a process. Used to maintain and access shared data in a concurrent application.",
+      "description_length": 237,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Riot.Crypto",
+      "description": "Generates and manipulates random numerical and byte-based data, including integers of various bit widths, floats, and string-like structures. Provides operations to create random values from defined character sets, fill buffers, and construct Cstructs, byte arrays, and bytestrings. Supports generating sequences of random bytes, characters, and numeric values with customizable parameters. Examples include generating a 32-bit random integer, filling a buffer with random bytes, or creating a random alphanumeric string.",
+      "description_length": 521,
+      "index": 42,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Riot.Runtime",
+      "description": "Collects and analyzes performance data by tracking elapsed time and event counts over intervals, generating summary statistics from raw timestamps and logs. It supports monitoring system behavior through metrics like latency and throughput during intensive operations. Key data types include counters, timestamps, and statistical summaries, with operations for aggregation and interval-based updates. Users can track real-time performance trends, identify bottlenecks, and evaluate system efficiency under load.",
+      "description_length": 511,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "riot",
+      "description": "Provides message-passing primitives and process management for concurrent execution across multiple cores. Operates on lightweight processes and message queues, enabling isolated computation units with asynchronous communication. Used to build scalable, fault-tolerant systems where independent tasks exchange data without shared state.",
+      "description_length": 336,
+      "index": 44,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Riot",
+      "description": "Provides a comprehensive set of utilities for managing time, references, process identifiers, messages, and system events, along with tools for I/O, networking, and data processing. It includes types like `t` for timeouts, `'a t` for references, `t` for PIDs, and `t` for binary data, with operations for creating, inspecting, and manipulating these values. Examples include scheduling delayed messages, handling process termination, parsing network packets, and tracking performance metrics. It supports asynchronous execution, logging, and dynamic process management, enabling robust concurrent and distributed application development.",
+      "description_length": 637,
+      "index": 45,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 46,
+    "meaningful_modules": 46,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 637,
+    "min_description_length": 199,
+    "avg_description_length": 345.7173913043478,
+    "embedding_file_size_mb": 0.16756248474121094
+  }
+}

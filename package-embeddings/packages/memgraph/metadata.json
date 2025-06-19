@@ -1,0 +1,49 @@
+{
+  "package": "memgraph",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 4,
+  "creation_timestamp": "2025-06-18T16:28:08.581579",
+  "modules": [
+    {
+      "module_path": "Memgraph.Dot",
+      "description": "Generates Graphviz dot files to visualize OCaml value structures using customizable node colors and layout directions. Operates on lists of (string * [ `Direct ] Repr.cell) pairs to represent memory blocks and pointers. Outputs to a file or formatter for debugging or analysis of complex data layouts.",
+      "description_length": 301,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Memgraph.Repr",
+      "description": "Provides functions to traverse and inspect the memory layout of OCaml values, including following pointers and recursively visiting blocks. Works with custom types like `addr`, `pblock`, and `context` to represent and manipulate memory structures. Used to analyze shared references and memory organization during serialization or debugging.",
+      "description_length": 340,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "memgraph",
+      "description": "Provides functions to analyze and serialize OCaml values into graph structures, enabling visualization of complex data layouts. Works with OCaml values, including tuples, variants, and closures, capturing their internal memory structure. Used to debug memory layouts and generate graphviz-compatible outputs for visual analysis.",
+      "description_length": 328,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Memgraph",
+      "description": "Generates and inspects OCaml memory structures through graph visualization and traversal. Processes lists of (string * [ `Direct ] Repr.cell) pairs to create Graphviz diagrams or analyze memory blocks using `addr`, `pblock`, and `context` types. Enables debugging by tracing pointers and shared references in complex data layouts. Can visualize linked lists, trees, or cyclic structures and extract memory relationships for serialization analysis.",
+      "description_length": 447,
+      "index": 3,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 4,
+    "meaningful_modules": 4,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 447,
+    "min_description_length": 301,
+    "avg_description_length": 354.0,
+    "embedding_file_size_mb": 0.014939308166503906
+  }
+}

@@ -212,7 +212,7 @@ uv run python generate_embeddings.py --workers 8 --batch-size 32 --rate-limit 15
 
 ### Output Structure
 
-Creates `package_embeddings/` directory with:
+Creates `package-embeddings/` directory with:
 - `packages/{package_name}/embeddings.npz`: Compressed numpy array of embeddings (float32)
 - `packages/{package_name}/metadata.json`: Module information with filtering statistics
 - `checkpoint.json`: Progress tracking for resume capability
@@ -233,7 +233,7 @@ Enables natural language search for OCaml modules using query embeddings and cos
 ### How it Works
 
 1. **Query Embedding**: Uses Qwen3-Embedding-0.6B model to embed user queries
-2. **Embedding Loading**: Loads all module embeddings from `package_embeddings/` into memory
+2. **Embedding Loading**: Loads all module embeddings from `package-embeddings/` into memory
 3. **Similarity Calculation**: Computes cosine similarity between query and all module embeddings
 4. **Result Ranking**: Returns top-K most similar modules with descriptions
 5. **Output Formatting**: Supports both text and JSON output formats
@@ -387,7 +387,7 @@ Add to your Claude Desktop configuration:
 ├── parsed-docs/            # Extracted documentation JSON files
 ├── module-descriptions/    # Generated module descriptions
 ├── package-descriptions/   # Generated package descriptions
-└── package_embeddings/     # Module embeddings and metadata
+└── package-embeddings/     # Module embeddings and metadata
 ```
 
 ## Data Directory Structure

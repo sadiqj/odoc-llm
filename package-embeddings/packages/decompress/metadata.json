@@ -1,0 +1,182 @@
+{
+  "package": "decompress",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 23,
+  "creation_timestamp": "2025-06-18T16:36:38.003417",
+  "modules": [
+    {
+      "module_path": "Zl.Def.Ns",
+      "description": "Provides pretty-printing for error types and compression utilities for byte sequences. Operates on bigstring buffers and returns results with explicit error handling. Used to deflate data into pre-allocated buffers, ensuring sufficient space via a pessimistic size calculation.",
+      "description_length": 277,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zl.Inf.Ns",
+      "description": "Provides functions to decompress data using the RFC 1950 standard, with `inflate` taking a source and destination bigstring to decompress in-place. Handles errors through a custom type and includes a pretty-printer for error messages. Designed for scenarios requiring direct decompression of complete input buffers.",
+      "description_length": 315,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "De.Def.Ns",
+      "description": "Provides pretty-printing for error values and supports data compression with a pessimistic size estimation. Operates on bigstring buffers and integer values to handle deflation operations. Used to compress arbitrary input data into a pre-allocated buffer with specified compression levels.",
+      "description_length": 289,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "De.Inf.Ns",
+      "description": "Provides functions to inflate compressed data using RFC 1951, returning byte counts on success or specific error variants on failure. Operates on bigstring types for input and output buffers, ensuring the destination is sufficiently large. Used to decompress binary data in scenarios where the entire input is available upfront, such as processing compressed files or network payloads.",
+      "description_length": 385,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Zl.Inf",
+      "description": "Handles data decompression using RFC 1950, with `inflate` operating on bigstrings to decompress in-place. Includes a custom error type and pretty-printer for clear diagnostics. Supports direct processing of complete input buffers without intermediate allocations. Can be used to decode compressed streams in memory-efficient applications.",
+      "description_length": 338,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zl.Def",
+      "description": "Encodes and decodes data using compression algorithms, handling errors explicitly and operating on bigstring buffers. Supports size estimation to prevent buffer overflows and provides utilities for byte sequence manipulation. Functions include deflating data into pre-allocated memory and pretty-printing error messages. Examples include compressing large datasets and diagnosing compression failures with detailed error reports.",
+      "description_length": 429,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zl.Higher",
+      "description": "Provides LZ77-based compression and decompression with custom input/output handling. Operates on bigstring buffers, shared queues, and window structures for managing data streams. Enables low-level control over buffer refill and output flushing, suitable for integrating compression into streaming or memory-sensitive applications.",
+      "description_length": 331,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "De.Inf",
+      "description": "Handles decompression of RFC 1951-compressed data using bigstring buffers, returning byte counts or error variants. Supports direct manipulation of binary data with precise control over input and output sizes. Enables efficient processing of preloaded compressed content, such as extracting data from files or network streams. Examples include decompressing a stored gzip payload or unpacking a deflate-encoded buffer.",
+      "description_length": 418,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "De.Queue",
+      "description": "Returns the number of elements in a queue, checks if it is empty or full, and manages element insertion and removal with explicit error handling. Operates on a custom `cmd` type representing commands like literals, copies, and end-of-block markers, and a queue structure `t` with fixed capacity. Supports bulk insertion from a bigstring, copying segments, and converting between queues and lists of commands.",
+      "description_length": 408,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "De.Def",
+      "description": "Encodes arbitrary input data into a pre-allocated buffer using three block types: flat, fixed, and dynamic Huffman compression. Operates on bigstring buffers and integers, supporting pessimistic size estimation and error pretty-printing. Flat blocks preserve data without compression, fixed blocks use a precomputed tree for any symbols, and dynamic blocks allow custom Huffman trees for optimized encoding. Examples include compressing text, images, or binary data with controlled memory usage and efficient symbol encoding.",
+      "description_length": 525,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "De.Lz77",
+      "description": "Provides functions to track literal and distance frequencies, compute ADLER-32 checksums, and manage input sources for LZ77 compression. Operates on bigstrings, queues, and custom state and window types to control compression behavior. Used to compress data streams with configurable window sizes and compression levels, enabling efficient pattern recognition or bypassing compression entirely.",
+      "description_length": 394,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "De.Higher",
+      "description": "Provides LZ77-based compression and decompression using custom input/output buffers and a shared queue for data flow. Operates on bigstring buffers, windows for compression, and queues for data coordination. Enables low-level control over buffer sizes and data handling for applications requiring tailored performance or integration with custom I/O systems.",
+      "description_length": 357,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "De.Lookup",
+      "description": "Provides operations to retrieve a pair of integers from a structured data type representing a lookup table. Works with a record type containing internal state for mapping integer keys to value pairs. Used to efficiently fetch coordinates or indices during graph traversal algorithms.",
+      "description_length": 283,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "De.T",
+      "description": "Creates a binary tree structure from an array of integers and a corresponding count array, using specified length and optional maximum length. Operates on integer arrays and constructs a tree type that represents hierarchical data. Used to build Huffman coding trees from symbol frequency data.",
+      "description_length": 294,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gz.Inf",
+      "description": "Provides functions to decode GZIP-compressed data, manage input and output buffers, and track decoding state. Works with `decoder` type, `bigstring` for buffer management, and `signal` to represent decoding outcomes like `Await`, `Flush`, `Malformed`, and `End`. Used to process streaming GZIP data, handle buffer flushing, and extract metadata such as filename, comment, and OS information from the compressed stream.",
+      "description_length": 418,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gz.Def",
+      "description": "Encodes data using DEFLATE compression, managing input and output buffers through `src` and `dst` functions, and returning `ret` states to control the encoding process. It handles metadata like modification time, OS, filename, and comment, and requires a pre-allocated 32k sliding window for LZ77 compression. The encoder processes input in chunks, tracks remaining bytes in buffers, and enforces a minimum 2-byte output buffer to avoid infinite loops.",
+      "description_length": 452,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gz.Higher",
+      "description": "Provides functions to compress and uncompress data using a custom interface that requires explicit management of input/output buffers, a sliding window for pattern matching, and a shared queue for coordination. Works with bigstring buffers, De.Lz77.window, De.Queue.t, and metadata structures derived from GZip streams. Used for implementing GZip compression and decompression with low-level control over performance-critical components like buffer sizes and data flow.",
+      "description_length": 469,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "decompress",
+      "description": "Decompress handles LZ77-based compression formats, offering decode and decode_into functions for reading compressed data streams. It operates on byte sequences and input buffers, supporting incremental decompression. Use it to extract data from LZ77-compressed files or network streams efficiently.",
+      "description_length": 298,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zl",
+      "description": "handles data compression and decompression using LZ77 with in-place operations on bigstrings, offering error handling, size estimation, and low-level buffer control. it supports streaming scenarios with referentially transparent encoders and decoders, enabling efficient memory use and direct processing of input buffers. users can compress large datasets, decode in-memory streams, and manage buffer refill and output flushing dynamically. examples include real-time data compression, error diagnosis with detailed reports, and integration into memory-sensitive applications.",
+      "description_length": 576,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "De",
+      "description": "Encodes and decodes RFC1951 DEFLATE data using a shared queue for coordination between compression and encoding stages. It handles LZ77 compression with `cmd` operations, Huffman encoding via `Def.kind` blocks, and manages input/output with bigstring buffers. Functions track frequencies, compute checksums, and build Huffman trees from symbol data. Examples include compressing text with dynamic blocks, decompressing network streams, or generating flat copies of raw data.",
+      "description_length": 474,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lz",
+      "description": "Provides functions to extract literals and distances from compressed data, compute a checksum, and manage source data buffers. Operates on bigstrings, queues, windows, and custom state structures. Used to process and compress data streams with specific window size configurations.",
+      "description_length": 280,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Gz",
+      "description": "Encodes and decodes GZIP-compressed data using streaming interfaces, managing input and output buffers with `bigstring` and tracking state through `decoder` and `encoder` types. Supports metadata extraction and insertion, including filename, comment, and OS information, while enforcing buffer constraints and sliding window requirements for LZ77 compression. Processes data in chunks, handling outcomes like `Await`, `Flush`, and `End` during decoding, and controls encoding flow via `ret` states and pre-allocated buffers. Enables low-level control over compression pipelines, allowing direct manipulation of buffers, queues, and compression parameters for optimized performance.",
+      "description_length": 681,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lzo",
+      "description": "Provides functions to uncompress and compress data using the LZO algorithm, working with bigstring and wrkmem types. Uncompressing maps input to a sub-layout of output, while compressing writes deflated data into a provided output buffer. Handles specific error conditions during compression and decompression.",
+      "description_length": 310,
+      "index": 22,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 23,
+    "meaningful_modules": 23,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 681,
+    "min_description_length": 277,
+    "avg_description_length": 391.3478260869565,
+    "embedding_file_size_mb": 0.08402156829833984
+  }
+}

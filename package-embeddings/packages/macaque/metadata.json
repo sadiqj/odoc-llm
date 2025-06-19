@@ -1,0 +1,469 @@
+{
+  "package": "macaque",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 64,
+  "creation_timestamp": "2025-06-18T16:46:30.145145",
+  "modules": [
+    {
+      "module_path": "Pa_bananas.Make.Ast.Meta.Make.Expr",
+      "description": "This module provides functions to construct expression nodes with embedded location metadata, wrapping diverse data types like strings, integers, booleans, lists, and complex OCaml syntax elements such as bindings, class expressions, and patterns. It also includes utilities to convert syntax constructs\u2014such as signature items, structure items, and flags\u2014into annotated expressions, enabling precise manipulation of OCaml's abstract syntax tree for tasks like compiler transformations or static analysis. These operations are critical for building and analyzing structured code representations while preserving contextual information for error tracking or code generation.",
+      "description_length": 673,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_bananas.Make.Ast.Meta.Make.Patt",
+      "description": "This module provides functions to generate pattern representations for OCaml AST nodes, including primitive types, lists, bindings, class expressions, and signature/structure items, while incorporating constraints and flags. It operates on OCaml's abstract syntax tree elements and location metadata to construct meta-level abstractions. These patterns are useful for code generation, type checking, or analysis tools requiring structured representation of language constructs.",
+      "description_length": 477,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_bananas.Make.Gram.Token.Loc",
+      "description": "This module provides operations for creating, converting, and manipulating location objects that track source code positions, including file names, line numbers, and byte offsets, with support for serialization, merging, and adjusting start/end positions. It works with `Loc.t` types, enabling tasks like retrieving positional data, modifying file names, and comparing locations, which are critical for source code analysis, error reporting, and transformation workflows. Specific use cases include handling code spans, tracking ghost locations, and synchronizing position metadata during parsing or editing.",
+      "description_length": 608,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pa_bananas.Make.Gram.Token.Filter",
+      "description": "Provides functions to create and manage token filters, including defining transformation rules, applying filters, and tracking keyword additions and removals. Operates on `token_filter` streams and `t` type representing filter configurations. Used to dynamically modify parsing behavior during code processing.",
+      "description_length": 310,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_bananas.Make.Gram.Token.Error",
+      "description": "Converts error values to human-readable strings and prints them using a formatter. Works with token-based error representations. Used to generate error messages during lexical analysis and debugging.",
+      "description_length": 199,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_bananas.Make.Ast.Meta.MetaLoc",
+      "description": "Generates pattern and expression locations by combining two source locations. Operates on OCaml's `loc` type and constructs `patt` and `expr` nodes. Used to annotate syntax tree nodes with precise source information during parsing or transformation.",
+      "description_length": 249,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pa_bananas.Make.Ast.Meta.MetaGhostLoc",
+      "description": "Generates pattern and expression nodes annotated with location information, using a custom type for source positions. It operates on OCaml's `loc` type and abstract syntax tree nodes. Used to inject location metadata during code transformation pipelines.",
+      "description_length": 254,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_bananas.Make.Ast.Meta.MetaLocVar",
+      "description": "Generates pattern and expression nodes annotated with location information, using a custom `loc` type and polymorphic values. It integrates with syntax tree structures by embedding location data directly into AST nodes. Used to track source positions during parsing or transformation stages.",
+      "description_length": 291,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_bananas.Make.Ast.Meta.Make",
+      "description": "Generates pattern and expression nodes with location metadata, combining two location markers into a single node. Operates on `loc`, `patt`, and `expr` types from the OCaml AST. Used to construct abstract syntax tree nodes during parsing or transformation workflows.",
+      "description_length": 266,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pa_bananas.Make.Quotation.DynAst.Pack",
+      "description": "Provides functions to pack and unpack binary data using a flexible format, including reading and writing integers, strings, and nested structures. Operates on byte sequences and custom data types encoded as binary. Used to serialize protocol buffers or network packets with precise control over byte layout.",
+      "description_length": 307,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pa_bananas.Make.Token.Loc",
+      "description": "The module offers operations for creating, modifying, and comparing source code location objects, which track file names, line numbers, and byte offsets. It enables tasks like adjusting positional data, serializing tuples, and generating error messages with contextual information. These capabilities are critical for tools requiring precise code navigation or debugging, such as linters, debuggers, or parsers.",
+      "description_length": 411,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_bananas.Make.Token.Filter",
+      "description": "Provides functions to create and manage token filters, including defining custom filtering logic and modifying keyword inclusion. Operates on `token_filter` and `t` types, which represent stream filters and token filtering configurations. Used to dynamically adjust how tokens are processed during parsing, such as adding or removing keywords from consideration.",
+      "description_length": 362,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_bananas.Make.Token.Error",
+      "description": "Converts error instances to human-readable strings and prints them using a formatter. Operates on syntax token error types generated during parsing. Used to display parsing issues in compiler or interpreter outputs.",
+      "description_length": 215,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_bananas.Make.Gram.Loc",
+      "description": "The module provides operations for constructing, modifying, and comparing structured source code position data, including adjustments to line numbers, byte offsets, and file names, as well as serialization and merging of location tuples. It works with a core `t` type representing code positions, enabling tasks like error reporting, code analysis, and transformation by tracking start/end ranges and ghost locations. Specific use cases include managing source code metadata in compilers, debugging tools, or linters that require precise positional information.",
+      "description_length": 561,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pa_bananas.Make.Gram.Action",
+      "description": "Provides functions to create and manipulate action objects, including retrieving stored values and applying functions to them. Works with the `Syntax.Gram.Action.t` type, which encapsulates action data. Used to extract and transform values within parsing or transformation contexts.",
+      "description_length": 282,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_bananas.Make.Gram.Token",
+      "description": "Manages source code positions, token transformations, and error reporting through integrated operations on location data, token filters, and error messages. It supports creating and modifying `Loc.t` objects, applying filter rules to token streams, and converting errors to readable formats. Tasks include tracking code spans, adjusting parsing behavior, and generating diagnostic output. Examples include handling file positions during parsing, filtering keywords in a stream, and displaying error details during lexical analysis.",
+      "description_length": 531,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_bananas.Make.Gram.Entry",
+      "description": "Creates and manages entries with associated parsing logic, allowing construction from strings or parsers and storing internal representations. Operates on typed entries wrapped in a grammar structure, supporting parsing setup and manipulation. Used to define and process syntax elements in a parser, with capabilities for debugging output and state resetting.",
+      "description_length": 359,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pa_bananas.Make.Ast.Loc",
+      "description": "The module provides operations for creating, converting, and manipulating structured location data, including file names, line numbers, and byte offsets, with support for serialization, merging, and line-based adjustments. It works with values representing lexical positions, enabling tasks like comparing positions, modifying file names, and generating location-aware error messages, which are essential for source code analysis and text processing applications.",
+      "description_length": 463,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pa_bananas.Make.Ast.Meta",
+      "description": "Generates pattern and expression nodes with specified location metadata. Operates on `loc` values and constructs `patt` and `expr` structures. Used to inject source location information into abstract syntax tree nodes during parsing or transformation.",
+      "description_length": 251,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_bananas.Make.Quotation.DynAst",
+      "description": "Encapsulates binary serialization and deserialization capabilities, enabling precise manipulation of byte sequences and custom data types. Supports packing and unpacking of integers, strings, and nested structures, allowing for low-level control over data representation. Can be used to encode and decode protocol buffers, network packets, or other structured binary formats. Provides direct access to byte-level operations for efficient data handling.",
+      "description_length": 452,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_bananas.Make.Quotation.Error",
+      "description": "Converts error values to human-readable strings and prints them using a formatter. Operates on a specific error type derived from syntax quotation processing. Used to display parsing or quotation-related errors in a structured format.",
+      "description_length": 234,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_macaque.CompGram.Token.Loc",
+      "description": "The module provides operations for creating, converting, and manipulating location objects that track source code positions, including file names, line numbers, and byte offsets, with support for tuple serialization, merging, and line-based adjustments. It enables inspecting and modifying these objects to retrieve start/stop positions, check ghost status, and convert to strings, primarily used for debugging, error reporting, and managing lexical position metadata.",
+      "description_length": 468,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_macaque.CompGram.Token.Filter",
+      "description": "Provides functions to create and manage token filters, including defining transformation rules, applying filters, and tracking keyword additions and removals. Operates on `token_filter` and `t` types, which are used in parsing and lexing processes. Used to customize token processing in code transformation pipelines, such as modifying syntax highlighting or enforcing specific language rules.",
+      "description_length": 393,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_macaque.CompGram.Token.Error",
+      "description": "Converts error instances to human-readable strings and prints them using the Format module. Operates on token-based error representations from the Camlp4 lexer. Used to generate diagnostic output during parsing or lexical analysis.",
+      "description_length": 231,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Query.Make.Db",
+      "description": "The module provides database connection management, query execution, and transaction control, along with comprehensive type conversion between OCaml and PostgreSQL, handling complex data types like arrays, hstore, and jsonb. It operates on structures such as connection descriptors, SQL parameters, result rows, and PostgreSQL-specific types including timestamps and oids, supporting nullability and array operations for precise database interactions. Use cases include serializing structured data, managing PostgreSQL-specific features, and ensuring accurate type mapping in applications requiring robust database integration.",
+      "description_length": 627,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pa_bananas.Make.Loc",
+      "description": "Operations include creating, manipulating, and comparing structured location metadata, such as file names, line numbers, and byte offsets. They support tuple serialization, merging, shifting, line-based adjustments, and checking for ghost locations, along with modifying file names, making them essential for code analysis, debugging, and tools requiring precise source code position tracking.",
+      "description_length": 393,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pa_bananas.Make.Token",
+      "description": "Manages source code positions, token filtering, and error reporting through integrated operations. It handles `location` objects for tracking file, line, and offset data, `token_filter` and `t` types for customizing token processing, and error types for generating readable diagnostics. Users can adjust positional data, refine token streams, and output detailed error messages. Tasks include debugging code navigation, modifying parsing rules, and improving error visibility in compiler outputs.",
+      "description_length": 496,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_bananas.Make.Gram",
+      "description": "Encapsulates code position tracking, action handling, token processing, and entry management for parsing and analysis. It defines types like `t` for positions, `Action.t` for stored values, and `Loc.t` for source spans, supporting operations such as merging locations, applying transformations, and filtering tokens. It enables precise error reporting, value extraction during parsing, and custom parsing logic with entry-based structures. Examples include adjusting file positions during lexing, extracting parsed values for further processing, and managing token streams with custom filters.",
+      "description_length": 593,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_bananas.Make.Quotation",
+      "description": "Provides tools for binary data manipulation, error conversion, and formatted output. Includes operations for packing and unpacking structured data, converting errors to readable formats, and handling byte sequences with precision. Supports tasks like encoding protocol buffers, decoding network packets, and displaying syntax-related errors. Enables low-level data control and clear error reporting in complex processing pipelines.",
+      "description_length": 431,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_bananas.Make.AntiquotSyntax",
+      "description": "Parses OCaml expressions and patterns from strings, incorporating antiquotations. Accepts location information and returns parsed AST nodes. Used to dynamically generate and evaluate code fragments within macro expansions.",
+      "description_length": 222,
+      "index": 29,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pa_macaque.CompGram.Loc",
+      "description": "The module provides operations for creating, converting, and manipulating source code positions, working with structured metadata like file names, line numbers, and byte offsets. It supports tasks such as merging locations, adjusting line-based positions, and generating string representations, essential for error reporting with context or parsing workflows requiring precise position tracking.",
+      "description_length": 395,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pa_macaque.CompGram.Action",
+      "description": "Provides functions to create and extract values from a wrapped type, including lifting functions that apply a given function to the wrapped value. Works with a type encapsulating parsed action data from a grammar parser. Used to transform and access parsed elements during syntax processing.",
+      "description_length": 291,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_macaque.CompGram.Token",
+      "description": "Manages source code positions, token transformations, and error reporting through location objects, token filters, and error formatting. Supports operations like position merging, filter rule application, and error string conversion. Location objects track file, line, and byte data, while token filters modify parsing behavior. Examples include adjusting line numbers in error messages, customizing syntax highlighting, and generating readable diagnostics from parser errors.",
+      "description_length": 476,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_macaque.CompGram.Entry",
+      "description": "Creates and manages entry points for parsing, allowing the definition of custom parsing logic tied to specific names. Operates on a parameterized type representing parsed entries, supporting setup of parsers, retrieval of names, and manipulation of internal representations. Used to construct and inspect parsing entries in a structured, controlled manner during language processing tasks.",
+      "description_length": 389,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Query.Make",
+      "description": "Provides monadic operations for sequencing I/O actions, including binding, failure handling, and exception catching. Works with in_channel and out_channel types to perform low-level input and output, such as reading characters, writing binary integers, and managing network connections. Enables structured handling of asynchronous or error-prone I/O workflows like network communication or file processing.",
+      "description_length": 406,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Query.Make_with_Db",
+      "description": "This module provides functions for managing PostgreSQL connections, executing SQL statements, and converting between OCaml types and database-specific representations, including OID-based type mapping, array handling, and serialization of complex types like JSONB, UUID, and timestamps. It operates on connection descriptors, query parameters, result metadata, and structured data types such as arrays, hstore, and byte arrays, enabling tasks like transaction control, result formatting, and type-safe data exchange. Specific use cases include serializing database values for output, parsing user input into structured formats, and facilitating low-level interactions with PostgreSQL through parameterized queries and type-specific conversions.",
+      "description_length": 744,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Query.Db",
+      "description": "The module offers database connection management, transaction control, and statement execution, alongside conversion functions for PostgreSQL-specific types like JSONB, UUID, and arrays, as well as OCaml types from CalendarLib. It works with connection descriptors, OIDs, custom data structures, and serialized values, enabling low-level interaction with database fields and result parsing. Use cases include handling complex data serialization, ensuring type consistency during queries, and managing metadata for structured database operations.",
+      "description_length": 545,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pa_bananas.Id",
+      "description": "Provides functions to retrieve a unique identifier's name and version as strings. Operates on opaque data structures representing identifiers. Used to extract metadata for logging, version checking, or system diagnostics.",
+      "description_length": 221,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_bananas.Make",
+      "description": "combines location tracking, token processing, and code parsing into a unified system for analyzing and manipulating source code. It defines types like `location`, `token_filter`, `Action.t`, and `Loc.t`, supporting operations such as merging positions, adjusting offsets, filtering tokens, and generating error diagnostics. It enables tasks like refining parser inputs, extracting values during parsing, and dynamically evaluating code fragments. Examples include tracking file positions during lexing, adjusting source spans for error messages, and parsing expressions with location-aware AST construction.",
+      "description_length": 607,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sql.Table_type",
+      "description": "Provides type constructors for SQL field types, each returning a record with `get`, `nul`, and `t` fields representing nullability and underlying data representation. Works with concrete SQL data types such as boolean, integer, string, timestamp, and arrays of 32-bit integers. Used to define schema structures in database interactions, enabling precise handling of SQL column definitions.",
+      "description_length": 389,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sql.Value",
+      "description": "Converts various SQL-compatible data types into structured value representations for use in query construction. Handles primitives like booleans, integers, floats, strings, and dates, as well as arrays and temporal types. Enables direct injection of values into SQL queries via antiquotations in user code.",
+      "description_length": 306,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sql.Sequence",
+      "description": "Generates sequences of numeric values based on a name, supporting 32-bit and 64-bit integers with distinct initialization methods. Accepts a string identifier to ensure unique sequence generation across different contexts. Used for creating guaranteed unique identifiers in database-like scenarios or distributed systems.",
+      "description_length": 321,
+      "index": 41,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sql.Op",
+      "description": "The module provides null-safe SQL operations, including comparisons, arithmetic, and logical functions, alongside aggregate functions like count, min, and max, and utilities for handling nullable types and database-typed values (numeric, string, timestamp, boolean). It supports use cases such as data validation, query optimization, and database operations like sequence value generation and timestamp tracking. Specific functionalities include null checks, option-to-nullable conversions, string hashing (e.g., MD5), and retrieval of current timestamps or sequence values.",
+      "description_length": 574,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sql.View",
+      "description": "Provides operations to construct and manipulate views with specific row types and nullability constraints. Works with row types that include nullable and non-nullable fields, enabling fine-grained access control. Used to enforce read-only access to certain fields during pattern matching and code generation.",
+      "description_length": 308,
+      "index": 43,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sql.ViewOp",
+      "description": "Performs set operations on views, including union, intersection, and difference, with variants for handling duplicates. Operates on views of elements with read-only access to results. Used to combine or filter data streams in query processing or data transformation pipelines.",
+      "description_length": 276,
+      "index": 44,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pa_macaque.CompGram",
+      "description": "manages source code positions, token transformations, and parsing entry points, offering tools to track and manipulate location data, wrap and transform parsed values, and define custom parsing logic. It includes types for location tracking, wrapped values, and entry points, with operations for merging positions, applying filters, lifting functions, and managing parsed entries. Users can adjust error messages with accurate line numbers, customize token processing, and define structured parsing workflows. Examples include generating formatted diagnostics, transforming parsed syntax trees, and setting up named parsing rules.",
+      "description_length": 630,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_macaque.Env",
+      "description": "Provides operations to manage a symbol table, including creating an empty environment, adding new identifiers, and retrieving bound variables. Works with an abstract `env` type representing a collection of identifiers. Used to track variable declarations in a compiler or interpreter context.",
+      "description_length": 292,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sql_public.Value",
+      "description": "Converts various primitive and temporal data types, including integers, floats, strings, dates, and arrays, into a tuple of internal SQL value representation and corresponding SQL type. Handles specific types like time, timestamp, and interval with dedicated conversion functions. Supports byte arrays and optional integer arrays for database interaction.",
+      "description_length": 355,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sql_public.Sequence",
+      "description": "Generates database sequence values with associated type metadata, supporting integer and custom types through explicit type conversion. Accepts input values to initialize or increment sequence counters. Used to create auto-incrementing identifiers in SQL schema definitions.",
+      "description_length": 274,
+      "index": 48,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sql_public.Op",
+      "description": "This module offers SQL-centric operations including arithmetic, comparison, logical, and aggregate functions, along with null handling and type-specific utilities. It works with tuples pairing values with SQL types and boolean-typed data structures, enabling precise manipulation of logical expressions and data transformations. Use cases include constructing complex SQL queries, validating data integrity, and performing type-safe aggregations or conversions.",
+      "description_length": 461,
+      "index": 49,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sql_public.Table_type",
+      "description": "Converts SQL atom types to SQL type representations, with options for nullable or non-nullable variants. Handles specific SQL data types such as boolean, integer, string, date, and array types. Used to construct SQL schema definitions or type mappings in database interactions.",
+      "description_length": 277,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sql_public.View",
+      "description": "Creates a view from a single database row, transforming it into a concrete view structure. Operates on SQL row data and generates a generic view representation for query execution. Used to construct views from raw database results during data retrieval.",
+      "description_length": 253,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sql_public.ViewOp",
+      "description": "Performs set operations on SQL view structures, including binary operations, unions, intersections, and differences with distinct or all rows. Operates on concrete and generic view types to combine or compare query results. Used to construct complex SQL queries by merging or filtering view outputs.",
+      "description_length": 299,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "macaque",
+      "description": "Provides functions for parsing and manipulating binary data using a flexible, type-safe approach. Works with byte sequences, bitfields, and structured data representations. Enables low-level network protocol decoding and file format analysis.",
+      "description_length": 242,
+      "index": 53,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sql_parsers",
+      "description": "The module provides parsing and conversion functions for SQL data types, enabling string-to-value transformations, record parsing, and composition of parsers for complex structures. It operates on strings, arrays, reference counters, and untyped SQL data, supporting types like booleans, integers, dates, and timestamps, with applications in processing raw SQL results and constructing type-specific values.",
+      "description_length": 407,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sql_keywords",
+      "description": "Provides functions to identify SQL reserved keywords, normalize their case for safe quoting, and generate SQL-safe identifiers. Operates on strings and a structured type representing keyword status. Used to ensure identifier consistency across SQL dialects, particularly for PostgreSQL, by normalizing reserved keywords to lowercase before quoting.",
+      "description_length": 348,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sql_base",
+      "description": "Parses SQL query results into structured data using a custom tuple format and result parser function. Handles various SQL-compatible data types including dates, timestamps, and arrays. Processes raw PostgreSQL data through specific conversion functions for use in application logic.",
+      "description_length": 282,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Query",
+      "description": "Provides monadic operations for sequencing I/O actions, including binding, lifting values, and error handling. Works with in_channel and out_channel types to perform character and binary input/output, as well as connection management. Enables structured handling of network communication by encapsulating I/O effects in a computational context.",
+      "description_length": 344,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Check",
+      "description": "Provides functions to validate database schema elements, including table and sequence definitions against expected structures. It checks column types, data constraints, and sequence properties using specific type-safe accessors. Used to ensure generated code aligns with database schema during development.",
+      "description_length": 306,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sql_builders",
+      "description": "This module enables construction of SQL queries with operations for selects, inserts, deletes, and updates, incorporating type checking, value casting, and conditional logic. It manipulates database structures like tables, views, rows, and query components such as FROM and WHERE clauses, supporting scenarios like modifying view data and ensuring schema consistency. Specific use cases include assembling structured queries and handling row-level updates with precise syntactic patterns.",
+      "description_length": 488,
+      "index": 59,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sql_printers",
+      "description": "The module provides functions to serialize SQL components like queries, views, and table definitions into string representations, along with converting database data types (e.g., bool, float, bytea) into row names. It operates on custom SQL-related types from Sql_internals, employing recursive formatting to handle structured SQL elements. Use cases include generating readable SQL output for debugging or database migration tasks, and preparing serialized data for insertion or display in applications.",
+      "description_length": 504,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_bananas",
+      "description": "manages identifier metadata and source code analysis through integrated operations on opaque identifiers and location-aware parsing. it handles string-based name and version extraction from identifiers, and supports location tracking, token filtering, and AST construction with types like `location`, `token_filter`, and `Action.t`. it enables tasks such as logging identifier versions, adjusting source spans for error messages, and parsing expressions with positional awareness. examples include extracting metadata for diagnostics and refining parser inputs with location-aware token processing.",
+      "description_length": 598,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_macaque",
+      "description": "Tracks source code positions, token transformations, and parsing logic, with tools to manage location data, wrap parsed values, and define custom entry points. Supports operations like merging positions, lifting functions, and filtering tokens, enabling precise error reporting and structured parsing workflows. Maintains an abstract environment type for managing symbol tables, allowing the addition and lookup of identifiers. Users can generate diagnostics with accurate line numbers, transform syntax trees, and track variable declarations during compilation.",
+      "description_length": 562,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sql_public",
+      "description": "Converts primitive and temporal data types into SQL-compatible representations, generates sequence values with type metadata, and supports SQL operations like arithmetic, comparison, and aggregation. Handles nullable types, constructs views from database rows, and performs set operations on view structures. It enables precise data manipulation, schema definition, and complex query building. Examples include converting dates to SQL types, generating auto-incrementing IDs, and combining query results via set operations.",
+      "description_length": 523,
+      "index": 63,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 79,
+    "meaningful_modules": 64,
+    "filtered_empty_modules": 15,
+    "retention_rate": 0.810126582278481
+  },
+  "statistics": {
+    "max_description_length": 744,
+    "min_description_length": 199,
+    "avg_description_length": 395.34375,
+    "embedding_file_size_mb": 0.23291492462158203
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "package": "tip-parser",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 4,
+  "creation_timestamp": "2025-06-18T16:30:36.511172",
+  "modules": [
+    {
+      "module_path": "tip-parser",
+      "description": "Parses structured text documents according to the TIP format, extracting sections, headings, and content blocks. It processes strings and produces an abstract syntax tree with nodes for headers, paragraphs, and lists. Used to convert TIP-formatted documentation into a structured representation for further processing or rendering.",
+      "description_length": 331,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tip_parser",
+      "description": "Parses lexical tokens into abstract syntax tree nodes for types, terms, and statements using a provided lexer. Processes input streams to construct lists of statements or individual statements based on grammar rules. Designed for interpreting structured input in a theorem proving context.",
+      "description_length": 289,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tip_util",
+      "description": "Parses input from a file or channel into a list of abstract syntax tree nodes representing Tip language statements. Handles both error-free and error-prone scenarios by returning either a successful result or an error message. Accepts file paths or open input channels as input sources.",
+      "description_length": 286,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tip_loc",
+      "description": "Represents source code locations with file, start, and end positions, supporting creation from strings and positions, equality checks, and pretty-printing. Works with lexing positions and file paths, enabling precise error reporting and source tracking. Provides methods to convert between lexing buffers and location records, and to format or serialize locations as strings.",
+      "description_length": 375,
+      "index": 3,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 9,
+    "meaningful_modules": 4,
+    "filtered_empty_modules": 5,
+    "retention_rate": 0.4444444444444444
+  },
+  "statistics": {
+    "max_description_length": 375,
+    "min_description_length": 286,
+    "avg_description_length": 320.25,
+    "embedding_file_size_mb": 0.014959335327148438
+  }
+}

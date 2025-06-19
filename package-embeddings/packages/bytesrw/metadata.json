@@ -1,0 +1,126 @@
+{
+  "package": "bytesrw",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 15,
+  "creation_timestamp": "2025-06-18T16:34:17.527716",
+  "modules": [
+    {
+      "module_path": "Bytesrw.Bytes.Slice",
+      "description": "The module provides functions for creating, manipulating, and inspecting byte slices within `Bytes.t` values, including handling the end-of-data marker `eod`. It supports operations on bytes, bigbytes, and strings, enabling safe range extraction, type conversion, and formatting while avoiding errors through `eod` returns. Use cases include processing data streams, efficiently managing byte ranges in network protocols, or parsing structured binary formats.",
+      "description_length": 459,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bytesrw.Bytes.Stream",
+      "description": "Provides functions to create and handle errors in byte stream processing, including converting errors to human-readable messages and results. Works with custom error types, format strings, and position tracking. Used to validate stream formats and enforce size limits during reading or writing.",
+      "description_length": 294,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bytesrw.Bytes.Reader",
+      "description": "The module offers slice-by-slice byte stream processing with operations like reading, pushing back, skipping, and filtering, enabling precise control over sequential data traversal. It manipulates byte slices, stream readers, and input channels, supporting tasks such as protocol parsing, data validation, and stream composition. Specific use cases include handling variable-length records, reprocessing segments of input, and converting byte sequences into structured outputs.",
+      "description_length": 477,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bytesrw.Bytes.Writer",
+      "description": "Writes byte slices to a stream, handling end-of-data markers and managing slice lengths. Operates on `Slice.t` and `Stream.pos`, supporting direct byte writes and integration with buffers, channels, and readers. Used to construct writers that log, limit, or redirect byte streams during data processing.",
+      "description_length": 303,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bytesrw.Bytes",
+      "description": "manages byte stream operations with slice-based processing, error handling, and writing capabilities. it works with byte slices, streams, and error types, offering read, write, skip, and error conversion functions. it enables precise control over data traversal, validation, and formatting in network protocols or binary parsing. examples include parsing variable-length records, logging byte sequences, and handling stream boundaries safely.",
+      "description_length": 442,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bytesrw_zlib.Deflate",
+      "description": "Filters byte reader and writer streams to compress or decompress data using the deflate algorithm. Operates on byte streams through reader and writer filters, handling compression levels and leftover data control. Decompression reads process incoming data into a decompressed stream, while compression writes encode outgoing data into a compressed stream.",
+      "description_length": 355,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bytesrw_zlib.Zlib",
+      "description": "Filters byte reader and writer streams to compress or decompress data using zlib. It handles raw byte sequences, applying compression levels or managing decompression with options for leftover data. Used to process compressed data streams in applications like file I/O or network protocols.",
+      "description_length": 290,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bytesrw_zlib.Gzip",
+      "description": "Filters byte reader and writer streams to compress or decompress data as single gzip members or concatenated sequences. Operates on byte streams using reader and writer filters, handling gzip headers and footers automatically. Decompression can process multiple members or a single one, while compression bundles writes into a single gzip member.",
+      "description_length": 346,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bytesrw_utf.Encoding",
+      "description": "Encodes and decodes character sets, converting between internal representations and IANA standard names. It handles types that include standard encodings and UTF-16, providing formatted output for debugging or logging. This supports applications needing precise character set identification and display, such as network protocols or data serialization.",
+      "description_length": 352,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "bytesrw",
+      "description": "Provides functions for reading from and writing to byte streams with fine-grained control over buffer management and resource allocation. Operates on byte arrays and input/output channels, supporting asynchronous data processing. Enables efficient handling of large binary data in network protocols and file serialization.",
+      "description_length": 322,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bytesrw_unix",
+      "description": "Provides functions to create byte stream readers and writers from Unix file descriptors, using configurable slice sizes for I/O operations. Operates on Unix file descriptors and byte streams, supporting retry logic for interruption errors during read and write operations. Used to efficiently handle low-level I/O with fine-grained control over buffer sizes and file positions.",
+      "description_length": 377,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bytesrw",
+      "description": "extends the Stdlib.Bytes module with stream-based byte processing, enabling efficient handling of byte slices, streams, and error states. it provides operations for reading, writing, skipping, and converting errors, along with tools for managing data boundaries and formatting. users can parse variable-length records, log byte sequences, or safely handle network protocol data. key types include byte slices, streams, and error representations, with functions for precise data manipulation.",
+      "description_length": 491,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bytesrw_hex",
+      "description": "Converts hexadecimal strings to binary strings and validates their length, with options for case-insensitive input and lowercase output. Processes raw byte sequences, ensuring correct formatting and error handling for length constraints. Formats byte sequences as lowercase hexadecimal strings for display or logging.",
+      "description_length": 317,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bytesrw_zlib",
+      "description": "Provides compression and decompression capabilities for deflate, zlib, and gzip formats using byte stream filters. Supports operations on readers and writers with configurable slice lengths and position tracking. Can handle raw deflate data, zlib-wrapped streams, and gzip files, including multi-member decompression. Examples include compressing data for network transmission, decompressing zlib-encoded files, and reading/writing gzip-compressed logs.",
+      "description_length": 453,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bytesrw_utf",
+      "description": "Handles UTF encoding and decoding with support for character set identification, conversion, and debugging output. Provides types for representing encodings and operations to guess, convert, and format them. Enables precise control over UTF-8 decoding with position tracking and writing, useful for processing streams in network or file operations. Examples include identifying the encoding of a byte stream or generating human-readable logs of encoding details.",
+      "description_length": 462,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 15,
+    "meaningful_modules": 15,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 491,
+    "min_description_length": 290,
+    "avg_description_length": 382.6666666666667,
+    "embedding_file_size_mb": 0.05494880676269531
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "package": "rock",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 13,
+  "creation_timestamp": "2025-06-18T16:33:01.855832",
+  "modules": [
+    {
+      "module_path": "Rock.Context.Key",
+      "description": "Provides operations to create and inspect keys with associated metadata, and to generate existential keys for type-erased comparisons. Works with typed information structures and existential key types. Used to implement filtering and ordering logic based on key identity and metadata.",
+      "description_length": 284,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rock.App",
+      "description": "Provides operations to construct and modify a handler pipeline, including adding middleware components and initializing with a base handler. Works with handler objects and middleware structures to define request processing flows. Used to build modular request handlers by stacking middleware for logging, authentication, or routing.",
+      "description_length": 332,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rock.Context",
+      "description": "Manages heterogeneous values through key-based access, supporting typed and type-erased operations. Key metadata and existential keys enable flexible filtering and ordering. Supports creating, inspecting, and comparing keys across different types. Can be used to implement dynamic query systems or sorted data structures based on key properties.",
+      "description_length": 345,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rock.Request",
+      "description": "Creates HTTP requests with specified methods, versions, headers, bodies, and contexts. Accepts target URLs and configures request properties through optional parameters. Supports GET, POST, PUT, and DELETE operations with customizable request components.",
+      "description_length": 254,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rock.Response",
+      "description": "Creates an HTTP response with specified version, status, reason, headers, body, and context. Operates on types such as Httpaf.Version.t, Httpaf.Status.t, Httpaf.Headers.t, and Body.t. Used to construct structured HTTP replies in web server implementations.",
+      "description_length": 256,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rock.Body",
+      "description": "Provides functions to construct HTTP bodies from strings, bigstrings, or streams, and to convert between body representations. Works with string Lwt streams, bigstrings, and opaque body types. Used to serialize request bodies for transmission or to process incoming response data incrementally.",
+      "description_length": 294,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rock.Service",
+      "description": "Handles asynchronous request-response interactions by defining functions that take a request and return a response wrapped in an Lwt promise. Operates on request and response types specified at instantiation. Used to implement network endpoints, background task handlers, and event-driven processing pipelines.",
+      "description_length": 310,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rock.Filter",
+      "description": "Transforms services by composing filters that modify request and response types, and applies a list of simple filters to a service. Operates on service types with request and response parameters, and filter functions that wrap services. Used to chain request-response transformations in a pipeline or apply multiple filters to a single service.",
+      "description_length": 344,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rock.Handler",
+      "description": "Handles HTTP requests by processing incoming `Request.t` objects and generating corresponding `Response.t` instances. It supports routing, middleware execution, and response formatting through a structured service interface. Used to manage user authentication, API endpoint responses, and request validation within a web application.",
+      "description_length": 333,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rock.Middleware",
+      "description": "Provides functions to create and apply filters that modify request and response handling in a structured way. Operates on Request.t and Response.t types, applying transformations through a handler pipeline. Used to inject logging, authentication, or routing logic into HTTP processing flows.",
+      "description_length": 291,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rock.Server_connection",
+      "description": "Handles HTTP server connections by executing a request handler and optional error handler, returning a Lwt thread. Processes HTTP requests and responses using Httpaf's request and response types, with support for custom error handling. Used to start and manage server instances within a Rock application, allowing controlled termination via an early response.",
+      "description_length": 359,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "rock",
+      "description": "Provides functions to define and compose HTTP services with request-response processing and filter chains. Operates on request and response records, along with service and filter type aliases. Enables building modular HTTP handlers with middleware-like transformations for logging, authentication, and error routing.",
+      "description_length": 316,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rock",
+      "description": "Provides a structured framework for building HTTP services by combining request handling, response generation, and middleware composition. It supports creating and manipulating requests and responses with specific types, managing key-based data, and defining asynchronous processing pipelines. Functions enable constructing bodies, applying filters, and routing requests through modular handlers. Examples include logging requests, authenticating users, and generating HTTP replies with custom headers and status codes.",
+      "description_length": 519,
+      "index": 12,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 13,
+    "meaningful_modules": 13,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 519,
+    "min_description_length": 254,
+    "avg_description_length": 325.9230769230769,
+    "embedding_file_size_mb": 0.047684669494628906
+  }
+}

@@ -1,0 +1,469 @@
+{
+  "package": "mrmime",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 64,
+  "creation_timestamp": "2025-06-18T16:45:40.444985",
+  "modules": [
+    {
+      "module_path": "Mrmime.Content_type.Parameters.Map",
+      "description": "This module offers operations for constructing, modifying, and querying associative collections, including insertion, deletion, lookup, and traversal, with support for custom merging and list-valued entries. It works with key-value maps, particularly those using string keys, enabling transformations, filtering, and conversions between maps, lists, and sequences. Use cases include data transformation pipelines, configuration management, and processing structured datasets requiring efficient key-based access and manipulation.",
+      "description_length": 529,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.MessageID.Domain",
+      "description": "Provides functions to construct and validate email domains according to RFC standards, including parsing atoms and literals, and converting domain structures to strings. Works with atom, literal, and domain types, supporting both labeled domains and literal strings. Used to generate properly formatted email domain components, such as creating \"isomorphis.me\" from a list of atoms or wrapping a string in brackets as \"[x25519]\".",
+      "description_length": 429,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.MessageID.Decoder",
+      "description": "Extracts a 32-bit unsigned integer from a binary stream, parsing it as a network message identifier. Operates on a stream of bytes, advancing the parser state as it reads. Used to decode protocol headers where message IDs are encoded in a fixed 4-byte format.",
+      "description_length": 259,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mrmime.MessageID.Encoder",
+      "description": "Encodes domain names and message IDs into formatted strings using custom pretty-printing logic. Works with domain name strings and message ID values, transforming them into human-readable representations. Used to generate consistent output for logging and debugging purposes.",
+      "description_length": 275,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Mailbox.Phrase",
+      "description": "Provides functions to construct and manipulate email phrases, including `w` for safe word creation, `e` for encoded words with specified encoding, and `v` to build a valid phrase from a list of elements. Works with `elt` types representing words, encoded words, and dots, ensuring compliance with email standards. Used to generate properly formatted recipient display names with support for UTF-8 and special character encoding.",
+      "description_length": 428,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mrmime.Mailbox.Literal_domain",
+      "description": "Provides functions to create and validate literal domains based on IPv4, IPv6, or custom extensions, ensuring compliance with RFC 5321. Works with IP address types from the Ipaddr library and string tuples for custom domains. Used to construct email address literals in protocols requiring strict domain formatting.",
+      "description_length": 315,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Mailbox.Domain",
+      "description": "Provides functions to create and validate email domains, including atoms, IP addresses, and literal domains. Works with types like `atom`, `literal`, `ipv4`, `ipv6`, and `extension` to represent different domain formats. Constructs domains from lists of atoms, IP addresses, or literal strings, ensuring compliance with RFC standards.",
+      "description_length": 334,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Mailbox.Local",
+      "description": "Produces a local part from a list of words, handling escaping, validation, and encoding according to RFC standards. Works with lists of strings and Emile.word types, supporting both atoms and quoted strings. Converts between internal representations and email-compatible strings, ensuring valid email local parts.",
+      "description_length": 313,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mrmime.Mailbox.Decoder",
+      "description": "Handles parsing of email mailbox structures and lists of mailboxes from input streams. Operates on raw byte sequences and produces structured mailbox representations. Used to extract and validate email sender and recipient information from protocol data.",
+      "description_length": 254,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Mailbox.Encoder",
+      "description": "Encodes Emile types into pretty-printed representations using specific formatting rules. It handles word, phrase, local, and mailbox data structures with tailored serialization. Used to generate human-readable output for email-related data in a structured format.",
+      "description_length": 263,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Unstructured.Decoder",
+      "description": "Provides a parser that generates an unstructured data representation from input, using a specific parsing combinator. Works with the `Unstrctrd.t` type to model loosely defined data formats. Used to process raw byte streams into a flexible in-memory structure for further analysis.",
+      "description_length": 281,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mrmime.Unstructured.Craft",
+      "description": "Generates lists of elements from integers and strings, converting them into structured representations. Processes and combines sequences of these elements into compiled forms for efficient manipulation. Used to construct and merge complex data structures in text processing workflows.",
+      "description_length": 284,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mrmime.Unstructured.Encoder",
+      "description": "Encodes elements into a structured format using a custom `elt` type, with support for unstructured lists of elements. Handles Unicode characters through the `uchar` type and manages partial or complete encoding outcomes via `ok_or_partial`. Processes data by transforming it into a printable representation or discarding it entirely with a no-op function.",
+      "description_length": 355,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Address.Decoder",
+      "description": "Extracts a single address from a stream of bytes and parses a list of addresses, both using a custom parser type. Works with byte streams and lists of parsed address data. Used to decode network protocol headers and process multiple endpoint addresses in a single parse operation.",
+      "description_length": 280,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mrmime.Address.Encoder",
+      "description": "Encodes a single address and a list of addresses into a formatted string representation. Works with the `t` type, which represents address data. Used to generate human-readable outputs for network or data serialization contexts.",
+      "description_length": 228,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Unstructured_with_encoded.Decoder",
+      "description": "Parses unstructured content including encoded words using a single-use Angstrom parser. Operates on byte sequences and produces a structured output type. Used to process raw input streams where text may contain escaped or encoded characters.",
+      "description_length": 241,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Unstructured_with_encoded.Encoder",
+      "description": "Encodes values into unstructured text with encoded words, preserving 7-bit compatibility when non-ASCII characters are confined to encoded segments. Works with the `t` type and `Prettym.t` for formatted output. Used to generate email headers that comply with ASCII constraints while including international characters.",
+      "description_length": 318,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mrmime.Unstructured_with_encoded.Craft",
+      "description": "Provides functions to encode and construct text elements using specific encodings, with operations to add spaces, insert literal text, and combine lists of elements. Works with encoded words, strings, and lists of elements representing text fragments. Used to build formatted field content by assembling encoded and literal text segments.",
+      "description_length": 338,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Iana.Map",
+      "description": "The module provides operations for creating, modifying, and querying associative maps with string keys and polymorphic values, including insertion, deletion, lookup, traversal, and transformation. It supports sequence-based construction, merging of entries, and complex data processing through filtering, folding, and conversion between maps and lists or sequences. Use cases include dynamic data management, handling list-valued entries, and combining multiple data sources with custom merge logic.",
+      "description_length": 499,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Iana.Set",
+      "description": "This module offers operations for constructing, modifying, and querying sets, including union, intersection, element insertion, deletion, and membership checks, while supporting transformations like mapping and folding over elements. It works with ordered collections of generic elements and provides sequence-based utilities for converting sets to reversed lists, populating sets from sequences, and handling string-oriented data. Use cases include dynamic data management, filtering large datasets, and integrating set operations with stream processing workflows.",
+      "description_length": 565,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mrmime.Header.Decoder",
+      "description": "Extracts and validates the header section of a binary format using a map of field names and their witnesses, returning a parser that produces a structured header. Operates on a map of field names to witnesses and a parser type for the overall structure. Used to parse and enforce the correct layout of a file's initial metadata section.",
+      "description_length": 336,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mrmime.Header.Encoder",
+      "description": "Encodes and decodes binary data using a set of low-level bit manipulation functions. It operates on byte arrays and bit streams, allowing precise control over data serialization. Used to generate protocol buffers and binary file headers with custom encoding rules.",
+      "description_length": 264,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mrmime.Encoded_word.Decoder",
+      "description": "Provides a parser that extracts a single encoded word from a stream, using a custom type `t` to represent encoded data. Operates on byte sequences and string representations of encoded content. Used to decode MIME-encoded headers in email processing workflows.",
+      "description_length": 260,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mrmime.Encoded_word.Encoder",
+      "description": "Encodes a custom type into a string representation using a predefined mapping. It operates on a specific domain model with enumerated values and structured data. Used to generate human-readable output from internal state in a logging system.",
+      "description_length": 241,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Field.Decoder",
+      "description": "Extracts specific fields from structured data using a map of field names, supporting custom parsing logic through a witness parameter. Operates on field names and parser functions to decode nested or tagged data formats. Used to parse protocol buffers or similar structured binary formats by selecting and decoding individual fields.",
+      "description_length": 333,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Field.Encoder",
+      "description": "Encodes structured data into a formatted output using a custom pretty-printing interface. It operates on fields defined with the Prettym module, allowing precise control over how each field is rendered. This is used to generate human-readable representations of complex data structures in logging and debugging contexts.",
+      "description_length": 320,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Date.Day",
+      "description": "Provides functions to create and manipulate day values based on RFC standards. Works with a custom type `t` representing days of the week, supporting conversions to and from strings, equality checks, and pretty printing. Used to validate and process day names in email headers or date parsing scenarios.",
+      "description_length": 303,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Date.Month",
+      "description": "This module offers operations for converting between month names, integers, and RFC-compliant string representations, including case-sensitive parsing and safe/unsafe conversion functions. It works with a custom type `t` to encapsulate month values as defined by RFC 822/2822/5322 standards, enabling precise comparisons via the `equal` function. Use cases include validating email headers or formatting dates in protocols requiring strict RFC month syntax.",
+      "description_length": 457,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mrmime.Date.Zone",
+      "description": "Provides functions to create and manipulate time zone representations based on RFC standards. Works with a custom type `t` representing time zones, and supports parsing from strings, converting to strings, and comparing zones. Includes specific zone constants like UTC, GMT, EST, PDT, and functions to construct zones from offsets or military time zone characters.",
+      "description_length": 364,
+      "index": 28,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mrmime.Date.Decoder",
+      "description": "Parses date and time strings into OCaml's date and time representations using a custom parser combinator. Works with string inputs and returns parsed time values. Used to convert log file timestamps into structured time data for analysis.",
+      "description_length": 238,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Date.Encoder",
+      "description": "Encodes date values into a formatted string representation using a predefined schema. It operates on OCaml's `Date.t` type and integrates with the Prettym library for output formatting. This function is used to generate human-readable date strings in log entries and API responses.",
+      "description_length": 281,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Field_name.Decoder",
+      "description": "Extracts the name of a field from a parsing context. Operates on a custom type representing parsed data structures. Used to retrieve field identifiers during schema validation.",
+      "description_length": 176,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Field_name.Encoder",
+      "description": "Encodes field names into a formatted string representation using a custom pretty-printing interface. It operates on a type `t` that represents structured data fields and produces human-readable output. This is used to generate consistent naming conventions in generated code or configuration files.",
+      "description_length": 298,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Field_name.Map",
+      "description": "The module provides functions for manipulating ordered maps with specific key types and generic value types, supporting operations like insertion, deletion, querying, merging, and key-based filtering. It includes sequence-based methods for constructing maps and iterating over subsets, enabling efficient data processing and ordered traversal for applications such as dynamic data management or sorted dataset operations.",
+      "description_length": 421,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Content_encoding.Decoder",
+      "description": "Provides a parsing mechanism for binary data streams using a custom stateful parser. Operates on a type `t` representing parsed data and a parser state. Used to decode network protocol messages by applying a sequence of byte-level transformations.",
+      "description_length": 247,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mrmime.Content_encoding.Encoder",
+      "description": "Encodes abstract syntax trees into human-readable string representations using a custom pretty-printing mechanism. It operates on typed AST nodes and generates formatted output suitable for debugging or code generation. The mechanism supports indentation and syntax highlighting for structured data.",
+      "description_length": 299,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Content_type.Type",
+      "description": "This module provides operations for handling MIME type representations, including parsing, validation, comparison, and serialization, along with custom type extensions for structured data manipulation through pattern matching and encoding. It works with IETF-defined MIME types, user-defined types, and structured data constructs, enabling tasks like content-type validation and data format conversion. Specific use cases include ensuring correct MIME type handling in network protocols and encoding complex data structures for storage or transmission.",
+      "description_length": 552,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Content_type.Subtype",
+      "description": "Provides functions to create and validate sub-type identifiers based on IETF standards, IANA databases, and user-defined extensions. Works with the abstract type `t` representing sub-type values, supporting comparison, pretty-printing, and string conversion. Used to enforce correct sub-type formatting in protocols like MIME, ensuring compatibility with RFC 2045 and external registries.",
+      "description_length": 388,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Content_type.Parameters",
+      "description": "manages key-value mappings with string keys, supporting insertion, deletion, lookup, and custom merging, while enabling conversions between maps, lists, and sequences. it provides operations for transforming and filtering data, making it suitable for configuration handling and structured data processing. examples include merging multiple configuration maps, extracting specific entries, and converting map contents to lists for further processing. it facilitates efficient manipulation of associative data structures with flexible query and modification capabilities.",
+      "description_length": 569,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Content_type.Decoder",
+      "description": "Parses type information from input streams using a custom type representation. Extracts subtypes based on provided type contexts and decodes structured content data. Designed for low-level binary format interpretation and protocol-specific data reconstruction.",
+      "description_length": 260,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Content_type.Encoder",
+      "description": "Encodes type information, subtype details, and content type data into human-readable formats. It operates on Type.t, Subtype.t, and t data structures. Used to generate debug outputs and API documentation with structured type representations.",
+      "description_length": 241,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Group.Phrase",
+      "description": "Provides operations to create and manipulate phrase elements from strings, encoded words, and other structured data. Works with types like `elt`, `string`, and custom encoded word representations. Used to construct email-compatible phrases, convert between encoding formats, and ensure valid phrase representations in message parsing and generation.",
+      "description_length": 349,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Group.Decoder",
+      "description": "Provides operations to parse and group input streams into structured data using a custom parser type. Works with input streams and produces grouped results based on defined parsing rules. Used to process binary data by breaking it into labeled segments during decoding.",
+      "description_length": 269,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Group.Encoder",
+      "description": "Encodes structured data into a formatted string representation using a custom pretty-printing engine. It operates on abstract syntax trees and transformation rules defined in the module's type definitions. The group function applies a specific formatting strategy to nested data elements, ensuring consistent indentation and spacing.",
+      "description_length": 333,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Iana",
+      "description": "manages associative maps with string keys and polymorphic values, enabling insertion, deletion, lookup, and complex transformations; also handles ordered sets of generic elements with operations like union, intersection, and membership checks, supporting sequence-based construction and conversion. It allows dynamic data manipulation, merging of multiple data sources, and integration with stream processing through filtering, folding, and mapping. Examples include building configuration maps from sequences, combining sets of identifiers, and transforming data structures for analysis.",
+      "description_length": 588,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Location",
+      "description": "This module handles operations for managing byte-range location data, including constructing, querying, and merging ranges, as well as extracting positional metadata. It works with annotated values tagged with location information, enabling precise tracking of source positions in processed data. Use cases include source code analysis, error reporting, and debugging, where accurate positional tracking is critical.",
+      "description_length": 416,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Content_encoding",
+      "description": "Parses binary data streams into structured representations using a stateful parser, converting raw bytes into a typed `t` structure. Generates human-readable outputs from abstract syntax trees, applying indentation and formatting for clarity. Operations include decoding network messages and producing debuggable string representations. Examples include parsing protocol headers and rendering ASTs for code inspection.",
+      "description_length": 418,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.MessageID",
+      "description": "Constructs and validates email domains using RFC-compliant parsing of atoms and literals, converts domain structures to strings, and handles both labeled and literal formats. Extracts 32-bit message IDs from binary streams, advancing the parser state as it reads fixed-length network data. Formats domain names and message IDs into human-readable strings for logging and debugging. Examples include generating \"isomorphis.me\" from atoms, decoding a 4-byte message ID, and pretty-printing \"[x25519]\" or \"0x1a2b3c4d\".",
+      "description_length": 515,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Content_type",
+      "description": "Handles MIME type parsing, validation, and serialization, along with sub-type management and key-value mapping operations. It supports Type.t, Subtype.t, and map data structures, enabling tasks like content validation, data conversion, and configuration merging. Functions include parsing from streams, encoding to readable formats, and manipulating structured data through pattern matching and custom transformations. Examples include validating HTTP content types, generating documentation, and converting configuration maps to lists.",
+      "description_length": 536,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Encoded_word",
+      "description": "Extracts and encodes encoded words from byte streams or internal state, using a custom type to represent data. Supports parsing MIME-encoded headers and generating human-readable logs through predefined mappings. Operations include decoding byte sequences into structured data and encoding internal states into strings. Can be used to process email headers or translate application states into log entries.",
+      "description_length": 406,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Mailbox",
+      "description": "Constructs and validates email addresses, phrases, and mailboxes using specialized types and encoding rules. Supports word creation, domain validation, local part generation, and pretty-printing of email data. Functions like `w`, `e`, and `v` build safe phrases, while domain and IP validation ensure RFC compliance. Can generate display names, parse mailbox lists, and serialize email components into readable formats.",
+      "description_length": 419,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Date",
+      "description": "Encapsulates RFC-compliant date and time handling through custom types for days, months, and time zones, enabling precise manipulation and validation. Supports parsing and formatting of date strings, with functions to convert between representations, compare values, and generate human-readable outputs. Day, month, and time zone types allow for accurate processing of email headers, log timestamps, and protocol-specific date formats. Examples include validating \"Mon\" as a day name, converting \"March\" to its numeric equivalent, and parsing \"2023-10-05 14:30:00 UTC\" into a structured time value.",
+      "description_length": 598,
+      "index": 51,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mrmime.Field",
+      "description": "Encodes and extracts structured data using field-specific parsing and pretty-printing. Supports decoding nested formats by selecting fields with custom parsers and rendering fields with defined formatting rules. Can parse protocol buffers by extracting individual fields and generate debug logs with controlled output. Operates on field names and pretty-printing interfaces to transform and represent data accurately.",
+      "description_length": 417,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Field_name",
+      "description": "Extracts field identifiers from parsed data, formats them into readable strings, and manages ordered mappings of field names with flexible operations. It handles custom types for structured data, enabling retrieval, display, and manipulation of field names in various contexts. Users can validate schemas, generate consistent naming, and efficiently manage dynamic datasets with ordered key-value pairs. Examples include extracting identifiers during validation, producing human-readable outputs for configuration, and building sorted maps for data traversal.",
+      "description_length": 559,
+      "index": 53,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mrmime.Header",
+      "description": "Extracts and validates binary headers by mapping field names to witnesses, producing a structured result through a custom parser. Handles low-level bit manipulation for encoding and decoding byte arrays and bit streams, enabling precise control over data serialization. Supports generating protocol buffers and custom binary headers with defined layouts. Examples include parsing file metadata with enforced field constraints and constructing binary messages with specific bit-level formatting.",
+      "description_length": 494,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Address",
+      "description": "Processes byte streams and lists of address data, extracting and parsing addresses using a custom parser. Supports encoding of address data into string representations for readable output. Handles both single and multiple address operations, enabling efficient decoding and formatting in network-related tasks. Can decode protocol headers and generate serialized address strings for logging or transmission.",
+      "description_length": 407,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Group",
+      "description": "Handles structured data creation, parsing, and formatting through integrated operations. Processes `elt`, `string`, and encoded word types to build email phrases, parses input streams into labeled segments, and formats abstract syntax trees with consistent layout. Supports conversion between encoding formats, segmentation of binary data, and nested data serialization. Enables precise control over message construction, data decoding, and readable output generation.",
+      "description_length": 468,
+      "index": 56,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mrmime.Unstructured",
+      "description": "Processes input streams into flexible in-memory structures using `Unstrctrd.t`, converts sequences of integers and strings into structured forms, and encodes elements into printable representations with support for Unicode and partial outcomes. Key operations include parsing, structuring, and encoding, with types such as `Unstrctrd.t`, `elt`, `uchar`, and `ok_or_partial`. It enables tasks like transforming raw data into analyzable formats, merging text elements into coherent structures, and handling encoding errors gracefully. Examples include parsing binary logs, building hierarchical text data, and safely converting Unicode content.",
+      "description_length": 642,
+      "index": 57,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mrmime.Unstructured_with_encoded",
+      "description": "Processes byte sequences into structured unstructured text, handling encoded words for 7-bit compatibility in email headers. Supports encoding and decoding between ASCII and UTF-8, with operations to construct and manipulate text elements using encoded segments. Can parse raw input with escaped characters and generate headers containing international characters. Examples include decoding a subject line with encoded words and encoding a UTF-8 string into an ASCII-compliant header.",
+      "description_length": 484,
+      "index": 58,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mrmime.Mail",
+      "description": "Parses RFC 5322 email messages, handling both header and body content with customizable body storage. Supports two body parsing modes: one that accumulates body data into a string and another that streams content to a provided emitter function. Processes mail data through a parser that can integrate with external storage mechanisms via a custom emitter interface.",
+      "description_length": 365,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Hd",
+      "description": "Provides functions to create and manage a decoder that processes structured data fields, using a map of field names to their expected value types. It handles parsing operations that return specific states like extracted fields, pending input, or errors, and allows feeding input to the decoder in chunks. Works with custom types for decoding states and a decoder structure that tracks field expectations and input progress.",
+      "description_length": 423,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime.Mt",
+      "description": "Generates and manipulates MIME parts and multipart messages, handling encoding schemes like base64, quoted-printable, and 7bit/8bit. Processes streams of data with line-per-line semantics and constructs multipart messages with customizable headers and boundaries. Converts between parts, multipart structures, and mail objects, and outputs mail as a buffer stream.",
+      "description_length": 364,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "mrmime",
+      "description": "Parses and generates email messages using formats defined in RFC822 and RFC2822, handling headers, body content, and MIME structures. It processes raw byte streams and constructs abstract syntax trees representing message components. Used to validate incoming email data, extract headers, and construct outgoing messages with proper encoding.",
+      "description_length": 342,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mrmime",
+      "description": "Encapsulates email and MIME processing through a suite of modules that manage structured data, headers, and binary streams. It handles associative maps, byte ranges, parsers for binary and text data, and RFC-compliant email components like domains, addresses, and dates. Operations include parsing, validating, formatting, and transforming data, with examples such as decoding message IDs, generating human-readable headers, and constructing multipart messages. Key types include `t`, `Unstrctrd.t`, `Type.t`, and custom parsers for precise data manipulation.",
+      "description_length": 559,
+      "index": 63,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 64,
+    "meaningful_modules": 64,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 642,
+    "min_description_length": 176,
+    "avg_description_length": 375.109375,
+    "embedding_file_size_mb": 0.23288249969482422
+  }
+}

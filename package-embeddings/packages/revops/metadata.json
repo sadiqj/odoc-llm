@@ -1,0 +1,126 @@
+{
+  "package": "revops",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 15,
+  "creation_timestamp": "2025-06-18T16:33:51.851514",
+  "modules": [
+    {
+      "module_path": "Revops_fn.Make.M",
+      "description": "Performs monadic binding and lifting, allowing sequential composition of operations that produce values in a context. Operates on values wrapped in a monadic structure, enabling safe error handling and resource management. Used to chain asynchronous or effectful computations, such as database queries or file I/O, while ensuring cleanup actions are executed.",
+      "description_length": 359,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Revops_fn.Make.Oprev",
+      "description": "Creates an operation that executes a given action and returns a result, with support for asynchronous side effects. Operates on monadic values and functions that return monadic results. Used to model and compose stateful computations in a controlled, sequential manner.",
+      "description_length": 269,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Revops_fn.Make.Revop",
+      "description": "Provides operations to reverse a list, apply a function to each element in reverse order, and construct a list by appending elements in reverse. Works with the 'a t type, which represents a reversed list structure. Used to efficiently process and transform data streams where reverse traversal is required, such as in parsing or stream inversion.",
+      "description_length": 346,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Revops_fn.Make",
+      "description": "Performs sequential computation with error handling, chaining operations that return wrapped values. Operates on values of type 'a t, supporting monadic binding and exception-safe resource management. Enables safe execution of side-effecting actions with guaranteed cleanup.",
+      "description_length": 274,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Revops.M",
+      "description": "Performs monadic binding and lifting, allowing sequential composition of operations that produce values wrapped in a type constructor. Operates on values of type 'a t, where t is a type alias for 'a. Used to manage side effects with guaranteed cleanup via the protect function.",
+      "description_length": 277,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Revops.Oprev",
+      "description": "Provides a mechanism to create and manage stateful operations that encapsulate side-effecting computations. Works with monadic types and stateful handlers, enabling controlled execution and cancellation. Used to implement interactive workflows and event-driven processes with precise control over execution flow.",
+      "description_length": 312,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Revops.Revop",
+      "description": "Provides operations to reverse a list, apply a function to each element in reverse order, and construct a new list by appending elements in reverse. Works with the 'a t type, which represents a list-like structure. Used to process and transform sequences in reverse, such as reversing input streams or applying transformations in reverse order.",
+      "description_length": 344,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Revops_intf.M",
+      "description": "Performs monadic binding and lifting, allowing sequential composition of operations that produce values in a context. Operates on values of type 'a t, supporting error handling through a protective execution mechanism. Used to manage resource acquisition and release, such as file handles or network connections, ensuring cleanup after operations.",
+      "description_length": 347,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Revops_intf.Oprev",
+      "description": "Provides a mechanism to create and manage stateful operations that encapsulate side effects, using a producer function to generate initial values and a consumer function to process them. Operates on monadic types, specifically `M.t`, and returns a value of type `'a t`. Used to sequence I/O operations in a controlled manner, such as handling user input and updating application state.",
+      "description_length": 385,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Revops_intf.Revop",
+      "description": "Provides operations to reverse a list, extract the head and tail of a reversed list, and check if the structure is empty. Works with the polymorphic list-like type 'a t. Used to efficiently process and manipulate sequences in reverse order, such as implementing stack-like behavior or reversing input streams.",
+      "description_length": 309,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "revops",
+      "description": "Provides functions for reversing lists, swapping elements in place, and rotating sequences. Operates on arrays, lists, and strings with in-place or new-allocated transformations. Used to reorganize data structures for processing, such as reversing input streams or preparing data for specific algorithms.",
+      "description_length": 304,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Revops_intf",
+      "description": "Combines monadic composition, stateful I/O handling, and list reversal capabilities into a unified interface. It supports operations on 'a t types, including error-resistant sequencing, stateful computation, and reverse list manipulation. Users can manage resource lifecycles, handle input/output with side-effect tracking, and process data in reverse order. Examples include safely opening and closing files, updating application state from user input, and reversing data streams for processing.",
+      "description_length": 496,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Revops_sys",
+      "description": "Creates a temporary file with optional prefix and suffix, returning a handle for its management. Operates on file paths and system resources, ensuring proper cleanup. Used to generate transient files during build processes or test executions.",
+      "description_length": 242,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Revops_fn",
+      "description": "Encapsulates sequential computation with error handling, allowing operations on values of type 'a t through monadic binding and safe resource management. Supports chaining of side-effecting actions with guaranteed cleanup, ensuring robust error propagation. Operations include binding, lifting, and error transformation, enabling safe and composable workflows. Examples include file I/O with automatic closure, database transactions with rollback on failure, and API calls with error recovery.",
+      "description_length": 493,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Revops",
+      "description": "combines monadic composition, state management, and reverse list operations into a unified framework for handling effectful and sequential computations. it supports 'a t type operations including binding, lifting, stateful execution, and list reversal with reverse traversal. users can chain effectful actions with guaranteed cleanup, manage interactive workflows with cancellable steps, and process data in reverse order. examples include reversing input streams, executing event-driven processes, and applying transformations in reverse sequence.",
+      "description_length": 548,
+      "index": 14,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 15,
+    "meaningful_modules": 15,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 548,
+    "min_description_length": 242,
+    "avg_description_length": 353.6666666666667,
+    "embedding_file_size_mb": 0.05492210388183594
+  }
+}

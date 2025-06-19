@@ -1,0 +1,175 @@
+{
+  "package": "mirage-conduit",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 22,
+  "creation_timestamp": "2025-06-18T16:36:56.490626",
+  "modules": [
+    {
+      "module_path": "Resolver_mirage.Make_with_stack.R.DNS",
+      "description": "Provides functions to create a DNS client, resolve domain names to IP addresses, and perform reverse lookups from IP addresses to hostnames. Operates with IP addresses, DNS query classes, types, and packet structures. Used to implement DNS queries in network applications, such as resolving web server addresses or mapping IP addresses to domain names.",
+      "description_length": 352,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Conduit_mirage.Context.UDPV4",
+      "description": "Handles IPv4 UDP communication by providing functions to write datagrams with optional source port and TTL, demultiplex incoming packets based on destination port using custom callbacks, and disconnect from the socket cleanly. Operates with IP addresses, buffers, and port numbers, and returns results with error handling. Used to implement network protocols that require direct control over UDP packet transmission and reception.",
+      "description_length": 430,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Conduit_mirage.Context.TCPV4",
+      "description": "The module handles TCP connection management, data transmission, and error handling, including optional keepalive configurations for maintaining persistent flows. It operates on socket structures, TCP flows, IP addresses, ports, and buffers to manage network communication and session states. Use cases include server applications requiring reliable data transfer or long-lived connections, with support for flow control and adaptive connection termination.",
+      "description_length": 457,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Conduit_mirage.Context.IPV4",
+      "description": "Provides pretty-printers for IP addresses and errors, and supports demultiplexing incoming IP frames by protocol, sending packets with configurable options like fragmentation and TTL, and calculating pseudoheaders for checksums. Operates on IP addresses, buffers, and connection handles. Used for handling network traffic routing, packet transmission with custom headers, and checksum calculations in IPv4-based network stacks.",
+      "description_length": 427,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Conduit_mirage.With_tcp.UDPV4",
+      "description": "Handles IPv4 UDP communication by providing functions to write datagrams with optional source ports and TTL, and to demultiplex incoming traffic based on destination ports. Operates on IP addresses, buffers, and custom error types, with a focus on network I/O operations. Enables packet inspection and response through callback handlers triggered by incoming data.",
+      "description_length": 364,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Conduit_mirage.With_tcp.TCPV4",
+      "description": "The module offers functions for reading, writing, and managing TCP connections, including keepalive configurations, operating on TCP flows, IP addresses, ports, and buffers. It enables use cases such as maintaining persistent connections and efficient data transmission through session management and error handling. Specific scenarios include configuring network reliability and handling flow control during data exchange.",
+      "description_length": 423,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Conduit_mirage.With_tcp.IPV4",
+      "description": "Provides pretty-printers for IP addresses and errors, and supports demultiplexing incoming IP traffic based on protocol, sending IP packets with configurable options like fragmentation and TTL, and calculating pseudoheaders for checksums. Operates on IP addresses, buffers, and connection handles. Used for handling network packet routing, error reporting, and low-level IP communication in networked applications.",
+      "description_length": 414,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resolver_mirage.Make_with_stack.R",
+      "description": "Handles DNS query operations by enabling the creation of client instances, resolution of domain names to IP addresses, and reverse lookups of IP addresses to hostnames. It works with IP addresses, DNS query classes, types, and packet structures to facilitate network-related name resolution. Users can implement DNS queries for web server lookups or IP-to-domain mapping. Examples include resolving \"example.com\" to an IP or finding the hostname associated with a given IP.",
+      "description_length": 473,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resolver_mirage.Make_with_stack.UDPV4",
+      "description": "Handles IPv4 UDP communication by providing functions to write datagrams with optional source ports and TTL, and to demultiplex incoming packets based on destination ports using custom callbacks. Operates on IP addresses, buffers, and connection handles, with error pretty-printing for diagnostics. Used to implement network protocols requiring direct control over UDP packet transmission and reception.",
+      "description_length": 403,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resolver_mirage.Make_with_stack.TCPV4",
+      "description": "The module handles TCP connection management, data transmission, and keepalive configuration, enabling reliable network communication. It operates on TCP flows, IP addresses, ports, buffers, and connection states to control session lifecycles and error recovery. Use cases include maintaining persistent server-client interactions, optimizing data flow control, and ensuring robustness in unstable network environments.",
+      "description_length": 419,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resolver_mirage.Make_with_stack.IPV4",
+      "description": "Provides pretty-printers for IP addresses and errors, and supports demultiplexing incoming IP traffic based on protocol, sending packets with configurable options like fragmentation and TTL, and calculating pseudoheaders for checksums. Operates on IP addresses, buffers, and network interfaces. Used for handling IP layer communication, including TCP/UDP packet routing, error reporting, and network configuration retrieval.",
+      "description_length": 424,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Conduit_mirage.Flow",
+      "description": "Provides functions to read from and write to network flows, including handling errors and closing connections. Operates on `flow`, `buffer`, `error`, and `write_error` types, with `buffer` being a `Cstruct.t` type. Reads block until data is available, writes buffers to the flow, and ensures proper closure by waiting for the remote endpoint to also close.",
+      "description_length": 356,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Conduit_mirage.With_tcp",
+      "description": "Manages network communication by handling UDP and TCP protocols, along with low-level IP operations. Supports writing and reading datagrams and streams, demultiplexing traffic by port or protocol, and manipulating IP packets with options for TTL, fragmentation, and checksums. Provides tools for inspecting, responding to, and routing network traffic through callbacks, buffers, and custom error handling. Enables tasks like configuring reliable connections, inspecting packet headers, and managing network flows in real-time applications.",
+      "description_length": 539,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Conduit_mirage.Context",
+      "description": "Provides asynchronous sleep functionality using nanosecond precision, operating on `int64` values and returning `unit` through the `io` type. Works with the `Lwt` monad to manage non-blocking thread suspension. Used to introduce controlled delays in event-driven I/O operations.",
+      "description_length": 278,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resolver_mirage.Make",
+      "description": "Creates and manages DNS resolution contexts using a stack structure. Performs DNS queries for hostname to IP address translation and reverse lookups, supporting custom server, port, and query parameters. Executes asynchronous DNS transactions with precise control over packet construction and response handling.",
+      "description_length": 311,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resolver_mirage.Make_with_stack",
+      "description": "Provides functions for asynchronous sleep operations, allowing threads to pause for a specified number of nanoseconds. Operates with the 'a io type, which wraps values in Lwt's monadic structure. Used to introduce controlled delays in asynchronous workflows, such as rate limiting or timing-based event handling.",
+      "description_length": 312,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Conduit_xenstore.Make",
+      "description": "This module facilitates interaction with a XenStore client through operations like initialization, suspension, resumption, and data access, supporting both transactional and immediate workflows. It manipulates XenStore paths, handles, and domain IDs, enabling tasks such as directory traversal, read/write operations, and permission control. Specific use cases include managing event-based watches and handling domain-specific configurations within virtualized environments.",
+      "description_length": 474,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resolver_mirage.DNS",
+      "description": "Handles DNS query operations using a specified network stack, enabling resolution of hostnames to IP addresses and reverse lookups. Operates with IP addresses, DNS packet structures, and client protocols to perform asynchronous DNS requests. Supports direct resolution of domain names and IP address lookups through configured DNS servers.",
+      "description_length": 339,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "mirage-conduit",
+      "description": "Handles TCP and SSL/TLS connection setup and listening for Lwt and Async, abstracting underlying SSL implementations. Operates on socket descriptors, connection endpoints, and TLS configuration parameters. Enables secure communication in networked applications by managing protocol-specific details during connection establishment.",
+      "description_length": 331,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Conduit_mirage",
+      "description": "handles network communication through UDP, TCP, and IP, enabling data transmission, traffic demultiplexing, and packet manipulation with options for TTL, fragmentation, and checksums. it provides operations for reading and writing streams and datagrams, along with callback-based traffic inspection and routing. key data types include packets, buffers, and connection states, supporting tasks like real-time flow management and protocol-specific processing. examples include configuring TCP connections, inspecting IP headers, and routing traffic based on port or protocol.",
+      "description_length": 573,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resolver_mirage",
+      "description": "Provides DNS resolution capabilities through asynchronous query operations, handling hostname-to-IP and IP-to-hostname lookups using configured DNS servers. Utilizes IP address representations, DNS packet formats, and client protocols to execute and manage DNS requests. Supports direct domain name resolution and reverse lookups via a network stack. Examples include resolving \"example.com\" to an IP address or mapping an IP back to a domain name.",
+      "description_length": 448,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Conduit_xenstore",
+      "description": "Establishes virtual channel connections through XenStore by managing paths, handles, and domain identifiers. Supports transactional and immediate data operations, including reading, writing, and setting permissions. Enables event-driven monitoring and domain-specific configuration management. Examples include setting up watchpoints on XenStore nodes and retrieving domain-specific metadata.",
+      "description_length": 392,
+      "index": 21,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 23,
+    "meaningful_modules": 22,
+    "filtered_empty_modules": 1,
+    "retention_rate": 0.9565217391304348
+  },
+  "statistics": {
+    "max_description_length": 573,
+    "min_description_length": 278,
+    "avg_description_length": 406.3181818181818,
+    "embedding_file_size_mb": 0.08031558990478516
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "package": "tty",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 7,
+  "creation_timestamp": "2025-06-18T16:30:39.154627",
+  "modules": [
+    {
+      "module_path": "Tty.Color",
+      "description": "Provides functions to create and manipulate color representations, including parsing from strings, constructing from RGB values, and converting to escape sequences for foreground or background use. Works with a private type `t` that encapsulates color information, supporting checks for color type and presence of ANSI or RGB data. Used to generate terminal color codes and validate color configurations in output formatting.",
+      "description_length": 425,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tty.Escape_seq",
+      "description": "The module provides terminal control operations through escape sequences, enabling text styling (color, bold, underline), cursor manipulation (positioning, movement), and screen management (scrolling, line deletion). It works with terminal output and escape codes to adjust display behavior, such as saving/restoring cursor positions or altering input modes. Use cases include building interactive CLI interfaces, formatting logs, or managing terminal layouts in applications requiring precise control over text rendering.",
+      "description_length": 522,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tty.Profile",
+      "description": "Provides functions to create a profile from environment variables, retrieve a default profile, and apply color conversions. Operates on a custom type `t` representing profile configurations. Used to adjust color settings based on predefined profile rules in rendering pipelines.",
+      "description_length": 278,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tty.Stdin",
+      "description": "Reads non-blocking UTF-8 strings from standard input, returning either a valid string, an end-of-input signal, a malformed byte sequence, or a retry request. It operates on Unix terminal I/O structures and is used to handle asynchronous input in real-time applications. The setup function configures the terminal for async reading, while shutdown restores its original state.",
+      "description_length": 375,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tty.Terminal",
+      "description": "Clears the terminal screen and individual lines, moves the cursor vertically and horizontally, enters and exits an alternative screen buffer, and adjusts cursor position with precise coordinates. Operates on integer-based cursor movements and terminal state transitions. Used to manage terminal display during interactive command-line applications or progress tracking interfaces.",
+      "description_length": 380,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "tty",
+      "description": "Provides functions to emit ANSI escape sequences, manage color profiles, and read from standard input. Works with strings, color definitions, and terminal state representations. Used to build interactive command-line interfaces with styled output and user input handling.",
+      "description_length": 271,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tty",
+      "description": "Encapsulates terminal manipulation capabilities through color handling, text styling, input processing, and cursor control. It manages color types with operations for conversion and validation, applies terminal escape sequences for styling and layout, and processes non-blocking UTF-8 input. It supports profile-based color configuration and provides low-level control over screen clearing, cursor positioning, and buffer switching. Examples include generating colored logs, building interactive CLI menus, and managing real-time terminal output.",
+      "description_length": 546,
+      "index": 6,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 7,
+    "meaningful_modules": 7,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 546,
+    "min_description_length": 271,
+    "avg_description_length": 399.57142857142856,
+    "embedding_file_size_mb": 0.02586650848388672
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "package": "xapi-stdext-encodings",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 6,
+  "creation_timestamp": "2025-06-18T16:30:46.005717",
+  "modules": [
+    {
+      "module_path": "Xapi_stdext_encodings.Encodings.XML_UTF8_UCS_validator",
+      "description": "Validates whether a single Unicode character is permissible in UTF-8-encoded XML documents by checking against UCS character value restrictions. Operates on `Uchar.t` values to ensure compliance with XML encoding rules. Used to filter out invalid characters during XML data processing or generation.",
+      "description_length": 299,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Xapi_stdext_encodings.Encodings.XML",
+      "description": "Checks for invalid control characters in XML content using the Uchar type. Processes Unicode characters to ensure compliance with XML 1.0 standards. Identifies characters that must be escaped or excluded in XML documents.",
+      "description_length": 221,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xapi_stdext_encodings.Encodings.UTF8_XML",
+      "description": "Checks if a string is valid UTF-8 encoded according to RFC 3629 and XML specifications, ensuring no invalid byte sequences or disallowed UCS values. Validates a string in place, raising an error on invalid input, and extracts the longest valid prefix up to the first invalid sequence. Works directly with OCaml strings, enforcing strict encoding rules required for XML processing.",
+      "description_length": 380,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xapi_stdext_encodings.Encodings",
+      "description": "Validates whether a Unicode code point is within the range of valid UCS characters. Accepts a single `Uchar.t` value and raises an exception if it is not a valid character. Used to ensure input conforms to Unicode standards before processing.",
+      "description_length": 242,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "xapi-stdext-encodings",
+      "description": "Provides functions for string manipulation, list transformations, and optional value handling. Works with strings, lists, and option types to simplify common workflows. Used to clean and process input data in API responses and configuration parsing.",
+      "description_length": 249,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xapi_stdext_encodings",
+      "description": "Provides validation for Unicode code points, ensuring they represent valid UCS characters. Accepts `Uchar.t` values and raises an exception for invalid inputs. This module enforces strict adherence to Unicode specifications during processing. It can be used to filter or sanitize input data before further manipulation.",
+      "description_length": 319,
+      "index": 5,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 6,
+    "meaningful_modules": 6,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 380,
+    "min_description_length": 221,
+    "avg_description_length": 285.0,
+    "embedding_file_size_mb": 0.022225379943847656
+  }
+}

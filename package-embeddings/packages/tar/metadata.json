@@ -1,0 +1,70 @@
+{
+  "package": "tar",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 7,
+  "creation_timestamp": "2025-06-18T16:30:36.146526",
+  "modules": [
+    {
+      "module_path": "Tar.Header.Link",
+      "description": "Creates and manipulates file system entries including hard links, symbolic links, device nodes, directories, and special file types. Operates on a custom type representing various inode structures and extended attributes. Used to serialize and deserialize Unix file metadata in archive formats like tar.",
+      "description_length": 303,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tar.Header.Extended",
+      "description": "Provides functions to create and manipulate extended header records with fields like access time, modification time, file size, and user/group identifiers. Works with a record type containing optional integer and string fields representing POSIX header extensions. Used to parse and generate pax extended header blocks in archive processing workflows.",
+      "description_length": 351,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tar.Header",
+      "description": "Encapsulates file metadata and extended attributes for archive creation and extraction. Manages custom inode structures and POSIX-style header records with optional fields for timestamps, sizes, and identifiers. Supports serialization of Unix file properties into tar-compatible formats and parsing of pax extended headers. Enables precise control over file entry representation in archive workflows.",
+      "description_length": 400,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tar.Syntax",
+      "description": "Performs sequencing of monadic operations with error handling, binding the result of one computation to the next. Works with a custom monadic type that encapsulates values, errors, and a context parameter. Used to chain parsing steps where each step depends on the successful outcome of the previous one.",
+      "description_length": 304,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "tar",
+      "description": "Provides functions to stream data in and out of tar archives, including reading headers, extracting files, and writing entries. Operates on byte sequences and file descriptors, supporting incremental processing of large archives. Used for efficiently handling compressed backups and packaging files in memory-constrained environments.",
+      "description_length": 334,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tar_gz",
+      "description": "Handles reading and writing of gzip-compressed tar archives by integrating compression and decompression layers into tar operations. Works with tar processes and file descriptors, enabling manipulation of .tar.gz files. Used to extract files from a compressed archive or create a new compressed archive with specified compression level and modification time.",
+      "description_length": 358,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tar",
+      "description": "Manages file metadata and extended attributes for tar archives, supporting serialization of Unix file properties and parsing of pax headers. Executes sequential monadic operations with error handling, linking parsing steps through a custom type that tracks values, errors, and context. Users can construct precise archive entries and reliably process complex tar structures. Examples include creating archives with custom inode data and parsing multi-step header sequences.",
+      "description_length": 473,
+      "index": 6,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 7,
+    "meaningful_modules": 7,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 473,
+    "min_description_length": 303,
+    "avg_description_length": 360.42857142857144,
+    "embedding_file_size_mb": 0.025864601135253906
+  }
+}

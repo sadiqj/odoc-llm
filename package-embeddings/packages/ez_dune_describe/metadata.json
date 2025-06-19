@@ -1,0 +1,98 @@
+{
+  "package": "ez_dune_describe",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 11,
+  "creation_timestamp": "2025-06-18T16:32:27.198727",
+  "modules": [
+    {
+      "module_path": "Ez_dune_describe.Datatypes.Make.Dep",
+      "description": "Returns a unique identifier and the set of dependency identifiers for a given dependable. Operates on a type `t` representing dependables, with dependencies stored as a set of strings. Used to analyze and manage dependency graphs in build systems or configuration loaders.",
+      "description_length": 272,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ez_dune_describe.Datatypes.Module",
+      "description": "Formats module information using a formatter, extracts unique identifiers, and retrieves dependency sets. Operates on a structured type containing module metadata. Used to generate human-readable module reports and analyze dependency graphs.",
+      "description_length": 241,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ez_dune_describe.Datatypes.Compilable",
+      "description": "provides a framework for managing dune-built units, supporting executables and libraries through formattable, dependable, and foldable operations. it handles dependency aggregation and formatting, with specific support for executable folding due to their lack of unique identifiers. operations include dependency resolution and structured output generation. examples include compiling dependent libraries and organizing executable outputs by their runtime dependencies.",
+      "description_length": 469,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ez_dune_describe.Datatypes.Workspace",
+      "description": "Manages dune workspaces by enabling formatting and folding of compilable dependencies. Supports operations on workspace structures, including traversal and transformation of dependency graphs. Examples include restructuring dependency trees and generating formatted output for workspace configurations. Special handling is provided for executables without unique identifiers during folding operations.",
+      "description_length": 401,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ez_dune_describe.Datatypes.Make",
+      "description": "Encapsulates logic for resolving and managing dependencies by extracting unique identifiers and their associated dependencies from a structured data type. It supports operations that traverse and analyze dependency relationships, enabling tasks like graph construction or validation. The core data structure is a set of strings representing dependencies, paired with a unique identifier. This allows for efficient dependency resolution in systems requiring precise tracking of component relationships.",
+      "description_length": 501,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ez_dune_describe.Decoder.WorkspaceDecoder",
+      "description": "Decodes Dune project configurations from S-expressions into a structured workspace representation. Processes nested data including project names, dependencies, and build targets. Used to load and validate workspace definitions from configuration files.",
+      "description_length": 252,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ez_dune_describe.Datatypes.Dep",
+      "description": "Returns a unique identifier and the set of dependency identifiers for a given dependable. Operates on a type `t` representing dependables, with dependencies stored as a set of strings. Used to analyze dependency graphs in build systems or configuration management.",
+      "description_length": 264,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ez_dune_describe.Datatypes",
+      "description": "Provides functions to extract a unique identifier and its dependent identifiers from a dependable, enabling analysis of dependency relationships. The core type `t` represents dependables, with dependencies stored as sets of strings. This allows for traversing and inspecting dependency graphs in systems like build tools or configuration managers. For example, it can identify all dependencies of a specific target or detect circular dependencies.",
+      "description_length": 447,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ez_dune_describe.Decoder",
+      "description": "Provides a decoder for parsing S-expressions into a specific datatype defined by the module. Operates on the type `t` and uses Sexp_decode to convert structured data from textual S-expressions. Used to read and construct instances of `t` from Dune configuration files.",
+      "description_length": 268,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "ez_dune_describe",
+      "description": "Provides functions to parse and extract information from the output of `dune describe workspace`, including project roots, package names, and source directories. Works with strings, lists, and associative arrays to represent workspace configurations and file paths. Enables automated build script integration by enumerating source files and dependencies for a given OCaml project.",
+      "description_length": 380,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ez_dune_describe",
+      "description": "Encapsulates functionality for analyzing and parsing dependency structures, with core type `t` representing dependables and their associated identifiers. Offers operations to traverse dependency graphs and decode S-expressions into structured instances of `t`, enabling tasks like dependency resolution and configuration loading. For example, it can extract all dependencies of a build target or parse a Dune file into a typed representation. The module supports both structural analysis and data conversion within build system workflows.",
+      "description_length": 538,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 13,
+    "meaningful_modules": 11,
+    "filtered_empty_modules": 2,
+    "retention_rate": 0.8461538461538461
+  },
+  "statistics": {
+    "max_description_length": 538,
+    "min_description_length": 241,
+    "avg_description_length": 366.6363636363636,
+    "embedding_file_size_mb": 0.040411949157714844
+  }
+}

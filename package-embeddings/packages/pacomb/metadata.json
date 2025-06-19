@@ -1,0 +1,231 @@
+{
+  "package": "pacomb",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 30,
+  "creation_timestamp": "2025-06-18T16:39:14.741091",
+  "modules": [
+    {
+      "module_path": "Pacomb.Interpolate.Make",
+      "description": "Provides functions to construct and manipulate input configurations, including parsing and validation. Operates on the input type, which represents configuration sources. Used to initialize build environments and manage dependency resolution.",
+      "description_length": 242,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pacomb.Assoc.Make",
+      "description": "Provides functions to construct, transform, and deconstruct values of type 'a data, including mapping over contained values and extracting underlying data. Operates on nested structures and supports pattern matching for complex data hierarchies. Used to process configuration trees and generate output based on structured input.",
+      "description_length": 328,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pacomb.Keywords.Make",
+      "description": "Provides functions to manage character sets and reserved keywords for lexical analysis. Operates on Charset.t and string lists to enforce restrictions on identifier formation. Used to prevent invalid identifiers by blocking characters from id_charset and rejecting words in reserved.",
+      "description_length": 283,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pacomb.Container.Make",
+      "description": "Provides functions to construct, deconstruct, and manipulate elements of type ('a, 'b) elt, including mapping over the 'a and 'b components and checking equality. Works with pairs of values where each element can be of distinct types. Used to process structured data in build systems, transforming and comparing configuration entries.",
+      "description_length": 334,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pacomb.Container.Ref",
+      "description": "Provides operations to manage containers linked to tables, enabling association of elements between different container types. Works with tables and containers, where elements are tagged and compared for equality. Used to track and manipulate graph nodes or union-find structures by linking containers through table lookups.",
+      "description_length": 324,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pacomb.Input.Tbl",
+      "description": "Maintains a mapping from specific positions in input buffers to associated values, enabling efficient lookup and insertion. It operates on buffer indices and arbitrary values, using a logarithmic time complexity for access. Used to track and retrieve data linked to specific locations during parsing or processing tasks.",
+      "description_length": 320,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pacomb.Bench.Base",
+      "description": "Provides a lookup table converting integers to floats using a precomputed array. Operates on integer inputs and returns corresponding floating-point values. Used to efficiently map discrete numerical values to their float equivalents in performance-critical code.",
+      "description_length": 263,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pacomb.Bench.Interpolate",
+      "description": "Provides functions to compute and evaluate interpolations using input-output pairs, with operations to generate coefficients, calculate values, and assess error. Works with arrays of input-output tuples and interpolation structures representing fitted models. Used to generate prediction models from data and evaluate their accuracy.",
+      "description_length": 333,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pacomb_ppx.Ppx_pacomb",
+      "description": "The module provides a foundation for parsing and combinatorial operations, offering basic constructs for building and combining parsers. It includes core types such as parser states and results, along with operations for sequencing and branching computations. Users can define simple parsing rules and compose them into more complex structures. Examples include creating a parser for a specific token or combining multiple parsers to handle nested input.",
+      "description_length": 454,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pacomb.Assoc",
+      "description": "manages nested association structures with custom data types, enabling manipulation of hierarchical data through mapping, extraction, and pattern matching. It supports operations like transforming nested values and deconstructing complex configurations into usable forms. For example, it can convert a nested configuration into a flat list or filter specific entries based on key patterns. This allows for precise control over structured data in applications like configuration parsing or data transformation pipelines.",
+      "description_length": 519,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pacomb.Bench",
+      "description": "Converts integers to floats via precomputed arrays and supports interpolation modeling using input-output pairs, enabling efficient value mapping and predictive analysis. Key data types include integer-to-float lookup tables and interpolation structures, with operations for coefficient generation, value calculation, and error assessment. It allows rapid conversion of discrete values to floating points and constructs models to predict outputs from given inputs. Examples include mapping sensor readings to scaled values and fitting curves to experimental data for estimation.",
+      "description_length": 578,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pacomb.Blank",
+      "description": "Handles blank character detection and parsing configuration, using buffer and index types to track position. Provides specialized blank definitions including from character sets, terminals, and line comments with customizable whitespace. Configures layout parsing to transition between old and new blank handling strategies.",
+      "description_length": 324,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pacomb.Charset",
+      "description": "The module provides set-theoretic operations such as union, intersection, and complement, along with membership checks and modifications like addition and deletion, tailored for character set manipulation. It works with the `charset` type, optimized for efficient range representation and string-based construction. Use cases include text processing, regular expression parsing, and input validation where precise character set operations are critical.",
+      "description_length": 452,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pacomb.Comb",
+      "description": "The module offers parsing combinators for sequence, alternation, and semantic transformation, enabling construction of parsers that handle ambiguous grammars and track positions within input buffers. It includes optimized left recursion elimination and caching mechanisms to reduce backtracking costs, along with tools for generating full parse trees and managing error recovery. These operations are tailored for applications requiring efficient grammar processing, such as compiler frontends or configuration file parsers, where precise position tracking and performance are critical.",
+      "description_length": 586,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pacomb.Container",
+      "description": "Provides operations to manage containers and tables, including adding and finding elements, iterating, folding, and clearing. Works with tables of type 'a and containers of type 'b, using element pairs ('a, 'b) elt. Used to track associations between unique identifiers and associated data structures, such as mapping session IDs to user objects.",
+      "description_length": 346,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pacomb.Grammar",
+      "description": "The module includes parsing combinators and transformation utilities for handling grammars, operating on structures like parse inputs, lexical buffers, and abstract syntax trees, with support for memoization, recursion, and ambiguity resolution. It enables processing diverse input sources\u2014buffers, strings, files\u2014while tracking positions and managing UTF-8 encoding, ideal for constructing parsers with custom semantics or recursive rules. Specific use cases involve building complex grammars with conditional logic, generating all possible parse trees, and optimizing performance through caching and lazy evaluation.",
+      "description_length": 618,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pacomb.Hashtbl_eq",
+      "description": "Provides custom equality-based hash table operations including creation with a user-defined key comparison, insertion, lookup, and iteration. Works with key-value pairs where keys can be compared using a provided equality function. Used to manage mappings with non-standard equality semantics, such as comparing complex or custom data types.",
+      "description_length": 341,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pacomb.Heap",
+      "description": "Provides operations to create and manage a priority queue, including adding elements with a custom comparison function and removing the element with the lowest priority. Works with a generic type 'a t representing the heap structure. Used to efficiently track and retrieve the minimum element in a dynamic collection, such as scheduling tasks by priority.",
+      "description_length": 355,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pacomb.Input",
+      "description": "Manages bidirectional mappings between buffer positions and values, supporting fast lookups and updates. It handles arbitrary value types and buffer indices, with logarithmic time complexity for all operations. This enables efficient tracking of metadata, annotations, or parsed elements within a stream. For example, it can map line numbers to byte offsets or store token positions during lexical analysis.",
+      "description_length": 407,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pacomb.Interpolate",
+      "description": "Provides functions to compute and evaluate interpolations, including calculating coefficients from input-output pairs, evaluating interpolated values, and estimating error. Operates on custom types `input` and `interpolation`, where `input` represents data points and `interpolation` holds computed coefficients. Used to generate smooth approximations from discrete data, such as fitting curves to sensor readings or financial time series.",
+      "description_length": 439,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pacomb.Keywords",
+      "description": "Provides functions to define character sets that restrict keyword boundaries and lists of reserved words that cannot be used as identifiers. Operates on character sets and string lists to enforce syntax rules. Used to validate and parse input where certain words and character sequences must be treated as non-identifiers.",
+      "description_length": 322,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pacomb.Lex",
+      "description": "This module offers low-level combinators for constructing lexical terminals, enabling character-level matching, input state management, and pattern composition through sequential, alternating, and repeating operations. It works with character sets, input buffers, and Unicode-aware structures like UTF-8 graphemes, supporting tasks such as parsing strings, numbers, and escaped sequences. Specific use cases include building robust lexers for complex grammars requiring precise control over token recognition and input position tracking.",
+      "description_length": 537,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pacomb.Pos",
+      "description": "Provides functions to create, merge, and check positions with byte range information, and to generate formatted output with line number prefixes, headers, and footers. Works with byte positions, source file metadata, and custom formatting configurations. Used to display error messages with contextual code snippets, track parser positions, and handle file changes during output.",
+      "description_length": 379,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pacomb.Regexp",
+      "description": "Provides functions to convert strings to regular expressions, check if a regex accepts the empty string, determine valid starting characters, and extract matched groups or the entire match. Works with regex patterns and character sets, and supports creating terminals for parsing. Used to define lexical rules in a parser, extract specific parts of matched input, and validate input structure.",
+      "description_length": 393,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pacomb.UnionFind",
+      "description": "Finds the root element of a node and returns the updated structure. Combines disjoint sets using a custom merge function and updates the root of a set. Operates on a tree-like structure where each node points to its parent. Used to efficiently manage and merge dynamic connectivity groups in graph algorithms.",
+      "description_length": 309,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pacomb.Utf8",
+      "description": "Provides operations for analyzing and manipulating UTF-8 encoded strings, including determining character width, extracting grapheme break properties, encoding and decoding Unicode code points, and navigating character and grapheme boundaries. Works with Uchar.t values, strings, and lists of code points to support text processing tasks. Enables precise control over string traversal and transformation in multilingual applications.",
+      "description_length": 433,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pacomb.Word_list",
+      "description": "Provides operations to manage mappings from strings to values, supporting both ASCII and Unicode input. Includes functions to add, check, and parse words, with options for case transformation and character set filtering. Used to implement keyword recognition and grammar parsing in language processing systems.",
+      "description_length": 310,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "pacomb",
+      "description": "Provides functions for combining parser states and managing context during parsing, including state merging and context tracking. Operates on parser state records and context objects derived from input tokens. Used to implement complex parsing logic in compiler front-ends and expression evaluators.",
+      "description_length": 299,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pacomb_ppx",
+      "description": "provides a framework for constructing and combining parsers through core types like states and results, enabling sequencing and branching of parsing operations. It allows users to define atomic parsing rules and assemble them into complex structures, such as parsing nested expressions or handling token sequences. Operations include chaining parsers and selecting between alternatives based on input. Examples include parsing a specific keyword or building a parser for a structured data format.",
+      "description_length": 496,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pacomb",
+      "description": "Combines hierarchical data manipulation, numeric interpolation, and character set operations with parsing tools, hash tables, and priority queues to support complex data processing and language analysis. It handles nested associations, integer-to-float conversions, set-theoretic character operations, and grammar parsing, while enabling efficient lookups, priority-based scheduling, and bidirectional position tracking. Examples include converting configuration structures to flat formats, fitting curves to sensor data, and parsing lexical tokens with custom rules. It also supports managing keyword restrictions, UTF-8 string analysis, and merging disjoint sets for graph connectivity.",
+      "description_length": 688,
+      "index": 29,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 31,
+    "meaningful_modules": 30,
+    "filtered_empty_modules": 1,
+    "retention_rate": 0.967741935483871
+  },
+  "statistics": {
+    "max_description_length": 688,
+    "min_description_length": 242,
+    "avg_description_length": 400.4,
+    "embedding_file_size_mb": 0.10941886901855469
+  }
+}

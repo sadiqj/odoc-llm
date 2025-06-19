@@ -1,0 +1,224 @@
+{
+  "package": "gitlab-unix",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 29,
+  "creation_timestamp": "2025-06-18T16:38:11.615815",
+  "modules": [
+    {
+      "module_path": "Gitlab.Project.Notes.Merge_request",
+      "description": "Provides functions to retrieve, create, update, and delete notes associated with GitLab merge requests. Operates on `Gitlab_t.note` and `Gitlab_t.create_note` types, using project IDs and merge request internal IDs as identifiers. Enables managing comment threads on specific merge requests through API interactions.",
+      "description_length": 316,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab.User.PersonalAccessToken",
+      "description": "Provides functions to retrieve, revoke, and create personal access tokens for user authentication. Operates on token values, user IDs, and token configuration data structures. Used to manage API access for GitLab users and enable HTTP basic authentication with Git.",
+      "description_length": 265,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab.Endpoint.Version",
+      "description": "Provides functions to parse, compare, and format version strings used in HTTP headers for conditional requests. Works with opaque version identifiers and structured metadata from API responses. Enables efficient cache validation by checking if a resource has changed since a specific version was last retrieved.",
+      "description_length": 311,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab.Group.Project",
+      "description": "Provides functions to retrieve projects by owner and name, supporting partial matches and private project access through a token. Works with strings for owner and project names, and returns structured project data. Used to fetch specific projects in a CI/CD pipeline for deployment or monitoring tasks.",
+      "description_length": 302,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab.Group.Milestone",
+      "description": "Provides functions to retrieve, create, update, and delete milestones associated with a group, including fetching by ID or title and filtering by state. Operates on data types such as `Gitlab_t.milestones`, `Gitlab_t.milestone`, and `Gitlab_t.new_milestone`. Used to manage project timelines by adding deadlines, updating progress, or removing outdated milestones.",
+      "description_length": 364,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab.Group.Issue",
+      "description": "Provides functions to retrieve and filter issues associated with a group, supporting parameters like state, assignee, milestone, and labels. Operates on Gitlab_t.issue and related types, including token and group identifiers. Used to fetch specific subsets of issues for reporting or workflow automation within a group context.",
+      "description_length": 327,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab.Project.Branch",
+      "description": "Retrieves and manages GitLab repository branches, including listing all branches, fetching a specific branch, creating new branches, and deleting branches or merged branches. Operates on project IDs and branch names, returning branch details or response statuses. Used for automating branch management in CI/CD pipelines or repository maintenance tasks.",
+      "description_length": 353,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab.Project.ExternalStatusCheck",
+      "description": "Provides functions to manage external status checks for GitLab projects and merge requests, including listing, creating, updating, and deleting checks. Operates on types such as `Token.t`, `int`, `string`, and `Gitlab_t.external_status_check`. Used to integrate external CI/CD systems, track merge request statuses, and enforce branch protection rules.",
+      "description_length": 352,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab.Project.Commit",
+      "description": "Retrieves a stream of commits with filters like project ID, reference name, and date ranges. Fetches detailed commit information by hash, adds or lists comments, and manages build statuses associated with specific commit hashes. Processes commit-related data such as comments, statuses, and metadata from a GitLab repository.",
+      "description_length": 325,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab.Project.Milestone",
+      "description": "Retrieves, fetches, creates, updates, and deletes project milestones using project and milestone IDs, with support for filtering by title, state, and search terms. Operates on data types such as `Gitlab_t.milestones`, `Gitlab_t.milestone`, and `Gitlab_t.new_milestone`. Used to manage project timelines, track task completion, and control milestone visibility in version-controlled workflows.",
+      "description_length": 392,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab.Project.ProjectAccessToken",
+      "description": "Retrieves, revokes, and creates project-specific access tokens for GitLab authentication. Operates on token values, project identifiers, and token configuration data. Used to manage HTTP authentication credentials for Git repositories and API interactions.",
+      "description_length": 256,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab.Project.Issue",
+      "description": "Provides functions to retrieve a stream of issues for a project, fetch a specific issue by ID, and create a new issue. Operates with Gitlab_t.issue, Gitlab_t.create_issue, and Token.t types. Used to manage project issues through API interactions, such as listing all open issues or creating a new bug report.",
+      "description_length": 308,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab.Project.Hook",
+      "description": "Provides functions to retrieve a project's hooks, fetch a specific hook by ID, and create a new webhook. Operates with project IDs, hook IDs, and webhook configuration data structures. Used to manage GitLab project webhooks through API interactions.",
+      "description_length": 249,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab.Project.Notes",
+      "description": "manages GitLab merge request notes through CRUD operations, using project and merge request IDs to target specific threads. It handles `Gitlab_t.note` for existing notes and `Gitlab_t.create_note` for new ones. Users can fetch comments, add new ones, modify existing entries, or remove them entirely. Example tasks include retrieving all notes on a merge request or posting a new comment to a specific line of code.",
+      "description_length": 415,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab.Response",
+      "description": "Provides functions to extract the payload and redirect history from API responses, and to determine the final destination of a redirect chain. Operates on a private type representing API responses with associated redirect lists. Used to handle and analyze HTTP redirect sequences and retrieve the final resource URI.",
+      "description_length": 316,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab.Monad",
+      "description": "Encapsulates Lwt threads with state management, enabling sequential API operations through binding and mapping. Operates on values of type 'a t, supporting composition of asynchronous actions and exception handling. Used to chain API requests, manage shared state, and handle responses with custom transformations.",
+      "description_length": 314,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab.Scope",
+      "description": "Converts GitLab scope values to and from strings, serializes lists of scopes for API use, and parses serialized scope lists. Operates on `Gitlab_t.scope` and lists of such values. Used to prepare and interpret scope parameters in GitLab API requests.",
+      "description_length": 250,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Gitlab.Token",
+      "description": "Creates and manages authentication tokens for GitLab API access, including generating authorization URLs, exchanging authorization codes for tokens, and converting between string representations and token objects. Operates with types such as OAuth credentials, scopes, and token strings. Used to authenticate API requests using personal access tokens, project tokens, or OAuth tokens obtained via authorization code flow.",
+      "description_length": 421,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab.Endpoint",
+      "description": "Handles versioned HTTP requests by parsing, comparing, and formatting version strings for cache validation. Operates on opaque identifiers and structured metadata to determine resource changes. Supports conditional requests by checking if a resource has updated since a known version. Examples include validating cached responses and optimizing API calls based on version timestamps.",
+      "description_length": 383,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Gitlab.Stream",
+      "description": "Provides functions to lazily process paginated API results, including fetching the next element, mapping over elements, limiting the number of elements, folding over the stream, and finding elements that match a predicate. Operates on a lazy, immutable stream type and a parsing function that converts strings to lists of values. Used to efficiently handle large datasets from GitLab's API, such as iterating over a project's issues or merging requests without loading all data at once.",
+      "description_length": 486,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Gitlab.API",
+      "description": "Provides HTTP methods for interacting with the GitLab API, including GET, POST, DELETE, PATCH, and PUT, with support for custom headers, query parameters, and token authentication. Processes responses using parsers and handles specific HTTP status codes with custom handlers. Tracks and retrieves rate limit information such as remaining requests, quota, and reset times.",
+      "description_length": 371,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab.Event",
+      "description": "Provides functions to retrieve user contribution events with filters such as timestamp, scope, target type, and action. Operates on token authentication and event-specific parameters like before, after, and sort order. Used to fetch a user's activity history from a GitLab instance for monitoring or reporting purposes.",
+      "description_length": 319,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab.User",
+      "description": "Handles user authentication through token management, including creation, retrieval, and revocation. Operates on user identifiers, token values, and configuration records. Supports API access control and HTTP basic authentication by manipulating token states. Example tasks include generating a new token for a user or invalidating an existing one.",
+      "description_length": 348,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab.Project",
+      "description": "manages GitLab project resources through a set of specialized functions, including branch operations, status checks, commit streams, milestones, access tokens, issues, webhooks, and merge request notes. It handles data types like `Gitlab_t.branch`, `Gitlab_t.external_status_check`, `Gitlab_t.commit`, `Gitlab_t.milestone`, `Token.t`, `Gitlab_t.issue`, `Gitlab_t.hook`, and `Gitlab_t.note`, enabling actions such as creating a branch, updating a merge request note, listing project issues, or fetching commit details. Users can automate CI/CD workflows, track project progress, and manage repository interactions via API. Examples include deleting merged branches, adding comments to merge requests, or retrieving commit metadata with date filters.",
+      "description_length": 748,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab.Group",
+      "description": "Retrieves and manages group-related projects, milestones, and issues with precise filtering and manipulation capabilities. Supports operations on structured data types such as projects, milestones, and issues, including creation, updates, and deletions. Enables fetching projects by owner or name, managing milestone timelines, and filtering issues by state or assignee. Used for automating CI/CD workflows, tracking project progress, and generating issue reports.",
+      "description_length": 464,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab.Runners",
+      "description": "Lists runners associated with a user's GitLab account using an authentication token. Operates on `Token.t` and returns a response containing `Gitlab_t.runners`. Used to retrieve and manage runner configurations within a CI/CD pipeline.",
+      "description_length": 235,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab.Env",
+      "description": "Provides functions to access and manipulate environment variables that configure library behavior. Works with lists of environment variable information and their associated values. Used to dynamically adjust execution based on external settings like log levels or API endpoints.",
+      "description_length": 278,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "gitlab-unix",
+      "description": "Provides functions to create, retrieve, and manage GitLab projects, commits, users, and events using native OCaml types. Operates on data structures such as project metadata, commit hashes, user identifiers, and event logs. Enables automation of repository management tasks like fetching commit history or querying user activity.",
+      "description_length": 329,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Gitlab",
+      "description": "Handles GitLab API interactions by managing authentication, processing HTTP requests, and handling redirects, pagination, and versioned resources. It supports asynchronous operations, scope serialization, and token management, enabling tasks like fetching user events, automating project workflows, and retrieving runner configurations. Key data types include tokens, scopes, API responses, and paginated streams, with operations such as chaining API calls, parsing version strings, and lazily processing large datasets. Examples include creating merge request notes, validating cached responses, and managing project milestones through structured data types.",
+      "description_length": 659,
+      "index": 28,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 29,
+    "meaningful_modules": 29,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 748,
+    "min_description_length": 235,
+    "avg_description_length": 360.55172413793105,
+    "embedding_file_size_mb": 0.10574722290039062
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "package": "ocplib-endian",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 22,
+  "creation_timestamp": "2025-06-18T16:36:20.903283",
+  "modules": [
+    {
+      "module_path": "EndianString.BigEndian",
+      "description": "Reads signed and unsigned integer values of various sizes (8, 16, 32, 64 bits) and floating-point numbers from a string in Big Endian format. Extracts individual bytes as characters or integers and operates directly on byte sequences without bounds checking. Used for parsing binary data formats that require explicit byte-order handling, such as network protocols or file headers.",
+      "description_length": 381,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EndianString.BigEndian_unsafe",
+      "description": "Reads signed and unsigned integer values of various sizes (8, 16, 32, 64 bits) and floating-point numbers from a string using big-endian byte order. Processes raw byte sequences and converts them into native OCaml numeric types, including int, int32, int64, and float. Used for parsing binary data formats like network protocols or file headers where byte order is fixed and safety checks are bypassed for performance.",
+      "description_length": 418,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EndianString.LittleEndian",
+      "description": "Reads 8-bit, 16-bit, 32-bit, and 64-bit signed and unsigned integers, as well as floats and doubles from a string using little-endian byte order. Extracts individual bytes as characters and handles both signed and unsigned 8-bit values. Writes equivalent data types to a byte buffer, though these functions are deprecated.",
+      "description_length": 322,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EndianString.LittleEndian_unsafe",
+      "description": "Reads 8-bit, 16-bit, 32-bit, and 64-bit signed and unsigned integers, as well as floats and doubles from a string using little-endian byte order. Extracts individual bytes as characters and handles raw binary data with direct memory access. Used for parsing binary file formats or network protocols requiring direct byte-level manipulation.",
+      "description_length": 340,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EndianString.NativeEndian",
+      "description": "Reads and writes individual bytes and multi-byte integer and floating-point values from and to byte strings, accounting for the machine's endianness. It handles 8-bit, 16-bit, 32-bit, and 64-bit signed and unsigned integers, as well as 32-bit and 64-bit floats. Use it to parse binary data formats like network protocols or file headers that require direct byte-level access.",
+      "description_length": 375,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EndianString.NativeEndian_unsafe",
+      "description": "Reads and writes individual bytes and multi-byte integer and floating-point values from and to string or byte buffer structures, interpreting data according to the machine's endianness. It extracts 8-bit, 16-bit, 32-bit, and 64-bit signed and unsigned integers, as well as 32-bit and 64-bit floats, directly from memory. Used for low-level data parsing and serialization in network protocols or binary file formats where endianness must match the host system.",
+      "description_length": 459,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EndianBytes.BigEndian",
+      "description": "Reads and writes primitive numeric and character values from and to byte buffers using Big Endian ordering. Operates on Bytes.t and standard numeric types, including int, int32, int64, and float. Extracts 8-bit integers, 16-bit integers, 32-bit and 64-bit integers, and floating points from specific byte offsets, and writes them back to the buffer in a fixed byte order.",
+      "description_length": 371,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EndianBytes.BigEndian_unsafe",
+      "description": "Reads and writes single and multi-byte integer and floating-point values from and to a byte buffer using Big Endian format. Operates on Bytes.t and primitive numeric types, extracting or inserting values directly at specified offsets. Used for low-level binary data manipulation, such as parsing network protocols or file formats that require strict byte ordering.",
+      "description_length": 364,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EndianBytes.LittleEndian",
+      "description": "Reads and writes individual bytes and multi-byte integers from and to a byte buffer using little-endian ordering. Operates on `Bytes.t` and numeric types including `int`, `int32`, `int64`, and `float`. Extracts 8-bit signed or unsigned values, 16-bit signed values, 32-bit and 64-bit integers, and floating-point numbers from specific offsets, and writes them back to the buffer.",
+      "description_length": 379,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EndianBytes.LittleEndian_unsafe",
+      "description": "Reads and writes primitive numeric and character values from and to byte buffers using little-endian encoding. Operates on `Bytes.t` and integer or float values of specific sizes, such as 8-bit, 16-bit, 32-bit, and 64-bit types. Used for direct manipulation of binary data formats like network protocols or file structures where byte order is critical.",
+      "description_length": 352,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EndianBytes.NativeEndian",
+      "description": "Reads and writes individual bytes and multi-byte integer and floating-point values from and to a byte buffer, accounting for the machine's endianness. Operates on `Bytes.t` and handles 8-bit, 16-bit, 32-bit, and 64-bit signed and unsigned integers, as well as 32-bit and 64-bit floats. Used for parsing binary data formats like network protocols or file headers, and for serializing data into platform-specific byte representations.",
+      "description_length": 432,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EndianBytes.NativeEndian_unsafe",
+      "description": "Reads and writes individual bytes and multi-byte integer and floating-point values from and to a byte buffer, using the machine's native endianness. Operates on `Bytes.t` and handles 8-bit, 16-bit, 32-bit, and 64-bit signed and unsigned integers, as well as 32-bit and 64-bit floats. Used for direct memory manipulation in low-level data parsing or serialization tasks.",
+      "description_length": 369,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EndianBigstring.BigEndian",
+      "description": "Reads and writes integer, floating-point, and character values from and to a bigstring using Big Endian byte order. Operates on 8-bit, 16-bit, 32-bit, and 64-bit signed and unsigned integers, as well as 32-bit and 64-bit floats. Used for parsing binary protocols, network data, or file formats requiring explicit byte-order handling.",
+      "description_length": 333,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EndianBigstring.BigEndian_unsafe",
+      "description": "Reads and writes primitive numeric and character values from and to a bigstring using Big Endian byte order, operating directly on raw bytes without bounds checks. It handles 8-bit, 16-bit, 32-bit, and 64-bit integers, floats, doubles, and characters, allowing direct manipulation of binary data. Used for low-level network protocol parsing, binary file format decoding, and efficient data serialization.",
+      "description_length": 404,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EndianBigstring.LittleEndian",
+      "description": "Reads and writes individual bytes and multi-byte integers from and to a bigstring in little-endian format. Handles 8-bit, 16-bit, 32-bit, and 64-bit signed and unsigned integers, as well as floats and doubles. Used for parsing binary data formats like file headers or network protocols where byte order is critical.",
+      "description_length": 315,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EndianBigstring.LittleEndian_unsafe",
+      "description": "Reads and writes primitive numeric and character values from/to a bigstring using little-endian byte order, with no bounds checking. Operates on bigstring, int, char, int, int32, int64, and float types. Used for direct memory manipulation in network protocols or binary file formats where performance and precise byte control are critical.",
+      "description_length": 339,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EndianBigstring.NativeEndian",
+      "description": "Reads and writes individual bytes and multi-byte integer and floating-point values from and to a bigstring, accounting for the machine's endianness. It handles 8-bit, 16-bit, 32-bit, and 64-bit signed and unsigned integers, as well as 32-bit and 64-bit floats. Used for parsing binary data formats, network protocols, and file structures that require direct memory manipulation.",
+      "description_length": 378,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EndianBigstring.NativeEndian_unsafe",
+      "description": "Reads and writes individual bytes and multi-byte integer and floating-point values from and to a bigstring using the machine's native endianness. Operates on bigstring, int, int32, int64, and float types, directly accessing memory without bounds checks. Used for low-level binary data manipulation, such as parsing network protocols or file formats that require direct memory access.",
+      "description_length": 383,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "ocplib-endian",
+      "description": "Provides functions to efficiently read and write 16-, 32-, and 64-bit integers from and to strings, bytes, and bigarrays, with endianness specified at runtime. Operates on raw byte sequences and ensures correct interpretation based on specified byte order. Used in network protocol parsing and binary file format decoding where precise control over data representation is required.",
+      "description_length": 381,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EndianString",
+      "description": "Provides functions to extract 8-bit, 16-bit, 32-bit, and 64-bit signed and unsigned integers, characters, and floating-point values from a string using big-endian byte order. Works with raw byte sequences represented as strings and byte buffers. Used for parsing binary data formats such as network protocols, file headers, or serialized data structures.",
+      "description_length": 354,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EndianBytes",
+      "description": "Provides functions to read and write primitive data types from and to a byte buffer using Big Endian byte order. It handles characters, 8-bit to 64-bit integers, and floating-point values, allowing direct manipulation of binary data. Use cases include parsing network protocols, file formats, and low-level data serialization.",
+      "description_length": 326,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EndianBigstring",
+      "description": "Provides functions to read and write primitive data types from and to a bigstring using big-endian byte order. It handles characters, 8-bit to 64-bit integers, and floating-point numbers, with specific operations for extracting and inserting values at given offsets. Use cases include parsing binary protocols and serializing data for network transmission or file storage.",
+      "description_length": 372,
+      "index": 21,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 22,
+    "meaningful_modules": 22,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 459,
+    "min_description_length": 315,
+    "avg_description_length": 370.3181818181818,
+    "embedding_file_size_mb": 0.08037471771240234
+  }
+}

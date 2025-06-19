@@ -1,0 +1,105 @@
+{
+  "package": "liquid_parser",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 12,
+  "creation_timestamp": "2025-06-18T16:32:38.843553",
+  "modules": [
+    {
+      "module_path": "Liquid_parser.Bounds",
+      "description": "Processes lex tokens to identify and manage boundary ranges, detecting conflicts and pairing tokens into structured intervals. Operates on lex_token values, lists of tokens, and interval pairs to support precise token range analysis. Used to extract chunks of code based on defined boundaries and resolve overlapping or conflicting token ranges.",
+      "description_length": 345,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Liquid_parser.Expression",
+      "description": "Converts lexed values into expression nodes, processes lists of values into corresponding expressions, and constructs expressions from token sequences. Parses expressions and assignments from token lists, returning abstract syntax trees and remaining tokens. Used to transform raw syntax elements into structured expression representations for further processing.",
+      "description_length": 363,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Liquid_parser.For",
+      "description": "Parses Liquid template constructs like `for`, `tablerow`, and `paginate` by consuming token lists and returning parsed AST nodes along with remaining tokens. It supports custom parsing logic through provided functions and handles token stream state explicitly. Specific to Liquid syntax, it enables structured processing of loop and pagination directives in templating contexts.",
+      "description_length": 378,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Liquid_parser.Keyword_lexer",
+      "description": "Checks if a string represents a language operator, tokenizes keywords into syntax tokens, converts strings to block tokens, and identifies block token types and whitespace. Operates on strings and syntax token types. Used to parse and validate Liquid template syntax elements during lexical analysis.",
+      "description_length": 300,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Liquid_parser.Lexer",
+      "description": "Processes strings to extract boolean values, numbers, identifiers, and delimited strings, returning parsed tokens and remaining input. Operates on base strings and constructs lists of lexical tokens for syntax analysis. Used to tokenize Liquid templates, handling expressions, blocks, and string literals with precise parsing rules.",
+      "description_length": 332,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Liquid_parser.Parser",
+      "description": "Checks if a list of lexed tokens can be parsed into an abstract syntax tree and returns the result. Processes specific syntax elements like loops, assignments, and expressions, extracting parsed structures along with remaining tokens. Handles token consumption and error recovery for distinct language constructs.",
+      "description_length": 313,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Liquid_parser.Parser_tools",
+      "description": "Processes lexed token lists to extract sublists up to end-of-stream, parse variable contexts from token sequences, and split body content based on a specified token. Operates on lists of lexed tokens and context-aware value structures. Used to isolate template variables, segment liquid code blocks, and handle nested content parsing.",
+      "description_length": 334,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Liquid_parser.Preprocessor",
+      "description": "Provides regular expression-based string manipulation, including pattern matching, comment removal, and raw block processing. Works with strings and compiled regex patterns to transform text content. Used to clean and prepare templating language inputs by stripping comments and handling raw code blocks.",
+      "description_length": 304,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Liquid_parser.Test",
+      "description": "Constructs and combines logical conditions from token lists using specific operators and combinators. Processes test and when statements, extracting conditions and associated data from structured token sequences. Parses nested test chains into abstract syntax trees for further evaluation.",
+      "description_length": 289,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Liquid_parser.Theme",
+      "description": "Parses and renders Liquid syntax tokens into abstract syntax trees, supporting form, style, and theme structures. It processes token lists using custom parsing functions to construct typed ASTs while tracking remaining tokens. Used to convert structured template definitions into executable representations for rendering.",
+      "description_length": 321,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "liquid_parser",
+      "description": "Provides functions to parse and render Liquid templates, including variable substitution, loop iteration, and conditional logic. Works with strings representing template content and associative data structures for context. Used to generate dynamic HTML or text outputs from predefined template files.",
+      "description_length": 300,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Liquid_parser",
+      "description": "Combines token processing, syntax parsing, and template analysis to transform raw input into structured representations. Handles lex_token lists, strings, and ASTs, supporting operations like range detection, expression parsing, block extraction, and condition evaluation. Enables tasks such as isolating loop constructs, extracting variable contexts, and building typed abstract syntax trees. Processes Liquid-specific syntax elements, including directives, conditions, and raw blocks, with precise control over token consumption and error handling.",
+      "description_length": 550,
+      "index": 11,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 12,
+    "meaningful_modules": 12,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 550,
+    "min_description_length": 289,
+    "avg_description_length": 344.0833333333333,
+    "embedding_file_size_mb": 0.044002532958984375
+  }
+}

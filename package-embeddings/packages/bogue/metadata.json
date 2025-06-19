@@ -1,0 +1,329 @@
+{
+  "package": "bogue",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 44,
+  "creation_timestamp": "2025-06-18T16:40:54.684634",
+  "modules": [
+    {
+      "module_path": "Bogue.File.Monitor",
+      "description": "Monitors file system changes by tracking modifications, additions, and deletions in a directory or file, using either an external fswatch process or a polling mechanism based on Unix.stat. It provides methods to retrieve the list of files, their count, and the last known state of changes, with actions triggered on detected modifications. The module supports non-blocking, asynchronous monitoring with configurable polling intervals.",
+      "description_length": 434,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bogue.Layout.Resize",
+      "description": "Resizes elements by scaling dimensions and positions based on a specified layout size, with separate functions for horizontal and vertical scaling. It operates on graphical elements and layout configurations, adjusting their size and placement accordingly. Use cases include adapting room layouts to different screen orientations or maintaining aspect ratios during interface resizing.",
+      "description_length": 385,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bogue.Theme",
+      "description": "Provides functions to manage application appearance through theme variables, including scaling, font configuration, and file path resolution. Operates with integers, floats, strings, and file paths to adjust visual elements and locate resources. Used to set font sizes, scale UI elements, and find shared application files like fonts or configuration data.",
+      "description_length": 356,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Utils",
+      "description": "The module provides debug logging controls, including conditional message printing and error handling with SDL results, alongside functional utilities like option extraction and function composition. It operates on integers, floats, options, and arbitrary types, enabling tasks such as managing debug flags and unwrapping optional values. Use cases include simplifying error tracking in SDL operations and streamlining functional workflows through lightweight composition patterns.",
+      "description_length": 481,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Time",
+      "description": "Provides functions to measure time in milliseconds and control frame rates in graphics loops. Operates with integer values representing time intervals and returns callback functions for managing timing in custom rendering loops. Used to synchronize animations and maintain consistent frame rates, with options to adjust for vertical sync and adaptive timing.",
+      "description_length": 358,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Var",
+      "description": "Provides functions to create and manage thread-safe global variables, ensuring safe access and modification across threads. Operates on a parameterized type 'a t, supporting operations to get, set, and apply functions to the variable's value under mutual exclusion. Useful for safely updating GUI elements or shared state in a multi-threaded application like Bogue.",
+      "description_length": 365,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Timeout",
+      "description": "Adds a delayed action to be executed after a specified number of milliseconds, using the main thread. Operates on a custom type `t` representing a scheduled timeout. Used to schedule and manage timed events, such as auto-saving after inactivity or delayed UI updates.",
+      "description_length": 267,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Trigger",
+      "description": "The module provides functions for detecting, managing, and routing SDL and custom events, including input handling (keyboard, mouse, touch), state changes (startup, exit), and interaction events. It operates on event data structures designed for inter-thread communication and widget interactions, enabling dynamic response to user actions and system triggers. Use cases include real-time input processing, state synchronization across components, and coordinating widget behavior during application lifecycle events.",
+      "description_length": 517,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bogue.Mixer",
+      "description": "Provides functions to initialize audio, load and play WAV files, adjust volume, and manage playback tracks. Works with audio devices, sound chunks represented as 16-bit signed bigarrays, and repeat configurations. Used to trigger button click sounds, game effects, and manage audio output in SDL applications.",
+      "description_length": 309,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bogue.Sync",
+      "description": "Registers functions to execute in a FIFO queue managed by Bogue's main loop, ensuring they run at the start of each graphical frame. Operates on thunk functions that take no arguments and return no value. Useful for deferring non-urgent updates to the UI or state changes to avoid disrupting rendering or event processing.",
+      "description_length": 322,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Draw",
+      "description": "This module handles color management and manipulation, including RGB operations, transparency/opacity conversion, and brightness adjustments, alongside low-level graphics functions for drawing shapes like lines, rectangles, and circles. It works with color types, RGB values, and graphical coordinates, offering tools for rendering, scaling, and system cursor management. Specific use cases include adjusting visual properties in graphical interfaces and performing coordinate transformations for precise rendering.",
+      "description_length": 515,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Mouse",
+      "description": "Returns the current position of the mouse pointer or touch input, including window-relative coordinates and touch-specific positions. Processes mouse button events, touch finger positions, and mouse wheel input with configurable scrolling speed. Used to track user interactions in graphical applications, handle input mapping, and adjust scroll behavior based on device type.",
+      "description_length": 375,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Tvar",
+      "description": "Transform variables enable bidirectional synchronization between two values with different representations, using transformation functions to convert between them. They support reading and writing through `get` and `set`, allowing one widget to expose a value in one format while another uses a transformed version. This is useful for scenarios like currency conversion between widgets or mapping integer sliders to floating-point ranges.",
+      "description_length": 438,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Avar",
+      "description": "Provides functions to create and manipulate animated variables that change over time, including linear transitions, oscillations, and custom updates. Works with numeric types and callbacks, supporting integer and generic value types. Used to implement smooth visual transitions and dynamic state changes in real-time applications.",
+      "description_length": 330,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bogue.Selection",
+      "description": "Provides operations to manage sets of integers represented as non-overlapping ranges, including adding, removing, and checking membership of individual integers. Works with ranges defined by start and end integers, supporting union, intersection, and inversion within specified bounds. Used to efficiently track selected items in a bounded integer space, such as highlighting ranges in a text editor or managing selected indices in a list.",
+      "description_length": 439,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bogue.Image",
+      "description": "Loads and manages images, supporting various formats including PNG and SVG, with options to control scaling and background color. It works with image file paths and stores loaded images in textures for efficient rendering. Use cases include displaying themed icons and dynamically updating image sources in a graphical interface.",
+      "description_length": 329,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Style",
+      "description": "The module provides functions for creating and modifying line, border, shadow, and background styles, operating on types like line, border, shadow, and gradient configurations. It supports detailed visual customization for user interfaces, including layered effects such as border outlines, shadow depth, and gradient-filled backgrounds. Specific use cases include designing interactive elements with dynamic styling or enhancing visual hierarchy through precise control over graphical properties.",
+      "description_length": 497,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Label",
+      "description": "Creates and manipulates single-line text displays with customizable font, color, and alignment. Operates on text strings, fonts defined from TTF files, and style attributes from the Ttf module. Used to update displayed text, adjust colors, and retrieve dimensions for layout purposes.",
+      "description_length": 284,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bogue.Button",
+      "description": "Provides functions to create and manage interactive buttons with customizable size, colors, and labels, and to handle state changes and actions. Works with button state, colors, labels, and predefined button kinds. Used to implement UI elements that respond to user input with visual and functional feedback, such as toggling settings or triggering events.",
+      "description_length": 356,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Slider",
+      "description": "Provides functions to retrieve and modify the value of a slider, along with its size and maximum value. Works with a custom type `t` representing the slider state and a `kind` type defining its configuration. Used to handle user input events and update visual feedback in a graphical interface.",
+      "description_length": 294,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Check",
+      "description": "Manages checkbox state and appearance with a constructor that sets initial state and style, and a getter to retrieve the current state. Operates on a custom type representing the checkbox widget and a style type for visual configuration. Used to create interactive UI elements where user selection needs to be tracked and displayed.",
+      "description_length": 332,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Text_display",
+      "description": "Provides operations to construct and format multi-line text displays, including bold, italic, and strikethrough styling. Works with `t` for text display widgets and `words` for structured text segments. Used to generate formatted paragraphs, update verbatim content, and transform text layouts within user interfaces.",
+      "description_length": 317,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bogue.Text_input",
+      "description": "Provides functions to filter user input based on string predicates and retrieve the current text value of a widget. Operates on a custom `t` type representing a text-input widget and uses a `filter` function to validate input. Used to enforce input constraints, such as allowing only numeric characters or specific formats.",
+      "description_length": 323,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Box",
+      "description": "Provides methods to create a box with specified dimensions and style, adjust its background, and modify or retrieve its style properties. Works with integer dimensions, style configurations, and background color definitions. Used to dynamically customize UI elements in a graphical application.",
+      "description_length": 294,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Sdl_area",
+      "description": "The module provides low-level SDL rendering capabilities, including drawing geometric shapes, managing a command queue for dynamic graphics, and manipulating texture-based render targets. It operates on SDL textures and rendering contexts, enabling efficient caching and element modification. Use cases include real-time interactive visualizations and custom graphics rendering where precise control over SDL's API is required.",
+      "description_length": 427,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Empty",
+      "description": "Handles cleanup actions when a widget is removed from the interface. Operates on widget instances represented by the type `t` and allows registering functions to execute during unloading. Used to manage resource release or state preservation during widget destruction.",
+      "description_length": 268,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bogue.Widget",
+      "description": "The module provides functions for creating and managing graphical components, enabling event-driven interactions such as handling user actions (clicks, mouse over) and connecting widgets. It operates on widget types and specialized components like sliders, text inputs, and images, supporting tasks like state manipulation, text transformation, and rendering. Use cases include building interactive interfaces with responsive elements and dynamic data exchange between components.",
+      "description_length": 480,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Update",
+      "description": "Registers a widget to be updated in the next frame by the main loop, ensuring visual changes are reflected. Operates on `Widget.t` values, which represent interactive UI elements. Used to trigger immediate redraws after state changes, such as button presses or data updates.",
+      "description_length": 274,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bogue.Layout",
+      "description": "manages graphical element placement within a hierarchical structure, allowing nested layouts and widgets to be scaled and positioned dynamically. it supports t, widget.t, and layout configurations, with operations for horizontal and vertical resizing. it enables adaptive GUIs that respond to screen changes, such as adjusting room dimensions while preserving widget proportions. examples include reflowing a window's contents on resize or optimizing space usage in multi-pane interfaces.",
+      "description_length": 488,
+      "index": 28,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bogue.Space",
+      "description": "Adjusts layout dimensions by expanding elements to fill available space or setting them to full width/height. Operates on `Layout.t` structures, modifying their size and positioning relative to parent containers. Used to create responsive layouts where specific elements stretch to fill available space or align to edges with defined margins.",
+      "description_length": 342,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Print",
+      "description": "Prints layout structures with detailed room hierarchies, including parent-child relationships and error states. It generates string representations of layouts for debugging, with options to format indentation. It also logs error messages and saves problematic layout states to temporary files for analysis.",
+      "description_length": 306,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Snapshot",
+      "description": "Generates a graphical representation from a layout, incorporating optional border styling. Produces a widget suitable for display or interaction. Converts a layout into a cursor with specified hotspots for mouse interactions.",
+      "description_length": 225,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Long_list",
+      "description": "Handles large dynamic lists by generating layouts on demand using a function, avoiding memory overload. Works with arbitrary Layout.t elements and supports variable heights, scroll control, and memory limits. Used to efficiently display millions of items, such as directory listings or data grids, where preloading all elements is impractical.",
+      "description_length": 343,
+      "index": 32,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bogue.Tabs",
+      "description": "Creates a tabbed interface that allows switching between predefined layouts. Accepts a list of named layouts with associated display properties, and supports sliding transitions, layout adjustment, and canvas integration. Used to build dynamic user interfaces where multiple views are toggled based on user input.",
+      "description_length": 313,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Menu",
+      "description": "Creates menus with customizable layouts or standard text-based entries, supporting automatic layout generation for labels and structured submenus. Operates on layouts, actions, and entry records that define labels, separators, and nested content. Used to build interactive UI elements like application menus with drop-downs, integrating seamlessly into larger layout hierarchies.",
+      "description_length": 379,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Select",
+      "description": "Provides functions to create a dropdown select box with a preselected item, handling user selection through a callback that receives the selected index. Works with string arrays and integer indices to represent options and selections. Used to implement interactive UI elements where users choose from a list of labeled options.",
+      "description_length": 327,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Radiolist",
+      "description": "Provides vertical or widget-based radiolist layouts with single selection capability. Works with string arrays and widget lists to create interactive radio button interfaces. Allows setting and retrieving the selected index, and returns active selection widgets for event handling.",
+      "description_length": 281,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Table",
+      "description": "Provides functions to create tables from arrays or lists of string rows, with sortable columns and row selection. Works with row data structured as string arrays or lists, and manages selections using a dedicated selection type. Supports sorting by column index and retrieving the current selection or table layout for display.",
+      "description_length": 327,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bogue.Window",
+      "description": "Creates and manages graphical windows based on a layout, allowing customization of close behavior and window size. Operates on `Layout.t` and `t` types, which represent the visual structure and window instance. Used to build applications with SDL-backed windows, such as custom UIs that respond to user interactions and resize dynamically.",
+      "description_length": 339,
+      "index": 38,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bogue.Main",
+      "description": "This module handles GUI lifecycle management, event-driven interactions, and resource cleanup, focusing on SDL-based window operations. It works with structures like boards, layouts, windows, and shortcut configurations to manage game states and input handling. Specific use cases include rendering graphics, processing user events, and executing keyboard shortcuts within a structured main loop.",
+      "description_length": 396,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.Popup",
+      "description": "Adds a screen layer to a layout for full-area interaction, attaches modal popups with background layers, and creates info, yes/no, and single/multi-button dialogs. Works with layout structures, widgets, and color values. Used to implement modal dialogs, overlay controls, and interactive tooltips in user interfaces.",
+      "description_length": 316,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue.File",
+      "description": "manages file system changes through monitoring, offering real-time updates on file modifications, additions, and deletions. it provides methods to access file lists, track changes, and trigger actions based on detected events, with support for both polling and external process-based monitoring. users can navigate directories, filter selections, and interact with large file sets efficiently. examples include automatically refreshing a file list when a new file is added or limiting the number of selectable items during a file operation.",
+      "description_length": 540,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "bogue",
+      "description": "Handles event loops, widget rendering, and layout management using widgets, containers, and event records. Supports button clicks, text input, and mouse interactions through dedicated handlers. Used to build interactive debug interfaces and simple game UIs with responsive elements.",
+      "description_length": 282,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bogue",
+      "description": "Bogue provides a comprehensive set of tools for building and managing graphical user interfaces, offering control over appearance, timing, threading, events, and layout. It includes data types like `t` for widgets, `Layout.t` for positioning, `color`, `font`, and `slider` for interactive elements, along with utilities for handling time, input, and resource management. Users can create responsive layouts, manage animations, implement interactive UI components, and handle complex event-driven workflows, such as scheduling delayed actions, tracking mouse input, or dynamically updating UI elements.",
+      "description_length": 601,
+      "index": 43,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 45,
+    "meaningful_modules": 44,
+    "filtered_empty_modules": 1,
+    "retention_rate": 0.9777777777777777
+  },
+  "statistics": {
+    "max_description_length": 601,
+    "min_description_length": 225,
+    "avg_description_length": 367.52272727272725,
+    "embedding_file_size_mb": 0.1602458953857422
+  }
+}

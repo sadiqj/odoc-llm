@@ -1,0 +1,42 @@
+{
+  "package": "xapi-backtrace",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 3,
+  "creation_timestamp": "2025-06-18T16:28:58.859877",
+  "modules": [
+    {
+      "module_path": "Backtrace.Interop",
+      "description": "Converts a JSON-formatted backtrace from a specified source into a structured representation. Operates on strings and returns a custom type encapsulating stack trace information. Used to process error logs from external systems that emit JSON-based debugging data.",
+      "description_length": 264,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "xapi-backtrace",
+      "description": "Provides functions to capture, store, and reconstruct exception backtraces for debugging purposes. Works with custom exception types and stack trace data structures. Enables tracking of error origins across asynchronous or distributed operations.",
+      "description_length": 246,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Backtrace",
+      "description": "captures and converts structured backtrace data from external sources into OCaml-compatible formats, enabling error tracking across language boundaries. It defines a custom type for stack trace information and provides parsing functions that transform JSON strings into this type. Operations include extracting frame details, mapping source locations, and reconstructing call sequences. For example, it can process a Python-generated JSON backtrace to produce an OCaml-readable stack trace with file, line, and function information.",
+      "description_length": 532,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 3,
+    "meaningful_modules": 3,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 532,
+    "min_description_length": 246,
+    "avg_description_length": 347.3333333333333,
+    "embedding_file_size_mb": 0.01131439208984375
+  }
+}

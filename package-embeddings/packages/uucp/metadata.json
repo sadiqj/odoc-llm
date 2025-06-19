@@ -1,0 +1,182 @@
+{
+  "package": "uucp",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 23,
+  "creation_timestamp": "2025-06-18T16:36:31.699574",
+  "modules": [
+    {
+      "module_path": "Uucp.Case.Map",
+      "description": "Converts individual Unicode code points to their lowercase, uppercase, and titlecase equivalents, returning either the same code point or a list of transformed code points. Operates on Uchar.t values, reflecting Unicode standard case mapping rules. Used to implement case conversion in text processing pipelines, such as normalizing input for comparison or formatting.",
+      "description_length": 368,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Uucp.Case.Fold",
+      "description": "Processes Unicode characters to apply case folding, returning either the character itself or a list of folded characters. Operates on Uchar.t values and produces results based on Unicode's Case_Folding rules. Used to normalize characters for case-insensitive comparisons or text processing tasks.",
+      "description_length": 296,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Uucp.Case.Nfkc_fold",
+      "description": "Processes Unicode characters by applying the NFKC case folding transformation, returning either the folded character or a list of resulting characters. Works with `Uchar.t` values and produces lists of Unicode characters or single characters. Used to normalize case in text processing tasks requiring strict Unicode compliance.",
+      "description_length": 327,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Uucp.Case.Nfkc_simple_fold",
+      "description": "Processes Unicode characters by applying NFKC simple case folding, returning either the character itself or a list of folded characters. Operates on `Uchar.t` values and produces results in a discriminated union type. Used to normalize case in text processing tasks where full Unicode normalization is unnecessary.",
+      "description_length": 314,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Uucp.Break.Low",
+      "description": "Provides integer mappings for break properties of Unicode characters, including line, grapheme cluster, word, sentence, and Indic conjunct break values. Each function returns an integer index used to look up high-level break properties in corresponding arrays. Supports processing of text segmentation tasks by converting characters to break type identifiers and retrieving their symbolic representations.",
+      "description_length": 405,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Uucp.Age",
+      "description": "Compares age values using standard comparison logic. Formats age representations for output. Computes the age property from a Unicode character. Works with the abstract type `t` representing age values. Used to standardize age comparisons in text processing workflows.",
+      "description_length": 268,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Uucp.Alpha",
+      "description": "Checks if a Unicode character has the Alphabetic property, returning true for letters in any language. Operates on Uchar.t values, supporting full Unicode coverage. Used to validate input fields that require alphabetic characters only.",
+      "description_length": 235,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Uucp.Block",
+      "description": "Provides functions to retrieve and compare block properties of Unicode characters, and to access a sorted list of Unicode blocks with their range definitions. Operates on Unicode characters (Uchar.t) and block identifiers (t). Used to determine the block membership of characters and to iterate over defined Unicode block ranges.",
+      "description_length": 329,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Uucp.Break",
+      "description": "Encapsulates Unicode break property mappings for text segmentation and line breaking, offering integer codes for line, grapheme, word, sentence, and Indic conjunct breaks. It provides functions to convert characters into break type identifiers and retrieve their symbolic names. Operations include querying break properties for individual characters and processing text segments based on these properties. Examples include identifying line break opportunities in a string or determining word boundaries in a sentence.",
+      "description_length": 517,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Uucp.Case",
+      "description": "Provides case conversion, folding, and normalization for Unicode text using Uchar.t values. Supports lowercase, uppercase, titlecase transformations, case folding, and NFKC-based case normalization, with operations returning single or multiple Unicode characters. Enables case-insensitive comparisons, text normalization, and consistent case handling in internationalized applications. For example, converts '\u00df' to 'ss', folds '\u0130' to 'i', and applies NFKC to ensure consistent representation of accented characters.",
+      "description_length": 515,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Uucp.Cjk",
+      "description": "Checks Unicode characters for specific CJK-related properties, including ideographic, radical, and operator classifications. Operates on `Uchar.t` values to determine their linguistic or structural role in East Asian scripts. Used to filter and process characters in text normalization, dictionary construction, or language-specific analysis.",
+      "description_length": 342,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Uucp.Emoji",
+      "description": "Checks Unicode characters for specific emoji-related properties, including whether a character is an emoji, an emoji presentation symbol, a modifier, a modifier base, a component, or extended pictographic. Operates on individual Unicode code points (Uchar.t). Used to filter and categorize characters in text processing pipelines for emoji detection and rendering.",
+      "description_length": 364,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Uucp.Func",
+      "description": "Checks Unicode characters for specific properties such as dash, diacritic, extender, and grapheme base. Operates on Uchar.t values to determine linguistic and typographic characteristics. Used to process text rendering, normalization, and character classification in internationalized applications.",
+      "description_length": 298,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Uucp.Gc",
+      "description": "Provides functions to compare and pretty-print values representing general category properties, and to retrieve the general category of a Unicode character. Works with the `t` type, which encapsulates category information, and `Uchar.t` for Unicode code points. Used to analyze and display character properties in text processing tasks.",
+      "description_length": 336,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Uucp.Gen",
+      "description": "Provides predicate functions to check specific Unicode properties of individual characters. Works with Uchar.t values to determine properties like default ignorable, deprecated, logical order exception, non-character, and variation selector. Used to filter or process characters in text normalization or validation tasks.",
+      "description_length": 321,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Uucp.Hangul",
+      "description": "Processes Hangul characters to determine their syllable type, such as leading, medial, or trailing consonant. Accepts Unicode code points and returns structured type information for linguistic analysis. Used to validate or categorize Hangul syllables in text processing pipelines.",
+      "description_length": 280,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Uucp.Id",
+      "description": "Checks Unicode character properties for identifier and pattern syntax rules. Evaluates whether a character can start or continue an identifier, or belongs to pattern syntax or whitespace. Used to validate and parse identifiers in programming languages or text processing systems adhering to Unicode standards.",
+      "description_length": 309,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Uucp.Name",
+      "description": "Returns the Unicode name of a character and its aliases, using specific data types like `Uchar.t` and `alias_tag`. Processes Unicode name properties and their associated tags for detailed character representation. Useful for generating human-readable labels or parsing Unicode character metadata.",
+      "description_length": 296,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Uucp.Num",
+      "description": "Provides functions to determine if a Unicode character is an ASCII or hexadecimal digit, and to retrieve its numeric type and value. Works with Uchar.t and abstract types numeric_type and numeric_value. Used to analyze character properties in text processing and encoding validation.",
+      "description_length": 283,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Uucp.Script",
+      "description": "Provides functions to retrieve and compare the Unicode script property of characters, and to obtain their script extensions. Works with Uchar.t values and a custom t type representing script properties. Used to analyze character writing systems and their extensions in text processing tasks.",
+      "description_length": 291,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Uucp.White",
+      "description": "Checks if a Unicode character belongs to the White_Space property. Operates on Uchar.t values to determine whitespace status. Used to validate or process text input where whitespace recognition is critical.",
+      "description_length": 206,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "uucp",
+      "description": "Provides functions to check Unicode character properties such as whether a character is a letter, digit, or whitespace, and to retrieve property values. Works with OCaml's `char` type and Unicode code points. Used to validate input strings, process text in different languages, and filter characters based on linguistic properties.",
+      "description_length": 331,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Uucp",
+      "description": "Uucp offers a comprehensive set of tools for analyzing and manipulating Unicode characters through specialized modules that handle properties like age, alphabetic status, block membership, break types, case conversion, CJK classification, emoji attributes, diacritics, general categories, identifier rules, names, numeric values, scripts, and whitespace. Key data types include `Uchar.t` for Unicode code points, `t` for abstract property representations, and specialized types for numeric values, block identifiers, and break types. Operations range from checking if a character is alphabetic or whitespace, to converting case, determining script, or identifying emoji components, enabling precise text processing and validation in multilingual applications. For example, it can convert '\u00df' to 'ss', classify 'A' as alphabetic, or detect if a character is part of the CJK block.",
+      "description_length": 879,
+      "index": 22,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 23,
+    "meaningful_modules": 23,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 879,
+    "min_description_length": 206,
+    "avg_description_length": 352.60869565217394,
+    "embedding_file_size_mb": 0.0840139389038086
+  }
+}

@@ -1,0 +1,469 @@
+{
+  "package": "dune-release",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 64,
+  "creation_timestamp": "2025-06-18T16:45:31.150819",
+  "modules": [
+    {
+      "module_path": "Dune_release.Github_v3_api.Archive.Request",
+      "description": "Handles file uploads to a repository by accepting an archive path, user identifier, repository name, release ID, and a CURL handle. Operates with Fpath.t for file paths and standard types for user and repository identifiers. Used to programmatically associate files with specific GitHub releases during automated deployment workflows.",
+      "description_length": 334,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dune_release.Github_v3_api.Archive.Response",
+      "description": "Extracts the browser download URL and asset name from a GitHub release asset response, returning results or error messages. Operates on Yojson.Basic.t values representing JSON responses from GitHub's API. Used to retrieve direct download links and identify assets for further processing.",
+      "description_length": 287,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Github_v3_api.Pull_request.Request",
+      "description": "Handles creation of GitHub pull requests with specified title, owner, branch, and body. Accepts an OPAM repository as a tuple and a boolean for draft status. Utilizes Curl.t to manage HTTP interactions during request submission.",
+      "description_length": 228,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Github_v3_api.Pull_request.Response",
+      "description": "Extracts the `html_url` field from a GitHub JSON response, returning a URL or indicating if a pull request already exists, and retrieves the `number` field as an integer, both with error handling. Works with `Yojson.Basic.t` data structures and custom result types for error messaging. Used to process GitHub API responses for tracking pull request details and identifiers.",
+      "description_length": 373,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Github_v3_api.Release.Request",
+      "description": "Handles HTTP requests for interacting with version control systems, including fetching tags, creating releases, and removing drafts. Operates with types such as Vcs.Tag.t, Version.t, and Curl.t to manage repository interactions. Used to automate release management tasks like generating release notes and preparing versioned deployments.",
+      "description_length": 337,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Github_v3_api.Release.Response",
+      "description": "Extracts a GitHub release ID from a JSON response or returns an error, and retrieves a browser download URL from a release asset based on a provided name. Works with JSON data structures from Yojson.Basic and error messages wrapped in a result type. Used to process GitHub API responses for release management tasks.",
+      "description_length": 316,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dune_release.Stdext.Option.O",
+      "description": "Handles optional values by chaining operations and transforming results. Accepts functions that take a value and return an option, enabling safe composition of potentially failing computations. Used to safely extract and process values from nested options without explicit pattern matching.",
+      "description_length": 290,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Stdext.Result.List",
+      "description": "Applies a function to each element of a list, stopping on the first error, and returns the result of the function or the first error encountered. Works with lists of any type and functions that return a result type. Used to process lists while handling potential errors during iteration.",
+      "description_length": 287,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dune_release.Stdext.Result.Let_syntax",
+      "description": "Provides binding operations for result types, allowing sequential computation with error propagation. Accepts a result and a function to transform its value or another result, returning a new result. Used to chain operations that may fail, maintaining error context through successive steps.",
+      "description_length": 291,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Github_v4_api.Pull_request.Request",
+      "description": "Provides functions to fetch a repository node ID and check if a repository is ready for review. Operates with strings for user and repository names, integers for IDs, and returns Curl.t objects for HTTP interactions. Used to retrieve specific repository data and validate review readiness in a version control system.",
+      "description_length": 317,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dune_release.Github_v4_api.Pull_request.Response",
+      "description": "Extracts a node identifier and a URL from a JSON object, returning results wrapped in a custom error type. Operates on Yojson.Basic.t values, parsing specific fields with error handling. Used to process server responses for node registration and endpoint retrieval.",
+      "description_length": 265,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Github_v3_api.Release",
+      "description": "Manages version control system interactions by handling HTTP requests, parsing JSON responses, and extracting release information. It processes types like Vcs.Tag.t, Version.t, and JSON structures to fetch tags, create releases, and retrieve download URLs. Operations include generating release notes, validating GitHub responses, and extracting asset URLs. Examples include automating draft removal, fetching release IDs, and preparing deployment artifacts.",
+      "description_length": 458,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Github_v3_api.Archive",
+      "description": "Processes file uploads to GitHub releases by accepting paths, user and repository identifiers, release IDs, and CURL handles, using Fpath.t for file management. Parses GitHub API responses to extract download URLs and asset names from Yojson.Basic.t structures, enabling automated retrieval of release assets. Combines upload and parsing capabilities to support continuous integration workflows. For example, it can upload a binary and then fetch its download link for deployment scripts.",
+      "description_length": 488,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Github_v3_api.Pull_request",
+      "description": "creates and manages GitHub pull requests by combining request generation with response parsing, enabling automated workflow integration. It uses tuples to represent OPAM repositories and employs result types to handle errors during URL and number extraction from JSON. Operations include submitting pull requests with customizable parameters and retrieving identifiers from API responses. This allows for tracking, updating, and validating pull requests within a CI/CD pipeline.",
+      "description_length": 478,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Stdext.Sbytes",
+      "description": "Provides functions to safely create and manipulate byte sequences. It supports operations like initializing a byte sequence with a specific character and copying data from a string into a byte sequence. Used to handle low-level byte-level data with error checking for boundary conditions.",
+      "description_length": 288,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Stdext.Path",
+      "description": "Checks if a filename is a backup by verifying if it ends with '~' or starts and ends with '#'. Filters a list of file paths to include only those whose base names match specified names, excluding backup files. Used to locate specific source files while skipping generated or temporary backups.",
+      "description_length": 293,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Stdext.Unix",
+      "description": "Reads a line from standard input, optionally echoing input to standard output. Operates on strings and handles user input in a terminal environment. Used for interactive command-line input where user responses need to be captured and optionally displayed.",
+      "description_length": 255,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Stdext.Option",
+      "description": "Encapsulates optional values and enables safe, composable operations through chaining and transformation. Supports functions that take a value and return an option, allowing seamless handling of missing data. Provides methods to map, bind, and flatten nested options, such as extracting a value from a deeply nested structure. Example: safely accessing a field in a record that may be absent, then applying a function to its value.",
+      "description_length": 431,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Stdext.String",
+      "description": "Formats a string to a given formatter using pretty-printing, suitable for debugging or logging. Works with the built-in string type and integrates with OCaml's formatting system. Used to display string values in a human-readable form during program execution.",
+      "description_length": 259,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Stdext.List",
+      "description": "Provides functions to pretty-print lists with a custom formatter, compare lists for equality using a custom predicate, and transform and filter elements using a function that may return an option. Works with lists of any type, enabling precise control over output, comparison, and element processing. Used to format debug output, validate data structures, and generate filtered results from optional transformations.",
+      "description_length": 416,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dune_release.Stdext.Result",
+      "description": "Combines list traversal with error handling and sequential result composition, enabling safe processing of data that may fail at any step. It supports operations like mapping over lists while halting on the first error and binding results to propagate failures through chains of computations. Key data types include lists and result values, with functions for transformation and error-aware composition. For example, it can validate a list of inputs, apply a series of transformations, and return either the final result or the first error encountered.",
+      "description_length": 552,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dune_release.Deprecate.Opam_1_x",
+      "description": "Provides functions to handle warnings about opam file format upgrades and to mark code for removal during version transitions. Operates on string messages and placeholder values for code migration. Used to notify users of compatibility changes and manage deprecation flags during package updates.",
+      "description_length": 296,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Deprecate.Config_user",
+      "description": "Provides documentation and warning messages for deprecated user-related command-line options and configuration fields. Works with string data to convey deprecation notices and guidance. Used to inform users when they employ outdated flags or settings in favor of updated alternatives.",
+      "description_length": 284,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dune_release.Github.Parse",
+      "description": "Generates an SSH URI from a GitHub HTTP URL by transforming the scheme and host. Processes strings representing HTTP URLs and returns an option type with the corresponding SSH format. Useful for converting repository references in build scripts or version control tools.",
+      "description_length": 270,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Version.Changelog",
+      "description": "Reads and converts changelog data from strings, extracts project versions while optionally preserving version prefixes, and generates VCS tags from changelog entries. Works with string representations of changelogs and versioned data structures. Used to generate semantic version tags for repository commits based on changelog content.",
+      "description_length": 335,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Text.Pp",
+      "description": "Formats package names, versions, VCS tags, commit identifiers, and file paths using custom styling. Outputs status indicators, \"dirty\" markers, and underlined URLs with specific formatting rules. Handles optional draft information through a tuple-based formatter.",
+      "description_length": 263,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Github_v4_api.Pull_request",
+      "description": "Fetches repository data and validates review readiness using user and repository names along with IDs, while extracting node identifiers and URLs from JSON responses, handling errors through a custom type. Operates on strings, integers, and Yojson.Basic.t values, returning Curl.t objects and parsed results. Enables interaction with version control systems by retrieving essential metadata and validating repository states. Examples include fetching a repository's node ID and parsing server-provided URLs for further API calls.",
+      "description_length": 529,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dune_release.Config.Opam_repo_fork",
+      "description": "type t = { name : string; url : string; branch : string option; default : bool } Provides functions to parse, validate, and manipulate repository configurations, including checking branch existence and resolving default repositories. Works with structured data representing Git repositories used in OPAM package management. Used to manage custom repository overrides and ensure consistency in package source resolution.",
+      "description_length": 419,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dune_release.Config.Cli",
+      "description": "Creates a wrapped value of type 'a t, enabling structured command-line argument handling. Accepts a single value of any type and encapsulates it for use in parsing and validating CLI inputs. Used to initialize configuration objects from raw command-line parameters.",
+      "description_length": 265,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Config.Draft_release",
+      "description": "Generates file paths for release metadata, sets and retrieves versioned configuration values, and checks if a value has been set. Operates on build directories, package names, versions, and string values. Used to manage release-specific settings during CI/CD workflows.",
+      "description_length": 269,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Config.Draft_pr",
+      "description": "Constructs and manipulates file paths for draft artifacts, managing versioned configuration entries. Operates on directory paths, string names, and version identifiers to store, retrieve, and remove data. Used to track build-specific settings in a structured, version-aware manner.",
+      "description_length": 281,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dune_release.Config.Release_asset_name",
+      "description": "Generates and manipulates file paths for release assets, allowing retrieval, setting, and verification of asset names tied to specific versions within a build directory. It interacts with versioned data and string values, supporting both in-memory checks and file system operations. Used to manage artifact identifiers during automated release workflows.",
+      "description_length": 354,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Vcs.Tag",
+      "description": "Provides functions to format, compare, and convert tag values to and from strings. Operates on an abstract type representing tags, commonly used to identify specific versions or commits. Used to generate human-readable representations and perform direct comparisons in contexts where tag identity is critical.",
+      "description_length": 309,
+      "index": 32,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dune_release.Vcs.Tag_or_commit_ish",
+      "description": "Provides functions to parse, compare, and convert between Git reference identifiers, including tags and commit hashes. Works with strings and the internal representation of Git references. Used to validate user input for Git operations and to determine the appropriate action when resolving a reference.",
+      "description_length": 303,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Opam.File",
+      "description": "Extracts and simplifies the fields from an opam file, returning a map of string keys to values, with dependencies and optional dependencies listed without version constraints. It operates on file paths and returns structured data for further processing. Used to analyze package dependencies and metadata in build systems.",
+      "description_length": 321,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dune_release.Opam.Descr",
+      "description": "Converts a string into a description tuple of a primary string and an optional secondary string, and vice versa. Parses an opam description from a readme file by extracting content based on file path. Used to process and serialize metadata from text files in a structured format.",
+      "description_length": 279,
+      "index": 35,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dune_release.Opam.Url",
+      "description": "Provides functions to create and validate URL structures with checksums, using OPAM file formats and file paths. Operates on strings for URIs, Fpath.t for file locations, and OpamFile.URL.t for structured URL data. Used to ensure integrity of distributed files by associating them with their expected checksums during build processes.",
+      "description_length": 334,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.App_log",
+      "description": "Provides functions to log application-level messages with distinct headers, including status updates, questions, success notifications, and error reports. Operates with logs and formatting constructs from the Logs module, allowing structured message output. Used to track progress in workflows, prompt user input, and report outcomes of specific checks with clear, formatted headers.",
+      "description_length": 383,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Archive",
+      "description": "Creates tar archives with controlled exclusion, rerooting, and timestamp settings. Compresses data using bzip2 and handles decompression of bzip2-compressed tarballs. Operates on file paths and strings, managing archive generation and extraction with precise control over file permissions and metadata.",
+      "description_length": 302,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Check",
+      "description": "Checks if a project meets dune-release requirements by validating build, tests, and linting. It uses package names, version tags, and build directories to configure checks and returns exit codes based on success or failure. Supports skipping specific steps like building, testing, or linting.",
+      "description_length": 292,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Config",
+      "description": "Creates and manages configuration files by constructing paths, setting values, checking existence, retrieving values, and removing entries. Operates on directory paths, string names, version identifiers, and raw string data. Used to store and retrieve build-specific settings, validate configuration presence, and manage versioned project configurations.",
+      "description_length": 354,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Curl",
+      "description": "type t = { url : string; headers : (string * string) list; method_ : string; body : string option } Provides functions to initialize a request with a URL, set HTTP headers, specify the HTTP method, and attach a request body. Processes and sends the request to retrieve a response. Used to interact with REST APIs, submit form data, and fetch remote resources with custom headers.",
+      "description_length": 379,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Curl_option",
+      "description": "Handles HTTP redirection, authentication, and output control for HTTP requests. Processes user credentials, manages silent mode, and includes custom headers in POST requests. Reads command-line arguments from a file and outputs protocol headers to a specified location.",
+      "description_length": 269,
+      "index": 42,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dune_release.Deprecate",
+      "description": "Handles deprecation notices and migration guidance by processing string-based warnings and flags. Supports tracking of outdated opam formats, user commands, and configuration settings, enabling clear communication of changes during version upgrades. Allows developers to issue targeted warnings, manage removal markers, and direct users toward updated practices. Examples include alerting users about deprecated CLI flags, generating migration instructions, and signaling incompatible opam file structures.",
+      "description_length": 506,
+      "index": 43,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dune_release.Distrib",
+      "description": "Provides functions to manage path exclusions in distribution packages, operating on lists of file paths represented as Fpath.t values. It allows precise control over which directories and files are omitted during the packaging process. Used to filter out build artifacts and temporary files when creating a release tarball.",
+      "description_length": 323,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Github",
+      "description": "Converts GitHub HTTP URLs to SSH format, enabling seamless integration with version control systems that require SSH protocols. Accepts string inputs and returns option types, ensuring safe handling of invalid or malformed URLs. Supports automation tasks such as updating build configurations or script-generated repository clones. Examples include transforming \"https://github.com/user/repo\" to \"git@github.com:user/repo\".",
+      "description_length": 423,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Github_repo",
+      "description": "Provides operations to parse and construct GitHub repository identifiers from URIs, including checking equality, pretty-printing, and generating HTTPS or SSH URLs. Works with a record type containing owner and repository names. Parses GitHub and GitHub Pages URLs to extract repository information and associated paths.",
+      "description_length": 319,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Github_v3_api",
+      "description": "Handles GitHub interactions through HTTP, JSON parsing, and data extraction, supporting version control, file uploads, and pull request management. It works with types such as Vcs.Tag.t, Version.t, Fpath.t, and Yojson.Basic.t to fetch tags, upload assets, and manage pull requests. Operations include generating release notes, uploading binaries, and extracting identifiers from API responses. Examples include automating release creation, fetching asset URLs, and integrating pull request workflows into CI/CD pipelines.",
+      "description_length": 521,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Github_v4_api",
+      "description": "Retrieves and validates repository data using identifiers and JSON parsing, extracting node IDs and URLs for subsequent API interactions. Processes strings, integers, and Yojson.Basic.t values, with error handling via a custom type. Supports fetching repository metadata and preparing URLs for further requests. Examples include obtaining a repository's node ID and parsing response URLs for additional queries.",
+      "description_length": 411,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Json",
+      "description": "Parses a string into a Yojson.Basic.t structure or returns an error, extracts string values from specific fields in a JSON object, retrieves integer values from specified fields, and retrieves lists of values from designated fields. Works with JSON objects and their nested structures. Used to validate and extract typed data from JSON input in configuration or data processing workflows.",
+      "description_length": 388,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Lint",
+      "description": "Provides functions to perform lint checks on package directories, including checking opam files and standard files. Operates on package structures, file paths, and boolean flags to control execution mode. Used to validate package configurations and ensure compliance with specified standards during build processes.",
+      "description_length": 315,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Opam",
+      "description": "Extracts and structures opam file data into a map, including dependencies and optional dependencies without version constraints, enabling analysis of package metadata. Converts between string descriptions and structured tuples, parsing readme content for metadata extraction and serialization. Handles URL validation and checksum association, ensuring file integrity through OPAM-compatible structures. Together, they support dependency analysis, metadata processing, and secure file distribution in build workflows.",
+      "description_length": 516,
+      "index": 51,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dune_release.Opam_file",
+      "description": "Handles migration and modification of OPAM files by updating URL, commit hash, and version fields, while removing outdated fields. Operates on OpamTypes.filename, OpamFile.URL.t, and OpamFile.OPAM.t types. Used to standardize package metadata during version upgrades or repository migrations.",
+      "description_length": 292,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Pkg",
+      "description": "The module provides operations for managing package metadata, including extracting licenses, inferring GitHub repositories, generating distribution archives, and retrieving version details from changelogs. It works with package data structures and file paths, leveraging `Fpath.t` for directory and file manipulation. Use cases include automating build processes, ensuring compliance via license extraction, and streamlining distribution workflows with version-controlled archives.",
+      "description_length": 481,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Prompt",
+      "description": "Prompts the user with formatted messages and handles confirmation, retries, and input collection. It works with boolean responses, string inputs, and error results based on user decisions. Used to safely execute actions after user approval, retry failed operations, or collect textual input during interactive sessions.",
+      "description_length": 319,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Sos",
+      "description": "The module offers functions for executing OS commands, manipulating files and directories, and managing system resources, with built-in controls for safe execution via dry-run and force flags. It operates on system paths, files, and command outputs, enabling precise handling of modifications and interactions. Use cases include automated script execution, system maintenance, and cautious file management where unintended changes must be avoided.",
+      "description_length": 447,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Stdext",
+      "description": "Provides functions for handling byte sequences, file filtering, interactive input, optional value manipulation, string formatting, list operations, and error-aware list processing. Key data types include byte sequences, options, lists, and result values, with operations for safe creation, transformation, and error handling. Examples include reading user input with echo, filtering backup files, and safely extracting nested optional values. It enables robust data manipulation across different abstractions, from low-level bytes to high-level list transformations.",
+      "description_length": 566,
+      "index": 56,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dune_release.Text",
+      "description": "Processes and formats text elements such as package names, versions, and file paths with custom styling, including status indicators and underlined URLs. Supports tuple-based formatting for optional draft information and manages commit identifiers and VCS tags with specific rules. Operations include string manipulation, conditional styling, and marker insertion. Examples include rendering a versioned package name with a \"dirty\" marker or underlining a URL with a custom prefix.",
+      "description_length": 481,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Uri_helpers",
+      "description": "Provides functions to parse, compare, and manipulate URIs as strings, including extracting the second level domain, appending relative paths, and removing Git prefixes. Operates on raw string representations of URIs, handling both standard and simplified formats. Used to process GitHub-style URIs and construct valid endpoint paths from base URLs.",
+      "description_length": 348,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Vcs",
+      "description": "manages version identifiers and Git references through abstract types and string conversions. It supports parsing, comparison, and formatting of tags and commit hashes, enabling accurate version tracking and reference resolution. Operations include validating user input for Git commands and generating readable tag representations. Examples include converting a commit hash to a tag name or comparing two references for equality.",
+      "description_length": 430,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Version",
+      "description": "Processes and transforms changelog strings into structured version data, extracting semantic versions and generating VCS tags. Supports version prefix preservation and operates on both raw strings and versioned data structures. Enables tasks like tagging commits based on changelog entries or parsing versioned logs. Examples include converting a changelog line to a version object or creating a git tag from a release note.",
+      "description_length": 424,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_release.Xdg",
+      "description": "Provides functions to retrieve standard directories according to the XDG specification, including configuration, data, cache, and home directories. Operates on string values representing file system paths. Used to locate application-specific directories for storing settings, user data, and temporary files in a standardized way.",
+      "description_length": 329,
+      "index": 61,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "dune-release",
+      "description": "Provides functions to parse Dune project configurations, generate versioned release tags, and interact with GitHub's API for package publishing. Works with Dune project metadata, Git repositories, and GitHub release endpoints. Used to automate version increments, tag commits, and push new package versions to opam.",
+      "description_length": 315,
+      "index": 62,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dune_release",
+      "description": "Provides functions for logging, packaging, validation, configuration management, HTTP interactions, and system operations, with support for structured data, file manipulation, and version control. Key data types include URLs, HTTP requests, file paths, JSON objects, version identifiers, and configuration maps, with operations for logging, archiving, checking project compliance, parsing JSON, handling HTTP, and managing system resources. Examples include creating tarballs with exclusion rules, validating project setup, sending API requests, converting GitHub URLs, and retrieving XDG-standard directories. It enables automation of release workflows, configuration management, and interaction with version control systems and REST APIs.",
+      "description_length": 740,
+      "index": 63,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 64,
+    "meaningful_modules": 64,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 740,
+    "min_description_length": 228,
+    "avg_description_length": 362.921875,
+    "embedding_file_size_mb": 0.23289871215820312
+  }
+}

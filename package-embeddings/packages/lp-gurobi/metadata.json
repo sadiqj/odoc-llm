@@ -1,0 +1,63 @@
+{
+  "package": "lp-gurobi",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 6,
+  "creation_timestamp": "2025-06-18T16:29:50.303103",
+  "modules": [
+    {
+      "module_path": "Lp_grb.Vt",
+      "description": "Converts between characters and a specialized variable type, enabling low-level manipulation of variable representations. Operates on an opaque type `t` that encapsulates variable data for system-level interactions. Used in binding C types to OCaml, particularly for interfacing with C libraries that require variable type handling.",
+      "description_length": 332,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lp_grb.Cs",
+      "description": "Converts between characters and a custom constraint type, enabling low-level manipulation of character-based constraints. Operates on a hidden type `t` that interfaces with C types through Ctypes. Used to embed character constraints in foreign function interfaces and system-level data structures.",
+      "description_length": 297,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lp_grb.Stat",
+      "description": "Provides conversion from integer to status type and string representation of status. Works with an abstract type representing model states. Used to encode and display model conditions in logging and user interfaces.",
+      "description_length": 215,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "lp-gurobi",
+      "description": "Provides functions to construct and manipulate linear and quadratic expressions, define constraints, and set objective functions for optimization models. Works with variables, expressions, and constraints represented as algebraic structures. Enables integration with GLPK and Gurobi solvers for solving LP and MIP problems, and supports reading/writing CPLEX LP files for model exchange.",
+      "description_length": 387,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lp_gurobi",
+      "description": "Provides functions to solve linear programming problems using Gurobi's optimization engine, returning objective values and variable assignments or error messages. Operates on problem structures defined in the Lp module, including constraints and objectives. Used to optimize resource allocation and decision-making in logistics and operations research scenarios.",
+      "description_length": 362,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lp_grb",
+      "description": "Encapsulates low-level interactions with Gurobi's C API through type conversions and opaque data handling. Manages variable and constraint representations using hidden types, enabling direct manipulation of system-level data. Supports status encoding and string conversion for model states, facilitating logging and interface integration. Allows precise control over variable and constraint types, as well as model status interpretation in external bindings.",
+      "description_length": 458,
+      "index": 5,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 6,
+    "meaningful_modules": 6,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 458,
+    "min_description_length": 215,
+    "avg_description_length": 341.8333333333333,
+    "embedding_file_size_mb": 0.022211074829101562
+  }
+}

@@ -1,0 +1,259 @@
+{
+  "package": "zstandard",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 34,
+  "creation_timestamp": "2025-06-18T16:39:58.612441",
+  "modules": [
+    {
+      "module_path": "Zstd_bindings.C.Streaming.Compression",
+      "description": "Provides functions to create, manage, and destroy compression contexts, compress data using input and output buffers, and control stream termination. Operates on Ctypes-based structures for input and output buffers and context pointers. Used to integrate low-level compression algorithms into OCaml applications with direct buffer manipulation.",
+      "description_length": 344,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstd_bindings.C.Streaming.Decompression",
+      "description": "Initializes and manages a decompression context, allocates and frees memory for input and output buffers, and performs decompression operations using C-compatible structures. Works with low-level buffer structures and size hints for efficient memory handling. Used to process compressed data streams in systems requiring direct memory control and integration with C libraries.",
+      "description_length": 376,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstd_bindings.C.Context.Compression",
+      "description": "Handles low-level compression operations using C types and structures. Provides functions to create, manage, and release compression contexts, as well as to compress data buffers with specified input and output sizes. Works with C-compatible pointers and size types to interface with native compression libraries.",
+      "description_length": 313,
+      "index": 2,
+      "embedding_norm": 0.9999998807907104
+    },
+    {
+      "module_path": "Zstd_bindings.C.Context.Decompression",
+      "description": "Handles memory-managed decompression operations using C-compatible structures. Accepts raw byte pointers and sizes to decompress data into allocated memory buffers. Initializes and releases decompression contexts with explicit memory management.",
+      "description_length": 245,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstd_bindings.C.Bulk_processing_dictionary.Compression",
+      "description": "Handles low-level compression operations using C library bindings, including creating and freeing compression contexts, and performing data compression. Works with C-compatible pointer types and size values to manage memory and data buffers. Used to compress raw byte sequences into compacted formats within system-level I/O pipelines.",
+      "description_length": 335,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstd_bindings.C.Bulk_processing_dictionary.Decompression",
+      "description": "Provides functions to create, manage, and decompress data using a structured C-compatible type. Operates with Ctypes structures and raw memory pointers for low-level data manipulation. Used to extract compressed data from buffers into allocated memory regions.",
+      "description_length": 260,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstd_bindings.C.Dictionary.Cover_params",
+      "description": "Provides access to fields of a C structure representing coverage parameters, including unsigned integers for size, depth, steps, and thread count, and a float for split point. Works with Ctypes-based structure definitions to interface with C code. Used to configure and query coverage settings in low-level system monitoring or testing tools.",
+      "description_length": 342,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstd_bindings.C.Dictionary.FastCover_params",
+      "description": "Provides access to fields of a C struct representing parameters for a fast coverage algorithm, including integers for configuration values like `k`, `d`, `f`, and `steps`, a float for `splitPoint`, and a type representing the struct itself. Works with Ctypes-based data structures to interface with C code. Used to configure and control the behavior of a parallelized coverage computation process.",
+      "description_length": 397,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstandard.Dictionary.Training_algorithm.Cover",
+      "description": "Provides functions to configure and manage parameters for segment and dmer size, number of steps, threads, and sample splitting. Works with a record type containing numeric constraints and optimization settings. Used to fine-tune performance and training strategies in data processing pipelines.",
+      "description_length": 295,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Zstandard.Dictionary.Training_algorithm.Fast_cover",
+      "description": "Provides functions to compute and optimize coverage for sequence data using segment and d-mer sizes, with configurable parameters for training, testing, and parallel processing. Operates on numerical configurations and sequence samples to adjust coverage strategies dynamically. Used to fine-tune coverage thresholds in bioinformatics pipelines for efficiency and accuracy.",
+      "description_length": 373,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstd_bindings.C.Context",
+      "description": "Manages low-level compression and decompression through C-compatible interfaces, offering context creation, data processing, and resource cleanup. Uses pointers and size types to handle raw data buffers for efficient encoding and decoding. Supports explicit memory control during decompression and context lifecycle management. Can compress arbitrary data streams or decompress into pre-allocated buffers with precise size control.",
+      "description_length": 431,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstd_bindings.C.Simple_dictionary",
+      "description": "Provides functions for compressing and decompressing data using a preloaded dictionary. Operates on pointers to compression/decompression contexts, input buffers, and output buffers with size specifications. Used to efficiently handle data compression and decompression in scenarios requiring dictionary-based algorithms.",
+      "description_length": 321,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstd_bindings.C.Bulk_processing_dictionary",
+      "description": "Manages low-level data compression and decompression through C library integrations, using pointer-based memory management and size values for efficient data handling. Supports creation, manipulation, and destruction of compression contexts, enabling seamless integration with system I/O pipelines. Processes raw byte sequences by compressing them into compact formats or decompressing stored data into allocated memory. Examples include compressing log files for storage or decompressing network-transmitted data for immediate processing.",
+      "description_length": 539,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstd_bindings.C.Streaming",
+      "description": "Manages compression and decompression workflows through low-level buffer and context operations, enabling direct interaction with C-based data structures. Supports creating, controlling, and destroying compression/decompression contexts, along with buffer management for efficient data processing. Allows for precise control over input and output buffers, enabling integration with C libraries for tasks like compressing large datasets or decompressing streamed content. Examples include compressing raw byte sequences or decompressing network-transmitted data with custom memory allocation.",
+      "description_length": 591,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstd_bindings.C.Dictionary",
+      "description": "Accesses and manipulates C structure fields for coverage configuration, including numeric parameters like size, depth, steps, and split point, as well as algorithm-specific values such as `k`, `d`, `f`, and `splitPoint`. Supports interaction with C code via Ctypes, enabling low-level control over coverage monitoring and parallelized computation. Allows retrieval and modification of structured data to adjust system behavior dynamically. Examples include setting thread counts for parallel processing or tuning split points for coverage analysis.",
+      "description_length": 548,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstandard.Streaming.Compression",
+      "description": "Provides functions to initialize a compression context, compress data in blocks, flush remaining data, and finalize the stream with an epilogue. Operates on bigstring buffers and a stateful compression handle. Used to efficiently compress large data streams in applications requiring incremental compression and precise control over buffer sizes.",
+      "description_length": 346,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Zstandard.Streaming.Decompression",
+      "description": "Provides functions to initialize, decompress data, and release resources. Operates on bigstrings and integer positions/lengths to manage data streams. Used to process compressed data in real-time applications like network protocols or file extraction.",
+      "description_length": 251,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstandard.Bulk_processing_dictionary.Compression",
+      "description": "Provides functions to create and manage compression contexts, compress input data into output buffers using a specified dictionary and compression level. Works with input and output data structures, including `Input.t` and `Output.t` types. Used to efficiently encode data streams with customizable compression settings.",
+      "description_length": 320,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Zstandard.Bulk_processing_dictionary.Decompression",
+      "description": "Provides functions to initialize, manage, and execute decompression operations using a preloaded dictionary. Works with input and output structures that handle binary data streams. Used to decode compressed data in real-time applications such as network protocols or file extraction.",
+      "description_length": 283,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstandard.Dictionary.Training_algorithm",
+      "description": "combines parameter configuration and coverage optimization for sequence data, using numeric records to adjust segment sizes, d-mer lengths, and processing strategies. It supports dynamic tuning of coverage thresholds through configurable training and testing phases, enabling efficient and accurate data processing. Functions include setting thread counts, sample splitting, and step limits to balance speed and precision. Examples include optimizing coverage for large genomic datasets or adjusting parameters to reduce memory usage during training.",
+      "description_length": 550,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Zstd_bindings.C",
+      "description": "Provides functions to bind and invoke C functions from OCaml, using type-safe wrappers. Operates with custom types like 'a fn, 'a return, and 'a result to represent function signatures and results. Enables direct calling of C functions by name and type, and facilitates accessing C global variables as pointers.",
+      "description_length": 311,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstandard.Output",
+      "description": "Provides functions to direct output to a pre-allocated buffer, an iobuf, or a newly allocated string or bigstring. Accepts parameters to control buffer position, length, and size limits. Used to manage output destinations for Zstd compression and decompression operations.",
+      "description_length": 272,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstandard.Input",
+      "description": "Provides functions to create a compressed data handle from various byte sources. Accepts OCaml strings, bytes, bigstrings, and Iobufs, with varying copy behaviors. Used to prepare input data for Zstd compression or decompression without unnecessary memory duplication.",
+      "description_length": 268,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstandard.Compression_context",
+      "description": "Provides functions to initialize and release a compression context, managing resources for data compression tasks. Operates on an opaque type representing the internal state of a compression engine. Used to set up and clean up compression operations in streaming or batch processing scenarios.",
+      "description_length": 293,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Zstandard.Decompression_context",
+      "description": "Provides functions to initialize and release a decompression context, managing resources for data extraction. Operates on an opaque type representing the internal state of a decompression process. Used to set up and clean up resources before and after decompressing data streams.",
+      "description_length": 279,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstandard.Simple",
+      "description": "Compresses a single frame of input data into a specified output structure using a given compression level. Decompresses input containing an exact number of frames into a provided output structure. Works with custom input and output types representing data streams. Used to process binary data in applications requiring efficient storage or transmission.",
+      "description_length": 353,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstandard.With_explicit_context",
+      "description": "Provides functions for compressing and decompressing data using pre-allocated contexts, ensuring efficient memory usage during repeated operations. Operates on compression and decompression contexts, input streams, and output buffers. Used to process large datasets or streaming data where context reuse minimizes memory overhead.",
+      "description_length": 330,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstandard.Dictionary",
+      "description": "manages sequence data processing by dynamically adjusting parameters such as segment size, d-mer length, and thread count to optimize coverage and performance. it operates on numeric records and supports configurable training and testing phases to refine processing strategies. it enables tasks like reducing memory consumption during training or improving accuracy in large genomic datasets. key operations include parameter tuning, sample splitting, and step limit adjustments.",
+      "description_length": 479,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstandard.Simple_dictionary",
+      "description": "Provides functions for compressing and decompressing data using a preloaded dictionary. Operates on compression and decompression contexts, input streams, and output buffers. Used to efficiently encode and decode data sequences with context-specific mappings.",
+      "description_length": 259,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstandard.Bulk_processing_dictionary",
+      "description": "Handles data compression and decompression using preloaded dictionaries, enabling efficient encoding and decoding of binary streams with adjustable compression settings. Supports input and output types `Input.t` and `Output.t` for managing data flow during processing. Allows real-time decoding of network data and efficient encoding of large datasets. Examples include compressing log files with a custom dictionary or decompressing streamed video frames.",
+      "description_length": 456,
+      "index": 29,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Zstandard.Streaming",
+      "description": "Manages data streams through stateful compression and decompression operations using bigstring buffers. Supports incremental processing with functions to initialize, compress, flush, decompress, and finalize streams, while tracking input and output positions. Examples include compressing large files in chunks or decompressing network data in real time. Operations require manual buffer management and input tracking to ensure complete processing.",
+      "description_length": 448,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "zstandard",
+      "description": "Provides compression and decompression of byte sequences using the Zstandard algorithm. Operates on input and output buffers as well as input channels. Used to efficiently reduce the size of data streams during network transmission or file storage.",
+      "description_length": 248,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Zstd_bindings",
+      "description": "Encapsulates C function and variable integration with OCaml through typed interfaces. Supports custom types such as 'a fn, 'a return, and 'a result to define and execute C signatures safely. Allows direct invocation of C functions by name and access to C global variables as pointers. Enables low-level system interactions with type-checked safety and direct memory manipulation.",
+      "description_length": 379,
+      "index": 32,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Zstandard",
+      "description": "Offers low-level control over compression and decompression workflows by managing input sources, output destinations, and context lifecycles. It includes types for buffers, contexts, and data streams, with operations to compress or decompress single frames, manage dictionaries, and handle streaming data. Functions allow direct manipulation of memory through pre-allocated buffers, reusable contexts, and custom input/output types. Examples include compressing log files with a dictionary, decompressing video streams in real time, or processing large datasets with optimized memory usage.",
+      "description_length": 590,
+      "index": 33,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 34,
+    "meaningful_modules": 34,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 591,
+    "min_description_length": 245,
+    "avg_description_length": 365.44117647058823,
+    "embedding_file_size_mb": 0.12400150299072266
+  }
+}

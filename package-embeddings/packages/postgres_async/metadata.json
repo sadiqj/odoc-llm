@@ -1,0 +1,434 @@
+{
+  "package": "postgres_async",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 59,
+  "creation_timestamp": "2025-06-18T16:43:44.270251",
+  "modules": [
+    {
+      "module_path": "Postgres_async.Private.Types.Notification_channel.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key value by parsing and extracting the first element. Works with Sexp.t and returns a key type. Used to deserialize structured data from S-expressions into a specific key format for lookup or comparison.",
+      "description_length": 236,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Postgres_async.Private.Types.Notification_channel.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of a specific type using the Bin_prot library, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, particularly those involving polymorphic variants. Used to enable efficient binary persistence of data structures in applications like network protocols or file storage.",
+      "description_length": 402,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Types.Notification_channel.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific element type using a provided constructor. Works with S-expressions and custom data types defined by the user. Used to parse structured data from S-expression representations into application-specific types.",
+      "description_length": 247,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Types.Notification_channel.Hash_set.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary encoding and decoding, particularly those involving polymorphic variants. Used to enable efficient binary persistence of data structures in applications requiring fast I/O operations.",
+      "description_length": 386,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Backend.Error_or_notice_field",
+      "description": "Provides functions to convert values to S-expressions and compare them for equality. Works with a private character type and an abstract type representing error or notice fields. Used to serialize and check consistency of error messages in parsing or validation workflows.",
+      "description_length": 272,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Backend.ErrorResponse",
+      "description": "Provides functions to convert an error structure to an S-expression and to read an error from a buffer. Works with a custom error type and Iobuf for low-level data handling. Used to parse and serialize error representations in network or file protocols.",
+      "description_length": 253,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Backend.NoticeResponse",
+      "description": "Provides functions to convert a structured data type to an S-expression and to parse a binary buffer into that type. Works with a custom record type containing fields for notice data and metadata. Used to process incoming network messages by decoding their binary representation into a typed structure.",
+      "description_length": 302,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Backend.AuthenticationRequest",
+      "description": "Handles parsing and serialization of authentication request data from and to S-expressions. Processes binary input using Iobuf to extract structured request information. Works with custom type `t` representing an authentication request.",
+      "description_length": 236,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Backend.ParameterDescription",
+      "description": "Consumes a buffer to extract an integer array, parsing binary data according to a predefined structure. It operates on Iobuf instances and returns an error-extended result. This is used to decode serialized parameter data from network or file sources.",
+      "description_length": 251,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Backend.ParameterStatus",
+      "description": "Provides functions to convert a status value to an S-expression and to consume input from a buffer, returning a result that may contain an error. Works with the `t` type, which represents a parameter status, and Iobuf for reading data. Used to parse and validate parameter status information from binary input streams.",
+      "description_length": 318,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Backend.BackendKeyData",
+      "description": "Consumes a buffer to extract and validate key data, returning an error if the operation fails. It processes binary data encoded in a specific format using Iobuf for efficient reading and seeking. This is used to parse cryptographic keys from network streams or file buffers.",
+      "description_length": 274,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Backend.NotificationResponse",
+      "description": "Provides functions to convert a notification response to an S-expression and to consume a buffer containing serialized notification data. Works with a record type representing the structured notification response. Used to parse incoming network messages into a typed representation for processing.",
+      "description_length": 297,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Backend.ReadyForQuery",
+      "description": "Handles parsing of PostgreSQL 'ReadyForQuery' protocol messages from byte buffers. Operates on Iobuf instances and returns a result type indicating success or failure. Converts internal representation to S-expressions for serialization or debugging purposes.",
+      "description_length": 258,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Backend.ParseComplete",
+      "description": "Consumes the entire contents of an Iobuf, advancing the read pointer to the end. It operates on Iobuf instances with read and seek capabilities, ensuring all data is processed. This is useful for fully reading input streams without manual tracking.",
+      "description_length": 248,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Backend.BindComplete",
+      "description": "Consumes the entire contents of an Iobuf, advancing the read pointer to the end. It operates on Iobuf instances with read and seek capabilities, ensuring all data is processed. This is useful for fully reading input streams without manual tracking.",
+      "description_length": 248,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Backend.NoData",
+      "description": "Consumes the contents of an Iobuf by reading from a readable source and discarding the data. It operates on Iobuf.t values with read and seek capabilities. Used to efficiently drain input streams without processing the data.",
+      "description_length": 224,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Backend.EmptyQueryResponse",
+      "description": "Handles the consumption of data from an Iobuf by advancing the read pointer, specifically designed for processing empty query responses. Operates on Iobuf instances with read and seek capabilities. Used to efficiently discard irrelevant data in network protocol implementations.",
+      "description_length": 278,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Backend.CloseComplete",
+      "description": "Consumes input from a read-ready buffer, advancing the buffer's position until no more data is available. Operates on Iobuf.t structures with read and seek capabilities. Used to process incoming data streams in real-time networking or file parsing scenarios.",
+      "description_length": 258,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Backend.RowDescription",
+      "description": "Processes raw row metadata from a database response, extracting column information such as names, types, and formats. Operates on byte buffers and returns an array of column metadata structures. Used to prepare schema information before parsing actual row data.",
+      "description_length": 261,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Backend.DataRow",
+      "description": "Processes a sequence of data rows by reading from a buffer, extracting each row as an array of optional strings. Operates on Iobufs and returns results as a tagged type for error handling. Used to parse structured data streams where each line represents a row of fields.",
+      "description_length": 270,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Backend.CopyInResponse",
+      "description": "Consumes input from a buffer, processing it into structured data based on defined column mappings. It operates on Iobuf.t and custom column types, extracting and validating data according to a schema. Used to parse and validate incoming network data streams during protocol handling.",
+      "description_length": 283,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Backend.CopyOutResponse",
+      "description": "Consumes a buffer to extract a structured response containing column data and a seek position. It processes Iobuf instances with read and seek capabilities, returning an error or a parsed result. The module is used to parse network or file-based responses that include columnar data and tracking information.",
+      "description_length": 308,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Backend.CommandComplete",
+      "description": "Consumes input from a buffer and returns a parsed command string, handling errors gracefully. It processes raw byte data using Iobuf operations and extracts command-line input. This is used to read and validate user input in interactive command-line applications.",
+      "description_length": 263,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Backend.Writer",
+      "description": "Writes PostgreSQL protocol messages to a network connection, including authentication responses, query readiness, error reports, and result rows. Operates on types such as AuthenticationRequest, ReadyForQuery, ErrorResponse, and DataRow to format and send structured data. Used to implement the PostgreSQL backend communication layer in an asynchronous network server.",
+      "description_length": 368,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Shared.CopyData",
+      "description": "Skips a specified number of bytes in an Iobuf stream using a seek operation. It operates on Iobuf objects and a string type for data representation. Used to bypass header information or irrelevant data segments during file or network data processing.",
+      "description_length": 250,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Shared.CopyDone",
+      "description": "Consumes the contents of an Iobuf by reading from a readable source and advancing the seek position. It operates on Iobuf instances paired with a readable interface, ensuring data is processed without duplication. This function is used to efficiently transfer data from a source to a destination buffer in I/O operations.",
+      "description_length": 321,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Frontend.StartupMessage",
+      "description": "Consumes a buffer to parse and validate a startup message, extracting protocol version and connection parameters. Works with Iobuf.t for binary data and returns a structured result with error handling. Used to process initial client connections in database or messaging protocols.",
+      "description_length": 280,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Frontend.PasswordMessage",
+      "description": "Handles parsing of Kerberos and password messages from byte buffers, extracting structured data for authentication protocols. Operates on Iobuf.t with read and seek capabilities, returning results wrapped in Core.Or_error.t. Used to process network authentication payloads in secure communication systems.",
+      "description_length": 305,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Frontend.Parse",
+      "description": "type t = { name: string; value: int; is_valid: bool } Provides functions to parse structured text into a record type, extract named values, and validate parsed data. Works with string inputs and returns a typed result with error handling. Used to process configuration lines and convert them into a usable data format for further processing.",
+      "description_length": 341,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Frontend.Bind",
+      "description": "Provides functions to bind a value to a function, handling optional and result types, and to compose operations that may fail or return no value. Works with types such as 'a option and 'a result. Used to chain database queries that may return no records or to link API calls that can fail with specific error codes.",
+      "description_length": 315,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Frontend.Execute",
+      "description": "Provides functions to execute SQL queries, fetch results as a list of rows, and handle query parameters. Works with query strings, parameter lists, and row data structures. Used to retrieve database records and execute batch updates in a database-driven application.",
+      "description_length": 266,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Frontend.Describe",
+      "description": "Provides functions to serialize and deserialize values of type t using a custom binary format, including reading from and writing to byte buffers. Supports encoding and decoding of nested structures and primitive types within t. Used to persist complex data structures to disk and reconstruct them efficiently during loading.",
+      "description_length": 325,
+      "index": 31,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Frontend.Close",
+      "description": "Provides functions to check if a value is within a specified range, calculate the distance to a target, and adjust values toward a close target. Works with numeric types and the abstract type t. Used to implement proximity-based logic in game mechanics and sensor simulation.",
+      "description_length": 275,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Frontend.CopyFail",
+      "description": "Provides functions to deep copy records and arrays, with support for recursive structures. Operates on custom types, records, and nested arrays, preserving original values during duplication. Used to safely duplicate configuration objects and data structures in concurrent environments.",
+      "description_length": 286,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Frontend.Query",
+      "description": "Consumes a buffer to extract a string value, parsing it from the input stream. It operates on Iobuf instances with read and seek capabilities, returning a result wrapped in an error monad. This is used to process raw byte data into structured string representations during data parsing workflows.",
+      "description_length": 296,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Frontend.CancelRequest",
+      "description": "Handles the parsing and validation of cancellation requests from a byte buffer, extracting structured data such as request IDs and timestamps. Processes Iobuf instances with read and seek capabilities to efficiently navigate and interpret raw data. Used to validate incoming cancellation messages before initiating system-wide rollback operations.",
+      "description_length": 347,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Frontend.Writer",
+      "description": "Writes PostgreSQL protocol messages to a network stream, including SSL requests, startup, password, parse, bind, close, query, describe, execute, copy data, and termination commands. Operates on specific message types like StartupMessage, PasswordMessage, Parse, Bind, and CopyData. Used to construct and send database interaction commands in a PostgreSQL client implementation.",
+      "description_length": 378,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Types.Notification_channel.Table",
+      "description": "Parses S-expressions into key values and enables binary serialization and deserialization of custom types with support for polymorphic variants. Operates on Sexp.t and arbitrary types, providing size, write, read, and shape functions. Converts structured data into lookup-friendly keys and persists complex data efficiently. Allows for efficient data storage and retrieval, as well as consistent key-based comparisons.",
+      "description_length": 418,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Types.Notification_channel.Hash_set",
+      "description": "Converts S-expressions to custom data types using a provided constructor and supports binary serialization and deserialization with Bin_prot, including size, write, read, and shape operations. Handles structured data parsing and efficient binary storage for user-defined types, particularly polymorphic variants. Allows converting between textual S-expression formats and compact binary representations. Enables seamless data interchange and persistence in applications requiring both human-readable and high-performance data handling.",
+      "description_length": 535,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Types.Notification_channel.Hash_queue",
+      "description": "This module provides operations for managing ordered key-value pairs in a hash queue, including insertion, lookup, reordering, and modification of elements based on keys. It supports traversal, transformation, and accumulation patterns like folding and filtering, alongside safe and unsafe (exn) variants for dequeuing and replacing items. Use cases include maintaining ordered caches, task scheduling with key-based prioritization, or processing elements with efficient membership checks and dynamic reordering.",
+      "description_length": 512,
+      "index": 39,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Shared",
+      "description": "Moves a pointer within an Iobuf stream by a given number of bytes, allowing efficient navigation through data sources. Reads and advances the seek position of an Iobuf from a readable interface, ensuring data is consumed once and not repeated. Key types include Iobuf and string, with operations for seeking and reading. This enables tasks like skipping file headers or streaming data between buffers without redundancy.",
+      "description_length": 420,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Frontend",
+      "description": "Processes binary and text data from buffers, extracting structured information for authentication, configuration, and protocol interactions. Supports parsing of messages, validation of values, and serialization of complex types, with error handling and optional/result-based operations. Enables tasks like reading configuration lines, executing SQL queries, and sending database commands. Facilitates secure communication, data persistence, and network protocol implementation.",
+      "description_length": 477,
+      "index": 41,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol.Backend",
+      "description": "Consumes a buffer and returns a result containing a parsed structure, handling errors gracefully. It operates on Iobuf buffers and custom data types representing columns and records. This is used to process incoming data streams in a structured, error-aware manner.",
+      "description_length": 265,
+      "index": 42,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Postgres_async.Private.Types.Statement_name",
+      "description": "Provides operations to create and manipulate named identifiers, including a default unnamed value and a constructor that enforces non-empty, null-free strings. Works with the abstract type `t` representing named entities. Used to generate valid entity names in system configurations and enforce input constraints during initialization.",
+      "description_length": 335,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Types.Portal_name",
+      "description": "Provides functions to create and manipulate named identifiers, including validation of nonempty, null-free strings. Works with the abstract type `t` representing named entities. Used to generate unique, validated names for system components.",
+      "description_length": 241,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Types.Notification_channel",
+      "description": "Combines S-expression parsing, binary serialization, and ordered key-value management into a unified data handling framework. Supports Sexp.t and custom types with size, write, read, and shape operations, along with key-based data manipulation and efficient storage. Enables conversion between textual and binary formats, and maintains ordered collections with dynamic reordering and lookup. Examples include persisting polymorphic variants, building ordered caches, and converting structured data for high-performance interchange.",
+      "description_length": 531,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Protocol",
+      "description": "provides low-level navigation and data extraction capabilities across Iobuf streams, enabling precise control over data consumption and structured parsing. It supports seeking, reading, and parsing binary or text-based data, with operations on Iobuf, string, and custom types to handle errors and extract meaningful information. Tasks include skipping headers, processing configuration lines, and parsing database records. It facilitates efficient, one-time data traversal and structured interpretation for protocol and application-level processing.",
+      "description_length": 549,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private.Types",
+      "description": "Provides operations to generate an unnamed instance, create a named instance from a nonempty string without nulls, and convert instances to strings. Works with the abstract type `t` representing named or unnamed entities. Used to enforce valid naming constraints in data models and generate string representations for logging or display.",
+      "description_length": 337,
+      "index": 47,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Postgres_async.Private.Simple_query_result",
+      "description": "Provides functions to convert query result states into specific error types for handling database interactions. Works with enumerated states representing different outcomes of a database query execution. Used to distinguish between successful, warning, and error conditions when processing query results in a PostgreSQL client.",
+      "description_length": 327,
+      "index": 48,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Postgres_async.Private.Without_background_asynchronous_message_handling",
+      "description": "Handles TCP connections for PostgreSQL clients, managing login sequences and raw I/O without asynchronous message processing. Operates with types like `Async.Reader.t`, `Async.Writer.t`, and `Protocol.Frontend.StartupMessage.t, enabling direct data exchange and parameter retrieval. Used to establish secure, controlled connections for scenarios requiring manual message handling or integration with custom protocols.",
+      "description_length": 417,
+      "index": 49,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Postgres_async.Pgasync_error.Postgres_field",
+      "description": "Converts a PostgreSQL field value to an S-expression, supporting character-based data types. Works with private character types and abstract field representations. Used to serialize database field data for logging or configuration purposes.",
+      "description_length": 240,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Pgasync_error",
+      "description": "Converts PostgreSQL field values into S-expressions, focusing on character-based data types and supporting private and abstract representations. Provides functions to serialize database fields for logging or configuration. Key data types include custom character types and field value representations. Examples include converting a text field to an S-expression or serializing a custom enum for debugging.",
+      "description_length": 405,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Or_pgasync_error",
+      "description": "Converts a result type with a PostgreSQL error into an OCaml core error, enabling integration with Core's error handling. Provides a way to extract the successful value, raising an exception if the result is an error. Supports serialization to S-expressions for debugging or logging purposes.",
+      "description_length": 292,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Column_metadata",
+      "description": "Extracts the name and PostgreSQL type OID of a column. Works with a custom type representing column metadata. Used to retrieve identifiers and type information for database columns during schema inspection.",
+      "description_length": 206,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Ssl_mode",
+      "description": "Converts an SSL mode value to a string compatible with libpq, and parses such a string back into the corresponding value. Works with an opaque type representing SSL mode configurations. Used to ensure consistent SSL settings when establishing database connections via libpq.",
+      "description_length": 274,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Expert",
+      "description": "Provides functions to establish and manage PostgreSQL connections, execute queries, handle notifications, and perform copy operations, returning results wrapped in a `Result.t` with `Pgasync_error.t` for error handling. Works with connection state, query parameters, and data feeding mechanisms for bulk operations. Used for reliably connecting to databases, processing query results, and managing asynchronous notification subscriptions.",
+      "description_length": 438,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async.Private",
+      "description": "offers low-level stream navigation, named entity handling, error conversion, and TCP connection management for PostgreSQL clients. It works with Iobuf, string, and custom types for data parsing, abstract `t` for valid naming, query states for error handling, and Async I/O types for direct communication. Tasks include parsing database records, validating identifiers, translating query outcomes, and managing login sequences. It enables precise control over data flow, error semantics, and connection setup in protocol-specific workflows.",
+      "description_length": 539,
+      "index": 56,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "postgres_async",
+      "description": "Provides functions for executing parameterized SQL queries and handling COPY IN data transfers with a PostgreSQL database. Operates on strings, byte sequences, and connection handles to manage database interactions. Used to import large datasets efficiently or run dynamic queries with bound parameters.",
+      "description_length": 303,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Postgres_async",
+      "description": "Encapsulates PostgreSQL client operations by handling data conversion, error mapping, connection management, and protocol-level interactions. It supports S-expression serialization of field values, error result unwrapping, column metadata extraction, SSL mode translation, and low-level stream processing. Functions include converting text fields to S-expressions, extracting column OIDs, establishing connections, and parsing database records. It enables robust logging, schema inspection, secure connections, and fine-grained control over asynchronous database interactions.",
+      "description_length": 576,
+      "index": 58,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 59,
+    "meaningful_modules": 59,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 576,
+    "min_description_length": 206,
+    "avg_description_length": 328.1864406779661,
+    "embedding_file_size_mb": 0.2112112045288086
+  }
+}

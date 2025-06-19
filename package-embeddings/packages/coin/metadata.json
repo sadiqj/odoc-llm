@@ -1,0 +1,49 @@
+{
+  "package": "coin",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 4,
+  "creation_timestamp": "2025-06-18T16:27:26.668403",
+  "modules": [
+    {
+      "module_path": "Coin.Char",
+      "description": "Provides operations to check if a character is valid under a specific encoding, compare characters, and convert characters to their corresponding Unicode values. Works with characters and encoding schemes, returning boolean results or Unicode code points. Used to validate input, ensure consistent character comparison, and perform encoding-specific conversions.",
+      "description_length": 362,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Coin.String",
+      "description": "Processes a string by iterating over its characters using a custom folding function that tracks positions and handles encoding. Operates on strings and uses a folder type that can either accumulate a value or signal malformed data. Useful for parsing encoded text, extracting character positions, or transforming strings while maintaining contextual information.",
+      "description_length": 362,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "coin",
+      "description": "Converts KOI8-U and KOI8-R encoded bytes to Unicode using preprocessed lookup tables. Accepts byte sequences and returns corresponding Unicode code points. Enables accurate text processing for legacy Russian and Ukrainian text sources.",
+      "description_length": 235,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Coin",
+      "description": "Processes strings by applying a folding function that tracks character positions and encoding context, enabling detailed text analysis and transformation. Supports character validation, comparison, and Unicode conversion, allowing for precise control over input handling and encoding-specific operations. Can be used to parse encoded text, extract positional data, or build custom string transformations. Key data types include characters, strings, and a folder type that accumulates results or detects malformed input.",
+      "description_length": 519,
+      "index": 3,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 4,
+    "meaningful_modules": 4,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 519,
+    "min_description_length": 235,
+    "avg_description_length": 369.5,
+    "embedding_file_size_mb": 0.014954566955566406
+  }
+}

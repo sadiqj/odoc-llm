@@ -1,0 +1,49 @@
+{
+  "package": "loga",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 4,
+  "creation_timestamp": "2025-06-18T16:28:03.580084",
+  "modules": [
+    {
+      "module_path": "Loga.Severity",
+      "description": "Converts severity levels to integers, generates string representations, and compares whether one level is more severe than or equal to another. Works with a custom type representing severity levels. Used to enforce logging thresholds and prioritize error handling in system diagnostics.",
+      "description_length": 286,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Loga.Timer",
+      "description": "Provides functions to generate time-based identifiers, including the current generation and a zero-valued generation. Works with a custom type representing time-based generation values. Used to track sequential events or state changes with temporal uniqueness.",
+      "description_length": 260,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "loga",
+      "description": "Provides functions to log messages at different severity levels, filter logs by level, and format output with timestamps and module names. Works with strings, integers, and custom log records. Used to track application flow, debug runtime issues, and monitor system behavior in real-time.",
+      "description_length": 288,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_loga",
+      "description": "Generates AST expressions for logging statements, integer literals, string literals, tuples, and function applications with location metadata. Constructs log expressions and payload wrappers using severity levels and source locations. Processes and transforms OCaml expressions within a parser tree migration context.",
+      "description_length": 317,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 6,
+    "meaningful_modules": 4,
+    "filtered_empty_modules": 2,
+    "retention_rate": 0.6666666666666666
+  },
+  "statistics": {
+    "max_description_length": 317,
+    "min_description_length": 260,
+    "avg_description_length": 287.75,
+    "embedding_file_size_mb": 0.014948844909667969
+  }
+}

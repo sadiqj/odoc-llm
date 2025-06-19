@@ -1,0 +1,385 @@
+{
+  "package": "nocrypto",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 52,
+  "creation_timestamp": "2025-06-18T16:42:46.540968",
+  "modules": [
+    {
+      "module_path": "Nocrypto.Rng.Generators.Hmac_drgb.Make",
+      "description": "Computes cryptographic hash values and HMAC authentication codes using a specified algorithm. It processes byte sequences through a stateful hashing interface, supporting incremental updates and direct digest computation. Handles Cstruct.t buffers for input and output, enabling secure message authentication and data integrity checks.",
+      "description_length": 335,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Cipher_block.AES.ECB",
+      "description": "Handles AES encryption and decryption using a key derived from a secret value. Operates on byte sequences (Cstruct.t) and supports key sizes of 128, 192, and 256 bits. Used to securely process data blocks in applications requiring direct cipher operations.",
+      "description_length": 256,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nocrypto.Cipher_block.AES.CBC",
+      "description": "Generates a key from a secret byte string, supports AES-CBC encryption and decryption with specified block and key sizes. Operates on Cstruct.t for input and output buffers, using an initialization vector for each message. Computes the next IV for sequential message encryption based on the previous ciphertext.",
+      "description_length": 311,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Cipher_block.AES.CTR",
+      "description": "Generates keystreams by encrypting sequential counter blocks, using a provided key and initial counter value. Operates on byte sequences (Cstruct.t) and cryptographic keys, supporting both encryption and decryption of arbitrary-length messages. Enables secure data transformation by XORing message bytes with generated keystreams, with support for offsetting the starting point of the stream.",
+      "description_length": 392,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Cipher_block.AES.GCM",
+      "description": "Handles AES-GCM encryption and decryption using a secret key and initialization vector. Operates on Cstruct.t for input/output and supports associated data. Processes fixed block size with key sizes validated through an array.",
+      "description_length": 226,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nocrypto.Cipher_block.AES.CCM",
+      "description": "Generates cryptographic keys from secrets, validates key and MAC sizes, and performs authenticated encryption and decryption with associated data. Operates on byte sequences represented as Cstruct.t and cryptographic keys of type key. Used to secure data transmission by encrypting payloads and verifying integrity with optional associated data.",
+      "description_length": 345,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Cipher_block.DES.ECB",
+      "description": "Handles AES encryption and decryption in ECB mode, operating on raw byte sequences with fixed block sizes. Accepts secret keys derived from byte buffers and supports encryption and decryption of arbitrary-length data. Works with Cstruct.t for efficient buffer manipulation and enforces key sizes compatible with AES-128, AES-192, and AES-256.",
+      "description_length": 342,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nocrypto.Cipher_block.DES.CBC",
+      "description": "Generates a key from a secret byte string, supports AES-CBC encryption and decryption with specified block and key sizes, and computes the next initialization vector for sequential message encryption. Operates on Cstruct.t for byte-level manipulation and key type for cryptographic operations. Used to securely process encrypted data streams requiring chained initialization vectors.",
+      "description_length": 383,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Cipher_block.DES.CTR",
+      "description": "Generates cryptographic keystreams by encrypting sequential counter blocks, using a fixed block size and a provided key. Processes messages by XORing them with the generated stream for encryption and decryption. Accepts a counter value, offset, and message length to control the output segment.",
+      "description_length": 294,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Rng.Generators.Fortuna",
+      "description": "Generates cryptographically secure random bytes using a block size defined at initialization, and updates its internal state with each generation. It accepts external entropy to reseed and accumulates incremental entropy from environmental sources. Used for secure key generation and session token creation in cryptographic applications.",
+      "description_length": 337,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nocrypto.Rng.Generators.Hmac_drgb",
+      "description": "Generates cryptographically secure random numbers using an HMAC-based deterministic random bit generator. Provides stateful operations for updating and extracting random data, with support for incremental input processing and direct output generation. Operates on byte sequences and Cstruct.t buffers, enabling secure key derivation and message authentication. Can be used to produce random keys, nonces, or securely seed other cryptographic functions.",
+      "description_length": 452,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Rng.Generators.Null",
+      "description": "Provides functions to generate random bytes based on a fixed seed, reseed with new data, and accumulate entropy from external sources. Operates on a stateful `g` type and `Cstruct.t` byte buffers. Used to create deterministic byte streams for testing or secure key generation where reproducibility is required.",
+      "description_length": 310,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Numeric.Int",
+      "description": "This module offers bitwise and arithmetic operations on integer types, including shifts, logical computations, and conversions between integer representations, alongside utilities for inspecting and formatting values. It facilitates binary serialization and deserialization via big-endian Cstructs, enabling efficient handling of integer data in network protocols or file formats. Specific use cases include low-level data manipulation and interoperability with systems requiring structured binary encoding.",
+      "description_length": 507,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Numeric.Int32",
+      "description": "The module provides arithmetic and bitwise operations on 32-bit integers, including addition, subtraction, shifts, and logical manipulations, alongside conversions between 32-bit integers and other numeric types. It interacts with Cstruct buffers for big-endian serialization, enabling packing and unpacking of 32-bit values into binary formats. This supports use cases like network protocol implementation, low-level data encoding, and interoperability with systems requiring precise bit-level control.",
+      "description_length": 503,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Numeric.Int64",
+      "description": "The module provides arithmetic, bitwise, and logical operations on 64-bit integers, alongside conversions between Int64 and other integer types, and utilities for formatting and inspecting values. It enables serialization and deserialization of Int64 values into Cstruct buffers using big-endian encoding, supporting byte-level manipulation and in-place data modifications. These capabilities are critical for low-level data processing, such as network protocol implementation or binary file handling, where precise control over 64-bit numeric representations is required.",
+      "description_length": 572,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Numeric.Z",
+      "description": "This module offers bitwise operations (shift, AND, OR, XOR), arithmetic operations (addition, subtraction, successor, predecessor), and conversions between arbitrary-precision integers/bit vectors (`t`) and integer types (int, int32, int64), along with serialization/deserialization to/from `Cstruct.t` for big-endian formats. It supports use cases like low-level bit manipulation, arithmetic with unbounded integers, and efficient data encoding for network protocols or file formats.",
+      "description_length": 484,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Cipher_block.S",
+      "description": "Generates cryptographic streams by encrypting sequential counter blocks, using a provided key and initial counter. Operates on Cstruct.t for input and output, with support for offset-based slicing of the generated stream. Encrypts and decrypts messages by XORing them with the stream, enabling secure data transformation in fixed-size blocks.",
+      "description_length": 342,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Cipher_block.Counter",
+      "description": "Increments or adds values to fixed-size blocks within a Cstruct buffer, with operations for 1, 2, 4, 8, 16, and 32-bit increments and additions. Each function modifies a specific block size at a given offset, with increment functions returning a boolean indicating overflow. Used for low-level network protocol parsing and manipulation where precise byte-level control is required.",
+      "description_length": 381,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Cipher_block.AES",
+      "description": "Provides AES-based encryption and decryption through multiple modes including CBC, CTR, and GCM, operating on byte sequences (Cstruct.t) with support for key sizes of 128, 192, and 256 bits. Includes key derivation, IV management, keystream generation, and authenticated encryption with associated data validation. Supports secure processing of arbitrary-length messages, sequential encryption with IV progression, and data integrity verification. Examples include encrypting payloads with CBC using an IV, generating keystreams for CTR mode, and performing authenticated GCM encryption with associated data.",
+      "description_length": 608,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Cipher_block.DES",
+      "description": "Provides AES-based encryption and decryption capabilities across ECB, CBC, and CTR modes, using Cstruct.t for efficient byte manipulation and supporting key sizes for AES-128, AES-192, and AES-256. Includes key derivation, initialization vector management, and counter-based keystream generation for secure data processing. Encrypts and decrypts arbitrary-length data by applying block cipher operations, chaining, or stream-based XOR. Examples include securing data streams with CBC, generating predictable keystreams for CTR, and handling fixed-size block operations.",
+      "description_length": 569,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Rng.S",
+      "description": "Generates uniform random bytes using a single PRNG algorithm, with `generate` producing `n` bytes and updating the internal state. It supports reseeding with external byte data and accumulating entropy from multiple sources incrementally. The `g` type represents the PRNG state, which must be seeded before use.",
+      "description_length": 311,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nocrypto.Rng.Generators",
+      "description": "Combines cryptographically secure random generation methods, including stateful byte and number generation with entropy accumulation and reseeding. Offers operations on `g` type and `Cstruct.t` buffers, supporting key derivation, token creation, and deterministic testing. Enables secure key generation, nonce production, and random number extraction with state management. Allows incremental entropy input and direct output generation for flexible cryptographic use.",
+      "description_length": 467,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Rng.Make_N",
+      "description": "This module offers bitwise operations (shift, AND, OR, XOR), arithmetic functions (addition, subtraction, increment, decrement), and conversions between a custom type `t` and integer types (int, int32, int64), enabling manipulation of arbitrary-precision integers or bit vectors. It also includes serialization and deserialization utilities for converting `t` to and from `Cstruct.t` in big-endian format, supporting in-place modifications and handling specific bit sizes. These capabilities are useful for tasks like network protocol parsing, cryptographic operations, or working with binary data requiring precise bit-level control.",
+      "description_length": 634,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Rng.Int",
+      "description": "Generates random integers within specified ranges or bit-lengths using a provided random generator. It supports uniform selection from intervals and bit-string interpretation with customizable most significant bits. Used for cryptographic key generation and randomized algorithm seeding.",
+      "description_length": 287,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Rng.Int32",
+      "description": "Generates random integers within specified ranges or bit-lengths using a provided random generator. Operates on 32-bit signed integers, supporting bounded and unbounded random selection. Used for cryptographic key generation and randomized algorithm initialization.",
+      "description_length": 265,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Rng.Int64",
+      "description": "Generates random integers and bit-strings using a provided random generator, with precise control over value ranges and bit configurations. Operates on 64-bit signed integers (`int64`) and supports generating values within specific intervals or bit-lengths. Used for cryptographic key generation, random sampling in bounded ranges, and bit-level data manipulation.",
+      "description_length": 364,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Rng.Z",
+      "description": "Generates random integers within specified ranges or bit-lengths using a given random generator. Operates on arbitrary-precision integers represented as Z.t. Used to create uniformly distributed values for cryptographic key generation or randomized algorithm testing.",
+      "description_length": 267,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Dsa.K_gen",
+      "description": "Provides functions to compute hash digests and HMAC authentication codes using a specified algorithm. Operates on byte sequences represented as Cstruct.t and maintains internal hash state through the t type. Computes single or multiple input digests, extracts final results, and generates keyed message authentication codes.",
+      "description_length": 324,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Dh.Group",
+      "description": "Provides pre-defined cryptographic group configurations for key exchange, including IKE groups from RFC 2409 and FFDHE groups from RFC 5114. Works with a custom `group` type representing parameters for Diffie-Hellman key agreement. Used to select standardized groups in secure communication protocols like IPsec and TLS.",
+      "description_length": 320,
+      "index": 28,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nocrypto.Cipher_stream.ARC4",
+      "description": "Encodes and decodes data using the ARC4 stream cipher, operating on byte sequences represented as Cstruct.t. It generates a key from a secret value and applies encryption or decryption to input buffers. Used for securing network communications or file data with symmetric key encryption.",
+      "description_length": 287,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Hash.MD5",
+      "description": "Computes MD5 hash values from byte sequences, supporting incremental updates and HMAC generation. Processes data using a stateful object that accumulates input before producing a fixed-size 16-byte digest. Accepts raw byte buffers or lists of buffers, and generates authentication codes using a secret key.",
+      "description_length": 306,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Hash.SHA1",
+      "description": "Computes SHA-1 hash values from byte sequences, supporting incremental updates and direct digest generation. Operates on `Cstruct.t` for input and output, and maintains internal state through the `t` type. Generates authentication codes using HMAC with a provided secret key.",
+      "description_length": 275,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Hash.SHA224",
+      "description": "Computes SHA-224 hash values from byte sequences, supporting incremental updates and single-pass hashing. Accepts Cstruct.t inputs and produces fixed-size 28-byte digests. Generates HMACs using a secret key for message authentication.",
+      "description_length": 234,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Hash.SHA256",
+      "description": "Computes SHA-256 hash values from input data, supporting incremental updates and direct digest generation. Operates on Cstruct.t buffers and maintains internal state through the t type. Generates authentication codes using HMAC with a provided secret key, and produces fixed-size 32-byte hash outputs.",
+      "description_length": 301,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Hash.SHA384",
+      "description": "Provides functions to compute SHA-384 hash digests, update hash states with input data, and generate HMACs using a secret key. Operates on Cstruct.t buffers and internal hash state objects. Used to generate secure message authentication codes and verify data integrity in cryptographic protocols.",
+      "description_length": 296,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Hash.SHA512",
+      "description": "Provides functions to compute SHA-512 hashes, update hash states with input data, and generate HMACs using a secret key. Operates on byte sequences represented as Cstruct.t and maintains internal hash state through the t type. Used to generate secure message digests and authentication codes for data integrity and verification.",
+      "description_length": 328,
+      "index": 35,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nocrypto.Rsa.PKCS1",
+      "description": "Encodes and decodes PKCS1 v1.5 signatures using private and public keys, applying padding and RSA transformation. Encrypts and decrypts messages with PKCS1 v1.5 padding using public and private keys, respectively. Operates on byte sequences and requires keys with a minimum size of 11 plus the message length.",
+      "description_length": 309,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nocrypto.Rsa.OAEP",
+      "description": "Computes cryptographic hash digests using a specified algorithm, supporting incremental updates and single-shot hashing. Operates on byte sequences and hash state objects, producing fixed-size output suitable for digital signatures and message authentication. Generates HMACs using a secret key for secure message authentication.",
+      "description_length": 329,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Rsa.PSS",
+      "description": "Computes cryptographic hash values and HMAC authentication codes using a specified algorithm. Operates on byte sequences represented as Cstruct.t and maintains internal hash state through the t type. Processes input data incrementally or in bulk, and generates digests or HMACs for authentication.",
+      "description_length": 297,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Base64",
+      "description": "Encodes and decodes data using Base64 encoding, operating on Cstruct.t values. It includes a validation function to check if a character is part of a Base64 sequence. Used to transform binary data into a text-safe format for transmission or storage.",
+      "description_length": 249,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Numeric",
+      "description": "This module offers bitwise operations (shift, AND, OR, XOR), arithmetic operations (addition, subtraction, increment, decrement), and conversions between a custom arbitrary-precision numeric type `t` and standard integer types (int, int32, int64). It also enables serialization and deserialization of `t` values into and out of Cstruct.t structures with big-endian encoding. These capabilities are useful for low-level data manipulation, protocol implementation, or interoperability with systems requiring precise control over numeric representations.",
+      "description_length": 551,
+      "index": 40,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nocrypto.Hash",
+      "description": "Computes cryptographic hash values using a single algorithm, supporting incremental updates and direct digest computation from byte sequences. Operates on `Cstruct.t` for input and output, and maintains internal state through the `t` type. Generates HMAC authentication codes using a secret key and provides methods to extract final hash results.",
+      "description_length": 346,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Cipher_block",
+      "description": "Generates cryptographic streams using counter blocks, enabling secure XOR-based encryption and decryption with Cstruct.t. Supports byte-level increment and addition operations on fixed-size blocks for precise network protocol manipulation. Offers AES encryption in multiple modes, including CBC, CTR, and GCM, with key management, IV progression, and authenticated encryption. Performs secure data transformation, keystream generation, and integrity verification across arbitrary message lengths.",
+      "description_length": 496,
+      "index": 42,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nocrypto.Cipher_stream",
+      "description": "Generates and applies stream ciphers using a secret key, transforming byte sequences into encrypted or decrypted outputs. Operates on Cstruct.t values, producing result records containing ciphertext or plaintext. Used to secure data transmission by XORing input data with a pseudorandom keystream derived from the key.",
+      "description_length": 318,
+      "index": 43,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nocrypto.Rng",
+      "description": "provides secure random number generation with support for multiple numeric types and bit-level manipulation. it includes a stateful PRNG type `g` for generating bytes and numbers, along with functions for entropy accumulation, reseeding, and cryptographic operations. it enables generation of integers, bit-strings, and arbitrary-precision values, with utilities for converting between custom types and standard integer representations. examples include generating secure keys, creating nonces, and performing randomized cryptographic operations with precise control over output ranges and bit configurations.",
+      "description_length": 609,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto.Rsa",
+      "description": "Performs RSA encryption, decryption, and signature operations with PKCS1 v1.5 padding, using byte sequences and keys. Supports hash computation and HMAC generation for message authentication, handling data incrementally or in bulk. Combines cryptographic operations with key-based transformations, ensuring message sizes comply with key constraints. Enables secure communication and data integrity checks through integrated hashing and RSA functions.",
+      "description_length": 450,
+      "index": 45,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nocrypto.Dsa",
+      "description": "Computes hash digests and HMACs using specified algorithms, operating on byte sequences with internal state management. Supports single and multiple input processing, final result extraction, and keyed message authentication. Accepts and returns data in Cstruct.t format, enabling secure cryptographic operations. Examples include generating SHA-256 hashes and HMAC-SHA256 signatures for data integrity checks.",
+      "description_length": 410,
+      "index": 46,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nocrypto.Dh",
+      "description": "Encapsulates Diffie-Hellman key exchange parameters with predefined cryptographic groups, including IKE and FFDHE configurations. Supports operations on a custom `group` type to manage parameters like prime modulus and generator. Enables secure key agreement in protocols by selecting standardized groups for cryptographic negotiations. Examples include generating shared secrets and validating group compatibility during handshake processes.",
+      "description_length": 442,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "nocrypto",
+      "description": "Provides functions for symmetric encryption (AES, 3DES, RC4), hash generation (MD5, SHA1, SHA2), and public-key operations (RSA, DSA, DH), along with a cryptographically secure random number generator. Operates on byte sequences, integers, and cryptographic keys. Used for securing data transmission, generating message digests, and implementing key exchange protocols.",
+      "description_length": 369,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto_entropy_unix",
+      "description": "Provides functions to seed and reseed a random number generator using the Unix system RNG, specifically /dev/urandom. It works with the `Nocrypto.Rng.g` type and allows for one-time initialization or periodic reseeding with a specified number of bytes. Used to ensure cryptographic randomness in applications requiring secure seeding, such as key generation or session token creation.",
+      "description_length": 384,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto_entropy_lwt",
+      "description": "Provides functions to seed and reseed a random number generator using Unix's /dev/urandom, with periodic background updates. Operates on Lwt threads and a random number generator type from Nocrypto. Initializes and maintains secure RNG state for cryptographic applications.",
+      "description_length": 273,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nocrypto",
+      "description": "Provides cryptographic operations through a unified interface, including encoding, hashing, encryption, and key exchange. Main data types include Cstruct.t, arbitrary-precision integers, and custom types for cryptographic states and groups, with operations like Base64 encoding, hash computation, AES encryption, and Diffie-Hellman key exchange. It supports secure random number generation, RSA signing, and HMAC authentication, enabling tasks such as generating secure keys, encrypting data streams, and verifying message integrity. Examples include transforming binary data for transmission, securing network protocols with AES-CTR, and establishing shared secrets via Diffie-Hellman.",
+      "description_length": 686,
+      "index": 51,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 52,
+    "meaningful_modules": 52,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 686,
+    "min_description_length": 226,
+    "avg_description_length": 379.4807692307692,
+    "embedding_file_size_mb": 0.1892995834350586
+  }
+}

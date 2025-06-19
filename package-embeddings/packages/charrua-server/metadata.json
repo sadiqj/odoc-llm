@@ -1,0 +1,56 @@
+{
+  "package": "charrua-server",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 5,
+  "creation_timestamp": "2025-06-18T16:29:16.384736",
+  "modules": [
+    {
+      "module_path": "Dhcp_server.Config",
+      "description": "Processes DHCP configuration files and constructs server settings based on specified IP and MAC addresses. Works with IP addresses, MAC addresses, and DHCP option lists to define network ranges, host entries, and lease times. Used to generate configuration objects for handling DHCP requests in a controlled network environment.",
+      "description_length": 328,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dhcp_server.Lease",
+      "description": "The module provides operations for managing DHCP lease lifetimes, including creating, extending, and checking expiration of leases tied to client identifiers, MAC addresses, and IPv4 addresses, while also handling database storage and cleanup. It includes functionality for validating and allocating IP addresses within specified ranges based on client information and network configurations. These capabilities are critical for ensuring efficient IP address management and preventing conflicts in dynamic network environments.",
+      "description_length": 527,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dhcp_server.Input",
+      "description": "Checks if a DHCP packet is intended for the local system and processes incoming packets to generate a reply based on configuration and lease database. Operates on DHCP wire packets, configuration data, and lease databases. Used to determine response actions in a DHCP server's main loop, such as sending an offer or acknowledgment.",
+      "description_length": 331,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "charrua-server",
+      "description": "Handles parsing and serialization of DHCP protocol messages from wire traffic, supporting options and message types specific to DHCP. Operates on byte sequences and structured data representing DHCP packets and options. Used to process incoming DHCP requests and generate appropriate responses in networked environments.",
+      "description_length": 320,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dhcp_server",
+      "description": "loads DHCP configuration data, processes incoming packets, and manages IP lease assignments and renewals. It handles IP addresses, MAC addresses, and DHCP options to define network settings, track lease lifetimes, and ensure proper response generation. Operations include validating client requests, allocating addresses within defined ranges, and updating lease databases. It enables controlled IP management, conflict prevention, and automated response handling in dynamic networks.",
+      "description_length": 484,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 5,
+    "meaningful_modules": 5,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 527,
+    "min_description_length": 320,
+    "avg_description_length": 398.0,
+    "embedding_file_size_mb": 0.01861095428466797
+  }
+}

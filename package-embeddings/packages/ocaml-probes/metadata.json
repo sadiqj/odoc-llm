@@ -1,0 +1,63 @@
+{
+  "package": "ocaml-probes",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 6,
+  "creation_timestamp": "2025-06-18T16:30:01.417245",
+  "modules": [
+    {
+      "module_path": "Probes_lib.Pid_or_self",
+      "description": "Provides functions to create and manipulate process identifiers, including converting from a PID integer, retrieving the process's executable path, and extracting the PID from a process handle. Works with the `t` type, representing a process identifier. Used to obtain the current process's information or inspect another process's details via its PID.",
+      "description_length": 352,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Probes_lib.Self",
+      "description": "Provides functions to update probe states based on actions, retrieve specific or all probe states, and manage a flag for gigatext support. Operates on probe names, actions, and probe states. Used to monitor and adjust internal probe configurations during runtime.",
+      "description_length": 263,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Probes_lib.With_ptrace",
+      "description": "Provides atomic access to process state via ptrace, enabling probe management and inspection. Operates on process IDs and probe states, allowing updates to memory and retrieval of enabled probe configurations. Used to safely modify and query instrumentation points in a running process without disrupting execution flow.",
+      "description_length": 320,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Probes_lib.Raw_ptrace",
+      "description": "Starts a process with the given command-line arguments and returns its process ID, pausing it immediately. Detaches from a paused process using its process ID. Useful for initializing and managing processes in a controlled, suspended state for debugging or inspection.",
+      "description_length": 268,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "ocaml-probes",
+      "description": "Tracks program execution by inserting probes that capture state information, enabling dynamic control of performance monitoring and debug logging. Operates on OCaml native code structures and runtime state, allowing inspection of variables, function calls, and control flow. Used to instrument running applications for real-time diagnostics and performance analysis.",
+      "description_length": 366,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Probes_lib",
+      "description": "manages process instrumentation and monitoring through process ID manipulation, probe state control, and ptrace-based access. it handles process identifiers, probe names, and states, enabling actions like starting paused processes, updating probe configurations, and inspecting running processes. it supports regex-based and predicate-driven probe selection, and allows atomic memory updates and state queries. examples include retrieving a process's executable path, enabling specific probes, and suspending a process for debugging.",
+      "description_length": 533,
+      "index": 5,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 6,
+    "meaningful_modules": 6,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 533,
+    "min_description_length": 263,
+    "avg_description_length": 350.3333333333333,
+    "embedding_file_size_mb": 0.022218704223632812
+  }
+}

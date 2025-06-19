@@ -1,0 +1,357 @@
+{
+  "package": "kkmarkdown",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 48,
+  "creation_timestamp": "2025-06-18T16:41:33.581637",
+  "modules": [
+    {
+      "module_path": "Lib.SpanRuleUnicode.Hex",
+      "description": "Provides functions to check if a hex sequence is safe, extract the first character of a hex sequence, and construct spans using a parsing rule. Works with boolean flags, first character data, and span lists derived from string parsing. Used to validate and process Unicode hex escape sequences during text parsing.",
+      "description_length": 314,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lib.SpanRuleUnicode.Dec",
+      "description": "Provides functions to check if a character is safe, retrieve the first character of a string, and construct spans by applying parsing rules. Works with strings, span lists, and first character data types. Used to process Unicode escape sequences and build structured text representations.",
+      "description_length": 288,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.SpanRuleA.Automatic",
+      "description": "Provides functions to check if a string is safe, extract the first character, and construct span lists from strings using parsing rules. Operates on boolean values, custom first character types, and span lists. Used to validate input, process text boundaries, and generate structured text representations.",
+      "description_length": 305,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.SpanRuleA.UnsafeNormal",
+      "description": "Provides operations to check if a parsing state is safe, extract the first character of a span, and apply a custom span rule using a recursive parser. Works with boolean flags, first character data, and span parsing states. Used to validate input streams and build structured text representations during parsing.",
+      "description_length": 312,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lib.SpanRuleStack.Em",
+      "description": "Provides functions to determine if a character is safe for emphasis, extract the first character of a span, and apply a parsing rule to generate span structures. Works with boolean flags, character data, and span lists representing formatted text. Used to process and validate emphasis markers in text parsing workflows.",
+      "description_length": 320,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.SpanRuleStack.Strong",
+      "description": "Provides functions to check if a string is safe, extract the first character, and construct spans using a parsing rule. Works with strings, span lists, and a state structure for parsing. Used to validate input, process text tokens, and build structured representations of text segments.",
+      "description_length": 286,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.SpanRuleStack.EmStrong",
+      "description": "Provides functions to check if a string is safe for emphasis and strong formatting, extract the first character of a span, and construct spans using a parsing rule. Works with strings, span lists, and state objects representing parsing progress. Used to generate HTML-like span structures from raw text with emphasis and strong markers.",
+      "description_length": 336,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.SpanRuleStack.Strike",
+      "description": "Provides functions to check safety, extract the first character of a string, and apply a parsing rule to generate a list of spans. Works with boolean values, custom first character types, and span parsing rules. Used to validate input, analyze string structure, and build structured text representations.",
+      "description_length": 304,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.SpanRuleStack.Code",
+      "description": "Provides operations to check if a code snippet is safe, extract the first character, and construct spans using a parsing rule. Works with boolean flags, custom first character types, and span lists. Used to validate input before execution and parse structured code elements.",
+      "description_length": 274,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.BlockRuleHeader.Sharp",
+      "description": "Processes and validates markdown headers by checking if a line is a valid header, extracting the header level, and managing state transitions. Works with strings, state records, and header level representations. Used to parse and convert lines like \"# Title\" or \"## Subtitle\" into structured block elements during document processing.",
+      "description_length": 334,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.BlockRuleHeader.H1",
+      "description": "Provides functions to parse and construct blocks of text based on a header line, using a state machine. Operates on strings, state records, and a list of strings to build a block structure. Used to detect header lines, track parsing state, and generate blocks when input ends or a new block is encountered.",
+      "description_length": 306,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lib.BlockRuleHeader.H2",
+      "description": "Provides functions to determine if a line is safe, extract the first character, and process lines for block construction. Operates on state, strings, and a list of strings to generate a block structure. Used to parse and build blocks in a document based on specific rules and input lines.",
+      "description_length": 288,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.BlockRuleInlineHTML.Div",
+      "description": "Provides functions to process and construct HTML blocks from inline content, including checking safety, extracting the first character, and transitioning state based on input. Operates on strings, state records, and a list of strings to build block elements. Used to handle inline HTML parsing and block construction in a streaming manner.",
+      "description_length": 339,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.BlockRuleInlineHTML.Script",
+      "description": "Provides functions to analyze and process inline HTML scripts, including checking safety, extracting the first character, and transitioning state based on input. Operates on strings, state records, and block transformation functions. Used to parse and construct HTML blocks from script content during document processing.",
+      "description_length": 321,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.BlockRuleList.UlStar",
+      "description": "Provides functions to parse and construct unordered list blocks from text, handling line spacing to determine block structure. Operates on strings, state records, and a list of strings to build block elements. Used to transform raw text like \"* a * b * c\" into formatted block outputs with proper line grouping.",
+      "description_length": 311,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.BlockRuleList.UlPlus",
+      "description": "Provides functions to parse and construct unordered list blocks with a '+' prefix, including checking safety, determining the starting character, and processing lines incrementally. Operates on state representations and string inputs to build block structures. Used to handle markdown-like list formatting in text processing pipelines.",
+      "description_length": 335,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.BlockRuleList.UlMinus",
+      "description": "Provides functions to parse and construct unordered list blocks with a '-' prefix, including checking safety, determining the first character, and processing lines to build a block structure. Operates on strings, state records, and a list of strings to generate a block representation. Used to handle markdown-style lists where each line starts with a '-' and needs to be aggregated into a single block.",
+      "description_length": 403,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.BlockRuleList.Ol",
+      "description": "Provides operations to process and construct blocks of text based on state transitions, including checking safety, extracting the first character, and handling line continuation. Works with strings, state records, and custom block transformation functions. Used to build structured document elements like lists or code blocks from sequential input lines.",
+      "description_length": 354,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lib.FirstChar.Map",
+      "description": "Provides a function to extract the first character from a rule-based structure. Operates on a custom type representing rules, returning a character based on the rule's internal representation. Used to quickly determine the initial character in parsing or pattern-matching scenarios.",
+      "description_length": 282,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.BlockRuleCode.Backquote",
+      "description": "Provides functions to parse and construct blocks of text using backquote syntax, including checking safety, extracting the first character, and transitioning between parsing states. Operates on strings, state records, and block structures defined by the BlockRule module. Used to process code blocks in markdown-like formats, ensuring proper handling of indentation and line continuation.",
+      "description_length": 388,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.BlockRuleCode.Tilde",
+      "description": "Provides functions to check if a block is safe, extract the first character, and process lines to build a block structure. Operates on strings, state records, and a list of strings to construct a block. Used to parse and validate lines beginning with a tilde, ensuring proper block formation during text processing.",
+      "description_length": 315,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.BlockRuleCode.UnsafeBackquote",
+      "description": "Provides functions to parse and construct code blocks using backquote syntax, handling state transitions and block construction. Works with strings, state records, and a custom first character type to identify code block starts. Used to generate Typ.block structures from input lines that match the backquote pattern.",
+      "description_length": 317,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.BlockRuleCode.UnsafeTilde",
+      "description": "Provides functions to process unsafe code blocks with tilde syntax, including checking safety, extracting the first character, and transitioning state during parsing. Operates on strings, state records, and a list of strings to construct block elements. Used to handle raw code blocks in documentation generators that require strict parsing of tilde-delimited content.",
+      "description_length": 368,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.BlockRuleCode.Indent",
+      "description": "Provides functions to analyze and manage indentation in text blocks, including checking if indentation is safe, extracting the first character, and determining block construction. Operates on strings, state records, and custom types like FirstChar.t. Used to process code blocks where consistent indentation defines structure, such as parsing Python-like syntax or formatting nested lists.",
+      "description_length": 389,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.AllBlockRules",
+      "description": "Provides functions to retrieve block rules based on a starting character or all rules. Operates on lists of modules conforming to the BlockRule.S signature. Used to filter or aggregate block rules for processing or analysis.",
+      "description_length": 224,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lib.AllSpanRules",
+      "description": "Provides functions to retrieve span rules based on a starting character or all rules. Operates on lists of modules conforming to the SpanRule.S signature. Used to filter rules for processing text segments starting with specific characters.",
+      "description_length": 239,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lib.BlockRule",
+      "description": "Provides functions to check if a rule is safe, determine the first character, and process input lines to build a block. Operates on state, strings, and a list of strings to construct a block structure. Used to parse and validate multi-line content in a structured way.",
+      "description_length": 268,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.BlockRuleCode",
+      "description": "Processes text blocks using backquote and tilde syntax, handling code block construction, safety checks, and state transitions. Operates on strings, state records, and custom types like FirstChar.t to extract first characters, manage indentation, and build block structures. Supports parsing and validating code blocks in markdown-like formats, including handling line continuation and raw content. Examples include extracting the first character of a line, checking if a block is safe, and constructing a block from a list of lines with consistent indentation.",
+      "description_length": 561,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lib.BlockRuleHeader",
+      "description": "Processes markdown headers by validating lines, extracting levels, and managing state transitions to build structured blocks. Operates on strings, state records, and lists to detect headers, track parsing progress, and construct blocks upon completion. Supports parsing lines like \"# Title\" into hierarchical elements and ensures safe line processing for accurate document structuring. Can generate block elements based on header detection and input termination.",
+      "description_length": 462,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.BlockRuleHr",
+      "description": "Provides functions to detect and process horizontal rule lines, including checking if a line is a valid rule, determining the first character, and constructing a block from a sequence of lines. Operates on strings, state records, and a custom `FirstChar.t` type to track rule characteristics. Used to parse markdown-like input and generate a block representation when a horizontal rule is detected.",
+      "description_length": 398,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.BlockRuleImg",
+      "description": "Handles parsing and construction of image blocks in a markdown processor. Operates on strings and a custom state type to track parsing progress. Processes lines to build image blocks with optional class attributes, supporting both continued and standalone input.",
+      "description_length": 262,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.BlockRuleInlineHTML",
+      "description": "Processes inline HTML content to construct block elements, supporting div and script tags with safety checks, state transitions, and string manipulation. Operates on strings, state records, and transformation functions to build and analyze HTML blocks during parsing. Can extract the first character of a tag, validate unsafe content, and transition parsing states based on input. Enables streaming construction of HTML blocks from inline content, particularly useful for handling script and div elements in unsafe mode.",
+      "description_length": 520,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.BlockRuleList",
+      "description": "handles text parsing and block construction for markdown-style unordered lists, supporting various prefixes and line grouping logic. it works with strings, state records, and line lists to generate structured blocks, including safety checks and incremental processing. it can transform raw input like \"* a * b * c\" into properly formatted list blocks or handle lines starting with '+' or '-'. it also supports custom block transformations through state transitions and line continuation rules.",
+      "description_length": 493,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.BlockRuleP",
+      "description": "Provides functions to check safety, determine the first character of a block, and process lines to transition between states in block parsing. Operates on strings, state records, and custom types like FirstChar.t and BlockRule.res. Used to build and finalize blocks based on input lines and transition logic.",
+      "description_length": 308,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lib.BlockRuleQuote",
+      "description": "Provides functions to check if a quote block is safe, determine the initial character, and process lines to build a block. Operates on strings, state records, and a custom block type. Used to parse and construct quote blocks in a markdown processor, handling continuation lines and forced construction when input ends.",
+      "description_length": 318,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lib.FirstChar",
+      "description": "Extracts the initial character from rule-based structures, enabling efficient parsing decisions. Operates on a custom rule type, returning a character that reflects the rule's starting element. This allows for rapid classification of rules during processing. For example, it can identify if a rule begins with a letter, digit, or symbol to guide subsequent operations.",
+      "description_length": 368,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.Kkmarkdown",
+      "description": "Converts markdown text to a structured type, supporting unsafe parsing and RSS filtering. Processes input from strings, files, or standard input, and outputs formatted strings with optional RSS compatibility. Handles specific translation rules for content transformation.",
+      "description_length": 271,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lib.RuleBr",
+      "description": "Constructs span lists by processing strings that contain line breaks, stripping markdown syntax for <br> elements. It operates on strings and lists of spans, using a transformation function to handle line content. Used to clean and structure text output after block-level processing.",
+      "description_length": 283,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.SpanRule",
+      "description": "Provides functions to check if a rule is safe, determine the first character constraint, and construct a rule that parses a string into a list of spans. Works with boolean flags, first character types, and span lists. Used to enforce parsing constraints and generate structured output during text processing.",
+      "description_length": 308,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.SpanRuleA",
+      "description": "Checks if input is valid, extracts first characters, and constructs or modifies span lists using parsing rules. Handles boolean flags, first character data, and parsing states to manage text validation and structure. Can verify string safety, process text boundaries, and apply recursive rules for structured output. Examples include validating user input, extracting leading characters, and generating span-based representations during parsing.",
+      "description_length": 445,
+      "index": 39,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lib.SpanRuleEscape",
+      "description": "Handles escape sequences in markdown by identifying safe characters and constructing span elements from strings. Operates on strings and span lists, using a stateful parsing approach. Used to correctly interpret escaped brackets, backticks, and special symbols in text rendering.",
+      "description_length": 279,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.SpanRuleStack",
+      "description": "Combines functions for validating and parsing text into structured spans, focusing on emphasis, strong formatting, and code safety. Handles boolean checks, string analysis, and span construction using parsing rules, with operations to extract first characters and manage parsing state. Processes raw text to generate formatted structures, ensuring safety before execution or rendering. Examples include validating emphasis markers, building HTML-like spans, and parsing code segments with safety checks.",
+      "description_length": 503,
+      "index": 41,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lib.SpanRuleUnicode",
+      "description": "Processes Unicode escape sequences by validating hex data, extracting first characters, and building span structures. Supports operations on strings, hex sequences, and boolean flags to enable structured text parsing. Can verify safety of characters, extract initial characters from strings, and generate span lists based on defined rules. Used to handle Unicode escape processing and ensure correct text representation during parsing.",
+      "description_length": 435,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.Trans",
+      "description": "Processes a list of strings by applying translation rules, supporting unsafe mode for bypassing validation. Operates on string lists and type representations defined in the Typ module. Used to convert source code comments into localized versions for multilingual documentation.",
+      "description_length": 277,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.Typ",
+      "description": "Prints parsed markdown structures with optional RSS formatting. Operates on block elements, list items, and inline spans. Used to generate human-readable or RSS-compatible representations of markdown content.",
+      "description_length": 208,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib.Utils",
+      "description": "Checks if a string is empty or contains only whitespace, removes trailing spaces or sharp characters, and parses class annotations into lists. Works with strings and regular expressions. Used to clean and process text input for formatting or parsing tasks.",
+      "description_length": 256,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "kkmarkdown",
+      "description": "Provides functions to parse and render Markdown content using a custom syntax parser. Operates on strings and abstract syntax trees generated from Markdown input. Used to convert user-generated content into HTML for web display and to process documentation files during build processes.",
+      "description_length": 286,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lib",
+      "description": "Processes text blocks, spans, and structural elements using rule-based parsing, state management, and transformation functions. Supports block construction from lines, header detection, code block handling, and inline formatting, with operations to check safety, extract first characters, and manage state transitions. Examples include parsing markdown headers, extracting code blocks, validating escape sequences, and generating structured output. Works with custom types, state records, and lists to enable flexible and safe text processing.",
+      "description_length": 543,
+      "index": 47,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 48,
+    "meaningful_modules": 48,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 561,
+    "min_description_length": 208,
+    "avg_description_length": 339.6666666666667,
+    "embedding_file_size_mb": 0.17479610443115234
+  }
+}

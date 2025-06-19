@@ -1,0 +1,49 @@
+{
+  "package": "stemming",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 4,
+  "creation_timestamp": "2025-06-18T16:28:49.275666",
+  "modules": [
+    {
+      "module_path": "Stemmer.Porter2",
+      "description": "Provides functions to initialize, apply, and clean up a stemming algorithm for English text. Operates on a stateful object of type `t` and processes strings to reduce words to their root forms. Used to normalize text for tasks like information retrieval or natural language processing.",
+      "description_length": 285,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Stemmer.Keva",
+      "description": "Initializes a stemmer instance for Russian and Ukrainian text, processes CP-1251 encoded strings to reduce words to their root forms, and releases associated resources. Operates on raw strings and internal state objects representing the stemmer configuration. Used to normalize linguistic input for information retrieval or text analysis tasks.",
+      "description_length": 344,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "stemming",
+      "description": "Processes text by applying stemming algorithms to reduce words to their root forms. Operates on strings and lists of strings, transforming each element according to specified linguistic rules. Used to normalize search queries and improve information retrieval accuracy.",
+      "description_length": 269,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Stemmer",
+      "description": "Initializes and manages stateful stemmers for English, Russian, and Ukrainian text, applying algorithm-specific transformations to reduce words to their root forms. Processes strings using type `t` for English and raw CP-1251 encoded strings for Slavic languages, with operations to configure, apply, and release resources. Supports text normalization for information retrieval, enabling consistent processing of linguistic input across languages. Examples include reducing \"running\" to \"run\" or \"\u043a\u043e\u0440\u0430\u0431\u043b\u044f\" to \"\u043a\u043e\u0440\u0430\u0431\u043b\u044c\".",
+      "description_length": 519,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 4,
+    "meaningful_modules": 4,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 519,
+    "min_description_length": 269,
+    "avg_description_length": 354.25,
+    "embedding_file_size_mb": 0.014943122863769531
+  }
+}

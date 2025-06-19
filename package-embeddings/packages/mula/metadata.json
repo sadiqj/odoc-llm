@@ -1,0 +1,343 @@
+{
+  "package": "mula",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 46,
+  "creation_timestamp": "2025-06-18T16:42:30.036366",
+  "modules": [
+    {
+      "module_path": "Mula.Match.Make.Lev",
+      "description": "Produces the initial state of an edit-distance automaton, transitions through characters, and computes edit distances between strings. Operates on string types and a state representation tracking error counts and input progress. Calculates exact edit distances up to a specified limit, useful for approximate string matching and error-tolerant pattern recognition.",
+      "description_length": 364,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mula.Match.Make.Dem",
+      "description": "Produces the initial state of an edit-distance automaton, transitions through characters, and computes edit distances between strings. Operates on string types and a state representation tracking error counts and input progress. Calculates the minimum edit distance between two strings up to a specified limit or returns None if the distance exceeds it.",
+      "description_length": 353,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Internal.DFA.Make.NFAStateSetSet",
+      "description": "The module provides set operations such as union, intersection, membership checks, and transformations, along with specialized functions for handling sequences of NFA.StateSet.t elements. It works with sets of generic elements and state sets from non-deterministic finite automata, enabling efficient manipulation and conversion between sets, lists, and sequences. Use cases include automata state management, symbolic computation, and tasks requiring hierarchical set operations with pretty-printing for debugging.",
+      "description_length": 515,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Internal.DFA.Make.NFAStateSetMap",
+      "description": "This module provides operations for managing key-value mappings where keys are of type `NFA.StateSet.t` and values are generic, including insertion, deletion, transformation, and querying. It supports functional programming patterns like folding, filtering, and sequence conversion, alongside custom pretty-printing for state set representations. Use cases include efficiently handling state set transitions in automata processing and converting between map structures and sequential data formats.",
+      "description_length": 497,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Internal.DFA.Make.Transitions",
+      "description": "Generates all possible state transitions from a given set of states, using a bit vector and a specified number of bits. It processes state sets and bit vectors to compute next states in a deterministic finite automaton. Used to model state changes in formal verification and symbolic execution.",
+      "description_length": 294,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Internal.DFA.Make.DFA",
+      "description": "Adds state transitions and builds deterministic finite automata from non-deterministic ones using state sets and bit vectors. Operates on state set mappings and transition tables to construct and manipulate automata structures. Constructs and outputs DFA representations based on specified input parameters and state configurations.",
+      "description_length": 332,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Internal.DFA.Make.State",
+      "description": "Compares two state instances using a custom ordering function. Operates on the abstract type `t` representing application state. Used to determine equality or precedence in state transitions during system updates.",
+      "description_length": 213,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Internal.DFA.Make.StateSet",
+      "description": "This module provides set operations such as unions, intersections, and element manipulation, along with transformation and iteration functions like filtering, mapping, and folding, tailored for ordered data structures. It handles generic sets with customizable ordering and specializes in managing collections of `State.t` elements, including reverse iteration and pretty-printing. Use cases include state transition management, symbolic execution, and scenarios requiring efficient set-based computations with ordered or specialized state values.",
+      "description_length": 547,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Internal.Matcher.Make.GBV",
+      "description": "Provides operations to extract characters from a state structure, compute size parameters, and generate bit vectors from characters or sentinels based on index and parameter k. Works with state structures, character indices, and bit vector representations. Used to encode specific character positions and generate compact representations for text processing tasks.",
+      "description_length": 364,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Internal.Matcher.Make.StateSet",
+      "description": "Provides operations to initialize a state with a given integer and retrieve the minimum cost as an option. Works with an abstract type representing a state configuration. Used to track and query the lowest cost in a search or optimization process.",
+      "description_length": 247,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Internal.Matcher.Make.Transitions",
+      "description": "Generates all possible state transitions from a given set of states, applying a bitwise operation with a specified bit width and integer parameter. It processes state sets and bit vectors to compute new state configurations. Used to model system state changes in formal verification and automata simulations.",
+      "description_length": 308,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mula.Match.Make",
+      "description": "Provides operations to determine the length of a string, retrieve characters by index, and compare characters for equality. Works with abstract types for characters and strings, decoupled from specific encodings. Used to process and compare textual data in a way that is independent of underlying character representations.",
+      "description_length": 323,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mula.Strings.Lev",
+      "description": "Provides operations to construct and manipulate a finite automaton for computing edit distances, including initializing the automaton with a maximum error count and a reference string, processing input characters, and querying the current error count or final edit distance. Works with the `nfa_state` type, representing the internal state of the automaton during processing. Used to determine if a string can be transformed into another within a specified number of insert, delete, or substitute operations.",
+      "description_length": 508,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mula.Strings.Dem",
+      "description": "Provides operations to construct and manipulate a finite automaton for computing edit distance, including initializing with a string and error limit, processing characters, and retrieving error counts or final edit distances. Works with the `nfa_state` type to track the automaton's progression through input. Computes exact edit distances between strings up to a specified limit, useful for applications like spell checking or string similarity analysis.",
+      "description_length": 455,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Internal.DFA.Make",
+      "description": "manages state transitions and set operations through a combination of custom comparisons, ordered set manipulations, and deterministic state generation. It supports operations on `t` types, including set unions, intersections, and transformations, as well as generating next states from bit vectors. Users can track state evolution, perform symbolic execution, and analyze system behavior through structured set-based computations. For example, it can compute all reachable states from an initial configuration or compare state precedence during system updates.",
+      "description_length": 561,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Internal.StringOps.BitVecOps",
+      "description": "Provides operations to retrieve individual bits from a bit vector and compare them for equality. Works with custom types `t` representing bit vectors and `ch` representing individual bits. Used to extract specific bits for bitwise processing and validate bit-level equivalence in low-level data manipulation.",
+      "description_length": 308,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Internal.DemarauBVNFA.StateSet",
+      "description": "Provides operations to manage and query a collection of states, including finding an index based on a predicate, determining the minimum cost, and pretty-printing the states. Works with arrays of arbitrary elements and state collections represented as arrays. Used to efficiently locate specific states and generate human-readable output for debugging or logging.",
+      "description_length": 363,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Internal.DemarauBVNFA.Transitions",
+      "description": "Generates all possible state transitions from a given set of states, using a bit vector to represent transition conditions and a specified number of bits for state encoding. Works with state sets and bit vectors to model finite state machine transitions. Used to explore reachable states in a system under specific constraints.",
+      "description_length": 327,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Internal.Matcher.Make",
+      "description": "Provides operations to determine the length of a sequence, retrieve elements by index, and compare characters for equality. Works with character types and sequence structures. Used to analyze string-like data and perform element-wise comparisons in text processing tasks.",
+      "description_length": 271,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Internal.LevNFA.State",
+      "description": "Compares two state representations by their lane and error components. Formats a state for pretty printing using a given formatter. Operates on tuples of a lane and a list of errors, suitable for debugging or logging purposes.",
+      "description_length": 226,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Internal.LevNFA.StateSet",
+      "description": "This module offers set manipulations such as union, intersection, and transformation, working with a generic set type `t` composed of elements of type `elt`, along with utilities for iterating, filtering, and converting between sets and lists. It includes specialized operations for state management, like subsumption checks, cost calculations, and sequence conversions, enabling efficient handling of state transitions and configuration analysis. Specific use cases involve verifying state equivalence, optimizing state representations, and generating human-readable outputs for debugging or reporting.",
+      "description_length": 603,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Internal.LevNFA.Transitions",
+      "description": "Handles state transitions based on bit vector operations, supporting deletion, substitution, and insertion patterns. Operates on `State.t` and `BitVec.t` to generate new states or state sets. Used to model sequence transformations in formal verification or data processing pipelines.",
+      "description_length": 283,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Internal.DemarauNFA.State",
+      "description": "Compares state values using a custom ordering function and formats them for human-readable output. It operates on a type `t` representing application states. Used to sort states during debugging and to display them in logs.",
+      "description_length": 223,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Internal.DemarauNFA.StateSet",
+      "description": "The module offers set operations such as adding, removing, and combining elements, along with iteration, transformation, and querying capabilities for generic types and `State.t` sets. It supports functional manipulation of collections, including membership checks, cardinality queries, and state-specific operations like subsumption analysis and cost evaluation. Use cases include managing symbolic execution states, verifying system transitions, and optimizing state-space exploration through reduction and sequence conversions.",
+      "description_length": 530,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Internal.DemarauNFA.Transitions",
+      "description": "Handles state transitions involving bit vector modifications, generating possible next states through deletion, substitution, and insertion operations. Operates on `State.t` and `BitVec.t` to explore transformation paths within a defined edit distance. Used to model sequence variations in genetic or symbolic data processing.",
+      "description_length": 326,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Internal.LevBVNFA.StateSet",
+      "description": "Provides operations to manage and query a collection of states represented as an array. Includes a function to find the index of the first element satisfying a predicate and another to retrieve the minimum cost among states, if available. Used to efficiently locate and evaluate state configurations in constraint-solving or optimization contexts.",
+      "description_length": 347,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Internal.LevBVNFA.Transitions",
+      "description": "Generates all possible state transitions from a given set of states, using a bit vector to represent transition conditions and a specified number of bits for state encoding. Works with state sets and bit vectors to model finite state machine transitions. Used to explore reachable states in a system under specific constraints.",
+      "description_length": 327,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Internal.Matcher.StateSet",
+      "description": "Provides operations to initialize a state with a given integer and retrieve the minimum cost as an optional integer. Works with an abstract type representing a state configuration. Used to track and query the lowest cost in a search or optimization process.",
+      "description_length": 257,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Internal.Matcher.Transitions",
+      "description": "Generates all possible state transitions from a given set of states, considering a bit vector and a specified number of transitions. It processes state sets and bit vectors to compute next states in a deterministic finite automaton. Used to model system behavior changes under specific input conditions.",
+      "description_length": 303,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Internal.NFA.State",
+      "description": "Compares two state instances using a custom ordering function. Operates on the abstract type `t` representing application state. Used to determine equality or precedence in state transitions during system updates.",
+      "description_length": 213,
+      "index": 29,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Internal.NFA.StateSet",
+      "description": "The module provides standard set operations\u2014such as adding, removing, and querying elements\u2014as well as set algebra (union, intersection, difference) and ordered traversal, leveraging efficient searches via underlying ordering. It supports transformations like mapping, filtering, and folding over sets of a generic type, with specialized functions for handling `State.t` elements, including sequence-based construction, reverse iteration, and pretty-printing. Use cases include managing state transitions, optimizing set manipulations, and processing ordered collections with predicate-based queries.",
+      "description_length": 600,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Internal.NFA.Transitions",
+      "description": "Generates all possible state transitions from a given set of states, applying a bit vector mask and a fixed number of steps. Operates on state sets and bit vectors to model system state changes. Used to explore reachable states in finite automata or state machines.",
+      "description_length": 265,
+      "index": 31,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mula.Match",
+      "description": "Provides operations to determine the length of a string, retrieve a character at a specific index, and compare two characters for equality. Works with abstract types representing strings and characters, decoupled from any specific encoding. Used to process and compare textual data in a way that is independent of underlying character encoding schemes.",
+      "description_length": 352,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mula.Strings",
+      "description": "creates a unified interface for building and querying finite automata that compute edit distances between strings, using the `nfa_state` type to track processing progress. It supports initializing with a reference string and error limit, processing input characters step-by-step, and retrieving current or final error counts. Users can determine if one string can be transformed into another within a given number of operations or compute exact distances for applications like spell checking. Examples include validating string similarity or tracking error accumulation during incremental input processing.",
+      "description_length": 606,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Internal.BitVec",
+      "description": "Provides bitwise operations for manipulating fixed-length bit vectors, including extracting bits, folding over positions, and shifting. Works with a custom `t` type representing bit vectors of arbitrary length. Used for low-level bit manipulation in protocol parsing and hardware simulation.",
+      "description_length": 291,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Internal.DFA",
+      "description": "manages state transitions and set operations through custom comparisons and ordered set manipulations, enabling actions on `t` types such as unions, intersections, and state transformations. It generates next states from bit vectors and supports tracking state evolution, symbolic execution, and behavior analysis. Users can compute reachable states from an initial setup or compare state precedence during updates. For instance, it can determine all possible states reachable from a starting point or evaluate state relationships in a system's transition graph.",
+      "description_length": 562,
+      "index": 35,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Internal.DemarauBVNFA",
+      "description": "manages state collections and transitions through array-based operations and bit vector representations. It supports finding state indices, calculating minimum costs, and printing state details, while also generating all valid state transitions based on bit-encoded conditions. Operations work with arrays and bit vectors to enable efficient state exploration and analysis. Examples include locating a state meeting a condition, printing debug information, and modeling finite state machine behavior.",
+      "description_length": 500,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Internal.DemarauNFA",
+      "description": "manages application states through custom ordering, set operations, and bit vector-based transitions. It supports sorting and formatting of state values, functional set manipulations including subsumption and cost analysis, and generates new states via bit vector edits. Operations include adding, removing, and combining states, as well as exploring transformation paths within a defined edit distance. Examples include debugging state sequences, optimizing symbolic execution, and modeling genetic data variations.",
+      "description_length": 516,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Internal.LevBVNFA",
+      "description": "manages state configurations and transitions using array-based operations and bit vectors, enabling efficient state evaluation and exploration. It supports finding elements by predicate, retrieving minimum costs, and generating transitions based on bit-encoded conditions. Operations work with state arrays and bit vectors to model and analyze finite state systems. Examples include locating optimal states and simulating system behavior under constraints.",
+      "description_length": 456,
+      "index": 38,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Internal.LevNFA",
+      "description": "Processes state transitions using bit vector operations, comparing and formatting states for debugging. Manages sets of states with operations like union, intersection, and subsumption checks, enabling efficient state analysis. Supports transformations such as deletion, substitution, and insertion to model sequence changes. Can verify state equivalence, optimize representations, and generate readable outputs for verification tasks.",
+      "description_length": 435,
+      "index": 39,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Internal.Matcher",
+      "description": "Provides operations to retrieve characters from a structured data type, compare characters for equality, and determine the size of the structure. Works with custom types representing characters and a container type for sequences. Used to process and compare character data in text parsing and pattern matching scenarios.",
+      "description_length": 320,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Internal.NFA",
+      "description": "Manages state transitions and set operations for finite automata, supporting custom comparisons, set algebra, and transition generation. It handles abstract state types with operations like union, intersection, and mapping, and generates reachable states using bit vectors and step counts. Functions include equality checks, ordered traversal, and transformation of state sets. Examples include optimizing state transitions, exploring automaton behavior, and querying structured state collections.",
+      "description_length": 497,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Internal.StringOps",
+      "description": "Provides operations to determine the length of a string, retrieve individual characters by index, and compare characters for equality. Works with custom types `t` for strings and `ch` for characters. Used to analyze string structure and perform character-level comparisons in text processing tasks.",
+      "description_length": 298,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "mula",
+      "description": "Provides functions for constructing and traversing Universal Levenshtein Automata, including state transitions and acceptance checks. Operates on strings and finite state machines represented as labeled transition systems. Enables efficient approximate string matching with error tolerance up to a specified edit distance.",
+      "description_length": 322,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mula",
+      "description": "offers string and character operations with encoding independence, along with finite automata for edit distance computation. It handles string length, character retrieval, and comparison, while also managing `nfa_state` to track progress in edit distance calculations. Users can check if strings are transformable within a specified error limit or compute exact distances for tasks like spell correction. Examples include validating input similarity or monitoring error growth during real-time text processing.",
+      "description_length": 510,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Internal",
+      "description": "combines bitwise manipulation, state management, and character processing to enable detailed analysis of structured data and system behavior. It handles custom `t` types for bit vectors, states, and strings, supporting operations like bit extraction, set unions, state transitions, and character retrieval. Users can trace state evolution, optimize transitions, and analyze string structures with precise control over data representation. Examples include generating reachable states from bit vectors, locating character positions in strings, and comparing state sets for equivalence.",
+      "description_length": 584,
+      "index": 45,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 48,
+    "meaningful_modules": 46,
+    "filtered_empty_modules": 2,
+    "retention_rate": 0.9583333333333334
+  },
+  "statistics": {
+    "max_description_length": 606,
+    "min_description_length": 213,
+    "avg_description_length": 389.17391304347825,
+    "embedding_file_size_mb": 0.1675710678100586
+  }
+}

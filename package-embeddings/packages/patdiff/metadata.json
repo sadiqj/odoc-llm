@@ -1,0 +1,588 @@
+{
+  "package": "patdiff",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 81,
+  "creation_timestamp": "2025-06-18T16:48:01.066498",
+  "modules": [
+    {
+      "module_path": "Patdiff_kernel.Format.Style.Map.Key",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons of key values in data structures.",
+      "description_length": 283,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Style.Map.Diff",
+      "description": "Provides operations to serialize and deserialize difference data between two maps, compute differences between map states, and apply changes to a map. Works with map-based data structures where keys are of type Key.t and values are of type 'a, with associated difference types 'a_diff. Enables precise tracking of changes between versions of a map, such as in version control systems or state synchronization.",
+      "description_length": 409,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Style.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type by parsing its structure and extracting relevant components. Works with S-expressions and custom key representations derived from them. Used to deserialize configuration keys from textual S-expression formats into typed values for further processing.",
+      "description_length": 290,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Style.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t through specialized reader and writer interfaces. Enables efficient binary persistence and network transmission of Key.t values.",
+      "description_length": 333,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Style.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, requiring explicit handling of structure size during folding. Used to generate reliable hash values for persistent data structures and serialized formats.",
+      "description_length": 364,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Style.Set.Elt",
+      "description": "Provides serialization and deserialization between `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons for custom data types.",
+      "description_length": 265,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Style.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting between S-expression representations and set structures. Works with set-based data types and optional difference records to track changes. Used to generate and apply transformations between distinct set states in a type-safe manner.",
+      "description_length": 332,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Style.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type `Elt.t` using a provided function. It operates on `Sexplib0.Sexp.t` values, enabling structured data parsing. This is used to deserialize specific domain objects from S-expression formatted input.",
+      "description_length": 240,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Style.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, and reading operations. Works with custom types defined via `Elt.t` and supports polymorphic variants through a constructor tag-based reader. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 345,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Style.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, requiring explicit handling of structure size during folding. Used to generate reliable hash values for complex types in hashing-based data structures.",
+      "description_length": 361,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Color.Map.Key",
+      "description": "Handles serialization and deserialization of key values using S-expressions. Provides a comparator for ordered operations on key types. Used to ensure consistent ordering and representation in data structures requiring typed equality and ordering.",
+      "description_length": 247,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Color.Map.Diff",
+      "description": "Provides operations to convert between a structured data type and S-expressions, and to compute and apply differences between maps. Works with key-value maps where values can be modified through delta updates. Enables precise tracking of changes between two versions of a map for reconciliation or version control.",
+      "description_length": 314,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Color.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Operates on S-expressions and the Key module's type. Used to deserialize configuration keys from textual S-expression formats.",
+      "description_length": 199,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Color.Map.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with binary I/O operations and polymorphic variants through specialized reader and writer interfaces. Used to persist and reconstruct Key.t values in binary format for storage or communication.",
+      "description_length": 358,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Color.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Works with custom data types and collections, using Base.Hash.state to accumulate hash values. Used to generate consistent, collision-resistant hashes for complex types in serialization or equality checks.",
+      "description_length": 403,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Color.Set.Elt",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons in data structures.",
+      "description_length": 269,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Color.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting between S-expressions and internal representations. Works with sets of elements and optional difference structures representing changes between two states. Used to track modifications between versions of a dataset and apply those changes to a base set.",
+      "description_length": 352,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Color.Set.Provide_of_sexp",
+      "description": "Converts a S-expression into an instance of `Elt.t` using a custom parsing function. Operates on S-expressions and the `Elt` type, which represents a specific domain object. Used to deserialize structured data from S-expression format into typed values for further processing.",
+      "description_length": 276,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Color.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape definition. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and variant-based reading. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 341,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Color.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of a data structure into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types through a structured folding process that includes size information to prevent prefix-based collisions. Used to generate reliable hash values for complex types in hashing algorithms and data storage systems.",
+      "description_length": 401,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Html_output.Private.Make.Rule",
+      "description": "Applies a formatting rule to a string, modifying it based on the rule's definition and returning whether the refinement was successful. It operates on strings and Format.Rule.t structures, which define specific transformation logic. Used to dynamically adjust output formatting in text processing pipelines.",
+      "description_length": 307,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff.Configuration.On_disk.V3",
+      "description": "Provides vector operations such as addition, subtraction, scalar multiplication, and dot product. Works with the `t` type representing three-dimensional vectors. Used for physics simulations and 3D graphics calculations.",
+      "description_length": 220,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff.Configuration.On_disk.V2",
+      "description": "Provides vector arithmetic operations such as addition, subtraction, scaling, and dot product. Works with the `t` type, representing 2D vectors. Used to compute movement directions and transform coordinates in game physics simulations.",
+      "description_length": 235,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff.Configuration.On_disk.V1",
+      "description": "Converts a value of type `t` into a corresponding value of type `V2.t` using a predefined mapping. Operates on a single type `t` and produces a transformed version in `V2.t`. Used to migrate data from an older representation to a newer format during system upgrades.",
+      "description_length": 266,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff.Configuration.On_disk.V0",
+      "description": "Converts a value of type `t` into a corresponding value of type `V1.t` using a predefined transformation. Operates on a single, opaque data type `t` that represents a specific version of a data structure. Used to migrate data from an older format to a newer one in system upgrades.",
+      "description_length": 281,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Patdiff_core.Private.Make",
+      "description": "Provides functions to generate output implementations and retrieve console width as an integer, handling potential errors. Works with output configurations and core error types. Used to dynamically construct output handlers and adjust formatting based on terminal size.",
+      "description_length": 269,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Style.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a specific type `t`, including standard relational operators and functions to determine minimum and maximum values. Works with any data type that supports polymorphic comparison, enabling direct value-based comparisons. Used to implement custom ordering logic in data structures like sorted lists or priority queues.",
+      "description_length": 364,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Style.Map",
+      "description": "offers serialization, comparison, and difference tracking for key-value mappings, with support for S-expressions, binary protocols, and hash folding. It handles key conversion from S-expressions, enables versioned map updates, and ensures consistent hashing for structured data. Operations include deserializing keys, computing map deltas, and persisting values efficiently. Examples include storing map states, tracking configuration changes, and generating stable hashes for data integrity.",
+      "description_length": 492,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Style.Set",
+      "description": "Encapsulates operations for serializing, deserializing, and comparing custom data structures, supporting both S-expression and binary formats. Enables tracking of set differences, parsing of structured data, and generation of consistent hash values for complex types. Key types include `t`, `Elt.t`, and S-expression representations, with operations for conversion, comparison, and transformation. Examples include persisting sets to disk, applying incremental changes, and generating hashes for use in hash tables.",
+      "description_length": 515,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Rule.Affix",
+      "description": "Creates a new affix with specified styles and a given string, or returns a default empty affix. Works with string-based prefixes and suffixes, incorporating style attributes. Used to construct and manage text decorations in formatted output generation.",
+      "description_length": 252,
+      "index": 29,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Color.RGB6",
+      "description": "Provides operations for comparing RGB color values, generating and observing random instances for property testing, and converting between internal representations and S-expressions. Works with a private type representing RGB colors composed of red, green, and blue components. Used to ensure consistent color comparisons, enable automated testing with Quickcheck, and support serialization in symbolic formats.",
+      "description_length": 411,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Color.Gray24",
+      "description": "Provides comparison, serialization, and construction operations for 24-bit grayscale values. Works with a private type representing 24-bit color intensities. Used to enforce type safety when converting from integer levels and serializing data for storage or transmission.",
+      "description_length": 271,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Color.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a specific type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports polymorphic comparison, enabling direct use in sorting and decision-making logic. Used to implement custom ordering in data structures like priority queues or to enforce consistent comparisons in generic algorithms.",
+      "description_length": 436,
+      "index": 32,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Color.Map",
+      "description": "manages key-value mappings with serialization, comparison, and change tracking, supporting S-expressions and binary formats for data persistence and exchange. it defines key types with ordered comparisons, enables delta updates between maps, and provides hash folding for structured data. operations include parsing keys from S-expressions, applying binary I/O for key storage, and computing consistent hashes for complex types. examples include deserializing configuration keys, tracking map modifications, and generating collision-resistant hashes for data integrity.",
+      "description_length": 569,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Color.Set",
+      "description": "Encodes and decodes values between S-expressions and typed representations, supports ordered operations via comparators, and enables efficient binary persistence. Tracks and applies set differences, allowing version control and incremental updates. Parses S-expressions into domain-specific objects using custom logic, and folds complex data into secure hash states for consistent identification. Together, these capabilities support robust data serialization, versioning, and hashing for structured, typed datasets.",
+      "description_length": 516,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Compare_core.Make.Private",
+      "description": "Compares two arrays of strings to identify hunks of differences using the patience diff algorithm. It processes line-based data structures and returns structured hunks indicating additions, deletions, and unchanged sections. This is used to generate precise change summaries between two versions of a text file.",
+      "description_length": 311,
+      "index": 35,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Patdiff_kernel.Compare_core.Without_unix.Private",
+      "description": "Compares two arrays of strings to identify hunks of differences using the patience diff algorithm. It processes line-based data structures and returns structured hunks indicating additions, deletions, and unchanged sections. This is used to generate precise change summaries between code versions.",
+      "description_length": 297,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Html_output.Private.Make",
+      "description": "Returns the modification time of a file as a floating-point timestamp, handling potential errors. Works with file names represented as `File_name.t` and returns results wrapped in `Core.Or_error.t`. Used to check when a file was last modified in build systems or file monitoring workflows.",
+      "description_length": 289,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Patdiff_kernel.Html_output.Without_mtime.Rule",
+      "description": "Applies a formatting rule to a string, modifying it based on the rule's definition and returning the result along with a boolean indicating if changes were made. It processes format rules that define transformation logic for text. Used to dynamically adjust output formatting in logging or templating systems.",
+      "description_length": 309,
+      "index": 38,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Patdiff.Configuration.On_disk",
+      "description": "Combines vector operations for 3D and 2D spaces, along with data conversion utilities for migrating between different data representations. Supports addition, subtraction, scaling, and dot products on `t` for 3D and 2D vectors, and enables conversion of `t` to `V2.t` or `V1.t` through predefined mappings. Allows for physics calculations, coordinate transformations, and data format migration. Examples include computing force vectors in 3D simulations, adjusting movement directions in 2D games, and updating legacy data structures to new formats.",
+      "description_length": 549,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff.Compare_core.Private",
+      "description": "Compares two arrays of strings using a patience diff algorithm to identify hunks of changes, based on a given configuration. It processes line-based data to detect additions, deletions, and modifications between previous and next versions. This is used to generate precise diff outputs for text comparison tasks.",
+      "description_length": 312,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Ascii_output.Rule",
+      "description": "Applies a formatting rule to a string, modifying it based on the rule's definition and returning whether the refinement was successful. It operates on strings and Format.Rule.t structures, which define specific transformation logic. Used to dynamically adjust output formatting in text processing pipelines.",
+      "description_length": 307,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.File_helpers.Trailing_newline",
+      "description": "Provides functions to handle and manipulate strings with trailing newlines, including conversion to S-expressions. Works with the `t` type, which represents strings that may end with a newline character. Used to ensure consistent newline handling in output generation and parsing.",
+      "description_length": 280,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Patdiff_core.Private",
+      "description": "Handles dynamic output construction and terminal size adaptation, using core error types for reliability. Exposes operations to generate output implementations and fetch console width, enabling responsive formatting. Supports error-aware configuration adjustments and terminal-aware output management. Examples include auto-resizing text layouts and building custom output handlers based on environment constraints.",
+      "description_length": 415,
+      "index": 43,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Patdiff_kernel.Patdiff_core.Without_unix",
+      "description": "Calculates and formats differences between two string arrays, producing structured hunks that represent changes, with options to refine matches, handle whitespace, and control output formatting. Operates on `Hunks.t` and `string array` inputs, supporting detailed line-by-line analysis and custom output generation. Generates unified diff-style outputs or ANSI-colored representations for visual comparison.",
+      "description_length": 407,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Color",
+      "description": "Combines RGB and grayscale color handling with generic comparison, serialization, and mapping capabilities. Supports private types for color components, ordered data structures, and key-value tracking with versioning and hashing. Enables precise color comparisons, safe conversions from integers, and efficient data persistence in multiple formats. Examples include generating test cases for color logic, serializing configuration maps, and ensuring consistent ordering in priority queues.",
+      "description_length": 489,
+      "index": 45,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Style",
+      "description": "provides comparison, serialization, and difference tracking for various data types, including ordered values, key-value maps, and custom sets. It supports operations like min/max calculation, map deltas, and set differences, with serialization formats such as S-expressions and binary. Users can track configuration changes, persist data structures, and generate stable hashes for integrity checks. Examples include sorting lists with custom orderings, versioning map updates, and storing sets with incremental modifications.",
+      "description_length": 525,
+      "index": 46,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Rule",
+      "description": "creates styled text decorations by combining prefixes and suffixes with specified styles, enabling precise control over formatted output. it defines data types for affixes and styles, supporting operations to build, modify, and apply these elements. examples include wrapping a string with a colored prefix and suffix or generating a styled heading. the module integrates seamlessly with output functions to produce structured text representations.",
+      "description_length": 448,
+      "index": 47,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Rules",
+      "description": "Provides comparison, S-expression conversion, and default value retrieval for rule configurations. Operates on a record type containing rule-specific parameters. Strips styling information from rule instances for consistent processing.",
+      "description_length": 235,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format.Location_style",
+      "description": "The module provides serialization, deserialization, comparison, and conversion operations for a type `t`, supporting formats like Bin_prot, Sexp, and strings. It includes utilities for generating test data, value shrinking, and formatting error messages or diffs. These capabilities are useful for tasks such as data persistence, testing, and debugging.",
+      "description_length": 353,
+      "index": 49,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Patdiff_kernel.Ansi_output.Rule",
+      "description": "Applies a formatting rule to a string, modifying it based on the rule's definition and returning whether the transformation was successful. It operates on strings and Format.Rule.t structures, which define specific text transformation logic. This is used to dynamically adjust output formatting in logging or templating systems.",
+      "description_length": 328,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Compare_core.Make",
+      "description": "Computes and formats differences between two text sequences, generating hunks that represent changes, with options to refine matches, handle whitespace, and control output formatting. Operates on arrays of strings, hunks, and custom file name and output types, supporting detailed line-by-line processing. Generates human-readable diffs, ANSI-colored outputs, and unified diff formats for comparing code or text files.",
+      "description_length": 418,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Compare_core.Without_unix",
+      "description": "Identifies differing sections between two line-based data sets, organizing changes into structured hunks that distinguish additions, deletions, and unchanged content. It operates on arrays of strings and produces a detailed, segmented view of modifications. This enables precise tracking of code changes by highlighting exact lines that have been added, removed, or retained. For example, it can show the exact lines changed between two versions of a source file.",
+      "description_length": 463,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Diff_input.Fields",
+      "description": "Creates a field with a specified name and text content, suitable for form submissions or data entry interfaces. Operates on string-based identifiers and textual values to construct structured input elements. Used to generate form field representations in web application contexts.",
+      "description_length": 280,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Html_output.Private",
+      "description": "Provides file modification time queries with error handling, using `File_name.t` inputs and returning `Core.Or_error.t` results. Supports precise timestamp retrieval for file tracking in build processes or change detection. Allows developers to determine if a file has been updated since last access. Enables automated workflows that depend on file freshness or versioning.",
+      "description_length": 373,
+      "index": 54,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Patdiff_kernel.Html_output.Without_mtime",
+      "description": "Transforms text using defined formatting rules, returning modified strings and change indicators. Processes lists of hunks, applying styles and adjustments for structured output. Supports dynamic formatting in logging, templating, and text rendering. Can highlight syntax, normalize whitespace, or apply color schemes to specific sections of text.",
+      "description_length": 347,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Compare_core.Private",
+      "description": "Compares two arrays of strings to identify hunks of differences using the patience diff algorithm. It takes a configuration object, previous lines, and next lines as input, producing a structured list of changes. This is useful for generating precise line-by-line comparisons in text processing tasks.",
+      "description_length": 301,
+      "index": 56,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Patdiff_kernel.Output.Rule",
+      "description": "Applies a formatting rule to a string, modifying it based on the rule's definition and returning the result along with a boolean indicating if the input was altered. Works with strings and Format.Rule.t structures to perform targeted text transformations. Used to enforce specific syntax conventions during code generation or text processing workflows.",
+      "description_length": 352,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff.Compare_core",
+      "description": "Provides line-based comparison of string arrays using a patience diff algorithm to detect and categorize changes. It supports generating detailed diff outputs by analyzing differences between two versions of text data. Key operations include processing arrays and identifying hunks of additions, deletions, and modifications. Example use cases include tracking changes in configuration files or version-controlled text documents.",
+      "description_length": 429,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff.Configuration",
+      "description": "Provides vector operations for 3D and 2D spaces, including addition, subtraction, scaling, and dot products on `t`, along with conversion functions to `V2.t` and `V1.t` for data migration. Supports physics computations, coordinate transformations, and format updates by enabling seamless interaction between different vector representations. Users can calculate force vectors in 3D simulations, adjust 2D movement directions, and convert legacy data structures to modern formats. Operations are applied directly to `t` instances, with clear mappings between vector types.",
+      "description_length": 571,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff.Patdiff_core",
+      "description": "provides a framework for pattern-based difference computation with support for defining and manipulating abstract syntax structures. it includes type definitions for patterns, nodes, and differences, along with operations to compare and analyze structural variations. users can construct custom pattern matchers and generate detailed difference reports between tree-like data structures. examples include identifying divergences in code syntax trees or tracking changes in hierarchical data models.",
+      "description_length": 498,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Ansi_output",
+      "description": "Transforms strings using predefined formatting rules, enabling dynamic text manipulation through rule-based logic. It processes strings and Format.Rule.t structures, returning success or failure status after applying changes. This allows for conditional text styling in logs or templates, such as colorizing error messages or highlighting specific content. Operations include rule application, validation, and result tracking.",
+      "description_length": 426,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Ascii_output",
+      "description": "Transforms strings using predefined formatting rules, applying changes based on Format.Rule.t definitions and indicating success or failure. Key operations include rule application and validation, with core data types being strings and rule structures. This enables dynamic text manipulation, such as colorizing output or adjusting indentation. Examples include converting plain text to styled terminal output or modifying line breaks according to specified patterns.",
+      "description_length": 467,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Compare_core",
+      "description": "Identifies differing hunks between two string arrays using the patience diff algorithm, returning a structured change list. It processes configuration, previous lines, and next lines to highlight additions, deletions, and unchanged sections. Users can track exact line differences in text comparisons, such as version control diffs or document comparison tools. Operations include analyzing textual changes and generating detailed, formatted output for review.",
+      "description_length": 460,
+      "index": 63,
+      "embedding_norm": 1.0000001192092896
+    },
+    {
+      "module_path": "Patdiff_kernel.Comparison_result",
+      "description": "Provides functions to generate and check for the presence of differences between two input states using a custom comparison function. Works with configuration data, input diffs, and hunk-based output. Used to determine if a transformation between states results in no textual changes.",
+      "description_length": 284,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Configuration",
+      "description": "This module offers fine-grained control over diff visualization through parameters like context settings, line/word matching thresholds, and output formatting rules, enabling customization of how differences are displayed. It operates on a configuration record and a private type `t`, allowing manipulation of boolean flags, tolerance levels, and formatting options. Use cases include adjusting diff accuracy for specific file types or tailoring output aesthetics for readability.",
+      "description_length": 480,
+      "index": 65,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Patdiff_kernel.Diff_input",
+      "description": "Encapsulates structured input elements with named fields and textual values, enabling the creation of form-compatible data structures. Supports operations on string identifiers and text-based content to build and manipulate input representations. Allows for the generation of field definitions and validation setups in web application workflows. Examples include creating a username field or a password input with associated labels and constraints.",
+      "description_length": 448,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.File_helpers",
+      "description": "Handles string manipulation with a focus on trailing newlines, converting strings to S-expressions and ensuring consistent newline management. The `t` type represents strings that may end with a newline, supporting operations like trimming, appending, and serialization. Functions include `to_sexp`, `trim_newline`, and `with_newline`, enabling precise control over output formatting. This module is useful for generating structured text outputs or parsing input with variable newline conventions.",
+      "description_length": 497,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.File_name",
+      "description": "Provides operations to compare, check equality, and manipulate file names with separate real and display names. Works with a custom type representing file names, supporting path appending and null file handling. Used to manage file system access names and display names, including handling alternate names for extensions.",
+      "description_length": 321,
+      "index": 68,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Float_tolerance",
+      "description": "Processes diff hunks to adjust ranges when floating point numbers change by less than a specified tolerance, modifying hunks to reflect approximate matches. Operates on diff hunks and percentage tolerances, adjusting context based on line counts. Used to handle minor numerical variations in diffs, such as rounding differences in generated code or data outputs.",
+      "description_length": 362,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Format",
+      "description": "manages internal formatting structures through color, text styling, and rule configuration handling, with support for comparison, serialization, and transformation. it defines types for colors, affixes, styles, and rule records, enabling operations like color conversion, text decoration, and configuration comparison. users can generate styled output, track changes in data structures, and serialize complex types across multiple formats. examples include applying colored prefixes to output, comparing rule configurations, and generating test data for structured types.",
+      "description_length": 571,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Html_output",
+      "description": "Queries file modification times with error handling, using `File_name.t` inputs and returning `Core.Or_error.t` results, enabling precise tracking of file changes. Applies formatting rules to text, producing modified strings and tracking changes, supporting structured output through hunk processing. Developers can determine file freshness for build systems or apply dynamic text styling for logging and rendering. Examples include detecting updated files for incremental builds or highlighting syntax in log outputs.",
+      "description_length": 518,
+      "index": 71,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Patdiff_kernel.Hunks",
+      "description": "Processes a list of hunk structures, applying custom functions to each hunk's start and end positions and individual lines. Accepts functions to process raw string lines and hunk boundaries. Used to analyze or transform diff outputs by traversing hunk data and their constituent lines.",
+      "description_length": 285,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Is_binary",
+      "description": "Determines if a given string contains binary data by analyzing byte patterns. It checks for non-printable characters and irregular byte sequences. Used to filter out binary content in file processing pipelines.",
+      "description_length": 210,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Output",
+      "description": "Transforms strings using defined formatting rules, returning modified output and a flag indicating changes. Processes lists of hunks, applying styles and generating styled text for display or output. Supports precise text manipulation and formatting through rule-based operations. Can adjust indentation, highlight syntax, or normalize whitespace in code or structured text.",
+      "description_length": 374,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Patdiff_core",
+      "description": "Computes and refines differences between string arrays using the patience diff algorithm, with support for line and word-level comparisons. Processes hunks, whitespace, and formatting rules to generate structured output. Generates human-readable diffs, ANSI-colored outputs, and string representations for file comparisons.",
+      "description_length": 323,
+      "index": 75,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Patdiff_kernel.Should_keep_whitespace",
+      "description": "Checks if whitespace changes between two text inputs should be preserved, using heuristics tailored for languages like Python. Operates on diff-like structures, including raw line arrays and file-name paired data. Used to determine whether to display or ignore whitespace differences in version control or code comparison tools.",
+      "description_length": 328,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "patdiff",
+      "description": "Computes differences between two sequences using the patience diff algorithm, supporting numeric semantic comparisons and output formatting in ASCII, ANSI, or HTML. Operates on lists and strings, with specialized handling for numerical values during comparisons. Useful for visualizing changes in codebases or configuration files with colored or structured output.",
+      "description_length": 364,
+      "index": 77,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Patdiff",
+      "description": "Combines line-based text comparison, vector arithmetic, and structural pattern analysis into a unified toolkit for handling differences in text, geometry, and abstract data. It offers operations on arrays, vectors, and syntax trees, enabling tasks like tracking file changes, performing physics calculations, and analyzing code structure. Users can generate detailed diffs, manipulate 3D vectors, and detect structural variations in hierarchical data. Examples include comparing configuration files, calculating force vectors, and identifying syntax tree discrepancies.",
+      "description_length": 569,
+      "index": 78,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Expect_test_patdiff",
+      "description": "Computes and outputs ASCII diffs between strings or s-expressions, supporting context control, whitespace handling, and floating-point tolerance. Generates detailed line-by-line comparisons for testing or debugging purposes. Provides both direct diff output and stateful printers for incremental comparison tracking.",
+      "description_length": 316,
+      "index": 79,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Patdiff_kernel",
+      "description": "Processes strings using rule-based formatting, diff algorithms, and visualization controls to enable dynamic text manipulation, structured comparison, and styled output. It handles data types such as strings, format rules, diff hunks, and configuration records, supporting operations like rule application, diff analysis, and newline management. Examples include colorizing logs, generating human-readable diffs, and adjusting whitespace sensitivity in code comparisons. It also manages file names, binary detection, and styled text generation through customizable parameters.",
+      "description_length": 576,
+      "index": 80,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 96,
+    "meaningful_modules": 81,
+    "filtered_empty_modules": 15,
+    "retention_rate": 0.84375
+  },
+  "statistics": {
+    "max_description_length": 576,
+    "min_description_length": 199,
+    "avg_description_length": 368.5308641975309,
+    "embedding_file_size_mb": 0.2946796417236328
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "package": "picos_io",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 8,
+  "creation_timestamp": "2025-06-18T16:31:44.708926",
+  "modules": [
+    {
+      "module_path": "Picos_io.Unix.LargeFile",
+      "description": "Performs low-level file positioning and size adjustment, including setting the file offset with `lseek`, truncating files to a specified length via `truncate` or `ftruncate`, and retrieving metadata through `stat`, `lstat`, and `fstat`. Operates on file descriptors and file paths, returning detailed file information in the `stats` type. Used for direct manipulation of large files, such as rewinding, resizing, or inspecting file properties in system-level I/O operations.",
+      "description_length": 474,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Picos_io.Unix",
+      "description": "Provides asynchronous, scheduler-friendly operations for file descriptors, including reading, writing, and waiting, with support for non-blocking mode to improve performance. Includes low-level file management functions like `lseek`, `truncate`, and `stat`, enabling direct control over file positioning, size, and metadata. Supports sleep, wait, and system calls that block without freezing the event loop, with specific behavior on Windows. Can be used to manage large files, monitor I/O readiness, and coordinate process execution in a non-blocking manner.",
+      "description_length": 559,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Picos_io_fd.Resource",
+      "description": "Manages Unix file descriptors as disposable resources, providing equality checks and hashing for identification. Disposal ensures proper release of underlying system resources. Used to safely handle file I/O operations where explicit cleanup is required.",
+      "description_length": 254,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Picos_io_select.Intr",
+      "description": "Provides functions to schedule and manage signal-based interruptions for Unix IO operations. Operates on a custom type `t` representing interrupt requests, using a dedicated signal for notification. Used to safely cancel or acknowledge timeouts on blocking system calls, ensuring proper cleanup after potential early interruptions.",
+      "description_length": 331,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "picos_io",
+      "description": "Provides asynchronous read and write operations on file descriptors, event loop management using Unix.select, and reference-counted file descriptor handling. Works with file descriptors, event loops, and IO channels. Enables non-blocking network and file operations in single-threaded applications.",
+      "description_length": 298,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Picos_io",
+      "description": "manages asynchronous I/O operations and low-level file control, enabling non-blocking reads, writes, and file metadata manipulation. It supports file positioning with `lseek`, size adjustment via `truncate`, and metadata retrieval through `stat`, along with system-level blocking calls that integrate with event loops. It allows managing large files, monitoring I/O readiness, and coordinating processes without freezing the application. Examples include efficiently reading from or writing to files in the background and waiting for I/O events without blocking the main thread.",
+      "description_length": 578,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Picos_io_fd",
+      "description": "Manages Unix file descriptors as disposable resources, enabling safe I/O operations with automatic cleanup. Provides equality and hash functions for tracking and comparing descriptors. Allows for precise control over resource lifecycle, such as closing descriptors after use or checking for duplicates. Examples include reading from a file, writing to a socket, or ensuring no descriptor leaks occur.",
+      "description_length": 400,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Picos_io_select",
+      "description": "Manages Unix IO operations with a thread-per-domain event loop based on Unix.select, enabling non-blocking and interruptible system calls. It introduces a custom type `t` for handling signal-based interruptions, allowing cancellation or acknowledgment of timeouts during blocking operations. Operations include scheduling interrupts, managing signal notifications, and ensuring cleanup after early termination. This enables safe coordination of IO with signal handling, supporting scenarios like timed reads or writes that can be gracefully interrupted.",
+      "description_length": 553,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 8,
+    "meaningful_modules": 8,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 578,
+    "min_description_length": 254,
+    "avg_description_length": 430.875,
+    "embedding_file_size_mb": 0.029466629028320312
+  }
+}

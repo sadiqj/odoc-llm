@@ -1,0 +1,119 @@
+{
+  "package": "solidity-typechecker",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 14,
+  "creation_timestamp": "2025-06-18T16:33:57.193179",
+  "modules": [
+    {
+      "module_path": "solidity-typechecker",
+      "description": "Provides type checking and post-processing operations for Solidity contracts, including type validation, environment construction, and type representation. Works with custom type structures, contract definitions, and abstract syntax trees. Used to enforce type safety during contract compilation and to generate human-readable type information.",
+      "description_length": 344,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Solidity_typechecker",
+      "description": "Handles type checking for Solidity programs, inferring and annotating types for all expressions and declarations. Operates on abstract syntax trees (ASTs) representing Solidity contracts, functions, and variables. Ensures correct type relationships in programs with multiple interdependent modules.",
+      "description_length": 298,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Solidity_type",
+      "description": "Compares and manipulates type and location information from Solidity AST, including checking equality of types, locations, and function options, and determining properties like whether a type is a reference or storage type. It supports operations to promote or unpromote locations, adjust type locations, and inspect type structure. Used for validating type consistency and location rules during static analysis of Solidity contracts.",
+      "description_length": 434,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Solidity_checker_TYPES",
+      "description": "The module defines a hierarchical data model for representing Solidity language constructs, including contracts, functions, variables, and custom type aliases for arguments and options. It focuses on structured type definitions rather than operational logic, enabling precise analysis of code elements. This foundation supports use cases like static analysis, code validation, or transformation tools by providing a clear, organized representation of Solidity's syntax and semantics.",
+      "description_length": 483,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Solidity_type_printer",
+      "description": "Converts Solidity type information into human-readable strings, including location, magic type, and parameter lists. Handles canonical representations with position and library flags for precise type identification. Generates storage-specific suffixes based on location and boolean flags.",
+      "description_length": 288,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Solidity_type_conv",
+      "description": "Converts and validates Solidity type compatibility, including checks for storage location compatibility, implicit and explicit conversions, and type merging. Operates on Solidity type representations, positions, and string data. Used to enforce type rules during contract analysis and bytecode generation.",
+      "description_length": 305,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Solidity_tenv_builder",
+      "description": "The module constructs and maintains type environments for Solidity by adding and validating modules, contracts, functions, and types, while handling overloads and local variables through AST node manipulation. It ensures type consistency by resolving aliases, detecting definition clashes, and managing metadata within environment maps, crucial for compiler phases like type checking and symbol resolution.",
+      "description_length": 406,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Solidity_postcheck_utils",
+      "description": "The module offers utilities for list and option manipulation, environment traversal, and pretty-printing, focusing on Solidity contract analysis. It works with data structures like `identmap`, `contract_env`, AST nodes, and function definitions to enable tasks such as parameter extraction, inheritance analysis, and metadata querying. Specific use cases include static analysis of contract properties, symbolic inspection of function visibility, and formatting of annotated identifiers within Solidity environments.",
+      "description_length": 516,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Version",
+      "description": "Provides functions to retrieve the version string, optional commit hash, and optional commit date. Works with string and option types to expose build-time metadata. Used to dynamically access build information in logging, diagnostics, and deployment tracking.",
+      "description_length": 259,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Solidity_type_builder",
+      "description": "This module performs type conversion, validation, and analysis on Solidity constructs, focusing on resolving types, computing function selectors, and generating error reports. It operates on Abstract Syntax Tree (AST) nodes, type descriptions, and environment contexts to ensure semantic correctness in function, variable, and event definitions. Specific use cases include translating low-level type representations into structured descriptors and verifying compatibility during contract compilation.",
+      "description_length": 500,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Solidity_postprocess",
+      "description": "Checks a typed Solidity AST for compliance with standard properties, raising specific exceptions defined in Solidity_exceptions when violations occur. Operates on Solidity_ast.program structures representing parsed and typed Solidity code. Used to validate smart contract syntax and semantics before deployment.",
+      "description_length": 311,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Main",
+      "description": "Handles application entry point by initializing system resources, processing command-line arguments, and launching the primary execution loop. Operates with unit type and implicitly interacts with global state. Used to start the application workflow and manage shutdown sequences.",
+      "description_length": 280,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Solidity_primitives",
+      "description": "Provides functions for initializing and manipulating Ethereum-based data types, including handling of addresses, integers, and byte arrays. Works with raw byte sequences and structured ABI-encoded values. Used to set up environment-specific defaults before executing smart contract operations.",
+      "description_length": 293,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Solidity_tenv",
+      "description": "Handles visibility checks and identifier lookups in Solidity contracts, including filtering symbols by visibility and determining symbol origins. Operates on contract structures, identifiers, and type descriptions within a symbolic environment. Used to resolve variable and function references during semantic analysis and to enforce access control rules.",
+      "description_length": 355,
+      "index": 13,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 14,
+    "meaningful_modules": 14,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 516,
+    "min_description_length": 259,
+    "avg_description_length": 362.2857142857143,
+    "embedding_file_size_mb": 0.05126762390136719
+  }
+}

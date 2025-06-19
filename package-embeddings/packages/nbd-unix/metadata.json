@@ -1,0 +1,49 @@
+{
+  "package": "nbd-unix",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 4,
+  "creation_timestamp": "2025-06-18T16:28:19.096545",
+  "modules": [
+    {
+      "module_path": "Nbd_unix.Client",
+      "description": "Provides functions to list remote disk exports, negotiate a connection, and perform asynchronous read and write operations on block devices. Operates with types such as `t` for client instances, `Cstruct.t list` for data buffers, and `int64` for sector positions. Used to access and manipulate remote storage by reading from or writing to specific disk sectors after establishing a connection.",
+      "description_length": 393,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nbd_unix.Server",
+      "description": "Establishes and manages network block device connections, handling handshake negotiation, read-only access control, and resource cleanup. Operates on block devices and string-based export names, processing I/O requests over NBD protocols. Used to securely expose local storage to remote clients, ensuring proper access restrictions and session termination.",
+      "description_length": 356,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "nbd-unix",
+      "description": "Provides functions for parsing and constructing NBD protocol messages, including negotiation, request handling, and reply generation. Operates on byte sequences, network sockets, and structured data representing block device operations. Enables direct interaction with NBD servers to read from and write to remote block devices.",
+      "description_length": 328,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nbd_unix",
+      "description": "Manages network block device interactions by establishing connections, negotiating protocols, and handling I/O operations on remote storage. It uses `t` for client states, `Cstruct.t list` for data transfers, and `int64` for sector addressing, enabling precise read and write operations. It supports exporting local storage with access controls and ensures proper session termination. Examples include reading from a specific sector of a remote disk or writing data to a block device after connection setup.",
+      "description_length": 507,
+      "index": 3,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 4,
+    "meaningful_modules": 4,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 507,
+    "min_description_length": 328,
+    "avg_description_length": 396.0,
+    "embedding_file_size_mb": 0.01495361328125
+  }
+}

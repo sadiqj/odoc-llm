@@ -1,0 +1,119 @@
+{
+  "package": "httpaf",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 14,
+  "creation_timestamp": "2025-06-18T16:33:27.398023",
+  "modules": [
+    {
+      "module_path": "Httpaf.Version",
+      "description": "Represents HTTP protocol versions with a dotted numeric format, supporting comparison, string conversion, and pretty printing. It handles version numbers as structured values, enabling precise version-based logic in protocol handling. Used to validate, log, and compare HTTP version strings in network communication contexts.",
+      "description_length": 325,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Httpaf.Method",
+      "description": "Provides functions to determine if a request method is safe, cacheable, or idempotent, and converts between string representations and internal types. Works with `standard` and `t` types representing HTTP request methods. Used to validate method behavior in HTTP clients and servers, such as checking if a method can be safely cached or repeated without side effects.",
+      "description_length": 367,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Httpaf.Status",
+      "description": "Provides functions to convert between status codes and their integer representations, check status code classes, and retrieve standard reason phrases. Works with custom types representing HTTP status code categories and a core type for status codes. Used to validate, classify, and serialize HTTP response status codes in networked applications.",
+      "description_length": 345,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Httpaf.Headers",
+      "description": "This module provides operations for managing HTTP header fields, including adding, replacing, removing, and converting headers while preserving their transmission order. It works with case-insensitive key-value pairs, handling string-based names and values, and supports concatenating multiple values for the same header name using commas. Use cases include processing HTTP messages, ensuring correct proxy behavior, and managing cookies or control data where order and case-insensitive comparisons are critical.",
+      "description_length": 512,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Httpaf.Body",
+      "description": "Schedules read callbacks for byte availability and end-of-file detection, and handles character, string, and bigstring writes with buffer coalescing. Transmits data efficiently through scheduled bigstrings and ensures all pending output is flushed with a completion callback. Closes input or output channels, tracking closure status for resource management.",
+      "description_length": 357,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Httpaf.Request",
+      "description": "Provides functions to create HTTP requests, determine body length constraints, and check for persistent connection eligibility. Works with HTTP methods, headers, and version information. Used to validate request bodies for fixed size or chunked transfer encoding and to manage connection reuse in proxy or client scenarios.",
+      "description_length": 323,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Httpaf.Response",
+      "description": "Provides functions to construct HTTP responses, determine body length based on request method and proxy status, and check if a connection can be reused. Works with status codes, headers, and version information. Used to handle HTTP response semantics in server logic, such as determining content-length or managing connection persistence.",
+      "description_length": 338,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Httpaf.IOVec",
+      "description": "Provides operations to manipulate and query contiguous memory buffers, including calculating lengths, shifting data, and pretty-printing. Works with a buffer type representing a sequence of bytes or arbitrary data. Used to efficiently manage data chunks in network I/O and file processing pipelines.",
+      "description_length": 299,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Httpaf.Reqd",
+      "description": "Provides functions to access and manipulate HTTP requests and responses, including reading request bodies and sending responses with strings, bigstrings, or streaming bodies. Works with `Request.t`, `Response.t`, and `Body.t` types to handle HTTP communication. Used to construct and send HTTP responses, manage connection persistence, and handle exceptions during request processing.",
+      "description_length": 384,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Httpaf.Config",
+      "description": "Provides functions to create and manipulate configuration records with default values for buffer sizes and thresholds. Works with a record type containing integer fields for sizing parameters. Used to initialize system settings for data processing pipelines with predefined limits.",
+      "description_length": 281,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Httpaf.Server_connection",
+      "description": "Handles HTTP connection lifecycle by managing read and write operations, error reporting, and state transitions. Works with `Bigstringaf.t` for byte-level input/output, `Reqd.t` for request processing, and custom error types for exception handling. Used to process incoming HTTP requests, buffer and flush data, and gracefully handle connection termination or errors.",
+      "description_length": 367,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Httpaf.Client_connection",
+      "description": "Handles HTTP client connections by managing request sending, reading responses, and processing input/output events. It works with request and response objects, bigstring buffers, and custom error and handler types. Used to coordinate asynchronous I/O operations, manage connection state, and handle errors during network communication.",
+      "description_length": 335,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "httpaf",
+      "description": "Provides HTTP request parsing, response serialization, and connection management using a state machine. Works with byte streams, HTTP messages, and request targets. Used to build scalable web servers that handle GET requests and route traffic based on URL paths.",
+      "description_length": 262,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Httpaf",
+      "description": "Provides HTTP protocol handling through structured versioning, method validation, and status code management. Offers header manipulation, buffer operations, and connection lifecycle control, enabling efficient request and response processing. Supports byte-level I/O scheduling, memory-efficient data handling, and configuration tuning for performance. Examples include validating HTTP methods, managing connection persistence, and constructing responses with proper content-length calculations.",
+      "description_length": 495,
+      "index": 13,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 14,
+    "meaningful_modules": 14,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 512,
+    "min_description_length": 262,
+    "avg_description_length": 356.42857142857144,
+    "embedding_file_size_mb": 0.05131244659423828
+  }
+}

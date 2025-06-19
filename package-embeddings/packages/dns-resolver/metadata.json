@@ -1,0 +1,91 @@
+{
+  "package": "dns-resolver",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 10,
+  "creation_timestamp": "2025-06-18T16:32:22.464236",
+  "modules": [
+    {
+      "module_path": "Dns_resolver_mirage.Make.UDP",
+      "description": "Provides functions to manage UDP communication, including listening for packets on specific ports, handling incoming datagrams, and sending data with optional source addresses and TTL. Operates on IP addresses, ports, and Cstruct.t buffers, with error handling through a custom error type. Used to establish and terminate UDP connections, route incoming data, and transmit packets with fine-grained control over network parameters.",
+      "description_length": 431,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dns_resolver_mirage.Make.TCP",
+      "description": "The module offers TCP connection management and data transfer functionalities, including establishing connections, reading/writing data, and handling disconnections, with support for buffered and nodelay writes. It operates on network flows, IP addresses, and ports, incorporating error handling and flow control mechanisms. Use cases include building reliable networked applications, managing real-time data streams, and ensuring controlled communication termination.",
+      "description_length": 468,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dns_resolver_mirage.Make.IP",
+      "description": "Provides pretty-printers for errors, IP addresses, and prefixes. Handles IP layer operations such as demultiplexing incoming packets, sending data with configurable fragmentation and TTL, and generating pseudoheaders for checksums. Works with IP addresses, prefixes, and network interfaces, supporting use cases like packet inspection, custom IP routing, and network diagnostics.",
+      "description_length": 379,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dns_resolver_mirage.Make",
+      "description": "Manages network communication through UDP and TCP protocols, handling packet reception, transmission, and flow control. Supports IP address manipulation, error reporting, and packet inspection with custom data types for addresses, ports, and buffers. Enables precise control over network behavior, including TTL settings, fragmentation, and checksum generation. Can be used to build custom network services, implement routing logic, or perform low-level packet analysis.",
+      "description_length": 470,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "dns-resolver",
+      "description": "Processes DNS queries and responses using wire-format parsing and serialization. Handles domain names, IP addresses, and DNS record types such as A, AAAA, and CNAME. Used to implement DNS resolvers and authoritative servers with strict adherence to protocol specifications.",
+      "description_length": 273,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dns_resolver_cache",
+      "description": "Provides functions to process DNS queries, resolve domain names with optional DNSSEC, and manage cached responses. Works with domain names, DNS packet structures, and IP addresses to handle CNAME resolution and query forwarding. Used to generate DNS replies, track query origins, and ensure authoritative responses based on cached data.",
+      "description_length": 336,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dns_resolver_root",
+      "description": "Provides root server information including NS, A, and AAAA records, along with IP addresses filtered by protocol. Works with domain names, IP sets, and DNS resource records. Used to configure DNS resolvers with authoritative root server data and handle reserved DNS zones.",
+      "description_length": 272,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dns_resolver_utils",
+      "description": "Processes DNS packets by filtering and qualifying resource records for cache insertion, ensuring only in-bailiwick data is considered. Operates on domain names, DNS question types, and packet structures, returning validated entries or error codes. Used to generate placeholder SOA records for invalid or unresolvable domains during resolution.",
+      "description_length": 343,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dns_resolver",
+      "description": "Provides functions to handle DNS resolution, including processing incoming DNS packets, managing root zone updates, and retransmitting queries. Operates on types such as protocol, IP address, port, and DNS buffers. Used to manage DNS requests, respond to queries, and maintain resolver state with caching and protocol-specific behavior.",
+      "description_length": 336,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dns_resolver_mirage",
+      "description": "Handles network communication via UDP and TCP, offering low-level control over packet transmission, reception, and inspection. Utilizes custom data types for IP addresses, ports, and buffers, with support for error handling, TTL adjustment, and checksum generation. Enables development of custom network services, routing logic, or packet analysis tools. Examples include crafting DNS queries, monitoring network traffic, and implementing custom transport protocols.",
+      "description_length": 466,
+      "index": 9,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 10,
+    "meaningful_modules": 10,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 470,
+    "min_description_length": 272,
+    "avg_description_length": 377.4,
+    "embedding_file_size_mb": 0.03676128387451172
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "package": "secp256k1-internal",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 13,
+  "creation_timestamp": "2025-06-18T16:34:37.348866",
+  "modules": [
+    {
+      "module_path": "Libsecp256k1.Internal.Field.Storage",
+      "description": "Provides functions to convert between a custom type `t` and Cstruct buffers, including safe and unsafe parsing. Offers a constant-time move operation for secure data manipulation and a constructor with optional 32-bit fields for initializing instances. Used to serialize and deserialize structured binary data in network protocols or file formats.",
+      "description_length": 347,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsecp256k1.Internal.Group.Storage",
+      "description": "Provides operations to convert between a custom type and Cstruct, including safe and unsafe parsing, and field-based construction. Works with the `t` type and `Cstruct.t` for efficient binary data handling. Used to serialize and deserialize structured data in network protocols or file formats.",
+      "description_length": 294,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsecp256k1.Internal.Group.Jacobian",
+      "description": "Provides operations to manipulate group elements in Jacobian coordinates, including setting, comparing, and transforming points. Works with field elements and group elements, supporting elliptic curve arithmetic like doubling, addition, and scalar multiplication. Enables efficient point addition with affine coordinates and rescaling for cryptographic applications.",
+      "description_length": 366,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsecp256k1.Internal.Scalar",
+      "description": "The module provides arithmetic, bit manipulation, and comparison operations on a custom scalar type `t`, including addition, multiplication, inversion, bit extraction, and group order checks. It supports cryptographic use cases with constant-time functions and low-level numeric transformations, such as conditional negation and scaled multiplication. The operations cater to scenarios requiring precise control over scalar values, like elliptic curve cryptography or secure protocol implementations.",
+      "description_length": 500,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsecp256k1.Internal.Field",
+      "description": "handles conversion between a custom type and binary data via Cstruct buffers, supporting safe parsing, unsafe parsing, and constant-time data movement; provides a constructor with optional 32-bit fields and tracks element magnitude and normalization state; allows serialization of structured data for network protocols, deserialization of binary streams, and manipulation of field elements with controlled normalization; supports operations that depend on magnitude for cryptographic or numerical computations.",
+      "description_length": 510,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libsecp256k1.Internal.Group",
+      "description": "handles conversion between a custom type and Cstruct for efficient binary data manipulation, and supports elliptic curve operations on group elements in Jacobian coordinates. it includes parsing, construction, and arithmetic functions for structured data and cryptographic points. users can serialize data, parse binary streams, and perform point addition, doubling, and scalar multiplication. examples include encoding protocol messages and executing elliptic curve operations in cryptographic protocols.",
+      "description_length": 505,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsecp256k1.External.Context",
+      "description": "Provides functions to create and clone context objects, and to randomize a context using a seed to enhance security against side-channel attacks. Operates on a opaque type `t` and a `Bigstring.t` for seeding. Used to initialize cryptographic contexts with randomized values for improved resistance to timing and power analysis attacks.",
+      "description_length": 335,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsecp256k1.External.Key",
+      "description": "This module offers cryptographic key manipulation functions, including buffer access, size determination, copying, negation, tweaking, and validation, alongside serialization and compression control for binary data. It works with `Bigstring.t` and custom types like `secret`, `public`, and `_ t`, enabling tasks such as secure key generation, data encoding, and efficient storage management. Specific use cases include cryptographic protocol implementation and optimized data transmission.",
+      "description_length": 489,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsecp256k1.External.Sign",
+      "description": "The module provides cryptographic operations for signing messages, verifying signatures, and recovering public keys, working with `Bigstring.t` data and cryptographic keys, while distinguishing between plain and recoverable signature formats. It handles DER encoding, error recovery, and includes both safe (result-based) and unsafe (exception-throwing) variants for robust signature management. Use cases include secure message authentication, integrity verification, and scenarios requiring key recovery from signatures.",
+      "description_length": 522,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsecp256k1.External",
+      "description": "manages cryptographic contexts, keys, and signatures through a unified set of operations, enabling secure initialization, manipulation, and verification tasks. It works with types such as `t`, `Bigstring.t`, `secret`, `public`, and `_ t`, supporting actions like context randomization, key generation, signing, and signature verification. Users can implement secure protocols, protect against side-channel attacks, and ensure data integrity through operations like key negation, signature recovery, and DER encoding. Examples include initializing randomized cryptographic contexts, generating and validating keys, and verifying signed messages with error handling.",
+      "description_length": 664,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsecp256k1.Internal",
+      "description": "manages cryptographic scalar and group operations through arithmetic, bit manipulation, and binary serialization; supports conversions between custom types and Cstruct, enabling secure data handling and elliptic curve computations; provides functions for scalar inversion, point addition, and constant-time transformations; examples include encoding protocol messages and performing scalar multiplication in elliptic curve cryptography.",
+      "description_length": 436,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "secp256k1-internal",
+      "description": "Provides elliptic curve operations for secp256k1, including point validation, scalar multiplication, and key derivation. Works with field elements, elliptic curve points, and private/public keys. Used to verify signature correctness and generate cryptographic keys in blockchain protocols.",
+      "description_length": 289,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Libsecp256k1",
+      "description": "Manages cryptographic operations through context, key, and signature handling, along with elliptic curve arithmetic and serialization. It defines types like `t`, `Bigstring.t`, `secret`, `public`, and supports operations such as key generation, signing, scalar inversion, and point addition. Users can initialize secure contexts, perform elliptic curve computations, and encode messages with constant-time methods. Examples include verifying signed data, generating private keys, and executing scalar multiplication for cryptographic protocols.",
+      "description_length": 544,
+      "index": 12,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 13,
+    "meaningful_modules": 13,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 664,
+    "min_description_length": 289,
+    "avg_description_length": 446.2307692307692,
+    "embedding_file_size_mb": 0.04769420623779297
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "package": "morsmall",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 8,
+  "creation_timestamp": "2025-06-18T16:31:35.387467",
+  "modules": [
+    {
+      "module_path": "Morsmall.AST",
+      "description": "This module provides equality checks, pretty-printing, and string conversion operations for structured shell syntax elements, including commands, patterns, assignments, and location-aware data. It works with nested AST types like located values, descriptions, programs, and case items, along with metadata-rich constructs such as character ranges and attributes. These utilities support tasks like parsing validation, debugging output, and analyzing shell script structures with precise location tracking.",
+      "description_length": 505,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Morsmall.Location",
+      "description": "Provides equality checks, pretty printing, and string representation for lexical and positional data, along with operations to handle located values that associate data with positions. Works with types like `lexing_position`, `position`, and `'a located`, which embed location metadata within structured data. Enables precise error reporting and debugging by preserving and formatting location information alongside parsed elements.",
+      "description_length": 432,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Morsmall.SafePrinter",
+      "description": "Provides formatted printing for AST nodes and related structures using OCaml's Format module. Handles specific types like names, words, patterns, assignments, and commands, with variants that include location information. Used to generate human-readable representations of parsed program structures in error messages and debugging output.",
+      "description_length": 338,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Morsmall.CST_to_AST",
+      "description": "This module provides functions to convert concrete syntax tree (CST) elements into abstract syntax tree (AST) representations, focusing on command structures, control flow constructs, and lexical components. It handles nested CST nodes, variant syntactic forms (e.g., quoted words, I/O redirects), and location-aware transformations, mapping constructs like loops, conditionals, and function definitions to their AST equivalents. Use cases include parsing shell scripts, analyzing program flow, and processing complex syntax with metadata.",
+      "description_length": 539,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Morsmall_utilities.TestParser",
+      "description": "Parses a list of strings into a structured test expression, handling optional bracket validation at the end of the input. It processes sequences of words to construct logical test conditions, such as checking file existence or comparing values. The output is an abstract syntax tree representing the parsed expression.",
+      "description_length": 318,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "morsmall",
+      "description": "Provides functions for manipulating small integers and bit patterns, including bitwise shifts, masks, and arithmetic operations tailored for 8-bit and 16-bit values. Works with native integers and bitset representations to enable efficient low-level data processing. Used to optimize encoding and decoding of compact binary formats in network protocols.",
+      "description_length": 353,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Morsmall",
+      "description": "Provides equality checks, pretty-printing, and string conversion for shell syntax elements, including commands, patterns, and located values, with support for nested AST types and location metadata. Offers formatted output for AST nodes, enabling readable representations of parsed structures, and includes conversion functions to transform concrete syntax trees into abstract forms, handling complex constructs like loops and I/O redirects. Operations work with types such as `lexing_position`, `position`, and `'a located`, allowing precise error reporting and debugging. Examples include validating parsed commands, generating debug output with location tracking, and converting quoted words to AST nodes.",
+      "description_length": 708,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Morsmall_utilities",
+      "description": "Processes a list of strings into an abstract syntax tree representing logical test conditions, including file checks and value comparisons. It supports optional bracket validation and constructs structured expressions from sequences of words. Key data types include the abstract syntax tree and parsed test conditions. Examples include evaluating \"file exists /path\" or \"value > 10\" as structured logical expressions.",
+      "description_length": 417,
+      "index": 7,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 9,
+    "meaningful_modules": 8,
+    "filtered_empty_modules": 1,
+    "retention_rate": 0.8888888888888888
+  },
+  "statistics": {
+    "max_description_length": 708,
+    "min_description_length": 318,
+    "avg_description_length": 451.25,
+    "embedding_file_size_mb": 0.029451370239257812
+  }
+}

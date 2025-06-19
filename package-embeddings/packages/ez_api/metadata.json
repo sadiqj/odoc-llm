@@ -1,0 +1,847 @@
+{
+  "package": "ez_api",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 118,
+  "creation_timestamp": "2025-06-18T16:51:35.211511",
+  "modules": [
+    {
+      "module_path": "EzAPIServerUtils.Directory.StringMap",
+      "description": "This module provides functions for manipulating string-keyed maps, including adding, removing, and transforming entries, as well as iterating and filtering key-value pairs. It operates on polymorphic map types where keys are strings and values can be of any type, supporting sequence-based construction and merging. Use cases include data indexing, configuration management, and processing structured datasets with dynamic key-value relationships.",
+      "description_length": 447,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPIServerUtils.Directory.MethMap",
+      "description": "The module provides operations for manipulating key-value maps, including adding, removing, and transforming entries, as well as converting between sequences of key-value pairs and map structures. It works with generic key-value pairs where keys are of type `EzAPI.Meth.t` and values are parameterized by `'a`, enabling flexible data handling. Use cases include dynamic data restructuring, configuration management, and processing hierarchical or nested data formats.",
+      "description_length": 467,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPIServerUtils.Directory.Step",
+      "description": "Converts a step value to its string representation and joins a list of steps into a single string. Works with the opaque type `t` representing individual steps. Used to generate human-readable logs of step sequences in workflow processing.",
+      "description_length": 239,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPIServerUtils.File.FileString",
+      "description": "Provides operations to access the size, byte content, and buffer of a file's string data. Works with integers, bytes, and buffer structures to manage file content. Reads a file from a path and returns its contents as a string.",
+      "description_length": 226,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzSessionServer.Make.Service",
+      "description": "Provides functions for handling session management, including defining API sections, parameters, and security schemes. Works with types such as user_id, user_info, and auth to manage authentication and session states. Enables specific operations like connecting, logging in with a message, and logging out using token-based security.",
+      "description_length": 333,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzSessionServer.UserStoreInMemory.SessionArg",
+      "description": "Provides functions to retrieve the web host for access control, encode user identifiers and information in JSON, and define the RPC path for authentication endpoints. Operates with optional string values, JSON encodings, and a token storage configuration that distinguishes between cookies and CSRF headers. Used to configure session handling and authentication mechanisms in web applications.",
+      "description_length": 393,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzSessionServer.UserStoreInMemory.SessionStore",
+      "description": "Handles session creation, lookup, and removal using a token-based system. Operates on user IDs and session data structures, linking sessions to HTTP requests when provided. Used to manage authenticated user states in web applications, ensuring secure and timed session management.",
+      "description_length": 280,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzSessionServer.Make.SessionArg",
+      "description": "Provides functions to retrieve the web host for access control, encode user identifiers and information in JSON, define the RPC path for authentication endpoints, and specify how tokens are stored in requests (as cookies or CSRF headers). Works with optional strings, JSON encodings, user identifiers, user information, and token storage configurations. Used to configure authentication behavior, manage session tokens, and structure API endpoints for user management.",
+      "description_length": 468,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzSessionServer.Make.SessionStore",
+      "description": "Handles session creation, lookup, and removal using a token-based system. Operates on user identifiers and session tokens, integrating with request contexts for timing synchronization. Used to manage authenticated user sessions in a web application's backend.",
+      "description_length": 259,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzRequest_lwt.Make.Legacy",
+      "description": "Provides functions to execute HTTP requests with customizable headers, parameters, and message payloads, supporting both GET and POST operations with varying numbers of arguments. Works with type-safe service definitions that encapsulate input, output, error, and security contexts, along with a unified error handling mechanism that maps error values to status codes and messages. Used to interact with legacy API endpoints requiring dynamic parameter injection and structured response processing.",
+      "description_length": 498,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzRequest_lwt.ANY.Legacy",
+      "description": "Provides functions to execute HTTP requests with customizable headers, parameters, and message payloads, supporting both GET and POST operations with varying numbers of arguments. Works with type-safe service definitions that encapsulate input, output, error, and security parameters, along with a unified error handling mechanism that maps errors to status codes and messages. Used to interact with legacy API endpoints requiring dynamic request configuration and structured error responses.",
+      "description_length": 492,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzRequest.Make.Legacy",
+      "description": "Provides HTTP GET and POST operations for legacy API endpoints, supporting varying numbers of arguments and input types. Works with URL paths, headers, query parameters, and custom error handlers. Used to fetch data from service0, service1, service2 endpoints and submit data to post_service0, post_service1, post_service2 with specific argument and input structures.",
+      "description_length": 367,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzRequest.ANY.Legacy",
+      "description": "Provides HTTP GET and POST operations for legacy API endpoints, supporting varying numbers of arguments and input types. Works with URL base paths, request headers, query parameters, and custom error handlers. Used to fetch data from service0, service1, service2 endpoints and submit data to post_service0, post_service1, post_service2 with flexible parameter handling.",
+      "description_length": 369,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPI.Arg.Ty",
+      "description": "Provides operations to generate and compare type witnesses, including a unique value representing the type and a function to establish equality between types. Works with the abstract type `t` and type-level witnesses. Used to enforce type constraints at runtime and enable safe type-based dispatch.",
+      "description_length": 298,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzAPI.Security.StringSet",
+      "description": "This module offers set operations for managing collections of strings, including adding, removing, merging, and querying elements, along with functional transformations like mapping and folding. It manipulates sets through sequence-based interactions, enabling conversions between sets and sequences while supporting predicates for filtering and splitting. Use cases include dynamic data aggregation, string processing pipelines, and efficient membership checks in functional workflows.",
+      "description_length": 486,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPI.Url.TYPES",
+      "description": "Provides functions to construct, validate, and manipulate URL strings from a base URL, ensuring proper path joining and query parameter handling. Works with custom types `base_url` and `url` to enforce type safety in URL composition. Used to generate absolute URLs from configuration-defined base URLs in web service integrations.",
+      "description_length": 330,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPI.Req.StringMap",
+      "description": "The module offers operations for building, modifying, and querying maps with string keys, including adding, removing, and merging entries, alongside safe access to bindings and cardinality checks. It enables iteration, transformation, and filtering of key-value pairs, supporting conversions between maps and lists/sequences for tasks like configuration management or data processing. Specific use cases include handling optional values and dynamic key-value storage scenarios.",
+      "description_length": 477,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPI.Err.IntMap",
+      "description": "The module provides operations for managing integer-keyed maps, including insertion, deletion, lookup, and transformation of key-value pairs, along with functions for converting between maps and sequences or lists. It supports iterative processing, filtering, and aggregation tasks, such as folding over entries or extracting specific values. Use cases include dynamic data management, configuration handling, or scenarios requiring efficient key-based access and manipulation.",
+      "description_length": 477,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPI.Service.IO",
+      "description": "Converts values to and from string representations using encoding definitions. Handles structured data through custom encoding schemes and error-aware decoding. Supports transforming JSON-encoded strings into typed results with explicit error handling.",
+      "description_length": 252,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzSessionClient.Make.Service",
+      "description": "Provides session management operations including connecting, logging in, and logging out using a token-based security model. Works with custom types such as user_id, user_info, and auth, along with security configurations defined as token_security. Used to handle authentication flows and secure API endpoints within a web service.",
+      "description_length": 331,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzSessionClient.Make.Legacy",
+      "description": "Provides HTTP GET and POST operations for legacy API endpoints, supporting varying numbers of arguments and input types. Works with base URLs, service definitions, and custom error handling. Used to fetch data from endpoints with dynamic parameters or send structured payloads to update resources.",
+      "description_length": 297,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzSession.Make.Encoding",
+      "description": "Encodes and decodes authentication states, login responses, and error cases for user sessions, including user IDs, login information, and specific error conditions. Works with custom types like authentication results, connection responses, and login messages. Used to handle session validation, user authentication failures, and error signaling in API interactions.",
+      "description_length": 365,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzSession.Make.Service",
+      "description": "Provides functions to define API security parameters, including a token parameter and security schemes that check for tokens in queries or cookies and headers. Defines paths for authentication services and handles connection, login, and logout operations with specific security requirements. Works with user identifiers, authentication tokens, and custom security configurations for API endpoints.",
+      "description_length": 397,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPIServerUtils.StringMap",
+      "description": "The module offers operations for constructing, modifying, and querying string-keyed maps, including adding, removing, and merging entries, alongside safe access variants for retrieving or checking bindings. It works with polymorphic maps where keys are strings and values are arbitrary types, enabling transformations, filtering, and conversions between maps, lists, and sequences. Use cases include managing configuration settings, processing structured data, or handling dynamic key-value associations where string keys are essential.",
+      "description_length": 536,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPIServerUtils.Timings",
+      "description": "Provides functions to manage time intervals and track durations, including creating, copying, and modifying periods, as well as adding and retrieving timing data. Works with custom types for periods, time records, and timing collections. Used to log and analyze performance metrics during execution, such as measuring function call durations or tracking event intervals.",
+      "description_length": 370,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPIServerUtils.Directory",
+      "description": "manages structured data through a combination of string- and type-keyed maps, along with step serialization. It supports adding, removing, and transforming key-value pairs, with operations on polymorphic and generic maps, and provides methods to convert step sequences into readable strings. Users can build dynamic configurations, process hierarchical data, and generate logs from step-based workflows. Examples include indexing data by string keys, merging configuration layers, and logging workflow progress as concatenated step strings.",
+      "description_length": 540,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPIServerUtils.Answer",
+      "description": "Provides functions to construct HTTP responses with specific status codes, headers, and error messages, including handling not found, method not allowed, and server errors. Works with Lwt threads and string-based response bodies, supporting custom headers and error deconstruction. Used to generate structured HTTP replies in web applications, such as returning 404 pages, invalid request formats, or internal server error messages.",
+      "description_length": 432,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzAPIServerUtils.File",
+      "description": "Manages file content through operations that retrieve size, byte sequences, and buffer data. Supports integer, byte, and buffer manipulations for file handling. Reads file paths and converts their contents into string representations. Enables direct access to raw file data for processing or transformation.",
+      "description_length": 307,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzAPIServerUtils.GMTime",
+      "description": "Calculates time differences, converts between local and UTC time, and handles date and time formatting using Unix.tm structures. It provides precise time measurements in seconds and nanoseconds, and supports conversions between string representations and time values. Used for timezone-aware time calculations and logging with standardized date formats.",
+      "description_length": 353,
+      "index": 28,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzAPIServerUtils.Ip",
+      "description": "Provides functions to track and retrieve IP information based on timestamps, using a hash table that maps strings to IP metadata. Registers IP addresses with a associated time value for later lookup. Used to manage active IP connections and their session durations.",
+      "description_length": 265,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPIServerUtils.Legacy",
+      "description": "Registers a service with a handler function, associating it with a directory structure. It processes request parameters, security checks, and returns a deferred result. Used to integrate legacy API endpoints into a routing system with specific type constraints.",
+      "description_length": 261,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzSessionServer.Make",
+      "description": "Manages authentication and session handling by retrieving web hosts, encoding user data in JSON, defining RPC paths, and specifying token storage mechanisms. Supports session creation, lookup, and removal using tokens, integrating with request contexts for timing consistency. Processes user identifiers, session tokens, and configuration settings to control access and manage authenticated states. Enables structured API interactions for user authentication and session management in web applications.",
+      "description_length": 502,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzSessionServer.UserStoreInMemory",
+      "description": "Provides functions to encode user identifiers and information using JSON, manage authentication endpoints via a specified RPC path, and handle token storage options including cookies and CSRF headers. Works with user_id as a string and user_info as a structured data type. Used to configure access control settings, serialize user data, and support authentication mechanisms in web requests.",
+      "description_length": 391,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzSessionServer.SessionStoreInMemory",
+      "description": "Creates sessions with unique tokens, retrieves sessions by token while optionally syncing with a request, and removes sessions based on user ID and token. Operates on user IDs and session tokens, storing session data in memory. Used to manage user authentication states during API requests and session expiration.",
+      "description_length": 313,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzEncoding.Ezjsonm",
+      "description": "Provides functions to parse a JSON string into an internal representation and to serialize that representation back into a string, with an option to minify the output. Works with the `Json_repr.ezjsonm` type, a compact and efficient JSON structure. Used to convert between human-readable JSON text and a lightweight in-memory format for processing or transmission.",
+      "description_length": 364,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google.Types",
+      "description": "Provides functions to construct, compare, and serialize type information structures. Works with records containing type metadata, user profiles, and aggregated type data. Used to validate type consistency in compiler plugins and generate type-specific reports.",
+      "description_length": 260,
+      "index": 35,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google.Encoding",
+      "description": "Encodes and decodes JSON data for specific types including profile information, boolean values, and merged object structures. Works with custom data types such as `Types.info`, `Types.profile`, and generic pairs with optional elements. Used to serialize configuration profiles and combine JSON objects with optional fields during data processing.",
+      "description_length": 346,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google.Services",
+      "description": "Extracts and validates ID tokens from request parameters, authenticates with Google's OAuth2 endpoint, and retrieves token information using a secure, no-authentication service. Works with API parameters, base URLs, and type-safe service definitions. Used to verify user authentication in API endpoints and fetch user details from token payloads.",
+      "description_length": 346,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzReq.Interface",
+      "description": "Handles HTTP GET and POST requests with customizable methods, headers, and messages. Accepts string-based content and returns results via a callback function. Used for integrating external API calls and sending structured data over HTTP.",
+      "description_length": 237,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzReq.Legacy",
+      "description": "Provides HTTP GET and POST operations for legacy API endpoints, supporting varying numbers of arguments and input types. Works with base URLs, service definitions, and custom error handlers to execute requests and process responses. Handles parameterized endpoints, form data, and raw content for interoperability with older systems.",
+      "description_length": 333,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Facebook.Types",
+      "description": "Provides functions to construct, compare, and serialize type information and user profiles. Operates on records containing type metadata and user-specific attributes. Used to generate schema definitions and validate data structures during runtime checks.",
+      "description_length": 254,
+      "index": 40,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Facebook.Encoding",
+      "description": "Provides encoders for serializing and deserializing data structures related to images and user profiles, including a specific encoder for picture metadata and one for profile information. Works with JSON-encoded types such as `Types.info` and `Types.profile`. Used to convert internal representations into JSON format for storage or transmission.",
+      "description_length": 346,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Facebook.Services",
+      "description": "Provides functions to define and handle API parameters and services, including user ID arguments, token parameters, and endpoints for fetching nodes and edges with custom encodings. Works with types such as `EzAPI.Arg.t`, `EzAPI.Param.t`, and `Json_encoding.encoding` to structure API requests and responses. Used to construct authentication flows, retrieve structured data from APIs, and manage parameterized service calls.",
+      "description_length": 424,
+      "index": 42,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzRequest_lwt.ANY",
+      "description": "Executes HTTP requests with customizable headers, parameters, and payloads, supporting GET and POST operations through type-safe service definitions that handle input, output, error, and security parameters. Offers unified error handling that maps exceptions to HTTP status codes and descriptive messages. Can dynamically configure requests for legacy APIs and manage structured responses. Examples include fetching data from a protected endpoint or submitting form data with custom headers.",
+      "description_length": 491,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzRequest_lwt.Make",
+      "description": "Handles HTTP GET and POST requests with customizable methods, headers, and message payloads. Operates on strings for URLs, headers, and content, returning results with status codes and optional error messages. Used for interacting with web APIs, sending form data, and retrieving remote resources.",
+      "description_length": 297,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzWsCommon.Types",
+      "description": "Provides asynchronous operations returning a result type with error strings, and defines action and web socket types for handling state and communication. Works with Lwt-based futures, error-typed values, and structured data for networked applications. Used for managing asynchronous workflows, handling protocol actions, and maintaining web socket connections.",
+      "description_length": 361,
+      "index": 45,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzCohttp_lwt.Base",
+      "description": "Handles HTTP request creation and execution with support for custom methods, headers, and payloads. Operates on strings, headers as key-value pairs, and results wrapped in Lwt and result types. Used for sending structured HTTP requests in networked applications, such as API interactions or data submission.",
+      "description_length": 307,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzCohttp_lwt.Interface",
+      "description": "Handles HTTP GET and POST requests with customizable methods, headers, and message payloads. Operates on strings for URLs, headers, and content, returning results with status codes and optional error messages. Used for interacting with web APIs, sending form data, and retrieving remote resources.",
+      "description_length": 297,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzCohttp_lwt.Legacy",
+      "description": "Provides HTTP request execution with parameter, header, and error handling, supporting GET and POST operations with varying argument counts. Operates on custom service type definitions, input/output types, and error tuples. Used for invoking API endpoints with dynamic parameters, managing request payloads, and translating errors into status codes and messages.",
+      "description_length": 362,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzRequest.ANY",
+      "description": "Handles HTTP GET and POST requests to legacy APIs, supporting dynamic arguments, headers, and error handling. Processes base URLs, query parameters, and custom error logic for data retrieval and submission. Enables interaction with specific endpoints like service0, service1, service2 for fetching data and post_service0, post_service1, post_service2 for sending data. Allows flexible parameter passing and response customization based on API requirements.",
+      "description_length": 456,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzRequest.Make",
+      "description": "Handles HTTP GET and POST requests with customizable methods, headers, and messages. Accepts content type and body for POST operations, and processes responses through a callback function. Designed for integrating network interactions in applications requiring direct HTTP control.",
+      "description_length": 281,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzReq_lwt.Interface",
+      "description": "Handles HTTP GET and POST requests with customizable methods, headers, and message payloads. Operates on strings and lists of header tuples to construct and send network requests. Used for interacting with RESTful APIs and submitting form data asynchronously.",
+      "description_length": 259,
+      "index": 51,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzReq_lwt.Legacy",
+      "description": "Provides functions to execute HTTP requests with customizable headers, parameters, and message payloads, supporting both GET and POST operations with varying numbers of arguments. Works with typed service definitions that encapsulate input, output, error, and security parameters, along with a unified error handling mechanism that maps error values to HTTP status codes and messages. Used to interact with legacy API endpoints requiring dynamic request configuration and structured error responses.",
+      "description_length": 499,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPI.Arg",
+      "description": "Manages type-level constraints and runtime type comparisons through abstract `t` values and witness functions. Supports equality checks between types and ensures type-safe operations by generating unique type identifiers. Enables dynamic type dispatch by linking values to their corresponding type representations. Can be used to implement polymorphic functions that behave differently based on the underlying type.",
+      "description_length": 415,
+      "index": 53,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzAPI.Url",
+      "description": "Constructs and validates URLs using custom types `base_url` and `url`, ensuring safe path and query operations. Supports joining paths, appending query parameters, and generating absolute URLs from configured bases. Allows precise control over URL structure, such as adding or modifying query strings. Enables reliable URL handling in web service interactions by enforcing type-safe composition.",
+      "description_length": 395,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPI.Security",
+      "description": "Manages collections of strings with set operations, sequence conversions, and functional transformations. Supports adding, removing, merging, and querying elements, alongside mapping, folding, and predicate-based filtering. Enables dynamic data aggregation, string processing, and efficient membership checks. Examples include building secure access lists, processing log entries, and generating filtered output streams.",
+      "description_length": 420,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPI.Param",
+      "description": "Provides functions to create parameters with specific types (string, int, bool) and associated metadata like name, description, required status, examples, and JSON schema. Works with custom types `kind` and `t`, where `t` encapsulates parameter definitions. Used to construct configuration or input specifications for tools that require structured, typed user inputs.",
+      "description_length": 367,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPI.Err",
+      "description": "Manages integer-keyed maps with insertion, deletion, and lookup, enabling dynamic data manipulation and configuration handling. Supports transformations, filtering, and aggregation through functions that process entries, convert between maps and sequences, and fold over key-value pairs. Operations include extracting specific values, modifying entries, and iterating through map contents. Examples include updating settings, aggregating statistics, or restructuring data based on integer keys.",
+      "description_length": 494,
+      "index": 57,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzAPI.Meth",
+      "description": "Converts values to strings and extracts headers from list-based structures. Operates on variant types representing HTTP methods and headers. Used to generate request strings and process header lists in network communication.",
+      "description_length": 224,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPI.Service",
+      "description": "Encodes and decodes structured data using custom schemes, with explicit error handling for malformed inputs. Supports conversion between JSON strings and typed OCaml values, ensuring type safety during parsing. Provides functions to serialize complex data structures into strings and reconstruct them accurately. Examples include parsing JSON configurations into records and converting enum values to their string equivalents.",
+      "description_length": 426,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPI.Mime",
+      "description": "Parses a string into a content type representation and converts it back to a string. It handles checks for allowed content types and includes specific predefined types like JSON, multipart, and URL-encoded. It also derives content types from file extensions.",
+      "description_length": 258,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPI.Path",
+      "description": "Provides operations to construct and manipulate path structures, including adding suffixes, arguments, and converting to lists or strings. Works with a polymorphic variant type representing paths with distinct segments and arguments. Used to generate command-line argument sequences, format paths with custom root handling, and extract argument descriptions from path components.",
+      "description_length": 379,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPI.Doc",
+      "description": "Provides functions to create and manage documentation entries for services, including setting sections, registering services, and retrieving service lists. Operates with types like `t` for documentation entries, `section` for categorization, and `Service.t` for service definitions. Used to generate structured documentation by associating service examples, descriptions, and registration status.",
+      "description_length": 396,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPI.Error_codes",
+      "description": "Provides a mapping between error names and integer codes, allowing lookup of codes by name and names by code. Works with string-to-int maps and optional values to represent valid and invalid error references. Used to translate error messages into standardized numeric identifiers and vice versa during system diagnostics.",
+      "description_length": 321,
+      "index": 63,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzAPI.Req",
+      "description": "provides map operations for string-keyed data structures, supporting insertion, deletion, merging, and safe access to values. It includes methods for iterating, transforming, and filtering key-value pairs, along with conversions to and from lists and sequences. Users can manage optional values, perform cardinality checks, and handle dynamic configurations efficiently. Examples include building configuration objects, processing data streams, and maintaining state with mutable key-value stores.",
+      "description_length": 497,
+      "index": 64,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzAPI.TYPES",
+      "description": "Provides functions to construct, validate, and manipulate URLs using base_url and url types, along with param_value for query parameters. Works with ip_info to associate IP address data with URL structures. Enables parsing and formatting of network requests with explicit type safety.",
+      "description_length": 284,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPI.Legacy",
+      "description": "Provides route definitions for HTTP services with input/output encoding, supporting methods like POST and standard GET. Works with request paths, JSON encodings, and parameter lists to construct typed service handlers. Enables creation of endpoints that process form data, JSON payloads, and query parameters in a type-safe manner.",
+      "description_length": 331,
+      "index": 66,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzCohttp.Base",
+      "description": "Handles HTTP request creation and execution with support for custom methods, headers, and payloads. Operates on strings, headers as key-value pairs, and results wrapped in Lwt promises. Used to send GET and POST requests with optional message and content fields in asynchronous network interactions.",
+      "description_length": 299,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzCohttp.Interface",
+      "description": "Handles HTTP GET and POST requests with customizable methods, headers, and message payloads. Accepts string-based content and returns results through a callback function that processes responses or errors. Used for integrating external API calls with specific formatting and error handling.",
+      "description_length": 290,
+      "index": 68,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzCohttp.Legacy",
+      "description": "Provides HTTP GET and POST operations for legacy API endpoints, supporting varying numbers of arguments and input types. Works with base URLs, service definitions, and custom error handlers to execute requests and process responses. Handles parameterized queries, form data, and raw content for compatibility with older API interfaces.",
+      "description_length": 335,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzSessionClient.Make",
+      "description": "Provides functions to handle web host configuration, JSON encoding for user identifiers and information, and defines an RPC path for authentication endpoints. Supports token management through cookies or CSRF headers, specifying how tokens are stored and validated. Used to enforce access control policies and manage user session data in web applications.",
+      "description_length": 355,
+      "index": 70,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzOpenAPI.Types",
+      "description": "Provides structured representations for API elements including contact details, license information, server configurations, parameters, responses, and security schemes. Works with nested records and polymorphic variants to model OpenAPI specifications accurately. Used to validate and serialize API definitions in tooling that generates or consumes OpenAPI documents.",
+      "description_length": 367,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzOpenAPI.Makers",
+      "description": "Constructs structured API metadata objects including contact details, license information, OpenAPI metadata, server configurations, schema representations, parameters, media types, responses, operations, paths, examples, security schemes, and component collections. Works with types such as contact_object, license_object, openapi_info, server_variable_object, server_object, schema, param_object, media_type_object, response_object, request_object, operation_object, path_item, example_object, security_scheme_object, and components_object. Used to generate valid OpenAPI 3.0 specifications from raw data and schema definitions.",
+      "description_length": 629,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzOpenAPI.Encoding",
+      "description": "This module handles encoding and decoding operations for OpenAPI specification elements, including contact objects, license objects, server variables, parameters, and security schemes, by mapping custom types from the `Types` module to JSON representations. It enables structured data serialization and deserialization for API components, facilitating tasks like API specification generation and data interchange. Specific use cases include processing request/response schemas, managing server configurations, and handling security definitions within OpenAPI documents.",
+      "description_length": 569,
+      "index": 73,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzCohttp_base.Make",
+      "description": "Provides context-aware HTTP request execution and response handling, including methods like GET, POST, PUT, and PATCH with customizable headers, body, and chunked encoding. Operates on HTTP request and response types, body streams, and context objects to manage request lifecycle. Enables direct API calls, form submissions, and low-level request processing with explicit control over I/O and context.",
+      "description_length": 401,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzSession.TYPES",
+      "description": "Provides functions to configure web host settings, define JSON encodings for user identifiers and information, and specify the RPC path for authentication endpoints. Works with optional string hosts, user_id, user_info, and token kinds that represent cookies or CSRF headers. Used to enforce access control policies and manage user authentication via JSON serialization and HTTP headers.",
+      "description_length": 387,
+      "index": 75,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzSession.Hash",
+      "description": "Computes cryptographic hashes of strings using a specified algorithm. Processes raw strings and combines them with login credentials or challenges to generate hashed outputs. Used for securely storing passwords and validating authentication challenges.",
+      "description_length": 252,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzSession.Make",
+      "description": "Provides functions to handle web host configuration, JSON encoding for user identifiers and information, and defines an RPC path for authentication endpoints. Supports token storage via cookies or CSRF headers, specifying cookie names, max-age, and header names. Used to manage authentication flows and secure HTTP responses with proper access control settings.",
+      "description_length": 361,
+      "index": 77,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzReq_lwt_S.Legacy",
+      "description": "Provides functions to execute HTTP requests with customizable headers, parameters, and message payloads, supporting both GET and POST operations with varying numbers of arguments. Works with type-safe service definitions that encapsulate input, output, error, and security contexts, along with a unified error handling mechanism that maps errors to status codes and messages. Used to interact with legacy API endpoints requiring dynamic parameter handling and structured response parsing.",
+      "description_length": 488,
+      "index": 78,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzSessionServer.SessionArg",
+      "description": "Provides functions to handle web host configuration, JSON encoding for user identifiers and information, and defines the RPC path for authentication endpoints. Supports token handling via cookies or CSRF headers, specifying their respective formats and names. Used to manage session-related data and authentication flow in web applications.",
+      "description_length": 340,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzSessionServer.SessionStore",
+      "description": "Handles session creation, lookup, and removal using a token-based system. Operates on user identifiers and session tokens, integrating with request contexts for timing synchronization. Used to manage authenticated user sessions in a web application, ensuring secure and timed access control.",
+      "description_length": 291,
+      "index": 80,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzReq_S.Legacy",
+      "description": "Provides HTTP GET and POST operations for interacting with legacy API endpoints, supporting varying numbers of arguments and input/output types. Works with URL paths, headers, query parameters, and custom error handling. Used to fetch data from service0, service1, service2 endpoints and submit data to post_service0, post_service1, post_service2 with flexible parameter configurations.",
+      "description_length": 386,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "ez_api",
+      "description": "Handles API request parsing, response encoding, and error management using JSON data structures. Processes HTTP services with support for security headers and documentation generation. Integrates with optional libraries to extend functionality for specific API requirements.",
+      "description_length": 274,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzReq_lwt_S",
+      "description": "Executes HTTP requests with customizable headers, parameters, and payloads, supporting GET and POST operations through type-safe service definitions that handle input, output, error, and security contexts. Offers unified error handling that maps exceptions to HTTP status codes and messages, enabling structured response parsing. Can dynamically construct requests for legacy APIs, inject headers, and manage complex parameter sets. Examples include fetching user data with query parameters or submitting form data with custom headers.",
+      "description_length": 535,
+      "index": 83,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzAPIServerUtils",
+      "description": "provides utilities for building and managing web server components through string-keyed maps, time tracking, structured data handling, and HTTP response generation. it includes operations for manipulating polymorphic maps, tracking intervals, serializing steps, and constructing HTTP replies with Lwt. it supports file content retrieval, time conversions, and IP tracking, enabling dynamic configuration, performance logging, and request handling. examples include generating 404 responses, logging workflow steps, and managing session-based IP data.",
+      "description_length": 550,
+      "index": 84,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzSessionServer",
+      "description": "Manages web session authentication and user data through token-based interactions, integrating with request contexts for timing and security. Defines user identifiers, session tokens, and RPC endpoints for authentication, supporting cookie and CSRF-based token handling. Enables session creation, lookup, and expiration, allowing secure user tracking and access control. Examples include validating login requests, storing session data, and revoking sessions after timeouts.",
+      "description_length": 474,
+      "index": 85,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzEncoding",
+      "description": "Encodes and decodes JSON data between string representations and a compact in-memory structure, supporting minification. It handles `Json_repr.ezjsonm` values, enabling efficient serialization and parsing. Users can transform readable JSON text into a lightweight format for processing or transmission. Examples include converting user input into a structured format for validation or sending processed data over a network.",
+      "description_length": 423,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzSendgrid_services",
+      "description": "Provides functions to interact with SendGrid's contact management API, including sending emails, adding or deleting contacts, retrieving contact details, and searching through contact lists. Operates with data types such as email messages, contact records, and identifiers. Enables specific actions like bulk contact deletion, contact lookup by email, and querying contact counts.",
+      "description_length": 380,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google",
+      "description": "Handles type metadata, JSON serialization, and OAuth2 authentication. Operates on structures like type info, user profiles, and token payloads, supporting encoding, decoding, and validation. Enables tasks such as generating type reports, merging JSON configurations, and verifying user authentication. Processes custom types and integrates with service endpoints for secure data handling.",
+      "description_length": 388,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "WsHttpaf",
+      "description": "Handles WebSocket connections using httpaf, supporting custom close handlers and background processing. Operates on references, Lwt promises, and callback functions. Used to establish real-time communication channels in networked applications with fine-grained control over connection lifecycle.",
+      "description_length": 295,
+      "index": 89,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzReq",
+      "description": "Manages HTTP communication by supporting GET and POST operations with flexible method configurations, headers, and content handling. Processes structured and raw data, enabling integration with both modern and legacy APIs through parameterized endpoints and custom error handling. Allows execution of requests with dynamic arguments and returns results through callback mechanisms. Examples include fetching data from a RESTful service, submitting form data to an older system, and handling raw JSON responses with custom parsing logic.",
+      "description_length": 536,
+      "index": 90,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ezjsonm_interface",
+      "description": "Converts a JSON string to an internal representation and serializes the internal representation back to a JSON string, with an option to minify the output. Works with the `Json_repr.ezjsonm` data type, which encapsulates parsed JSON data. Used to integrate JSON processing in applications requiring efficient parsing and generation of compact JSON outputs.",
+      "description_length": 356,
+      "index": 91,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Facebook",
+      "description": "Manages type metadata, user profiles, and API interactions through structured data handling and serialization. Supports operations on records with type information, JSON encoding of profiles and images, and API parameter management using specific type definitions. Enables schema validation, data conversion for storage, and construction of authenticated API requests. Examples include generating JSON from user data, validating profile structures, and defining endpoint parameters for data retrieval.",
+      "description_length": 501,
+      "index": 92,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzReq_S",
+      "description": "Handles HTTP GET and POST requests to legacy APIs, supporting dynamic argument counts, URL paths, headers, query parameters, and custom error handling. Exposes data retrieval from service0, service1, service2 and data submission to post_service0, post_service1, post_service2 with flexible parameter configurations. Supports multiple input and output types, enabling seamless integration with diverse API responses. Examples include fetching user profiles from service1 and submitting form data to post_service2 with custom headers.",
+      "description_length": 532,
+      "index": 93,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPIServer",
+      "description": "provides a framework for defining and managing API endpoints within a server application, offering a structured way to register handlers for incoming requests. It includes types for route definitions, request handlers, and middleware, along with operations to bind functions to specific HTTP methods and paths. Users can create custom endpoints, apply transformations to request data, and integrate with external services through defined interfaces. Example uses include setting up a GET endpoint to retrieve user data or a POST endpoint to process form submissions.",
+      "description_length": 566,
+      "index": 94,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "WsCohttp",
+      "description": "Handles WebSocket connections using Cohttp, supporting custom reaction logic on messages and connection closure. Operates with Lwt promises, boolean flags, and callback functions. Used to establish real-time communication channels in networked applications.",
+      "description_length": 257,
+      "index": 95,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzRequest_lwt",
+      "description": "Executes HTTP requests with customizable headers, parameters, and payloads, supporting GET and POST operations through type-safe service definitions that handle input, output, error, and security parameters. Processes URLs, headers, and content as strings, returning status codes and error messages. Can fetch data from protected endpoints, submit form data with custom headers, or interact with legacy APIs by dynamically configuring requests and parsing structured responses.",
+      "description_length": 477,
+      "index": 96,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzLoads_offset",
+      "description": "Provides functions to handle and register endpoint offsets, including a service that returns a float pair and a handler that processes HTTP requests to compute and return offsets. Works with HTTP request objects, exception types, and API directory structures. Used to implement route-specific offset calculations in web services.",
+      "description_length": 329,
+      "index": 97,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzWsCommon",
+      "description": "Provides asynchronous result handling through `rp` type, and manages WebSocket interactions via `ws` type. Supports message parsing and response generation with `action` type for structured communication. Used to handle real-time data exchange and event-driven workflows in networked applications.",
+      "description_length": 297,
+      "index": 98,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzLwtSys",
+      "description": "Provides asynchronous execution of unit-returning functions and delays execution for a specified duration in seconds. Operates with Lwt.t monadic values and floating-point numbers. Used to manage non-blocking I/O operations and introduce controlled pauses in event loops.",
+      "description_length": 271,
+      "index": 99,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzServer",
+      "description": "Handles HTTP server initialization with custom error handling and configuration, accepting port and server type pairs. Processes requests using a provided exception handler that returns API-specific responses. Enables debug mode for detailed logging during development.",
+      "description_length": 269,
+      "index": 100,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzCohttp_lwt",
+      "description": "Manages HTTP communication by enabling request creation, execution, and response handling with support for custom methods, headers, and payloads. Operates on strings, headers, and results wrapped in Lwt and result types, allowing for structured API interactions and data submission. Supports GET and POST operations with dynamic parameters, error translation, and status code reporting. Examples include sending form data, retrieving remote resources, and invoking API endpoints with custom service definitions.",
+      "description_length": 511,
+      "index": 101,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzRequest",
+      "description": "Manages HTTP communication by enabling GET and POST requests with customizable parameters, headers, and response handling. Supports dynamic argument passing, content type specification, and callback-based processing for flexible integration. Can interact with specific endpoints to fetch or submit data, such as retrieving from service0 or posting to post_service1. Provides direct control over network interactions while handling errors and response customization.",
+      "description_length": 465,
+      "index": 102,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzReq_lwt",
+      "description": "Combines HTTP request handling with typed service definitions, enabling asynchronous communication with RESTful and legacy APIs through customizable headers, parameters, and payloads. Supports string and list-based request construction, along with structured input/output and error mapping. Operations include sending GET and POST requests, managing dynamic configurations, and translating errors into standardized HTTP responses. Examples include fetching data from a REST endpoint, submitting form data, and handling API-specific error codes with consistent messaging.",
+      "description_length": 570,
+      "index": 103,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzAPI",
+      "description": "Combines type-safe operations, URL construction, string sets, parameter definitions, integer maps, header processing, data encoding, content type handling, path manipulation, documentation management, error mapping, and string maps into a unified system. Key types include `t`, `base_url`, `url`, `param_value`, `kind`, `map`, `content_type`, `path`, `section`, `error`, and `service`. It enables tasks like generating typed HTTP requests, validating configurations, managing access control lists, serializing data, and constructing documentation. Examples include parsing JSON into OCaml records, building secure API endpoints, and translating error names to codes.",
+      "description_length": 666,
+      "index": 104,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzCohttp",
+      "description": "Encapsulates HTTP request handling with support for GET and POST operations, custom methods, headers, and payloads, using string-based inputs and Lwt for asynchronous execution. Offers flexible integration with external APIs through callback-driven response processing and error handling. Supports legacy endpoints with parameterized queries, form data, and raw content, enabling compatibility with diverse API structures. Examples include sending authenticated requests, parsing JSON responses, and managing session-based interactions.",
+      "description_length": 536,
+      "index": 105,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzSendgrid_encoding",
+      "description": "Encodes and decodes email-related data structures including addresses, content elements, and contact information using JSON. Handles specific types like `email_address`, `contact`, and `mail` with custom serialization rules. Supports operations such as contact search, job output parsing, and query string encoding for SendGrid integrations.",
+      "description_length": 341,
+      "index": 106,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzSendgrid_types",
+      "description": "Provides functions to construct and manipulate email addresses, content elements, and contact data structures. Works with types such as email_address, content_element, and contact to represent messaging and user data. Used to format and validate data for sending emails via Sendgrid's API.",
+      "description_length": 289,
+      "index": 107,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzSessionClient",
+      "description": "Handles web host configuration, user identifier serialization, and authentication RPC paths, with support for token management via cookies or CSRF headers. Defines session data structures and operations for validating and enforcing access control. Enables secure user authentication and session management in web applications. Examples include parsing user tokens, setting authentication headers, and validating session cookies.",
+      "description_length": 428,
+      "index": 108,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzCookieServer",
+      "description": "Extracts cookies from HTTP request headers, removes cookies by setting their value to empty and expiration to zero, and generates 'Set-Cookie' headers with specified attributes like secure, http_only, and expiration. Works with request objects and string maps representing cookies. Used to manage session cookies and enforce secure cookie policies in web applications.",
+      "description_length": 368,
+      "index": 109,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_common",
+      "description": "This module provides functions for converting OCaml AST elements to strings, constructing AST nodes, and registering ppx attributes for service and handler definitions, while handling attribute-based code generation and syntax transformations. It operates on OCaml ASTs, attributes, and expressions, enabling tasks like service configuration, client/server setup, and version-agnostic AST manipulation. Specific use cases include parsing attribute-driven logic, generating boilerplate code for handlers, and managing syntax structures during ppx processing.",
+      "description_length": 557,
+      "index": 110,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzOpenAPI",
+      "description": "Encapsulates OpenAPI 3.0 specification elements through structured types like contact_object, license_object, server_object, and schema, enabling accurate representation and manipulation of API metadata. Supports encoding and decoding of these elements to and from JSON, allowing for generation, validation, and interchange of API definitions. Operations include constructing server configurations, defining security schemes, and serializing request/response schemas. Examples include generating valid OpenAPI documents from schema definitions and processing server variables for dynamic API routing.",
+      "description_length": 600,
+      "index": 111,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzHash",
+      "description": "Provides a single function to compute hash values of strings using specified algorithms. Works with string data and supports cryptographic hash functions like MD5, SHA-2, SHA-3, and BLAKE2s. Used to generate fixed-size checksums for data integrity verification.",
+      "description_length": 261,
+      "index": 112,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzWs",
+      "description": "Provides functions for establishing WebSocket connections with custom message handling, protocol support, and error callbacks. Works with string-based actions, result types for responses, and WebSocket endpoints defined by URL and service structure. Used to integrate real-time communication in applications requiring bidirectional data exchange with structured input and output.",
+      "description_length": 379,
+      "index": 113,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Verbose",
+      "description": "Tracks verbosity level and execution callbacks, using integer references for state and event handling. Accepts a function to execute on specific integer thresholds during program execution. Enables dynamic control over output intensity and action triggers.",
+      "description_length": 256,
+      "index": 114,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzDebug",
+      "description": "Prints formatted debug messages using a type-safe printf-like interface and logs arbitrary strings for debugging purposes. Works with format strings and raw strings to output information during program execution. Used to trace variable values and execution flow in complex logic paths.",
+      "description_length": 285,
+      "index": 115,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzCohttp_base",
+      "description": "Executes HTTP requests with context-aware handling, supporting methods like GET, POST, PUT, and PATCH, while managing headers, body streams, and context objects. Processes HTTP request and response types, enabling direct API interactions, form submissions, and low-level I/O control. Allows customization of chunked encoding and body content for precise request construction. Example tasks include fetching data from an API endpoint, submitting form data with custom headers, and streaming large payloads efficiently.",
+      "description_length": 517,
+      "index": 116,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EzSession",
+      "description": "Provides functions for managing user authentication sessions, including defining API sections, parameters, and security schemes. Works with user identifiers, user information, and token-based security structures. Enables handling of connect, login, and logout operations with specific response and error types.",
+      "description_length": 310,
+      "index": 117,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 134,
+    "meaningful_modules": 118,
+    "filtered_empty_modules": 16,
+    "retention_rate": 0.8805970149253731
+  },
+  "statistics": {
+    "max_description_length": 666,
+    "min_description_length": 224,
+    "avg_description_length": 384.271186440678,
+    "embedding_file_size_mb": 0.4255104064941406
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "package": "otoggl",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 17,
+  "creation_timestamp": "2025-06-18T16:35:38.161189",
+  "modules": [
+    {
+      "module_path": "Toggl.Api.F.TimeEntry",
+      "description": "Creates and manages time entries by starting, stopping, and updating tracked intervals, retrieving current or historical entries, and deleting entries based on identifiers. Operates with time entry records, project data, and client connections to interact with time tracking systems. Used to log work sessions, adjust tracked durations, and fetch detailed time entry reports.",
+      "description_length": 375,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Toggl.Api.F.Workspace",
+      "description": "Provides operations to retrieve a list of workspaces associated with a client, using a Toggl API client. Works with the `Client.t` type and returns a result containing a workspace list or an error. Used to fetch active workspace data for integration with project management tools.",
+      "description_length": 280,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Toggl.Api.F.Project",
+      "description": "Retrieves a list of projects for a given workspace, creates a new project with specified details, and deletes a project by ID. Operates on client objects and data structures representing projects and error responses. Used to manage project configurations in a time-tracking application.",
+      "description_length": 286,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Toggl.Api.F.Oneshot",
+      "description": "Provides HTTP methods for sending requests with configurable headers, bodies, and URIs, returning results wrapped in a Lwt_result. Operates on Piaf's Config, Method, Body, and Response types, along with standard URI and header structures. Used for interacting with RESTful APIs, submitting form data, and managing resource states through HTTP verbs.",
+      "description_length": 349,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Toggl.Auth.Client.Oneshot",
+      "description": "Provides HTTP methods for sending requests with configurable headers, bodies, and URIs, returning results wrapped in a Lwt_result. Operates on Piaf.Config.t, Piaf.Body.t, Piaf.Response.t, Piaf.Error.t, and Uri.t. Used for making authenticated API calls, submitting form data, and managing resource states in networked applications.",
+      "description_length": 331,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Toggl.Api.F",
+      "description": "Offers a suite of HTTP operations for constructing and sending requests, handling responses, and managing request parameters. It works with types such as Config, Method, Body, Response, URI, and headers to enable interactions with RESTful services, form submissions, and state management. Operations include sending GET, POST, PUT, and DELETE requests with custom headers and payloads. Examples include fetching data from an API endpoint, submitting user input, and updating resource states remotely.",
+      "description_length": 500,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Toggl.Auth.Client",
+      "description": "Handles user authentication by initiating and managing the authentication process. Operates on session and token data structures to establish and validate user access. Used to trigger login flows and verify user identity in interactive applications.",
+      "description_length": 249,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Toggl.Auth.Oneshot",
+      "description": "Provides HTTP methods for sending requests with configurable headers, bodies, and URIs, returning results wrapped in Lwt_result. Operates on Piaf's Config, Method, Body, and Response types, along with standard URI and header lists. Used to interact with RESTful APIs by executing GET, POST, PUT, PATCH, DELETE, and custom HTTP methods in a non-blocking manner.",
+      "description_length": 360,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Toggl.Api",
+      "description": "Provides HTTP request construction, sending, and response handling with support for GET, POST, PUT, and DELETE operations. Utilizes types like Config, Method, Body, Response, URI, and headers to manage interactions with RESTful services and form data. Enables tasks such as fetching API data, submitting user input, and updating remote resources. Supports custom headers and payloads for flexible client-server communication.",
+      "description_length": 425,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Toggl.Auth",
+      "description": "handles HTTP interactions by executing various methods on configurable endpoints, using Piaf's types for configuration and response handling, and returning results via Lwt_result for asynchronous execution. It supports standard and custom HTTP methods, allowing for flexible API communication. Operations include setting headers, bodies, and URIs, with results parsed into structured response types. Examples include fetching user data via GET, updating resources with PUT, and authenticating with POST requests.",
+      "description_length": 512,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Toggl.Toggl_j",
+      "description": "The module offers serialization, deserialization, and parsing capabilities for Toggl data structures, including time entries, projects, workspaces, and their associated lists, using JSON formats. It handles operations like converting between OCaml types and JSON representations, supporting tasks such as API data processing and request generation. Specific use cases involve managing structured data like project IDs, time entry updates, and workspace configurations, with functions tailored for buffers, strings, and lexers.",
+      "description_length": 526,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Toggl.Toggl_t",
+      "description": "This module provides utilities for pretty-printing, string serialization, and equality comparisons of Toggl API data structures, including time entries, projects, workspaces, and their associated identifiers. It operates on custom record types and type aliases for structured representations like project lists, time entry requests, and UID/TID/PID values. These operations support debugging, API data validation, and consistent formatting in workflows involving time tracking and project management.",
+      "description_length": 500,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Toggl.Toggl_v",
+      "description": "This module handles validation and creation of time tracking entities, including time entries, projects, and workspaces, along with their identifiers and lists, ensuring data integrity through schema-based checks. It operates on structured types like `datetime`, `time_entry`, `project`, and associated identifier lists, enabling precise manipulation of Toggl API data. Use cases include processing API responses, constructing valid requests for time entry updates, and managing project/workspace configurations with typed error handling.",
+      "description_length": 538,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Toggl.Types",
+      "description": "This module offers serialization, deserialization, and validation utilities for Toggl API data models, including time entries, projects, workspaces, and identifiers like uids, tids, and pids, with support for JSON encoding/decoding and structured validation. It provides consistent operations for converting between OCaml types and JSON formats, along with pretty-printing and equality checks to facilitate debugging and data comparison. Use cases include API data handling, ensuring schema compliance during interactions, and generating human-readable outputs for logging or user interfaces.",
+      "description_length": 592,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Toggl.Util",
+      "description": "Handles HTTP response validation by checking for a 200 OK status, returning a result type that either contains a string message or an error. Operates on Piaf.Response.t and produces Lwt_result.t for asynchronous error handling. Used to ensure successful API responses before proceeding with further processing.",
+      "description_length": 310,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "otoggl",
+      "description": "Provides functions to retrieve and manage time entries, projects, and workspace data from Toggl. Operates on records representing time entries, project configurations, and user authentication tokens. Used to synchronize local time tracking data with Toggl's server and fetch project-specific information for tracking purposes.",
+      "description_length": 326,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Toggl",
+      "description": "manages HTTP interactions, data serialization, and validation for Toggl API operations, combining request construction, response handling, and data transformation. It supports methods like GET, POST, PUT, and DELETE, with types such as Config, Method, Body, Response, and URI, and handles JSON encoding/decoding for entities like time entries and projects. It enables tasks such as fetching user data, updating resources, and validating API responses with structured error handling. Examples include serializing project configurations, parsing time entry updates, and ensuring successful HTTP responses before processing results.",
+      "description_length": 629,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 17,
+    "meaningful_modules": 17,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 629,
+    "min_description_length": 249,
+    "avg_description_length": 416.94117647058823,
+    "embedding_file_size_mb": 0.062203407287597656
+  }
+}

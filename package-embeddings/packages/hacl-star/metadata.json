@@ -1,0 +1,1134 @@
+{
+  "package": "hacl-star",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 159,
+  "creation_timestamp": "2025-06-18T16:54:29.260823",
+  "modules": [
+    {
+      "module_path": "Hacl_star.Hacl.NaCl.Noalloc.Easy",
+      "description": "Provides encryption and decryption operations for authenticated messaging using public keys, shared keys, or secret keys. Works with byte buffers for plaintext, ciphertext, nonces, and keys, with fine-grained control over buffer offsets and lengths. Used to securely transmit data by appending authentication tags to ciphertext, ensuring integrity and confidentiality in cryptographic protocols.",
+      "description_length": 395,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.NaCl.Noalloc.Detached",
+      "description": "Provides encryption and decryption operations using cryptographic keys and nonces, with separate buffers for ciphertext and message authentication tags. Works with byte buffers of specific sizes for tags, keys, and nonces, allowing in-place processing with offset and length parameters. Used for secure messaging with public-key encryption, shared-key encryption, and authenticated decryption of data segments.",
+      "description_length": 410,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.K256.Noalloc.Libsecp256k1",
+      "description": "Performs ECDSA signing with low-S normalization using a secret key, message, and signing secret, storing the result in a provided buffer. Operates on byte sequences representing signatures and messages, ensuring compatibility with libsecp256k1's signature format. Used to generate and validate signatures in cryptographic protocols requiring strict S-value normalization.",
+      "description_length": 371,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.P256.SHA2_384.Noalloc",
+      "description": "Provides functions for in-place signing operations, writing results directly into a provided buffer. Works with byte sequences for keys, messages, and signatures. Used to efficiently generate digital signatures without additional memory allocation.",
+      "description_length": 248,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.P256.SHA2_256.Noalloc",
+      "description": "Handles cryptographic signing operations by writing signatures directly into a provided buffer. Works with byte sequences for keys, messages, and signatures. Used to verify message authenticity in high-performance cryptographic protocols.",
+      "description_length": 238,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.P256.SHA2_512.Noalloc",
+      "description": "Handles cryptographic signing operations by writing signatures directly into a provided buffer. Works with byte sequences representing secret keys, messages, signing secrets, and output signatures. Used to verify message authenticity in performance-critical applications where memory allocation must be minimized.",
+      "description_length": 313,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedDefs.Hacl_Hash.Hacl_Streaming_Types_applied",
+      "description": "This module provides functions for managing hash state structures and error codes in streaming cryptographic operations, handling 32-bit and 64-bit message digests with components like block data, buffer pointers, and total length. It works with algorithm identifiers for SHA2, SHA1, MD5, Blake2S, Blake2B, SHA3, and SHAKE, enabling secure, incremental data processing. Use cases include secure data transmission and integrity verification where continuous hashing of large datasets is required.",
+      "description_length": 495,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Blake2s_32.Noalloc",
+      "description": "Performs in-place hashing of byte sequences using a provided key and buffer. Accepts byte arrays for the key, message, and output digest. Used to generate cryptographic hashes without allocating new memory, suitable for low-level network or file processing tasks.",
+      "description_length": 263,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.SHA3_384.Noalloc",
+      "description": "Hashes a byte sequence into a pre-allocated buffer, ensuring no additional memory is allocated during the process. Operates directly on bytes and mutable byte buffers. Used for efficient cryptographic hashing in performance-critical sections of code.",
+      "description_length": 250,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.HKDF_BLAKE2b.Noalloc",
+      "description": "Computes pseudorandom keys from input material and expands them with additional context, writing results directly into preallocated buffers. Operates on byte sequences for cryptographic key derivation. Used in scenarios requiring secure, in-place key generation without heap allocation.",
+      "description_length": 286,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.MD5.Noalloc",
+      "description": "Hashes a byte sequence into a pre-allocated byte buffer, ensuring no additional memory is allocated during the process. Operates directly on bytes and mutable byte buffers. Used for efficient cryptographic hashing in performance-critical sections of code.",
+      "description_length": 255,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.HKDF_BLAKE2s.Noalloc",
+      "description": "Computes pseudorandom keys from input material and expands them with additional context, writing results directly into preallocated buffers. Operates on byte sequences for cryptographic key derivation. Used in scenarios requiring secure key generation without heap allocation.",
+      "description_length": 276,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.SHA3_256.Noalloc",
+      "description": "Hashes a byte sequence into a pre-allocated buffer, ensuring no additional memory is allocated during the process. Operates directly on bytes and mutable byte buffers. Used for efficient cryptographic hashing in performance-critical applications.",
+      "description_length": 246,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.HKDF_SHA2_256.Noalloc",
+      "description": "Computes pseudorandom keys from input material and salts, and expands keys using additional context data. Operates on byte sequences to produce cryptographic outputs in preallocated buffers. Used for deriving secure keys in password-based encryption and key agreement protocols.",
+      "description_length": 278,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.SHA2_384.Noalloc",
+      "description": "Hashes a byte sequence into a pre-allocated buffer, ensuring no additional memory is allocated during the process. Operates directly on bytes and bytes arrays, providing low-level control over output storage. Used for efficient cryptographic operations where memory allocation must be minimized.",
+      "description_length": 295,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.SHA3_224.Noalloc",
+      "description": "Computes cryptographic hashes by writing results directly into a provided byte buffer. Operates on byte sequences for input and output. Used to efficiently generate message digests without allocating new memory.",
+      "description_length": 211,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.HMAC_SHA2_512.Noalloc",
+      "description": "Computes message authentication codes (MACs) by writing results directly into a provided buffer, avoiding memory allocation. Operates on byte sequences for keys, messages, and output tags. Used to securely verify message integrity in performance-critical network protocols.",
+      "description_length": 273,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Poly1305_32.Noalloc",
+      "description": "Computes message authentication codes in-place using a provided buffer for output. Operates on byte sequences and requires the output buffer to meet size constraints. Used to securely generate MACs without additional memory allocation.",
+      "description_length": 235,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Poly1305_128.Noalloc",
+      "description": "Computes message authentication codes in-place using a provided buffer for output. Operates on byte sequences and cryptographic keys, ensuring efficient memory usage by avoiding allocations. Used to verify data integrity and authenticity in network protocols and secure messaging systems.",
+      "description_length": 288,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Chacha20_Poly1305_32.Noalloc",
+      "description": "Provides encryption and decryption operations using AES-GCM, writing results directly into pre-allocated buffers. Works with bytes for keys, IVs, additional data, plaintext, ciphertext, and authentication tags. Used to securely process data in memory without allocating new buffers, suitable for high-performance network or storage protocols.",
+      "description_length": 342,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.NaCl.Noalloc",
+      "description": "Encrypted data is processed using byte buffers for plaintext, ciphertext, nonces, and keys, with support for public, shared, and secret key operations. Ciphertext includes authentication tags, requiring buffers 16 bytes larger than plaintext, and supports in-place operations with offset and length parameters. Functions handle encryption, decryption, and authentication for secure data transmission, with specific size constraints on keys (32 bytes), nonces (24 bytes), and tags. Examples include encrypting a 100-byte message with a 32-byte key and 24-byte nonce, producing a 116-byte ciphertext with an embedded tag.",
+      "description_length": 619,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.HKDF_SHA2_512.Noalloc",
+      "description": "Computes pseudorandom keys from input material and expands them with additional context, writing results directly into preallocated buffers. Operates on byte sequences for cryptographic key derivation. Used in scenarios requiring secure, in-place key generation without heap allocation.",
+      "description_length": 286,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.SHA3_512.Noalloc",
+      "description": "Computes cryptographic hashes in-place by writing results directly into a provided byte buffer. Accepts a message and a pre-allocated buffer for the digest. Used for efficient message authentication in network protocols where memory allocation must be minimized.",
+      "description_length": 262,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.SHA1.Noalloc",
+      "description": "Calculates cryptographic hashes by writing results directly into a provided byte buffer. Operates on byte sequences for input and output. Used to efficiently generate message digests without allocating new memory.",
+      "description_length": 213,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Blake2b_256.Noalloc",
+      "description": "Computes cryptographic hashes by writing results directly into a provided byte buffer, supporting keyed hashing with a separate key buffer. Operates on byte sequences for input data, message, and output digest. Used to efficiently generate hashes in pre-allocated memory, avoiding unnecessary allocations during processing.",
+      "description_length": 323,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Curve25519_51.Noalloc",
+      "description": "Generates ECDH public keys from secret keys and computes shared secrets and scalar multiplications, all using pre-allocated byte buffers. Operates on 32-byte sequences representing keys and points on an elliptic curve. Used in cryptographic protocols to derive shared secrets without heap allocation.",
+      "description_length": 300,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Keccak.Noalloc",
+      "description": "Provides in-place hashing operations for SHAKE-128, SHAKE-256, and Keccak, writing results directly into a preallocated byte buffer. Accepts message and digest buffers as inputs, enabling efficient memory usage without additional allocations. Used for cryptographic hashing in performance-critical applications where buffer reuse is essential.",
+      "description_length": 343,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.RandomBuffer.Noalloc",
+      "description": "Generates random bytes into a pre-allocated bytes buffer, returning success status. Operates directly on mutable bytes structures without allocating new memory. Used for secure data generation in performance-critical applications.",
+      "description_length": 230,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.HMAC_SHA2_256.Noalloc",
+      "description": "Computes message authentication codes in-place using a provided buffer for output. Operates on byte sequences and requires the output buffer to meet size constraints. Used for secure message verification in performance-critical applications.",
+      "description_length": 241,
+      "index": 28,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Ed25519.Noalloc",
+      "description": "Provides functions for cryptographic key conversion and signing using Ed25519, operating on fixed-size byte buffers. Secret keys, public keys, and signatures are handled as 32-byte or 64-byte arrays. Used to generate public keys from secrets, sign messages with either raw or expanded keys, and manage key expansion in memory-efficient contexts.",
+      "description_length": 345,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.SHA2_256.Noalloc",
+      "description": "Computes cryptographic hashes by writing results directly into a provided byte buffer. Operates on byte sequences for input messages and output digests. Used to efficiently generate hashes without additional memory allocation.",
+      "description_length": 226,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.HMAC_SHA2_384.Noalloc",
+      "description": "Computes message authentication codes in-place using a provided buffer for output. Operates on byte sequences and cryptographic keys, ensuring no additional memory allocation. Used to verify data integrity in network protocols and secure messaging systems.",
+      "description_length": 256,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.SHA2_224.Noalloc",
+      "description": "Hashes a byte sequence into a pre-allocated byte buffer, ensuring no additional memory is allocated during the process. Operates directly on bytes and mutable byte buffers. Used for efficient cryptographic hashing in performance-critical sections of code.",
+      "description_length": 255,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Chacha20_Poly1305_256.Noalloc",
+      "description": "Provides encryption and decryption operations using AES-GCM, accepting key, IV, additional data, and input/output buffers for ciphertext and authentication tags. Works with bytes arrays to store cryptographic outputs in pre-allocated memory. Used to securely process data in memory-constrained environments without heap allocation.",
+      "description_length": 331,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.SHA2_512.Noalloc",
+      "description": "Calculates cryptographic hashes by writing results directly into a provided byte buffer. Operates on byte sequences for efficient memory usage. Used to compute message digests in-place during network communication or file processing.",
+      "description_length": 233,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.K256.Libsecp256k1",
+      "description": "Provides functions for signing and verifying ECDSA signatures with low-S normalization, ensuring compatibility with libsecp256k1. Operates on byte sequences representing secret keys, messages, public keys, and signatures. Used to validate and standardize signatures in cryptographic protocols requiring strict signature format compliance.",
+      "description_length": 338,
+      "index": 35,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.K256.Noalloc",
+      "description": "provides functions for generating and validating ECDSA signatures with low-S normalization, operating directly on byte sequences. It includes operations for signing messages using secret keys and verifying signatures against public keys, with outputs stored in pre-allocated buffers. Key data types include byte sequences for messages, signatures, and public keys, with functions for encoding and decoding in libsecp256k1 format. Examples include signing a transaction hash with a private key and verifying the signature against a public key in a blockchain context.",
+      "description_length": 566,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.HMAC_BLAKE2s.Noalloc",
+      "description": "Computes message authentication codes in-place using a provided buffer for output. Operates on byte sequences and cryptographic keys, ensuring no additional memory allocation. Used to verify data integrity in network protocols where buffer reuse is critical.",
+      "description_length": 258,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Chacha20_Poly1305_128.Noalloc",
+      "description": "Provides encryption and decryption operations using AES-GCM, taking key, IV, additional data, and input buffers, and writing results directly into pre-allocated output buffers for ciphertext and authentication tag. Works with bytes and mutable buffer structures to avoid heap allocation during processing. Used in secure communication protocols to efficiently encrypt and authenticate data in place.",
+      "description_length": 399,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.P256.SHA2_256",
+      "description": "Provides direct signing and verification operations using SHA-256, working with byte sequences of fixed sizes: 32 bytes for private and secret keys, 64 bytes for signatures, and variable-length messages. Supports efficient cryptographic protocols by writing results directly into pre-allocated buffers. Allows verification of message authenticity using elliptic curve digital signatures. Examples include signing a message with a private key and validating the signature against a public key.",
+      "description_length": 492,
+      "index": 39,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.P256.SHA2_384",
+      "description": "Handles in-place digital signature generation using SHA-256, with direct buffer manipulation for keys, messages, and signatures. Accepts 32-byte secret keys, arbitrary-length messages, and produces 64-byte signatures. Supports efficient signing operations without extra memory allocation, using 64-byte public keys for verification. Enables secure ECDSA signing with minimal overhead and direct buffer control.",
+      "description_length": 410,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.P256.SHA2_512",
+      "description": "Provides direct signing and verification capabilities using SHA-256, operating on fixed-size byte sequences. Accepts 32-byte secret keys, 64-byte public keys, and 64-byte signatures, with messages of arbitrary length. Supports in-place signature generation to reduce memory overhead, enabling efficient cryptographic operations. Can be used to generate and validate ECDSA signatures with minimal runtime allocation.",
+      "description_length": 415,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.P256.Noalloc",
+      "description": "Converts elliptic curve points between raw, compressed, and uncompressed formats using pre-allocated byte buffers. Performs ECDH key exchange and digital signature operations, writing results directly into provided buffers. Handles 32-byte secret keys, 64-byte public keys, and 65-byte uncompressed points for cryptographic transformations.",
+      "description_length": 340,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Curve25519_64.Noalloc",
+      "description": "Performs elliptic curve operations by writing results directly into preallocated buffers. Processes 32-byte secret keys, public keys, and scalars to compute public keys, shared secrets, and scalar multiplications. Used in cryptographic protocols requiring in-place output to minimize memory allocations.",
+      "description_length": 303,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Poly1305_256.Noalloc",
+      "description": "Computes message authentication codes in-place using a provided buffer for output. Operates on byte sequences and requires the output buffer to meet size constraints. Used to securely generate MACs without additional memory allocation.",
+      "description_length": 235,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Blake2s_128.Noalloc",
+      "description": "Computes cryptographic hashes in-place using a provided buffer, accepting a key, message, and output buffer. Operates on byte sequences for efficient memory usage. Used to generate message digests without allocating new memory, suitable for high-performance networking or embedded systems.",
+      "description_length": 289,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.HMAC_BLAKE2b.Noalloc",
+      "description": "Computes message authentication codes (MACs) by writing results directly into a provided byte buffer. Operates on byte sequences and ensures output buffers meet size requirements. Used for secure message verification in network protocols and data integrity checks.",
+      "description_length": 264,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Blake2b_32.Noalloc",
+      "description": "Computes cryptographic hashes by writing results directly into a provided byte buffer, supporting keyed hashing with a separate key buffer. Operates on byte sequences for input data and output storage. Used to efficiently generate message digests in pre-allocated memory without additional allocations.",
+      "description_length": 302,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_Blake2b.Noalloc",
+      "description": "Computes a cryptographic hash using a provided key, message, and digest buffer. It operates directly on byte sequences, modifying the digest in place. Used for secure message authentication in performance-critical applications.",
+      "description_length": 227,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_ECDSA_generic.Noalloc",
+      "description": "Handles cryptographic signature verification using raw byte inputs. Accepts secret keys, messages, public keys, and signatures to validate authenticity. Designed for low-level cryptographic operations where memory allocation is restricted.",
+      "description_length": 239,
+      "index": 49,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_HMAC_generic.Noalloc",
+      "description": "Provides cryptographic message authentication using a fixed key and message, storing the computed tag in a pre-allocated byte buffer. Operates on byte sequences for efficient in-place computation. Used to verify data integrity in high-performance network protocols.",
+      "description_length": 265,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_HMAC.Noalloc",
+      "description": "Provides cryptographic message authentication using a fixed key and message, storing the computed tag in a provided byte buffer. Operates on byte sequences for efficient in-place computation. Used to verify data integrity in network protocols without allocating new memory.",
+      "description_length": 273,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_HashFunction.Noalloc",
+      "description": "Computes a cryptographic hash by combining a message and a digest buffer in-place. Operates on byte sequences for efficient memory usage. Used to generate fixed-size output from variable-length input in performance-critical applications.",
+      "description_length": 237,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_Blake2s.Noalloc",
+      "description": "Computes a cryptographic hash by combining a key, message, and digest buffer in-place. It operates on byte sequences and modifies the digest buffer directly. Used for secure message authentication in performance-critical network protocols.",
+      "description_length": 239,
+      "index": 53,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_EdDSA_generic.Noalloc",
+      "description": "Converts a secret key to a public key, signs messages using a secret key or expanded key, and expands a secret key into a key stream. Operates on byte sequences for cryptographic operations. Used in scenarios requiring low-level cryptographic signing and key derivation without memory allocation.",
+      "description_length": 296,
+      "index": 54,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_ECDSA.Noalloc",
+      "description": "Handles cryptographic signature verification using specific byte sequences for the secret key, message, public key, and signature. Operates on raw byte arrays to perform efficient, low-level validation without memory allocation. Used in scenarios requiring high-performance digital signature checks, such as secure messaging protocols.",
+      "description_length": 335,
+      "index": 55,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_EdDSA.Noalloc",
+      "description": "Converts a secret key to a public key, signs messages using a secret key or expanded key, and expands a secret key into a key stream. Operates on byte sequences for cryptographic operations. Used in scenarios requiring low-memory cryptographic signing and key derivation.",
+      "description_length": 271,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_Chacha20_Poly1305_generic.Noalloc",
+      "description": "Encrypts plaintext using a key, IV, additional data, and outputs ciphertext and tag; decrypts ciphertext with matching key, IV, additional data, and tag, returning a boolean indicating success. Operates on byte sequences for secure cryptographic operations. Used for real-time data protection in network protocols and file encryption.",
+      "description_length": 334,
+      "index": 57,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_Poly1305.Noalloc",
+      "description": "Computes a cryptographic message authentication code using a given key, message, and output tag buffer. Operates directly on byte sequences for efficient in-place computation. Used to verify message integrity in low-level network protocols and secure communication channels.",
+      "description_length": 274,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_HKDF.Noalloc",
+      "description": "Extracts a pseudorandom key from an input keying material using a salt, and expands it into an output keying material using provided context information. Operates directly on byte sequences for efficient memory usage. Used in cryptographic key derivation processes where in-place computation is required.",
+      "description_length": 304,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_Curve25519.Noalloc",
+      "description": "Performs elliptic curve operations including converting a secret key to a public key, scalar multiplication of a point, and computing an ECDH shared secret. Works with byte sequences representing cryptographic keys and points on an elliptic curve. Used for secure key exchange and cryptographic protocol implementations.",
+      "description_length": 320,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_HashFunction_generic.Noalloc",
+      "description": "Computes a cryptographic hash by combining a message and a digest buffer. It operates directly on byte sequences, modifying the digest in place. Used for efficient message authentication in network protocols.",
+      "description_length": 208,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_HKDF_generic.Noalloc",
+      "description": "Extracts a pseudorandom key from an initial keying material using a salt, then expands it into an output keying material using provided context-specific information. Operates directly on byte sequences for efficient cryptographic key derivation. Used in protocols requiring secure key stretching and derivation without heap allocation.",
+      "description_length": 335,
+      "index": 62,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_Blake2s_generic.Noalloc",
+      "description": "Computes a cryptographic hash by combining a key, message, and digest buffer in-place. Operates on byte sequences for efficient memory usage. Used to generate secure message authentication codes in network protocols.",
+      "description_length": 216,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_Chacha20_Poly1305.Noalloc",
+      "description": "Encrypts plaintext using a key, IV, additional data, and outputs ciphertext and tag; decrypts ciphertext with the same parameters, returning a boolean indicating success. Operates on byte sequences for secure data transformation. Used for real-time encryption and decryption in memory-constrained environments.",
+      "description_length": 310,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_Poly1305_generic.Noalloc",
+      "description": "Provides cryptographic message authentication using a fixed key and message, storing the computed tag in a pre-allocated byte buffer. Operates on byte sequences for efficient in-place computation. Used to verify data integrity in high-performance network protocols.",
+      "description_length": 265,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_Curve25519_generic.Noalloc",
+      "description": "Handles elliptic curve operations including converting a secret key to a public key, performing scalar multiplication on a curve point, and computing an ECDH shared secret. Works with byte sequences representing cryptographic keys and points on an elliptic curve. Used for secure key exchange and cryptographic protocol implementations.",
+      "description_length": 336,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_Blake2b_generic.Noalloc",
+      "description": "Computes a cryptographic hash by combining a key, message, and digest buffer in-place. It operates on byte sequences and modifies the digest buffer directly. Used for secure message authentication in performance-critical network protocols.",
+      "description_length": 239,
+      "index": 67,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.EverCrypt.Curve25519.Noalloc",
+      "description": "Performs elliptic curve operations by writing results directly into pre-allocated buffers. Processes 32-byte secret keys, public keys, and scalars to compute public keys, shared secrets, and scalar multiplications. Used in cryptographic protocols requiring in-place output to minimize memory allocations.",
+      "description_length": 304,
+      "index": 68,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.EverCrypt.HKDF.Noalloc",
+      "description": "Computes pseudorandom keys from input key material and salts using specified hashing algorithms, and expands these keys into output key material with additional context. Operates on byte sequences for input and output, ensuring in-place writing to pre-allocated buffers. Used in cryptographic key derivation processes where memory allocation must be minimized.",
+      "description_length": 360,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.EverCrypt.DRBG.Noalloc",
+      "description": "Generates random bytes into a provided buffer using a state and optional additional input. Operates on byte sequences and a custom state type. Used for low-level random number generation in performance-critical applications.",
+      "description_length": 224,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.EverCrypt.AEAD.Noalloc",
+      "description": "Encrypts plaintext into ciphertext and generates an authentication tag, or decrypts ciphertext and verifies the tag, using provided buffers for output. Operates on cryptographic states, byte sequences for input and output, and returns results via an error monad. Used for secure message transmission with integrity checks in performance-critical applications.",
+      "description_length": 359,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.EverCrypt.Poly1305.Noalloc",
+      "description": "Computes message authentication codes in-place using a provided buffer for output. Operates on byte sequences and requires the output buffer to meet size constraints. Used for secure message verification without additional memory allocation.",
+      "description_length": 241,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.EverCrypt.Ed25519.Noalloc",
+      "description": "Provides functions for cryptographic operations including public key derivation, signing messages, and key expansion, all operating on fixed-size byte buffers. Works with secret keys, public keys, messages, and signatures, each requiring precisely sized input and output buffers. Used to generate public keys from secrets, create digital signatures, and prepare keys for repeated signing operations.",
+      "description_length": 399,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.EverCrypt.Chacha20_Poly1305.Noalloc",
+      "description": "Provides encryption and decryption operations using AES-GCM, accepting key, IV, additional data, and plaintext or ciphertext buffers, with output written directly into pre-allocated buffers for ct and tag during encryption, and into a pt buffer during decryption. Works with bytes type for all inputs and outputs, ensuring no additional memory allocation during processing. Used in secure communication protocols to efficiently encrypt and authenticate data in place.",
+      "description_length": 467,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.EverCrypt.HMAC.Noalloc",
+      "description": "Computes HMACs using a specified algorithm, key, and message, writing the result directly into a provided byte buffer. Operates on byte sequences for keys, messages, and output tags. Used for secure message authentication in performance-critical applications where memory allocation must be minimized.",
+      "description_length": 301,
+      "index": 75,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.EverCrypt.Hash.Noalloc",
+      "description": "Computes cryptographic hashes by writing results directly into a provided buffer, supporting algorithms like SHA-256, SHA-512, and BLAKE2. It processes byte sequences and requires the output buffer to match the digest size of the chosen algorithm. Used for secure message authentication and data integrity checks where direct memory manipulation is necessary.",
+      "description_length": 359,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedDefs.CBytes",
+      "description": "Provides operations to manipulate byte buffers, including creating, copying, slicing, and comparing them. Works with OCaml's Bytes.t type and Ctypes.buf, enabling low-level memory handling. Used to extract size values, create buffer views, and perform safe memory comparisons in interoperability scenarios.",
+      "description_length": 306,
+      "index": 77,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.SharedDefs.Hacl_Hash",
+      "description": "Manages cryptographic hash state and error codes for streaming operations, supporting multiple algorithms including SHA2, SHA1, MD5, Blake2S, Blake2B, SHA3, and SHAKE. It handles 32-bit and 64-bit digests through structures that track block data, buffer pointers, and total message length. Operations include initializing, updating, and finalizing hash states for incremental processing of large data. Examples include verifying file integrity during transfers or generating secure hashes for continuous data streams.",
+      "description_length": 517,
+      "index": 78,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.SharedDefs.Hacl_Spec",
+      "description": "This module defines cryptographic parameters and algorithm identifiers, operating on unsigned 8-bit values to represent configurations like key exchange protocols (e.g., Frodo, FFDHE), cipher expansions, and AEAD schemes. It provides structured types for encoding specific cryptographic standards, enabling precise implementation of secure communication protocols. Use cases include establishing encrypted channels with Diffie-Hellman groups or enforcing authenticated encryption through defined algorithmic constants.",
+      "description_length": 518,
+      "index": 79,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.SharedDefs.Hacl_Streaming_Types",
+      "description": "The module defines error codes and state structures for streaming cryptographic hashing, including 32/64-bit message digests with block states, buffers, and total lengths, alongside algorithm identifiers for SHA2, SHA1, MD5, Blake2S, Blake2B, SHA3, and SHAKE. It enables incremental processing of large data streams by representing hash states and algorithm constants, supporting use cases like secure data integrity checks in network protocols or file verification.",
+      "description_length": 466,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedDefs.AEADDefs",
+      "description": "Provides functions to retrieve and validate cryptographic parameters for authenticated encryption with associated data (AEAD) algorithms. Works with an abstract `alg` type and integer values representing key lengths, tag lengths, and input/output sizes. Includes checks for IV, plaintext, and ciphertext length validity, as well as comprehensive size validation for encryption operations.",
+      "description_length": 388,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedDefs.HashDefs",
+      "description": "Provides functions to convert algorithm identifiers to unsigned 8-bit integers, retrieve digest lengths, and validate digest lengths against algorithm specifications. Works with custom types representing cryptographic algorithms and deprecated algorithm variants. Used to enforce correct digest sizes during hash computation and verification processes.",
+      "description_length": 352,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.AutoConfig2.EverCrypt_AutoConfig2",
+      "description": "This module provides low-level operations to query and control CPU feature availability, such as enabling/disabling instructions like AESNI, AVX2, or RDRAND, and checking vector support (128-bit, 256-bit). It interacts with system hardware capabilities through feature flags and instruction set controls. Use cases include optimizing cryptographic performance, ensuring compatibility across hardware, or enforcing security constraints by restricting specific processor extensions.",
+      "description_length": 480,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Chacha20_Poly1305_32",
+      "description": "Encapsulates symmetric encryption and decryption with AES-GCM, enabling in-place processing of byte sequences for keys, IVs, plaintext, ciphertext, and tags. Supports authenticated encryption with associated data, ensuring data integrity and confidentiality. Operations include encrypting and decrypting data directly into pre-allocated memory, reducing overhead. Examples include securing network payloads, encrypting disk sectors, and protecting sensitive in-memory data.",
+      "description_length": 473,
+      "index": 84,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Chacha20_Poly1305_128",
+      "description": "Offers vectorized encryption and decryption using a 128-bit implementation of Chacha20-Poly1305, optimized for platforms with 128-bit vector support. It handles key, IV, additional data, and input buffers, producing ciphertext and authentication tags in pre-allocated memory. Operations work directly on byte arrays and mutable buffers to minimize memory overhead. Examples include securing real-time data streams and validating authenticated messages in network protocols.",
+      "description_length": 473,
+      "index": 85,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Chacha20_Poly1305_256",
+      "description": "Offers vectorized encryption and decryption using a 256-bit implementation of Chacha20-Poly1305, optimized for performance on supported platforms. It handles key, IV, additional data, and buffers for ciphertext and authentication tags, using byte arrays for in-place operations. Functions include authenticated encryption and decryption, ensuring data integrity and confidentiality. Examples include securing network packets, encrypting disk sectors, and protecting sensitive in-memory data.",
+      "description_length": 491,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Curve25519_51",
+      "description": "Perform operations on elliptic curve points using 32-byte sequences, including key generation, shared secret computation, and scalar multiplication. All functions operate on pre-allocated byte buffers to avoid heap allocation, ensuring efficient memory usage. Supports ECDH protocols by generating public keys from secret keys and calculating shared secrets. Example tasks include deriving a shared secret between two parties using their respective secret and public keys.",
+      "description_length": 472,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Curve25519_64",
+      "description": "Perform operations on elliptic curves using preallocated buffers, accepting 32-byte secret keys, public keys, and scalars to generate public keys and shared secrets. Supports in-place computation for efficient memory use, leveraging optimized field arithmetic for cryptographic protocols. Key types include secret keys, public keys, and scalars, with operations like key generation and scalar multiplication. Example tasks include deriving a shared secret from a secret key and a peer's public key, or computing a public key from a secret.",
+      "description_length": 539,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Ed25519",
+      "description": "Handles cryptographic key conversion, signing, and management using Ed25519, working with 32-byte secret keys, 32-byte public keys, and 64-byte signatures. Supports generating public keys from secrets, signing messages with raw or expanded keys, and efficiently managing key expansion. Operations are performed on fixed-size byte buffers, ensuring consistency and security. Examples include signing a message with a secret key and verifying the signature using the corresponding public key.",
+      "description_length": 490,
+      "index": 89,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.P256",
+      "description": "Offers ECDSA signing and verification, and ECDH key exchange using P-256, operating on fixed-size byte sequences and pre-allocated buffers. Supports 32-byte secret keys, 64-byte public keys, and 64-byte signatures, with variable-length messages and 65-byte uncompressed points for conversions. Enables efficient cryptographic operations by writing results directly into buffers, avoiding unnecessary memory allocation. Examples include signing a message with a secret key, verifying a signature with a public key, and converting elliptic curve points between formats.",
+      "description_length": 567,
+      "index": 90,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.K256",
+      "description": "Provides ECDSA signing and verification capabilities with low-S normalization, operating on fixed-size byte sequences for keys, messages, and signatures. Supports generating and validating signatures using secret keys and verifying them against public keys, with direct buffer manipulation for efficiency. Examples include signing transaction hashes and verifying signatures in blockchain applications. Key data types include 32-byte secret keys, 64-byte signatures, and 64-byte public keys.",
+      "description_length": 491,
+      "index": 91,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.SHA2_224",
+      "description": "Computes SHA-224 hashes directly from byte sequences into a pre-allocated buffer, avoiding dynamic memory allocation. Accepts mutable byte arrays and produces 28-byte digests suitable for cryptographic applications. Supports in-place processing for optimized performance. Example: hash a string into a fixed-size buffer for secure data integrity checks.",
+      "description_length": 353,
+      "index": 92,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.SHA2_256",
+      "description": "Hashes byte sequences into 32-byte digests using direct buffer writes, avoiding extra memory allocation. Accepts input messages as byte arrays and stores results in pre-allocated buffers. Supports efficient cryptographic hashing for applications requiring low-level control. Example uses include generating message digests for data integrity checks or digital signatures.",
+      "description_length": 371,
+      "index": 93,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.SHA2_384",
+      "description": "Computes SHA-384 hashes directly from byte sequences into a pre-allocated 48-byte buffer, avoiding dynamic memory allocation. Supports operations on bytes and byte arrays, offering low-level control over output storage. Accepts input data in various forms and produces fixed-size cryptographic digests. Can be used to generate secure hashes for data integrity checks or digital signatures.",
+      "description_length": 389,
+      "index": 94,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.SHA2_512",
+      "description": "Computes SHA-512 hashes by writing results directly into a preallocated byte buffer, ensuring efficient memory use. Processes byte sequences to generate message digests, suitable for in-place operations during data transmission or storage. Supports direct manipulation of 64-byte digest outputs, enabling low-level control over cryptographic operations. Examples include validating data integrity in network protocols or embedding hashes within binary file formats.",
+      "description_length": 465,
+      "index": 95,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.SHA3_224",
+      "description": "Computes SHA3-224 hashes by writing results directly into a provided 28-byte buffer, operating on byte sequences for input and output. Supports efficient message digest generation with minimal memory allocation. Accepts arbitrary byte sequences and produces fixed-size 28-byte outputs. Example uses include verifying data integrity, generating unique identifiers, and securing data signatures.",
+      "description_length": 393,
+      "index": 96,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.SHA3_256",
+      "description": "Provides direct SHA3-256 hashing with memory-efficient operations, processing byte sequences into a 32-byte digest buffer without additional allocations. Accepts mutable byte buffers and operates on raw bytes, enabling high-performance cryptographic operations. Supports in-place hashing where input and output buffers can overlap. Example uses include generating secure hashes for data integrity checks or cryptographic signatures.",
+      "description_length": 432,
+      "index": 97,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.SHA3_384",
+      "description": "Computes SHA3-384 hashes directly from byte sequences into a fixed-size 48-byte buffer, using mutable byte arrays for efficient memory management. Accepts input as raw bytes and produces a cryptographic digest without intermediate allocations. Supports in-place processing for low-latency applications, such as securing data streams or generating message authentication codes. Example uses include hashing sensitive payloads for integrity checks or deriving keys in cryptographic protocols.",
+      "description_length": 490,
+      "index": 98,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.SHA3_512",
+      "description": "Computes SHA3-512 hashes in-place by overwriting a provided 64-byte buffer with the resulting digest. Accepts a byte sequence and a pre-allocated buffer, enabling low-memory hash generation. Operations include hashing arbitrary data and validating message integrity through direct buffer manipulation. Example uses include generating fixed-size authentication tags for secure communication or verifying data consistency in constrained environments.",
+      "description_length": 448,
+      "index": 99,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Keccak",
+      "description": "Hashing functions for SHAKE-128, SHAKE-256, and Keccak generate variable-length digests by operating directly on preallocated byte buffers, eliminating unnecessary memory allocations. Key data types include message and digest buffers, with operations that process input in-place and return results in the same memory space. For example, a 32-byte digest can be generated from a message buffer, or a 1024-byte output can be produced by specifying the desired length. These functions are optimized for low-latency, high-throughput scenarios where memory efficiency is critical.",
+      "description_length": 575,
+      "index": 100,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Blake2b_32",
+      "description": "Computes cryptographic hashes by writing results directly into a provided byte buffer, supporting keyed hashing with a separate key buffer. Accepts byte sequences for input data and output storage, enabling efficient digest generation in pre-allocated memory. Key buffers must be 64 bytes or smaller for BLAKE2b, and digest outputs are restricted to 64 bytes or less. Examples include generating a keyed hash for a message or computing a digest for a large data stream without heap allocation.",
+      "description_length": 493,
+      "index": 101,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Blake2b_256",
+      "description": "Provides direct hash computation into pre-allocated byte buffers, supporting keyed hashing with separate key buffers. Accepts byte sequences for input data and message, producing digests of specified lengths up to 64 bytes. Allows efficient cryptographic operations without intermediate memory allocations, suitable for high-performance applications. Example uses include generating secure message authentication codes and hashing large datasets in fixed memory regions.",
+      "description_length": 470,
+      "index": 102,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Blake2s_32",
+      "description": "Provides in-place cryptographic hashing for byte sequences with key support, using fixed-size buffers optimized for performance. Accepts key, message, and digest as byte arrays, enabling direct memory manipulation without additional allocations. Supports BLAKE2s with digest sizes up to 32 bytes, ideal for secure message authentication in constrained environments. Example uses include generating hash-based message authentication codes (HMACs) or checksums for data integrity in network protocols.",
+      "description_length": 499,
+      "index": 103,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Blake2s_128",
+      "description": "Computes cryptographic hashes in-place using byte buffers, supporting key and message inputs with output directly written to a provided buffer. Handles both BLAKE2b and BLAKE2s variants, with size constraints on keys and digests for security and efficiency. Accepts byte sequences to minimize memory allocation, enabling high-performance hashing in networking or embedded environments. Example uses include generating secure message digests for data integrity checks or authentication protocols.",
+      "description_length": 495,
+      "index": 104,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.MD5",
+      "description": "Computes MD5 hashes directly from byte sequences into pre-allocated buffers, avoiding extra memory allocations. Supports in-place operations on mutable byte arrays, enabling efficient processing of large data sets. Accepts input of any length and produces a 16-byte digest. Can be used to generate hash values for files, strings, or network data with minimal overhead.",
+      "description_length": 368,
+      "index": 105,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.SHA1",
+      "description": "Calculates SHA-1 hashes by writing results directly into a provided byte buffer, operating on byte sequences for input and output. The main data types include byte buffers and input sequences, with operations for hashing and digest generation. It allows efficient message digest creation, such as generating a 20-byte hash from a given input buffer. This approach avoids unnecessary memory allocation, making it suitable for performance-sensitive applications.",
+      "description_length": 460,
+      "index": 106,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.HMAC_SHA2_256",
+      "description": "Computes in-place message authentication codes using byte sequences, adhering to strict buffer size requirements for key and output. Supports HMAC-SHA-256 and HMAC-BLAKE2 with output sizes of 32, 64, or 16 bytes depending on the algorithm. Accepts input data and key, producing a fixed-size digest that ensures data integrity and authenticity. Example uses include securing network communications and verifying file integrity with minimal memory overhead.",
+      "description_length": 455,
+      "index": 107,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.HMAC_SHA2_384",
+      "description": "Generates in-place message authentication codes using cryptographic keys and byte sequences, supporting multiple hash algorithms. Key operations include signing and verifying data with output buffers sized according to the algorithm, such as 16 bytes for Poly1305 and 48 bytes for HMAC-SHA-384. It enables secure data integrity checks in protocols by operating directly on provided memory, avoiding unnecessary allocations. Examples include authenticating network packets, validating encrypted messages, and generating fixed-size tags for data verification.",
+      "description_length": 557,
+      "index": 108,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.HMAC_SHA2_512",
+      "description": "Computes secure message authentication codes using HMAC-SHA-512, writing results directly into a pre-allocated buffer for efficiency. Accepts keys and messages as byte sequences and produces output tags of fixed size based on the algorithm used. Supports operations such as generating a 16-byte tag for Poly1305 or a 64-byte tag for BLAKE2b. Enables secure integrity checks in low-latency communication systems without dynamic memory allocation.",
+      "description_length": 445,
+      "index": 109,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.HMAC_BLAKE2b",
+      "description": "Computes message authentication codes by writing results directly into a provided byte buffer, ensuring output sizes match specified constraints. Supports key-based authentication with 32-byte keys and produces 16-byte outputs for Poly1305, 64-byte outputs for BLAKE2b, and variable-sized outputs for SHA-2. Operations include generating and verifying MACs using byte sequences, enabling secure communication and data integrity validation. Examples include authenticating network packets, signing messages, and verifying data authenticity with fixed-size output buffers.",
+      "description_length": 570,
+      "index": 110,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.HMAC_BLAKE2s",
+      "description": "Computes in-place message authentication codes using byte sequences and cryptographic keys, supporting multiple hash functions including BLAKE2s and SHA-2. Key types include 32-byte keys and 16-byte output buffers for BLAKE2s, with variable output sizes for other algorithms. Operations include generating and verifying MACs directly in a provided buffer, eliminating heap allocation. Examples include securing network data streams with 16-byte MACs or integrating with protocols requiring 32-byte authentication tags.",
+      "description_length": 518,
+      "index": 111,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Poly1305_32",
+      "description": "Computes in-place message authentication codes using byte sequences, adhering to strict buffer size requirements for key and output. Supports secure MAC generation with output buffers of 16 bytes for Poly1305 and variable sizes for HMAC variants. Operations include generating and verifying MACs directly within allocated memory. Example uses include securing network payloads or file integrity checks with minimal memory overhead.",
+      "description_length": 431,
+      "index": 112,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Poly1305_128",
+      "description": "Computes in-place message authentication codes using byte sequences and cryptographic keys, leveraging vectorized operations for performance. Supports output buffers of 16 bytes for Poly1305 and variable sizes for HMAC variants. Accepts 32-byte keys and produces authenticated outputs suitable for verifying data integrity in secure communications. Examples include generating 16-byte tags for Poly1305 and 64-byte HMACs for BLAKE2b.",
+      "description_length": 433,
+      "index": 113,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.Poly1305_256",
+      "description": "Computes in-place message authentication codes using vectorized 256-bit operations, supporting secure MAC generation for Poly1305 and HMAC with SHA-2/BLAKE2. Accepts byte sequences and enforces output buffer sizes: 16 bytes for Poly1305, and hash-specific sizes for HMAC. Processes data efficiently by reusing provided buffers, eliminating extra memory allocation. Examples include generating a 16-byte MAC for a message with a 32-byte key or producing a 64-byte HMAC using BLAKE2b.",
+      "description_length": 482,
+      "index": 114,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.NaCl",
+      "description": "provides byte-level encryption and decryption using public and secret keys, with dedicated functions for handling plaintext, ciphertext, nonces, and keys. It supports in-place operations, requires specific buffer sizes (32-byte keys, 24-byte nonces, 16-byte tags), and ensures authenticated transmission of data. Examples include encrypting a 100-byte message into a 116-byte ciphertext or decrypting a message using a shared secret. Operations include key generation, encryption, decryption, and authentication, with interfaces for both high-level and low-level control.",
+      "description_length": 571,
+      "index": 115,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.HKDF_SHA2_256",
+      "description": "Generates and expands pseudorandom keys using SHA2-256, operating on byte sequences and requiring preallocated buffers. Accepts input keys, salts, and context data to produce cryptographic outputs suitable for secure key derivation. Supports key expansion up to 255 times the digest length, ensuring flexibility in cryptographic protocol implementations. Examples include deriving encryption keys from passwords and generating session keys in secure communication protocols.",
+      "description_length": 474,
+      "index": 116,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.HKDF_SHA2_512",
+      "description": "Derives and expands pseudorandom keys using SHA2-512, operating on byte sequences with in-place buffer manipulation. Accepts input keying material and context to generate output keys of specified lengths. Supports key derivation where memory allocation is restricted, ensuring efficient use of preallocated storage. Examples include generating session keys from a shared secret or deriving multiple keys from a single master key with different labels.",
+      "description_length": 451,
+      "index": 117,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.Hacl.HKDF_BLAKE2b",
+      "description": "Derives and expands cryptographic keys using BLAKE2b, operating directly on byte sequences with in-place buffer manipulation. Accepts input keying material and context to generate pseudorandom keys, ensuring output fits within preallocated memory. Supports key lengths up to 255 times the digest size, enabling flexible key expansion. Examples include generating session keys from a shared secret or deriving multiple keys from a single master key.",
+      "description_length": 448,
+      "index": 118,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.HKDF_BLAKE2s",
+      "description": "Derives and expands cryptographic keys using BLAKE2s, operating on byte sequences with strict buffer size constraints relative to the hash digest. Main data types include byte arrays for input, output, and context, with operations for key derivation and expansion. Functions allow secure key generation in environments without dynamic memory allocation, such as embedded systems. Examples include generating session keys from a shared secret or deriving multiple keys from a single master key with different context strings.",
+      "description_length": 524,
+      "index": 119,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl.RandomBuffer",
+      "description": "Generates random bytes directly into a mutable bytes buffer, ensuring efficient memory usage and high performance. Provides a low-level interface for secure random data generation, suitable for cryptographic and sensitive operations. Supports platform-specific implementations for reliability across Unix and Windows. Can be used to fill buffers with cryptographically strong random values without unnecessary memory allocation.",
+      "description_length": 428,
+      "index": 120,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_Chacha20_Poly1305_generic",
+      "description": "Handles ChaCha20-Poly1305 encryption and decryption with explicit key, nonce, and associated data inputs. Operates on byte buffers and 32-bit unsigned integers for cryptographic parameters. Enables secure message transmission and verification in protocols requiring authenticated encryption.",
+      "description_length": 291,
+      "index": 121,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_Curve25519_generic",
+      "description": "Performs elliptic curve operations on Curve25519, including converting a secret key to a public key, scalar multiplication, and ECDH key exchange. Works with buffer types for input and output data. Used to generate shared secrets and public keys in cryptographic protocols.",
+      "description_length": 273,
+      "index": 122,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_EdDSA_generic",
+      "description": "Generates EdDSA public keys from secrets, signs messages with private keys, and verifies signatures using curve-specific parameters. Operates on byte buffers and 32-bit unsigned integers to handle cryptographic operations. Used for creating and validating digital signatures in secure communication protocols.",
+      "description_length": 309,
+      "index": 123,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_HashFunction_generic",
+      "description": "Provides hash algorithm configuration and in-place hashing of buffer data using a specified algorithm. Operates on buffer structures and unsigned 32-bit integers. Used to generate cryptographic hashes in network protocols and data integrity checks.",
+      "description_length": 248,
+      "index": 124,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_Poly1305_generic",
+      "description": "Provides functions for generating and verifying Poly1305 message authentication codes using a buffer-based interface. Operates on byte buffers and 32-bit unsigned integers to process cryptographic operations. Used to authenticate data streams with a shared secret key in network protocols and secure messaging systems.",
+      "description_length": 318,
+      "index": 125,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_HMAC_generic",
+      "description": "Provides hash algorithm configuration and HMAC generation with specified key, data, and output buffer. Operates on byte buffers, unsigned 32-bit integers, and hash algorithm definitions. Used to compute secure message authentication codes in cryptographic protocols.",
+      "description_length": 266,
+      "index": 126,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_HKDF_generic",
+      "description": "Generates keying material using HMAC-based key derivation, operating on byte buffers and unsigned 32-bit integers. It performs extraction from an input key and expansion into a derived key based on a salt and info string. Used to derive cryptographic keys from a shared secret in protocols requiring key separation.",
+      "description_length": 315,
+      "index": 127,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_ECDSA_generic",
+      "description": "Calculates and validates ECDSA signatures using a fixed message size. It operates on byte buffers and unsigned 32-bit integers, handling cryptographic operations directly. Used to generate and confirm digital signatures in secure communication protocols.",
+      "description_length": 254,
+      "index": 128,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_Blake2b_generic",
+      "description": "Provides hash computation using the Blake2b algorithm with specific input parameters including a key, message, and output buffer. Operates on unsigned 32-bit integers and byte buffers. Used for generating cryptographic hashes in performance-critical applications requiring direct memory manipulation.",
+      "description_length": 300,
+      "index": 129,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_Blake2s_generic",
+      "description": "Provides hash computation using the Blake2s algorithm with a fixed output size, accepting a key, input buffer, and output buffer, along with parameters for hash length and key length. Operates on unsigned 32-bit integers and C-compatible buffer types. Used to generate cryptographic hashes in systems requiring low-level control over hashing parameters.",
+      "description_length": 353,
+      "index": 130,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_Chacha20_Poly1305",
+      "description": "Generates and verifies encrypted data using the ChaCha20-Poly1305 algorithm, handling key, nonce, and associated data inputs. Operates on byte buffers and 32-bit unsigned integers to perform encryption and decryption with authenticated encryption. Used to secure communication channels by ensuring data integrity and confidentiality.",
+      "description_length": 333,
+      "index": 131,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_Curve25519",
+      "description": "Generates Curve25519 key pairs and performs elliptic curve operations using byte buffers. Computes public keys from secrets, executes scalar multiplication, and facilitates ECDH key exchange. Processes cryptographic data in fixed-size buffers for secure, low-level cryptographic computations.",
+      "description_length": 292,
+      "index": 132,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_EdDSA",
+      "description": "Generates public keys from secrets, signs messages with private keys, verifies signatures using public keys, and expands key material for repeated use. Operates on byte buffers and 32-bit unsigned integers. Used for cryptographic operations in secure communication protocols and digital signature validation.",
+      "description_length": 308,
+      "index": 133,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_HashFunction",
+      "description": "Provides hash algorithm configuration and in-place hashing of byte buffers using a specified algorithm. Operates on CBytes buffers and unsigned 32-bit integers. Used to generate cryptographic hashes during data integrity checks in network protocols.",
+      "description_length": 249,
+      "index": 134,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_Poly1305",
+      "description": "Generates a Poly1305 message authentication code using a 32-bit key and two 16-byte buffers, storing the result in a third buffer. Operates on byte buffers and unsigned 32-bit integers. Used to authenticate encrypted data in cryptographic protocols.",
+      "description_length": 249,
+      "index": 135,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_HMAC",
+      "description": "Generates HMAC using a specified hash algorithm, applying a key and data buffer to produce a message authentication code. It operates on byte buffers and unsigned 32-bit integers, handling cryptographic operations directly. Used to validate data integrity and authenticity in secure communication protocols.",
+      "description_length": 307,
+      "index": 136,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_HKDF",
+      "description": "Provides functions for key derivation using HKDF, including extraction and expansion phases. Operates on byte buffers and unsigned 32-bit integers to generate cryptographic keys. Used to derive session keys from shared secrets in secure communication protocols.",
+      "description_length": 261,
+      "index": 137,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_ECDSA",
+      "description": "Calculates and validates ECDSA signatures using fixed-size buffers for messages and keys. Operates on unsigned 32-bit integers and byte buffers to handle cryptographic operations. Used to generate and verify digital signatures in secure communication protocols.",
+      "description_length": 261,
+      "index": 138,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_Blake2b",
+      "description": "Computes BLAKE2b hash values using a fixed output size and two input buffers. It processes 32-bit digest lengths and operates on byte buffers represented as CBytes.buf. The function is used for cryptographic hashing in scenarios requiring fixed-size outputs from binary data.",
+      "description_length": 275,
+      "index": 139,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors.Make_Blake2s",
+      "description": "Computes the BLAKE2s hash using a fixed output size, taking a key, input buffer, and output buffer with explicit size parameters. It operates on unsigned 32-bit integers and byte buffers for efficient memory handling. Used to generate cryptographic hashes in systems requiring low-level control over buffer allocation and hash computation.",
+      "description_length": 339,
+      "index": 140,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.EverCrypt.Error",
+      "description": "Handles error propagation in AEAD operations with a result type that wraps either a value or an error code. Works with polymorphic result types and specific error codes to represent successful or failed outcomes. Used to manage cryptographic operation failures and validate input in secure communication protocols.",
+      "description_length": 314,
+      "index": 141,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.EverCrypt.AEAD",
+      "description": "provides secure encryption and decryption using AES128-GCM, AES256-GCM, and Chacha20-Poly1305, operating on cryptographic states and byte sequences. It generates or verifies 16-byte authentication tags, supporting key and IV sizes specific to each algorithm. Users initialize a state once and reuse it for multiple operations, ensuring efficient and secure message handling. Examples include encrypting a message with AES256-GCM using a 32-byte key and 12-byte IV, or decrypting a Chacha20-Poly1305-encrypted payload with tag validation.",
+      "description_length": 537,
+      "index": 142,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.EverCrypt.Chacha20_Poly1305",
+      "description": "Encrypts and decrypts data using AES-GCM, operating directly on pre-allocated byte buffers for plaintext, ciphertext, and authentication tags. Accepts keys, IVs, and additional data as byte sequences, enabling in-place processing without extra memory allocation. Supports secure communication by ensuring data integrity and confidentiality through authenticated encryption. Examples include encrypting messages with a shared key and verifying ciphertext authenticity during decryption.",
+      "description_length": 485,
+      "index": 143,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.EverCrypt.Curve25519",
+      "description": "Provides in-place elliptic curve operations for ECDH using Curve25519, directly writing results to pre-allocated buffers. Supports 32-byte secret keys, public keys, and scalars to generate public keys, compute shared secrets, and perform scalar multiplications. Operations include key generation, shared secret derivation, and point multiplication. Example uses include secure key exchange in protocols where memory efficiency is critical.",
+      "description_length": 439,
+      "index": 144,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.EverCrypt.Ed25519",
+      "description": "Generates and verifies digital signatures using fixed-size byte buffers, handling secret keys, public keys, messages, and signatures. Supports key derivation from secrets and prepares keys for repeated signing. Operations include signing messages with a secret key and verifying signatures with a public key. Examples include creating a signature for a message and validating it against the corresponding public key.",
+      "description_length": 416,
+      "index": 145,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.EverCrypt.Hash",
+      "description": "Provides a flexible interface for computing cryptographic hashes using a variety of algorithms, including SHA-2, SHA-3, BLAKE2, SHA-1, and MD5. It supports both direct hashing, where results are written to a pre-allocated buffer, and streaming operations for handling large data sets. Key data types include hash contexts, byte sequences, and fixed-size digest buffers, with operations like `init`, `update`, and `digest` for processing data. Examples include generating secure message digests, verifying file integrity, and implementing cryptographic protocols requiring direct memory access.",
+      "description_length": 593,
+      "index": 146,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.EverCrypt.HMAC",
+      "description": "Computes HMACs using SHA-2 and BLAKE2 algorithms, accepting byte sequences for keys, messages, and output buffers. Produces tags of fixed sizes\u2014digest-length for SHA-2 and 64/32 bytes for BLAKE2b/s\u2014enabling efficient, low-memory message authentication. Supports direct buffer writing to avoid unnecessary allocations, suitable for real-time or embedded systems. Examples include generating secure authentication tags for network protocols or verifying data integrity in constrained environments.",
+      "description_length": 495,
+      "index": 147,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.EverCrypt.Poly1305",
+      "description": "Provides in-place computation of message authentication codes using specified buffer sizes, supporting multiple cryptographic algorithms. Key operations include generating MACs with fixed-size outputs, where the key is 32 bytes and the output is 16 bytes for Poly1305, and variable sizes for HMAC variants. Examples include verifying message integrity with a pre-allocated 16-byte buffer or generating a 64-byte MAC using BLAKE2b. The module ensures efficient memory usage by reusing input buffers for output.",
+      "description_length": 509,
+      "index": 148,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.EverCrypt.HKDF",
+      "description": "Derives and expands cryptographic keys from input material using hash-based functions, operating directly on byte sequences with in-place buffer modifications. Core operations include key derivation and expansion, supporting algorithms from EverCrypt.HMAC. Functions accept and produce byte arrays, enabling efficient key management in constrained environments. Examples include generating session keys from a master secret or deriving multiple keys from a single input with different context strings.",
+      "description_length": 501,
+      "index": 149,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.EverCrypt.DRBG",
+      "description": "provides a low-level interface for generating random bytes using a stateful HMAC-DRBG implementation, supporting SHA2-256, SHA2-384, and SHA2-512. it operates on byte sequences and a custom state type, allowing direct manipulation of output buffers for efficiency. users can generate random data, reseed the state, or add additional input during generation. examples include filling a buffer with cryptographically secure random bytes or integrating with performance-sensitive systems requiring deterministic reseeding.",
+      "description_length": 519,
+      "index": 150,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedDefs.Noalloc",
+      "description": "Computes cryptographic hashes in-place using a provided buffer, accepting a key, message, and output buffer. Operates on byte sequences for efficient memory usage. Used to generate message digests without allocating new memory, suitable for high-performance networking or embedded systems.",
+      "description_length": 289,
+      "index": 151,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.AutoConfig2",
+      "description": "manages hardware feature configuration by exposing operations to enable, disable, and query CPU instructions and vector support. it defines types for feature flags, instruction sets, and vector widths, along with functions to modify and inspect these settings. users can dynamically adjust processor capabilities to optimize performance for cryptographic workloads or enforce security policies. examples include enabling AVX2 for faster data processing or disabling RDRAND on systems where entropy sources are restricted.",
+      "description_length": 521,
+      "index": 152,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.EverCrypt",
+      "description": "Offers cryptographic operations including authenticated encryption, key exchange, digital signatures, hashing, and random number generation, all optimized for memory efficiency and performance. Core data types include byte sequences, cryptographic states, and fixed-size buffers, with operations such as encryption, decryption, signing, verification, and key derivation. It enables tasks like encrypting messages with AES-GCM, generating ECDH shared secrets, signing data with Ed25519, and producing HMACs for message authentication. Examples include secure key exchange, in-place data encryption, and generating random bytes for cryptographic protocols.",
+      "description_length": 654,
+      "index": 153,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.Hacl",
+      "description": "Provides cryptographic operations including symmetric encryption (AES-GCM, ChaCha20-Poly1305), elliptic curve cryptography (ECDH, ECDSA), hash functions (SHA-2, SHA-3, BLAKE2, SHAKE), and message authentication codes (HMAC, Poly1305). Operates on byte arrays and pre-allocated buffers, supporting in-place processing to minimize memory overhead. Functions include encrypting data, generating signatures, hashing messages, and deriving keys, with examples like securing network traffic, verifying digital signatures, and generating secure random values. Key types include keys, nonces, tags, public/private keys, and digests, with operations tailored for performance and memory efficiency.",
+      "description_length": 688,
+      "index": 154,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hacl_star.SharedDefs",
+      "description": "Provides operations to create, manipulate, and compare byte buffers, including extracting size as a 32-bit unsigned integer, creating sub-buffers, and checking for disjointedness. Works with bytes and a custom `buf` type derived from bytes. Used to handle low-level buffer interactions and comparisons with arbitrary-precision integers.",
+      "description_length": 336,
+      "index": 155,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star.SharedFunctors",
+      "description": "Provides cryptographic operations including authenticated encryption with ChaCha20-Poly1305, elliptic curve cryptography on Curve25519, EdDSA and ECDSA signature generation and verification, hash computation with Blake2b and Blake2s, HMAC, and key derivation using HKDF. Operates on byte buffers and 32-bit unsigned integers to handle cryptographic data. Supports secure message transmission, key exchange, digital signatures, and data integrity checks. Examples include encrypting messages with authenticated encryption, generating ECDH shared secrets, signing data with EdDSA, and computing HMACs for message authentication.",
+      "description_length": 626,
+      "index": 156,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "hacl-star",
+      "description": "Provides cryptographic operations such as AES encryption, SHA-256 hashing, and RSA signing using low-level primitives from HACL* and EverCrypt. Works with byte sequences, big integers, and cryptographic contexts. Enables secure data transmission and authentication in network protocols and file encryption.",
+      "description_length": 306,
+      "index": 157,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hacl_star",
+      "description": "Combines hardware configuration management with cryptographic primitives, offering control over CPU features and optimized cryptographic operations. It handles byte buffers, cryptographic states, and key material, enabling tasks like secure data encryption, key exchange, and signature verification. Operations include enabling AVX2 for performance, encrypting with AES-GCM, generating ECDH secrets, and computing HMACs. It supports in-place processing, buffer manipulation, and secure random generation, tailored for low-memory and high-performance environments.",
+      "description_length": 563,
+      "index": 158,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 159,
+    "meaningful_modules": 159,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 688,
+    "min_description_length": 208,
+    "avg_description_length": 369.0691823899371,
+    "embedding_file_size_mb": 0.578059196472168
+  }
+}

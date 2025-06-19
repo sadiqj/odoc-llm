@@ -1,0 +1,238 @@
+{
+  "package": "accessor_base",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 31,
+  "creation_timestamp": "2025-06-18T16:40:20.236011",
+  "modules": [
+    {
+      "module_path": "Accessor_base.Sequence.Generator",
+      "description": "Provides operations to transform, iterate over, and aggregate elements from structured data sources, supporting both parallel and sequential execution. Works with generator sequences that yield values or errors, and integrates with accessor-based data structures. Enables tasks like mapping over indexed elements, summing results, counting matches, and reducing collections with custom combining functions.",
+      "description_length": 406,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Accessor_base.Either.Index",
+      "description": "Provides accessors for first and second elements of a tuple-like structure, along with comparison, hashing, and S-expression conversion. Works with the abstract type `t` representing a structured value. Used to manipulate and serialize tuple-based data in a type-safe manner.",
+      "description_length": 275,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Accessor_base.Either.First",
+      "description": "Provides operations to transform, iterate over, and aggregate elements within structured data, supporting both sequential and parallel execution. Works with indexed and unindexed collections, handling results through an either monad for error propagation. Enables tasks like conditional counting, parallel mapping, and reduction with customizable combining functions.",
+      "description_length": 367,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Accessor_base.Either.Second",
+      "description": "Provides operations to transform, aggregate, and iterate over collections, supporting both parallel and sequential execution. Works with indexed and unindexed data structures, returning results wrapped in `Either` for error handling. Enables counting, summing, and reducing elements while preserving error states, suitable for processing large datasets with failure resilience.",
+      "description_length": 377,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Accessor_base.Tuple2.Fst",
+      "description": "Provides operations to transform and extract values from structured data, including mapping over elements with or without indices and extracting the first component of a tuple. Works with tuples and custom data types that support field access. Used to process records by applying functions to specific fields or extracting initial values from compound structures.",
+      "description_length": 363,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Accessor_base.Tuple2.Snd",
+      "description": "Provides operations to transform and aggregate data within structured records, supporting indexed and non-indexed mappings. Works with typed accessors and nested data structures, enabling precise manipulation of field values. Used to apply custom transformations to specific fields during data processing pipelines.",
+      "description_length": 315,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Accessor_base.Bool",
+      "description": "Accesses the unit value when the boolean is true or false, enabling conditional checks. Transforms a boolean into its negation, allowing inversion of logical states. Works directly with base boolean values and unit types for control flow and state manipulation.",
+      "description_length": 261,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Accessor_base.Either",
+      "description": "manages structured data through accessors, transformations, and aggregations, using `t` as the core type and `Either` for error handling. It supports tuple manipulation, element iteration, and parallel processing with customizable reduction functions. Operations include comparing, hashing, serializing, and counting elements within nested structures. Examples include reassociating nested eithers, parallel mapping over collections, and aggregating results while preserving error states.",
+      "description_length": 488,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Accessor_base.Error",
+      "description": "Provides accessors to retrieve error information and lazy error representations. Works with `Base.Error.t` and its lazy variant `Base.Error.t Base.Lazy.t`. Used to inspect error details or handle errors that are evaluated on demand.",
+      "description_length": 232,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Accessor_base.Float",
+      "description": "Provides accessors for modifying a float through negation, addition, subtraction, multiplication, and division. Operates on base float values and returns accessor objects that apply these operations. Used to dynamically adjust numeric values in data transformation pipelines.",
+      "description_length": 275,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Accessor_base.Fn",
+      "description": "Provides operations to transform, filter, and aggregate values through higher-order functions, including mapping with or without indices, flipping function arguments, and inverting predicates. Works with functions, predicates, and indexed data structures, enabling tasks like counting matches, summing results, and reducing collections. Supports complex workflows such as applying a function to each element with context, reversing argument order, and generating results based on custom logic.",
+      "description_length": 493,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Accessor_base.Info",
+      "description": "Provides access to a lazy representation of Info.t, allowing observation of evaluation state. Works with Base.Info.t and Base.Info.t Base.Lazy.t. Enables efficient handling of potentially expensive computations tied to information structures.",
+      "description_length": 242,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Accessor_base.Int",
+      "description": "Provides accessors for modifying integers through arithmetic and bitwise operations. Works with base integers and boolean values derived from individual bits. Enables direct manipulation of integer values, such as negating, incrementing, or checking specific bit positions.",
+      "description_length": 273,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Accessor_base.List",
+      "description": "This module offers list manipulation functions for operations like traversal, transformation, and aggregation, including checks for emptiness, element extraction, and reverse operations, while supporting parallel or sequential processing of non-empty data through map-reduce patterns. It works with arbitrary lists and non-empty structures, enabling efficient element-wise computation and combination via indexed or non-indexed accessors. Use cases include parallel data processing, list-based algorithm optimization, and handling non-empty collections with customizable reduction strategies.",
+      "description_length": 592,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Accessor_base.Map",
+      "description": "The module offers operations for accessing, transforming, and iterating over key-value pairs, including retrieving values by key and constructing maps from accessor-based data. It works with generic map types that support indexed or ranged access, enabling tasks like summing values, counting occurrences, and reducing with combine functions. These capabilities are useful for processing structured data, aggregating results, and managing key-based transformations in applications requiring efficient data manipulation.",
+      "description_length": 519,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Accessor_base.Maybe_bound",
+      "description": "Provides functions to modify bounds of a value, including adding a lower bound, removing a lower bound, and setting an unbounded state. Operates on `Base.Maybe_bound.t` type, which represents values with optional lower bounds. Used to adjust constraints in numerical ranges or similar structured data.",
+      "description_length": 301,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Accessor_base.Option",
+      "description": "Provides operations to handle optional values, including mapping, iteration, and reduction with control over parallel or sequential execution. Works with option types and indexable collections, enabling transformations and aggregations that account for absence of values. Supports default value substitution and ensures safe handling of empty or non-empty sequences.",
+      "description_length": 366,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Accessor_base.Or_error",
+      "description": "Provides operations to transform, iterate, and aggregate values wrapped in an error-aware type, supporting both sequential and parallel execution. Works with data structures that can be indexed or iterated over, such as lists, arrays, and other container-like types. Enables error handling during mapping, counting, and reduction, allowing for safe accumulation of results while preserving error context.",
+      "description_length": 404,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Accessor_base.Ordering",
+      "description": "Provides comparison operations to determine less than, equal to, and greater than relationships between values. Works with custom types that implement ordering logic through the Base.Ordering.t type. Used to define custom sorting criteria in data processing pipelines.",
+      "description_length": 268,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Accessor_base.Result",
+      "description": "Provides operations to transform, combine, and aggregate results, handling success and failure states. Works with result types that encapsulate either a value or an error. Applies functions to elements of collections, accumulates results, and checks conditions across elements, returning a single result or error.",
+      "description_length": 313,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Accessor_base.Sequence",
+      "description": "Processes structured data through transformation, iteration, and aggregation, supporting parallel and sequential execution. Handles generator sequences that produce values or errors and interacts with accessor-based data structures. Offers operations such as mapping indexed elements, summing results, counting matches, and reducing collections with custom functions. Examples include calculating totals from large datasets, filtering based on conditions, and combining elements with user-defined logic.",
+      "description_length": 503,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Accessor_base.Set",
+      "description": "Checks if a key exists in a set, returns a boolean or unit based on presence, and allows iterating over all elements. Operates on sets of keys with associated comparators. Used to validate membership in configuration options and extract all elements for processing.",
+      "description_length": 265,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Accessor_base.Sexp",
+      "description": "Provides operations to access and transform S-expressions, including extracting atoms, list children, tuple elements, and fields by name. Works with Sexp.t and related list and tuple structures, enabling precise navigation of nested data. Supports converting between S-expressions and OCaml types, with options for strict or optional conversion.",
+      "description_length": 345,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Accessor_base.Sign",
+      "description": "Handles sign manipulation for numerical values by providing operations to negate, check for zero, and verify positivity. Works with the `Base.Sign.t` type and associated accessors. Used to conditionally alter behavior based on the sign of a value in mathematical or validation logic.",
+      "description_length": 283,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Accessor_base.Sign_or_nan",
+      "description": "Provides accessors to extract negative, zero, positive, or NaN values from a Sign_or_nan type. Works with the Base.Sign_or_nan.t data structure to distinguish between signed and NaN representations. Used to conditionally process numerical values based on their sign or NaN status in numerical computations.",
+      "description_length": 306,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Accessor_base.Source_code_position",
+      "description": "Extracts file name, line number, column number, and beginning-of-line offset from source code position data. Operates on `Base.Source_code_position.t` to retrieve specific attributes. Used to track and report exact locations in source files during parsing or error handling.",
+      "description_length": 274,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Accessor_base.Staged",
+      "description": "Provides functions to transform and manipulate values within a staged computation context, supporting both staged and unstage operations. Works with base types and staged versions of those types, enabling controlled evaluation timing. Used to lift computations into a staged environment for later execution or to convert staged results back to normal values.",
+      "description_length": 358,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Accessor_base.String",
+      "description": "Provides operations to access and transform strings, including converting to a list of characters, reversing the string, iterating over characters with or without indices, checking for prefixes or suffixes, and converting to other types with optional error handling. Works with base string types and character lists. Used to process text data, validate string formats, and perform type-safe conversions.",
+      "description_length": 403,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Accessor_base.Tuple2",
+      "description": "Extracts and transforms values from nested tuples and structured data using indexed and non-indexed mappings. Supports operations like accessing components with their index, reassociating nested tuples, and applying functions to specific fields. Can map over elements while preserving or utilizing indices, enabling precise data manipulation. For example, it allows extracting the second element of a tuple while treating the first as an index, or reorganizing deeply nested structures for easier processing.",
+      "description_length": 508,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "accessor_base",
+      "description": "Provides functions to extract and modify fields in records using reflection, supporting nested access and updates. Operates on OCaml record types and variant types with labeled fields. Enables dynamic field retrieval in plugins and serialization frameworks.",
+      "description_length": 257,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Accessor_base",
+      "description": "Provides a framework for transforming and accessing nested data through a variety of accessors, supporting operations on booleans, floats, integers, lists, maps, options, errors, and structured types. Core types include `t`, `Either`, `Base.Error.t`, `Base.Sign.t`, and `Base.Source_code_position.t`, with operations like mapping, filtering, aggregation, and conditional checks. Examples include negating booleans, adjusting numeric values, extracting elements from tuples, and handling error-aware computations.",
+      "description_length": 512,
+      "index": 30,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 70,
+    "meaningful_modules": 31,
+    "filtered_empty_modules": 39,
+    "retention_rate": 0.44285714285714284
+  },
+  "statistics": {
+    "max_description_length": 592,
+    "min_description_length": 232,
+    "avg_description_length": 359.48387096774195,
+    "embedding_file_size_mb": 0.11298561096191406
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "package": "http",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 13,
+  "creation_timestamp": "2025-06-18T16:32:33.804834",
+  "modules": [
+    {
+      "module_path": "Http.Private.Parser",
+      "description": "Parses a string buffer into an HTTP request, returning the request structure and an offset indicating remaining unconsumed data. Extracts chunk length values from a buffer for HTTP chunked transfer encoding. Processes raw HTTP data to validate and structure incoming requests.",
+      "description_length": 276,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Http.Header.Private",
+      "description": "Compares two strings in a case-insensitive manner by converting both to lowercase ASCII before checking equality. Operates directly on string values without additional abstractions. Used to validate user input against stored values where case variation is irrelevant.",
+      "description_length": 267,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Http.Transfer.Private",
+      "description": "Checks if a given encoding specifies a body part, returning whether it is present, absent, or indeterminate. Works with encoding data structures representing message components. Used to filter or process message parts based on their content presence.",
+      "description_length": 250,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Http.Version",
+      "description": "Compares version strings by parsing them into a structured format and evaluating their numerical components. Parses and serializes version identifiers from and to strings, supporting semantic versioning conventions. Formats version values for human-readable output using OCaml's formatting library.",
+      "description_length": 298,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Http.Method",
+      "description": "Compares method values using a custom ordering function, checks if a method permits a payload body based on HTTP standards, converts between string representations and internal method types, and formats method values for output. Operates on an abstract type representing HTTP methods. Used to validate HTTP request methods and ensure proper handling of request bodies in network protocols.",
+      "description_length": 389,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Http.Status",
+      "description": "Provides functions to convert status codes between integers and custom types, retrieve reason phrases, and compare status values. Works with specialized variants representing HTTP status categories like informational, success, and client_error. Used to handle HTTP response codes, manage redirects, and generate appropriate client or server responses.",
+      "description_length": 351,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Http.Transfer",
+      "description": "Handles HTTP/1.1 transfer-encoding formats, focusing on chunked and content-length encodings. It provides operations to determine the presence of message bodies using encoding data structures. Users can check if a message includes a body, skip processing when absent, or handle chunked data streams. Examples include validating request bodies before processing or parsing streamed content incrementally.",
+      "description_length": 403,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Http.Header",
+      "description": "Compares string equality in a case-insensitive manner by normalizing both to lowercase ASCII. Supports direct string operations without intermediate types. Can verify user input against stored values, such as checking \"Hello\" against \"HELLO\" as equal. Provides a lightweight, efficient method for case-insensitive comparisons in validation scenarios.",
+      "description_length": 350,
+      "index": 7,
+      "embedding_norm": 1.0000001192092896
+    },
+    {
+      "module_path": "Http.Request",
+      "description": "Provides methods to inspect and manipulate HTTP request properties, including checking for a body, extracting headers, method, resource, and version. Works with request-specific data types such as method, header, and version. Used to determine connection reuse, content length requirements, and to add support for chunked trailers in HTTP requests.",
+      "description_length": 348,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Http.Response",
+      "description": "Provides functions to extract and manipulate HTTP response components such as headers, version, status, and content length. Works with types representing HTTP versions, status codes, and headers. Used to determine connection reuse policies and content length requirements based on response and request methods.",
+      "description_length": 310,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Http.Private",
+      "description": "Processes raw HTTP data to parse requests, extract chunk lengths, and validate structures, while tracking unconsumed buffer content. It handles HTTP chunked transfer encoding by identifying chunk sizes and manages request validation and structuring. Key data types include request structures, buffer offsets, and chunk length values. Examples include parsing an incoming HTTP request from a string and extracting chunk sizes for streaming data.",
+      "description_length": 444,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "http",
+      "description": "Provides HTTP request and response parsing, serialization, and handling with support for HTTPS through TLS. Works with message structures, headers, and body streams for network communication. Used to build scalable HTTP servers that manage encrypted and unencrypted traffic efficiently.",
+      "description_length": 286,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Http",
+      "description": "Processes HTTP data by parsing requests, handling chunked encoding, and validating structures, while tracking unconsumed buffer content. It works with request structures, buffer offsets, and chunk length values to extract and manage HTTP components. Functions include parsing raw data, identifying chunk sizes, and validating request formats. Used for processing incoming HTTP streams, extracting chunked content, and ensuring proper request structuring.",
+      "description_length": 454,
+      "index": 12,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 13,
+    "meaningful_modules": 13,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 454,
+    "min_description_length": 250,
+    "avg_description_length": 340.46153846153845,
+    "embedding_file_size_mb": 0.04765033721923828
+  }
+}

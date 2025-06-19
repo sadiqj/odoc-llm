@@ -1,0 +1,133 @@
+{
+  "package": "mirage-crypto",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 16,
+  "creation_timestamp": "2025-06-18T16:34:22.575846",
+  "modules": [
+    {
+      "module_path": "Mirage_crypto.AES.ECB",
+      "description": "Constructs encryption keys from secrets and supports encryption and decryption of fixed-size blocks. Operates on strings and byte buffers, requiring input lengths to be multiples of the block size. Provides in-place encryption and decryption with offset and length controls for precise data handling.",
+      "description_length": 300,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mirage_crypto.AES.CBC",
+      "description": "Constructs encryption keys from secrets, handles block cipher operations with fixed block sizes, and supports both in-place and buffer-based encryption and decryption. Operates on strings for input/output and bytes for efficient data manipulation. Enables secure message encryption with CBC mode, including generation of initialization vectors for sequential message processing.",
+      "description_length": 378,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mirage_crypto.AES.CTR",
+      "description": "Constructs encryption keys from secrets, manages counter states for block cipher operations, and generates keystreams for encryption and decryption. Operates on secret strings, cryptographic keys, and 128-bit counter values represented as pairs of 64-bit integers. Enables secure stream encryption of arbitrary-length messages and in-place encryption/decryption into byte buffers.",
+      "description_length": 380,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mirage_crypto.AES.GCM",
+      "description": "Provides functions to generate encryption keys from secrets, encrypt and decrypt data with authentication, and manage authentication tags. Operates on strings for input/output, bytes for in-place operations, and a key type derived from secret strings. Used for secure communication protocols requiring authenticated encryption, such as encrypting messages with integrity checks.",
+      "description_length": 378,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mirage_crypto.AES.CCM16",
+      "description": "Provides functions to generate encryption keys from secrets, encrypt and decrypt messages with authentication, and manage authentication tags. Operates on strings for messages, nonces, and authentication data, and uses byte buffers for in-place operations. Supports authenticated encryption with associated data, tag separation, and buffer-based encryption/decryption for performance-critical applications.",
+      "description_length": 406,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mirage_crypto.DES.ECB",
+      "description": "Constructs encryption keys from secrets, validates key and block sizes, and performs in-place and out-of-place encryption and decryption of binary data. Operates on strings and byte buffers, ensuring input lengths are multiples of the block size. Used for securing data streams by applying symmetric key encryption directly to raw byte sequences.",
+      "description_length": 346,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mirage_crypto.DES.CBC",
+      "description": "Constructs encryption keys from secrets, handles block cipher operations with fixed block sizes, and supports both in-place and direct encryption/decryption of data. Works with strings for input/output and bytes for efficient in-place operations. Used to securely process messages in CBC mode, manage initialization vectors, and derive subsequent IVs for chained encryption.",
+      "description_length": 374,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mirage_crypto.DES.CTR",
+      "description": "Constructs encryption keys from secrets, manages counter states for block cipher operations, and generates keystreams for encryption and decryption. Operates on strings, integers, and 64-bit counters, with support for byte-level manipulation. Used to securely encrypt messages in streaming contexts, maintain state across multiple messages, and efficiently apply keystreams to buffers.",
+      "description_length": 385,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mirage_crypto.Poly1305",
+      "description": "Computes Poly1305 message authentication codes using a 32-byte key, processing data through sequential updates or iterators. Operates on strings, byte sequences, and custom iterators that consume elements one by one. Used for generating or verifying message authentication tags from concatenated data fragments or streaming inputs.",
+      "description_length": 331,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mirage_crypto.Block",
+      "description": "Constructs encryption keys from secrets and manages counter states for block cipher operations. Works with cryptographic keys and counter values, supporting byte-level encryption and keystream generation. Enables secure message encryption by generating and advancing counters, and provides in-place operations for efficient data processing.",
+      "description_length": 340,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mirage_crypto.AES",
+      "description": "Combines key derivation, block and stream encryption, and authenticated encryption capabilities, supporting multiple modes like CBC and CTR. Handles strings, byte buffers, and cryptographic keys, with operations for in-place and buffer-based encryption/decryption. Enables secure message transmission with integrity checks, IV generation, and keystream management. Examples include encrypting fixed-size blocks, securing arbitrary-length data with counters, and adding authentication tags to messages.",
+      "description_length": 501,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mirage_crypto.DES",
+      "description": "Generates and manages encryption keys, performs block cipher operations with fixed sizes, and supports encryption and decryption in CBC and CTR modes. Handles input as strings or byte buffers, with operations that can be in-place or direct, and manages initialization vectors or counters for secure data processing. Supports secure message encryption, keystream generation for streaming data, and stateful encryption across multiple messages. Examples include encrypting raw data streams, deriving IVs for chained encryption, and applying keystreams to large buffers.",
+      "description_length": 567,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mirage_crypto.Chacha20",
+      "description": "Provides encryption and decryption with authentication using the ChaCha20 algorithm, including functions to generate keys from secrets, encrypt messages with associated data, and verify authentication tags. Operates on strings for input and output, and uses byte sequences for in-place operations. Supports both IETF and original ChaCha20 specifications with different nonce and counter configurations.",
+      "description_length": 402,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mirage_crypto.ARC4",
+      "description": "Encodes and decodes strings using the ARC4 stream cipher, accepting a secret string to generate a key. It processes plaintext into encrypted byte sequences and reverses the process with decryption. The key is derived from a string, and results are returned as structured data containing the output bytes.",
+      "description_length": 304,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "mirage-crypto",
+      "description": "Provides AES, RSA, and elliptic curve operations with built-in support for secure random number generation and protection against timing attacks. Works with byte sequences, keys, and cryptographic contexts to enable encryption, decryption, and key exchange. Used for implementing secure communication protocols and data integrity checks in networked applications.",
+      "description_length": 363,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mirage_crypto",
+      "description": "Provides functions to create a key from a secret string, and to encrypt or decrypt a string using that key. Operates on string data and returns a result type containing the encrypted or decrypted output. Used for securing data streams with symmetric encryption.",
+      "description_length": 261,
+      "index": 15,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 16,
+    "meaningful_modules": 16,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 567,
+    "min_description_length": 261,
+    "avg_description_length": 376.0,
+    "embedding_file_size_mb": 0.05856609344482422
+  }
+}

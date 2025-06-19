@@ -1,0 +1,133 @@
+{
+  "package": "petrol",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 16,
+  "creation_timestamp": "2025-06-18T16:35:39.753808",
+  "modules": [
+    {
+      "module_path": "Petrol.Type.Numeric",
+      "description": "Performs arithmetic and comparison operations on numeric types, including addition, subtraction, multiplication, division, and equality checks. Works with parameterized types 'a integral and 'a t, supporting integers and floating-point numbers. Enables precise calculations in contexts like financial computations and scientific simulations.",
+      "description_length": 341,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Petrol.Postgres.Type",
+      "description": "Provides a foundation for working with Postgres data types by defining core representations and conversions. Includes basic type aliases and encoding/decoding operations for standard database values. Supports direct manipulation of type information in queries and results. Enables precise handling of nulls, integers, and strings within database interactions.",
+      "description_length": 359,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Petrol.Postgres.Expr",
+      "description": "The module enables construction of type-safe SQL expressions through arithmetic, comparison, and predicate operations on numeric, boolean, and string-typed values, including features like null checks, type coercion, and aggregation. It supports SQL-compliant manipulations such as trigonometric functions, string transformations, and conditional logic, operating on structured expressions to ensure type integrity. Use cases include building dynamic queries with precise type validation, handling database updates, and implementing complex filtering or aggregation rules.",
+      "description_length": 571,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Petrol.Sqlite3.Type",
+      "description": "Defines the set of SQL data types supported by the system. Includes basic type representations such as integer, real, text, and blob, along with their corresponding SQL syntax. Operations include type checking, conversion, and serialization to SQL-compatible formats. Examples include storing numeric values, handling string data, and managing binary content in database records.",
+      "description_length": 379,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Petrol.Sqlite3.Expr",
+      "description": "This module enables the construction of well-typed SQL expressions through arithmetic, comparison, and logical operations on numeric, string, and boolean values, alongside SQL-specific functions like `exists`, `in_`, and `between`. It supports aggregations (e.g., `count`, `max`), string transformations (e.g., `lower`, `upper`), and type-safe manipulations such as nullability checks and coercion, operating on typed SQL values and generic numeric types. Use cases include building dynamic queries, ensuring type safety in database operations, and handling complex data transformations within SQL contexts.",
+      "description_length": 607,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Petrol.Expr",
+      "description": "Provides functions to pretty-print SQL expressions and expression lists, with support for type-erased expression types. Works with polymorphic expression types, wrapped assignments, and list structures of expressions. Used for debugging and generating human-readable SQL output during query construction.",
+      "description_length": 304,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Petrol.Type",
+      "description": "Performs arithmetic and comparison operations on parameterized numeric types, supporting integers and floating-point numbers through 'a integral and 'a t. Includes addition, subtraction, multiplication, division, and equality checks for precise calculations. Enables tasks such as financial computations and scientific simulations with guaranteed type safety. Operations can be applied to both concrete and abstract numeric representations.",
+      "description_length": 440,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Petrol.Request",
+      "description": "Constructs SQL requests with specific result multiplicities using `make_zero`, `make_one`, `make_zero_or_one`, and `make_many`, each returning a request type that enforces expected outcome constraints. Operates on query types with parameterized result and multiplicity types, ensuring type-safe execution with Caqti. Used to generate cached, type-checked database queries for scenarios requiring exact result counts, such as fetching a single record or handling optional results.",
+      "description_length": 479,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Petrol.Sqlite3",
+      "description": "Provides a domain-specific language for constructing and manipulating SQL queries with type safety. It includes SQL data types like integer, real, text, and blob, along with operations for type conversion, serialization, and validation. It supports building complex SQL expressions with arithmetic, comparisons, logical operations, and built-in functions, enabling dynamic query generation and safe data handling. Examples include creating typed queries, managing null values, and performing string and numeric transformations within database operations.",
+      "description_length": 554,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Petrol.Postgres",
+      "description": "Provides a domain-specific language for constructing and manipulating Postgres SQL queries with type safety. It includes core data type representations, encoding/decoding utilities, and operations for building expressions involving numbers, strings, and booleans, along with support for null handling and aggregation. Users can create dynamic queries, perform type-checked arithmetic and comparisons, and apply SQL functions like trigonometric calculations or string transformations. Examples include generating safe query fragments, validating input types, and constructing complex filtering conditions.",
+      "description_length": 604,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Petrol.Schema",
+      "description": "Constructs SQL table columns and constraints using a domain-specific language, including primary keys, foreign keys, unique constraints, and not-null restrictions. Operates on types like `field`, `constraint_`, and `table`, with support for column and table-level constraints. Enables creation of structured SQL schemas with explicit control over column types, relationships, and integrity rules.",
+      "description_length": 396,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Petrol.Query",
+      "description": "This module enables the construction of SQL queries through a type-safe embedded domain-specific language, supporting operations like SELECT, UPDATE, INSERT, DELETE, and JOIN with clauses such as WHERE, GROUP BY, and ORDER BY. It works with typed abstract syntax trees to represent query structures, allowing incremental composition of complex queries. Specific use cases include configuring error handling for INSERT and UPDATE operations via strategies like ABORT or REPLACE, and building structured SQL statements with precise syntactic controls.",
+      "description_length": 549,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Petrol.StaticSchema",
+      "description": "Declares and manages a static SQL schema with table definitions and constraints, allowing for the creation of named tables with specified column expressions. It operates on a schema type `t` and uses table specifications that include column expressions and constraints. This is used to set up a database schema in a controlled, non-versioned environment during development or testing.",
+      "description_length": 384,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Petrol.VersionedSchema",
+      "description": "Constructs version numbers from lists of integers and manages schema initialization with migration scripts. Operates on versioned data structures, including migration lists and table specifications with version constraints. Enables checking and applying database migrations based on declared schema versions.",
+      "description_length": 308,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "petrol",
+      "description": "Provides functions for defining SQL schemas, declaring tables with typed fields, and constructing type-safe SQL queries through a domain-specific language. Works with OCaml types, expressions, and database connections to generate and execute SQL operations. Enables inserting records into a database by composing query expressions that map directly to table structures.",
+      "description_length": 369,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Petrol",
+      "description": "Combines SQL expression formatting, type-safe numeric operations, and query construction to enable robust database interactions. Supports SQL query building with result multiplicity constraints, type-checked expressions, and schema management. Provides tools for generating human-readable SQL, performing precise calculations, and defining structured database schemas. Examples include creating typed queries with constraints, generating safe SQL fragments, and managing schema versions through migrations.",
+      "description_length": 506,
+      "index": 15,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 20,
+    "meaningful_modules": 16,
+    "filtered_empty_modules": 4,
+    "retention_rate": 0.8
+  },
+  "statistics": {
+    "max_description_length": 607,
+    "min_description_length": 304,
+    "avg_description_length": 446.875,
+    "embedding_file_size_mb": 0.05854225158691406
+  }
+}

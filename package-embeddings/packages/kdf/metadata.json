@@ -1,0 +1,63 @@
+{
+  "package": "kdf",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 6,
+  "creation_timestamp": "2025-06-18T16:29:46.810680",
+  "modules": [
+    {
+      "module_path": "Hkdf.Make",
+      "description": "This module offers cryptographic operations including hash generation and HMAC authentication for byte sequences, strings, and bigstrings, supporting both direct and incremental processing. It handles structured data through abstract types for context management and provides utilities for converting HMAC outputs to hexadecimal or raw byte formats, enabling secure message authentication and integrity verification. Use cases include secure communication protocols and data validation where cryptographic strength is critical.",
+      "description_length": 527,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pbkdf.Make",
+      "description": "This module offers cryptographic hashing and HMAC generation capabilities, supporting incremental and single-shot processing of bytes, strings, and bigstrings, along with utilities for converting and comparing HMAC values. It works with abstract types for context management and structured data, enabling secure data authentication and integrity verification in scenarios like secure communications or file hashing. Specific use cases include generating message authentication codes for network protocols and handling large datasets through iterative data feeding.",
+      "description_length": 564,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "kdf",
+      "description": "Computes cryptographic key derivations using PBKDF1 and PBKDF2 algorithms, accepting passwords, salts, and iteration counts as inputs. Processes byte sequences and integers to generate secure key outputs. Used for password-based encryption and authentication scenarios requiring key stretching.",
+      "description_length": 294,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Scrypt",
+      "description": "Derives secret keys from a password and salt using the scrypt algorithm, with parameters controlling computational and memory costs. Accepts password, salt, and integer parameters n, r, p, and a 32-bit length for the output key. Used for securely generating cryptographic keys in applications requiring resistance to hardware-based attacks.",
+      "description_length": 340,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hkdf",
+      "description": "Extracts a pseudorandom key from input key material and an optional salt, then expands it into output keying material using a context-specific info string and desired length. Operates on byte strings to produce cryptographic keys suitable for symmetric encryption or authentication. Used in protocols requiring key derivation from shared secrets, such as establishing session keys in TLS.",
+      "description_length": 388,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pbkdf",
+      "description": "Derives cryptographic keys from passwords using PBKDF1 and PBKDF2 algorithms, with PBKDF1 requiring an 8-byte salt and PBKDF2 supporting longer salts. Accepts password, salt, iteration count, and desired key length to generate a derived key as a string. Used for secure password storage and authentication by transforming passwords into fixed-length keys.",
+      "description_length": 355,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 6,
+    "meaningful_modules": 6,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 564,
+    "min_description_length": 294,
+    "avg_description_length": 411.3333333333333,
+    "embedding_file_size_mb": 0.02224254608154297
+  }
+}

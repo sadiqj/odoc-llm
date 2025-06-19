@@ -1,0 +1,119 @@
+{
+  "package": "pgx",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 14,
+  "creation_timestamp": "2025-06-18T16:33:48.423209",
+  "modules": [
+    {
+      "module_path": "Pgx.Make.Io",
+      "description": "Provides monadic operations for sequencing and error handling in asynchronous computations, including binding, exception catching, and resource protection. Works with thread-based computations and SSL configuration structures. Used to manage I/O operations with safe resource cleanup and error recovery.",
+      "description_length": 303,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pgx.Make.Prepared",
+      "description": "Provides functions to prepare, execute, and manage PostgreSQL SQL statements, including parameter binding, result processing, and resource cleanup. Operates on a statement handle type `s` and PostgreSQL value options, supporting both row retrieval and side-effect operations. Used for executing parameterized queries, handling result sets with custom folding or iteration, and managing database resources efficiently.",
+      "description_length": 417,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pgx.Make.Sequencer",
+      "description": "Manages a sequence of operations that execute in order, applying a function to each element in a context that supports monadic transformations. It works with a custom monad type and a structured sequence container. Used to process a series of dependent computations where each step's output influences the next.",
+      "description_length": 311,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pgx.Access",
+      "description": "Provides serialization and string conversion for a type representing access control information. Works with a custom type `t` and integrates with S-expressions for parsing and generation. Used to convert access data between binary and textual formats for logging and configuration.",
+      "description_length": 281,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pgx.Isolation",
+      "description": "Provides serialization and string conversion for a type `t` using S-expressions and human-readable strings. Works with a custom data type encapsulating arbitrary values. Used to convert internal representations into serializable formats for logging or persistence.",
+      "description_length": 264,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pgx.Error_response",
+      "description": "Provides serialization and deserialization between a custom error type and S-expressions, along with methods to determine if an error should be printed based on a verbosity level and to generate a string representation with optional detailed output. Works with a structured error type containing error codes, messages, and context. Used to format error outputs for logging or user display, enabling conditional verbosity control during program execution.",
+      "description_length": 454,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pgx.Result_desc",
+      "description": "Represents database column metadata, including name, OID, type, and length. Converts between internal representation and S-expressions, and constructs from PostgreSQL row descriptions. Used to inspect and serialize schema information during database interactions.",
+      "description_length": 263,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pgx.Value",
+      "description": "The module provides comparison, serialization (Sexp), and bidirectional conversion operations between a generic type `t` and diverse data representations such as hstore, inet, UUIDs, binary strings, booleans, floats, integers, and lists, with explicit error handling via option types and exceptions. It supports specialized operations like UUID comparison, point handling, and optional value management, making it suitable for tasks involving database type conversions or data format transformations. Specific use cases include processing structured data in applications requiring robust type safety and interoperability.",
+      "description_length": 621,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pgx.Make",
+      "description": "Encapsulates a sequence of dependent operations, each transforming a value within a custom monad. It supports chaining and composition of functions that modify state or handle side effects. Key types include the monad and a structured sequence container, with operations like bind and map. It enables complex workflows such as parsing, validation, and stateful processing with explicit control flow.",
+      "description_length": 399,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pgx.Sequencer",
+      "description": "Manages a sequence of operations that transform values through a monadic context. It works with a custom monad type and a structured queue system. Processes tasks by enqueuing functions that produce monadic results, enabling controlled execution flow.",
+      "description_length": 251,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pgx.Io",
+      "description": "Provides monadic operations for sequencing and error handling in I/O workflows, including binding, exception catching, and resource protection. Works with asynchronous or effectful computations represented as `'a t` and SSL configuration data of type `ssl_config`. Used to manage network connections, file operations, and other side-effecting tasks with structured error recovery and cleanup.",
+      "description_length": 392,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pgx.Prepared",
+      "description": "Provides functions to prepare, execute, and manage PostgreSQL SQL statements, including parameter binding, result processing, and resource cleanup. Works with statement handles (`s`), parameter lists, and result descriptions, supporting both row-based and bulk operations. Used for executing parameterized queries, handling large datasets, and managing database transactions with precise control over portals and prepared statements.",
+      "description_length": 433,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "pgx",
+      "description": "Provides functions for executing SQL queries, managing prepared statements, and handling database connections with support for asynchronous and synchronous execution models. Works with data types such as query results, parameterized statements, and connection configurations. Used to safely interact with PostgreSQL databases in applications requiring reliable and type-safe database operations.",
+      "description_length": 395,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pgx",
+      "description": "manages I/O and database operations through structured monadic workflows and SQL execution, combining error handling, resource management, and asynchronous processing. It handles computations wrapped in `'a t` and SSL configurations, along with PostgreSQL statement handles, parameters, and result sets. Operations include executing parameterized queries, managing transactions, and processing large datasets with precise control. Examples include safely opening network connections, executing prepared SQL statements, and cleaning up resources after asynchronous file I/O.",
+      "description_length": 573,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 14,
+    "meaningful_modules": 14,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 621,
+    "min_description_length": 251,
+    "avg_description_length": 382.64285714285717,
+    "embedding_file_size_mb": 0.051300048828125
+  }
+}

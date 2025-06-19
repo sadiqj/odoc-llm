@@ -1,0 +1,161 @@
+{
+  "package": "jsont",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 20,
+  "creation_timestamp": "2025-06-18T16:36:11.511294",
+  "modules": [
+    {
+      "module_path": "Jsont.Repr.Type.Id",
+      "description": "Generates unique identifiers with a numeric signature and enables safe comparison between different typed identifiers. Operates on parameterized type 'a t, ensuring type safety during equality checks. Used to track distinct entities in a system where type-specific uniqueness is critical.",
+      "description_length": 288,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Jsont.Error.Context",
+      "description": "Provides operations to build and query context paths for JSON error tracking, including pushing array and object elements with named indices. Works with nested lists of index tuples representing path segments. Used to trace error locations within structured JSON data during parsing or validation.",
+      "description_length": 297,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Jsont.Repr.String_map",
+      "description": "The module provides operations for creating, modifying, and querying string-keyed mappings, including adding, removing, updating, and merging entries, as well as retrieving bindings and checking cardinality. It supports ordered traversal, predicate-based filtering, and transformation of key-value pairs, enabling efficient data manipulation and aggregation. Use cases include managing configuration settings, processing structured data, and implementing lookup tables with dynamic key-value relationships.",
+      "description_length": 506,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Jsont.Repr.Type",
+      "description": "Manages typed identifiers with unique numeric signatures, ensuring safe and accurate comparisons across different types. It operates on a parameterized type 'a t, enforcing type safety in equality checks and preventing unintended matches. This allows for precise tracking of distinct entities in systems requiring strict type-based uniqueness. For example, it can distinguish between two integers of the same value if they belong to different type categories.",
+      "description_length": 459,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Jsont.Repr.Dict",
+      "description": "Provides operations to manage key-value pairs where keys are typed identifiers. Works with a custom `t` type representing the dictionary and `binding` type for individual entries. Supports adding, removing, checking existence, and retrieving values based on unique type-identified keys.",
+      "description_length": 286,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Jsont.Object.Mem",
+      "description": "Provides functions to manipulate member maps for object structures, including applying transformations to specific fields. Works with object_map and map types that associate keys with values or constructors. Used to dynamically adjust or extract members in JSON-like object processing workflows.",
+      "description_length": 295,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Jsont.Object.Case",
+      "description": "Provides functions to define and manipulate case-based object structures where the shape of an object depends on a specific tag value. Works with maps that associate tag values to case-specific object structures and generates case values and typed objects. Used to construct JSON-like objects with dynamic schemas based on a discriminant field.",
+      "description_length": 344,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Jsont.Object.Mems",
+      "description": "Maps unknown members of uniform type to values of type 'mems built with a custom builder. Accepts metadata and provides hooks for constructing, adding, and finishing the builder. Encodes or decodes members using a provided function, supporting named members via string keys.",
+      "description_length": 274,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Jsont.Textloc",
+      "description": "The module offers operations to create, modify, and compare text spans using byte and line position ranges, working with types like `t`, `byte_pos`, `line_num`, and `fpath`. It supports range adjustments, relocation, and formatting, enabling tasks such as tracking code fragments in editors or analyzing structured text. Specific use cases include handling empty spans, combining ranges, and repositioning text locations within files.",
+      "description_length": 434,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Jsont.Meta",
+      "description": "Tracks source text location and surrounding whitespace for AST nodes. Provides operations to create, modify, and query metadata with precise control over whitespace before and after nodes. Used to preserve formatting and positional information during parsing and transformation workflows.",
+      "description_length": 288,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Jsont.Path",
+      "description": "Provides operations to construct and manipulate paths representing locations in JSON data structures. Works with index types and path types to navigate arrays and objects, supporting parsing from strings and formatting for debugging. Enables tracking of error contexts through indexed path traversal and reverse index extraction.",
+      "description_length": 329,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Jsont.Sort",
+      "description": "Provides functions to convert sort values to strings, format them for output, and construct labeled versions of sorts. Operates on a custom type `t` representing JSON sorts and string labels. Used to generate human-readable representations of sorts with optional prefixes.",
+      "description_length": 272,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Jsont.Error",
+      "description": "Tracks error locations within nested JSON structures using path segments built from index tuples. Supports operations to construct, modify, and query these paths, enabling precise error localization during data processing. Key data types include path segments and composite path structures, with operations for pushing array and object elements. Examples include tracing an error to a specific array index within a nested object or identifying a missing field in a complex data structure.",
+      "description_length": 488,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Jsont.Base",
+      "description": "Provides functions to map JSON base types\u2014such as null, boolean, number, and string\u2014between OCaml values and their JSON representations. Supports custom decoding and encoding with metadata handling, and includes specialized maps for identity, ignoring, and error-prone conversions. Used to construct decoders and encoders that integrate with JSON parsing and serialization workflows.",
+      "description_length": 383,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Jsont.Array",
+      "description": "Maps JSON arrays to OCaml arrays, lists, and bigarrays using customizable decoding and encoding strategies. Supports element-wise transformation with callbacks for skipping, adding, and finishing the build process. Handles metadata and provides specialized mappings for different array types and layouts.",
+      "description_length": 304,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Jsont.Object",
+      "description": "manages JSON-like object structures through three core capabilities: transforming specific fields in object maps, constructing objects with dynamic schemas based on tag values, and handling unknown members with a customizable builder. It works with object_map, map, and mem types, enabling operations like field transformation, case-based object creation, and member encoding/decoding. For example, it can adjust nested fields in a JSON object, generate different object shapes based on a discriminant, or collect unnamed members into a structured format. Functions support both static and dynamic object processing, allowing flexible manipulation of structured data.",
+      "description_length": 667,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Jsont.Json",
+      "description": "The module provides functions for constructing, transforming, and comparing JSON values, including handling numeric types, metadata, and layout preservation. It works with JSON data structures like arrays, objects, strings, and numbers, enabling operations such as member extraction, type conversion, and error-aware encoding/decoding. Use cases include serializing OCaml data structures, processing configuration files, and exchanging structured data in APIs.",
+      "description_length": 460,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Jsont.Repr",
+      "description": "Provides operations for handling JSON-like structures through typed key-value mappings, numeric identifiers, and custom dictionaries. It includes creating and manipulating string-based maps, managing unique type-identified keys with safe comparisons, and working with custom `t` types for structured data. Users can build dynamic lookup tables, track distinct entities with type safety, and process JSON representations with precise control over key-value relationships. Examples include configuring systems with typed settings, ensuring safe equality checks in heterogeneous data, and transforming structured data during serialization.",
+      "description_length": 636,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "jsont",
+      "description": "Provides combinators to define JSON structures using OCaml values, enabling direct decoding, encoding, querying, and updating of JSON data. Works with OCaml types and JSON representations, preserving layout and location information when needed. Used to build custom JSON processors or integrate with effectful systems requiring precise data manipulation.",
+      "description_length": 354,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Jsont",
+      "description": "Provides bidirectional mapping between OCaml values and JSON structures through a set of specialized modules. It supports text span manipulation, source location tracking, JSON path navigation, sort labeling, error localization, base type conversion, array and object handling, and value transformation. Key types include `t`, `byte_pos`, `line_num`, `fpath`, `path_segment`, and `object_map`, with operations for encoding, decoding, querying, and modifying structured data. Examples include tracking code positions in editors, preserving formatting during AST transformations, and navigating nested JSON errors with indexed paths.",
+      "description_length": 631,
+      "index": 19,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 20,
+    "meaningful_modules": 20,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 667,
+    "min_description_length": 272,
+    "avg_description_length": 399.75,
+    "embedding_file_size_mb": 0.07305622100830078
+  }
+}

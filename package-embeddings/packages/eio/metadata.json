@@ -1,0 +1,651 @@
+{
+  "package": "eio",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 90,
+  "creation_timestamp": "2025-06-18T16:48:41.501506",
+  "modules": [
+    {
+      "module_path": "Eio.Private.Cells.Make",
+      "description": "Provides operations to initialize cell values, define segment size based on bit offset, and display cell states for debugging. Works with a generic cell container type that manages memory in fixed-size segments. Used to configure and inspect memory layout in low-level data structures.",
+      "description_length": 285,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Net.Ipaddr.V4",
+      "description": "Provides functions to create and manipulate IPv4 addresses, including constants for the 'any' address and loopback address. Works with a tagged type representing IPv4 addresses. Used in network programming to bind to all interfaces or refer to the local machine.",
+      "description_length": 262,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Net.Ipaddr.V6",
+      "description": "Provides functions to create and manipulate IPv6 addresses, including constants for the any address and loopback address. Works with the `t` type representing IPv6 addresses. Used to configure network interfaces and establish local connections.",
+      "description_length": 244,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio.Fiber.List",
+      "description": "Processes list elements concurrently using fibers, applying functions to each element and collecting results. Operates on standard OCaml lists, supporting mapping, filtering, and iteration with controlled parallelism. Useful for I/O-bound tasks or computations where individual element processing can benefit from concurrency.",
+      "description_length": 326,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Fs.Pi",
+      "description": "Provides operations for file system manipulation including opening files, creating directories, reading directory contents, retrieving file metadata, and managing symbolic links. Works with file paths, permissions, and file descriptors in a Unix-like environment. Used to handle file I/O and directory structures in a controlled, switch-managed context.",
+      "description_length": 353,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Buf_read.BE",
+      "description": "Parses binary data into numeric types using big-endian byte order, including 16-bit, 32-bit, 48-bit, and 64-bit unsigned integers, as well as 32-bit and 64-bit floats. Each function consumes a specific number of bytes from a byte stream and converts them into the corresponding numeric value. Used for decoding network protocols, file formats, or binary data streams where byte order is critical.",
+      "description_length": 396,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Buf_read.LE",
+      "description": "Parses binary data into numeric types using little-endian byte order, including 16-bit, 32-bit, 48-bit, and 64-bit unsigned integers, as well as 32-bit and 64-bit floating points. Each function consumes a specific number of bytes from a byte stream and converts them into the corresponding numeric value. Used for decoding binary protocols or file formats that require precise control over byte representation.",
+      "description_length": 410,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Buf_read.Syntax",
+      "description": "Provides syntax for combining parsers using custom operators and functions, including mapping, binding, and pairing. Works with parser types that process sequences and return values. Enables concise parsing logic for structured input, such as extracting specific tokens or formatting nested data.",
+      "description_length": 296,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Domain_manager.Pi",
+      "description": "Runs a function in a new domain, allowing for cancellation handling by resolving a promise when the calling fiber is cancelled. Operates on a custom domain type `t` and executes functions that may need to respond to cancellation. Used to manage long-running tasks that must terminate cleanly when a cancellation signal is received.",
+      "description_length": 331,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Private.Trace",
+      "description": "Tracks Eio event traces by recording fiber and cancellation context activities. It uses unique integer identifiers to label and monitor operations such as fiber suspension, object creation, and promise resolution. Specific use cases include logging fiber execution spans, tracking resource acquisition, and correlating errors with their originating fibers.",
+      "description_length": 356,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Private.Cells",
+      "description": "Provides operations to initialize cell values, define segment size via bit offset, and format cell states for debugging. Works with polymorphic cell types and integer segment configurations. Used to manage memory segments in low-level data structures and track cell states during development.",
+      "description_length": 292,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Private.Broadcast",
+      "description": "Provides operations to manage a lock-free queue of suspended functions that are all resumed together. It works with a queue type `t` and request tokens `request` to track and cancel suspended callbacks. Used to coordinate asynchronous resumption of multiple handlers, such as in event-driven or concurrent systems where signals or callbacks need to be safely triggered in bulk.",
+      "description_length": 377,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio.Private.Single_waiter",
+      "description": "Provides functions to create and manage a synchronization point between two fibers in the same domain. It works with a stateful token type that tracks whether a fiber is running or sleeping. Used to pause a fiber until another fiber signals it with a value, ensuring safe communication in single-fiber waiting scenarios.",
+      "description_length": 320,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Private.Fiber_context",
+      "description": "Provides functions to manage fiber contexts, including creating root contexts, destroying them, retrieving thread IDs, accessing cancellation contexts, setting and clearing cancel functions, and checking for errors. Operates on a custom type `t` representing fiber contexts. Used to handle cancellation semantics and error tracking within asynchronous operations.",
+      "description_length": 363,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Private.Effects",
+      "description": "Handles fiber suspension and resumption through a custom effect handler, allowing asynchronous operations to yield control and resume later. Operates on fibers and their contexts, using an enqueue function to schedule resumed execution. Used to implement cooperative multitasking, such as managing promise resolution or thread-like execution in event-driven systems.",
+      "description_length": 366,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Private.Suspend",
+      "description": "Suspends the current fiber and executes a provided function in the scheduler's context, allowing for controlled resumption via an enqueue function. It works with `Fiber_context.t` and `Effects.enqueue` to manage fiber state and scheduling. This is used to implement cooperative multitasking operations that require precise control over resumption and cancellation.",
+      "description_length": 364,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Private.Debug",
+      "description": "Provides functions for thread-safe trace logging, including `traceln` for outputting messages with optional position information, `with_trace_prefix` for wrapping functions with a formatter prefix, and `default_traceln` for writing to stderr with a \"+\" prefix and line numbers. Operates with `Format.formatter`, `Mutex.t`, and a custom `traceln` type stored in a fiber key. Used to coordinate logging across concurrent domains and integrate with Eio's standard environment.",
+      "description_length": 473,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio.File.Unix_perm",
+      "description": "Provides bitwise operations to manipulate and inspect Unix file permissions represented as integers. Includes functions to check read, write, and execute bits for user, group, and others. Used to validate and modify permission settings in system-level file operations.",
+      "description_length": 268,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio.File.Stat",
+      "description": "Provides functions to pretty-print file kind and file statistics, including detailed metadata like size, permissions, and timestamps. Works with custom types representing file kinds and full file statistics. Used to format and display file information in a human-readable way for logging or user interfaces.",
+      "description_length": 307,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio.File.Pi",
+      "description": "Provides functions for low-level file I/O operations including writing, reading, seeking, and synchronizing data. Operates on a file handle type `t` and uses Cstruct buffers for data transfer. Supports direct file access with offset-based reads and writes, and includes methods for file metadata retrieval and management.",
+      "description_length": 321,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio.Time.Mono",
+      "description": "Provides functions to retrieve the current time, pause execution until a specific time, or for a given duration, using a monotonic clock. Operates with time values and durations represented as Mtime.t and Mtime.span. Used to implement reliable timeouts and interval-based operations in systems where real-time accuracy is not required.",
+      "description_length": 335,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio.Time.Timeout",
+      "description": "Provides functions to create and manage timeouts based on a clock and duration, including converting seconds to timeouts and defining infinite timeouts. Executes functions with a time limit, interrupting them if they exceed the specified duration. Formats timeouts as human-readable strings for logging and error reporting.",
+      "description_length": 323,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Time.Pi",
+      "description": "Provides functions to retrieve the current time and pause execution until a specified time. Operates with a custom time type and a clock source type. Used to implement precise timing controls in real-time applications.",
+      "description_length": 218,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Exn.Backend",
+      "description": "Provides functions to register and control pretty-printing of backend-specific error representations. Works with a generic error type `t` and formatatters to conditionally display or suppress backend details. Used to manage error formatting in test environments where backend-specific information must be hidden or customized.",
+      "description_length": 326,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Flow.Pi",
+      "description": "Provides functions to manage a connection's lifecycle, read and write data in various formats, and optimize data copying. Operates on a custom type `t` and works with Cstruct buffers for efficient data handling. Used to gracefully terminate connections, perform single or bulk data transfers, and implement optimized data movement between sources.",
+      "description_length": 347,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Net.Ipaddr",
+      "description": "Encapsulates IPv4 and IPv6 address handling with dedicated types for each version, offering creation, manipulation, and constant access for common addresses like any and loopback. Supports network configuration tasks such as binding to all interfaces or establishing local connections. Functions operate on distinct types, ensuring type safety and clarity in address handling. Examples include constructing an IPv4 any address or an IPv6 loopback address for testing or configuration.",
+      "description_length": 484,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Net.Sockaddr",
+      "description": "Provides functions to format and handle network address types, including stream and datagram sockets. Works with abstract types representing socket addresses and their variants. Used to serialize and debug address representations in network communication code.",
+      "description_length": 260,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Net.Pi",
+      "description": "Provides functions to accept incoming connections, close a socket, and retrieve the listening address. Operates on a socket type `t`, a switch type `Switch.t`, and a tag type `tag`. Used to manage network communication by establishing connections and monitoring socket status.",
+      "description_length": 276,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Buf_write.BE",
+      "description": "Serializes numeric values into a big-endian byte buffer. Operates on integers of various widths (16, 32, 48, 64 bits) and floating-point numbers (32 and 64-bit). Used to prepare data for network transmission or file storage requiring strict byte order.",
+      "description_length": 252,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Buf_write.LE",
+      "description": "Writes 16, 32, 48, and 64-bit unsigned integers, and 32- and 64-bit floating-point numbers into a buffer using little-endian byte order. Operates on integer and floating-point values of varying bit widths. Used to serialize numerical data for network protocols or file formats requiring specific byte ordering.",
+      "description_length": 310,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Process.Pi",
+      "description": "Provides functions to retrieve a process ID, wait for a process to complete, and send a signal to a process. Works with process handle types and signal tags. Used to manage and control external processes from within an OCaml application.",
+      "description_length": 237,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio_unix.Private.Rcfd",
+      "description": "Provides operations to safely manage file descriptors across concurrent domains, including `use` for atomic access, `close` and `remove` for controlled closure, and `is_open` to check state. Works with Unix file descriptors and tracks usage via reference counting to prevent race conditions. Used to ensure safe inter-domain communication and avoid data corruption when shared FDs are involved.",
+      "description_length": 394,
+      "index": 31,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio_unix.Private.Thread_pool",
+      "description": "Provides functions to manage a pool of system threads, including creating a pool with a sleep queue, running tasks in the pool, submitting tasks with fiber context, and executing functions directly in a system thread. Operates with thread pools, fiber contexts, and result callbacks. Used to efficiently execute I/O-bound or concurrent tasks while managing thread lifecycle and cancellation.",
+      "description_length": 391,
+      "index": 32,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio_unix.Net.Ipaddr",
+      "description": "Converts between Eio.Net.Ipaddr and Unix.inet_addr, handling both IPv4 and IPv6 addresses. Accepts Eio.Net.Ipaddr.v4v6 values and Unix.inet_addr objects as inputs. Used to interface network data between Eio and Unix libraries for address manipulation.",
+      "description_length": 251,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio_unix.Process.Pi",
+      "description": "Provides functions to create and manage process pipelines and spawns, handling input/output streams and process execution. Works with process tags, switches, file descriptors, and command-line arguments. Used to set up inter-process communication and execute system commands with custom environment and file descriptors.",
+      "description_length": 320,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio_unix.Process.Make_mgr",
+      "description": "Provides functions to spawn and manage Unix processes, including setting up environment variables, working with file descriptors, and specifying working directories. Operates with types such as switch, file system paths, and process execution parameters. Used to launch child processes with precise control over their execution environment and resource handling.",
+      "description_length": 362,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio_utils.Zzz.Key",
+      "description": "Handles timer registration and management, offering operations to create, cancel, and check the status of timers. Works with the `t` type to represent and manipulate individual timer instances. Used to control scheduled tasks in event-driven applications.",
+      "description_length": 255,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio_mock.Clock.Mono",
+      "description": "Manages a virtual clock that tracks time and schedules events, allowing precise control over time progression. It supports advancing to the next event or setting an explicit time, with mechanisms to handle scheduled tasks. Used in testing and simulation scenarios where controlled time flow is essential.",
+      "description_length": 304,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio.Std",
+      "description": "Provides basic standard utilities and abstractions. Includes core types such as option, list, and result, along with common operations like mapping, filtering, and folding. Supports pattern matching and functional transformations on data structures. Enables concise handling of null values, sequential processing, and error propagation.",
+      "description_length": 336,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Switch",
+      "description": "Provides functions to manage resource lifecycles by grouping fibers and resources under a single switch. It includes `run` to execute a function with a new switch and ensure cleanup, `fail` to trigger cancellation, and `on_release` to register cleanup actions. Works with `t` for switches and `hook` for tracking cleanup tasks, used to safely close files or terminate fibers when a scope ends.",
+      "description_length": 393,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Fiber",
+      "description": "provides concurrent processing of list elements through lightweight threads, enabling parallel application of functions to each item while managing execution flow. It supports mapping, filtering, and iteration with controlled parallelism, making it suitable for I/O-bound operations. Each element is processed independently, with results aggregated efficiently. For example, it can fetch data from multiple URLs or transform a large dataset in parallel.",
+      "description_length": 453,
+      "index": 40,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio.Cancel",
+      "description": "Provides functions to manage cancellation contexts for fibers, including creating sub-contexts, protecting against parent cancellations, checking cancellation status, and triggering cancellations with custom exceptions. Operates on a tree structure of cancellation contexts, where each fiber is registered to a context. Used to safely handle fiber termination, ensure resource cleanup during cancellation, and propagate cancellation signals across related operations.",
+      "description_length": 467,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Promise",
+      "description": "Creates and manages asynchronous values that can be resolved at a later time, allowing threads to wait for results without blocking. Works with promise types (`'a t`) and resolver types (`'a u`), enabling coordination between fibers or domains. Used to synchronize asynchronous computations, such as waiting for a network response or a file read to complete before proceeding.",
+      "description_length": 376,
+      "index": 42,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio.Semaphore",
+      "description": "Provides operations to manage a counting semaphore, including creating with an initial value, acquiring to wait for availability, releasing to increment and resume waiting fibers, and querying the current value. Works with the `t` type, representing a thread-safe semaphore state. Used to synchronize execution between fibers across domains, ensuring controlled access to shared resources.",
+      "description_length": 389,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Mutex",
+      "description": "Provides functions to manage mutual exclusion in a fiber-based environment, allowing non-blocking waits and safe resource access. Operates on a mutex type that tracks locked and unlocked states, supporting both read-write and read-only access. Used to coordinate access to shared resources in concurrent Eio applications, ensuring consistency during blocking operations.",
+      "description_length": 370,
+      "index": 44,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio.Condition",
+      "description": "Provides functions to synchronize fibers based on a condition, including waiting, broadcasting updates, and handling asynchronous notifications. Operates with mutexes and custom request objects to manage fiber suspension and resumption. Used to coordinate fiber execution in scenarios like waiting for a variable to reach a specific value or reacting to configuration changes.",
+      "description_length": 376,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Lazy",
+      "description": "Provides functions to create and manage lazily evaluated values that can be forced by multiple concurrent threads. It works with a type 'a t representing a delayed computation, supporting cancellation strategies during evaluation. Used to safely defer computation in concurrent environments, ensuring consistent results across multiple force operations.",
+      "description_length": 353,
+      "index": 46,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio.Stream",
+      "description": "Provides atomic add and take operations for thread-safe communication between domains, with support for non-blocking reads and length queries. Operates on a bounded or unbounded buffer of arbitrary values, allowing synchronization via blocking or immediate returns. Used to coordinate data flow in concurrent programs, such as passing messages between worker threads or managing task queues.",
+      "description_length": 391,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Pool",
+      "description": "Creates and manages a limited number of reusable resources, using a factory function to generate new ones when needed. Operates on arbitrary resource types, validating and disposing of them as required. Used to efficiently manage expensive resources like buffers or connections, ensuring they are reused and properly cleaned up.",
+      "description_length": 328,
+      "index": 48,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio.Domain_manager",
+      "description": "Manages parallel computation across CPU cores by executing functions in isolated domains that respond to cancellation. It introduces a domain type `t` for tracking and controlling execution, along with operations to start and cancel tasks. Functions can be registered to handle cancellation events, ensuring clean termination of long-running processes. For example, a network request can be canceled gracefully, or a computation can be interrupted without leaving resources in an inconsistent state.",
+      "description_length": 499,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Executor_pool",
+      "description": "Creates and manages a pool of domain workers to execute jobs concurrently, balancing load based on specified CPU weight. Accepts functions with a defined CPU usage ratio and schedules them across multiple threads. Used to efficiently run I/O or CPU-bound tasks in parallel, such as processing multiple network requests or batch data transformations.",
+      "description_length": 349,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Exn",
+      "description": "Manages error formatting by allowing conditional display of backend-specific details through a generic error type `t` and custom formatters. Supports registration of pretty-printing rules to control how errors are presented, enabling suppression or modification of backend information. Useful in testing to ensure consistent error output by hiding implementation-specific data. Examples include hiding internal state in error messages or adapting formatting for different logging backends.",
+      "description_length": 489,
+      "index": 51,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio.Debug",
+      "description": "Provides functions to customize tracing output by wrapping a trace function that prefixes messages with a specified format. Works with formatter functions and fiber-bound trace handlers. Used to inject custom logging prefixes in asynchronous code, such as adding context-specific labels to debug messages.",
+      "description_length": 305,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Resource",
+      "description": "Provides functions to manage and query resource interfaces, including retrieving implementations via `get` and `get_opt`, and constructing handlers from interface bindings. Works with handler types that map resource implementations to specific interfaces, and resource types that support various operations like close, read, and write. Used to dynamically access and invoke resource-specific methods, such as writing to a socket or closing a file descriptor.",
+      "description_length": 458,
+      "index": 53,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio.Flow",
+      "description": "manages byte streams with efficient data handling through a custom type `t` and Cstruct buffers, supporting read, write, and data transfer operations. It enables structured data reading via wrapping sources with Buf_read and facilitates connection management, including graceful termination and bulk transfers. Operations include optimizing data movement between sources and sinks, and handling both single and multiple data chunks. Examples include reading lines from a network socket or copying large files with minimal overhead.",
+      "description_length": 531,
+      "index": 54,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio.Buf_read",
+      "description": "Provides efficient, non-backtracking parsing of binary data with support for both big-endian and little-endian numeric conversions, including integers and floats of various sizes. Offers combinators for building complex parsers by sequencing, mapping, and combining simpler ones. Functions like `Buf_read.line` and endian-specific numeric parsers enable decoding of network packets, file headers, and structured binary formats. Examples include reading 32-bit floats from a stream or extracting 64-bit integers in little-endian order.",
+      "description_length": 534,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Buf_write",
+      "description": "Provides low-level serialization of numeric types into contiguous byte buffers with control over endianness. Supports big-endian and little-endian encoding for integers (16, 32, 48, 64 bits) and floats (32, 64 bits), enabling efficient data preparation for network or file formats. Operations include writing raw numeric values directly into a buffer, with options for buffered or direct writes. Example: serialize a 32-bit float as little-endian or a 64-bit integer as big-endian for transmission over a protocol requiring specific byte order.",
+      "description_length": 544,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Net",
+      "description": "Manages network communication through socket operations, address formatting, and connection handling. Provides types for IPv4 and IPv6 addresses, socket address serialization, and functions to accept connections, close sockets, and retrieve listening addresses. Supports constructing addresses like IPv4 loopback or IPv6 any, serializing socket data, and managing flow control in HTTP requests. Enables tasks such as binding to network interfaces, establishing local connections, and debugging network interactions.",
+      "description_length": 515,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Path",
+      "description": "The module provides file-system operations like reading, writing, creating, and manipulating paths, including joining, splitting, and handling symbolic links, while enforcing confined access to prevent traversal beyond a base directory. It works with `Path.t` values, which combine a base directory and relative path, ensuring cross-platform consistency with `/` as the separator and offering safe interactions with file contents, metadata, and directory structures. Specific use cases include securely saving data with exclusive creation modes, recursively deleting trees, and accessing the full filesystem via `Stdenv.fs` for scenarios requiring broader permissions.",
+      "description_length": 668,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.File",
+      "description": "manages file operations through bitwise permission manipulation, metadata formatting, and low-level I/O. It handles Unix permission integers, file statistics, and file handle operations, enabling tasks like checking read access, formatting file sizes, and performing offset-based reads. Functions include permission checks, metadata display, and direct data transfer using Cstruct. Examples include validating user access, logging file details, and synchronizing data writes.",
+      "description_length": 475,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Fs",
+      "description": "manages file system operations through path-based interactions, supporting file I/O, directory traversal, and metadata retrieval. it handles file descriptors, permissions, and symbolic links, enabling controlled access and manipulation. operations include opening, creating, reading, and deleting files and directories. examples include listing directory contents, checking file attributes, and managing link structures.",
+      "description_length": 420,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Process",
+      "description": "Manages external processes through handle types and signal tags, enabling retrieval of process IDs, waiting for completion, and sending signals. Supports operations like parsing output and controlling process execution. Example includes running commands like `echo` and handling their output. Provides low-level control and integration with asynchronous I/O environments.",
+      "description_length": 371,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Time",
+      "description": "Manages time-related operations using custom time types and clock sources, enabling precise control over execution delays and timeouts. Supports retrieving current time, pausing for specified durations, and enforcing time limits on function execution. Offers conversion between time units, formatting of timeout values, and handling of infinite or finite time limits. Can be used to implement reliable interval-based tasks, real-time scheduling, or time-bound operations in system-level programming.",
+      "description_length": 499,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Stdenv",
+      "description": "Provides access to process-wide resources including standard I/O streams, filesystem operations, network namespace, process management, and system clocks. Works with types like Path.t, Net.t, Process.mgr, and Time.clock to handle file paths, network connections, and time measurements. Enables tasks such as reading from or writing to the filesystem, managing child processes, and measuring elapsed time in a controlled environment.",
+      "description_length": 432,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio.Private",
+      "description": "manages fiber execution, synchronization, and logging through a set of interrelated utilities. It tracks event traces with unique identifiers, manages memory segments, coordinates suspended functions via lock-free queues, and enables fiber synchronization and context manipulation. It supports cooperative multitasking through effect handlers and provides thread-safe logging with formatter prefixes and error tracking. Examples include correlating errors with fibers, managing memory segments, resuming multiple callbacks in bulk, and pausing fibers until signals are received.",
+      "description_length": 578,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio_unix.Fd",
+      "description": "Provides operations to safely manage Unix file descriptors within an Eio environment, including wrapping, using, and closing them. Works with file descriptors and lists of file descriptors, ensuring proper resource management and thread safety. Used to safely execute operations on file descriptors, handle errors, and manage lifecycle events like closure and cleanup.",
+      "description_length": 368,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio_unix.Resource",
+      "description": "Provides operations to access and inspect file descriptors wrapped by resources. Works with file descriptor types and resource wrappers that encapsulate them. Used to safely retrieve or check for the presence of an underlying OS file descriptor in resource handles.",
+      "description_length": 265,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio_unix.Net",
+      "description": "Converts between Eio.Net.Ipaddr and Unix.inet_addr, supporting both IPv4 and IPv6 addresses, including dual-stack v4v6 values. Provides bidirectional conversion functions for seamless integration between Eio and Unix network operations. Allows manipulation of network addresses in mixed environments, enabling tasks like parsing, validating, and transforming IP address representations. Examples include converting a Unix.inet_addr to an Eio.Net.Ipaddr for use in Eio-based network protocols or extracting Unix-compatible addresses from Eio structures.",
+      "description_length": 552,
+      "index": 67,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio_unix.Process",
+      "description": "creates and manages Unix processes with detailed control over execution environments, including environment variables, working directories, and file descriptors. It supports pipeline creation, inter-process communication, and custom argument handling through process tags and switches. Functions allow launching commands with specific configurations, redirecting input/output, and managing process lifecycles. Examples include running shell commands with modified environments, chaining processes for data filtering, and capturing output from external programs.",
+      "description_length": 561,
+      "index": 68,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio_unix.Cap",
+      "description": "Provides functions to enforce Capsicum security by restricting access to global namespaces after entering capability mode. Works with unit types and result types to handle success or `Not_supported` errors. Used to lock down resource access in secure applications after initial setup.",
+      "description_length": 284,
+      "index": 69,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio_unix.Stdenv",
+      "description": "Provides access to standard I/O streams, network configuration, process management, and timing resources for Unix processes. Works with types such as input/output sources, sinks, file system directories, and clocks. Used to configure and interact with a process's environment, including handling secure random data and debugging information.",
+      "description_length": 341,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio_unix.Private",
+      "description": "Manages file descriptors and thread pools with safe concurrency controls. Offers atomic access, closure, and state checks for file descriptors, along with thread pool creation, task submission, and execution. Supports fiber context integration for task scheduling and result handling. Ensures safe shared resource access and efficient concurrent task management.",
+      "description_length": 362,
+      "index": 71,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio_unix.Pi",
+      "description": "Provides functions to accept incoming connections, close a listening socket, retrieve the address it's bound to, and access the underlying file descriptor. Works with stream sockets and socket address structures from Eio. Used to manage network listeners in asynchronous I/O contexts, such as handling incoming TCP connections.",
+      "description_length": 327,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio_utils.Lf_queue",
+      "description": "Provides operations to create, modify, and query a thread-safe queue that supports concurrent pushes from multiple producers and single-consumer pops. Works with a parameterized type 'a t, allowing storage of arbitrary values. Used to implement a scheduler's run queue where multiple tasks can be added concurrently, and a single thread processes them in order.",
+      "description_length": 361,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio_utils.Suspended",
+      "description": "Provides a mechanism for managing suspended execution contexts, enabling control over asynchronous operations. Contains a single empty module with no additional types or functions. No operations can be performed beyond basic context handling. Intended for use in conjunction with other modules that provide actual fiber management capabilities.",
+      "description_length": 344,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio_utils.Zzz",
+      "description": "manages timer instances through creation, cancellation, and status checks, using the `t` type to represent each timer. It enables precise control over scheduled tasks in event-driven systems by allowing developers to track and modify timer behavior dynamically. For example, a timer can be set to trigger a function after a delay, then canceled if the task is no longer needed. This module supports real-time task coordination by providing direct manipulation of timer states and durations.",
+      "description_length": 490,
+      "index": 75,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio_utils.Dla",
+      "description": "Provides a function to initialize a domain-local await structure, enabling coordination between threads in a concurrent environment. Operates on domain-local state and asynchronous synchronization primitives. Used to set up thread coordination before entering a waiting phase in distributed or parallel computations.",
+      "description_length": 316,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio_mock.Action",
+      "description": "Performs actions encapsulated in a monadic structure, executing them and transforming their results using function mapping. Operates on a polymorphic type representing suspended computations. Executes HTTP request simulations and transforms response data during test scenarios.",
+      "description_length": 277,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio_mock.Handler",
+      "description": "Controls the execution flow of mock responses by managing a sequence of actions or a fallback function. It works with action types and lists of actions, allowing handlers to cycle through predefined responses or override behavior dynamically. Used to create mock behaviors that change state or return varying results on each invocation.",
+      "description_length": 336,
+      "index": 78,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio_mock.Flow",
+      "description": "Provides functions to configure mock network flow behavior, including setting read responses, byte copy limits, and copy methods. Works with custom types representing flow configurations and network socket types. Used to simulate network interactions in testing scenarios, such as controlling data flow during mock copy operations.",
+      "description_length": 331,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio_mock.Net",
+      "description": "Configures mock network behavior by defining actions for connection handling, socket creation, and address resolution. Works with stream and datagram sockets, listening sockets, and Sockaddr structures. Used to simulate network events like incoming connections, DNS lookups, and socket acceptance in testing environments.",
+      "description_length": 321,
+      "index": 80,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio_mock.Clock",
+      "description": "Manages event scheduling by tracking time and advancing to the next event, with operations to set time directly or progress through scheduled events. Works with a custom `time` type and an internal state structure representing scheduled events. Used to control the execution flow of asynchronous tasks in a simulation or event-driven system.",
+      "description_length": 341,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio_mock.Domain_manager",
+      "description": "Provides functions to create and manage a mock domain environment within a single execution context. Operates with domain IDs, fiber keys, and tracing utilities to simulate domain behavior. Used to run code in a controlled domain-like setup for testing or isolated execution.",
+      "description_length": 275,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio_mock.Backend",
+      "description": "Provides functions to execute event-based code within a simulated environment, detecting deadlocks by monitoring the run queue. Operates on a custom environment type containing clocks and debugging information, with a focus on testing and validation. Used to run and verify single-threaded event loops where timing and deadlock conditions must be strictly controlled.",
+      "description_length": 367,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "eio",
+      "description": "Reads from and writes to files, establishes network connections, and executes synchronous or asynchronous computations with support for concurrency. Operates on file descriptors, sockets, and streams, and handles both blocking and non-blocking I/O. Used to build high-performance network servers, process data in parallel, and manage system resources efficiently.",
+      "description_length": 363,
+      "index": 84,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio",
+      "description": "Eio offers a comprehensive set of tools for concurrent and parallel programming, centered around fibers and domains. It includes utilities for managing resources, synchronization, and communication, with types like switch, mutex, semaphore, and promise, supporting operations such as cancellation, locking, and asynchronous value resolution. It enables tasks like parallel data processing, safe resource cleanup, and network communication, with examples including fetching URLs in parallel, managing file I/O, and coordinating domain-based computations.",
+      "description_length": 553,
+      "index": 85,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio_runtime_events",
+      "description": "This module enables tracking of OCaml runtime activities through operations like managing fibers, continuations, and object lifecycles, alongside logging messages and handling error spans. It manipulates runtime identifiers, event structures, and timestamps to record and process trace data, integrating with OCaml's infrastructure for detailed execution analysis. Use cases include debugging complex concurrency patterns and monitoring resource usage in event-driven applications.",
+      "description_length": 481,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio_unix",
+      "description": "Combines Unix file descriptor management, network address conversion, process control, and security enforcement within an Eio context. Offers types for file descriptors, sockets, IP addresses, and process handles, along with operations to wrap, inspect, convert, and manipulate them. Enables tasks like launching secure processes, handling TCP connections, converting IP addresses, and restricting capabilities after initialization. Examples include managing file descriptor lifecycles, parsing network addresses, and creating process pipelines with custom environments.",
+      "description_length": 570,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eio_utils",
+      "description": "manages thread-safe queues, timers, and domain-local synchronization for concurrent task management. It offers a parameterized queue type for safe multi-producer, single-consumer operations, a timer type for dynamic scheduling, and a domain-local await structure for thread coordination. Users can implement schedulers with ordered task processing, control asynchronous events with timers, and synchronize threads during waiting phases. Examples include managing a run queue, scheduling delayed actions, and coordinating parallel computations.",
+      "description_length": 543,
+      "index": 88,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eio_mock",
+      "description": "Provides mock implementations for testing Eio programs by simulating OS resources and controlling their behavior. It includes types for flows, networks, time, domains, and event environments, with operations to configure responses, manage execution flow, and track usage. For example, it allows setting read responses for a mock stdin, simulating network connections, and advancing time to test asynchronous code. It supports creating custom mocks through action sequences, configuring flow limits, and detecting deadlocks in event loops.",
+      "description_length": 538,
+      "index": 89,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 95,
+    "meaningful_modules": 90,
+    "filtered_empty_modules": 5,
+    "retention_rate": 0.9473684210526315
+  },
+  "statistics": {
+    "max_description_length": 668,
+    "min_description_length": 218,
+    "avg_description_length": 379.1222222222222,
+    "embedding_file_size_mb": 0.32732677459716797
+  }
+}

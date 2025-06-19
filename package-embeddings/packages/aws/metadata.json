@@ -1,0 +1,175 @@
+{
+  "package": "aws",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 22,
+  "creation_timestamp": "2025-06-18T16:34:13.965225",
+  "modules": [
+    {
+      "module_path": "Aws.BaseTypes.Unit",
+      "description": "Converts a unit value to and from JSON and query formats, and parses XML nodes into unit values. Serializes and deserializes unit values to and from strings. Used to handle HTTP request parsing and response serialization where the body is expected to be empty.",
+      "description_length": 260,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws.BaseTypes.String",
+      "description": "Converts between string values and JSON or query representations, parses XML nodes into strings, and handles bidirectional conversion between OCaml strings and internal string types. Works with raw OCaml strings and custom JSON/query types. Used to serialize configuration data for API requests and extract text content from XML responses.",
+      "description_length": 339,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws.BaseTypes.Blob",
+      "description": "Converts a string-based value to and from JSON and query formats, and parses XML nodes into the type. Supports string serialization and deserialization. Used to handle structured data in web requests and XML processing workflows.",
+      "description_length": 229,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Aws.BaseTypes.Boolean",
+      "description": "Converts boolean values to and from JSON and query formats, parses XML nodes into boolean values, and serializes to and from string representations. Works with the built-in boolean type and custom JSON and query types. Used to handle boolean data in API responses, form submissions, and XML configuration files.",
+      "description_length": 311,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws.BaseTypes.Integer",
+      "description": "Converts integer values to and from JSON and query formats, parses integers from XML nodes, and handles string serialization and deserialization. Operates on the built-in integer type. Used to process numeric data in API responses, configuration files, and user input.",
+      "description_length": 268,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws.BaseTypes.Long",
+      "description": "Converts a 32-bit integer to and from JSON and query formats, parses XML nodes into an integer, and handles string serialization and deserialization. Works with the built-in `int` type and custom types derived from it. Used to process numeric data from XML inputs, encode integers in JSON responses, and manage query parameters in web applications.",
+      "description_length": 348,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Aws.BaseTypes.Double",
+      "description": "Converts a float value to and from JSON and query formats, parses XML nodes into a float, and handles string serialization and deserialization. Works exclusively with the float data type. Used to process numerical data from API responses, XML documents, and query parameters.",
+      "description_length": 275,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Aws.BaseTypes.Float",
+      "description": "Converts float values to and from JSON and query formats, parses XML nodes into float values, and handles string serialization and deserialization. Operates on the float type and JSON, query, and XML data structures. Used for data interchange in web services and configuration parsing.",
+      "description_length": 285,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws.BaseTypes.DateTime",
+      "description": "Converts calendar data to and from JSON and query formats, parses XML nodes into date-time values, and serializes to and from string representations. Operates on calendar data structured as `CalendarLib.Calendar.t`. Used to handle date-time data in API requests, configuration files, and XML-based data sources.",
+      "description_length": 311,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws.Signing.Hash",
+      "description": "Computes SHA-256 hashes of strings, supporting optional key-based hashing. Produces results in raw digest, hexadecimal, and base64 formats. Accepts a key to generate HMAC-SHA256 outputs when provided.",
+      "description_length": 200,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Aws.Error",
+      "description": "Produces a formatted string representation of an error using a provided function for custom types. Parses AWS error responses into code-message pairs or an error reason if decoding fails. Works with error response structures and custom error types derived from AWS API outputs.",
+      "description_length": 277,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws.Request",
+      "description": "Produces a string representation of an HTTP method for use in AWS request signing. Operates on method values, URI objects, and header lists. Used to standardize request formatting before sending or signing.",
+      "description_length": 206,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Aws.Time",
+      "description": "Parses AWS-style timestamps into calendar objects, truncating milliseconds, and formats calendar objects into the same string format. Converts between ISO 8601 strings and calendar representations, including generating the current UTC time. Used to standardize time data in systems interacting with AWS APIs.",
+      "description_length": 308,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Aws.Query",
+      "description": "Produces a nested URL query structure by encoding values into a string format suitable for AWS API requests. It works with lists and hashtables, transforming them into a structured query format with indexed keys. Converts a list of values into a query with numbered parameters and a hashtable into a query by applying custom key and value functions.",
+      "description_length": 349,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws.Xml",
+      "description": "Provides functions to safely extract XML elements, returning options or lists instead of raising exceptions. Works with Ezxmlm.nodes and handles tag lookup and required field validation. Used to parse structured XML data, such as extracting specific elements from configuration files or API responses.",
+      "description_length": 301,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws.Json",
+      "description": "Converts JSON values to OCaml lists and hash tables, with safe lookup for associative structures. Works with the `t` type representing JSON values, including lists and key-value pairs. Used to extract and transform structured JSON data into native OCaml collections for processing.",
+      "description_length": 281,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws.Util",
+      "description": "Filters association lists by removing empty keys and retrieves values by key. Converts between options and values, handling defaults and errors explicitly. Processes lists of options to extract valid values or check for all present.",
+      "description_length": 232,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws.Signing",
+      "description": "Handles AWS signature generation using SHA-256 and HMAC-SHA256 algorithms, supporting multiple output formats. Processes strings and keys to produce digests in raw, hexadecimal, and base64 forms. Enables creation of signed HTTP requests by generating authorization headers. Supports both V2 and V4 signing protocols through hash-based authentication.",
+      "description_length": 350,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws.BaseTypes",
+      "description": "Converts values between JSON, query strings, and string representations, and parses XML nodes into the type. Works with a custom type `t` and related encodings. Used to serialize and deserialize data from XML, JSON, and query parameters in web applications.",
+      "description_length": 257,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws.Endpoints",
+      "description": "Processes endpoint and URL construction by parsing and validating route segments. Accepts string parameters representing base paths and resource identifiers to generate fully qualified URLs. Used to dynamically build API endpoints from structured route definitions.",
+      "description_length": 265,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "aws",
+      "description": "Provides functions for constructing and sending HTTP requests to AWS services, parsing JSON responses, and handling authentication signatures. Works with types such as HTTP methods, headers, query parameters, and JSON-encoded data structures. Used to interact with specific AWS services like S3 for object storage or DynamoDB for database operations.",
+      "description_length": 350,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Aws",
+      "description": "Handles AWS API requests by converting between native input and HTTP formats, including signing and endpoint selection. Processes HTTP responses, decoding them into structured outputs or specific error types. Supports parsing of AWS error responses based on HTTP status codes and XML content.",
+      "description_length": 292,
+      "index": 21,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 22,
+    "meaningful_modules": 22,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 350,
+    "min_description_length": 200,
+    "avg_description_length": 286.09090909090907,
+    "embedding_file_size_mb": 0.08039379119873047
+  }
+}

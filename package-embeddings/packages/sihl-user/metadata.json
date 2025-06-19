@@ -1,0 +1,105 @@
+{
+  "package": "sihl-user",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 12,
+  "creation_timestamp": "2025-06-18T16:33:04.537409",
+  "modules": [
+    {
+      "module_path": "Sihl_user.Make.Web",
+      "description": "Extracts user data from a request's Bearer token or session. Operates on HTTP requests and uses strings for keys and session cookies. Retrieves user information for authentication and authorization workflows.",
+      "description_length": 208,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl_user.MariaDb.Web",
+      "description": "Handles token-based and session-based user authentication by extracting and validating user data from HTTP requests. Operates on request objects and employs custom parsing logic to retrieve user information. Used to secure endpoints by verifying user identity through tokens or session cookies.",
+      "description_length": 294,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl_user.Password_reset.MakePostgreSql",
+      "description": "Creates and manages signed tokens with expiration and activation controls, allowing storage and retrieval of key-value data. Operates on strings, lists of key-value pairs, and durations, supporting token validation, deactivation, and lifecycle management. Used to generate temporary access tokens, store session data, and enforce token expiration and validity checks.",
+      "description_length": 367,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_user.Password_reset.MakeMariaDb",
+      "description": "Generates, verifies, and manages tokens with expiration, deactivation, and secret signing. Operates on strings representing tokens and lists of key-value pairs for associated data. Used to securely store and retrieve user session data, validate authentication tokens, and manage token lifecycles in web applications.",
+      "description_length": 316,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_user.PostgreSql.Web",
+      "description": "Handles token and session-based user authentication by extracting and validating user data from HTTP requests. Operates on request objects and returns user records wrapped in a lazy (Lwt) monad. Used to securely retrieve user information for protected endpoints and session management.",
+      "description_length": 285,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl_user.Logs",
+      "description": "Provides logging operations at different severity levels, including error, warning, info, and debug, with support for formatted messages and error handling. Works with log levels, formatted strings, and result types to capture and process logging output. Enables structured error recovery by wrapping operations that may fail, allowing custom processing of errors and their associated messages.",
+      "description_length": 394,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_user.Make",
+      "description": "Registers migration and cleaner tasks, manages user data through CRUD operations, and supports sorting and pagination for user queries. Works with user records and context-based parameters. Used to initialize database structures, manage user data, and retrieve users with filters and ordering.",
+      "description_length": 293,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_user.PostgreSql",
+      "description": "Manages user authentication and session validation by processing HTTP requests and returning user data through a lazy (Lwt) monad. Processes request objects to extract and verify user credentials, supporting secure access control. Enables protected endpoint access by retrieving validated user records. Examples include authenticating API requests and managing user sessions across HTTP interactions.",
+      "description_length": 400,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl_user.MariaDb",
+      "description": "Extracts and validates user credentials from HTTP requests using token or session-based authentication, enabling secure access control. Processes request objects to retrieve user data through custom parsing logic. Supports operations like user verification, session validation, and token extraction. Can enforce authentication on endpoints, check user permissions, and manage session state.",
+      "description_length": 390,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl_user.Password_reset",
+      "description": "Manages secure, time-bound tokens with data storage, validation, and lifecycle control. Handles string-based tokens and key-value pairs, enabling operations like generation, verification, expiration, and deactivation. Supports session management, temporary access control, and secure data retrieval. Examples include creating a token with a 10-minute expiration, storing user ID and email, and validating it during login.",
+      "description_length": 421,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "sihl-user",
+      "description": "Handles user authentication and account management through password-based login, registration, and password recovery mechanisms. Operates on user data structures including email, password hashes, and session tokens. Enables secure user onboarding and access control in web applications.",
+      "description_length": 286,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl_user",
+      "description": "manages logging, authentication, data persistence, and token management for user-related operations. It includes logging with severity levels and error handling, user data CRUD with query controls, HTTP-based authentication and session validation, and secure token generation and verification. Operations include logging messages, retrieving users with filters, authenticating requests, and managing time-bound tokens. It enables structured error recovery, secure access control, and efficient user data handling across application layers.",
+      "description_length": 539,
+      "index": 11,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 13,
+    "meaningful_modules": 12,
+    "filtered_empty_modules": 1,
+    "retention_rate": 0.9230769230769231
+  },
+  "statistics": {
+    "max_description_length": 539,
+    "min_description_length": 208,
+    "avg_description_length": 349.4166666666667,
+    "embedding_file_size_mb": 0.044013023376464844
+  }
+}

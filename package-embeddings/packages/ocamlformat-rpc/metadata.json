@@ -1,0 +1,98 @@
+{
+  "package": "ocamlformat-rpc",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 11,
+  "creation_timestamp": "2025-06-18T16:32:49.169023",
+  "modules": [
+    {
+      "module_path": "Ocamlformat_rpc.V1.Command",
+      "description": "Reads a command from an input channel, converts it to an S-expression format, and writes it to an output channel. Works with a custom command type that represents structured user input. Used to parse and serialize commands in a CLI tool for persistent storage and inter-process communication.",
+      "description_length": 292,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ocamlformat_rpc.V1.Client",
+      "description": "Provides functions to create, query, and manage a client instance for interacting with an RPC service, including sending commands, retrieving process IDs, and handling configuration and formatting requests. Operates with process IDs, input/output channels, and command structures. Used to send structured commands to a server, retrieve process information, and apply configuration or formatting rules through a reliable interface.",
+      "description_length": 430,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ocamlformat_rpc.V2.Command",
+      "description": "Reads a command from an input channel, parses it into a structured representation, and writes it to an output channel. Works with input and output channels alongside a command type that encapsulates user input. Used to process and serialize command-line entries for logging or transmission.",
+      "description_length": 290,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocamlformat_rpc.V2.Client",
+      "description": "Provides functions to create a client instance from a process ID and I/O channels, send commands, request formatting, and gracefully terminate the connection. Operates with process IDs, command structures, and I/O channels. Used to interact with a formatting server by sending specific format requests and handling results or errors.",
+      "description_length": 333,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocamlformat_rpc.IO",
+      "description": "Provides monadic binding and lifting for sequential computation, enabling structured handling of input and output operations. Operates with input and output channels, and Csexp-based data structures for serialization. Reads Csexp values from input channels and writes lists of Csexp values to output channels.",
+      "description_length": 309,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocamlformat_rpc.V",
+      "description": "Handles version negotiation by comparing a given string against known versions, returning either a handled version or a proposal for an alternative. Works with string inputs and version-typed values from Ocamlformat_rpc_lib. Used to manage protocol compatibility during client-server communication.",
+      "description_length": 298,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocamlformat_rpc.Init",
+      "description": "Reads input from a channel and constructs a value of type t. Converts a value of type t into a Csexp.t for serialization. Writes a value of type t to an output channel. Works with input and output channels, and represents configuration or data structures parsed from input. Used to parse user input, transform it for storage, and write it to a file or stream.",
+      "description_length": 359,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocamlformat_rpc.V1",
+      "description": "Processes commands by reading, converting to S-expressions, and writing them through input and output channels, using a custom command type for structured interaction. Manages client instances for RPC services, enabling command submission, PID retrieval, and configuration handling via process IDs and channels. Combines parsing, serialization, and remote execution capabilities for CLI and distributed systems. Example tasks include saving user input to a file, sending a command to a server, and fetching process details for monitoring.",
+      "description_length": 538,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocamlformat_rpc.V2",
+      "description": "Processes command input through structured parsing and serialization, enabling interaction with a formatting server via process IDs and I/O channels. Supports creating client instances, sending commands, and managing connections with error handling. Key data types include command structures, process IDs, and I/O channels, with operations for sending, formatting, and terminating sessions. Example tasks include logging user input, requesting text formatting, and gracefully closing server connections.",
+      "description_length": 503,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "ocamlformat-rpc",
+      "description": "Handles RPC communication by reading requests from standard input and writing formatted results to standard output. Processes OCaml source code and formatting configurations via structured data exchanges. Enables integration with editors and tools that support RPC for real-time code formatting.",
+      "description_length": 295,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ocamlformat_rpc",
+      "description": "Reads input from an IO channel and parses it into a structured representation. Converts the structured data into S-expression format for serialization. Writes the structured data to an output channel in a formatted manner.",
+      "description_length": 222,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 11,
+    "meaningful_modules": 11,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 538,
+    "min_description_length": 222,
+    "avg_description_length": 351.72727272727275,
+    "embedding_file_size_mb": 0.040424346923828125
+  }
+}

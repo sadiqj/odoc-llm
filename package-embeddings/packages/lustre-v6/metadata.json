@@ -1,0 +1,546 @@
+{
+  "package": "lustre-v6",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 75,
+  "creation_timestamp": "2025-06-18T16:46:16.041480",
+  "modules": [
+    {
+      "module_path": "Soc.SocMap",
+      "description": "The module offers operations for inserting, deleting, and querying key-value mappings, along with merging, traversal, and handling optional values. It supports functional transformations, filtering, and conversion between maps and sequences or lists, enabling efficient data processing. Use cases include dynamic data management, such as building lookup tables from sequences or aggregating structured data through folding.",
+      "description_length": 423,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "TopoSort.Make",
+      "description": "Checks if a dependency exists in a store, retrieves a list of dependencies for a given element, and removes a dependency from the store. Operates on custom types `elt` for elements and `store` for dependency mappings. Used to manage and query dependencies in a build system or graph traversal context.",
+      "description_length": 301,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lic.TopoSortVarInfo",
+      "description": "Checks for cycles in a directed graph of variable information and returns a topologically sorted list of elements. Operates on a hash table mapping variable information to lists of dependencies. Used to validate and reorder variable declarations in a program's dependency graph.",
+      "description_length": 278,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "lustre-v6",
+      "description": "Provides functions for parsing and generating Lustre V6 code, including node definitions, expressions, and type annotations. Operates on abstract syntax trees (ASTs) and concrete syntax representations. Used to transform Lustre programs during code generation and analysis workflows.",
+      "description_length": 283,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Soc2cDep",
+      "description": "Generates C code for variable assignments, step calls, and control structures using Soc.t and var_expr types. Produces iterator implementations, conditional actions, and boolean reductions based on step definitions. Converts SOC keys and contexts into C-compatible type definitions and expressions.",
+      "description_length": 298,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "L2lCheckCKeyWord",
+      "description": "Checks that a given program's identifiers do not conflict with C keywords by analyzing the program's syntax tree. Operates on the `LicPrg.t` data type, which represents parsed C-like source code. Ensures that variable and function names in the program avoid reserved C keywords during static analysis.",
+      "description_length": 301,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Soc2cInstances",
+      "description": "Generates a list of (key, count) pairs and a mapping function that assigns each instance an index in a C-compatible array. It processes lists of (ident, key) pairs, grouping keys by their occurrence. This enables efficient iteration over instances in low-level code, such as when generating C code that requires array indices.",
+      "description_length": 326,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lv6Misc",
+      "description": "Converts a reversed list structure into an explicitly ordered format, preserving variable information and transformation data. Operates on a custom type containing variable metadata, transformation tokens, and a list of filters. Used to prepare data for analysis where access patterns need to be examined in their natural order.",
+      "description_length": 328,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lv6version",
+      "description": "Provides version string, SHA hash, branch name, and maintainer information derived from build-time data. Works with string-based identifiers and version metadata. Used to embed build-specific details into compiled binaries for debugging and tracking purposes.",
+      "description_length": 259,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lv6parser",
+      "description": "Parses a stream of tokens into an abstract syntax tree representing a Lua version 6 program. It processes input using a lexer and constructs an `AstV6.t` structure based on the parsed tokens. The module relies on a custom token type to represent lexical elements during parsing.",
+      "description_length": 278,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lv6Run",
+      "description": "Creates a plugin instance from an array of strings, using a specific configuration format. Operates on string arrays and the RdbgPlugin.t type, which represents debugger plugins. Used to initialize a debugger plugin with command-line arguments during runtime.",
+      "description_length": 259,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "L2lExpandEnum",
+      "description": "Expands enumerated values in a program representation by substituting placeholders with their corresponding definitions. Operates on a custom target type and a program structure encoded in LicPrg.t. Used to resolve enum references during code generation for embedded systems.",
+      "description_length": 275,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lv6util",
+      "description": "Provides string conversion and manipulation functions, including converting floats and integers to strings, checking if a string ends with another, and searching for an element in a list by position. Operates on basic types like float, int, string, and lists of tuples. Used for generating sequences, parsing input, and formatting output in specific contexts.",
+      "description_length": 359,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "LicMetaOp",
+      "description": "Extracts a node and integer constant from static arguments, and generates lic expressions for predefined Meta operators using a node key and transformation function. Works with Lxm.t, Lic.static_arg lists, Lic.node_key, and Lic.node_exp. Used to translate meta-operator expressions into their corresponding lic representations during code analysis.",
+      "description_length": 348,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "SocExec",
+      "description": "Handles execution of steps in a system-on-chip configuration, applying specific transformation rules to a table of components and a key. Operates on structured data types including component tables, step methods, and execution contexts. Used to simulate or apply a sequence of hardware configuration changes during system initialization.",
+      "description_length": 337,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Soc2cUtil",
+      "description": "Provides functions to convert data and license types to strings and C code, generate C switch statements, and format flow declarations with or without annotations. Works with custom data types like `Data.t`, `Lic.type_`, and `Soc.gao`. Used to generate C code from abstract representations, such as translating flow declarations into executable switch cases or conditional logic.",
+      "description_length": 379,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "L2lExpandMetaOp",
+      "description": "Expands meta-operators such as red and map into lower-level operations within a program representation. It processes programs encoded as `LicPrg.t` values, transforming their structure through specific expansion rules. The `doit` function applies all expansions, while `doit_boolred` targets only the boolean reduction operator.",
+      "description_length": 328,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ast2lic",
+      "description": "Translates AST elements to Lic type and value representations, performing static evaluation where needed. It handles type expressions, clock identifiers, node expressions with static arguments, equations, and assertions, ensuring type and parameter compatibility. Specific operations include checking array sizes, indexes, and node signatures during translation.",
+      "description_length": 362,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "LicTab",
+      "description": "Provides operations to create and manage a lazy compiler, compile individual nodes or all items, and convert internal state to a functional program representation. Works with an internal table structure derived from AST data and node identifiers. Used to generate a functional program structure from an imperative compilation state.",
+      "description_length": 332,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Soc",
+      "description": "provides a framework for managing structured data through key-value operations, transformations, and conversions. it includes functions for inserting, deleting, and querying mappings, as well as merging and traversing data. it supports filtering, folding, and converting between maps, lists, and sequences, enabling tasks like building lookup tables or aggregating data. examples include dynamically constructing data structures or generating code from mapped values.",
+      "description_length": 467,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "IdSolver",
+      "description": "Provides functions to create and serialize local environments, and to look up types, nodes, constants, and variables using identifiers and context. Operates on types such as node keys, identifier references, and environment records. Used to resolve variable information and node expressions within specific lexical contexts during analysis or transformation.",
+      "description_length": 358,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "TopoSort",
+      "description": "Checks for cycles in a directed graph represented by a store and a list of elements, ensuring topological order is possible. Processes element lists to produce a valid topological ordering when no cycles are present. Operates on custom types `elt` and `store` to manage graph dependencies.",
+      "description_length": 289,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "L2lCheckKcgKeyWord",
+      "description": "Checks for the presence of KCG keywords in a program's identifier list and raises an error if found. Operates on `LicPrg.t` data structures representing parsed programs. Ensures compliance with naming restrictions by validating identifiers against a predefined set of KCG keywords.",
+      "description_length": 281,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Soc2yaml",
+      "description": "Processes a key-value pair from a Soc table, converting specific entries into YAML format. Operates on Soc.key, Soc.tbl, and string types to generate structured output. Used to export session data from a database into a human-readable configuration format.",
+      "description_length": 256,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "LicEvalClock",
+      "description": "Processes predefined operators in clock expressions using an identifier solver and abstract syntax tree data. Operates on AST nodes and substitution maps to generate updated clock assignments. Used to resolve clock dependencies in static analysis of synchronous systems.",
+      "description_length": 270,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lic2soc",
+      "description": "Provides functions to convert license program data into social network key-value pairs and variable lists, operating on license program structures and social network types. Translates license type information into data type representations and extracts profile variables from node expressions. Used to map license constraints into social network-compatible formats for analysis or transformation.",
+      "description_length": 396,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "SocPredef2cHeap",
+      "description": "Generates C code for predefined operations, iterators, conditional actions, and boolean reductions based on specific Soc key and type information. Works with Soc.t, Soc.key, and Soc.var_expr list to produce low-level code constructs. Used to translate high-level logic into C implementations for embedded or performance-critical systems.",
+      "description_length": 337,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "SortActionsExpe",
+      "description": "Splits action lists based on dependency information, compares actions using clock and metadata, and groups actions according to dependencies. It processes lists of actions and dependency graphs to organize and filter them. Used to restructure test execution sequences and optimize opening steps in a system.",
+      "description_length": 307,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AstV6",
+      "description": "Provides functions to construct and manipulate abstract syntax tree structures for Lustre V6 programs, including creating pack bodies from hash tables of identifiers and their associated type and constant information. Converts left parts of expressions to lexemes and serializes pack or model information into strings. Operates on hash tables mapping identifiers to flagged type, constant, and node information, along with custom data types for pack definitions and model details.",
+      "description_length": 480,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "L2lSplit",
+      "description": "Provides functions to decompose equations and tuples into individual assignments, introducing fresh variables for intermediate results. Operates on abstract syntax trees representing program state and local environments. Transforms complex assignments like tuple unpacking into sequential equations for further processing.",
+      "description_length": 322,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "L2lExpandNodes",
+      "description": "Expands user-defined nodes by replacing their definitions with inline equations, substituting input parameters with actual arguments and output parameters with left-hand sides. It introduces fresh local variables for each local variable in the node and handles assertions by wrapping them in a fresh boolean variable. The function processes a list of program statements, transforming node invocations into equivalent local variable assignments and equations.",
+      "description_length": 458,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "FreshName",
+      "description": "Generates unique identifiers by modifying input names with prefixes and suffixes to avoid conflicts. It handles node keys, local variables, and array types, ensuring consistent and collision-free naming. Produces stable outputs for repeated inputs while allowing customization for new names.",
+      "description_length": 291,
+      "index": 31,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EvalType",
+      "description": "Evaluates the type of a value expression and updates its type information, along with the types of its sub-expressions. Works with `Lic.val_exp` and `Lic.type_` structures to perform static type analysis. Used to infer and propagate type information during semantic analysis of expressions.",
+      "description_length": 290,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AstPredef",
+      "description": "Provides functions to manage and convert predefined operators, including checking infix status, converting to strings or identifiers, and retrieving lists of all or iterable operators. Works with the `op` type and evaluator functions that process nested lists into flat lists. Used to parse and manipulate operator representations in syntax tree transformations.",
+      "description_length": 362,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AstV6Dump",
+      "description": "Formats OCaml syntax tree nodes for human-readable output, including package information, model details, and abstract syntax trees. Operates on types like `AstV6.pack_info`, `AstV6.model_info`, and `AstV6.t` with custom pretty-printing logic. Converts abstract operations to strings for debugging or logging purposes.",
+      "description_length": 317,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "SocExecEvalPredef",
+      "description": "Provides a function to retrieve a predefined operator interpreter from a context, using a key. Works with `Soc.key` and `SocExecValue.ctx` types. Used to access built-in operations during evaluation of symbolic expressions.",
+      "description_length": 223,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "UnifyType",
+      "description": "Performs type unification by comparing and merging lists of type representations, returning a structured result that captures compatibility or conflicts. Operates on lists of `Lic.type_` values, producing a composite type structure that reflects resolved relationships. Used to enforce type consistency in a compiler's inference system during expression analysis.",
+      "description_length": 363,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "L2lCheckOutputs",
+      "description": "Checks that each output and local variable is declared exactly once and ensures no input is redefined. Operates on abstract syntax tree nodes and program structures from the Lic module. Validates correctness of node definitions in a language processing pipeline.",
+      "description_length": 262,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "LicDump",
+      "description": "This module provides string conversion and formatting functions for internal data structures like identifiers, types, node keys, expressions, and errors, with options to control output details such as source flags or verbosity. It operates on structured types from the Lic, Lv6Id, and AstCore modules, enabling tasks like pretty-printing complex data, generating error messages, and debugging by transforming abstract representations into human-readable forms. Specific use cases include serializing program elements for inspection and enhancing traceability in diagnostic outputs.",
+      "description_length": 581,
+      "index": 38,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Soc2cIdent",
+      "description": "Provides regular expressions for parsing and validating identifiers, and functions to convert internal representations to strings. Works with custom data types such as `Soc.key`, `Lv6Id.long`, and `Data.t` to extract and format specific components. Includes operations to generate short strings from identifiers and lookup contextual or base names from keys.",
+      "description_length": 358,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "L2lWhenOnId",
+      "description": "Processes license programs by applying a transformation that modifies specific identifier references within the program structure. It operates on the `LicPrg.t` type, which represents parsed license program data. This is used to update variable bindings in compliance with a defined naming convention.",
+      "description_length": 301,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Action",
+      "description": "Provides operations to convert internal representations of actions into string formats, and defines data structures for right-hand and left-hand sides of assignments, along with clock and atomic operation metadata. Works with clock values, variable expressions, and atomic operations to model computational steps. Used to generate human-readable logs of action sequences in a formal verification context.",
+      "description_length": 404,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "L2lOptimIte",
+      "description": "Transforms conditional expressions by replacing them with a merge construct that explicitly handles the condition and its negation, preserving the original branches. Works with abstract syntax trees represented as LicPrg.t, focusing on control flow structures. Used to simplify conditional logic in low-level program representations where memory usage is restricted.",
+      "description_length": 366,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "FilenameExtras",
+      "description": "Simplify file paths by resolving relative components like `.` and `..` in a platform-specific manner. It operates on string representations of file names and paths. Used to normalize project file references or user-provided paths before processing.",
+      "description_length": 248,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "AstRecognizePredef",
+      "description": "Replaces idref nodes in the syntax tree with Predef constructors by recursively analyzing and transforming the structure. It operates on AstV6.t, focusing on Lv6Id.idref and Lv6Id.long types to resolve predefined identifiers. This is used to correctly handle references to built-in language elements during tree processing.",
+      "description_length": 323,
+      "index": 44,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dbg",
+      "description": "Outputs a newline to a specified or default output channel. Formats and prints values using a printf-like interface with custom formatting. Converts internal representations of language constructs and constants to strings for debugging purposes.",
+      "description_length": 245,
+      "index": 45,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Soc2cPredef",
+      "description": "Generates a formatted call string based on a key, a Soc record, and two lists of strings. Checks if a given key supports a call by returning a boolean. Operates on Soc.key and Soc.t types, producing and evaluating call structures for specific protocol interactions.",
+      "description_length": 265,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lv6Compile",
+      "description": "Processes command-line arguments and source files to generate a compiled program structure, accepting package or model definitions and optional identifier references. Operates on argument configurations, file lists, and abstract syntax tree elements representing packages or models. Used to compile and link components into a structured program representation for further processing.",
+      "description_length": 383,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "L2lExpandArrays",
+      "description": "Expands nested structures and arrays within a program representation, transforming them into flat forms. It operates on `LicPrg.t` data structures, which represent parsed code. This is used to prepare code for EC generation by ensuring all elements are fully expanded.",
+      "description_length": 268,
+      "index": 48,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Soc2cStack",
+      "description": "Provides functions to generate C code for heap-based stack operations, including assignments, step names, and function prototypes. Works with types like `Soc.t`, `Soc.var_expr`, and `Data.t` to produce low-level C code snippets. Used to inline SOC steps, generate variable declarations, and create function calls for embedded system code generation.",
+      "description_length": 349,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "SortActions",
+      "description": "Provides a function to process a list of actions, dependencies, and a location map, producing a list of GAOs. It operates on action records, dependency graphs, and location metadata. Used to generate execution sequences for task orchestration in a build system.",
+      "description_length": 261,
+      "index": 50,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lxm",
+      "description": "The module provides operations for creating, inspecting, and modifying lexemes\u2014lexical tokens in parsers\u2014along with tracking line, column, and range positions, string representations, and metadata such as pragmas and IDs. It supports parsing and tokenization of input sources, managing lexical elements with position tracking, and is utilized in lexer/parser integration and structured text processing.",
+      "description_length": 402,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "L2lCheckLoops",
+      "description": "Checks for dependency cycles in equation sets by analyzing their interdependencies. Operates on `LicPrg.t` data structures, which represent parsed programs with equations. Ensures correct ordering during translation in ec mode where standard checks are skipped.",
+      "description_length": 261,
+      "index": 52,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Soc2cExtern",
+      "description": "Generates file content based on system, table, and license program data, producing boolean success flags and output strings. Constructs constant declarations from license program information for integration into code. Creates accessor functions for a given module, leveraging license and system data to produce structured code outputs.",
+      "description_length": 335,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "EvalClock",
+      "description": "Provides functions to validate clock expressions against expected profiles and ensure compatibility between argument and parameter clocks in node calls. Works with clock expressions, substitution maps, and lists of clock identifiers. Used to enforce clock consistency during static analysis of functional programs.",
+      "description_length": 314,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "SocNameC",
+      "description": "Extracts and processes variable, node, and instance information from a structured data representation. Operates on custom types like variable_type, node_type, and instance_type, and associates them with strings and lists. Used to map variables to indices, retrieve input/output definitions, and generate instance summaries for analysis.",
+      "description_length": 336,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "LicEvalType",
+      "description": "Handles type validation and evaluation for predefined operators, checking arity and type compatibility. Operates on type lists, operator identifiers, and abstract syntax tree nodes to generate type profiles or node expressions. Used to enforce type correctness in static analysis of operator applications and to construct expression nodes with specific evaluation behaviors.",
+      "description_length": 374,
+      "index": 56,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "SocVar",
+      "description": "Expands and collapses variable profiles and substitutions, handling nested structures during external communication. It operates on lists of variables and substitutions, transforming them to and from a flattened format. Used to prepare data for serialization or parsing from external systems.",
+      "description_length": 292,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "SocExecDbg",
+      "description": "Processes step execution and debugging events for a system state, operating on table and state representations. Handles context transitions during execution and debug session interactions. Enables precise control and observation of state changes during simulation or testing.",
+      "description_length": 275,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lv6MainArgs",
+      "description": "Provides functions to parse command-line arguments, manage verbose flags, and generate usage information. Works with custom types for scheduling, I/O transmission, and enumeration modes, along with a configuration record type. Used to initialize argument parsing from an array of strings and generate detailed help output to a channel.",
+      "description_length": 335,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Soc2c",
+      "description": "Handles key-based data transformations by applying a specific function to a license program structure, using a table and main arguments. Operates on types including `Soc.key`, `Soc.tbl`, and `LicPrg.t` to process and update licensing information. Used to synchronize license data with system configurations during initialization.",
+      "description_length": 329,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lv6Id",
+      "description": "This module facilitates bidirectional conversions and manipulations among identifier-related types such as `idref`, `pack_name`, `long`, and `clk`, focusing on module and reference handling. It enables operations like string serialization, packing/unpacking, and structured identifier transformations, distinguishing between packed and unpacked representations. Use cases include compiler tooling for managing module paths, efficient identifier storage, and cross-format data exchange in systems requiring precise reference tracking.",
+      "description_length": 533,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "SocExecValue",
+      "description": "Manages substitutions and context for the Soc interpreter, supporting operations to add values to paths, retrieve values and enumerations, and manipulate substitution lists. Works with paths as lists of identifiers, substitutions as pairs of paths and values, and contexts containing variable mappings. Used to process variable expressions, substitute parameters, and extract enumerated or concrete values during interpretation.",
+      "description_length": 428,
+      "index": 62,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "LicPrg",
+      "description": "This module enables management of compilation artifacts through operations like adding, deleting, and iterating over type definitions, constants, and nodes, structured under a `t` type keyed by `Lic.item_key` and `Lic.node_key`. It facilitates efficient lookup and modification of elements critical to compilation workflows, such as tracking symbolic references or hierarchical node relationships.",
+      "description_length": 397,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lv6lexer",
+      "description": "Handles lexical error recovery by wrapping lexing functions, and provides mechanisms to backtrack in the input stream. Operates on `Lexing.lexbuf` and `Lv6parser.token` types, including keyword recognition and comment parsing. Parses and processes OCaml-style comments and inline comments, and maps tokens to their corresponding string and location representations.",
+      "description_length": 365,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Soc2cHeap",
+      "description": "Generates C code from heap-based structures using functions that translate variables, steps, and assignments into C-compatible strings. It operates on types like `Soc.t`, `Soc.var_expr`, and `Soc.step_method`, producing code for variable declarations, function calls, and type definitions. Specific use cases include generating assignment statements, step prototypes, and inline code for heap-managed entities.",
+      "description_length": 410,
+      "index": 65,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "L2lNoWhenNot",
+      "description": "Processes license programs by removing all `when` clauses and simplifying conditional structures, operating on `LicPrg.t` data structures that represent program logic. It transforms programs to eliminate runtime condition checks, ensuring deterministic execution. Used to prepare license policies for environments where conditional branching is not supported or must be statically resolved.",
+      "description_length": 390,
+      "index": 66,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "SocPredef2cStack",
+      "description": "Generates C code for predefined operations, iterators, conditional actions, and boolean reductions based on Soc data structures. Works with Soc keys, Soc instances, and variable expressions to produce low-level code fragments. Used to translate high-level specification constructs into executable C code for embedded systems.",
+      "description_length": 325,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Soc2cGenAssign",
+      "description": "Generates a list of used types from a list of Soc.t values and produces string representations of Data.t elements, including a specialized version for loop constructs. It processes structured data types derived from domain-specific definitions. Used to extract type information and generate code snippets for assignment logic in domain-specific contexts.",
+      "description_length": 354,
+      "index": 68,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lv6Verbose",
+      "description": "Provides functions to control and query a verbose logging system, including enabling/disabling output, setting verbosity levels, and managing flags. Operates with integers for levels, strings for flag names, and a custom `flag` type for filtering logs. Used to conditionally print messages, execute code blocks with specific logging contexts, and track execution profiles.",
+      "description_length": 372,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "L2lRemoveAlias",
+      "description": "Removes redundant aliases introduced by compiler passes that manipulate labeled code. Operates on programs represented as `LicPrg.t` structures. Eliminates aliases that no longer serve a purpose, improving code consistency.",
+      "description_length": 223,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "L2lRmPoly",
+      "description": "Removes overloading from node types in a program representation, transforming polymorphic constructs into concrete types. Operates on `LicPrg.t` structures, modifying type annotations and node definitions. Used to resolve ambiguous type references before aliasing transformations.",
+      "description_length": 280,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "LicEvalConst",
+      "description": "Evaluates predefined operators in constant expressions using a type-safe approach, handling errors through dedicated functions. It operates on lists of constant values and abstract syntax tree nodes, producing evaluated results or error values. Used to validate and compute expressions during compilation phases where dynamic evaluation is not feasible.",
+      "description_length": 353,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "UnifyClock",
+      "description": "Handles substitution operations for clock variables in a type-checking context, supporting both name-binding and polymorphic variable resolution. Works with clock representations, substitution lists, and abstract variable mappings to enforce clock compatibility during expression evaluation. Used to unify clock profiles in function applications and manage variable instantiation when converting constants to value expressions.",
+      "description_length": 427,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "L2lCheckMemSafe",
+      "description": "Checks for correct declaration of nodes based on memory usage and side effects. Analyzes value expressions to determine if they are safe or memoryless within a given program. Ensures nodes using memory are declared as \"node\" and those with side effects as \"unsafe,\" issuing errors or warnings as appropriate.",
+      "description_length": 308,
+      "index": 74,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 75,
+    "meaningful_modules": 75,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 581,
+    "min_description_length": 223,
+    "avg_description_length": 335.37333333333333,
+    "embedding_file_size_mb": 0.2728452682495117
+  }
+}

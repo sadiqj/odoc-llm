@@ -1,0 +1,70 @@
+{
+  "package": "ppx_yojson",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 7,
+  "creation_timestamp": "2025-06-18T16:30:19.198827",
+  "modules": [
+    {
+      "module_path": "Ppx_yojson_lib.Expression",
+      "description": "Expands JSON serialization expressions for ezjsonm and yojson formats, transforming them based on provided location and path information. Operates on Ppxlib.expression values, modifying them to include generated serialization code. Used to inject custom JSON handling logic during ppx rewrites.",
+      "description_length": 294,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_yojson_lib.Integer_const",
+      "description": "Determines if a string represents a binary, octal, or hexadecimal integer literal by checking prefix patterns. Accepts string inputs formatted with 0b, 0o, or 0x prefixes. Used to validate and categorize integer literals during AST processing.",
+      "description_length": 243,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_yojson_lib.Pattern",
+      "description": "Expands a pattern by substituting placeholders with specified values, using a given file location and path. It operates on `Ppxlib.pattern` structures, modifying them during syntax tree traversal. This is used to replace pattern fragments in code transformation pipelines.",
+      "description_length": 272,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_yojson_lib.Raise",
+      "description": "Provides error-raising functions for ppx_yojson rewriting, each taking a location to pinpoint issues in input expressions. Works with Ppxlib.Location.t and returns 'a to terminate processing. Used to signal invalid payloads, unsupported record fields, excessive record patterns, and malformed antiquotations during parsing.",
+      "description_length": 323,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_yojson_lib.Utils",
+      "description": "Removes an element at a specified index from a list or returns the list unchanged if the index is invalid. Generates all possible permutations of a list's elements. Transforms OCaml record field names by removing a leading underscore to match JSON naming conventions.",
+      "description_length": 267,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "ppx_yojson",
+      "description": "Provides functions to parse and generate Yojson values directly from OCaml syntax, enabling seamless integration of JSON-like structures. Works with OCaml's variant types and records to match and construct JSON data. Allows pattern matching on JSON values and embedding JSON literals inline in code for configuration or data serialization tasks.",
+      "description_length": 345,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_yojson_lib",
+      "description": "Transforms and validates JSON-related syntax during ppx processing by expanding expressions, patterns, and error handling. Handles integer literal detection, list manipulation, and name normalization for record fields. Operates on Ppxlib.expression, Ppxlib.pattern, and Location.t values, enabling custom serialization, AST modifications, and error signaling. Examples include injecting JSON code, validating numeric prefixes, and adjusting field names for JSON compatibility.",
+      "description_length": 476,
+      "index": 6,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 8,
+    "meaningful_modules": 7,
+    "filtered_empty_modules": 1,
+    "retention_rate": 0.875
+  },
+  "statistics": {
+    "max_description_length": 476,
+    "min_description_length": 243,
+    "avg_description_length": 317.14285714285717,
+    "embedding_file_size_mb": 0.025811195373535156
+  }
+}

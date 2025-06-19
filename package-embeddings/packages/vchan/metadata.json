@@ -1,0 +1,98 @@
+{
+  "package": "vchan",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 11,
+  "creation_timestamp": "2025-06-18T16:33:09.183719",
+  "modules": [
+    {
+      "module_path": "Vchan.Xenstore.Make",
+      "description": "The module offers functions for managing XenStore interactions, including initializing connections, handling transactions, and performing read/write operations on paths and nodes. It works with XenStore paths, directory structures, and a handle type to track client sessions, enabling tasks like real-time monitoring via watches or permission adjustments. Specific use cases include configuring virtual machine settings or dynamically adjusting access controls in a Xen environment.",
+      "description_length": 482,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vchan.Endpoint.Make",
+      "description": "Provides functions to convert between port strings and port types, and to manage event channels for inter-domain communication. It includes operations to listen on, connect to, and send events through channels, with event synchronization via blocking receive operations. Used to establish and manage communication links between domains in a distributed system.",
+      "description_length": 360,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vchan.Endpoint",
+      "description": "Handles inter-domain communication using Xen's vchan protocol by managing port conversions, event channels, and synchronization. It supports listening, connecting, and sending events through channels, with blocking receives for coordination. Key data types include port representations and event channel handles. Examples include setting up a listener on a port, initiating a connection, and exchanging events between domains.",
+      "description_length": 426,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vchan.In_memory",
+      "description": "Provides server and client creation for in-memory communication, using a domain ID and port. Operates on flow objects, handling read, write, and shutdown operations with explicit error handling for data transmission. Supports writing single or multiple buffers, and ensures proper cleanup after connection termination.",
+      "description_length": 318,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vchan.In_memory_events",
+      "description": "Provides functions to manage event channels and ports for inter-domain communication, including sending and receiving events, establishing connections, and cleaning up resources. Operates on custom types `port`, `channel`, and `event` to handle low-level event synchronization. Used to coordinate actions between domains, such as waking up a sleeping domain upon receiving a signal or ensuring proper resource release after testing.",
+      "description_length": 432,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vchan.Location",
+      "description": "Provides functions to convert between offset representations and integers, determine available byte counts, and retrieve unique identifiers from location data. Operates on custom types for offsets and locations, derived from shared page metadata. Used to manage buffer boundaries and ensure unique identification of memory regions in concurrent or distributed systems.",
+      "description_length": 368,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Vchan.Port",
+      "description": "Converts a string to a validated port number, returning an error if the input is invalid; serializes port numbers to their string representation. Operates on a custom type `t` representing port values. Used to parse user-provided port inputs and generate configuration strings.",
+      "description_length": 277,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vchan.S",
+      "description": "Provides server and client creation for network communication using domain IDs and ports, with support for reading and writing data buffers. Operates on flow objects, error types, and custom port representations. Enables reliable data transmission with error handling, shutdown, and closure of network connections.",
+      "description_length": 314,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vchan.Xenstore",
+      "description": "Manages XenStore interactions through connection initialization, transaction handling, and path-based read/write operations. Utilizes a handle type to track client sessions and supports directory structures, watches, and permission changes. Enables real-time monitoring and dynamic configuration adjustments, such as modifying VM settings or access controls. Provides low-level control over Xen environment resources through direct path manipulation.",
+      "description_length": 450,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "vchan",
+      "description": "Provides functions for establishing and managing bidirectional communication channels using shared memory, including binding to a port, connecting to a remote domain, and sending/receiving data. Works with domain IDs, port strings, and byte sequences to facilitate low-latency data exchange. Used to enable real-time data transfer between Xen virtual machines, such as synchronizing state or exchanging control signals.",
+      "description_length": 419,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Vchan",
+      "description": "manages inter-domain communication through Xen's vchan protocol, XenStore interactions, and in-memory or network-based flows, enabling coordinated data exchange and resource management. It defines custom types such as `port`, `channel`, `event`, `offset`, and `location`, supporting operations like event signaling, buffer management, port validation, and XenStore transactions. Users can set up listeners, establish connections, transmit data with error handling, and manage shared memory regions across domains. Examples include synchronizing domain actions via event channels, parsing and serializing port numbers, and dynamically updating VM configurations through XenStore.",
+      "description_length": 678,
+      "index": 10,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 11,
+    "meaningful_modules": 11,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 678,
+    "min_description_length": 277,
+    "avg_description_length": 411.27272727272725,
+    "embedding_file_size_mb": 0.04037284851074219
+  }
+}

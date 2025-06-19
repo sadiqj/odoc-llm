@@ -1,0 +1,98 @@
+{
+  "package": "bisect_ppx",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 11,
+  "creation_timestamp": "2025-06-18T16:32:17.084367",
+  "modules": [
+    {
+      "module_path": "Bisect_ppx.Exclude",
+      "description": "Provides functions to create, manipulate, and query exclusion rules stored in file structures. Works with custom types representing exclusion criteria and file metadata. Used to filter out specific entries during data processing tasks.",
+      "description_length": 235,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bisect_ppx.Exclude_lexer",
+      "description": "Handles lexical analysis for a custom language, providing functions to process characters, manage buffers, and parse tokens from input. It works with lexing buffers, strings, and custom error types to support tokenization and comment parsing. Used to convert lexing errors to messages, track line numbers, and handle escape sequences in string literals.",
+      "description_length": 353,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bisect_ppx.Exclude_parser",
+      "description": "Parses a file's content into a list of `Exclude.file` structures using a provided lexer function that processes a `Lexing.lexbuf` and returns a `token`. It handles structured data from input streams, extracting specific exclusion patterns. This is used to process configuration files that define file inclusion/exclusion rules.",
+      "description_length": 327,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bisect_ppx.Exclusions",
+      "description": "Provides functions to manage excluded toplevel declarations and files, including adding exclusions from strings or files and checking if a value or file is excluded. Operates on strings representing names, file paths, and patterns. Used to filter out specific identifiers or entire files during processing, such as skipping instrumentation for certain modules or symbols.",
+      "description_length": 371,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bisect_ppx.Instrument",
+      "description": "Provides functions to instrument OCaml code by inserting logging or tracing calls during compilation. Works with abstract syntax trees and type information from the compiler. Enables runtime analysis of function calls and execution flow in compiled programs.",
+      "description_length": 258,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bisect_ppx.Register",
+      "description": "Provides functions to manage conditional compilation flags, including checking if a feature is enabled, excluding specific files from conditionals, and defining command-line switches. Operates with boolean references, strings, and argument specifications. Used to control code inclusion during builds based on runtime configurations.",
+      "description_length": 333,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bisect.Runtime",
+      "description": "Registers instrumented files with coverage point arrays, manages output file generation based on environment variables, and handles signal termination for coverage dumps. Works with arrays of integers representing execution counts and serialized point definitions. Used to collect and persist code coverage data during program execution for post-processing.",
+      "description_length": 357,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "bisect_ppx",
+      "description": "Tracks execution of code lines and functions during tests, generating detailed coverage reports. It operates on OCaml source files and integrates with Dune for build automation. Developers use it to identify untested code sections and improve test coverage.",
+      "description_length": 257,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bisect_ppx",
+      "description": "manages code instrumentation, exclusion rules, and conditional compilation through a set of interrelated functions. it processes exclusion patterns from files, instruments OCaml code with logging, and handles lexical analysis with custom error tracking and token parsing. it supports filtering of files and declarations, managing conditional flags, and converting lexing errors into structured messages. examples include skipping instrumentation for specific modules, parsing configuration files for exclusion rules, and tracking line numbers during tokenization.",
+      "description_length": 563,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bisect",
+      "description": "Tracks code coverage by instrumenting files and collecting execution counts in integer arrays, serializing point definitions for later analysis. Manages output files through environment variables and ensures data is dumped on program termination. Supports post-processing of coverage data by storing execution statistics. Can be used to generate detailed coverage reports or integrate with testing frameworks.",
+      "description_length": 409,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bisect_common",
+      "description": "Provides functions to manage coverage data, register source files with instrumentation points, and write coverage information to strings. Works with types like `coverage`, which maps filenames to arrays of visit counts, and `instrumented_file`, which tracks file-specific data. Used to accumulate and reset visit counts during program execution and generate coverage files for analysis.",
+      "description_length": 386,
+      "index": 10,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 11,
+    "meaningful_modules": 11,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 563,
+    "min_description_length": 235,
+    "avg_description_length": 349.90909090909093,
+    "embedding_file_size_mb": 0.040404319763183594
+  }
+}

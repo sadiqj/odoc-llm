@@ -1,0 +1,70 @@
+{
+  "package": "cfstream",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 7,
+  "creation_timestamp": "2025-06-18T16:29:16.125171",
+  "modules": [
+    {
+      "module_path": "CFStream.Stream.Result",
+      "description": "Processes streams of result values by applying functions that handle success cases without explicit error checking. Supports mapping, folding, and combining streams while preserving error states. Transforms error values into exceptions and aggregates results from multiple streams.",
+      "description_length": 281,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "CFStream.Stream.Or_error",
+      "description": "Provides operations to process streams of values wrapped in an error monad, including mapping, folding, and combining multiple streams. Works with streams of `'a Core_kernel.Or_error.t` values, allowing for error propagation during transformations. Supports concrete use cases like safely aggregating results from multiple data sources or applying error-aware transformations to sequential data.",
+      "description_length": 395,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "CFStream.Stream.Infix",
+      "description": "Generates integer and float enumerations using range operators and supports transformation, filtering, and mapping through custom infix operators. Works with integer and float sequences, producing ordered or reversed lists based on input parameters. Enables concise creation of numerical progressions and processing of elements in a pipeline style.",
+      "description_length": 348,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "CFStream.Stream",
+      "description": "Processes streams of values, including error-handled results and numerical sequences, by enabling mapping, folding, and combining operations. Supports transforming error-monad wrapped values, extracting subsets, and generating numerical progressions with custom operators. Allows safe aggregation of results, error propagation, and pipeline-style processing of sequences. Can convert between streams and other data structures, and handle both success and error states in a unified manner.",
+      "description_length": 488,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "CFStream.Streamable",
+      "description": "Provides functions to convert between a data structure and a stream, allowing elements to be processed or reconstructed. Works with any data type wrapped in a parameterized type 'a t. Used to serialize a list into a stream for incremental processing or rebuild a set from a stream, preserving uniqueness.",
+      "description_length": 304,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "cfstream",
+      "description": "Provides functions for transforming, filtering, and folding over streams, including operations like `map`, `filter`, and `fold_left`. Works with OCaml's Stream type and related lazy sequences, enabling efficient processing of large or infinite data sources. Used to handle file lines, event logs, or data pipelines where memory efficiency is critical.",
+      "description_length": 351,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "CFStream",
+      "description": "Processes streams of values with error handling, enabling transformations, aggregations, and combinations through mapping, folding, and custom operators. Supports numerical sequences, error propagation, and conversion between streams and data structures like lists and sets. Operations include extracting subsets, handling success and error states, and reconstructing data from streamed elements. Examples include converting a list to a stream for incremental processing or generating a sequence of numbers with custom step functions.",
+      "description_length": 534,
+      "index": 6,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 7,
+    "meaningful_modules": 7,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 534,
+    "min_description_length": 281,
+    "avg_description_length": 385.85714285714283,
+    "embedding_file_size_mb": 0.0258331298828125
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "package": "atacama",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 8,
+  "creation_timestamp": "2025-06-18T16:30:51.435643",
+  "modules": [
+    {
+      "module_path": "Atacama.Transport.Tcp",
+      "description": "type config = { host: string; port: int; timeout: float } Provides functions to establish TCP connections, send raw byte sequences, and receive data with specified timeouts. Operates on socket descriptors and byte arrays, supporting asynchronous read/write operations. Used to implement network protocols, handle client-server communication, and manage data streaming over TCP.",
+      "description_length": 377,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Atacama.Transport.Ssl",
+      "description": "type config = { cert_file: string; key_file: string; ca_file: string; verify: bool } Provides functions to load SSL certificates, configure secure connections, and validate peer certificates. Operates on file paths and boolean flags to establish trusted SSL sessions. Used to secure network communications in server and client applications requiring TLS encryption.",
+      "description_length": 365,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Atacama.Handler.Default",
+      "description": "Provides handler functions for managing connection lifecycle events, including closing, data reception, message processing, and error handling. Operates on connection objects and state values, returning results that may include errors. Used to implement basic handler behavior in network protocols, allowing incremental customization of event responses.",
+      "description_length": 353,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Atacama.Connection",
+      "description": "Provides functions to send and receive byte strings over a connection, with options for timeouts, message limits, and read sizes. Operates on a connection type `t` and related data like addresses and timestamps. Used to manage network communication, check negotiated protocols, and track connection establishment times.",
+      "description_length": 319,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Atacama.Handler",
+      "description": "Provides functions to process connection events, including handling data, messages, errors, and timeouts, with state management. Works with connection objects, byte strings, messages, and custom error types. Used to manage real-time communication protocols by defining behavior for each interaction phase.",
+      "description_length": 305,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Atacama.Transport",
+      "description": "Manages network communication through TCP and SSL protocols, offering configuration-based setup for both standard and secure connections. Supports sending and receiving byte data over sockets, with options for timeouts and certificate validation. Provides low-level control for implementing custom protocols or securing data transmission. Examples include establishing encrypted chat servers, streaming data with timeout handling, and validating SSL certificates during client handshakes.",
+      "description_length": 488,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "atacama",
+      "description": "Provides asynchronous socket management with connection pooling, handling read and write operations on TCP streams. Works with ports, socket descriptors, and custom handler modules that define message processing logic. Used to build scalable network servers, such as an echo service that responds to incoming data with the same payload.",
+      "description_length": 336,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Atacama",
+      "description": "handles network communication by enabling byte string transmission, event processing, and protocol management over TCP and SSL. it defines a connection type `t` and supports operations like sending, receiving, and tracking connection states, along with custom error handling and protocol negotiation. it allows for building secure, real-time applications such as encrypted chat servers or data streams with timeout controls. examples include validating SSL certificates during handshakes and managing message boundaries in custom protocols.",
+      "description_length": 540,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 9,
+    "meaningful_modules": 8,
+    "filtered_empty_modules": 1,
+    "retention_rate": 0.8888888888888888
+  },
+  "statistics": {
+    "max_description_length": 540,
+    "min_description_length": 305,
+    "avg_description_length": 385.375,
+    "embedding_file_size_mb": 0.029450416564941406
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "package": "ppx_open",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 19,
+  "creation_timestamp": "2025-06-18T16:35:44.126170",
+  "modules": [
+    {
+      "module_path": "Ppx_open_parsing.Parsed.Module",
+      "description": "type t = { id: int; name: string; tags: string list } Provides functions to create, update, and query records with unique identifiers, string names, and associated tags. Includes methods to filter records by tag presence and retrieve structured data for display or processing. Used to manage user profiles in a system that requires efficient lookup and categorization.",
+      "description_length": 368,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_open_parsing.Parsed.Module_type",
+      "description": "type t = { id: int; name: string; tags: string list } Provides functions to create, update, and query records with unique identifiers, string names, and associated tags. Operates on structured data containing integers, strings, and lists of strings. Used to manage configuration settings and metadata in a system that requires fast lookups by ID.",
+      "description_length": 346,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_open_parsing.Parsed.Value",
+      "description": "type t = { id : int; value : string; metadata : (string * float) list } Provides functions to create, update, and retrieve fields of records, including adding key-value pairs to metadata. Operates on structured data containing identifiers, string values, and associated metadata. Used to manage configuration settings where dynamic attributes need to be stored and accessed efficiently.",
+      "description_length": 386,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_open_parsing.Parsed.Type",
+      "description": "Provides functions to inspect and manipulate type representations, including checking kind equality and extracting type information. Works with custom type definitions and abstract syntax tree nodes. Used to enforce type constraints during code generation and validation.",
+      "description_length": 271,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_open_parsing.Parsed.Item",
+      "description": "Provides functions to create, compare, and serialize items, including parsing from strings and checking equality. Works with the `t` type, which represents entities with unique identifiers and metadata. Used to manage inventory entries in a game system, enabling efficient lookup and data exchange.",
+      "description_length": 298,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_open_parsing.Parsed.Payload",
+      "description": "type t = { data: string; timestamp: int; } Provides functions to serialize data into a JSON string, extract the timestamp, and validate that the data is non-empty. Operates on a record type containing a string and an integer. Used to prepare and check incoming messages before processing in a logging system.",
+      "description_length": 308,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_open_parsing.Lexer",
+      "description": "Processes input streams to identify and extract tokens according to predefined lexical rules. Operates on lexing buffers and returns parsed tokens matching a specified grammar. Used to convert raw source code into a sequence of structured tokens for parsing.",
+      "description_length": 258,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_open_parsing.Parse",
+      "description": "Processes a lexing buffer to parse structured payload data, returning a result containing a typed payload or an error message. Operates on Lexing.lexbuf and produces values of type Parsed.Payload.t. Used to extract and validate configuration data from input streams.",
+      "description_length": 266,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_open_parsing.Parsed",
+      "description": "Manages structured data records with unique identifiers, string fields, and metadata through functions for creation, update, and query. Supports filtering by tags, extracting timestamps, serializing to JSON, and inspecting type structures. Operations include adding key-value metadata, validating non-empty data, and comparing entities. Used for user profiles, configuration settings, inventory management, and message validation.",
+      "description_length": 430,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_open_parsing.Parser",
+      "description": "Parses input streams into structured payload data using a custom lexer and tokenization scheme. Processes lexing buffers and maps tokens to a predefined internal representation. Used to convert raw input into a format suitable for further processing in protocol handling or data interpretation tasks.",
+      "description_length": 300,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_open.Module",
+      "description": "Expands a module identifier into its corresponding structure item, incorporating location information for error reporting. It operates on ppxlib location data and module parsed structures. Used to inject module definitions into abstract syntax trees during code transformation.",
+      "description_length": 277,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_open.Module_type",
+      "description": "Expands a module type into an AST structure item, using a long identifier and location. It operates on Ppxlib's location data and a custom module type representation. This is used to generate abstract syntax for module type declarations during code transformation.",
+      "description_length": 264,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_open.Type",
+      "description": "This module handles type conversion, environment querying, and AST manipulation, focusing on OCaml's internal representations like `Path.t`, `Longident`, `Env.t`, and `type_declaration`. It enables operations such as flattening module paths, expanding type definitions into structure items, and generating Parsetree declarations, supporting tasks like code analysis, transformation, and environment-aware type processing. Specific use cases include generating abstract syntax trees and resolving module dependencies during compilation.",
+      "description_length": 535,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_open.Value",
+      "description": "Expands a long identifier into an AST structure item, incorporating location information. It operates on Ppxlib's location type and a custom value type representing parsed values. Used to generate AST nodes for value definitions during code transformation.",
+      "description_length": 256,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_open.Item",
+      "description": "Expands a parsed item into a structure item using a specified location and long identifier. It operates on OCaml AST nodes and location data to generate executable code representations. Used to transform parsed items into a form suitable for further processing or output.",
+      "description_length": 271,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_open.Payload",
+      "description": "Expands a payload into an AST structure item, incorporating location and tool name information. It operates on a specific record type containing parsed payload data. Used to generate AST nodes during code transformation pipelines.",
+      "description_length": 230,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "ppx_open",
+      "description": "Provides selective module opening through a custom syntax [%%open: {|...|}], allowing precise control over which bindings are exposed. Works with OCaml module types and signatures to filter and expose specific identifiers. Enables cleaner namespace management in large codebases by limiting the scope of opened modules.",
+      "description_length": 319,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_open_parsing",
+      "description": "Processes input streams to extract and structure data, converting raw content into tokens or typed payloads using custom lexing and parsing logic. Handles structured records with unique IDs, string fields, and metadata, enabling operations like filtering, serialization, and validation. Supports configuration extraction, protocol data interpretation, and user profile management through precise data manipulation functions. Examples include parsing configuration files, validating message formats, and serializing records for storage or transmission.",
+      "description_length": 551,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_open",
+      "description": "Provides utilities for expanding module identifiers, module types, long identifiers, and payloads into abstract syntax tree (AST) structure items, incorporating location and tool-specific data. It supports operations on OCaml's internal types such as `Path.t`, `Longident`, `Env.t`, and `type_declaration`, enabling tasks like code transformation, AST generation, and dependency resolution. Functions include flattening module paths, generating Parsetree declarations, and injecting module definitions into ASTs. Examples include transforming parsed values into AST nodes, expanding type definitions, and constructing code representations for compilation pipelines.",
+      "description_length": 665,
+      "index": 18,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 21,
+    "meaningful_modules": 19,
+    "filtered_empty_modules": 2,
+    "retention_rate": 0.9047619047619048
+  },
+  "statistics": {
+    "max_description_length": 665,
+    "min_description_length": 230,
+    "avg_description_length": 347.3157894736842,
+    "embedding_file_size_mb": 0.0694427490234375
+  }
+}

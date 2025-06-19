@@ -1,0 +1,707 @@
+{
+  "package": "amqp-client-lwt",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 98,
+  "creation_timestamp": "2025-06-18T16:48:48.996064",
+  "modules": [
+    {
+      "module_path": "Amqp_client_lwt.Thread.Deferred.List",
+      "description": "Creates lists by applying a function to a range of indices, supporting sequential or parallel execution. Processes lists by applying a function to each element, with support for asynchronous operations. Used for generating structured data sets and performing bulk transformations on list elements.",
+      "description_length": 297,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Thread.Pipe.Writer",
+      "description": "Provides operations to build and manipulate monadic computations that accumulate output, including bind, return, and write. Works with the 'a t type, which represents a computation yielding a value and a log. Used to track side effects like logging or auditing during sequential processing.",
+      "description_length": 290,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Thread.Pipe.Reader",
+      "description": "Provides functions to transform and compose values within a context, including mapping, binding, and lifting operations. Works with the 'a t type, representing a computation that depends on an external environment. Used to chain asynchronous or environment-dependent operations in a clean, sequential manner.",
+      "description_length": 308,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Tx.Select_ok",
+      "description": "Initializes a channel for standard transactions, ensuring proper setup before use. Operates exclusively with the unit type, signaling success through side effects. Used to validate transaction readiness in network communication workflows.",
+      "description_length": 238,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Tx.Select",
+      "description": "Sets the channel to use standard transactions, requiring a prior call to `init` before using transactional operations. Operates on `Framing.t` and `Framing.channel_no` to manage transaction requests. Used to prepare a channel for committing or rolling back transactions in a controlled manner.",
+      "description_length": 293,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Tx.Commit_ok",
+      "description": "Initializes a state to signal a successful commit, using a unit type to represent success. It provides a single function to set up the confirmation mechanism. Used to notify clients of successful transaction completion in distributed systems.",
+      "description_length": 242,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Tx.Commit",
+      "description": "Handles transactional message commitments, ensuring all published messages and acknowledgments are finalized. Operates on framing data and channel numbers to manage communication state. Used to synchronize message delivery and start new transaction cycles after completion.",
+      "description_length": 273,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Tx.Rollback_ok",
+      "description": "Initializes a state that confirms a successful rollback, used to signal completion after an undo operation. Works with the unit type to represent a void value indicating success. Ensures the client receives confirmation after a transaction is reverted.",
+      "description_length": 252,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Tx.Rollback",
+      "description": "Provides functions to initiate and manage transaction rollbacks, discarding unacknowledged messages and starting a new transaction. Operates with framing data and channel numbers to handle message state transitions. Used to reset message processing state after errors or failures, ensuring consistent transaction boundaries.",
+      "description_length": 324,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Confirm.Select_ok",
+      "description": "Provides a mechanism to confirm successful initialization of publisher acknowledgements on a channel. Operates with a unit type, signaling state through side effects. Used to ensure reliable message delivery in message queue interactions.",
+      "description_length": 238,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Confirm.Select",
+      "description": "Sets up and manages a channel for AMQP communication with publisher acknowledgements. Handles framing data and channel numbers to request message delivery confirmations. Used to ensure message delivery in non-transactional publish operations.",
+      "description_length": 242,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Queue.Declare_ok",
+      "description": "Initializes a structure representing a declared queue with a specific name, message count, and consumer count. Works with queue names, message counts, and consumer counts as defined by AMQP types. Used to validate queue configuration before message delivery in AMQP-based systems.",
+      "description_length": 280,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Queue.Declare",
+      "description": "Creates and manages AMQP queues with configurable properties such as durability, exclusivity, and auto-deletion. Operates on queue names, bit flags, and tables to define queue behavior. Used to initialize queues before message publishing or consumption in messaging systems.",
+      "description_length": 274,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Queue.Bind_ok",
+      "description": "Provides a mechanism to verify the success of a binding operation through a dedicated initialization function. Operates with the unit type, ensuring no additional data is processed. Used to signal and confirm successful setup in monadic workflows.",
+      "description_length": 247,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Queue.Bind",
+      "description": "Provides operations to initialize and manage queue-exchange bindings using specific AMQP types. Works with queue names, exchange names, routing keys, and tables to establish message routing configurations. Used to connect store-and-forward or subscription queues to exchanges for message delivery.",
+      "description_length": 297,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Queue.Unbind_ok",
+      "description": "Provides a mechanism to verify the success of an unbinding operation. Operates on the unit type to signal completion or validation. Used to ensure that a resource release process has completed without errors.",
+      "description_length": 208,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Queue.Unbind",
+      "description": "Provides operations to initialize and request the unbinding of a queue from an exchange using specific AMQP types. Works with queue identifiers, exchange names, routing keys, and AMQP tables. Used to manage message routing configurations in AMQP-based systems.",
+      "description_length": 260,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Queue.Purge_ok",
+      "description": "Handles queue purging by tracking message counts and validating removal operations. Operates on a state type containing message count information. Used to ensure queues are properly emptied before system shutdown or maintenance.",
+      "description_length": 228,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Queue.Purge",
+      "description": "Removes messages from a queue that are not awaiting acknowledgment using a dedicated request function. It operates on a queue structure and a channel number, returning a deferred purge confirmation. The initialization function sets up the context for purging operations.",
+      "description_length": 270,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Queue.Delete_ok",
+      "description": "Initializes a deletion confirmation state with a specified message count. Works with a record type containing internal state for tracking deletions. Used to validate that a queue's message count matches expected values before finalizing deletion.",
+      "description_length": 246,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Queue.Delete",
+      "description": "Provides operations to initialize and send a queue deletion request, handling conditions like queue unused status, empty state, and no-wait behavior. Works with queue names, AMQP channel information, and bit flags for configuration. Used to safely remove queues while ensuring messages are routed to dead-letter queues as per server settings.",
+      "description_length": 342,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Connection.Start_ok",
+      "description": "Selects a SASL security mechanism based on client and peer properties, a specified mechanism name, a response string, and a locale. It operates on AMQP client types including shortstr, longstr, and custom record structures. Used to initialize SASL negotiation in AMQP client implementations.",
+      "description_length": 291,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Connection.Start",
+      "description": "Handles the initialization of an AMQP connection by setting the protocol version, server properties, available authentication mechanisms, and supported locales. Processes client responses to initiate the authentication phase. Works with AMQP protocol versions, peer properties, and string-based mechanisms and locales. Used to establish the initial handshake between a client and an AMQP server.",
+      "description_length": 395,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Connection.Secure_ok",
+      "description": "Handles SASL authentication by processing response strings and maintaining state for secure communication. Operates on AMQP long string types and internal state records. Used to manage server-side authentication challenges during secure connection setup.",
+      "description_length": 254,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Connection.Secure",
+      "description": "Provides functions to initialize a secure authentication context with a challenge and generate responses based on incoming frames. Operates on AMQP framing data and channel numbers, returning deferred results for asynchronous processing. Used to handle SASL authentication exchanges by constructing and validating secure responses during protocol negotiation.",
+      "description_length": 359,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Connection.Tune_ok",
+      "description": "Handles AMQP connection tuning by setting channel maximum, frame maximum, and heartbeat values. Works with AMQP client types such as short and long integers. Used to configure client-side connection parameters before establishing an AMQP session.",
+      "description_length": 246,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Connection.Tune",
+      "description": "Provides initialization and response mechanisms for AMQP connection tuning parameters, including channel max, frame max, and heartbeat values. Operates on AMQP frame and channel number types, and returns tuning confirmation objects. Used to negotiate connection settings during AMQP protocol negotiation.",
+      "description_length": 304,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Connection.Open_ok",
+      "description": "Initializes a connection state, setting it to a ready-to-use condition. Operates on the unit type and a generic value to trigger the readiness signal. Used to establish a communication channel in network or process-based systems.",
+      "description_length": 229,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Connection.Open",
+      "description": "Opens a connection to a virtual host, managing resource isolation and access control. It handles framing and channel operations for communication, using a structured type to represent the connection state. Used to establish and maintain controlled interactions with server resources under defined constraints.",
+      "description_length": 309,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Connection.Close_ok",
+      "description": "Initializes a state that signals a connection can be safely closed, using a unit type to represent the confirmation. It provides a single operation to establish this closure signal. Used to coordinate resource release between communication endpoints.",
+      "description_length": 250,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Connection.Close",
+      "description": "Provides functions to initialize a close message with reply codes, text, and method identifiers, and to handle close requests and replies over a channel. Works with types including reply_code, reply_text, class_id, method_id, and Framing.t. Used to manage connection termination in protocol implementations, such as signaling a shutdown after an error in a specific method.",
+      "description_length": 373,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Connection.Blocked",
+      "description": "Provides initialization and handling for connection block events, including reply and request operations tied to AMQP frames and channel numbers. Works with AMQP client types such as `shortstr` and `Framing.t`, and manages state through a custom type `t`. Used to manage blocked connections by responding to or initiating actions based on AMQP protocol messages.",
+      "description_length": 362,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Connection.Unblocked",
+      "description": "Handles connection unblocking events with specific signaling mechanisms. Operates on framing data and channel numbers to manage asynchronous responses and requests. Used to trigger immediate replies or deferred actions upon connection restoration.",
+      "description_length": 247,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Connection.Update_secret_ok",
+      "description": "Confirms the validity of an updated secret through a dedicated verification process. Operates with a unit type to signal completion of the check. Used to ensure secret updates meet required constraints before finalizing changes.",
+      "description_length": 228,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Connection.Update_secret",
+      "description": "Updates a secret with a new value and reason, handling expiration and renewal. Works with AMQP client types including longstr secrets and shortstr reasons. Used to refresh OAuth 2 tokens during connection maintenance.",
+      "description_length": 217,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Exchange.Declare_ok",
+      "description": "Initializes a confirmation mechanism for exchange declaration, ensuring the exchange name is validated. Works with the unit type to signal successful setup. Used to verify exchange configuration in message queue systems.",
+      "description_length": 220,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Exchange.Declare",
+      "description": "Creates and verifies AMQP exchanges with specified properties such as durability, auto-deletion, and internal status. Operates on AMQP type definitions, channel contexts, and table-based arguments. Used to initialize exchanges in a message broker, ensuring they match expected configurations before use.",
+      "description_length": 303,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Exchange.Delete_ok",
+      "description": "Initializes a deletion confirmation state, ensuring the exchange is ready for removal. Operates on a unit type, signaling the start of a deletion process. Used to validate and prepare an exchange for safe deletion in a transactional workflow.",
+      "description_length": 242,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Exchange.Delete",
+      "description": "Deletes an AMQP exchange and removes all associated queue bindings. Operates on exchange names and AMQP frame data. Used to cleanly remove exchanges during system shutdown or reconfiguration.",
+      "description_length": 191,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Exchange.Bind_ok",
+      "description": "Provides a mechanism to verify the success of a binding operation, using a unit type to signal completion. It includes an initialization function that sets up the verification state. Used to ensure proper flow control in monadic computations where success is critical.",
+      "description_length": 268,
+      "index": 39,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Exchange.Bind",
+      "description": "Provides operations to initialize and request binding between exchanges using specific AMQP types. Works with exchange names, routing keys, and AMQP tables. Used to establish message routing configurations in RabbitMQ-based systems.",
+      "description_length": 232,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Exchange.Unbind_ok",
+      "description": "Provides a mechanism to verify the success of an unbinding operation. Operates on the unit type, ensuring no side effects during initialization. Used to signal readiness after a resource has been properly released.",
+      "description_length": 214,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Exchange.Unbind",
+      "description": "Provides functions to initialize and request the unbinding of one exchange from another in an AMQP context. Operates with types such as exchange names, routing keys, and AMQP tables. Used to manage message routing configurations in distributed messaging systems.",
+      "description_length": 262,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Basic.Content",
+      "description": "Constructs a message payload with customizable metadata such as content type, encoding, headers, delivery mode, priority, and message identifiers. Operates on AMQP-specific types like `shortstr`, `table`, `octet`, and `timestamp` to form structured message objects. Used to prepare messages for AMQP 0-9-1 protocol transmission with precise control over message properties.",
+      "description_length": 373,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Basic.Qos_ok",
+      "description": "Provides functions to initialize and manage Quality of Service settings, ensuring consistent handling of consumer requests. Operates with a unit type, signaling state transitions in QoS configuration. Used to confirm server capability to maintain specified QoS levels across active consumers.",
+      "description_length": 292,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Basic.Qos",
+      "description": "Provides functions to initialize and request quality of service settings, including prefetch size, count, and global flag, for AMQP channels. Operates on AMQP client types such as `long`, `short`, `bit`, and channel-specific framing data. Used to configure message delivery behavior in AMQP connections, ensuring controlled message flow from the server to the client.",
+      "description_length": 367,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Basic.Consume_ok",
+      "description": "Initializes a consumer with a given tag, providing a stateful object for tracking consumer-specific data. Works with a consumer tag and returns an object with methods for managing consumer interactions. Used to handle message delivery and acknowledgment within a messaging system.",
+      "description_length": 280,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Basic.Consume",
+      "description": "Provides functions to initialize a message consumer and request message delivery from a specific queue, using AMQP protocol details. Works with queue names, consumer tags, and AMQP table structures. Used to set up real-time message processing in distributed systems.",
+      "description_length": 266,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Basic.Cancel_ok",
+      "description": "Provides a mechanism to confirm cancellation completion using a consumer tag. Operates on a stateful type that tracks cancellation status. Used to ensure proper shutdown sequencing in message queue consumers.",
+      "description_length": 208,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Basic.Cancel",
+      "description": "Provides functions to initialize a cancellation request, send a cancellation message, and handle the corresponding acknowledgment. Operates with consumer tags, channel numbers, and framing data structures. Used to manage consumer termination in message queues, ensuring clients are notified of unexpected cancellations or explicitly ending message delivery.",
+      "description_length": 357,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Basic.Publish",
+      "description": "Publishes messages to an AMQP exchange with specified routing parameters, handling message delivery and transactional commitment. Works with AMQP message content, channel identifiers, and exchange configurations. Used to send structured data payloads to defined queues in a message broker system.",
+      "description_length": 296,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Basic.Return",
+      "description": "Provides functions to initialize and handle undeliverable or unroutable AMQP messages, using reply codes, text, exchange names, and routing keys. Works with AMQP frame structures, content, and channel numbers to manage message return logic. Used to process and respond to messages that could not be delivered due to specific protocol constraints.",
+      "description_length": 346,
+      "index": 51,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Basic.Deliver",
+      "description": "Provides operations to initialize a delivery context and handle message replies in an asynchronous model. Works with types such as consumer tags, delivery tags, exchange names, and AMQP content structures. Used to manage message delivery from a server to a client consumer, enabling real-time message processing.",
+      "description_length": 312,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Basic.Get_ok",
+      "description": "Provides a way to construct and manage a 'get-ok' message with delivery tags, redelivery status, exchange name, routing key, and message count. Works with AMQP message metadata and delivery information. Used to confirm receipt of messages in a message queue system, ensuring proper acknowledgment flow.",
+      "description_length": 302,
+      "index": 53,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Basic.Get_empty",
+      "description": "Initializes a state that signals an empty queue, taking no arguments and returning unit. It operates with the unit type to represent the absence of messages. Used to notify consumers that no items are available in the queue.",
+      "description_length": 224,
+      "index": 54,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Basic.Get",
+      "description": "Provides synchronous access to message queues by initializing a connection with a specific queue name and handling message retrieval through a request function that returns either an empty response or a message with its content and delivery tag. Operates on queue names, message content, and channel identifiers, using a dedicated state type to manage the dialogue. Used in applications requiring immediate confirmation of message retrieval, such as transactional systems or real-time data processing.",
+      "description_length": 501,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Basic.Ack",
+      "description": "Handles message acknowledgment in AMQP protocols, supporting single or multiple message confirmations. Operates with delivery tags, channel numbers, and framing data structures. Used to confirm message delivery from the client or server side during message processing.",
+      "description_length": 268,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Basic.Reject",
+      "description": "Provides functions to initialize a rejection request with a delivery tag and requeue flag, and to send the rejection as a deferred operation. Works with AMQP delivery tags, channel numbers, and framing data. Used to cancel message processing and return messages to their queue during handling.",
+      "description_length": 293,
+      "index": 57,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Basic.Recover_async",
+      "description": "Provides operations to initiate and request the redelivery of unacknowledged messages on a specific AMQP channel, using a bit flag to determine message requeuing. Works with AMQP channel numbers and framing data structures. Used to handle message recovery in asynchronous AMQP client interactions.",
+      "description_length": 297,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Basic.Recover",
+      "description": "Provides operations to initiate and request redelivery of unacknowledged messages on an AMQP channel. Works with AMQP frame structures and channel numbers. Used to recover messages after a consumer disconnects or during recovery scenarios.",
+      "description_length": 239,
+      "index": 59,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Basic.Recover_ok",
+      "description": "Initializes a recovery state, allowing for controlled restarts after failures. Operates on a unit type, signaling success or failure through side effects. Used to reset system state during fault recovery scenarios.",
+      "description_length": 214,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Basic.Nack",
+      "description": "Handles message rejection in AMQP, supporting delivery tags, multiple message flags, and requeue options. Operates on AMQP frame data and channel numbers to send or receive rejection signals. Used to cancel incoming messages or notify publishers of unhandled messages in confirm mode.",
+      "description_length": 284,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Channel.Open_ok",
+      "description": "Initializes a channel state and signals readiness, accepting a unit and returning a unit. Operates on the unit type to manage channel activation. Used to trigger client-side readiness after channel setup.",
+      "description_length": 204,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Channel.Open",
+      "description": "Opens a communication channel to a server, handling initialization and request operations. It works with framing data and channel numbers to manage network interactions. Used to establish connections and send asynchronous requests in a networked application.",
+      "description_length": 258,
+      "index": 63,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Channel.Flow_ok",
+      "description": "Handles flow control communication by confirming receipt of commands through initialization, reply, and request operations. Operates on AMQP framing data and channel numbers, using a stateful type to track flow status. Used to ensure reliable message processing in asynchronous AMQP interactions.",
+      "description_length": 296,
+      "index": 64,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Channel.Flow",
+      "description": "Manages flow control between AMQP peers by allowing the reception of flow requests and sending flow replies. Operates on AMQP frame structures and channel numbers, enabling precise control over message flow. Used to pause or resume message delivery in response to consumer processing capacity constraints.",
+      "description_length": 305,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Channel.Close_ok",
+      "description": "Initializes a state that confirms a channel closure, ensuring resource release is safe. Works with a unit type to represent a confirmed close signal. Used to synchronize channel termination in network communication protocols.",
+      "description_length": 225,
+      "index": 66,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Channel.Close",
+      "description": "Provides operations to initialize a close message with reply code, text, and method details, send a close request over a channel, and handle a close reply with optional one-time execution. Works with types including reply codes, method IDs, and framing data structures for channel communication. Used to gracefully terminate a channel during error handling or shutdown, ensuring proper notification to the receiver.",
+      "description_length": 415,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Thread.Deferred",
+      "description": "Generates and processes lists using function application over ranges, with support for sequential, parallel, and asynchronous execution. Key operations include list creation, element-wise transformation, and bulk processing. Users can generate structured datasets, perform parallel computations, and handle asynchronous transformations efficiently. Examples include creating arrays of computed values, applying filters or mappings across large datasets, and executing tasks concurrently.",
+      "description_length": 487,
+      "index": 68,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Thread.Ivar",
+      "description": "Provides operations to manage a single-value container that can be filled once and read asynchronously. Works with the `'a t` type, allowing creation, filling, and deferred reading of values. Used to synchronize asynchronous computations where a value is produced once and accessed later.",
+      "description_length": 288,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Thread.Reader",
+      "description": "Provides operations to close a resource and read bytes from it, returning a deferred result that indicates success or end-of-file. Works with a custom type `t` representing a readable resource. Used to handle asynchronous data streams, such as reading from files or network sockets.",
+      "description_length": 282,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Thread.Writer",
+      "description": "Writes a string to a stream and manages its lifecycle, including closing and flushing with asynchronous support. Operates on a handle type representing an open output stream. Used to reliably send data to a file or network socket while ensuring all data is properly transmitted.",
+      "description_length": 278,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Thread.Tcp",
+      "description": "Establishes a TCP connection using a provided exception handler, with optional TCP_NODELAY setting, and returns a paired reader and writer for the connection. Operates on host strings and port integers, supporting asynchronous communication. Used to build reliable networked applications requiring direct socket-level control.",
+      "description_length": 326,
+      "index": 72,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Thread.Log",
+      "description": "Outputs formatted log messages at different severity levels, using polymorphic variants for flexible message construction. Accepts format strings with arguments to generate structured output. Used to track application behavior, report status updates, and capture error details during runtime.",
+      "description_length": 292,
+      "index": 73,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Thread.Pipe",
+      "description": "Combines monadic computation building with environment-aware transformations, enabling sequential processing that tracks side effects and depends on external context. It supports operations like bind, return, and map on a type that represents computations yielding values and logs or depending on an environment. Users can log information during processing or chain asynchronous tasks that rely on shared state. For example, it can track audit trails while performing a series of database queries.",
+      "description_length": 497,
+      "index": 74,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Thread.Scheduler",
+      "description": "Provides a mechanism to start and terminate a task execution system. It operates with a custom scheduling state and handles process termination signals. Used to initiate background processing and cleanly exit the application.",
+      "description_length": 225,
+      "index": 75,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Confirm",
+      "description": "manages AMQP channel communication for reliable message delivery, using sequence numbers to track published messages and confirm their receipt. it provides a unit-based confirmation mechanism and handles framing to ensure acknowledgments are properly processed. it enables tracking of message delivery status and handles unrouteable messages through immediate acknowledgments. examples include verifying message receipt, managing channel state, and ensuring all messages are properly acknowledged by the broker.",
+      "description_length": 511,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Tx",
+      "description": "manages transactional workflows by coordinating initialization, commitment, and rollback operations across a channel. it handles framing data and channel numbers to control message state, using unit types to signal success or failure in transactional actions. it enables atomic publishing and acknowledgment, allowing for controlled rollbacks and commit confirmations. examples include preparing a channel for transactions, finalizing message delivery, and resetting state after errors.",
+      "description_length": 486,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Basic",
+      "description": "Manages AMQP 0-9-1 messaging through structured message creation, QoS configuration, consumer initialization, and message delivery control. Key data types include `shortstr`, `table`, `delivery_tag`, `consumer_tag`, and `channel`, with operations for publishing, acknowledging, rejecting, and redelivering messages. Functions enable precise control over message flow, including setting prefetch limits, handling undeliverable messages, and managing consumer lifecycle events. Examples include configuring message priorities, confirming delivery, and recovering unacknowledged messages after failures.",
+      "description_length": 600,
+      "index": 78,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Queue",
+      "description": "manages AMQP queue lifecycle operations including declaration, binding, unbinding, purging, and deletion. it handles queue names, message counts, consumer counts, and AMQP-specific types like bit flags and tables to configure and validate queue behavior. it supports operations such as binding a queue to an exchange with a routing key, purging messages, and confirming deletions based on state checks. examples include initializing a durable queue, binding it to an exchange, purging messages before shutdown, and safely deleting a queue after verifying its empty state.",
+      "description_length": 571,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Exchange",
+      "description": "manages AMQP exchange lifecycle operations including declaration, binding, unbinding, and deletion. it handles types like exchange names, routing keys, AMQP frames, and tables, with operations that validate configurations, ensure proper flow control, and manage resource cleanup. it supports initializing bindings between exchanges, verifying successful operations, and preparing exchanges for safe removal. examples include declaring durable exchanges, binding queues to exchanges, and cleanly deleting exchanges during system reconfiguration.",
+      "description_length": 544,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Channel",
+      "description": "Establishes and manages AMQP channels through initialization, flow control, and closure operations. It handles framing data, channel numbers, and stateful tracking to enable reliable communication, flow management, and graceful termination. Operations include triggering readiness, opening connections, confirming command receipts, pausing message delivery, and sending close messages with detailed error codes. Examples include setting up asynchronous requests, managing message flow based on consumer capacity, and ensuring safe channel shutdown with proper notifications.",
+      "description_length": 574,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec.Connection",
+      "description": "Manages the full lifecycle of an AMQP connection, from initial negotiation to secure authentication, tuning, and termination. It supports AMQP protocol versions, SASL mechanisms, and custom types like longstr and shortstr for handling authentication, framing, and state transitions. Functions include initializing connection parameters, processing SASL responses, negotiating channel and frame limits, and managing closure with reply codes and reasons. It enables secure, configurable, and controlled communication between clients and servers, supporting asynchronous operations and stateful interactions.",
+      "description_length": 605,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Rpc.Client",
+      "description": "Provides initialization, RPC calling, and resource release for a client interacting with an AMQP exchange. Operates with connection details, message headers, routing keys, and timeouts to manage asynchronous requests. Used to send messages to specific queues or exchanges and handle responses with controlled timeouts and tracing capabilities.",
+      "description_length": 343,
+      "index": 83,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Rpc.Server",
+      "description": "Provides functions to configure and manage an RPC server using AMQP, including setting up a queue with a dead letter exchange for timeout handling. Operates with channel and queue types from the AMQP library, processing messages through a request-response pattern. Starts a server that handles messages either synchronously or asynchronously, and stops the server when needed.",
+      "description_length": 376,
+      "index": 84,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Channel.Transaction",
+      "description": "Starts a transaction, commits changes made to a channel, or rolls back to discard all modifications. Operates on a transaction handle (`tx`) that tracks message publications and queue/exchange operations. Used to ensure atomic updates in message processing workflows, such as batch message publishing or configuration changes.",
+      "description_length": 326,
+      "index": 85,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Channel",
+      "description": "Manages transactional operations on message channels, allowing for atomic updates through commit, rollback, or start actions. Tracks message publications and queue/exchange modifications via a transaction handle. Supports batch message publishing and configuration changes with guaranteed consistency. Example uses include safely updating multiple queues or reverting incomplete message deliveries.",
+      "description_length": 398,
+      "index": 86,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Connection",
+      "description": "Establishes AMQP connections using either a hostname or URI, supporting custom credentials, virtual hosts, and heartbeat intervals. Manages channel creation and provides a way to monitor connection closure. Operates on connection handles and channel configurations for messaging protocols.",
+      "description_length": 289,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Constants",
+      "description": "This module provides functions to define numeric constants for AMQP protocol elements, including frame types and error codes, operating on protocol-level identifiers and integer-based error conditions. It supports low-level protocol handling by specifying distinct error scenarios such as frame mismatches, resource constraints, and operational failures, primarily for messaging system communication. The constants are utilized in managing message framing, connection states, and diagnosing protocol-related issues within constrained environments.",
+      "description_length": 547,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Exchange",
+      "description": "Provides functions to declare, delete, bind, and unbind exchanges with specific types such as direct, fanout, topic, and header-based routing. Operates on exchange types encapsulated in variants like `Queue`, `Topic`, and `Headers`, and exchange instances with associated channel and message data. Used to route messages between exchanges and publish messages to a specific exchange using a defined routing key.",
+      "description_length": 411,
+      "index": 89,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Framing",
+      "description": "The module provides operations for managing AMQP protocol interactions, including message transmission, channel control, and asynchronous data handling. It works with AMQP client state, channel identifiers, message payloads, and thread-based processing structures. Use cases include real-time messaging systems and event-driven architectures requiring protocol-specific method and content routing.",
+      "description_length": 397,
+      "index": 90,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Message",
+      "description": "Provides functions to construct and manipulate AMQP messages, including creating headers from strings or integers, and building messages with custom properties like content type, delivery mode, and correlation ID. Works with AMQP content types and tables, and supports message acknowledgment, rejection, and recovery on a channel. Used to handle message delivery and control flow in AMQP-based communication.",
+      "description_length": 408,
+      "index": 91,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Queue",
+      "description": "Provides functions to configure queue properties like time-to-live, auto-expiration, maximum length, and dead-letter settings. Works with queue names, AMQP channel objects, and message structures. Declares, consumes, publishes, and manages queues in an AMQP client implementation.",
+      "description_length": 280,
+      "index": 92,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Rpc",
+      "description": "Establishes client-server communication over AMQP with support for asynchronous request-response interactions. Manages connection parameters, message headers, and routing keys for sending and receiving data, while handling timeouts and tracing. Configures server queues with dead letter exchanges to manage expired requests, enabling both synchronous and asynchronous message processing. Supports sending messages to specific endpoints and reliably managing server lifecycle operations.",
+      "description_length": 486,
+      "index": 93,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Amqp_client_lwt.Spec",
+      "description": "manages AMQP communication through channel, transaction, message, queue, and exchange operations, with support for reliable delivery, flow control, and lifecycle management. key data types include `shortstr`, `table`, `delivery_tag`, `channel`, and `consumer_tag`, with operations for publishing, acknowledging, binding, declaring, and closing resources. it enables precise control over message flow, transactional integrity, and resource management, allowing tasks like configuring queues, handling unrouteable messages, and securely establishing connections. examples include tracking message delivery status, managing transaction commits, and ensuring safe queue deletion after verification.",
+      "description_length": 694,
+      "index": 94,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt.Thread",
+      "description": "offers a comprehensive set of tools for managing asynchronous and concurrent operations, including list processing, value synchronization, stream handling, and network communication. It defines types such as `'a t` for single-value containers, `t` for readable and writable resources, and a computation type for environment-aware monadic workflows. Users can generate and transform data in parallel, manage asynchronous I/O, and coordinate networked tasks with precise control. Examples include reading from files, writing logs, establishing TCP connections, and executing background processes.",
+      "description_length": 594,
+      "index": 95,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "amqp-client-lwt",
+      "description": "Handles AMQP protocol interactions including message publishing, subscription, and queue management. Operates on types such as connections, channels, exchanges, and messages. Used to build real-time messaging systems, event-driven architectures, and distributed task processing.",
+      "description_length": 278,
+      "index": 96,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Amqp_client_lwt",
+      "description": "Manages AMQP protocol interactions through connection setup, channel control, message handling, and transactional operations. Key data types include connection handles, channel identifiers, message payloads, exchange types, and queue configurations, with operations for declaring exchanges, publishing messages, managing transactions, and configuring queues. It supports atomic updates, message routing, and asynchronous communication, enabling tasks like safe queue modifications, real-time message delivery, and reliable server interaction. Examples include publishing batch messages, handling message acknowledgments, and configuring dead-letter exchanges for expired requests.",
+      "description_length": 680,
+      "index": 97,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 109,
+    "meaningful_modules": 98,
+    "filtered_empty_modules": 11,
+    "retention_rate": 0.8990825688073395
+  },
+  "statistics": {
+    "max_description_length": 694,
+    "min_description_length": 191,
+    "avg_description_length": 327.9591836734694,
+    "embedding_file_size_mb": 0.3564634323120117
+  }
+}

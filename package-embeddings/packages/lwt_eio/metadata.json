@@ -1,0 +1,49 @@
+{
+  "package": "lwt_eio",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 4,
+  "creation_timestamp": "2025-06-18T16:28:05.870430",
+  "modules": [
+    {
+      "module_path": "Lwt_eio.Token",
+      "description": "Provides a mechanism to check if Lwt_eio has been initialized, using a private type to enforce correct usage. Works with the abstract type `t` to ensure proper initialization sequencing. Used to prevent premature use of Lwt_eio-dependent features in libraries with early entry points.",
+      "description_length": 284,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lwt_eio.Promise",
+      "description": "Provides functions to bridge Lwt and Eio promise systems, enabling synchronization between Eio fibers and Lwt threads. Accepts Lwt promises, Eio promises, and Eio promise results as inputs. Used to integrate asynchronous workflows in mixed Lwt-Eio environments, such as waiting for Eio operations from Lwt threads or resolving Lwt values in Eio contexts.",
+      "description_length": 354,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "lwt_eio",
+      "description": "Provides functions to integrate Lwt and Eio for concurrent I/O operations within a single execution context. Works with Lwt promises and Eio's file system and network abstractions. Enables gradual migration of Lwt-based code to Eio by running both in a unified environment.",
+      "description_length": 273,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lwt_eio",
+      "description": "Checks if an internal state is initialized using a private type, ensuring proper sequencing of Lwt_eio usage and preventing premature access to its features. Bridges Lwt and Eio promises, allowing synchronization between Lwt threads and Eio fibers through functions that handle Lwt promises, Eio promises, and their results. This enables seamless integration of asynchronous workflows in mixed Lwt-Eio environments. For example, it allows waiting for Eio operations from Lwt code or resolving Lwt values within Eio contexts.",
+      "description_length": 524,
+      "index": 3,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 4,
+    "meaningful_modules": 4,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 524,
+    "min_description_length": 273,
+    "avg_description_length": 358.75,
+    "embedding_file_size_mb": 0.014962196350097656
+  }
+}

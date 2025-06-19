@@ -1,0 +1,105 @@
+{
+  "package": "osc",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 12,
+  "creation_timestamp": "2025-06-18T16:32:51.739365",
+  "modules": [
+    {
+      "module_path": "Osc.Transport.Make.Client",
+      "description": "Handles client-side communication for a transport protocol, offering create, destroy, and send_string operations. Works with the abstract type t and sockaddr to manage network interactions. Used to transmit OSC data to a server by establishing and managing a client connection.",
+      "description_length": 277,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Osc.Transport.Make.Server",
+      "description": "Handles server creation, destruction, and message reception for network communication. Operates on socket addresses and string data, using a server handle type. Used to set up listening servers, process incoming messages, and clean up resources after use.",
+      "description_length": 255,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Osc.Transport.Make.Io",
+      "description": "Handles asynchronous I/O operations through a monadic interface, allowing chaining of actions that produce values or fail. Works with a generic 'a t type representing computations that may involve side effects. Enables composition of file reads, network requests, and user input handling in a structured, sequential manner.",
+      "description_length": 323,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Osc.Transport.Make",
+      "description": "provides a framework for building networked applications with asynchronous I/O and communication protocols. It includes operations for managing client and server sockets, handling message transmission, and composing side-effecting computations. The 'a t type enables structured sequencing of I/O actions, while the t type and sockaddr support low-level network interactions. Examples include reading files, sending OSC messages over a network, and setting up a server to receive and process incoming data.",
+      "description_length": 505,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Osc.Transport.Io",
+      "description": "Handles asynchronous and sequential computation with monadic operations, supporting chaining of I/O actions and transformations. Works with a generic 'a t type representing computations that yield values. Enables structured handling of file reads, network requests, and user input in a composable manner.",
+      "description_length": 304,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Osc.Transport.Client",
+      "description": "Handles client-side communication for a transport protocol, offering create and destroy operations for client instances. Works with the `t` type and `sockaddr` to manage network interactions. Sends string data to an OSC server using a configured client.",
+      "description_length": 253,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Osc.Transport.Server",
+      "description": "Handles server creation, destruction, and message reception for network communication. Operates on socket addresses and buffers, using a server handle type to manage connections. Used to set up listening servers, process incoming data, and clean up resources after use.",
+      "description_length": 269,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Osc.Types",
+      "description": "Represents OSC packet structures with time, message, and bundle definitions, including timestamps and argument parsing. Works with custom record types for time, timetag, and message arguments. Used to parse and construct OSC data for real-time communication protocols.",
+      "description_length": 268,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Osc.Codec",
+      "description": "Converts OSC packets to and from byte strings using specific serialization and deserialization routines. Operates on OSC packet structures that include addresses, arguments, and type tags. Used to encode messages for network transmission and decode incoming data streams into structured OSC content.",
+      "description_length": 299,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Osc.Transport",
+      "description": "provides a framework for building OSC libraries by combining asynchronous computation, client-server communication, and network resource management. It defines a `t` type for managing transport operations, along with `sockaddr` for addressing, and supports monadic composition for I/O workflows. It enables sending OSC messages via client instances and receiving them through server setups, allowing for structured handling of file, network, and user input operations. Examples include configuring a client to send data to a server or setting up a listener to process incoming OSC messages.",
+      "description_length": 590,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "osc",
+      "description": "Handles encoding and decoding of OSC messages and bundles using binary and structured representations. Operates on custom types for addresses, arguments, and timestamps, enabling precise control over network audio data. Used to implement real-time audio communication between applications and hardware devices.",
+      "description_length": 310,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Osc",
+      "description": "handles OSC packet parsing, serialization, and network communication through structured data types and I/O operations. it defines packet, message, and bundle structures with time stamps and argument handling, and provides encoding/decoding between byte strings and these structures. it includes a transport layer with `t` and `sockaddr` types to manage asynchronous client-server interactions, enabling tasks like sending messages over a network or receiving and processing OSC data in real time.",
+      "description_length": 496,
+      "index": 11,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 12,
+    "meaningful_modules": 12,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 590,
+    "min_description_length": 253,
+    "avg_description_length": 345.75,
+    "embedding_file_size_mb": 0.04401588439941406
+  }
+}

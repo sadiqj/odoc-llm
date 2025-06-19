@@ -1,0 +1,91 @@
+{
+  "package": "monolith",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 10,
+  "creation_timestamp": "2025-06-18T16:32:43.891728",
+  "modules": [
+    {
+      "module_path": "Monolith.Support.Tuple",
+      "description": "Nest3 transforms a three-element tuple into a nested pair structure, while unnest3 reverses this process by expanding nested pairs into a triple. The module operates on tuples of three elements and nested pair structures. It is useful for restructuring data during pattern matching or when preparing inputs for functions expecting specific tuple formats.",
+      "description_length": 354,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monolith.Support.Fun",
+      "description": "Accepts functions with two or three arguments and rearranges their parameter order, supporting operations on arbitrary types. Processes functions that take multiple arguments and returns a transformed version with reordered parameters. Useful for adapting function signatures in higher-order programming scenarios.",
+      "description_length": 314,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monolith.Support.Exn",
+      "description": "Handles exceptions raised during function execution, returning a result type that distinguishes between successful outcomes and caught errors. Operates on functions that take a single argument and produce a value, wrapping their execution in a safe context. Used to manage unexpected failures in critical paths, such as parsing user input or processing external data.",
+      "description_length": 367,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monolith.Support.Seq",
+      "description": "Transforms functions into one-shot variants that raise an exception on repeated invocation and converts sequences into affine sequences that enforce single evaluation. Works with lazy sequences and lists, providing mechanisms to safely extract the first element or convert lists into single-use sequences. Used to enforce single evaluation of potentially expensive computations or to prevent redundant processing in control flow.",
+      "description_length": 429,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monolith.Support.Iteration",
+      "description": "Converts various iteration and folding functions into producers of element lists, handling both simple values and key-value pairs. Operates on custom iteration types like `iter`, `foldr`, `foldl`, `iteri`, `foldri`, and `foldli`. Extracts elements from collections such as maps or lists, returning structured lists for further processing.",
+      "description_length": 338,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monolith.Gen",
+      "description": "Generates values including integers, booleans, characters, and collections using interval-based, list-based, and stateful methods. Supports creating options, results, lists, arrays, and strings with specified lengths or elements. Fails on invalid inputs or empty structures, such as empty lists or out-of-range intervals.",
+      "description_length": 321,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monolith.Print",
+      "description": "Prints OCaml values as formatted documents using specialized printers for integers, booleans, characters, strings, options, results, pairs, lists, and arrays. It constructs complex documents by wrapping content in parentheses, applying expressions, adding comments, or embedding in assertion syntax. Handles nested structures and formatting rules for line breaks and indentation.",
+      "description_length": 379,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monolith.Support",
+      "description": "Transforms tuples into nested pairs and vice versa, reorders function parameters, wraps functions to handle exceptions, enforces single-use evaluation of sequences, and extracts elements from iterative operations into structured lists. Key data types include tuples, nested pairs, lazy sequences, and custom iteration types, with operations like `nest3`, `unnest3`, `reorder`, `safe_call`, `once`, and `collect`. Functions can be adapted for different argument orders, made exception-safe, or converted into single-use forms to control evaluation. Examples include restructuring data for pattern matching, safely parsing input, and extracting elements from maps into lists for downstream processing.",
+      "description_length": 699,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "monolith",
+      "description": "Provides functions to generate and execute sequences of operations on custom data types, comparing results between a reference and a candidate implementation. Works with user-defined types and operations, requiring minimal setup per type. Used to detect implementation errors through randomized or fuzzed operation sequences, particularly effective for data structures like sets, maps, or parsers.",
+      "description_length": 397,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monolith",
+      "description": "Generates and manipulates OCaml values with precise control over structure and type, including integers, lists, options, and nested pairs, while enforcing validity constraints. Provides tools for formatting and displaying complex data structures with customizable layout and syntax. Enables transformation of function signatures, safe execution, and structured extraction of results from iterative processes. Examples include generating test inputs, formatting debug output, and restructuring data for pattern matching or safe parsing.",
+      "description_length": 535,
+      "index": 9,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 10,
+    "meaningful_modules": 10,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 699,
+    "min_description_length": 314,
+    "avg_description_length": 413.3,
+    "embedding_file_size_mb": 0.036757469177246094
+  }
+}

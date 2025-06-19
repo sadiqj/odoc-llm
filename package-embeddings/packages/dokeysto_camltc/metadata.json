@@ -1,0 +1,77 @@
+{
+  "package": "dokeysto_camltc",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 8,
+  "creation_timestamp": "2025-06-18T16:31:07.854429",
+  "modules": [
+    {
+      "module_path": "Dokeysto_camltc.Db_camltc_gen.RO",
+      "description": "Converts keys and values between their native forms and string representations, enabling serialization and deserialization. Operates on arbitrary key and value types through polymorphic functions. Used to generate human-readable logs and parse input data in configuration systems.",
+      "description_length": 280,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dokeysto_camltc.Db_camltc_gen.RW",
+      "description": "Converts keys and values between their original types and string representations, enabling serialization and deserialization. Operates on arbitrary types 'k and 'v through custom conversion functions. Used to store and retrieve complex data in text-based formats like configuration files or logs.",
+      "description_length": 296,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dokeysto_camltc.Db_camltc.RO",
+      "description": "Provides operations to open, close, and query a persistent hash table stored across two files, including checking for key existence, retrieving values, and iterating over entries. Works with string keys and string values, and a handle type `t` representing the database. Used to efficiently access and process large datasets stored on disk without loading them entirely into memory.",
+      "description_length": 382,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dokeysto_camltc.Db_camltc.RW",
+      "description": "Provides operations to create, open, and manage a persistent hash table stored across two files: one for data and one for an index. Supports adding, replacing, removing, and looking up key-value pairs, as well as iterating and folding over the contents. Used to maintain durable, in-memory-like storage with disk persistence for applications requiring fast access to structured data.",
+      "description_length": 383,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dokeysto_camltc.Db_camltc",
+      "description": "Manages persistent, disk-based hash tables with separate data and index files, enabling efficient storage and retrieval of string-keyed data. Offers operations to open, close, add, remove, look up, and iterate over key-value pairs, with a handle type for managing database sessions. Supports folding over entries for aggregate processing and ensures data durability without loading entire datasets into memory. Examples include maintaining a lookup table for user sessions or caching frequently accessed data across application runs.",
+      "description_length": 533,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dokeysto_camltc.Db_camltc_gen",
+      "description": "Handles type conversion for keys and values, supporting serialization and deserialization across arbitrary types using custom or polymorphic functions. Provides operations to transform data into string formats for storage or logging and back into native forms for processing. Examples include converting a timestamp to a string for a log entry or parsing a configuration file's JSON-like structure into a record type. Supports flexible data handling in systems requiring persistent or human-readable representations.",
+      "description_length": 516,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "dokeysto_camltc",
+      "description": "Provides functions to insert, retrieve, and delete key-value pairs using an in-memory hash table. Operates on strings as keys and arbitrary OCaml values serialized as strings. Used to persist and query test data during integration testing.",
+      "description_length": 239,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dokeysto_camltc",
+      "description": "provides a framework for persistent data storage, type-safe conversions, and structural organization. It includes a hash table implementation with key-value operations, a type conversion layer for arbitrary data, and an empty module for structural purposes. Users can store and retrieve string-keyed data efficiently, convert complex types to and from strings, and manage module structure without functional overhead. Examples include caching session data, serializing configuration objects, and organizing related modules into a cohesive namespace.",
+      "description_length": 549,
+      "index": 7,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 10,
+    "meaningful_modules": 8,
+    "filtered_empty_modules": 2,
+    "retention_rate": 0.8
+  },
+  "statistics": {
+    "max_description_length": 549,
+    "min_description_length": 239,
+    "avg_description_length": 397.25,
+    "embedding_file_size_mb": 0.029458045959472656
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "package": "inuit",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 16,
+  "creation_timestamp": "2025-06-18T16:35:19.939724",
+  "modules": [
+    {
+      "module_path": "Inuit_widget.Nav",
+      "description": "Provides functions to construct and manipulate a navigation state, allowing transitions between named routes with associated side effects. Operates on a typed state structure representing navigation frames and a cursor for interactive elements. Used to manage app flow and user interactions in a declarative way, such as navigating between screens or updating UI based on user input.",
+      "description_length": 383,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Inuit_widget.Tree",
+      "description": "Provides operations to construct and manipulate a tree structure where each node is a cursor with associated flags. Supports adding children, triggering actions, and managing open states, working with custom cursor types and references. Used to build interactive hierarchical interfaces with dynamic node updates.",
+      "description_length": 313,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inuit_widget.Check",
+      "description": "Provides functions to create and manipulate a stateful flag structure, including setting a new state and retrieving the current state. Operates on a polymorphic type 'flags t, which is associated with a clickable UI element. Used to manage interactive UI components that respond to user input and update their state accordingly.",
+      "description_length": 328,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Inuit_widget.Edit",
+      "description": "Provides functions to create and manipulate editable text fields with custom state handling. Operates on a polymorphic type 'flags t and string-based state. Used to dynamically update and retrieve input values in interactive UI components.",
+      "description_length": 239,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inuit_widget.Slider",
+      "description": "Provides functions to create and manipulate a slider with a state represented as a pair of integers, and an optional callback for state changes. Operates on a parameterized type that tracks the slider's configuration and interaction state. Used to update the slider's position programmatically or respond to user input in a graphical interface.",
+      "description_length": 344,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inuit_format.Make",
+      "description": "Provides functions to create, modify, and combine flag values, including setting, clearing, and checking individual bits. Operates on the flag type, which represents a set of binary options. Used to manage configuration settings in low-level system interfaces.",
+      "description_length": 260,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Inuit_base.Patch",
+      "description": "Provides functions to calculate the number of Unicode sequences in a UTF-8 string, determine byte offsets for specific sequences, and construct patches with associated flags and operations. Works with UTF-8 strings, integer offsets, and custom flag lists to track changes. Used to generate patches that encode removed and inserted text lengths and their corresponding Unicode positions.",
+      "description_length": 386,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Inuit_base.Socket",
+      "description": "Establishes and manages bidirectional communication between two endpoints, handling message sending, connection state tracking, and event-driven callbacks for reception, connection, and closure. Operates on `controller` and `t` types, where `controller` manages message handling and `t` represents the socket's state. Used to link two pending sockets, send messages only when connected, and trigger actions upon connection or termination.",
+      "description_length": 438,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "inuit",
+      "description": "Provides functions for inserting, deleting, and modifying text within a buffer, along with tracking cursor position and selection. Operates on a structured text buffer representation and event streams from user interactions. Used to synchronize an emacs buffer with an in-memory text model during real-time editing sessions.",
+      "description_length": 324,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inuit_region",
+      "description": "Provides operations to manage text regions with flags, including appending text, clearing content, closing regions, and creating sub-regions. Works with a region type parameterized by flags and an observer type for tracking changes. Used to build interactive text interfaces where content updates are streamed to a consumer via a socket.",
+      "description_length": 337,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inuit_widget",
+      "description": "manages interactive UI components through a set of coordinated stateful structures, including navigation frames, hierarchical cursors, flags, text inputs, and sliders. It supports operations like navigating between routes, building dynamic trees, updating flags, handling text input, and controlling slider values. Each component works with specific types\u2014such as 'flags t, cursor structures, and integer pairs\u2014to enable responsive and declarative user interfaces. Examples include transitioning between app screens, toggling expandable menus, updating button states, capturing user input, and adjusting slider positions.",
+      "description_length": 621,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inuit_format",
+      "description": "Manages binary configuration options through bit manipulation, allowing flags to be set, cleared, and checked. The core type is `flag`, which encapsulates a collection of binary states. Operations include combining flags, testing individual bits, and modifying their values. This enables precise control over system-level settings through bitwise logic.",
+      "description_length": 353,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inuit_trace",
+      "description": "Provides operations to construct and manipulate trace data, including creating an empty trace, initializing with a cursor, and defining call and fix operations that wrap functions with metadata. Works with a parameterized trace type and cursor structures to track execution flow. Used to instrument function calls and fixes for debugging or logging purposes.",
+      "description_length": 358,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Inuit_cursor",
+      "description": "The module enables creation and management of text regions with associated flags and indentation, offering operations like text appending, content clearing, and sub-cursor generation. It works with cursor and socket data structures, facilitating hierarchical organization and event-driven interactions through flag management. Use cases include interactive text editing interfaces and structured data parsing where dynamic state modification is required.",
+      "description_length": 454,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inuit_base",
+      "description": "Calculates Unicode sequence counts and byte offsets in UTF-8 strings, constructs patches with flags and operations, and tracks text changes through custom flag lists. Manages bidirectional communication between endpoints, handling message transmission, connection states, and event callbacks for reception and closure. It operates on `controller` and `t` types, enabling controlled message sending and state-aware actions. Examples include generating text change patches and linking sockets for real-time message exchange.",
+      "description_length": 522,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inuit_remote",
+      "description": "Creates and returns a pair of sockets for handling remote patch communication, one for sending and one for receiving. Operates with revision records and typed remote patch structures to manage versioned data exchanges. Used to synchronize patch updates between distributed components in real-time systems.",
+      "description_length": 305,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 24,
+    "meaningful_modules": 16,
+    "filtered_empty_modules": 8,
+    "retention_rate": 0.6666666666666666
+  },
+  "statistics": {
+    "max_description_length": 621,
+    "min_description_length": 239,
+    "avg_description_length": 372.8125,
+    "embedding_file_size_mb": 0.058541297912597656
+  }
+}

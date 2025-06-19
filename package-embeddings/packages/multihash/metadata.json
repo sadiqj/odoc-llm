@@ -1,0 +1,63 @@
+{
+  "package": "multihash",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 6,
+  "creation_timestamp": "2025-06-18T16:28:17.540409",
+  "modules": [
+    {
+      "module_path": "Multihash.Make.Conv",
+      "description": "Converts between string representations and Cstruct buffers, enabling efficient binary data handling. Operates on custom string types and Cstruct.t values, ensuring seamless data transformation. Used to serialize structured data for network transmission or file storage.",
+      "description_length": 270,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Multihash.Make",
+      "description": "Computes cryptographic hashes of byte sequences or strings using specified multihash algorithms, and applies functions over data in a streaming fashion. Operates on `Cstruct.t` and `string` types, returning results with error handling for unsupported algorithms. Validates algorithm support before processing and enables custom processing during hashing.",
+      "description_length": 354,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Multihash.Uvarint",
+      "description": "Encodes and decodes unsigned integers using variable-length encoding, where smaller values occupy fewer bytes. Works with 32-bit unsigned integers and byte buffers or strings. Used to efficiently serialize protocol buffers or network protocols requiring compact integer representation.",
+      "description_length": 285,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Multihash.Conv",
+      "description": "Converts between string and Cstruct types, enabling seamless data interchange. Operates on custom string and Cstruct wrapped types for safe type handling. Used to serialize data for network transmission or decode incoming binary data into strings.",
+      "description_length": 247,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "multihash",
+      "description": "Encodes and decodes multihashes, which include a hash function identifier, digest length, and the actual hash value. Works with byte sequences and custom hash function implementations. Enables verification of data integrity by comparing computed and stored multihashes.",
+      "description_length": 269,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Multihash",
+      "description": "Computes cryptographic hashes of byte sequences and strings using specified multihash algorithms, and iterates over hash chunks. Operates on `Cstruct.t` and `string` types, with error handling for unsupported algorithms. Validates algorithm support before processing and supports streaming hash computation.",
+      "description_length": 307,
+      "index": 5,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 6,
+    "meaningful_modules": 6,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 354,
+    "min_description_length": 247,
+    "avg_description_length": 288.6666666666667,
+    "embedding_file_size_mb": 0.022233009338378906
+  }
+}

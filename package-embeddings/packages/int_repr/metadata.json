@@ -1,0 +1,343 @@
+{
+  "package": "int_repr",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 46,
+  "creation_timestamp": "2025-06-18T16:42:16.282697",
+  "modules": [
+    {
+      "module_path": "Int_repr.Bytes.Unsafe.Local",
+      "description": "Extracts 64-bit integer values from byte sequences, supporting both little-endian and big-endian formats. Operates on byte buffers and specific positions within them. Used for parsing binary data formats such as file headers or network protocols.",
+      "description_length": 246,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Int_repr.Int32.O.Wrap",
+      "description": "Performs arithmetic operations on wrapped numeric values, supporting addition, subtraction, multiplication, and division. Works with a custom type `t` that encapsulates numeric values. Used to safely apply arithmetic in contexts where direct operations are restricted or need additional validation.",
+      "description_length": 298,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Uint16.O.Wrap",
+      "description": "Performs arithmetic operations on wrapped numeric values, supporting addition, subtraction, multiplication, and division. Works with a custom type `t` that encapsulates numeric values. Used to safely apply arithmetic in contexts where raw numeric operations are not directly applicable.",
+      "description_length": 286,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Int63.O.Wrap",
+      "description": "Performs arithmetic operations on wrapped numeric values, supporting addition, subtraction, multiplication, and division. It operates on a custom type `t` that encapsulates numeric values. Used to safely apply arithmetic in contexts where raw numeric operations are not directly applicable.",
+      "description_length": 290,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.String.Unsafe.Local",
+      "description": "Extracts 64-bit integer values (signed and unsigned) from a string in little-endian or big-endian format at a specified position. Operates on string data and returns int64 or uint64 values based on the byte order. Used for parsing binary data formats that store numeric values in specific endianness.",
+      "description_length": 300,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Int_repr.Uint64.O.Wrap",
+      "description": "Performs arithmetic operations on wrapped numeric values, supporting addition, subtraction, multiplication, and division. Works with a custom type `t` that encapsulates numeric values. Used to safely apply binary operations within a constrained computational context.",
+      "description_length": 267,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Uint32.O.Wrap",
+      "description": "Performs arithmetic operations on wrapped numeric values, supporting addition, subtraction, multiplication, and division. Works with a custom type `t` that encapsulates numeric values. Used to safely apply binary operations within a constrained computational context.",
+      "description_length": 267,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Uint63.O.Wrap",
+      "description": "Performs arithmetic operations on wrapped numeric values, supporting addition, subtraction, multiplication, and division. Works with a custom type representing wrapped numbers, preserving original values during computations. Used to safely apply mathematical operations in contexts where value boundaries or transformations are enforced.",
+      "description_length": 337,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Int_repr.Int8.O.Wrap",
+      "description": "Performs arithmetic operations on wrapped numeric values, supporting addition, subtraction, multiplication, and division. Works with a custom type `t` that encapsulates numeric values. Used to safely apply binary operations within a constrained computational context.",
+      "description_length": 267,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Int16.O.Wrap",
+      "description": "Performs arithmetic operations on wrapped numeric values, supporting addition, subtraction, multiplication, and division. Works with a custom type `t` that encapsulates numeric values. Used to safely apply arithmetic in contexts where raw numeric operations are not directly applicable.",
+      "description_length": 286,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Int64.O.Wrap",
+      "description": "Performs arithmetic operations on wrapped numeric values, supporting addition, subtraction, multiplication, and division. Works with a custom type `t` that encapsulates numeric values. Used to safely apply arithmetic in contexts where raw numeric operations are not directly applicable.",
+      "description_length": 286,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Uint8.O.Wrap",
+      "description": "Performs arithmetic operations on wrapped numeric values, supporting addition, subtraction, multiplication, and division. Works with a custom type representing wrapped numbers, preserving values within a defined range. Used to safely perform calculations in systems requiring bounded numeric behavior, such as embedded controllers or game physics engines.",
+      "description_length": 355,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Make_get.Local",
+      "description": "Provides operations to read 64-bit integers from a binary buffer in network byte order. Works with a custom buffer type and integer indices. Used to parse binary data formats requiring endianness-aware integer extraction.",
+      "description_length": 221,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Bytes.Local",
+      "description": "Extracts 64-bit signed or unsigned integers from a byte buffer in little-endian or big-endian format at a specified position. Operates on byte sequences and returns numeric values based on endianness. Used for parsing binary data formats that require precise control over byte ordering.",
+      "description_length": 286,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Bytes.Unsafe",
+      "description": "Handles 64-bit integer extraction from byte buffers, supporting both endianness formats. Provides functions to read and interpret raw binary data at specified offsets. Enables precise parsing of structured binary formats like file headers or network packets. Examples include decoding a 64-bit timestamp from a network packet or extracting a file size from a binary file header.",
+      "description_length": 378,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Int32.O",
+      "description": "Encapsulates numeric values in a custom type `t` to perform arithmetic operations safely, including addition, subtraction, multiplication, and division. Supports operations that validate inputs and handle edge cases, ensuring controlled numeric manipulation. For example, adding two wrapped integers while checking for overflow or dividing by zero. Provides a structured way to manage numeric computations in restricted or sensitive environments.",
+      "description_length": 446,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Int_repr.Uint16.O",
+      "description": "Encapsulates numeric values in a custom type `t` to perform safe arithmetic operations including addition, subtraction, multiplication, and division. Supports operations that prevent overflow or invalid results by handling values within a controlled environment. For example, adding two `t` values ensures valid numeric outcomes, and dividing by zero triggers a defined error handling mechanism. This enables reliable numeric computation in constrained or safety-critical applications.",
+      "description_length": 485,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Int63.O",
+      "description": "Encapsulates numeric values in a custom type `t` to perform safe arithmetic operations including addition, subtraction, multiplication, and division. Supports operations that prevent overflow or invalid results by wrapping values appropriately. For example, adding two large integers without exceeding their bounds or dividing by zero safely returns an error. This enables reliable numeric computation in constrained or error-sensitive environments.",
+      "description_length": 449,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.String.Local",
+      "description": "Extracts 64-bit integer values (signed and unsigned) from a string in little-endian or big-endian format at a specified position. Operates on string data, interpreting raw byte sequences as numeric values. Used for parsing binary data formats such as file headers or network protocols.",
+      "description_length": 285,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Int_repr.String.Unsafe",
+      "description": "Converts string data into 64-bit integers, supporting both signed and unsigned values and handling little-endian or big-endian byte orders. It extracts values from a specified position within the string, enabling precise parsing of binary formats. Operations include decoding int64 and uint64 from raw byte sequences. For example, it can read a 4-byte little-endian integer from the middle of a binary file or extract a 8-byte big-endian unsigned value from a network packet.",
+      "description_length": 475,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Uint64.O",
+      "description": "Encapsulates numeric values in a custom type `t` to enable safe arithmetic operations, including addition, subtraction, multiplication, and division. Supports binary operations within a controlled environment, preventing overflow or invalid computations. Users can combine values of type `t` to perform calculations while maintaining strict control over numeric behavior. For example, adding two `t` values returns a new `t` instance, ensuring all operations remain within defined boundaries.",
+      "description_length": 492,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Uint32.O",
+      "description": "Encapsulates numeric values in a custom type `t` and enables safe arithmetic operations, including addition, subtraction, multiplication, and division. Operations are applied within a controlled environment to prevent invalid computations. For example, adding two wrapped integers or dividing a wrapped float by a non-zero value. The module ensures correctness by handling edge cases internally.",
+      "description_length": 395,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Uint63.O",
+      "description": "Encapsulates numeric operations within a protected framework, enabling safe arithmetic on values with defined constraints. Utilizes a custom type to store and manipulate numbers while maintaining their integrity through operations like addition, subtraction, multiplication, and division. This allows for controlled computation in scenarios where value limits or transformations are critical. For example, it can prevent overflow in integer calculations or apply scaling factors during division.",
+      "description_length": 495,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Int_repr.Int8.O",
+      "description": "Encapsulates numeric values in a custom type `t` and enables safe arithmetic operations including addition, subtraction, multiplication, and division. Operations are applied within a controlled environment to prevent invalid computations. For example, adding two `t` values yields a new `t` or an error if overflow occurs. Division includes checks to avoid division by zero.",
+      "description_length": 374,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Int16.O",
+      "description": "encapsulates numeric values in a custom type `t` and enables safe arithmetic operations including addition, subtraction, multiplication, and division. It allows for precise manipulation of wrapped numbers without exposing raw numeric types. For example, it can compute `t 5 + t 3` to produce `t 8` or handle division with controlled error handling. This module is ideal for scenarios requiring type-safe numeric computations.",
+      "description_length": 425,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Int64.O",
+      "description": "encapsulates numeric values in a custom type `t` and enables safe arithmetic operations including addition, subtraction, multiplication, and division. It allows computations to be performed on wrapped values without exposing raw numbers, ensuring controlled manipulation. For example, adding two `t` values returns a new `t` with the result, and dividing by zero triggers a defined error handling mechanism. This module is useful for scenarios requiring guarded numeric operations, such as financial calculations or input validation.",
+      "description_length": 533,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Uint8.O",
+      "description": "Encapsulates numeric operations with range-bound safety, using a custom wrapped number type to prevent overflow or underflow. Supports addition, subtraction, multiplication, and division, ensuring values remain within specified limits. Can be used to manage health points in a game or sensor readings in an embedded system. Operations are designed to maintain numerical integrity in critical applications.",
+      "description_length": 405,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.O.Wrap",
+      "description": "Performs arithmetic operations on wrapped numeric values, supporting addition, subtraction, multiplication, and division. Works with a custom type `t` that encapsulates numeric values. Used to safely apply arithmetic in contexts where value wrapping or overflow handling is required.",
+      "description_length": 283,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Int8",
+      "description": "Encapsulates numeric values in a custom type `t` with safe arithmetic operations such as addition, subtraction, multiplication, and division, all performed within a controlled environment. Operations return a `t` or an error, ensuring invalid computations like overflow or division by zero are explicitly handled. For instance, adding two `t` values may result in a new `t` or an error, while division includes checks to prevent zero division. The module supports precise manipulation of 8-bit integers with explicit error propagation.",
+      "description_length": 535,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Uint8",
+      "description": "Provides range-bound numeric operations using a wrapped number type to prevent overflow or underflow, supporting addition, subtraction, multiplication, and division. The core data type is a wrapped unsigned 8-bit integer, with operations that enforce value limits during calculations. It enables safe handling of values like health points or sensor data, ensuring they stay within valid ranges. For example, adding to a value near the maximum will wrap it back to the minimum instead of causing an overflow.",
+      "description_length": 507,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Int16",
+      "description": "Encapsulates numeric values in a custom type `t` and supports safe arithmetic operations such as addition, subtraction, multiplication, and division, with controlled error handling for invalid operations. It ensures type safety by preventing direct use of raw numeric types while enabling precise computation. For instance, `t 5 + t 3` yields `t 8`, and division includes explicit error handling for division by zero. This module is well-suited for applications requiring reliable and bounded numeric operations.",
+      "description_length": 512,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Int_repr.Uint16",
+      "description": "Encapsulates numeric values in a custom type `t` to perform safe arithmetic operations including addition, subtraction, multiplication, and division. Operations are designed to prevent overflow and handle invalid results, such as division by zero, through defined error mechanisms. Users can reliably compute with 16-bit unsigned integers in environments where precision and safety are critical. For example, adding two `t` values returns a validated result, and division includes explicit error handling for zero denominators.",
+      "description_length": 527,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Int32",
+      "description": "Encapsulates numeric values in a custom type `t` to perform arithmetic operations safely, including addition, subtraction, multiplication, and division. Validates inputs and handles edge cases like overflow and division by zero during computations. Operations allow structured numeric manipulation, such as adding two wrapped integers or dividing with explicit error handling. Provides controlled access to arithmetic in environments where precision and safety are critical.",
+      "description_length": 474,
+      "index": 32,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Int_repr.Uint32",
+      "description": "Encapsulates numeric values in a custom type `t` with safe arithmetic operations including addition, subtraction, multiplication, and division, all performed within a controlled environment. It handles edge cases internally, ensuring valid computations such as adding two wrapped integers or dividing a wrapped float by a non-zero value. The module supports both integer and floating-point operations with built-in error prevention. Examples include safely summing large values or performing division without runtime failures.",
+      "description_length": 526,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Int63",
+      "description": "Encapsulates numeric values in a custom type `t` to perform safe arithmetic operations, including addition, subtraction, multiplication, and division, with overflow and error handling. Operations automatically wrap or return errors to avoid invalid results, such as division by zero or integer overflow. Users can safely compute with integers in environments where reliability is critical. For instance, adding two large values without overflow or handling division errors gracefully.",
+      "description_length": 484,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Uint63",
+      "description": "Encapsulates numeric operations within a protected framework, using a custom type to ensure integrity during arithmetic like addition, subtraction, multiplication, and division. It enforces constraints to prevent overflow and apply controlled transformations, such as scaling during division. Operations are designed for scenarios requiring precise value management. For instance, it can safely handle large integer computations or apply fixed-point arithmetic.",
+      "description_length": 461,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Int64",
+      "description": "Encapsulates numeric values in a custom type `t` with safe arithmetic operations including addition, subtraction, multiplication, and division. Operations on `t` values return new `t` instances or handle errors like division by zero explicitly. For example, adding two `t` values produces a new `t` with the sum, and dividing by zero raises a defined error. This enables controlled numeric manipulation in contexts where precision and safety are critical.",
+      "description_length": 455,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Int_repr.Uint64",
+      "description": "Encapsulates numeric values in a custom type `t` to enable safe arithmetic operations, including addition, subtraction, multiplication, and division. Operations on `t` values are performed within a controlled environment, preventing overflow and invalid results. Users can combine `t` values to compute new `t` instances, ensuring all calculations remain within defined bounds. For example, adding two `t` values returns a new `t` instance without risk of overflow.",
+      "description_length": 465,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Make_get",
+      "description": "Extracts 64-bit integers from a custom buffer using network byte order, with index-based access for precise data parsing. The primary data types include a buffer structure and integer indices, supporting operations like reading and validating data segments. This enables efficient handling of binary formats where endianness and position are critical. Examples include parsing packet headers or structured binary files with fixed-size fields.",
+      "description_length": 442,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Make_set",
+      "description": "Writes values of various integer types (8-bit unsigned, 16-bit unsigned, 32-bit signed, 64-bit signed) into a pre-allocated buffer at specified offsets. Operates on a mutable buffer type `t` that represents a contiguous block of memory. Used to construct binary data structures with precise byte-level control, such as network packets or file formats.",
+      "description_length": 351,
+      "index": 39,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Int_repr.Bytes",
+      "description": "Reads and interprets 64-bit signed or unsigned integers from byte sequences, supporting both little-endian and big-endian formats at specified positions. It provides functions to extract numeric values from raw binary data, enabling precise parsing of structured formats such as file headers or network packets. Operations include decoding timestamps, file sizes, or other numeric fields embedded in binary streams. Examples include parsing a 64-bit identifier from a binary file or extracting a network packet's length field.",
+      "description_length": 526,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.String",
+      "description": "Extracts and converts 64-bit signed or unsigned integers from string data, interpreting byte sequences in either little-endian or big-endian format at a specified index. It supports precise parsing of binary structures by decoding int64 and uint64 values from raw byte arrays. For instance, it can retrieve a 4-byte little-endian integer from a file header or extract an 8-byte big-endian value from a network message. Operations enable direct manipulation of binary data without additional encoding layers.",
+      "description_length": 507,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.Local",
+      "description": "Reads 64-bit signed and unsigned integers in little-endian and big-endian formats from a binary buffer. Operates on a buffer type representing raw byte data. Used to parse binary file formats or network protocols requiring precise byte-level access.",
+      "description_length": 249,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Int_repr.O",
+      "description": "Encapsulates numeric values in a custom type `t` to perform arithmetic operations with controlled overflow and wrapping behavior. Supports addition, subtraction, multiplication, and division, ensuring values remain within defined bounds. For example, adding two large values will wrap around instead of causing an overflow. Operations can be applied to both integers and floating-point numbers through distinct implementations.",
+      "description_length": 427,
+      "index": 43,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "int_repr",
+      "description": "Provides functions to convert between integers and their string representations in various bases, including binary, octal, and hexadecimal. Works with OCaml's native integer types and string values, supporting both signed and unsigned conversions. Enables precise manipulation of numeric data in low-level system programming and protocol encoding.",
+      "description_length": 347,
+      "index": 44,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Int_repr",
+      "description": "Handles conversion of 64-bit signed and unsigned integers between binary buffers and OCaml values, supporting both little-endian and big-endian byte orders. It works with a raw byte buffer type, enabling precise manipulation of binary data. Operations include reading and writing integers, allowing for low-level parsing of file formats or network packets. For example, it can extract a 64-bit unsigned integer from a byte sequence or encode a signed integer into a specific endianness.",
+      "description_length": 486,
+      "index": 45,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 46,
+    "meaningful_modules": 46,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 535,
+    "min_description_length": 221,
+    "avg_description_length": 395.5,
+    "embedding_file_size_mb": 0.15319252014160156
+  }
+}

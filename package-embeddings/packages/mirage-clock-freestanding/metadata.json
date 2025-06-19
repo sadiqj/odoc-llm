@@ -1,0 +1,42 @@
+{
+  "package": "mirage-clock-freestanding",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 3,
+  "creation_timestamp": "2025-06-18T16:28:10.524275",
+  "modules": [
+    {
+      "module_path": "mirage-clock-freestanding",
+      "description": "Provides functions to create and manipulate monotonic and system time sources, including reading current time, calculating durations, and converting between time representations. Works with types such as `int64` for time values and custom time source objects that track elapsed time. Used to synchronize timing in network protocols and event-driven systems where precise time tracking is essential.",
+      "description_length": 398,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pclock",
+      "description": "Returns the current POSIX time in days and picoseconds, retrieves the local time zone offset in seconds, and provides the clock's period in days and picoseconds. Operates on time values represented as tuples of integers and 64-bit integers. Used to synchronize application time with system clocks in networked environments.",
+      "description_length": 323,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mclock",
+      "description": "Returns the number of nanoseconds elapsed since an arbitrary start point and provides the clock's period in nanoseconds when available. Operates on integer values representing time intervals. Useful for measuring precise time differences in performance-critical applications like profiling or timing-sensitive operations.",
+      "description_length": 321,
+      "index": 2,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 3,
+    "meaningful_modules": 3,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 398,
+    "min_description_length": 321,
+    "avg_description_length": 347.3333333333333,
+    "embedding_file_size_mb": 0.011304855346679688
+  }
+}

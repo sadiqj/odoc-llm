@@ -1,0 +1,105 @@
+{
+  "package": "xapi-rrd",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 12,
+  "creation_timestamp": "2025-06-18T16:33:07.536403",
+  "modules": [
+    {
+      "module_path": "Rrd_utils.BoundedFloat",
+      "description": "Provides functions to create and convert bounded float values, ensuring they fall within specified ranges. Operates on private float type and a custom entry function type for validation. Used to enforce constraints in numerical inputs for financial calculations and user interface controls.",
+      "description_length": 290,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rrd_utils.Xmlm_utils",
+      "description": "Provides functions to parse and manipulate XML data using the Xmlm library, including extracting element content, handling start tags, and processing sequences of XML signals. Works with XML signals, input streams, and string-based element identifiers. Used to read and transform XML blocks, extract specific elements, and iterate over XML content efficiently.",
+      "description_length": 360,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rrd.StringMap",
+      "description": "The module offers operations for managing string-keyed maps, including adding, removing, and querying entries, alongside traversal, transformation, and filtering of key-value pairs. It works with polymorphic maps and sequences, enabling conversions between these structures while supporting both strict and optional processing variants. Use cases include configuration management, data aggregation, and scenarios requiring efficient string-based lookups and transformations.",
+      "description_length": 474,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rrd.Json",
+      "description": "Converts various data types to JSON-compatible structures, including strings, numbers, records, and arrays. Handles complex nested data like databases, RRA, and RRD structures with specific type constraints. Provides methods to extract and format values from time-series data sources.",
+      "description_length": 284,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rrd.Statefile_latency",
+      "description": "Encodes and decodes latency data between a client and server using RPC serialization. Works with a structured record type containing timestamps and duration measurements. Used to track and transmit performance metrics in distributed systems.",
+      "description_length": 241,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "xapi-rrd",
+      "description": "Provides functions to manage and rotate through a set of data sources in a round-robin fashion, supporting addition, removal, and selection of sources. Operates on a custom data structure representing a pool of sources, each with a unique identifier and state. Used to distribute queries evenly across multiple backend services or databases.",
+      "description_length": 341,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rrd_utils",
+      "description": "Encapsulates utilities for handling bounded numerical values and XML data processing. Implements a private float type with validation logic and supports XML parsing, element extraction, and stream processing. Enables precise control over numerical inputs and structured data manipulation. Can enforce value ranges for financial computations and extract specific XML elements for data transformation.",
+      "description_length": 399,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rrd_timescales",
+      "description": "Provides operations to create and manipulate time-based data archives, including calculating total span and interval duration. Works with a structured type representing time scales, including name, number of intervals, and interval steps. Used to serialize and deserialize time configurations for data storage or transmission.",
+      "description_length": 326,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rrd_unix",
+      "description": "Serializes an RRD data structure to XML or JSON and writes the output to a Unix file descriptor. Works with Rrd.rrd type to handle time-series data storage. Used to stream RRD contents over network sockets or save to files.",
+      "description_length": 223,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rrd_updates",
+      "description": "Provides functions to construct and serialize data structures representing time-series updates for performance monitoring. Works with types like `t`, `row`, and `Rrd.rra` to manage and encode update records. Used to generate XML or JSON representations of monitoring data, or to create multi-source update records for export.",
+      "description_length": 325,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rrd_fring",
+      "description": "Provides ring buffer structures with value ranges enforced through type constraints. Contains fixed-size, circular data storage with operations for insertion, retrieval, and range validation. Examples include managing a rolling window of sensor readings or maintaining a bounded history of events. Ensures values remain within specified limits during all operations.",
+      "description_length": 366,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rrd",
+      "description": "manages time-series data through map operations, JSON serialization, and RPC encoding, enabling efficient storage, transformation, and transmission of structured metrics. It supports string-keyed maps for data organization, JSON conversion for interoperability, and latency tracking via serialized records. Operations include adding and querying map entries, serializing complex data types, and encoding performance metrics. Examples include storing sensor readings, exporting data for visualization, and monitoring system performance across networks.",
+      "description_length": 551,
+      "index": 11,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 15,
+    "meaningful_modules": 12,
+    "filtered_empty_modules": 3,
+    "retention_rate": 0.8
+  },
+  "statistics": {
+    "max_description_length": 551,
+    "min_description_length": 223,
+    "avg_description_length": 348.3333333333333,
+    "embedding_file_size_mb": 0.04400920867919922
+  }
+}

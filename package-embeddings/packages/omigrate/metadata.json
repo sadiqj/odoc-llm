@@ -1,0 +1,112 @@
+{
+  "package": "omigrate",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 13,
+  "creation_timestamp": "2025-06-18T16:33:42.512584",
+  "modules": [
+    {
+      "module_path": "Omigrate_sqlite3.Sqlite_3.Db",
+      "description": "Provides functions to create and manage SQLite database connections, execute SQL statements, bind parameters, and handle transactions. Works with database handles, SQL statements, and data lists to perform queries and script execution. Enables error handling during statement execution and ensures safe transactional operations.",
+      "description_length": 328,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Omigrate_sqlite3.Sqlite_3.T",
+      "description": "Provides functions to manage database migrations, including creating and dropping databases, executing migration scripts up or down, checking version status, and parsing connection URIs. Works with database connection parameters, migration records, and result types for error handling. Used to automate database schema updates, rollback changes, and verify database versions in a controlled manner.",
+      "description_length": 398,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Omigrate_postgres.Postgres.T",
+      "description": "Provides functions to manage PostgreSQL database connections, execute migrations, and handle database schema versions. Works with connection parameters, migration records, and URI parsing results. Enables creating/dropping databases, running migration scripts, and ensuring version tables exist.",
+      "description_length": 295,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Omigrate.Driver.Connection",
+      "description": "type t = { id : int; status : string; last_active : float } Provides functions to establish, close, and check the status of network connections, along with updating activity timestamps. Works with connection records containing identifier, status string, and timestamp. Used to manage real-time chat session lifecycles and detect inactive connections.",
+      "description_length": 350,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Omigrate_sqlite3.Sqlite_3",
+      "description": "Manages SQLite database interactions through connection handling, query execution, parameter binding, and transaction control, while supporting migration workflows like version checks, script application, and rollback. Operates on database handles, SQL statements, migration records, and connection parameters to perform structured data operations and schema updates. Executes raw SQL, manages migration scripts, and ensures consistent database states across environments. Examples include running complex queries with bound parameters, applying incremental schema changes, and rolling back to previous versions when needed.",
+      "description_length": 624,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Omigrate_postgres.Postgres",
+      "description": "Manages PostgreSQL database connections, migrations, and schema versions through functions that process connection parameters, migration records, and URI parsing results. Supports creating and dropping databases, executing migration scripts, and maintaining version tracking. Key data types include connection configurations, migration metadata, and URI components. Examples include initializing a database with a migration script or verifying the presence of a version table.",
+      "description_length": 476,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Omigrate.Error",
+      "description": "Handles error representations with specific constructors for distinct error conditions. Operates on a variant type that includes cases for unknown drivers, bad URIs, and invalid sources. Provides conversion to string for error reporting in scenarios like configuration validation and network request handling.",
+      "description_length": 309,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Omigrate.Migration",
+      "description": "Compares two migration records based on their version numbers and timestamps. It operates on a record type containing version, timestamp, and status fields. This is used to determine the order of execution in a database migration system.",
+      "description_length": 237,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Omigrate.Driver",
+      "description": "Manages network connection states with records tracking identifier, status, and activity time. Offers functions to create, terminate, monitor, and update connections, enabling real-time session management and inactivity detection. Operations include checking status, updating timestamps, and handling connection lifecycles. Examples include tracking user sessions, identifying idle connections, and maintaining active communication channels.",
+      "description_length": 441,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "omigrate",
+      "description": "Provides functions to apply and revert database schema changes, including creating tables, altering columns, and inserting initial data. Works with PostgreSQL and SQLite3 databases using structured migration files and SQL scripts. Enables version-controlled database updates during application deployment.",
+      "description_length": 305,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Omigrate_sqlite3",
+      "description": "Handles SQLite database operations including connection management, query execution, parameter binding, and transaction control, with support for migration workflows such as version checks, script application, and rollbacks. Operates on database handles, SQL statements, migration records, and connection parameters to execute raw SQL, apply schema changes, and maintain consistent database states. Supports complex queries with bound parameters, incremental schema updates, and versioned rollbacks. Examples include executing parameterized SELECTs, applying migration scripts in sequence, and reverting to a prior database state.",
+      "description_length": 630,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Omigrate_postgres",
+      "description": "Handles PostgreSQL database interactions by managing connections, migrations, and version tracking through structured configuration, migration records, and URI parsing. It defines types for connection settings, migration metadata, and URI components, enabling operations like database creation, script execution, and version verification. Users can initialize databases with predefined migrations or check if versioning tables exist. Functions support both low-level database manipulation and high-level migration orchestration.",
+      "description_length": 528,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Omigrate",
+      "description": "Handles error representation, migration record comparison, and network connection management through distinct data types and operations. It includes an error variant with specific constructors for validation and network issues, a migration record with version and timestamp comparison logic, and connection records with status tracking and lifecycle functions. Users can validate configurations, order database migrations, and manage active sessions. Examples include reporting bad URIs, sorting migrations by version, and detecting idle user connections.",
+      "description_length": 555,
+      "index": 12,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 14,
+    "meaningful_modules": 13,
+    "filtered_empty_modules": 1,
+    "retention_rate": 0.9285714285714286
+  },
+  "statistics": {
+    "max_description_length": 630,
+    "min_description_length": 237,
+    "avg_description_length": 421.2307692307692,
+    "embedding_file_size_mb": 0.047646522521972656
+  }
+}

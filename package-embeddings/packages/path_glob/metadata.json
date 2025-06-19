@@ -1,0 +1,63 @@
+{
+  "package": "path_glob",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 6,
+  "creation_timestamp": "2025-06-18T16:30:09.198767",
+  "modules": [
+    {
+      "module_path": "Path_glob.Ast",
+      "description": "Provides functions to construct and manipulate abstract syntax tree nodes, including pattern matching structures and character class definitions. Works with nested pattern types, character ranges, and formula-based expressions. Used to parse and represent regular expressions and logical conditions in a structured format.",
+      "description_length": 322,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Path_glob.Formula",
+      "description": "Represents propositional formulas with operations to evaluate them using a given truth assignment, iterate over atoms to apply side effects, and transform atoms through a mapping function. Works with a polymorphic formula type that encapsulates logical expressions. Evaluates logical expressions in a custom domain, such as checking satisfiability with specific variable assignments or rewriting formulas with substituted variables.",
+      "description_length": 432,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Path_glob.Glob",
+      "description": "Provides functions to parse and evaluate glob patterns with logical combinations, supporting literal strings, shell-like wildcards, and complex expressions using operators like or, and, and not. Operates on strings and constructs efficient automata for pattern matching, with support for directory prefixes during parsing. Evaluates whether a given string matches a compiled pattern, optimizing performance after initial evaluations.",
+      "description_length": 433,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Path_glob.Lexer",
+      "description": "Processes input streams to identify and return tokens representing components of globbing patterns. Works with Lexing.lexbuf and a custom token type encoding pattern elements. Used to build custom parsing logic that integrates with broader grammatical structures.",
+      "description_length": 263,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "path_glob",
+      "description": "Provides functions to parse and evaluate glob patterns and boolean combinations of such patterns against strings. Works with string paths and constructs representing logical formulas of pattern matches. Used to filter files in build systems based on complex path matching rules, such as selecting source files or applying compiler flags conditionally.",
+      "description_length": 351,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Path_glob",
+      "description": "Combines pattern construction, logical evaluation, and parsing to handle glob patterns with regular expression-like syntax. It manages formula-based expressions, propositional logic with custom domains, and string matching through automata. It supports operations like evaluating truth assignments, transforming atoms, and generating tokens from input streams. Examples include checking if a filename matches a complex pattern, rewriting logical conditions, and parsing custom glob syntax.",
+      "description_length": 489,
+      "index": 5,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 6,
+    "meaningful_modules": 6,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 489,
+    "min_description_length": 263,
+    "avg_description_length": 381.6666666666667,
+    "embedding_file_size_mb": 0.022226333618164062
+  }
+}

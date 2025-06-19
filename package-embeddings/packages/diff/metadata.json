@@ -1,0 +1,77 @@
+{
+  "package": "diff",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 8,
+  "creation_timestamp": "2025-06-18T16:31:02.647472",
+  "modules": [
+    {
+      "module_path": "Diff.Field.Infix",
+      "description": "Provides composition of functions with type-preserving transitions, optional mapping, and optional binding. Operates on function types with dependent pairs and optional values. Enables chaining of transformations in pipeline-style workflows and handling of partial functions.",
+      "description_length": 275,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_diff.Utils",
+      "description": "Generates naming conventions for constructors, getters, and setters based on a given identifier. Operates on string inputs to produce standardized method and field names. Used to enforce consistent naming in code generation or schema-driven development.",
+      "description_length": 253,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_diff.Lidents",
+      "description": "Provides functions to construct and manipulate location-aware long identifiers, including field accessors, setters, and constructor names. Works with `Ppxlib.longident` and associated location metadata. Used to generate qualified names for record fields, options, and module-level functions during code transformation.",
+      "description_length": 318,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_diff.Impl",
+      "description": "Generates AST nodes for attribute annotations, field extensions, and pattern matching cases for record fields, using location information and type declarations. It constructs extension constructors, value bindings, and structure items tailored to specific field names and types. Used to dynamically create getter and setter functions, registration logic, and pre/post attribute handlers in code transformation pipelines.",
+      "description_length": 420,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Diff.Field",
+      "description": "Offers function composition with type preservation, supporting optional mappings and bindings. Operates on dependent pairs and optional values, enabling pipeline-style transformation chains and partial function handling. Allows for precise control over data flow and error propagation. For example, it can sequentially apply a series of optional transformations to a value, stopping at the first failure.",
+      "description_length": 404,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "diff",
+      "description": "Generates field accessors for records and computes differences between instances of product types. Works with OCaml records and their derived types to track changes efficiently. Enables versioning of data structures by comparing and storing only the modified fields.",
+      "description_length": 266,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_diff",
+      "description": "Generates standardized method and field names from identifiers, constructs location-aware long identifiers for qualified access, and creates AST nodes for annotations and pattern matching based on type declarations. Operates on strings, `Ppxlib.longident`, and type information to produce consistent naming, field accessors, and code structure. Enables dynamic creation of getters, setters, and registration logic during code generation. Examples include generating `get_foo` from \"foo\", building `MyModule.Bar.baz` with location data, and inserting pattern match cases for record fields.",
+      "description_length": 588,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Diff",
+      "description": "Provides function composition with type preservation, handling dependent pairs and optional values through pipeline-style transformations and partial function application. Supports optional mappings and bindings, allowing controlled data flow and error propagation. It enables sequential application of transformations, such as safely chaining optional operations on a value. For instance, it can process a value through multiple steps, halting on the first failure.",
+      "description_length": 466,
+      "index": 7,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 8,
+    "meaningful_modules": 8,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 588,
+    "min_description_length": 253,
+    "avg_description_length": 373.75,
+    "embedding_file_size_mb": 0.029499053955078125
+  }
+}

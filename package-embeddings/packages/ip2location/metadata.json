@@ -1,0 +1,49 @@
+{
+  "package": "ip2location",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 4,
+  "creation_timestamp": "2025-06-18T16:27:55.422352",
+  "modules": [
+    {
+      "module_path": "Ip2location.Database",
+      "description": "Retrieves the API version string, establishes a database connection with a given identifier, and closes an active connection. It processes SQL queries against a database using a metadata object and returns structured IP geolocation data. The metadata type encapsulates connection details, while the IP record type holds lookup results.",
+      "description_length": 335,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ip2location.Web_service",
+      "description": "Handles WebSocket connections and data retrieval with custom configuration. Processes string-based queries and returns structured JSON responses along with status codes. Used to fetch user-specific data and manage session states in real-time applications.",
+      "description_length": 255,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "ip2location",
+      "description": "Provides functions to retrieve detailed geographic and network information from IP addresses using a file-based database. Works with IPv4 and IPv6 addresses, returning structured data including country, city, latitude, longitude, ISP, time zone, and ASN. Used in applications requiring location-based routing, user geolocation, or network analysis.",
+      "description_length": 348,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ip2location",
+      "description": "manages database and WebSocket interactions for IP geolocation, offering structured data retrieval through metadata and session-aware queries. It defines metadata for connection management and IP records for lookup results, along with JSON responses for real-time data. Users can execute SQL queries against a database or handle WebSocket-based user sessions. Examples include fetching geolocation details for an IP or maintaining real-time user state tracking.",
+      "description_length": 461,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 4,
+    "meaningful_modules": 4,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 461,
+    "min_description_length": 255,
+    "avg_description_length": 349.75,
+    "embedding_file_size_mb": 0.014950752258300781
+  }
+}

@@ -1,0 +1,588 @@
+{
+  "package": "fix",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 81,
+  "creation_timestamp": "2025-06-18T16:46:32.994709",
+  "modules": [
+    {
+      "module_path": "Fix.Indexing.Vector.Of_array",
+      "description": "Provides operations to convert between arrays and other structures, including mapping and folding over elements. Works with arrays of a specific type `a` and returns new arrays or values based on transformations. Used to process and aggregate data from arrays into different forms, such as filtering or reducing elements into a single result.",
+      "description_length": 342,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fix.Numbering.Make.Done",
+      "description": "Provides operations to encode and decode values of a type `t` into and from integers within a range determined by the number of distinct values of `t`. Works with a type `t` that is isomorphic to the interval [0..n), where `n` is the count of distinct values. Used to map a finite set of values to unique integer identifiers and back, such as in serialization or enumeration schemes.",
+      "description_length": 383,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Numbering.ForOrderedType.Done",
+      "description": "Provides operations to encode and decode values of a type `t` into a range of integers from 0 to `n-1`, where `n` is the total number of distinct values of `t` that have been encoded. Works with a type `t` that is abstractly defined and represents a finite set of values. Used to map between concrete values and compact integer representations in serialization or compression scenarios.",
+      "description_length": 386,
+      "index": 2,
+      "embedding_norm": 0.9999998807907104
+    },
+    {
+      "module_path": "Fix.Numbering.ForType.Done",
+      "description": "Provides functions to encode and decode values of type t into and from integers within a fixed range determined by the number of distinct values. Works with a type t that is isomorphic to the interval [0..n), where n is the count of distinct values. Used to map a finite set of values to unique integer codes for efficient representation or serialization.",
+      "description_length": 355,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Numbering.ForHashedType.Done",
+      "description": "Provides operations to encode and decode values of a type `t` into a range of integers from 0 to `n-1`, where `n` represents the total number of distinct values. Works with a type `t` that is isomorphic to the interval [0..n). Used to map a finite set of values to unique integer identifiers for serialization or indexing.",
+      "description_length": 322,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Indexing.Const",
+      "description": "Provides operations to retrieve the cardinal value of a set, including a function to get the size as an integer. Works with set data structures that track element counts. Used to determine the number of elements in a set during processing or validation steps.",
+      "description_length": 259,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fix.Indexing.Empty",
+      "description": "Provides a type-level representation of the empty set using a singleton type `n`. Operates on cardinality values to express absence or nullity in type-level computations. Used to enforce constraints in generic programming where empty structures must be explicitly modeled.",
+      "description_length": 272,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fix.Indexing.Gensym",
+      "description": "Generates unique indices for an open-ended set, allowing the addition of new elements until the set's cardinality is observed. Operates on a type-level natural number `n` to track the current size of the set. Used to create distinct identifiers in contexts requiring non-conflicting labels, such as compiler name generation or symbolic computation.",
+      "description_length": 348,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Indexing.Sum",
+      "description": "Calculates the sum of a list of integers using a recursive accumulation pattern. Operates on lists and integer values, applying a fold operation to aggregate results. Used to compute total values from structured data sets such as transaction logs or numerical arrays.",
+      "description_length": 267,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fix.Indexing.Index",
+      "description": "Converts integers to and from index types bounded by a given cardinality, ensuring values remain within [0, n). Iterates over all indices in forward or reverse order, and provides an imperative iterator for sequential access. Used to safely generate and traverse finite sequences of unique identifiers or positions.",
+      "description_length": 315,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fix.Indexing.Vector",
+      "description": "Provides operations for creating and manipulating vectors with distinct numeric and element types. Works with abstract types `n` for size and `a` for element values. Used to construct fixed-size numerical data structures for mathematical computations and low-level memory management.",
+      "description_length": 283,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.HashCons.Make",
+      "description": "Provides memoization for functions with key-based caching, exposes memo tables for inspection, and supports recursive function definitions with cycle detection. Operates on custom key types and memoization tables parameterized by result types. Enables efficient repeated computation of results for identical inputs and safe recursive definitions in scenarios prone to infinite loops.",
+      "description_length": 383,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.HashCons.ForHashedType",
+      "description": "Provides equality and hashing operations for key types used in hash tables. Works with arbitrary data types through a defined `t` type. Used to ensure consistent key comparison and hashing in hash table implementations, such as comparing objects by structure or physical identity.",
+      "description_length": 280,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.HashCons.ForHashedTypeWeak",
+      "description": "Provides equality and hashing operations for keys in weak hash tables, ensuring consistent behavior when comparing and storing elements. Works with arbitrary data types through user-defined equality and hash functions. Used to manage keys in hash tables where object identity or structural equality is critical, such as tracking mutable or cyclic data structures.",
+      "description_length": 363,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Numbering.Make",
+      "description": "Provides operations to create, modify, and traverse a key-value store, including adding entries, finding values by key, and clearing the entire structure. Works with a polymorphic map type that associates keys of a specific type with values of another type. Used to manage dynamic data associations, such as storing configuration settings or tracking state during processing.",
+      "description_length": 375,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Numbering.ForOrderedType",
+      "description": "Compares elements of type t using a total ordering, returning -1, 0, or 1 based on their relative values. It operates on values of the abstract type t, enabling ordered comparisons in data structures like sets and maps. This function is essential for implementing sorted collections where element ordering is critical.",
+      "description_length": 318,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fix.Numbering.ForHashedType",
+      "description": "Provides equality and hashing operations for key types used in hash tables. Works with arbitrary data types through a defined `t` type. Used to ensure consistent key comparison and hashing in hash table implementations, such as comparing objects by structure or physical identity.",
+      "description_length": 280,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Numbering.ForType",
+      "description": "Provides functions to serialize and deserialize values of type t to and from JSON, along with a comparison function for ordering. Works with the abstract type t, which represents domain-specific data structures. Used to ensure consistent data representation in network communication and persistent storage.",
+      "description_length": 306,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Glue.CHAR",
+      "description": "Provides operations to compare, convert, and inspect individual characters. Works with the built-in char type and supports transformations to and from their ASCII integer representations. Used to validate input characters and perform case-insensitive comparisons.",
+      "description_length": 263,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Glue.INT",
+      "description": "Provides operations for arithmetic and comparison on integer values, including addition, subtraction, multiplication, division, and equality checks. Works with the built-in integer type, supporting standard numerical computations. Used to perform precise integer calculations in algorithms requiring exact numeric results.",
+      "description_length": 322,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Glue.STRING",
+      "description": "Provides operations for manipulating immutable sequences of characters, including concatenation, substring extraction, and length calculation. Works with the built-in string type, offering direct access to standard library functions. Used for processing text input, generating formatted output, and performing string-based data transformations.",
+      "description_length": 344,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Glue.TrivialOrderedType",
+      "description": "Provides functions for comparing and ordering values of type t, including equality checks and total ordering. Works with any data type that supports these operations, such as integers, strings, or custom records. Used to implement sorted data structures like priority queues or ordered maps.",
+      "description_length": 291,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Glue.TrivialHashedType",
+      "description": "Provides hash and equality operations for a custom type `t`, enabling its use in hash tables and sets. Works with opaque data types where structural equality and hashing are required. Used to define key types for modules like `Hashtbl` and `Set`.",
+      "description_length": 246,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Glue.InjectOrderedType",
+      "description": "Encodes values of type t into a unique representation using an injective function, ensuring distinct inputs produce distinct outputs. It operates on arbitrary types that can be mapped to another type u. This is useful for generating unique identifiers or stable representations for objects in contexts requiring injectivity.",
+      "description_length": 324,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Glue.InjectHashedType",
+      "description": "Encodes values of type t into a unique representation using an injective function, ensuring distinct inputs produce distinct outputs. It operates on abstract types where equality is not directly comparable. This is useful for generating stable, unique identifiers for objects in contexts like serialization or hashing.",
+      "description_length": 318,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Glue.InjectMinimalImperativeMaps",
+      "description": "Encodes values of type t into keys of a map, ensuring each input maps to a unique key. It relies on an underlying map structure to store and retrieve these encoded values. This is useful for generating stable, unique identifiers for objects in a mutable context.",
+      "description_length": 262,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Glue.InjectImperativeMaps",
+      "description": "Encodes values of type t into keys of a map, ensuring unique representation through an injective mapping. The operation preserves distinctness, allowing safe use as identifiers in imperative map structures. This supports scenarios where t values need to be reliably stored and retrieved in a mutable key-value context.",
+      "description_length": 318,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Glue.PersistentMapsToImperativeMaps",
+      "description": "Converts persistent map operations into imperative-style interfaces, supporting insertion, lookup, and iteration over key-value pairs. Operates on a polymorphic map type where keys are abstract and values are user-defined. Used to bridge functional map logic with imperative code that requires side effects or in-place updates.",
+      "description_length": 327,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Glue.ArraysAsImperativeMaps",
+      "description": "Provides operations to treat arrays as mutable key-value stores, including retrieving the size with `n` and accessing elements by index. Works with arrays of arbitrary types and integer keys. Used to efficiently manage dynamic mappings where frequent updates and lookups are required.",
+      "description_length": 284,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Glue.HashTablesAsImperativeMaps",
+      "description": "Compares keys using a provided equality function and generates hash values for them, ensuring consistent hashing for key equivalence. Works with arbitrary key types, supporting structural, physical, or custom comparisons. Used to implement hash tables with specific key comparison semantics, such as handling NaNs or mutable objects.",
+      "description_length": 333,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Glue.WeakHashTablesAsImperativeMaps",
+      "description": "Provides key equality and hashing operations for managing weak hash tables as imperative maps. Works with arbitrary key types through customizable equality and hash functions. Used to implement associative mappings where key identity is determined by user-defined structural or physical comparison.",
+      "description_length": 298,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Glue.MinimalSemiLattice",
+      "description": "Determines partial order relationships and computes least upper bounds between properties. Operates on the `property` type, representing abstract program properties. Used to merge and compare constraints in static analysis tools.",
+      "description_length": 229,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Memoize.Make",
+      "description": "Creates a new empty map and allows in-place insertion of key-value pairs, with a lookup function that retrieves values by key. Operates on a custom map type parameterized by data and key types. Used to manage dynamic associations where keys are unique and values are updated or retrieved efficiently.",
+      "description_length": 300,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Memoize.ForOrderedType",
+      "description": "Compares elements of type t using a total ordering, returning -1, 0, or 1 based on their relative positions. Works with any data type that supports structural comparison. Used to establish consistent ordering for sorted data structures or custom key comparisons.",
+      "description_length": 262,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Memoize.ForHashedType",
+      "description": "Provides equality and hashing operations for key types used in hash tables. Works with arbitrary data types through a defined `t` type. Used to ensure consistent key comparison and hashing in hash table implementations, such as when comparing objects by structure or physical identity.",
+      "description_length": 285,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fix.Memoize.ForType",
+      "description": "Provides functions to serialize and deserialize values of type t using a custom binary format, including packing and unpacking operations. Works with the abstract type t, which represents structured data with nested fields. Used to encode configuration objects into byte sequences for network transmission and decode them back into native OCaml values.",
+      "description_length": 352,
+      "index": 35,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fix.Memoize.Char",
+      "description": "Provides memoization for functions with char keys, including a combinator that returns a memoized function and its table. Supports recursive memoization with cycle detection and handles currying for product types. Used to optimize repeated character-based computations and manage dependencies in recursive definitions.",
+      "description_length": 318,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Memoize.Int",
+      "description": "Provides memoization for integer-keyed functions, exposing tables for inspection and handling recursive definitions with cycle detection. Operates on integer keys and returns memoized function results, with support for currying and recursive patterns. Used to optimize repeated calculations with integer inputs and track memoization state explicitly.",
+      "description_length": 350,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Memoize.String",
+      "description": "Memoizes functions that take a string key and return a value, storing results to avoid redundant computations. Exposes a memoization table for inspection and provides recursive variants that detect cyclic dependencies during evaluation. Supports currying for functions operating on tuple keys, enabling efficient reuse of memoized results.",
+      "description_length": 339,
+      "index": 38,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fix.DataFlow.Run",
+      "description": "Computes the join of two properties, returning the stronger (logically greater) property when applicable. Operates on the `property` type, which represents logical constraints or attributes. Used to merge constraints in static analysis or verification workflows.",
+      "description_length": 262,
+      "index": 39,
+      "embedding_norm": 1.0000001192092896
+    },
+    {
+      "module_path": "Fix.DataFlow.ForOrderedType",
+      "description": "Compares elements of type t using a total ordering, returning -1, 0, or 1 based on their relative values. Works with any data type that supports structural comparison. Used to establish consistent ordering for sorted data structures like trees or lists.",
+      "description_length": 253,
+      "index": 40,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fix.DataFlow.ForHashedType",
+      "description": "Provides equality and hashing operations for key types used in hash tables. Works with arbitrary data types through a defined `t` type. Used to ensure consistent key comparison and hashing in hash-based data structures, such as when implementing custom hash tables or ensuring proper behavior with mutable or cyclic objects.",
+      "description_length": 324,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.DataFlow.ForType",
+      "description": "Provides functions to serialize and deserialize values of type t to and from JSON, with support for custom encoding and decoding rules. Works with the t type, enabling integration with external systems that require structured data exchange. Used to convert internal representation of configuration settings into a format suitable for storage or transmission.",
+      "description_length": 358,
+      "index": 42,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fix.DataFlow.ForIntSegment",
+      "description": "Provides operations to work with integer segments, including retrieving the size of a segment. Operates on a custom segment type that encapsulates start and end points. Used to calculate and validate ranges in interval-based algorithms.",
+      "description_length": 236,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.DataFlow.ForCustomMaps",
+      "description": "Provides operations to retrieve and update boolean values associated with variables in a custom map structure. Works with G.variable keys and boolean values, ensuring safe access without exceptions. Used to track and modify state information during program execution.",
+      "description_length": 267,
+      "index": 44,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fix.Fix.Make",
+      "description": "Provides operations to compare properties for equality, determine if a property is the bottom element, and check if a property is maximal under a partial order. Works with the `property` type, which represents elements in a partially ordered set. Used to analyze lattice structures, such as determining dominance relationships in static analysis or constraint systems.",
+      "description_length": 368,
+      "index": 45,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fix.Fix.ForOrderedType",
+      "description": "Compares elements of type t using a total ordering, returning -1, 0, or 1 based on their relative positions. Works with any data type that supports structural comparison. Used to establish consistent ordering for sorted data structures like ordered sets or maps.",
+      "description_length": 262,
+      "index": 46,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fix.Fix.ForHashedType",
+      "description": "Provides equality and hashing operations for key types used in hash tables. Works with arbitrary data types through a defined `t` type. Used to ensure consistent key comparison and hashing in hash-based data structures, such as when implementing custom dictionaries or ensuring correct behavior with mutable or cyclic objects.",
+      "description_length": 326,
+      "index": 47,
+      "embedding_norm": 0.9999998807907104
+    },
+    {
+      "module_path": "Fix.Fix.ForType",
+      "description": "Provides functions to serialize and deserialize values of type t using a custom binary format, including packing and unpacking operations. Works with the abstract type t, which represents structured data with nested fields. Used to encode configuration objects into byte sequences for storage and decode them during application startup.",
+      "description_length": 336,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Prop.Boolean",
+      "description": "Provides operations to compare and combine boolean values using lattice semantics. Includes checks for equality, partial order, and join operations, with specific behavior for bottom and top elements. Used to determine logical relationships and bounds in boolean-based property systems.",
+      "description_length": 286,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Prop.Option",
+      "description": "Provides functions to map, bind, and fold over optional values, including `map`, `bind`, and `fold`. Works with the `t` type, representing values that may be absent. Enables safe handling of potentially missing data in computations like parsing or lookup.",
+      "description_length": 255,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Prop.Set",
+      "description": "Creates and manipulates sets with operations for checking equality and generating empty instances. Works with the abstract set type `t` to manage unique elements. Used to compare set contents and initialize empty collections in algorithms requiring distinct values.",
+      "description_length": 265,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Tabulate.Make",
+      "description": "Creates and manipulates mutable maps with key-value pairs, supporting insertion and lookup operations. Operates on maps where keys are of type F.t and values are polymorphic. Used to dynamically track and update state in applications requiring fast key-based data access.",
+      "description_length": 271,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Tabulate.ForOrderedType",
+      "description": "Iterates over each element in a collection, applying a given function to each element. Operates on a custom type `t` representing ordered data. Used to process elements in sequence for logging, validation, or transformation.",
+      "description_length": 224,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Tabulate.ForHashedType",
+      "description": "Iterates over each element in a collection, applying a given function to each item. Operates on a custom type `t` representing a set of hashed values. Used to perform side-effecting operations like logging or updating external state during traversal.",
+      "description_length": 250,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Tabulate.ForType",
+      "description": "Iterates over each element of a collection, applying a given function to each. Operates on a custom type `t` that represents a sequence of values. Used to perform side-effecting operations like logging or updating state during traversal.",
+      "description_length": 237,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Tabulate.ForIntSegment",
+      "description": "Provides operations to work with integer segments, including retrieving the size of a segment. Operates on a custom segment type that encapsulates start and end points. Used to calculate and validate ranges in interval-based algorithms.",
+      "description_length": 236,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.GraphNumbering.Make",
+      "description": "Provides operations to create, modify, and traverse a key-value store where keys are of an abstract type and values are polymorphic. Supports adding entries, retrieving values by key, and clearing the entire structure. Used to manage dynamic mappings in applications requiring in-place updates and sequential processing of entries.",
+      "description_length": 331,
+      "index": 57,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fix.GraphNumbering.ForOrderedType",
+      "description": "Compares elements of type t using a total ordering, returning -1, 0, or 1 based on their relative values. Works with any data type that supports structural comparison. Used to establish consistent ordering for sorted data structures like trees or lists.",
+      "description_length": 253,
+      "index": 58,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fix.GraphNumbering.ForHashedType",
+      "description": "Provides equality and hashing operations for key types used in hash tables. Works with arbitrary data types through a defined `t` type. Used to ensure consistent key comparison and hashing in hash table implementations, such as when handling objects by structural equality or physical identity.",
+      "description_length": 294,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.GraphNumbering.ForType",
+      "description": "Provides functions to serialize and deserialize values of type t using a custom binary format, including packing and unpacking operations. Works with the abstract type t, ensuring type safety during data transformation. Used to encode runtime values for network transmission and decode incoming data streams efficiently.",
+      "description_length": 320,
+      "index": 60,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fix.Minimize.Minimize",
+      "description": "Compares transition labels using a total order, returning an integer result. Converts transition labels to strings for debugging output. Operates on the abstract type `t` representing transition labels.",
+      "description_length": 202,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Glue",
+      "description": "Combines character, integer, and string utilities with comparison, hashing, and encoding functions to support building and manipulating association maps. Offers operations for character manipulation, integer arithmetic, string processing, and type-specific equality, ordering, and hashing. Enables the creation of unique identifiers, stable key mappings, and efficient imperative data structures like hash tables and arrays. Supports tasks such as validating input, generating formatted output, and implementing sorted or hashed collections with custom types.",
+      "description_length": 559,
+      "index": 62,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fix.Memoize",
+      "description": "provides a set of tools for building and managing memoized functions with various key types, including maps, comparators, hashers, serializers, and specialized memoizers for chars, integers, and strings. It supports efficient key-value storage, ordered comparisons, structural equality, and binary serialization, enabling optimized computation and data management. Functions can be memoized with cycle detection, recursive handling, and currying, allowing reuse of results for repeated inputs. Examples include caching character-based computations, tracking integer-dependent results, and reusing string-keyed function outputs with explicit table inspection.",
+      "description_length": 658,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Numbering",
+      "description": "manages bidirectional mappings between values and unique integers, supporting dynamic key-value storage, ordered comparisons, hash-based lookups, and JSON serialization. It handles polymorphic key-value associations, total order comparisons, and equality checks for arbitrary data types, enabling efficient data management and representation. Users can add and retrieve entries, compare elements, hash keys, and convert data to and from JSON format. This allows for structured data handling in applications ranging from configuration management to networked systems.",
+      "description_length": 566,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.GraphNumbering",
+      "description": "manages vertex numbering in directed graphs by combining key-value storage, ordered comparisons, hashable keys, and binary serialization. It uses abstract key types with polymorphic values, ordered comparisons for sorting, hash functions for efficient lookups, and binary encoding for data persistence. Operations include adding and retrieving key-value pairs, comparing elements, hashing keys, and serializing data. This enables efficient graph traversal, dynamic data management, and reliable data exchange in applications involving structured graphs.",
+      "description_length": 553,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Indexing",
+      "description": "Provides injection and projection operations to map indices between disjoint sum types. Works with index types representing left and right components of a sum and a combined index type. Used to encode and decode positions in a tagged union structure, such as in encoding variant types with explicit indexing.",
+      "description_length": 308,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Tabulate",
+      "description": "provides a framework for efficiently evaluating and querying functions over their domains by precomputing results. it includes mutable maps for key-value storage, iterators for processing ordered or hashed collections, and segment utilities for handling interval-based data. operations include insertion, lookup, transformation, and range validation. users can build fast lookup tables, process data sequences with side effects, and manage interval ranges with precision.",
+      "description_length": 471,
+      "index": 67,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fix.Gensym",
+      "description": "Generates unique integer identifiers using a stateful generator that tracks the next available value. It defines a generator type that can produce fresh integers and retrieve its current state. Used to create unique symbolic names in code generation or tracking distinct entities.",
+      "description_length": 280,
+      "index": 68,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.HashCons",
+      "description": "Allocates uniquely numbered cells for data, ensuring each distinct value is stored only once. It uses a smart constructor that returns either a new or existing cell based on equality checks. This is useful for efficiently managing large datasets with repeated values, such as in symbolic computation or compiler optimizations.",
+      "description_length": 326,
+      "index": 69,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fix.DataFlow",
+      "description": "Computes the least fixed point of a data flow equation over a directed graph, using join operations on properties to merge constraints and total ordering to manage sorted structures. Supports serialization to JSON, integer segment analysis, and boolean state tracking via custom maps. Equality, hashing, and comparison functions ensure robust handling of arbitrary data types in hash tables and sorted collections. Enables efficient static analysis, configuration management, and state tracking in programs with cyclic dependencies.",
+      "description_length": 532,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.CompactQueue",
+      "description": "Provides operations to create, check emptiness, add elements to the end, and remove elements from the front of a queue. Works with a mutable queue type that stores elements in a contiguous array for efficient memory and time usage. Used in scenarios requiring high-throughput element processing where memory retention of past elements is acceptable, such as streaming data pipelines or batch processing.",
+      "description_length": 403,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Enum",
+      "description": "Provides functions to create, transform, and consume enumerations, including iterating, filtering, mapping, and converting to lists or arrays. Works with the `'a enum` type, supporting operations like appending elements, checking length, and handling empty sequences. Used to process sequences lazily, such as filtering a large dataset or converting between list and array representations.",
+      "description_length": 389,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Partition",
+      "description": "Provides operations to manage and refine partitions of a set of elements, including marking elements, splitting blocks based on marks, discarding elements, and iterating over block contents. Works with elements represented as indices and partitions structured into blocks identified by integers. Used in automata minimization to efficiently refine equivalence classes during state reduction.",
+      "description_length": 391,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Minimize",
+      "description": "Provides operations to query the number of states and transitions, extract labels and endpoints of transitions, and enumerate initial and final states. Works with indexed state and transition types, along with labels representing input symbols. Used to analyze structure and behavior of deterministic finite-state automata in formal language processing.",
+      "description_length": 353,
+      "index": 74,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fix.Prop",
+      "description": "Defines lattice operations for boolean, optional, and set types, enabling comparisons, combinations, and transformations. Supports equality checks, partial order relations, and join operations for booleans; maps, binds, and folds over optional values; and manages set equality and empty instances. Allows for logical bounding in boolean systems, safe data handling with optionals, and set-based algorithm initialization. Examples include determining boolean bounds, safely chaining computations with optionals, and comparing set contents.",
+      "description_length": 538,
+      "index": 75,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fix.Fix",
+      "description": "offers a framework for computing least fixed points in recursive definitions with cyclic dependencies, using a partially ordered set of properties. it includes comparison operations for properties, total ordering for arbitrary types, equality and hashing for keys, and serialization for structured data. users can analyze dominance in graphs, manage ordered collections, implement hash tables, and persist complex data structures. the system enables efficient, on-demand computation and memoization for static analysis and data flow tasks.",
+      "description_length": 539,
+      "index": 76,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fix.Make",
+      "description": "Provides operations to compare properties for equality, determine if a property is the bottom element, and check if a property is maximal under a partial order. Works with the `property` type, which represents elements in a partially ordered set. Used to analyze lattice structures, verify property hierarchies, and enforce constraints in static analysis tools.",
+      "description_length": 361,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix.Done",
+      "description": "Provides functions to encode and decode values of type t into and from integers within a fixed range determined by the number of distinct values of t. Works with a type t that represents a finite set of values, where each value maps uniquely to an integer in [0..n). Used to serialize and deserialize values in contexts requiring compact integer representations, such as encoding enums or finite state machines.",
+      "description_length": 411,
+      "index": 78,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "fix",
+      "description": "Provides functions for memoizing recursive calls, computing fixed points, and managing numbered sequences. It operates on functions, integers, and recursive data structures. Used to optimize recursive algorithms and implement efficient numbering schemes in combinatorial applications.",
+      "description_length": 284,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fix",
+      "description": "Encodes values of type t into values of type u using an injective function, ensuring unique representation. Works with abstract types t and u where t is embedded within u. Used to distinguish between different type contexts while preserving value identity.",
+      "description_length": 256,
+      "index": 80,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 81,
+    "meaningful_modules": 81,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 658,
+    "min_description_length": 202,
+    "avg_description_length": 330.81481481481484,
+    "embedding_file_size_mb": 0.2910423278808594
+  }
+}

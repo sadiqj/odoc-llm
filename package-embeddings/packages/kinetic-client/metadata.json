@@ -1,0 +1,175 @@
+{
+  "package": "kinetic-client",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 22,
+  "creation_timestamp": "2025-06-18T16:36:11.741807",
+  "modules": [
+    {
+      "module_path": "Kinetic.Make.Entry",
+      "description": "Provides operations to construct a structured entry with a key, database version, new version, and optional value and tag. Works with custom types including key, version, I.value slice, and Tag.t. Used to create and serialize entry records for database state tracking.",
+      "description_length": 268,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Kinetic_tag.Tag",
+      "description": "Converts tag values to their string representations. Works with custom tag types defined in the module. Used to generate human-readable output for logging and user interfaces.",
+      "description_length": 175,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Kinetic_integration.BytesIntegration",
+      "description": "Converts SSL socket data to strings, reads from and writes to sockets using byte buffers, and generates cryptographic tags from byte sequences. Operates on byte arrays and SSL sockets for low-level network communication. Used to serialize socket content, transfer binary data, and compute checksums for data integrity.",
+      "description_length": 318,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Kinetic_config.Config",
+      "description": "Provides pretty-printing and string representation for configuration data, and constructs a configuration record with detailed parameters such as vendor, model, serial number, IP addresses, and size limits for keys, values, and operations. Works with a record type containing strings, bytes, integers, and lists of bytes to define system-specific settings. Used to initialize system configurations with precise constraints for networked services and data storage.",
+      "description_length": 463,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Kinetic.Config",
+      "description": "Provides functions to serialize configuration data into a string representation. Works with a record type containing application-specific settings and parameters. Used to generate human-readable logs and debug outputs from loaded configuration values.",
+      "description_length": 251,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Kinetic.Tag",
+      "description": "Provides functions to create, compare, and serialize tags represented as strings. Operates on opaque tag values and supports pattern matching for tag classification. Used to annotate log entries with specific metadata identifiers.",
+      "description_length": 230,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Kinetic.BytesIntegration",
+      "description": "Creates and manipulates byte-based values, supporting reading from and writing to SSL sockets with precise offset and length parameters. Processes byte sequences to generate cryptographic tags such as SHA-1 and CRC32 checksums. Converts values and socket connections to string representations for debugging or logging purposes.",
+      "description_length": 327,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Kinetic.Error",
+      "description": "Provides a way to convert error values into human-readable strings using the show function. Works with a custom error type and string messages. Used to generate error logs and user-facing notifications.",
+      "description_length": 202,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Kinetic.Make",
+      "description": "Creates and manipulates binary data values, handling socket I/O with asynchronous read and write operations. Works with custom value and socket types, supporting byte-level data processing and checksum generation. Enables low-level network communication and data integrity checks through direct buffer manipulation.",
+      "description_length": 315,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Kinetic_error.Error",
+      "description": "Provides pretty-printing and string representation for error messages and error values. Works with `msg` as a string and `t` as an opaque error type. Used to format error outputs for logging and user-facing error messages.",
+      "description_length": 222,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Kinetic_session.Session",
+      "description": "Manages session state with operations to increment or set a sequence number, and to enable or disable batch mode. It operates on a record type containing session-specific data. Used to control logging behavior and track message ordering in a communication protocol.",
+      "description_length": 265,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "kinetic-client",
+      "description": "Provides functions for sending commands, reading data, and handling responses over the Kinetic protocol, including message serialization and deserialization. Works with byte sequences, custom protocol buffers, and drive-specific data structures. Used to interact with Seagate Kinetic drives for low-level storage operations and firmware updates.",
+      "description_length": 345,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Kinetic_tag",
+      "description": "Converts custom tag values into human-readable strings, enabling clear output for logging and user interfaces. It supports a variety of tag types defined within the module, allowing for consistent representation across different contexts. Operations include mapping tag values to their corresponding string equivalents. For example, it can transform a `Status.Active` tag into the string `\"Active\"` or a `Priority.High` into `\"High\"`.",
+      "description_length": 434,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Kinetic_network",
+      "description": "Handles binary decoding and encoding of 32-bit fixed integers, and provides low-level network I/O operations for reading and writing exact byte counts. Works with byte sequences, file descriptors, and custom I/O handlers to manage network communication. Enables precise control over message transmission and reception with timeout support and error handling.",
+      "description_length": 358,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Kinetic_integration",
+      "description": "Provides functions to create and manipulate value objects, along with socket operations for reading and writing data in asynchronous I/O contexts. Works with custom `value` and `socket` types, as well as OCaml `Bytes.t` for low-level data handling. Generates cryptographic tags for data integrity checks using SHA-1 and CRC32 algorithms.",
+      "description_length": 337,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Kinetic_config",
+      "description": "Handles configuration data representation and initialization, offering detailed parameters like vendor, model, and network settings through a structured record type. Supports string conversion, pretty-printing, and manipulation of system-specific values including bytes, integers, and byte lists. Enables precise setup of key-value constraints and IP configurations for networked services. Example uses include generating human-readable logs and validating storage limits before system deployment.",
+      "description_length": 497,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Kinetic_pb",
+      "description": "This module handles binary encoding and decoding of structured data for kinetic protocol messages, utilizing `Pbrt.Encoder.t` and `Pbrt.Decoder.t` to serialize/deserialize command types like log utilization, security operations, and batch commands. It works with OCaml types from `Kinetic_types`, focusing on protocol components such as authentication headers, status codes, and configuration parameters. Use cases include efficient network communication and data storage for systems requiring precise serialization of command-specific payloads.",
+      "description_length": 545,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Kinetic",
+      "description": "Provides functions to create and manipulate value objects, convert them to strings, and perform asynchronous read and write operations on sockets using either value objects or byte buffers. Works with custom types `value` and `socket`, and generates checksum tags from data segments. Used for network communication and data integrity checks in high-performance I/O workflows.",
+      "description_length": 375,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Kinetic_util",
+      "description": "Converts byte sequences to hexadecimal strings, trims byte content, and handles optional values with custom mapping and display functions. Processes lists of bytes, options, and tuples, providing string representations and error-aware sequencing. Used for logging, data serialization, and safe value extraction in network or file operations.",
+      "description_length": 341,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Kinetic_error",
+      "description": "Handles error message formatting and representation, converting opaque error values into human-readable strings. Supports `msg` for descriptive messages and `t` for structured error types, enabling consistent logging and user feedback. Allows customization of error output through formatting functions and string conversion. Examples include displaying error details in logs, generating user-friendly alerts, and serializing errors for debugging.",
+      "description_length": 446,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Kinetic_session",
+      "description": "Tracks session state through a record structure, supporting sequence number manipulation and batch mode control. Key operations include incrementing, setting, enabling, and disabling session attributes. This allows precise management of message ordering and logging in a communication protocol. For example, it can ensure messages are processed in sequence or batched for efficiency.",
+      "description_length": 383,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Kinetic_types",
+      "description": "The module provides functions for initializing structured data types with optional parameters, focusing on command headers, message authentication components, and hierarchical command data in protocol buffer systems. It operates on nested records, log types, security attributes, and power management settings, enabling use cases like device configuration, system monitoring, and secure communication in kinetic protocols.",
+      "description_length": 422,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 22,
+    "meaningful_modules": 22,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 545,
+    "min_description_length": 175,
+    "avg_description_length": 341.77272727272725,
+    "embedding_file_size_mb": 0.08034992218017578
+  }
+}

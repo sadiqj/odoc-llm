@@ -1,0 +1,49 @@
+{
+  "package": "splittable_random",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 4,
+  "creation_timestamp": "2025-06-18T16:28:46.384406",
+  "modules": [
+    {
+      "module_path": "Splittable_random.State",
+      "description": "Provides functions to create, copy, and perturb random state instances, and to split a state into two independent states. Operates on a custom random state type derived from Base's random state. Used to manage and diversify random number generation sequences in legacy code.",
+      "description_length": 274,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Splittable_random.Log_uniform",
+      "description": "Generates random integers within a specified range using a uniform distribution over bit widths, ensuring lower values are more likely. Supports multiple integer types including 32-bit, 63-bit, 64-bit, and native integers. Useful for scenarios requiring biased random selection, such as simulating natural distributions or testing edge cases.",
+      "description_length": 342,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "splittable_random",
+      "description": "Generates random values and splits into independent sequences using a fast, non-cryptographic algorithm. Works with internal state representations that track the current position in the random value stream. Used to create parallel random sequences in simulations or randomized algorithms where independence is required.",
+      "description_length": 319,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Splittable_random",
+      "description": "Manages and diversifies random number generation through state manipulation, splitting, and biased integer generation. Custom random state types support creation, copying, perturbation, and splitting into independent streams. Generates biased integers across multiple bit widths, enabling tailored randomness for simulations and edge-case testing. Provides direct control over random sequences, allowing legacy systems to leverage split-based parallelism without cryptographic guarantees.",
+      "description_length": 488,
+      "index": 3,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 4,
+    "meaningful_modules": 4,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 488,
+    "min_description_length": 274,
+    "avg_description_length": 355.75,
+    "embedding_file_size_mb": 0.014954566955566406
+  }
+}

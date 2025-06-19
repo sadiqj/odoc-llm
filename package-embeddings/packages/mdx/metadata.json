@@ -1,0 +1,308 @@
+{
+  "package": "mdx",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 41,
+  "creation_timestamp": "2025-06-18T16:40:10.354361",
+  "modules": [
+    {
+      "module_path": "Mdx.Util.Result.Infix",
+      "description": "Provides monadic binding and mapping operations for result types, enabling sequential computation and transformation while preserving error states. Works with `('a, 'err) result` and `('a, [ `Msg of string ] list) result` types, allowing for error-aware function composition. Supports concise error-handling in workflows like parsing, validation, and API response processing.",
+      "description_length": 375,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Util.Result.List",
+      "description": "Processes lists by applying functions that return results, accumulating values, and transforming elements while handling errors. Operates on lists of values and result types, preserving error information throughout operations. Used to safely aggregate results from a list of computations or separate successful values from errors.",
+      "description_length": 330,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Ocaml_env.Set",
+      "description": "The module offers operations for manipulating ordered sets, including standard set operations like addition, removal, and union, as well as traversal, transformation, and predicate-based queries, leveraging ordered element comparisons. It works with ordered sets and sequences, enabling efficient element management and structured data processing. Use cases include dynamic data collection management, algorithmic operations requiring ordered traversal, and batch processing of elements in predictable sequences.",
+      "description_length": 512,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Stable_printer.Location",
+      "description": "Prints file and line information for error diagnostics, using a formatted output stream. Accepts a location record containing file name and line range. Used to generate human-readable error messages in compiler or parser outputs.",
+      "description_length": 229,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mdx.Util.Result",
+      "description": "Combines monadic operations for result types with list processing capabilities, enabling safe and structured error handling in complex workflows. It supports binding and mapping over `('a, 'err) result` and list-based computations, maintaining error states through transformations. Functions can process lists of values or results, accumulating successes or collecting errors during operations. Examples include parsing a list of strings into integers while capturing invalid entries, or validating a series of inputs and aggregating only the successful outcomes.",
+      "description_length": 563,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mdx.Util.File",
+      "description": "Reads the contents of a file and returns each line as a string in a list. Operates on file paths and string data. Useful for processing log files or configuration files line by line.",
+      "description_length": 182,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Util.Option",
+      "description": "Checks if a value is present in an optional type and retrieves the value or returns a default. Works with the option data type, which represents values that may be absent. Used to safely extract values from potentially missing results or handle fallbacks in computations.",
+      "description_length": 271,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Util.List",
+      "description": "Processes lists by applying a function to elements and returning the first successful result, or separating elements into two lists based on a predicate until a condition is met. Operates on lists of any type, extracting or dividing elements according to specified criteria. Used to locate the first matching item with additional data or to split a list into processed and remaining elements during iteration.",
+      "description_length": 409,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Util.String",
+      "description": "Provides functions to format lists of strings with English conjunctions and check if a string contains only whitespace characters. Operates on string lists and individual strings. Used to generate human-readable lists and validate input for empty or whitespace-only content.",
+      "description_length": 274,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Util.Sexp",
+      "description": "Provides functions to parse, generate, and manipulate S-expressions, including converting between nested lists and structured data. Works with lists, strings, and integers to represent and process symbolic expressions. Used for reading configuration files and serializing data in a human-readable format.",
+      "description_length": 304,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mdx.Util.Csexp",
+      "description": "Converts an Sexp data structure to its string representation. Works with the Sexp.t type, which represents symbolic expressions. Used to serialize Sexp values for logging or transmission.",
+      "description_length": 187,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mdx.Util.Array",
+      "description": "Extracts a subarray from a given array based on specified start and end indices. Operates on arrays of any type, returning a new array containing elements in the specified range. Used to isolate portions of large datasets for processing or analysis.",
+      "description_length": 249,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Util.Process",
+      "description": "Waits for a specified process to complete and returns its exit code, using the process ID as input. It handles both normal exits and abnormal termination scenarios. This function is used to synchronize parent processes with child processes in system-level operations.",
+      "description_length": 267,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Util.Int",
+      "description": "Returns the smaller of two integer values. Operates on primitive integer types. Useful for determining the lower bound in numerical comparisons, such as setting a minimum value in a calculation.",
+      "description_length": 194,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Util.Seq",
+      "description": "Appends two sequences into a new sequence, preserving the order of elements from both. It operates on values of type 'a Seq.t, which represent lazy sequences. This function is useful when combining data streams or building pipelines incrementally.",
+      "description_length": 247,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mdx.Label.Relation",
+      "description": "Provides functions to parse strings into labeled relations, compare relations based on numeric values, and pretty-print relations. Works with a custom type representing relations, which includes a label and an associated value. Used to process and validate structured data strings, such as parsing configuration entries or data records.",
+      "description_length": 336,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mdx.Block.Header",
+      "description": "Parses and represents HTTP header information, supporting conversion from strings and file content. It includes pretty-printing for formatted output and handles optional parsing results. The core type encapsulates header fields and their values.",
+      "description_length": 245,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Block.Raw",
+      "description": "Provides functions to construct objects representing raw data sections, including location, headers, contents, labels, and error lists. Works with location data, strings, lists of strings, and error collections. Used to build structured representations of source code fragments for processing or output generation.",
+      "description_length": 314,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx_test.Package",
+      "description": "Provides functions to retrieve specific paths related to OCaml tooling, including Unix-specific configurations, Findlib top-level paths, internal Findlib paths, and compiler library paths. Operates on string values representing file system locations. Used to locate critical runtime components during build processes or environment setup.",
+      "description_length": 338,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx_test.Predicate",
+      "description": "Provides functions to check if a string represents a byte value and if it is a toploop identifier. Works with string data types and enforces specific format constraints. Used to validate input in parsing and scripting contexts.",
+      "description_length": 227,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Lexer_mdx",
+      "description": "Processes Markdown and Cram syntax into structured token lists, handling inline elements and code blocks. Works with lexing buffers and returns parsed tokens or error messages. Used to convert raw text into a format suitable for further processing in documentation tools.",
+      "description_length": 271,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mdx.Output",
+      "description": "Compares lists of test outputs for equivalence, ignoring ellipsis markers. Merges ellipsis placeholders from test results into output lists. Provides pretty-printing and debugging output formats for test results.",
+      "description_length": 212,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mdx.Cram",
+      "description": "Provides functions to extract and format exit codes, command lines, and heredoc usage from Cram test cases. Works with structured data types representing individual tests and lists of commands. Used to generate human-readable output, debug test structures, and format command lines with optional padding.",
+      "description_length": 304,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mdx.Deprecated",
+      "description": "Emits a warning message to standard error with an optional replacement suggestion and a version number indicating when the feature was deprecated. Accepts a message string, a optional replacement string, and a version string. Used to notify developers of outdated API usage during runtime.",
+      "description_length": 289,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Document",
+      "description": "Provides pretty-printing for individual lines and full documents with syntax-aware formatting, and converts documents to strings or dumps for debugging. Operates on line-based structures and document lists. Used to generate human-readable output from markdown-like content and extract environment sets from document contexts.",
+      "description_length": 325,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Toplevel",
+      "description": "Provides functions for printing and parsing top-level OCaml phrases, including pretty-printers for commands and blocks, and a parser that constructs test structures from line lists with location information. Works with types representing top-level phrases and test blocks, including location data and whitespace padding. Used to generate debug output, format commands for display, and process input lines into structured test representations.",
+      "description_length": 442,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Part",
+      "description": "Reads a file's contents and allows extracting, replacing, or modifying specific sections identified by a part name. Operates on a file type and string-based data, handling line lists for modification. Used to update configuration files by replacing designated blocks or inserting new sections when a part is not found.",
+      "description_length": 318,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Block",
+      "description": "Encapsulates HTTP headers and raw data sections, enabling structured representation and manipulation of source code fragments. Core types include header fields, location data, and content blocks, with operations for parsing, constructing, and formatting these elements. Functions support converting string inputs into header objects and assembling data sections with associated metadata. Examples include parsing HTTP headers from a string, generating formatted output, and building code fragments with labeled sections and error tracking.",
+      "description_length": 539,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Mli_parser",
+      "description": "Parses MLI and MLD files, separating content into structured line elements representing text and blocks. Processes input strings to extract and categorize elements for further analysis or transformation. Used to prepare documentation sources for rendering or validation workflows.",
+      "description_length": 280,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Compat",
+      "description": "Initializes a path configuration, ensuring environment-specific settings are properly set up. Works with system path structures and configuration states. Used to prepare runtime environments for cross-platform compatibility.",
+      "description_length": 224,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Util",
+      "description": "Combines monadic operations with list processing to handle errors and transform data safely, while offering utilities for file I/O, optional value extraction, list filtering, string formatting, S-expression manipulation, array slicing, process waiting, and basic arithmetic. It supports operations on result types, options, lists, strings, arrays, and sequences, enabling tasks like parsing input, validating data, formatting output, and managing process execution. Functions include extracting values from options, processing lines from files, finding first matches in lists, converting S-expressions to strings, and combining sequences. Examples include parsing and validating input, generating readable lists, serializing structured data, and synchronizing with child processes.",
+      "description_length": 781,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Prelude",
+      "description": "Parses a string to extract an environment and associated file or prelude, returning a tuple of an environment identifier and a string. The module works with a custom type representing either a specific environment or all environments, paired with a string. It is used to configure and process prelude files in a build or evaluation context.",
+      "description_length": 340,
+      "index": 31,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Mdx.Syntax",
+      "description": "Prints abstract syntax tree representations, compares syntax structures for equality, infers syntax from file content, and parses strings into syntax structures. Works with an opaque type representing parsed language constructs. Used to validate input files, generate human-readable outputs, and perform semantic checks during compilation.",
+      "description_length": 339,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Label",
+      "description": "Processes and validates structured data by parsing strings into labeled relations, comparing them numerically, and formatting them for output. It operates on a custom relation type that pairs a label with a value, enabling precise data handling. Users can parse configuration entries, validate numeric comparisons, and generate human-readable representations. Examples include parsing \"threshold: 50\" into a relation and comparing two relations based on their values.",
+      "description_length": 467,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Dep",
+      "description": "Converts a block into an optional dependency structure, and processes a list of document lines into a list of dependency representations. Works with block data and document line lists to build structured dependencies. Used to parse and serialize dependency information from source code blocks.",
+      "description_length": 293,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Ocaml_env",
+      "description": "Provides ordered set and sequence manipulation with efficient element handling and traversal. Supports addition, removal, union, mapping, filtering, and predicate-based queries on ordered data. Enables dynamic data management, algorithmic processing, and batch operations with predictable element ordering. Examples include maintaining sorted collections, processing elements in sequence, and applying transformations based on conditions.",
+      "description_length": 438,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx.Stable_printer",
+      "description": "Provides functions to generate human-readable error messages by printing file and line information from location records. It operates on formatted output streams and supports structured diagnostics. Key data types include location records with file names and line ranges, and operations include formatting and printing these details. Examples include displaying error positions in source code or logging precise locations during parsing.",
+      "description_length": 437,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "mdx",
+      "description": "Executes code blocks within markdown and documentation files, evaluating and embedding results directly. It processes OCaml code snippets and integrates outputs into the rendered documentation. Supports dynamic examples and tests within comments and module interfaces.",
+      "description_length": 268,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx_test",
+      "description": "Retrieves and validates OCaml-related file paths and string formats, enabling precise control over build environments and input validation. Functions handle Unix configurations, Findlib paths, and compiler libraries, while also checking byte value syntax and toploop identifiers. Operations include path resolution and string validation, supporting tasks like environment setup and parser input checks. Examples include locating compiler libraries and verifying if a string matches a valid byte representation.",
+      "description_length": 510,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx",
+      "description": "Mdx provides tools to parse, process, and validate markdown content, with support for executing and testing code blocks. It handles structured token lists, test comparisons, command extraction, and pretty-printing, while enabling environment configuration, file modification, and dependency tracking. Key data types include tokens, test outputs, command structures, environments, and location records, with operations for parsing, formatting, and transforming these elements. Examples include extracting command lines from Cram tests, generating human-readable error messages, and converting markdown into formatted output.",
+      "description_length": 623,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Mdx_top",
+      "description": "Provides functions to initialize a toplevel configuration, evaluate OCaml phrases, and run code within a specific OCaml environment. Works with configuration objects, directives, and strings representing code. Used to process and execute multi-line OCaml expressions in a controlled environment, such as in documentation or interactive sessions.",
+      "description_length": 345,
+      "index": 40,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 41,
+    "meaningful_modules": 41,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 781,
+    "min_description_length": 182,
+    "avg_description_length": 343.8536585365854,
+    "embedding_file_size_mb": 0.14939308166503906
+  }
+}

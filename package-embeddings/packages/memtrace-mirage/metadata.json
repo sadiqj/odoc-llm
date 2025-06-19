@@ -1,0 +1,147 @@
+{
+  "package": "memtrace-mirage",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 18,
+  "creation_timestamp": "2025-06-18T16:34:21.542640",
+  "modules": [
+    {
+      "module_path": "Memtrace.Make.Trace.Location_code.Tbl",
+      "description": "This module offers standard hashtable operations\u2014such as insertion, deletion, lookup, and iteration\u2014alongside sequence-based utilities for constructing and updating tables using key-value pairs. It works with hash tables where keys are of type `t` (specifically location codes) and values are generic, enabling flexible data manipulation. Use cases include dynamically managing location-specific data or efficiently refreshing tables from sequential inputs.",
+      "description_length": 457,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Memtrace.Make.Trace.Obj_id.Tbl",
+      "description": "This module offers operations for inserting, deleting, and looking up key-value pairs in a hashtable indexed by object IDs, along with iteration and transformation capabilities. It supports sequence-based construction and modification of these structures, enabling efficient dynamic data management. Use cases include scenarios requiring frequent updates or processing of structured data through functional transformations.",
+      "description_length": 423,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Memtrace.Make.Trace.Timestamp",
+      "description": "Provides functions to create timestamps from the current time, convert between timestamps and 64-bit integers representing microseconds since the Unix epoch, and transform timestamps into and out of floating-point seconds. Operates on the `t` type, which encapsulates time values. Used to synchronize events with precise microsecond resolution and integrate with systems using Unix time formats.",
+      "description_length": 395,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Memtrace.Make.Trace.Timedelta",
+      "description": "Converts a time difference to microseconds and applies a time offset to a timestamp. Works with 64-bit integer-based time intervals and timestamp values. Used to calculate elapsed time between events and adjust timestamps for event sequencing.",
+      "description_length": 243,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Memtrace.Make.Trace.Location",
+      "description": "Represents source code positions with file, line, and column information. Provides conversion to string representation and a default \"unknown\" location. Used to track and report exact positions during program execution tracing.",
+      "description_length": 227,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Memtrace.Make.Trace.Obj_id",
+      "description": "manages key-value mappings indexed by object IDs, supporting insertion, deletion, lookup, iteration, and transformation. It defines a hashtable type with operations for dynamic data manipulation and sequence-based updates. Users can efficiently process structured data through functional pipelines and maintain stateful collections. Examples include tracking object metadata, updating records in real-time, and generating derived data from existing mappings.",
+      "description_length": 458,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Memtrace.Make.Trace.Location_code",
+      "description": "provides hash tables with key-type `t` for location codes, supporting insertion, deletion, and lookup, along with sequence-based updates. It enables dynamic management of location-specific data and efficient table rebuilding from ordered inputs. Operations include iterating over entries and constructing tables from key-value sequences. For example, it can track call stack positions or map execution points to debug information.",
+      "description_length": 430,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Memtrace.Make.Trace.Allocation_source",
+      "description": "Provides functions to classify and inspect allocation sources, including checking if a source is dynamic, static, or unknown. Works with the `t` type, which represents different allocation strategies in memory management. Used to determine the origin of memory allocations during program analysis or debugging.",
+      "description_length": 310,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Memtrace.Make.Trace.Event",
+      "description": "Converts event data into a human-readable string using a location mapping function. Operates on event records that include location codes and timestamps. Used to generate logs for debugging or auditing purposes.",
+      "description_length": 211,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Memtrace.Make.Trace.Info",
+      "description": "Provides functions to extract and manipulate trace identifiers, timestamps, and metadata from structured log entries. Operates on records containing fields like `id`, `time`, and `source`. Used to filter and annotate logs during system diagnostics and performance analysis.",
+      "description_length": 273,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Memtrace.Make.Trace.Writer",
+      "description": "Writes trace data including memory allocations, collections, promotions, and events, with support for callstack decoding and timestamped records. Operates on types such as Timestamp.t, Obj_id.t, Allocation_source.t, Location_code.t, and Event.t. Used to instrument applications for detailed memory and execution analysis during runtime.",
+      "description_length": 336,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Memtrace.Make.Trace",
+      "description": "Encapsulates tools for handling time, location, and trace data, enabling precise event synchronization, source tracking, and structured logging. It supports operations on timestamps, intervals, source positions, and key-value mappings, with functions to convert, transform, and inspect trace elements. Users can generate human-readable logs, manage dynamic data, and analyze memory allocation patterns. Examples include tracking execution flow with location codes, calculating event durations, and writing detailed trace files for debugging.",
+      "description_length": 541,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Memtrace.Make.Memprof_tracer",
+      "description": "Tracks memory allocations and deallocations with custom tokens, enabling precise control over memory profiling data collection. Operates on trace writers and external allocation tokens to record detailed memory usage patterns. Used to instrument specific memory operations in performance-critical applications.",
+      "description_length": 310,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Memtrace.Make.External",
+      "description": "Tracks memory allocations outside the garbage-collected heap, using a token system to correlate allocations with their subsequent frees. It handles byte counts and token references, enabling precise tracking of raw memory usage. Used to monitor and analyze non-heap memory in applications with low-level memory management.",
+      "description_length": 322,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Memtrace.Make",
+      "description": "Provides functions for reading from and writing to network flows, with error handling and shutdown capabilities. Operates on flow objects and Cstruct.t buffers, supporting both single and multiple buffer writes. Handles EOF and connection closure states, ensuring proper resource management and error reporting.",
+      "description_length": 311,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Memtrace.Geometric_sampler",
+      "description": "Generates geometrically distributed random integers using a specified sampling rate and random state. Operates on a stateful object that tracks internal randomness and sampling parameters. Used to simulate events with a fixed probability of occurrence, such as modeling rare occurrences in stochastic simulations.",
+      "description_length": 313,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "memtrace-mirage",
+      "description": "Handles TCP-based transmission of memory traces generated by OCaml programs, supporting real-time monitoring and analysis. Works with byte sequences and network sockets to stream data between a unikernel and a tracing listener. Used to capture and save memory allocation patterns during unikernel execution for performance debugging.",
+      "description_length": 333,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Memtrace",
+      "description": "captures the interaction between network flow management and probabilistic sampling, enabling controlled data transmission and event generation. It includes flow objects for network communication and a stateful sampler for generating geometrically distributed events. Operations include reading/writing data over flows, managing connection states, and producing random integers based on a specified rate. Examples include simulating packet loss with controlled probability or managing data streams with periodic sampling.",
+      "description_length": 521,
+      "index": 17,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 18,
+    "meaningful_modules": 18,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 541,
+    "min_description_length": 211,
+    "avg_description_length": 356.3333333333333,
+    "embedding_file_size_mb": 0.0658273696899414
+  }
+}

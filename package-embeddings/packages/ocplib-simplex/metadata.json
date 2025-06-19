@@ -1,0 +1,721 @@
+{
+  "package": "ocplib-simplex",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 100,
+  "creation_timestamp": "2025-06-18T16:50:59.090735",
+  "modules": [
+    {
+      "module_path": "OcplibSimplex.Basic.Make.Core.R",
+      "description": "Provides arithmetic operations for rational numbers including addition, subtraction, multiplication, and division, along with comparison and sign checks. Works with the `t` type representing rational values, supporting checks for zero, one, negative one, and integer status. Used to handle exact fractional computations in symbolic math or algebraic expressions.",
+      "description_length": 362,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Basic.Make.Core.V",
+      "description": "Provides arithmetic operations such as addition, subtraction, multiplication, and division, along with comparison and conversion functions for numeric values. Works with a type `t` representing real numbers, supporting integer checks, rounding, and formatting. Used to handle user-provided variables and bounds in mathematical computations.",
+      "description_length": 340,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Basic.Make.Core.R2",
+      "description": "represents intervals using pairs of rational numbers with an offset, enabling precise interval arithmetic. It supports operations like addition, multiplication, and comparison of intervals. Users can construct intervals, compute their intersections, and check for containment. Examples include modeling uncertainty in numerical computations and performing safe range analysis.",
+      "description_length": 376,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.Basic.Make.Core.P",
+      "description": "Provides a framework for representing and manipulating linear relationships between variables. Includes types for coefficients and variables, along with operations for combining and solving equations. Supports constructing systems of equations and performing substitutions. Example tasks include expressing one variable in terms of others and simplifying equation sets.",
+      "description_length": 369,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.Basic.Make.Core.MX",
+      "description": "Provides operations to manage a collection of variables indexed by unique keys, including adding, removing, and looking up values. Works with a polymorphic table type where keys are derived from `Var.t` and values can be of any type. Used to track and manipulate variable bindings in a symbolic computation context.",
+      "description_length": 315,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Basic.Make.Core.SX",
+      "description": "Provides operations to manage a set of elements, including adding, removing, checking membership, and folding over elements. Works with a set type `t` and elements of type `Var.t`. Used to manipulate variable sets in symbolic execution contexts, such as tracking live variables during analysis.",
+      "description_length": 294,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.Basic.Make.Core",
+      "description": "combines rational and real number arithmetic, interval operations, linear equation handling, and variable management into a unified system for symbolic and numerical computations. It includes types for rational numbers (`t`), real numbers (`t`), intervals, linear equations, and variable tables, with operations for arithmetic, comparison, interval intersection, equation solving, and variable manipulation. Users can perform exact fractional calculations, manage real-number approximations, model uncertain ranges, and track variable dependencies. Examples include solving systems of equations, validating bounds, and maintaining variable states during symbolic execution.",
+      "description_length": 673,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Basic.Make.Assert",
+      "description": "Updates environment bounds for a variable or polynomial, returning the modified environment and a flag indicating if changes occurred. Operates on Core.t environments, Core.Var.t variables, and Core.P.t polynomials. Used to refine constraints in symbolic execution or static analysis workflows.",
+      "description_length": 294,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Basic.Make.Solve",
+      "description": "Handles solving systems of linear inequalities and finding maximum values under those constraints. Operates on core simplex environments and polynomial expressions. Used to determine feasible solutions and bounded maxima in optimization problems.",
+      "description_length": 246,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.Basic.Make.Result",
+      "description": "Retrieves a solution from a simplex environment based on an optimization objective and bounds status. Operates on a tuple of a boolean and an objective, along with a simplex environment structure. Used to extract feasible solutions after solving a system of linear inequalities.",
+      "description_length": 278,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.AssertBounds.Make.Var",
+      "description": "Compares variables using a custom ordering, checks if a variable is of integer type, and formats variables for output. Works with the `t` type representing variables in a simplex algorithm context. Used to enforce constraints and track variable properties during optimization processes.",
+      "description_length": 286,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.AssertBounds.Make.Ex",
+      "description": "Provides operations to create empty explanations, combine explanations using union, and format them for output. Works with a type `t` representing explanation data, typically used to track backtracking information in constraint systems. Used to aggregate and display information about bound origins during simplex algorithm execution.",
+      "description_length": 334,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.AssertBounds.Make.R",
+      "description": "Provides arithmetic operations for rational numbers including addition, subtraction, multiplication, and division, along with comparison and sign checks. Works with the `t` type representing rational values, supporting conversions to and from strings and formatting for output. Used to handle exact fractional calculations in symbolic computation or algebraic manipulations.",
+      "description_length": 374,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.AssertBounds.Make.V",
+      "description": "Provides arithmetic and comparison operations for numeric values, including addition, subtraction, multiplication, division, and rounding. Works with a custom type `t` representing variables and bounds, and a coefficient type `r` for scaling operations. Supports converting values to strings, checking for zero, and performing signed comparisons.",
+      "description_length": 346,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.AssertBounds.Make.R2",
+      "description": "represents intervals using pairs of rational numbers with an offset, enabling precise bounded arithmetic. It supports operations like addition, multiplication, and comparison on these interval structures. Key data types include `t` for interval representations and `bound` for individual rational endpoints. Examples include calculating the sum of two intervals or determining if one interval is contained within another.",
+      "description_length": 421,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.AssertBounds.Make.P",
+      "description": "Provides a framework for representing and manipulating linear relationships between variables. Includes types for equations, coefficients, and variable bindings, along with operations for substitution, simplification, and combination. Supports constructing systems of equations and solving for variables within constraints. Example tasks include expressing one variable in terms of others or checking consistency of a set of relations.",
+      "description_length": 435,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.AssertBounds.Make.MX",
+      "description": "Provides operations to manage a collection of variables indexed by `Var.t` keys. Supports adding, removing, looking up, and iterating over entries, as well as folding over the collection to accumulate results. Used to track and manipulate variable bindings in a symbolic computation context.",
+      "description_length": 291,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.AssertBounds.Make.SX",
+      "description": "Provides operations to manage a set of elements, including adding, removing, checking membership, and folding over elements. Works with a set type `t` and elements of type `Var.t`. Used to manipulate variable sets in symbolic execution contexts, such as tracking live variables during analysis.",
+      "description_length": 294,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.AssertBounds.Core.Var",
+      "description": "Compares variables using a custom ordering, checks if a variable is of integer type, and formats variables for output. Works with the `t` type representing variables in a simplex algorithm context. Used to enforce constraints and generate human-readable representations during optimization processes.",
+      "description_length": 300,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.AssertBounds.Core.Ex",
+      "description": "Provides operations to create empty explanations, combine explanations using union, and print them. Works with a type `t` representing explanation data, typically used to track backtracking information in constraint systems. Used to aggregate and display information about bound origins during simplex algorithm execution.",
+      "description_length": 322,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.AssertBounds.Core.R",
+      "description": "Provides arithmetic operations for rational numbers including addition, subtraction, multiplication, and division, along with comparison and sign checks. Works with the `t` type representing rational values, supporting conversions to and from strings and formatting for output. Used to handle exact fractional computations in algebraic expressions and numerical algorithms.",
+      "description_length": 373,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.AssertBounds.Core.V",
+      "description": "Provides arithmetic and comparison operations for numeric values, including addition, subtraction, multiplication, division, and rounding. Works with a custom type `t` representing variables and bounds, and a coefficient type `r` derived from `R.t`. Supports conversions to string, checking for zero, and handling integer checks in mathematical contexts.",
+      "description_length": 354,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.AssertBounds.Core.R2",
+      "description": "Encapsulates intervals with rational bounds and an epsilon offset, enabling precise numerical range representations. Supports operations like intersection, union, and containment checks on these intervals. Key data types include pairs of rationals and epsilon-adjusted bounds. Examples include representing [1/2 + 0.1\u0190, 3/4 - 0.2\u0190] and checking if one interval falls entirely within another.",
+      "description_length": 391,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.AssertBounds.Core.P",
+      "description": "Provides a framework for representing and manipulating linear relationships between variables. Includes basic types for coefficients and variables, along with operations for constructing and combining relations. Supports tasks such as solving systems of equations and transforming expressions. Example uses include modeling economic constraints and optimizing resource allocation.",
+      "description_length": 380,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.AssertBounds.Core.MX",
+      "description": "Provides operations to manage a collection of variables indexed by `Var.t` keys, including adding, removing, and looking up values. Supports folding over entries and iterating through key-value pairs, with functions to check membership and determine size. Designed for handling variable environments in symbolic computation or code analysis tasks.",
+      "description_length": 347,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.AssertBounds.Core.SX",
+      "description": "Provides operations to manage a set of elements, including adding, removing, checking membership, and folding over elements. Works with a set type `t` and elements of type `Var.t`. Used to manipulate variable sets in symbolic execution contexts, such as tracking live variables during analysis.",
+      "description_length": 294,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.Core.Make.R",
+      "description": "Provides arithmetic operations for rational numbers including addition, subtraction, multiplication, division, and absolute value, along with comparison and sign checks. Works with a custom rational number type that supports integer and fractional representations. Used to handle exact fractional coefficients in algebraic computations and output formatting.",
+      "description_length": 358,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Core.Make.V",
+      "description": "Provides arithmetic operations such as addition, subtraction, multiplication, and division, along with comparison and conversion functions for numeric values. Works with a type `t` representing real numbers, supporting integer checks, rounding, and formatting. Used to handle user-provided variables and bounds in mathematical computations.",
+      "description_length": 340,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Core.Make.R2",
+      "description": "Provides interval arithmetic with rational bounds and epsilon offsets, supporting operations on pairs (R, x + k\u0190). Main data types include intervals and epsilon-adjusted values, with operations for comparison, intersection, and union. Examples include computing safe bounds for floating-point calculations and handling precision errors in numerical algorithms.",
+      "description_length": 360,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Core.Make.P",
+      "description": "Provides a framework for representing and manipulating linear relationships between variables. Core operations include constructing, combining, and solving systems of equations using structured data types such as coefficients and constraints. Examples include defining equations like 2x + 3y = 5 and deriving relationships between variables through substitution or elimination. The module supports symbolic manipulation and transformation of linear expressions.",
+      "description_length": 461,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Core.Make.MX",
+      "description": "Provides operations to manage a collection of variables indexed by `Var.t` keys. Supports adding, removing, checking membership, and iterating over entries, as well as folding over the collection to accumulate results. Used to track and manipulate variable bindings in a functional manner.",
+      "description_length": 289,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Core.Make.SX",
+      "description": "Provides operations to manage a set of elements, including adding, removing, checking membership, and folding over elements. Works with a set type `t` and elements of type `Var.t`. Used to manipulate symbolic variables in constraint solving or expression analysis.",
+      "description_length": 264,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Core.MakeExpert.R2",
+      "description": "Provides a framework for representing and manipulating intervals with rational bounds and an epsilon offset. Core data types include pairs of rationals and offset values, supporting arithmetic and comparison operations. Operations include interval addition, subtraction, and checking for overlap. Examples include modeling numerical precision and performing safe interval arithmetic in symbolic computations.",
+      "description_length": 408,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.SolveBounds.Make.Var",
+      "description": "Compares variables using a custom ordering and checks if a variable is of integer type. It handles variables represented as a custom type `t` used in optimization contexts. The print function formats variable output for debugging or logging purposes.",
+      "description_length": 250,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.SolveBounds.Make.Ex",
+      "description": "Provides operations to create empty explanations, combine explanations using union, and print them. Works with a type `t` representing explanation data, typically used to track backtracking information in constraint systems. Used to aggregate and display information about bound origins during simplex algorithm execution.",
+      "description_length": 322,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.SolveBounds.Make.R",
+      "description": "Provides arithmetic operations for rational numbers including addition, subtraction, multiplication, and division, along with comparison and sign checks. Works with the `t` type representing rational values, supporting conversions to and from strings and formatting for output. Used to handle exact fractional calculations in symbolic mathematics or algebraic computations.",
+      "description_length": 373,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.SolveBounds.Make.V",
+      "description": "Provides arithmetic and comparison operations for numeric values, including addition, subtraction, multiplication, division, and rounding. Works with a custom type `t` representing variables and bounds, and a coefficient type `r` derived from `R.t`. Supports conversions to string, checking for zero, and handling integer-specific operations.",
+      "description_length": 342,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.SolveBounds.Make.R2",
+      "description": "Provides interval arithmetic with rational bounds and an epsilon offset, enabling precise representation of ranges. Core data types include intervals defined by a rational center and an epsilon width, supporting operations like addition, multiplication, and intersection. Examples include computing safe bounds for floating-point operations or tracking error propagation in numerical algorithms. Operations allow for exact arithmetic on intervals while maintaining precision through rational components.",
+      "description_length": 503,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.SolveBounds.Make.P",
+      "description": "Provides a framework for representing and manipulating linear relationships between variables. Includes types for coefficients and variables, along with operations for combining and solving equations. Supports constructing systems of equations and performing substitutions. Example tasks include expressing one variable in terms of others and simplifying relational expressions.",
+      "description_length": 378,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.SolveBounds.Make.MX",
+      "description": "Provides operations to manage a collection of variables indexed by `Var.t` keys. Supports adding, removing, looking up, and iterating over entries, as well as folding over the collection to accumulate results. Used to track and manipulate variable bindings in a symbolic computation context.",
+      "description_length": 291,
+      "index": 39,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.SolveBounds.Make.SX",
+      "description": "Provides operations to manage a set of elements, including adding, removing, checking membership, and folding over elements. Works with a set type `t` and elements of type `Var.t`. Used to manipulate variable sets in symbolic execution contexts, such as tracking live variables during analysis.",
+      "description_length": 294,
+      "index": 40,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.SolveBounds.Core.Var",
+      "description": "Compares variables using a custom ordering and checks if a variable is of integer type. It handles variables represented as a custom type `t` used in optimization contexts. The print function formats variable output for debugging or logging.",
+      "description_length": 241,
+      "index": 41,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.SolveBounds.Core.Ex",
+      "description": "Provides operations to create empty explanations, combine explanations using union, and print them. Works with a type `t` representing explanation data, typically used to track backtracking information in constraint systems. Used to aggregate and display explanation labels during simplex algorithm execution.",
+      "description_length": 309,
+      "index": 42,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.SolveBounds.Core.R",
+      "description": "Provides arithmetic operations for rational numbers including addition, subtraction, multiplication, and division, along with comparison and sign checks. Works with the `t` type representing rational values, supporting checks for zero, one, negative one, and integer status. Used to format and display rational numbers, and to compute minimum values and absolute values.",
+      "description_length": 370,
+      "index": 43,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.SolveBounds.Core.V",
+      "description": "Provides arithmetic and comparison operations for numeric values, including addition, subtraction, multiplication, division, and rounding. Works with a custom type `t` representing variables and bounds, and a coefficient type `r` for scaling operations. Used to manipulate user-defined numeric constraints in optimization or symbolic computation contexts.",
+      "description_length": 355,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.SolveBounds.Core.R2",
+      "description": "represents intervals using pairs of rational numbers with an offset, enabling precise interval arithmetic. It supports operations like addition, multiplication, and comparison of intervals. Key data types include `t` for interval representations and `bound` for individual rational bounds. Examples include calculating the product of two intervals or checking if one interval is contained within another.",
+      "description_length": 404,
+      "index": 45,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.SolveBounds.Core.P",
+      "description": "Provides a framework for representing and manipulating linear relationships between variables. Includes types for equations, coefficients, and variable bindings, along with operations to combine, simplify, and solve these relations. Users can construct systems of equations, substitute variables, and derive new relations from existing ones. Example tasks include solving for a variable in a system or reducing a set of equations to a canonical form.",
+      "description_length": 450,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.SolveBounds.Core.MX",
+      "description": "Provides operations to manage a collection of variables indexed by unique keys, including adding, removing, and looking up values. Works with a polymorphic table type where keys are derived from Var.t. Used to track and manipulate variable bindings in a symbolic computation context.",
+      "description_length": 283,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.SolveBounds.Core.SX",
+      "description": "Provides operations to manage a set of elements, including adding, removing, checking membership, and folding over elements. Works with a set type `t` and elements of type `Var.t`. Used to manipulate variable sets in symbolic execution contexts, such as tracking live variables during analysis.",
+      "description_length": 294,
+      "index": 48,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.Result.Make.Var",
+      "description": "Compares variables using a custom ordering, checks if a variable is of integer type, and formats variables for output. Works with the `t` type representing variables in a simplex algorithm context. Used to enforce constraints and generate human-readable representations during optimization processes.",
+      "description_length": 300,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Result.Make.Ex",
+      "description": "Provides operations to create empty explanations, combine explanations using union, and print them in a formatted way. Works with a type `t` representing explanation data, typically used to track backtracking information during constraint solving. Used to aggregate and display information about bound origins in optimization algorithms.",
+      "description_length": 337,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Result.Make.R",
+      "description": "Provides arithmetic operations for rational numbers including addition, subtraction, multiplication, and division, along with comparison and sign checks. Works with the `t` type representing rational values, supporting conversions to and from strings and formatting for output. Used to handle exact fractional computations in algebraic expressions and numerical algorithms.",
+      "description_length": 373,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Result.Make.V",
+      "description": "Provides arithmetic and comparison operations for numeric values, including addition, subtraction, multiplication, division, and rounding. Works with a custom type `t` representing variables and bounds, and a coefficient type `r` derived from `R.t`. Supports conversion to string, checking for zero, and handling integer checks in mathematical contexts.",
+      "description_length": 353,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Result.Make.R2",
+      "description": "Provides interval arithmetic with rational bounds and epsilon offsets, enabling precise representation of ranges. Core data types include pairs of rationals and offset values, supporting operations like addition, multiplication, and comparison. Examples include calculating safe bounds for floating-point operations and tracking error propagation in numerical computations. The module facilitates rigorous interval analysis through structured arithmetic on extended rational representations.",
+      "description_length": 491,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Result.Make.P",
+      "description": "Provides a framework for representing and manipulating linear relationships between variables. Supports operations such as addition, scaling, and substitution of variables within equations. Examples include combining equations, solving for variables, and transforming systems of linear relations. Core data types include terms, equations, and systems, with functions to modify and analyze their structure.",
+      "description_length": 405,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Result.Make.MX",
+      "description": "Provides operations to manage a collection of variables indexed by `Var.t` keys, including adding, removing, and looking up values. Supports folding over entries and iterating through key-value pairs. Useful for tracking and manipulating symbolic variables in compiler or interpreter contexts.",
+      "description_length": 293,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Result.Make.SX",
+      "description": "Provides operations to manage a set of elements, including adding, removing, checking membership, and folding over elements. Works with a set type `t` and elements of type `Var.t`. Used to manipulate variable sets in symbolic execution contexts, such as tracking live variables during analysis.",
+      "description_length": 294,
+      "index": 56,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.Result.Core.Var",
+      "description": "Compares variables using a custom ordering and checks if a variable is of integer type. It handles variables represented as a custom type `t` used in optimization contexts. The print function outputs variable information in a formatted way for debugging or logging.",
+      "description_length": 265,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Result.Core.Ex",
+      "description": "Provides operations to create empty explanations, combine explanations using union, and format them for output. Works with a type `t` representing explanation data, typically used to track backtracking information in constraint systems. Used to aggregate and display information about bound origins during simplex algorithm execution.",
+      "description_length": 334,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Result.Core.R",
+      "description": "Provides arithmetic operations for rational numbers including addition, subtraction, multiplication, and division, along with comparison and sign checks. Works with the `t` type representing rational values, supporting checks for zero, one, negative one, and integer status. Used for precise coefficient manipulation in algebraic computations and output formatting.",
+      "description_length": 365,
+      "index": 59,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.Result.Core.V",
+      "description": "Provides arithmetic and comparison operations for numeric values, including addition, subtraction, multiplication, division, and rounding. Works with a custom type `t` representing variables and bounds, and a coefficient type `r` for scaling operations. Supports converting values to strings, checking for zero, and applying bounds through floor and ceiling functions.",
+      "description_length": 368,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Result.Core.R2",
+      "description": "represents intervals using pairs of rational numbers with an offset, enabling precise interval arithmetic. It supports operations like addition, multiplication, and comparison on these interval representations. Key data types include rational bounds and interval structures, with functions to manipulate and combine them. Examples include calculating the sum of two intervals or determining if one interval is contained within another.",
+      "description_length": 435,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Result.Core.P",
+      "description": "Provides a framework for representing and manipulating linear relationships between variables. Includes types for coefficients and variables, along with operations for combining and solving equations. Supports constructing systems of equations and performing substitutions. Example tasks include expressing one variable in terms of others or simplifying equation sets.",
+      "description_length": 368,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Result.Core.MX",
+      "description": "Provides operations to manage a collection of variables indexed by unique keys, including adding, removing, and looking up values. Works with a polymorphic table type where keys are derived from `Var.t` and values can be of any type. Used to track and manipulate variable bindings in a symbolic computation context.",
+      "description_length": 315,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Result.Core.SX",
+      "description": "Provides operations to manage a set of elements, including adding, removing, checking membership, and folding over elements. Works with a set type `t` where elements are of type `Var.t`. Used to manipulate variable sets in symbolic execution contexts, such as tracking live variables during analysis.",
+      "description_length": 300,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Basic.Make",
+      "description": "Creates and manipulates sets of build rules, supporting union operations to combine rule sets and formatting for output. Operates on an abstract type representing a collection of targets and their dependencies. Used to merge build configurations and generate human-readable build summaries.",
+      "description_length": 290,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.AssertBounds.Make",
+      "description": "combines variable management, interval arithmetic, and constraint tracking to support symbolic computation and optimization. It handles operations on rational numbers, intervals, and variable bindings, with types including `t` for variables, intervals, and sets, and `r` for coefficients. It enables tasks like combining explanations, enforcing bounds, and solving linear relations. Examples include calculating interval sums, tracking variable dependencies, and generating constraint explanations.",
+      "description_length": 498,
+      "index": 66,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.Core.Make",
+      "description": "Creates and manipulates sets of build rules, supporting union operations to combine rule sets and formatting for output. Operates on an abstract type representing a collection of targets and their dependencies. Used to merge multiple build configurations into a single coherent set of instructions.",
+      "description_length": 298,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Core.MakeExpert",
+      "description": "Provides operations to manage a collection of elements, including adding, removing, checking membership, and folding over elements. Works with a set-like structure where elements are of type Var.t. Used to efficiently combine sets, iterate over elements, and extract all elements as a list.",
+      "description_length": 290,
+      "index": 68,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.SolveBounds.Make",
+      "description": "combines variable comparison, rational arithmetic, interval operations, and linear equation handling to support symbolic and constraint-based computations. it manages variable bindings, explanation tracking, and set operations, using types like `t` for variables, rationals, intervals, and sets. it enables tasks such as bound checking, error propagation tracking, and equation simplification. examples include computing precise interval bounds, aggregating backtracking information, and solving linear systems.",
+      "description_length": 511,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Result.Make",
+      "description": "Combines variable management, interval arithmetic, and linear equation handling to support constraint-based optimization. It includes operations on rational numbers, variable comparisons, and explanation tracking, with types for variables, intervals, and equations. Users can perform precise arithmetic, track bound origins, and manipulate systems of linear relations. Examples include enforcing integer constraints, generating human-readable outputs, and analyzing error propagation in numerical computations.",
+      "description_length": 510,
+      "index": 70,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.Rat2.Make",
+      "description": "Provides arithmetic operations for a numeric type `t`, including addition, subtraction, multiplication, division, and comparisons. Works with `t` for numeric values and `r` for coefficients in scaled operations. Used for precise calculations in mathematical algorithms and symbolic computations.",
+      "description_length": 295,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Polys.Make",
+      "description": "This module offers arithmetic operations, comparisons, and mathematical transformations for numeric values, including addition, multiplication, ceiling, and absolute value calculations. It works with a generic numeric type `t`, enabling operations like value checks (zero, one, negative one) and string conversions. Use cases include numerical analysis, financial computations, and scenarios requiring precise value manipulation or rounding.",
+      "description_length": 441,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.CoreSig.Var",
+      "description": "Compares variables using a custom ordering, checks if a variable is of integer type, and formats variables for output. Works with the `t` type representing variables in a simplex algorithm context. Used to enforce variable constraints and generate human-readable representations during optimization processes.",
+      "description_length": 309,
+      "index": 73,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.CoreSig.Ex",
+      "description": "Provides operations to create empty explanations, combine explanations using union, and print them in a formatted way. Works with a type `t` representing explanation data, typically used to track backtracking information during constraint solving. Used to attach and manage labels on bounds in optimization algorithms, such as when initializing and updating simplex solver states.",
+      "description_length": 380,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.CoreSig.R",
+      "description": "Provides arithmetic operations for rational numbers including addition, subtraction, multiplication, and division, along with comparison and sign checks. Works with the `t` type representing rational values, supporting conversions to and from strings and formatting for output. Used to handle exact fractional computations in algebraic expressions and numerical algorithms.",
+      "description_length": 373,
+      "index": 75,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.CoreSig.V",
+      "description": "Provides arithmetic and comparison operations for numeric values, including addition, subtraction, multiplication, division, and rounding. Works with a custom type `t` representing variables and bounds, and a coefficient type `r` for scaling operations. Supports converting values to strings, checking for zero, and determining integer status.",
+      "description_length": 343,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.CoreSig.R2",
+      "description": "represents intervals using pairs of rational numbers with an epsilon offset, enabling precise interval arithmetic. It supports operations like addition, multiplication, and comparison of intervals. Users can construct intervals, compute their unions and intersections, and check for containment. For example, adding two intervals yields a new interval representing the sum of their ranges.",
+      "description_length": 389,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.CoreSig.P",
+      "description": "Provides a framework for representing and manipulating linear relationships between variables. Includes types for equations, coefficients, and variable bindings, along with operations to combine, simplify, and solve these relations. Users can construct systems of equations, substitute variables, and derive new relations from existing ones. Example tasks include solving for a variable in a system or merging multiple equations into a unified form.",
+      "description_length": 449,
+      "index": 78,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.CoreSig.MX",
+      "description": "Provides operations to manage a collection of variables indexed by unique keys, including adding, removing, and looking up values. Works with a polymorphic table type where keys are derived from Var.t. Used to track and manipulate variable bindings in a symbolic computation context.",
+      "description_length": 283,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.CoreSig.SX",
+      "description": "Provides operations to manage a set of elements, including adding, removing, checking membership, and folding over elements. Works with a set type `t` and elements of type `Var.t`. Used to manipulate variable sets in symbolic execution contexts, such as tracking live variables during analysis.",
+      "description_length": 294,
+      "index": 80,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.AssertBounds.Core",
+      "description": "manages variables, intervals, and constraints within a simplex algorithm framework, enabling precise arithmetic, comparison, and symbolic manipulation. It handles rational numbers, variable relationships, and explanation tracking through specialized types like `t`, `r`, and `Var.t`, supporting operations such as interval intersections, equation solving, and variable environment management. Examples include enforcing integer constraints, aggregating backtracking data, and representing exact fractional ranges. It facilitates both numerical computations and symbolic reasoning in optimization and constraint satisfaction tasks.",
+      "description_length": 630,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.SolveBounds.Core",
+      "description": "manages variable comparisons, rational arithmetic, interval operations, and constraint systems through a suite of interrelated modules. it handles custom types for variables, rational numbers, intervals, and explanations, enabling tasks like checking bounds, combining constraints, and performing arithmetic with precise control. operations include adding intervals, solving linear equations, and tracking variable dependencies. examples include computing the minimum of rational values, verifying interval containment, and generating explanation labels during constraint resolution.",
+      "description_length": 583,
+      "index": 82,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.Result.Core",
+      "description": "combines variable comparison, rational arithmetic, interval operations, and equation management to support symbolic and constraint-based computations. it handles custom types for variables, rational numbers, intervals, and sets, enabling tasks like bound checking, equation solving, and explanation aggregation. operations include arithmetic, comparison, union of explanations, and variable tracking. examples include calculating interval sums, solving linear systems, and tracking variable dependencies.",
+      "description_length": 504,
+      "index": 83,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.Rat2.R",
+      "description": "Provides arithmetic operations such as addition, subtraction, multiplication, and division, along with comparison and sign extraction functions for a custom numeric type `t`. Includes methods to check for specific values like zero, one, and negative one, and supports conversion to and from strings. Offers absolute value computation and min/max selection for instances of `t`.",
+      "description_length": 377,
+      "index": 84,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.Rat2.V",
+      "description": "Provides arithmetic operations for a numeric type `t`, including addition, subtraction, multiplication, division, and comparisons. Works with `t` for numerical values and `r` for coefficients in scaling operations. Used for precise calculations in mathematical algorithms and numerical processing.",
+      "description_length": 297,
+      "index": 85,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.Polys.Var",
+      "description": "Compares variables using a custom comparison function, checks if a variable represents an integer, and formats variables for output. It operates on a type `t` representing variables in a program analysis context. Used to determine variable equivalence, type validation, and debugging output in symbolic execution tools.",
+      "description_length": 319,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Polys.R",
+      "description": "Provides arithmetic and comparison operations for a numeric type `t`, including addition, subtraction, multiplication, division, absolute value, and sign checks. Supports identity checks for zero, one, and negative one, and includes conversion to string and formatting for output. Designed for precise manipulation and inspection of values in mathematical contexts.",
+      "description_length": 365,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.AssertBounds",
+      "description": "manages variables, intervals, and constraints within a simplex algorithm, using types like `t`, `r`, and `Var.t` to represent rational numbers, intervals, and variables. It supports interval intersections, equation solving, and symbolic manipulation, enabling tasks such as enforcing integer constraints and tracking explanations during backtracking. Operations include arithmetic computations, comparison, and environment management for variable relationships. It allows precise representation of fractional ranges and aids in optimization and constraint satisfaction.",
+      "description_length": 569,
+      "index": 88,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.Basic",
+      "description": "Encapsulates build rule management with operations to combine and format rule sets. It handles an abstract type representing targets and dependencies, enabling merging of configurations and output generation. Users can perform union operations to aggregate rules and produce structured summaries. This supports tasks like consolidating build plans and exporting dependency graphs.",
+      "description_length": 380,
+      "index": 89,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Core",
+      "description": "manages collections of build rules and variables, supporting set operations like union, membership checks, and iteration. It handles abstract types for targets and dependencies, as well as Var.t-based sets for efficient manipulation. Operations include merging rule sets, adding or removing variables, and converting structures to lists. Examples include combining multiple build configurations and extracting all variables for processing.",
+      "description_length": 439,
+      "index": 90,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.CoreSig",
+      "description": "manages variable constraints, rational arithmetic, interval operations, and linear relations, with tools for tracking explanations, managing variable bindings, and handling sets of variables. It supports operations on `t` types representing variables, rationals, intervals, and equations, enabling precise computation and symbolic manipulation. Users can perform arithmetic, compare values, construct intervals, solve equations, and manage variable sets and explanations. Examples include solving linear systems, tracking backtracking information, and performing exact fractional calculations.",
+      "description_length": 593,
+      "index": 91,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "OcplibSimplex.ExtSigs",
+      "description": "Provides operations to create, query, and manipulate a collection of elements, including adding, removing, and checking membership. Works with a generic set-like structure represented by type `t` and elements of type `elt`. Used to process unique element sets, such as managing user permissions or tracking distinct event occurrences.",
+      "description_length": 334,
+      "index": 92,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Polys",
+      "description": "Encapsulates variable and numeric operations with custom comparison, type checking, and formatting capabilities. It handles arithmetic and logical operations on a numeric type `t`, along with variable equivalence and type validation. Users can perform precise value manipulations, check for specific numeric identities, and generate human-readable outputs. Examples include comparing variables for equality, adding numeric values, and formatting results for debugging.",
+      "description_length": 468,
+      "index": 93,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Rat2",
+      "description": "Performs arithmetic and comparison operations on a custom numeric type `t`, supporting addition, subtraction, multiplication, division, and scaling with coefficients `r`. Includes functions to check for special values, extract signs, and convert between `t` and strings. Provides absolute value, min, max, and comparison capabilities for precise numerical computations. Examples include scaling values by coefficients, checking if a value is zero or one, and converting numeric results to string representations.",
+      "description_length": 512,
+      "index": 94,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Result",
+      "description": "combines variable comparison, rational arithmetic, interval operations, and equation management to support symbolic and constraint-based computations. it defines custom types for variables, rationals, intervals, and sets, enabling operations such as arithmetic, comparison, explanation union, and variable tracking. users can calculate interval sums, solve linear systems, and track variable dependencies. the module facilitates precise bound checking and explanation aggregation in constraint-based reasoning.",
+      "description_length": 510,
+      "index": 95,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.SolveBounds",
+      "description": "manages variable comparisons, rational arithmetic, interval operations, and constraint systems using custom types for variables, rationals, intervals, and explanations. it supports operations such as interval addition, linear equation solving, and constraint combination, with capabilities to track dependencies and generate explanations. examples include calculating the minimum of rational values, checking interval inclusion, and resolving constraints with labeled justifications. the module enables precise control over bound analysis and constraint propagation.",
+      "description_length": 566,
+      "index": 96,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex.Version",
+      "description": "Provides a single function to retrieve a version string. Operates on no data types beyond basic strings. Used to dynamically access application or library version information at runtime.",
+      "description_length": 186,
+      "index": 97,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "ocplib-simplex",
+      "description": "Performs incremental solving of linear inequality systems and linear optimization, supporting backtracking and unsatisfiable core extraction. Operates on constraints represented as lists of linear equations and inequalities. Used for automated verification, resource allocation, and constraint-based reasoning in OCaml applications.",
+      "description_length": 332,
+      "index": 98,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "OcplibSimplex",
+      "description": "Combines variable management, interval arithmetic, and constraint handling with operations for rational numbers, equations, and set manipulations. It supports arithmetic, comparison, interval intersections, and constraint solving, using types like `t`, `r`, and `Var.t` to represent variables, rationals, and intervals. Users can solve linear systems, track variable dependencies, and manage build rule sets through union and membership operations. Examples include enforcing integer constraints, generating dependency graphs, and performing exact fractional calculations.",
+      "description_length": 572,
+      "index": 99,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 156,
+    "meaningful_modules": 100,
+    "filtered_empty_modules": 56,
+    "retention_rate": 0.6410256410256411
+  },
+  "statistics": {
+    "max_description_length": 673,
+    "min_description_length": 186,
+    "avg_description_length": 371.13,
+    "embedding_file_size_mb": 0.3637418746948242
+  }
+}

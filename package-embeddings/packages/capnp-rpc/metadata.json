@@ -1,0 +1,1057 @@
+{
+  "package": "capnp-rpc",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 148,
+  "creation_timestamp": "2025-06-18T16:54:45.779927",
+  "modules": [
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.Core_types.Wire.Path",
+      "description": "Compares path values using a structural ordering function, enabling sorted operations on capability references. It handles a custom type `t` representing capability paths, often used in message-based systems. The `root` value provides a standardized reference to the bootstrap capability within a message.",
+      "description_length": 305,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.Core_types.Wire.Request",
+      "description": "Provides functions to access and modify the attachments of a request message, retrieve the capability index at a specific path, and pretty-print request messages. Works with the `request msg` type and `Path.t` for navigating message structure. Used to inspect or alter the capabilities embedded in a request during processing.",
+      "description_length": 326,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.Core_types.Wire.Response",
+      "description": "Provides functions to manipulate and inspect message responses, including extracting capability indices from paths, accessing attachments, and modifying attachment content. Works with the `t` type, representing a response message, and the `S.attachments` structure for handling message attachments. Used to construct and analyze reply messages in a messaging system, particularly for managing capability indices and attachment data.",
+      "description_length": 432,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.In.QuestionId",
+      "description": "Generates and manipulates unique question identifiers based on a table's answer ID type, supporting increment operations and conversions to and from 32-bit unsigned integers. Formats question IDs for human-readable output. Used to track and serialize question instances in a structured, numeric format.",
+      "description_length": 302,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.In.AnswerId",
+      "description": "Generates and manipulates unique identifiers derived from 32-bit unsigned integers, supporting increment operations and conversions between internal and external representations. Works with a type alias for question IDs, ensuring compatibility with underlying table structures. Used to track and manage answer references in a structured, type-safe manner.",
+      "description_length": 355,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.In.ImportId",
+      "description": "Generates and manipulates unique identifiers derived from 32-bit unsigned integers, supporting increment operations and conversions. Works with `Table.ExportId.t` type, ensuring compatibility with module-specific indexing. Used to track and serialize exported entities in a structured, deterministic manner.",
+      "description_length": 307,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.In.ExportId",
+      "description": "Generates and manipulates unique identifiers used for table imports, supporting increment operations and conversions to and from 32-bit unsigned integers. Works with the `Table.ImportId.t` type to represent and format import identifiers. Used to track and serialize external function references in module exports.",
+      "description_length": 313,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.Core_types.Wire",
+      "description": "defines a messaging system that supports structured access to capability paths, request and response messages, and their attachments. It includes a custom `t` type for capability paths, a `request msg` type for incoming messages, and a `t` type for responses, along with `S.attachments` for managing message data. Operations include comparing paths, retrieving and modifying capability indices, and pretty-printing messages. Examples include navigating message structure to extract embedded capabilities or altering attachments during request processing.",
+      "description_length": 554,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.Core_types.Attachments",
+      "description": "Provides functions to manage a collection of capabilities, including creating a writable array, accessing and modifying specific indices, adding new capabilities, and releasing all references. Works with an internal structure representing a list of capabilities with reference counting. Used to safely handle resource management in systems requiring controlled access to shared objects.",
+      "description_length": 386,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.Core_types.Request_payload",
+      "description": "Provides functions to manipulate request payloads, including extracting capabilities from specific fields, replacing capability sets, and releasing resources. Operates on a type representing a request message, with support for path-based lookups and capability management. Used to handle message corruption, manage reference counts, and implement message cloning with modified embargoes.",
+      "description_length": 387,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.Core_types.Response_payload",
+      "description": "Provides functions to manipulate response payloads, including extracting read-only capability arrays, looking up capabilities by path, replacing capabilities, and releasing resources. Operates on a type wrapping `Wire.Response.t` and manages capabilities and their lifecycles. Used to handle message fields, manage embargoes, and ensure safe resource cleanup.",
+      "description_length": 359,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.Table.QuestionId",
+      "description": "Generates and manipulates unique question identifiers using 32-bit unsigned integers. Provides increment operations, conversion to and from raw 32-bit values, and pretty-printing. Used to track and serialize question indices in a constrained numeric range.",
+      "description_length": 256,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.Table.AnswerId",
+      "description": "Generates and manipulates unique identifiers using 32-bit unsigned integers, supporting increment operations and conversions between internal and external representations. Provides pretty-printing for readable output. Used to track answer sequences in systems requiring ordered, non-overlapping numeric identifiers.",
+      "description_length": 315,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.Table.ImportId",
+      "description": "Manages 32-bit unsigned integer identifiers with increment and conversion operations. Works with the `t` type, a private alias for `Uint32.t`, ensuring type safety. Used to generate and format unique identifiers in systems requiring sequential numeric values.",
+      "description_length": 259,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.Table.ExportId",
+      "description": "Generates and manipulates unique identifiers using 32-bit unsigned integers, supporting increment operations and conversions between internal representations and external uint32 values. Provides pretty-printing for readable output. Used to track and serialize distinct elements in systems requiring compact, sequential identifiers.",
+      "description_length": 331,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.Out.QuestionId",
+      "description": "Generates and manipulates unique question identifiers using increment operations and conversions to and from 32-bit unsigned integers. Works with a custom type encapsulating numeric values for question tracking. Formats identifiers for human-readable output in debugging or logging scenarios.",
+      "description_length": 292,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.Out.AnswerId",
+      "description": "Generates and manipulates unique identifier values for answer records, supporting increment operations and conversion to and from 32-bit unsigned integers. Works with a custom type wrapped around a table-specific identifier structure. Used to track and serialize answer references in a structured, compact format.",
+      "description_length": 313,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.Out.ImportId",
+      "description": "Generates and manipulates unique identifiers for imported table entries, supporting increment operations and conversions between 32-bit unsigned integers and internal representations. Works with 32-bit unsigned integers and a custom type encapsulating import identifiers. Used to track and manage external function or table references in module linking processes.",
+      "description_length": 363,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.Out.ExportId",
+      "description": "Generates and manipulates unique identifiers for table exports, supporting increment operations and conversion to and from 32-bit unsigned integers. It handles internal representation as `Table.ExportId.t` and provides pretty-printing for debugging. Used to track and serialize export indices in WebAssembly module construction.",
+      "description_length": 328,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Local_struct_promise.Make.Wire.Path",
+      "description": "Compares path values using a structural ordering, enabling sorted operations on capability references. It works with a custom type `t` representing capability paths. The `root` value provides a predefined path for the bootstrap capability in system initialization.",
+      "description_length": 264,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Local_struct_promise.Make.Wire.Request",
+      "description": "Provides operations to inspect and modify message attachments, extract capability indices from specific paths, and format messages for output. Works with message objects containing structured attachments and path references. Used to process incoming requests by accessing embedded capability data and ensuring proper message serialization.",
+      "description_length": 339,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Local_struct_promise.Make.Wire.Response",
+      "description": "Provides functions to inspect and modify message attachments, extract capability indices from paths, and create bootstrap responses. Works with message structures containing attachments and path references. Used to navigate capability indices in structured responses and initialize empty replies for bootstrap processes.",
+      "description_length": 320,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Make.Wire.Path",
+      "description": "Compares path values using a structural ordering, enabling sorted operations on capability references. It handles a custom type `t` representing capability paths, often used in message parsing and validation. The `root` function retrieves the base capability path for initialization scenarios.",
+      "description_length": 293,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Make.Wire.Request",
+      "description": "Provides operations to inspect and modify message attachments, extract capability indices from specific paths, and format messages for output. Works with message objects containing structured attachments and path identifiers. Used to analyze message content and manage capability references in communication protocols.",
+      "description_length": 318,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Make.Wire.Response",
+      "description": "Provides functions to manipulate and inspect message responses, including extracting capability indices from paths, accessing attachments, and modifying attachment content. Works with the `t` type, representing a response message, and the `S.attachments` structure for handling message attachments. Used to construct and analyze reply messages in a messaging system, particularly for managing capability references and binary data.",
+      "description_length": 431,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Endpoint.In.QuestionId",
+      "description": "Generates and manipulates unique question identifiers using increment operations and conversions to and from 32-bit unsigned integers. Works with a custom type encapsulating question IDs, supporting pretty printing for debugging. Used to track and serialize question indices in a table-based system.",
+      "description_length": 299,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Endpoint.In.AnswerId",
+      "description": "Generates and manipulates unique identifiers for answers using a custom type wrapped around a 32-bit unsigned integer. Supports incrementing values and converting between the custom type and standard 32-bit unsigned integers. Provides pretty-printing for readable output in logs or user interfaces.",
+      "description_length": 298,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Endpoint.In.ImportId",
+      "description": "Generates and manipulates unique identifiers using increment operations and conversions to and from 32-bit unsigned integers. Works with a custom type representing import identifiers, supporting pretty-printing for debugging. Used to track and serialize import indices in a compiler or interpreter context.",
+      "description_length": 306,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Endpoint.In.ExportId",
+      "description": "Generates and manipulates unique identifiers used to reference exported values in a table structure. It supports incrementing values, converting to and from 32-bit unsigned integers, and pretty-printing. Used to track and manage export indices in a low-level runtime environment.",
+      "description_length": 279,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Endpoint.Out.QuestionId",
+      "description": "Generates and manipulates unique question identifiers using increment operations and conversions to and from 32-bit unsigned integers. Works with the `t` type, which represents question IDs internally. Used to track and serialize question sequences in a database-backed application.",
+      "description_length": 282,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Endpoint.Out.AnswerId",
+      "description": "Generates and manipulates unique identifier values for answer records, supporting increment operations and conversion to and from 32-bit unsigned integers. Works with the `t` type, which wraps internal table-specific identifiers. Used to track and serialize answer references in a structured, compact format.",
+      "description_length": 308,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Endpoint.Out.ImportId",
+      "description": "Generates and manipulates unique identifiers for imported table entries, supporting increment operations and conversion to and from 32-bit unsigned integers. Works with the `t` type, which represents import identifiers in a structured format. Used to track and reference external functions or variables within a module's import section.",
+      "description_length": 336,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Endpoint.Out.ExportId",
+      "description": "Generates and manipulates unique identifiers for table exports, supporting increment operations and conversion to and from 32-bit unsigned integers. It handles internal representation as `Table.ExportId.t` and provides pretty-printing for debugging. Used to track and serialize export references in WebAssembly module construction.",
+      "description_length": 331,
+      "index": 32,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Endpoint.Wire.Path",
+      "description": "Compares path values using a structural ordering function, enabling sorted operations on capability references. It works with a custom type `t` representing capability paths in messages. The `root` value provides a predefined path for the bootstrap capability in system initialization.",
+      "description_length": 285,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Endpoint.Wire.Request",
+      "description": "Provides operations to inspect and modify message attachments, extract capability indices from specific paths, and format messages for output. Works with message objects containing structured attachments and path references. Used to process incoming requests by accessing embedded capabilities and ensuring proper message serialization.",
+      "description_length": 336,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Endpoint.Wire.Response",
+      "description": "Provides functions to manipulate and inspect message responses, including extracting capability indices from paths, accessing attachments, and modifying attachment content. Works with the `t` type, representing a response message, and the `S.attachments` structure for handling message attachments. Used to construct replies with specific capabilities and manage attachment data during message processing.",
+      "description_length": 405,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Core_types.Wire.Path",
+      "description": "Compares path values using a structural ordering, enabling sorted operations on capability references. It handles a custom type `t` representing capability paths, often used in message-based systems. The `root` value provides a standardized reference to the bootstrap capability within a message.",
+      "description_length": 296,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Core_types.Wire.Request",
+      "description": "Provides operations to inspect and modify message attachments, extract capability indices from specific paths, and format messages for output. Works with message objects containing structured attachments and path identifiers. Used to process incoming requests by accessing embedded capabilities and ensuring proper message serialization.",
+      "description_length": 337,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Core_types.Wire.Response",
+      "description": "Provides functions to inspect and modify message attachments, extract capability indices from paths, and create bootstrap responses. Works with message structures containing attachments and path specifications. Used to navigate capability references in structured responses and initialize empty replies for bootstrap interactions.",
+      "description_length": 330,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Cap_proxy.Make.Wire.Path",
+      "description": "Compares path values using a structural ordering, enabling sorted operations on capability references. It handles a custom type `t` representing capability paths, often used in message-based systems. The `root` function retrieves the base capability path for initialization sequences.",
+      "description_length": 284,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Cap_proxy.Make.Wire.Request",
+      "description": "Provides operations to inspect and modify message attachments, extract capability indices from specific paths, and format messages for output. Works with message objects and path specifications to access embedded data. Used to retrieve specific capabilities from structured request payloads and generate human-readable representations.",
+      "description_length": 335,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Cap_proxy.Make.Wire.Response",
+      "description": "Provides functions to manipulate and inspect message responses, including extracting capability indices from paths, accessing attachments, and modifying attachment data. Works with the `t` type, representing a response message, and the `S.attachments` structure for handling message attachments. Used to construct and analyze reply messages in a messaging system, particularly for managing capability references and binary data.",
+      "description_length": 428,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.Core_types",
+      "description": "Provides operations for manipulating structured references and capabilities, including conversion, comparison, and extraction. Works with custom data types such as struct_ref and cap, which encapsulate complex object hierarchies. Used to enforce type safety and consistency in low-level memory management and object interaction.",
+      "description_length": 328,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.Network_types",
+      "description": "Provides functions to generate, validate, and compare unique identifiers for network provisioning, recipient tracking, third-party capabilities, and join key components. Operates on opaque types representing distinct logical entities in a network system. Used to enforce type-safe handling of identifiers in authentication flows and access control logic.",
+      "description_length": 354,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.Table",
+      "description": "Handles 32-bit unsigned integer identifiers for tracking unique elements, questions, answers, and sequences with increment, conversion, and pretty-printing capabilities. Each child module defines a distinct identifier type with operations to manage sequential, non-overlapping numeric values. Examples include generating question indices, formatting answer sequences, and serializing distinct elements within constrained ranges. All modules ensure type safety and consistent representation across system components.",
+      "description_length": 515,
+      "index": 44,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.Out",
+      "description": "Manages unique identifiers across different components of an endpoint, using custom types and 32-bit unsigned integers for question, answer, import, and export tracking. Each module supports increment operations, conversions between numeric and custom types, and formatting for debugging. Operations include generating, manipulating, and serializing identifiers for structured data handling. Examples include tracking question references, serializing answer indices, and managing external table imports.",
+      "description_length": 503,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make.In",
+      "description": "Handles unique identifier generation and manipulation across multiple domains, including questions, answers, exports, and imports, all based on 32-bit unsigned integers. Provides operations for incrementing, converting, and formatting identifiers, with type-specific representations such as question IDs, export IDs, and import IDs. Supports structured tracking of entities, references, and serialized data within table-based systems. Examples include generating a question ID from an integer, converting an export ID to a string, and incrementing an import ID for new entries.",
+      "description_length": 577,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Local_struct_promise.Make.Wire",
+      "description": "Organizes capability paths for sorted operations, inspects and modifies message attachments, extracts capability indices from paths, and constructs bootstrap responses. It works with custom path types, message objects, and structured attachments to enable efficient data navigation and serialization. Operations include path comparison, attachment manipulation, and message formatting for both requests and responses. Examples include initializing system capabilities, extracting embedded data from messages, and generating serialized outputs for RPC communication.",
+      "description_length": 565,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Local_struct_promise.Make.Attachments",
+      "description": "Provides functions to manage a collection of capabilities, including creating a writable array, accessing and modifying specific indices, adding new capabilities, and releasing all references. Works with an internal array structure that holds capability objects. Used to safely handle resource lifetimes in systems requiring precise control over reference counts.",
+      "description_length": 363,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Local_struct_promise.Make.Request_payload",
+      "description": "Provides functions to manipulate request payloads, including extracting capabilities from specific fields, replacing capability sets, and releasing resources. Operates on a type representing a request message, wrapping wire-level data with capability management. Used to handle capability snapshots, modify message contexts, and ensure proper resource cleanup.",
+      "description_length": 360,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Local_struct_promise.Make.Response_payload",
+      "description": "Provides functions to manipulate response payloads, including extracting capabilities from specific fields, replacing capability arrays, and releasing resources. Operates on a type wrapped around `Wire.Response.t`, handling capabilities rather than attachments. Used to manage capability references during message processing and to safely modify or release resources.",
+      "description_length": 367,
+      "index": 50,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.S.Wire.Path",
+      "description": "Compares path values using a structural ordering function, enabling sorted operations on capability references. It handles a custom type `t` representing message fields linked to capabilities. The `root` value provides a predefined path for accessing the bootstrap capability in system messages.",
+      "description_length": 295,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.S.Wire.Request",
+      "description": "Provides functions to access and modify the attachments of a request message, retrieve capability indices at specific paths, and pretty-print request messages. Works with the `t` type, representing a request message, and the `Path.t` type for navigating message structure. Used to inspect or alter the attachments of a request and locate specific capabilities within the message's hierarchy.",
+      "description_length": 391,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.S.Wire.Response",
+      "description": "Provides functions to manipulate and inspect message responses, including extracting capability indices from paths, accessing attachments, and modifying attachment content. Works with the `t` type, representing a response message, and the `attachments` data structure. Used to construct replies with specific capabilities and manage message content during protocol interactions.",
+      "description_length": 378,
+      "index": 53,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Make.QuestionId",
+      "description": "Manages unique numeric identifiers through increment operations and conversions between 32-bit unsigned integers and a private type. Supports pretty-printing for readable output. Used to generate and track sequential question identifiers in a system.",
+      "description_length": 250,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Make.AnswerId",
+      "description": "Manages 32-bit unsigned integer identifiers with increment and conversion operations. Works with `Stdint.Uint32.t` for efficient storage and manipulation. Used to generate and serialize unique response identifiers in network protocols.",
+      "description_length": 235,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Make.ImportId",
+      "description": "Manages 32-bit unsigned integer identifiers with increment and conversion operations. Works with `Uint32.t` values to represent and manipulate unique identifiers. Used to generate and serialize sequential numeric keys in low-level data formats.",
+      "description_length": 244,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Make.ExportId",
+      "description": "Generates and manipulates unique identifiers using 32-bit unsigned integers, supporting increment operations and conversions between internal representations and raw 32-bit values. Provides pretty-printing for readable output of identifier values. Used to track and serialize distinct entity references in low-level system interactions.",
+      "description_length": 336,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Table_types.QuestionId",
+      "description": "Manages unique numeric identifiers through increment operations and conversions between 32-bit unsigned integers and a private type. Supports pretty-printing for readable output. Used to generate and track sequential question identifiers in a system.",
+      "description_length": 250,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Table_types.AnswerId",
+      "description": "Generates and manipulates unique identifier values using 32-bit unsigned integers. Provides increment operations and conversions between internal representations and standard 32-bit unsigned integers. Formats identifiers for human-readable output.",
+      "description_length": 247,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Table_types.ImportId",
+      "description": "Manages 32-bit unsigned integer identifiers with increment and conversion operations. Works with opaque 32-bit unsigned integers, exposing only safe manipulation functions. Used to generate and serialize unique identifiers in protocol buffers and binary formats.",
+      "description_length": 262,
+      "index": 60,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Table_types.ExportId",
+      "description": "Generates and manipulates unique identifiers using 32-bit unsigned integers, supporting increment operations and conversions between internal representations and external uint32 values. Formats identifiers for human-readable output using the Fmt module. Used to track and serialize distinct entity references in low-level system logging and data serialization pipelines.",
+      "description_length": 370,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Flip.QuestionId",
+      "description": "Manages unique numeric identifiers through increment operations and conversions between 32-bit unsigned integers and a private type. Supports pretty-printing for readable output. Used to generate and track sequential question identifiers in a system.",
+      "description_length": 250,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Flip.AnswerId",
+      "description": "Generates and manipulates unique identifiers using 32-bit unsigned integers, supporting increment operations and conversions between internal and external representations. Provides pretty-printing for human-readable output. Used to track answer sequences in a bounded, efficient numeric range.",
+      "description_length": 293,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Flip.ImportId",
+      "description": "Provides operations to manipulate 32-bit unsigned integers as a private type, including incrementing, converting to and from raw 32-bit values, and pretty-printing. Works with values that require unique identifiers or sequential numbering. Used to generate and manage compact, incrementable identifiers in systems requiring efficient storage and comparison.",
+      "description_length": 357,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Flip.ExportId",
+      "description": "Generates and manipulates unique identifiers using 32-bit unsigned integers, supporting increment operations and conversions between internal representations and raw uint32 values. Provides pretty-printing for readable output. Used to track and serialize distinct elements in a system requiring compact, sequential identifiers.",
+      "description_length": 327,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Endpoint.Out",
+      "description": "Each module manages unique identifier generation and manipulation, supporting increment operations and 32-bit unsigned integer conversions. They each define a `t` type for internal representation, with specific use cases such as tracking question sequences, answer records, import entries, and table exports. Operations include serialization, incrementing, and conversion, enabling precise control over identifier lifecycles. For example, one module can generate a new question ID, another can map an answer reference to a compact integer, and another can track external imports with structured identifiers.",
+      "description_length": 607,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Endpoint.In",
+      "description": "Generates and manages unique identifiers across different contexts using custom types wrapped around 32-bit unsigned integers, supporting increment operations, conversions, and pretty-printing. Each module handles specific use cases such as question, answer, import, and export indices, enabling precise tracking and serialization in systems like compilers, interpreters, and runtime environments. Operations include generating new IDs, incrementing existing ones, and converting between internal and external representations. Examples include serializing question indices for storage, logging answer IDs for debugging, managing import references during compilation, and tracking exported values in a runtime table.",
+      "description_length": 715,
+      "index": 67,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Make.Wire",
+      "description": "Encapsulates core RPC logic with support for multiple serialization systems, focusing on message handling and capability management. It defines a `t` type for paths and responses, along with operations to inspect, modify, and format messages, extract capability indices, and manage attachments. Functions like `root` initialize capability paths, while others enable structured message analysis and manipulation. Examples include parsing message attachments, constructing reply messages with modified content, and organizing capability references for protocol compliance.",
+      "description_length": 570,
+      "index": 68,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Make.Attachments",
+      "description": "Provides functions to manage a collection of capabilities, including adding, retrieving, and releasing them. Works with a mutable array structure that holds capability references. Used to safely handle resource lifetimes in systems programming, such as managing file descriptors or memory pointers.",
+      "description_length": 298,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Make.Request_payload",
+      "description": "Provides functions to manipulate request payloads, including extracting capabilities from specific fields, replacing capability sets, and releasing resources. Operates on a type representing request messages, with support for path-based lookups and capability management. Used to handle message cloning with modified capabilities and ensure proper resource cleanup.",
+      "description_length": 365,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Make.Response_payload",
+      "description": "Provides functions to manipulate response payloads, including extracting capabilities from specific fields, replacing capability arrays, and releasing resources. Operates on a type wrapping `Wire.Response.t` and uses read-only capability arrays. Used to manage capability lifetimes and integrity in message processing, such as handling corrupted data or breaking reference cycles.",
+      "description_length": 380,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Endpoint.QuestionId",
+      "description": "Manages unique numeric identifiers through increment operations and conversions between 32-bit unsigned integers and a private type. Supports pretty-printing for readable output. Used to generate and track sequential question identifiers in a system.",
+      "description_length": 250,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Endpoint.AnswerId",
+      "description": "Generates and manipulates unique identifier values using 32-bit unsigned integers. Provides increment operations and conversions between the custom type and standard 32-bit unsigned integers. Used to track and serialize answer indices in a compact, efficient format.",
+      "description_length": 266,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Endpoint.ImportId",
+      "description": "Provides operations to manipulate 32-bit unsigned integers as a private type, including incrementing, converting to and from raw 32-bit values, and pretty-printing. Works with values that require unique identifiers or sequential numbering. Used to generate and manage compact, incrementable identifiers in systems requiring efficient storage and comparison.",
+      "description_length": 357,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Endpoint.ExportId",
+      "description": "Generates and manipulates unique identifiers using 32-bit unsigned integers, supporting increment operations and conversions between internal representations and raw 32-bit values. Provides pretty-printing for readable output. Used to track and serialize distinct entities in systems requiring compact, sequential identifiers.",
+      "description_length": 326,
+      "index": 75,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Endpoint.Wire",
+      "description": "Encapsulates core RPC logic with support for multiple serialization systems, offering structured handling of message paths, attachments, and responses. It defines a custom `t` type for capability paths and response messages, along with operations to compare paths, extract indices, and modify attachments. Functions enable processing of incoming requests by accessing embedded capabilities and constructing replies with controlled data. Examples include sorting capability references, serializing messages with specific attachments, and generating responses that include targeted capability indices.",
+      "description_length": 599,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Endpoint.Attachments",
+      "description": "Provides functions to manage a collection of capabilities, including adding, retrieving, and releasing them. Operates on a mutable array structure that holds capability references. Used to safely handle resource lifetimes in systems programming, such as managing file descriptors or memory handles.",
+      "description_length": 298,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Endpoint.Request_payload",
+      "description": "Provides functions to manipulate request payloads, including extracting capabilities from specific fields, replacing capability arrays, and releasing resources. Operates on a type representing request messages, with support for path-based lookups and capability management. Used to handle message cloning, embargoes, and corruption recovery in network communication.",
+      "description_length": 366,
+      "index": 78,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Endpoint.Response_payload",
+      "description": "Provides functions to manipulate response payloads, including extracting capabilities from a message, looking up specific fields, replacing capabilities to manage embargoes or break cycles, and releasing resources. Operates on a type representing a response message wrapped around a wire payload. Used to handle capability snapshots, field access, and resource cleanup in message processing.",
+      "description_length": 391,
+      "index": 79,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.In.QuestionId",
+      "description": "Generates and manipulates unique question identifiers using increment operations and conversions to and from 32-bit unsigned integers. Works with a custom type encapsulating question IDs, supporting pretty printing for debugging. Used to track and serialize question sequences in a constraint satisfaction solver.",
+      "description_length": 313,
+      "index": 80,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.In.AnswerId",
+      "description": "Generates and manipulates unique identifier values for answers, supporting increment operations and conversion to and from 32-bit unsigned integers. Works with a custom type encapsulating these identifiers, ensuring type-safe handling. Used to track answer sequences in a table-based system, enabling efficient serialization and pretty printing.",
+      "description_length": 345,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.In.ImportId",
+      "description": "Generates and manipulates unique identifiers using increment operations and conversions to and from 32-bit unsigned integers. Works with a custom type representing import identifiers, supporting pretty-printing for debugging. Used to track and serialize import indices in a compiler or interpreter context.",
+      "description_length": 306,
+      "index": 82,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.In.ExportId",
+      "description": "Generates and manipulates unique numeric identifiers using 32-bit unsigned integers, supporting increment operations and conversions. Works with 32-bit unsigned integer values to represent and format identifiers. Used to track and serialize export references in a binary format.",
+      "description_length": 278,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Core_types.Wire",
+      "description": "Encapsulates message processing logic with support for capability path manipulation and attachment handling. It defines a custom type `t` for capability paths, offering root reference and sorting capabilities, along with functions to extract indices and manage message attachments. Operations include inspecting, modifying, and serializing messages, enabling structured interaction with embedded capabilities. Examples include navigating response hierarchies, generating bootstrap replies, and ensuring consistent message formatting.",
+      "description_length": 533,
+      "index": 84,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Core_types.Attachments",
+      "description": "Provides functions to manage a collection of capabilities, including adding, retrieving, and releasing them. Operates on a mutable array structure that stores capability references. Used to safely handle resource lifetimes in systems programming, such as managing file descriptors or memory handles.",
+      "description_length": 299,
+      "index": 85,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Core_types.Request_payload",
+      "description": "Provides functions to manipulate request payloads, including extracting capabilities from specific fields, replacing capability sets, and releasing resources. Operates on a type representing request messages, with support for path-based lookups and capability management. Used to handle message integrity, manage embargoes, and prevent reference cycles in distributed systems.",
+      "description_length": 376,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Core_types.Response_payload",
+      "description": "Provides functions to manipulate response payloads, including extracting capabilities from a message, looking up specific fields, replacing capabilities to manage embargoes or break cycles, and releasing resources. Operates on a type representing a response message wrapped around a wire payload. Used to handle capability snapshots, field access, and resource management in message processing.",
+      "description_length": 394,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Table.QuestionId",
+      "description": "Manages unique numeric identifiers through increment operations and conversions between 32-bit unsigned integers and its internal representation. Supports pretty-printing for readable output. Used to generate and track sequential question identifiers in a system requiring compact, incrementable numeric keys.",
+      "description_length": 309,
+      "index": 88,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Table.AnswerId",
+      "description": "Manages 32-bit unsigned integer identifiers with increment and conversion operations. Works with `Uint32.t` values to represent unique answer identifiers. Used to generate and serialize unique answer tokens in a bounded numeric range.",
+      "description_length": 234,
+      "index": 89,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Table.ImportId",
+      "description": "Manages 32-bit unsigned integer identifiers with increment and conversion operations. Works with `Uint32.t` values to represent and manipulate unique identifiers. Used to generate and serialize sequential numeric keys in low-level data formats.",
+      "description_length": 244,
+      "index": 90,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Table.ExportId",
+      "description": "Generates and manipulates unique identifiers using 32-bit unsigned integers, supporting increment operations and conversions between internal representations and external uint32 values. Formats identifiers for human-readable output using the Fmt module. Used to track and serialize distinct entity identifiers in low-level system interfaces.",
+      "description_length": 341,
+      "index": 91,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Out.QuestionId",
+      "description": "Generates and manipulates unique question identifiers using increment operations and conversions to and from 32-bit unsigned integers. Works with a custom type wrapped around a 32-bit unsigned integer for efficient storage and comparison. Used to track and serialize question indices in a database-backed application.",
+      "description_length": 317,
+      "index": 92,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Out.AnswerId",
+      "description": "Generates and manipulates unique identifier values for answer records, supporting increment operations and conversion to and from 32-bit unsigned integers. Works with the `t` type, which wraps internal table-specific identifiers. Used to track and serialize answer references in a structured, compact format.",
+      "description_length": 308,
+      "index": 93,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Out.ImportId",
+      "description": "Generates and manipulates unique identifiers for imported table elements, supporting increment operations and conversions between 32-bit unsigned integers and internal representations. Works with 32-bit unsigned integers and a custom type encapsulating import identifiers. Used to track and manage external function or variable references in a module's import section.",
+      "description_length": 368,
+      "index": 94,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Out.ExportId",
+      "description": "Generates and manipulates unique identifiers for table exports, supporting increment operations and conversion to and from 32-bit unsigned integers. Works with the `t` type, which wraps export-specific numeric values. Used to track and serialize export indices in low-level bytecode processing.",
+      "description_length": 294,
+      "index": 95,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.Cap_proxy.Make.Wire",
+      "description": "Organizes and processes capability paths, message attachments, and response data through structured operations. It defines a `t` type for capability paths and response messages, along with functions to extract, modify, and format data. Operations include retrieving root paths, inspecting attachments, and generating human-readable outputs. It enables precise handling of capability references and binary data within message flows.",
+      "description_length": 431,
+      "index": 96,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Cap_proxy.Make.Attachments",
+      "description": "Provides functions to manage a collection of capabilities, including creating a writable array, accessing and modifying specific indices, adding new capabilities, and releasing all references. Operates on a structured type representing an attachments array, with each element being a capability. Used to safely handle resource references in systems requiring precise control over capability lifetimes and ownership.",
+      "description_length": 415,
+      "index": 97,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.Cap_proxy.Make.Request_payload",
+      "description": "Provides functions to manipulate request payloads, including extracting capabilities from specific fields, replacing capability sets, and releasing resources. Operates on a type representing a request message, with support for path-based lookups and capability management. Used to handle message corruption, manage embargoes, and prevent reference cycles in distributed systems.",
+      "description_length": 378,
+      "index": 98,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Cap_proxy.Make.Response_payload",
+      "description": "Provides functions to manipulate response payloads, including extracting capabilities from a message, looking up specific fields, replacing capabilities to manage embargoes or break cycles, and releasing resources. Operates on a type representing a response message wrapped around a wire payload. Used to handle capability snapshots, field access, and resource management in message processing.",
+      "description_length": 394,
+      "index": 99,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Debug.Log",
+      "description": "Logs messages with specified severity levels, formats error handling with custom pretty-printing, and provides structured logging for application events. Works with log levels, formatted messages, and result types to capture success or error states. Used to instrument application flow, handle failures gracefully, and produce consistent log outputs for debugging.",
+      "description_length": 364,
+      "index": 100,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Debug.OID",
+      "description": "Generates and formats unique identifiers, with a counter-based approach to ensure uniqueness. Works with a custom type `t` representing object IDs. Useful for tracking objects during debugging or testing scenarios where predictable, resettable IDs are needed.",
+      "description_length": 259,
+      "index": 101,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP.Make",
+      "description": "Combines structured reference manipulation, unique identifier generation, and 32-bit integer tracking across multiple domains, offering type-safe operations for conversion, comparison, and increment. Key data types include struct_ref, cap, opaque identifiers, and domain-specific numeric types like question IDs and export IDs. Functions enable generating question indices, serializing answer sequences, and managing import/export tracking with consistent formatting. Examples include converting a 32-bit integer to a question ID, incrementing an import ID, and validating network identifiers.",
+      "description_length": 593,
+      "index": 102,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Local_struct_promise.Make",
+      "description": "Provides functions to construct, modify, and query struct_ref and cap data structures. Includes operations for setting and retrieving fields, merging configurations, and validating constraints. Used to generate and manage structured data in compiler and tooling workflows.",
+      "description_length": 272,
+      "index": 103,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Id.Make",
+      "description": "Provides operations to create and manipulate 32-bit unsigned integers, including incrementing, converting to and from the standard library's 32-bit unsigned type, and pretty-printing. Works with the private type t, which is an alias for Stdint.Uint32.t. Used to handle arithmetic and serialization of 32-bit values in low-level system interfaces.",
+      "description_length": 346,
+      "index": 104,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.EmbargoId",
+      "description": "Generates and manipulates unique identifiers using 32-bit unsigned integers, supporting increment operations and conversions between internal and external representations. Provides pretty-printing for readable output. Used to track and manage embargo identifiers in network protocols.",
+      "description_length": 284,
+      "index": 105,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Flip",
+      "description": "Manages sequential, unique identifiers using 32-bit unsigned integers, with support for incrementing, conversion between internal and external representations, and pretty-printing. Each module handles identifier generation and tracking for distinct system components, such as questions, answers, or elements, ensuring type-safe, efficient numeric ranges. Operations include generating, converting, and displaying identifiers in a human-readable format. Examples include creating a sequence of question IDs, tracking answer indices, or serializing elements with compact, incrementable identifiers.",
+      "description_length": 596,
+      "index": 106,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Make",
+      "description": "Provides functions to construct, modify, and inspect struct_ref and cap data types, including operations for field access, mutation, and comparison. Works with structured records and capability objects used in low-level system programming. Used to manage hardware abstraction layers and enforce access control in embedded systems.",
+      "description_length": 330,
+      "index": 107,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Table_types",
+      "description": "Manages unique 32-bit unsigned integer identifiers with safe increment and conversion operations, exposing opaque types for controlled manipulation. Provides human-readable formatting and serialization capabilities for use in logging, protocol buffers, and data pipelines. Supports generation of sequential question identifiers and distinct entity references. Examples include converting internal identifiers to uint32, formatting for output, and serializing values in binary protocols.",
+      "description_length": 486,
+      "index": 108,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Endpoint",
+      "description": "Handles reference and capability manipulation through methods like `resolve`, `update`, and `validate`. Operates on structured data types such as `struct_ref` and `cap` to manage object pointers and access controls. Used to ensure consistent handling of resource identifiers in distributed systems.",
+      "description_length": 298,
+      "index": 109,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Cap_proxy.Make",
+      "description": "Provides functions to construct, modify, and inspect struct_ref and cap data types. Includes operations for merging structures, extracting fields, and validating constraints. Used to standardize interactions with reference structures in compiler and parser components.",
+      "description_length": 268,
+      "index": 110,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Core_types.Attachments",
+      "description": "Provides functions to manage a collection of capabilities, including creating a writable array, accessing and modifying specific indices, adding new capabilities, and releasing all references. Operates on a custom attachments structure that tracks capability references. Used to safely handle resource management in systems requiring controlled access to mutable state.",
+      "description_length": 369,
+      "index": 111,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Core_types.Request_payload",
+      "description": "Provides functions to manipulate request payloads, including extracting capabilities from specific fields, replacing capability sets, and releasing resources. Operates on a type representing a request message, wrapping a wire format structure. Used to manage capability references in message processing and ensure safe resource cleanup.",
+      "description_length": 336,
+      "index": 112,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Core_types.Response_payload",
+      "description": "Provides functions to manipulate response payloads by extracting and modifying capabilities, looking up fields by path, and managing resource release. Operates on a type wrapping `Wire.Response.t` and uses read-only capability arrays. Used to handle capability snapshots, implement message transformations, and ensure proper resource cleanup.",
+      "description_length": 342,
+      "index": 113,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.S.Wire",
+      "description": "defines a system for handling RPC messages with structured path navigation, enabling manipulation of capabilities and attachments in both requests and responses. It operates on types `t` for messages and `Path.t` for path navigation, supporting operations like capability lookup, attachment modification, and message inspection. Functions allow extracting indices from paths, altering attachments, and constructing replies with specific capabilities. Examples include locating the bootstrap capability via a predefined root path or modifying response content during protocol interactions.",
+      "description_length": 588,
+      "index": 114,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.S.Attachments",
+      "description": "Provides operations to manage a collection of capabilities, including retrieving, adding, and releasing them. Works with an attachments data structure that stores references to capabilities. Used to safely handle resource management in systems requiring controlled access to shared resources.",
+      "description_length": 292,
+      "index": 115,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.S.Request_payload",
+      "description": "Provides operations to manage capabilities within request payloads, including extracting a read-only array of capabilities, looking up specific fields by path, and replacing capabilities to manage ownership and cycles. Works with `Wire.Request.t` and `cap RO_array.t` to handle message data and associated capabilities. Used to safely modify request messages for operations like taking capabilities from other questions or releasing resources.",
+      "description_length": 443,
+      "index": 116,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.S.Response_payload",
+      "description": "Provides functions to manipulate response payloads, including extracting capabilities from specific fields, replacing capability arrays, and releasing resources. Operates on a type representing a response message wrapped from a wire format, with support for reading and modifying capabilities. Used to manage capability references in message handling, such as when transferring or modifying message contents.",
+      "description_length": 408,
+      "index": 117,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.S.Path",
+      "description": "Compares path values using a structural ordering, enabling sorted operations on capability references. It works with a custom type `t` representing capability paths. The `root` value provides a predefined path for the bootstrap capability in system initialization.",
+      "description_length": 264,
+      "index": 118,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.S.Request",
+      "description": "Provides functions to access and modify the attachments of a request message, retrieve the capability index at a specific path, and format the message for output. Works with the `t` type, representing a request message, and the `Path.t` type for navigating within the message structure. Used to inspect or alter the attachments and locate capability indices during message processing.",
+      "description_length": 384,
+      "index": 119,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.S.Response",
+      "description": "Provides functions to manipulate and inspect message responses, including extracting capability indices from paths, accessing attachments, and modifying attachment content. Works with the `t` type, representing a response message, and the `attachments` data structure. Used to handle capability indexing in distributed systems and manage reply content during protocol interactions.",
+      "description_length": 381,
+      "index": 120,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Core_types",
+      "description": "Provides methods to manipulate and compare structured references and capabilities, including equality checks, hashing, and conversion to string representations. Works with custom data types such as struct_ref and cap, which encapsulate complex internal states. Used to ensure consistent handling of these types in serialization and logging workflows.",
+      "description_length": 350,
+      "index": 121,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Network_types",
+      "description": "Provides functions to generate, validate, and manipulate unique identifiers for network provisioning, recipient tracking, third-party capabilities, and join key components. Operates on custom type aliases representing opaque identifiers and structured key fragments. Used to ensure type-safe handling of network-specific tokens in authentication and access control workflows.",
+      "description_length": 375,
+      "index": 122,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Table",
+      "description": "Manages 32-bit unsigned integer identifiers with increment and conversion operations, supporting pretty-printing and serialization. Provides tools to generate and track sequential numeric keys, answer tokens, and entity identifiers across system components. Operations include incrementing, converting between internal and external representations, and formatting for human-readable output. Used to create and manage unique, compact identifiers in low-level data formats and test environments.",
+      "description_length": 493,
+      "index": 123,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.Out",
+      "description": "Provides a set of modules for generating, manipulating, and serializing unique identifiers across different components of a module system. Each module works with a custom `t` type or 32-bit unsigned integers to manage question, answer, import, and export identifiers, supporting increment operations and conversions. These identifiers enable efficient tracking of database records, table elements, and bytecode references. For example, a question ID can be incremented and converted to an integer for storage, while an import identifier can be wrapped in a custom type for compact representation.",
+      "description_length": 596,
+      "index": 124,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.In",
+      "description": "Encapsulates unique identifier generation and manipulation across distinct domains, using custom types for question, answer, import, and export tracking. Each module supports increment operations, 32-bit unsigned integer conversions, and pretty printing for debugging purposes. They enable precise serialization and sequence management in constraint solvers, table systems, compilers, and binary formats. Examples include generating sequential question IDs, tracking answer indices, formatting import references, and encoding export pointers.",
+      "description_length": 542,
+      "index": 125,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.QuestionId",
+      "description": "Manages unique numeric identifiers through increment operations and conversions between 32-bit unsigned integers and a private type. Supports pretty-printing for readable output. Used to generate and track sequential question identifiers in a system.",
+      "description_length": 250,
+      "index": 126,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.AnswerId",
+      "description": "Generates and manipulates unique identifiers using 32-bit unsigned integers, supporting increment operations and conversions between internal and external representations. Provides pretty-printing for human-readable output. Used to track answer sequences in systems requiring ordered, non-overlapping numeric identifiers.",
+      "description_length": 321,
+      "index": 127,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.ImportId",
+      "description": "Provides operations to manipulate 32-bit unsigned integers as a private type, including incrementing, converting to and from raw 32-bit values, and pretty-printing. Works with values that require unique identifiers or sequential numbering within a fixed numeric range. Used to generate and manage compact, incrementable identifiers in systems requiring efficient storage and comparison.",
+      "description_length": 386,
+      "index": 128,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types.ExportId",
+      "description": "Generates and manipulates unique identifiers using 32-bit unsigned integers, supporting increment operations and conversions between internal and external representations. It enables precise control over identifier sequences and ensures compatibility with systems using standard 32-bit unsigned values. The pretty-printing function facilitates readable output for debugging or logging purposes.",
+      "description_length": 394,
+      "index": 129,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Core_types.Path",
+      "description": "Compares path values using a structural ordering, enabling sorted operations on capability references. It handles a custom type `t` representing capability paths, often used in message-based systems. The `root` value provides a standardized reference to the bootstrap capability within a message.",
+      "description_length": 296,
+      "index": 130,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Capnp_rpc.Core_types.Request",
+      "description": "Provides operations to inspect and modify the attachments of a request message, including retrieving the attachments directly and determining capability indices at specific paths. Works with the `t` type, representing a request message, and the `Path.t` type for navigating message structure. Used to extract capability indices for handling complex message payloads in network protocols.",
+      "description_length": 387,
+      "index": 131,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Core_types.Response",
+      "description": "Provides functions to manipulate and inspect message responses, including extracting capability indices from paths, accessing attachments, and modifying attachment content. Works with the `t` type, representing a response message, and the `S.attachments` structure for handling message attachments. Used to construct and analyze reply messages in a messaging system, such as retrieving specific capabilities during message processing.",
+      "description_length": 434,
+      "index": 132,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.S",
+      "description": "Provides methods to manipulate struct_ref values and handle capability tokens, including lifting, lowering, and checking validity. Operates on struct_ref and cap types, enabling low-level memory and permission management. Used to enforce access control and manage structured data references in system-level programming.",
+      "description_length": 319,
+      "index": 133,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.RO_array",
+      "description": "Provides operations to create, access, and transform immutable arrays. Works with the `'a t` type, supporting list conversion, indexed access, and higher-order functions like `map` and `iter`. Used to safely handle fixed-size data sequences where mutation is not allowed, such as in concurrent or persistent data structures.",
+      "description_length": 324,
+      "index": 134,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Stats",
+      "description": "Provides operations to initialize a statistics record and pretty-print it. Works with a record type containing metrics for CapTP connections. Used to track and display connection-related data during protocol execution.",
+      "description_length": 218,
+      "index": 135,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Id",
+      "description": "Generates and manipulates unique identifiers using 32-bit unsigned integers, supporting increment operations and conversions between internal and external representations. Provides pretty-printing for readable output. Used to track sequential records in systems requiring compact, incrementable identifiers.",
+      "description_length": 307,
+      "index": 136,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Debug",
+      "description": "Tracks application flow and errors through structured logging with severity levels, formatted messages, and result tracking, while generating unique, counter-based identifiers for object tracking. Provides operations to log messages, manage log levels, and generate or reset IDs. Supports debugging by capturing detailed event records and ensuring traceable object references. Can log error states with custom formatting and generate predictable IDs for test scenarios.",
+      "description_length": 469,
+      "index": 137,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Error",
+      "description": "Handles error representations including cancellation and exceptions, providing pretty-printing and exception construction. Works with variant types representing error conditions and exception objects. Used to generate human-readable error messages and wrap exceptions with contextual information.",
+      "description_length": 296,
+      "index": 138,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Exception",
+      "description": "Provides functions to format and construct exception values with specific error types, including disconnection, failure, overload, and undefined codes. Works with custom types representing error conditions and exception records containing messages. Used to generate human-readable error outputs and create exception instances for network or protocol-related failures.",
+      "description_length": 367,
+      "index": 139,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Message_types",
+      "description": "Manages sequential, unique identifiers using 32-bit unsigned integers, with private type conversions, increment operations, and pretty-printing. Supports generating and tracking question and answer sequences, ensuring ordered, non-overlapping numeric ranges. Provides precise control over identifier generation and compatibility with standard 32-bit values. Examples include creating a new identifier, incrementing it, and converting it to a human-readable format for logging or debugging.",
+      "description_length": 489,
+      "index": 140,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Core_types",
+      "description": "Provides methods to manipulate and compare structured references and capabilities, including equality checks, hashing, and conversion to string representations. Works with custom data types such as `struct_ref` and `cap`, which encapsulate complex internal states. Used to ensure consistent handling of these types in serialization and logging workflows.",
+      "description_length": 354,
+      "index": 141,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Local_struct_promise",
+      "description": "Manages structured data through operations that build, modify, and inspect complex types, enabling configuration merging and field manipulation. Supports cap and struct_ref data structures with validation and query capabilities. Allows for precise control over data representation in compiler workflows. Examples include setting nested fields, combining configuration layers, and enforcing data integrity constraints.",
+      "description_length": 417,
+      "index": 142,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.Cap_proxy",
+      "description": "Manages local promise operations for capabilities, enabling message queuing and structured data manipulation. Supports operations on struct_ref and cap types, including merging, field extraction, and validation. Allows for precise control over reference structures in compiler and parser workflows. Example tasks include modifying field values, validating structural integrity, and combining multiple reference structures into a unified form.",
+      "description_length": 442,
+      "index": 143,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.CapTP",
+      "description": "manages structured references, unique identifiers, and domain-specific numeric types across Cap'n Proto RPC networks, enabling safe and precise manipulation of data structures. It handles operations such as converting integers to question IDs, incrementing import IDs, and serializing answer sequences. Key types include struct_ref, cap, opaque identifiers, and domain-specific numeric types like question and export IDs. Examples include generating unique identifiers, tracking imports and exports, and ensuring consistent formatting during network communication.",
+      "description_length": 564,
+      "index": 144,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc.RC",
+      "description": "Manages reference counts with strict overflow and validity checks, supporting addition, increment, and decrement operations that raise exceptions on invalid states. Works with a custom `t` type representing ref-counts, including a special `leaked` value for invalid states. Used to enforce safe resource management in systems where detecting and handling GC leaks is critical.",
+      "description_length": 376,
+      "index": 145,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "capnp-rpc",
+      "description": "Processes and manipulates JSON data through parsing, serialization, and field extraction. Operates on OCaml's native data types such as lists, variants, and records. Enables efficient data transformation in API response handling and configuration file parsing.",
+      "description_length": 260,
+      "index": 146,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Capnp_rpc",
+      "description": "Provides low-level operations for managing structured references, capabilities, and unique identifiers, along with error handling, logging, and data serialization. Key types include `struct_ref`, `cap`, `t` for arrays, and 32-bit numeric identifiers, supporting actions like lifting, hashing, array transformation, and error pretty-printing. It enables precise control over data integrity, access enforcement, and sequence tracking in distributed systems. Examples include generating question IDs, logging connection metrics, and validating reference structures during RPC communication.",
+      "description_length": 587,
+      "index": 147,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 152,
+    "meaningful_modules": 148,
+    "filtered_empty_modules": 4,
+    "retention_rate": 0.9736842105263158
+  },
+  "statistics": {
+    "max_description_length": 715,
+    "min_description_length": 218,
+    "avg_description_length": 361.6283783783784,
+    "embedding_file_size_mb": 0.5309181213378906
+  }
+}

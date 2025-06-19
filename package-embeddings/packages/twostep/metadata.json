@@ -1,0 +1,56 @@
+{
+  "package": "twostep",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 5,
+  "creation_timestamp": "2025-06-18T16:30:39.195887",
+  "modules": [
+    {
+      "module_path": "Twostep.TOTP",
+      "description": "Generates and verifies time-based one-time passwords using a Base-32 secret, supporting configurable window sizes, token lengths, and HMAC hash algorithms. It produces a 6-digit code by default, with options to adjust to 8 digits and use SHA-1, SHA-256, or SHA-512. It is used in authentication flows where time-synchronized tokens are required, such as securing account logins or API access.",
+      "description_length": 392,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Twostep.HOTP",
+      "description": "Generates and verifies HMAC-based one-time passwords using a secret key, counter, and hash algorithm. It produces sequences of numeric codes with customizable length and digit count, and checks against a list of provided codes with optional counter synchronization. Used for secure authentication via trusted channels like email, ensuring tokens expire after a short window to prevent replay attacks.",
+      "description_length": 400,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Twostep.Internals",
+      "description": "Provides functions for generating time-based counters, computing HMAC signatures, converting base32 strings, padding strings with specified characters, and truncating strings to a fixed number of digits. Operates on strings, integers, and custom padding types. Used for generating one-time passwords, securing data exchanges, and formatting cryptographic outputs.",
+      "description_length": 363,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "twostep",
+      "description": "Generates and verifies time- or counter-based one-time passwords using HMAC. Operates on byte sequences, integers, and base32-encoded strings. Used for authenticating users in two-factor authentication systems by validating OTPs against a shared secret.",
+      "description_length": 253,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Twostep",
+      "description": "Generates and verifies time- and HMAC-based one-time passwords using secrets, counters, and hash algorithms, with customizable length, digits, and padding. Supports 6- or 8-digit codes, SHA-1, SHA-256, and SHA-512, and includes utilities for base32 conversion, string padding, and truncation. Enables secure authentication in time-sensitive scenarios like login systems and API access, as well as counter-based token validation over trusted channels. Examples include generating a 6-digit TOTP code for a user's login or verifying a 8-digit HOTP token against a precomputed list.",
+      "description_length": 579,
+      "index": 4,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 5,
+    "meaningful_modules": 5,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 579,
+    "min_description_length": 253,
+    "avg_description_length": 397.4,
+    "embedding_file_size_mb": 0.01858997344970703
+  }
+}

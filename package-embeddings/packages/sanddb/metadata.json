@@ -1,0 +1,56 @@
+{
+  "package": "sanddb",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 5,
+  "creation_timestamp": "2025-06-18T16:28:40.442848",
+  "modules": [
+    {
+      "module_path": "Sanddb.Database",
+      "description": "Provides functions to read all or visible records from a database, insert new records, and manage record IDs. Operates on a type `t` representing database records and `Record_id.t` for unique identifiers. Used to persist and retrieve data with support for shadowing existing entries during insertion.",
+      "description_length": 300,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sanddb.Record_id",
+      "description": "Provides functions to generate, compare, and convert record identifiers, including random ID creation, string parsing, and serialization. Works with the `t` type, a unique identifier compatible with set operations. Used to uniquely reference database records and ensure consistent comparisons and representations.",
+      "description_length": 313,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sanddb.Serializer",
+      "description": "Converts between a custom type `t` and its string representation, supporting both parsing from and serialization to strings with optional length control. Works with the abstract type `t` to encode and decode structured data. Used to generate compact string representations for network transmission or file storage.",
+      "description_length": 314,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "sanddb",
+      "description": "Handles file-based data persistence with minimal API. Operates on OCaml values serialized to and from disk using binary encoding. Used to store application state or configuration that needs to survive process restarts.",
+      "description_length": 218,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sanddb",
+      "description": "manages database records through operations like reading, inserting, and ID management, with support for shadowing and efficient referencing. It handles unique identifiers through generation, comparison, and conversion, enabling consistent record tracking. It also facilitates serialization and parsing of structured data into compact string formats. This enables tasks such as inserting a new record with a generated ID, retrieving visible entries, and converting records to strings for storage or transmission.",
+      "description_length": 512,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 5,
+    "meaningful_modules": 5,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 512,
+    "min_description_length": 218,
+    "avg_description_length": 331.4,
+    "embedding_file_size_mb": 0.01862621307373047
+  }
+}

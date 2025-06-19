@@ -1,0 +1,308 @@
+{
+  "package": "github-hooks",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 41,
+  "creation_timestamp": "2025-06-18T16:40:34.711675",
+  "modules": [
+    {
+      "module_path": "Github_hooks.Make.Endpoint.Version",
+      "description": "Provides functions to parse, compare, and format version strings according to semantic versioning rules. Works with strings and a custom version type that represents major, minor, and patch numbers. Used to validate cache headers and ensure clients receive updated resources when necessary.",
+      "description_length": 290,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Github_hooks.Make.Repo.Hook",
+      "description": "Provides functions to retrieve, create, update, and delete GitHub repository hooks, as well as test hooks and parse webhook events. Operates on types like `Github_t.hook`, `Github_t.new_hook`, `Github_t.update_hook`, and `Github_t.event_hook_constr`. Used to manage post-receive hooks for repository automation and event-driven workflows.",
+      "description_length": 338,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.Organization.Hook",
+      "description": "Retrieves, creates, updates, and deletes organization-level webhooks for GitHub. Processes event payloads and extracts metadata for hook events. Accepts organization names, hook IDs, and serialized event data to perform actions and parse incoming notifications.",
+      "description_length": 261,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Repo.Set",
+      "description": "This module provides set theory operations like union, intersection, and difference, along with element manipulation (addition, removal) and property queries (size, membership). It works with ordered sets and sequences, enabling efficient traversal, predicate-based filtering, and transformation of elements. Use cases include managing dynamic collections with unique elements, performing mathematical set operations, and processing ordered data structures.",
+      "description_length": 457,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.IO",
+      "description": "Provides monadic operations for sequencing I/O actions, including binding results between computations and lifting values into I/O contexts. Works with input and output channels, connection handles, and error representations. Enables reading lines and arbitrary data from input streams, writing strings to output streams, and handling I/O errors gracefully.",
+      "description_length": 357,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.Response",
+      "description": "Provides functions to extract the payload and redirect history from API responses, and to determine the final destination of a redirect chain. Operates on a private type representing API responses, including a list of redirect records. Used to track and resolve HTTP redirect sequences, returning either a permanent or temporary final URI based on the chain's status.",
+      "description_length": 367,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Github_hooks.Make.Monad",
+      "description": "Encapsulates Lwt threads with state for API interactions, allowing sequential binding of operations that carry state. Provides combinators to transform and chain values within the monadic context, including handling responses and exceptions. Executes API actions by converting the monad to an Lwt thread, preserving state during execution.",
+      "description_length": 339,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.Endpoint",
+      "description": "Handles versioning logic for API requests, enabling accurate comparison and formatting of version strings. It defines a version type with major, minor, and patch components, and supports operations like parsing from strings and checking compatibility. This ensures clients receive the correct API responses based on version constraints. For example, it can determine if a cached response is outdated or if a new version of an endpoint is available.",
+      "description_length": 448,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.Stream",
+      "description": "Provides functions to lazily process paginated API results, including fetching the next element, mapping over elements, folding over them, finding elements, iterating, converting to a list, and creating streams from lists. Operates on a generic stream type and a parsing function that converts strings to lists of parsed values. Used to efficiently handle large or continuous data from GitHub, such as iterating over a repository's commit history or filtering specific events from a stream.",
+      "description_length": 490,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Github_hooks.Make.Scope",
+      "description": "Provides functions to convert between GitHub scope values and their string representations, and to serialize/deserialize lists of scopes. Works with the `Github_t.scope` type and lists of such values. Used to generate API requests with specific permissions and to parse scope strings from responses.",
+      "description_length": 299,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Github_hooks.Make.Token",
+      "description": "Provides functions to generate, retrieve, and manage GitHub authorization tokens, including handling OAuth web flow codes and personal tokens. Works with types such as `Github_t.auth`, `string`, and `int64` to represent and manipulate token data. Used to create new authorizations with optional scopes, fetch existing authorizations by ID, and delete them, while supporting two-factor authentication workflows.",
+      "description_length": 410,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.API",
+      "description": "Provides HTTP method handlers for GitHub API interactions, including GET, POST, DELETE, PATCH, and PUT with customizable status code validation, headers, tokens, and query parameters. Works with Cohttp types, Token.t, and GitHub-specific data structures like Response.t and rate limit information. Enables rate-limited API calls, error handling for unbound endpoints, and monadic state management for user agents and authentication tokens.",
+      "description_length": 439,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.URI",
+      "description": "Generates OAuth2 authorization and token endpoints using URI.t for web-based authentication flows. Constructs URLs for user redirection and token exchange with specific parameters like client ID, secret, and code. Produces valid URI instances for integration with GitHub's API and web applications.",
+      "description_length": 298,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.Filter",
+      "description": "Provides functions to construct and manipulate filter parameters for querying GitHub resources, including sorting options, date ranges, and qualifier-based constraints. Works with custom types such as `milestone`, `user`, `date`, and `issue_qualifier` to represent specific filter criteria. Used to refine API requests for issues, repositories, and user data by applying structured sorting and qualification rules.",
+      "description_length": 414,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.Rate_limit",
+      "description": "Provides functions to retrieve rate limit information for different GitHub API regimes, including core and search limits. Operates on token and rate data structures, returning monadic results. Used to monitor API usage constraints in real-time during request handling.",
+      "description_length": 268,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.User",
+      "description": "Provides functions to retrieve user information and repositories from GitHub, using a token for authentication. Operates on user identifiers and returns structured data including user profiles and repository streams. Enables fetching details for the authenticated user or any specified user.",
+      "description_length": 291,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.Organization",
+      "description": "Manages GitHub organization webhooks, enabling creation, retrieval, update, and deletion of hooks. Processes event payloads to extract metadata, using organization names, hook IDs, and serialized data to handle notifications. Supports parsing and responding to webhook events with structured data. Examples include filtering specific event types or triggering workflows based on received payloads.",
+      "description_length": 397,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.Team",
+      "description": "Provides functions to retrieve team information and associated repositories from GitHub's API. Accepts a team ID and optional authentication token to fetch detailed team data and a stream of linked repositories. Used to fetch team metadata and dynamically process repository lists in integration workflows.",
+      "description_length": 306,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.Event",
+      "description": "Provides functions to retrieve event streams from GitHub, including repository-specific events, public events, organization events, and user-generated or received events. Operates on GitHub event data structured as streams of `Github_t.event` records. Enables real-time monitoring of activity for repositories, organizations, and users, with options to filter by public or private access.",
+      "description_length": 388,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.Repo",
+      "description": "Manages GitHub repository hooks with functions to retrieve, create, update, and delete them, along with testing and parsing webhook events. Key types include `Github_t.hook`, `Github_t.new_hook`, `Github_t.update_hook`, and `Github_t.event_hook_constr`. Users can automate repository workflows by setting up post-receive hooks or processing event data from webhooks. Example tasks include configuring deployment triggers or logging event details for monitoring.",
+      "description_length": 461,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.Stats",
+      "description": "Provides functions to retrieve contributor statistics, commit activity by week, code frequency, weekly commit counts, and hourly commit distributions for a GitHub repository. Works with streams of contributor stats, commit activity, code frequency, participation data, and punch card data. Used to analyze long-term contribution patterns, identify active periods, and compare owner vs. community contributions over time.",
+      "description_length": 420,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.Status",
+      "description": "Provides operations to retrieve and create status reports for specific Git references in a GitHub repository. Works with Git SHAs, branch names, and tag names, along with status data structures from the Github_t module. Used to fetch combined status information for a commit or post a new status update for a specific SHA.",
+      "description_length": 322,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.Pull",
+      "description": "Provides functions to retrieve, create, update, and merge pull requests, along with streams of associated commits and files. Operates on GitHub pull request data structures, including new_pull, update_pull, and merge types. Enables programmatic interaction with specific pull requests by repository and number, such as checking merge status or fetching commit history.",
+      "description_length": 368,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.Issue",
+      "description": "Provides functions to retrieve, create, and update GitHub issues, comments, labels, and events for a specific repository or issue. Operates on types such as `Github_t.issue`, `Github_t.issue_comment`, `Github_t.label`, and `Github_t.repo_issues_event`. Enables filtering issues by creator, assignee, labels, and state, and fetching detailed comment histories or label assignments for specific issues.",
+      "description_length": 400,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.Label",
+      "description": "Retrieves, creates, updates, and deletes GitHub repository labels using a repository's owner and name. Operates on GitHub label data structures and authentication tokens. Fetches all labels from a repository, retrieves specific labels by name, adds new labels, modifies existing ones, and removes labels.",
+      "description_length": 304,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Github_hooks.Make.Collaborator",
+      "description": "Provides functions to retrieve, check, add, and remove GitHub repository collaborators. Operates on strings for user, repo, and collaborator names, and uses a token for authentication. Used to manage access permissions and verify membership in specific repositories.",
+      "description_length": 266,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.Milestone",
+      "description": "Provides functions to retrieve, create, update, and delete GitHub milestones, along with fetching associated labels. Operates on repository-specific milestones identified by user, repo, and milestone number, using streams for listing and responses for single entities. Enables programmatic management of milestone data and label associations within a repository.",
+      "description_length": 362,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.Release",
+      "description": "Provides functions to retrieve, create, update, and delete GitHub releases and their assets. Operates on repository identifiers, release IDs, and asset metadata. Enables fetching specific releases by ID or tag, managing release assets, and creating new releases with associated data.",
+      "description_length": 283,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.Deploy_key",
+      "description": "Provides functions to retrieve, create, and delete deploy keys for specific GitHub repositories. Operates on types such as `Github_t.deploy_key`, `Github_t.new_deploy_key`, and `Token.t` to interact with the GitHub API. Used to manage SSH keys for repository access control and automation workflows.",
+      "description_length": 299,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.Gist",
+      "description": "Provides functions to retrieve, create, update, and manage GitHub gists, including user-specific, public, and starred gists, along with operations on gist commits, stars, forks, and deletions. Works with stream and response types for gists, gist commits, and gist forks. Enables fetching a user's gists since a specific timestamp, creating new gists from structured data, and interacting with gist metadata through RESTful API calls.",
+      "description_length": 433,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.Emoji",
+      "description": "Provides functions to retrieve GitHub's list of emojis, including a method to fetch all available emojis for use in GitHub-flavored markdown. Works with token authentication and returns a response containing emoji data structured as a map of names to URLs. Used to dynamically populate emoji suggestions or render emojis in user-generated content.",
+      "description_length": 347,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.Check",
+      "description": "Provides functions to interact with GitHub's check API, including creating, updating, and retrieving check runs and suites, listing annotations, and managing check suite preferences. Operates on data types such as check_run, check_runs_list, check_suite, and check_suite_list. Used to automate CI/CD pipeline status tracking, review code changes, and manage build configurations through GitHub's API.",
+      "description_length": 400,
+      "index": 31,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Github_hooks.Make.Search",
+      "description": "Provides functions to search for GitHub repositories and issues using specified qualifiers and keywords, with customizable sorting and ordering. Works with token authentication, filter options, and lists of strings for search terms. Used to retrieve streamed results for targeted codebase exploration or issue tracking.",
+      "description_length": 319,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.Git_obj",
+      "description": "Provides functions to convert Git object types to strings and split Git reference strings into directory and name components. Works with Git object types and reference strings. Used to process Git object metadata and parse reference paths in version control workflows.",
+      "description_length": 268,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make.Log",
+      "description": "Provides logging operations for different severity levels, including message formatting and error handling. Works with log levels, formatted messages, and result types to capture and process errors. Enables structured error recovery with custom pretty-printing and tag management.",
+      "description_length": 280,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Repo",
+      "description": "Provides set operations such as union, intersection, and difference, along with element addition, removal, and queries like size and membership. It handles ordered sets and sequences, supporting efficient traversal, filtering, and transformation. Operations include adding elements to a set, checking membership, and computing the difference between two collections. Examples include managing unique item lists, performing mathematical set computations, and processing ordered data with predicates.",
+      "description_length": 498,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Make",
+      "description": "Offers structured logging with severity-based message handling, error recovery, and custom formatting. Supports log levels, result types, and tagged messages for precise error tracking. Enables formatted output, error propagation, and customizable pretty-printing. Can log warnings, errors, and debug messages with associated tags and structured data.",
+      "description_length": 351,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.Log",
+      "description": "Provides logging operations at various severity levels, including error, warning, info, and debug, with support for formatted messages and error handling. Works with log levels, formatted strings, and result types to capture and process logging output. Used to instrument application flow, capture structured error messages, and handle failures gracefully with custom recovery logic.",
+      "description_length": 383,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks.IO",
+      "description": "Provides monadic operations for sequencing IO actions, including binding results and lifting values into IO contexts. Works with input and output channels, connection handles, and error representations. Enables reading lines and bytes from input, writing strings to output, and handling IO errors with explicit error propagation.",
+      "description_length": 329,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "github-hooks",
+      "description": "Handles HTTP POST requests from GitHub, parses event payloads, and validates signatures using HMAC-SHA1. Processes JSON data from GitHub events such as push, pull_request, and issues. Used to test and verify that GitHub events are correctly received and processed in sequence.",
+      "description_length": 276,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Github_hooks",
+      "description": "Provides functions to create and manipulate time values, including a constant minimum time and a function to retrieve the current time. Works with the abstract type `t` representing temporal points. Used to track event timestamps in repository activity processing.",
+      "description_length": 264,
+      "index": 40,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 41,
+    "meaningful_modules": 41,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 498,
+    "min_description_length": 261,
+    "avg_description_length": 353.4146341463415,
+    "embedding_file_size_mb": 0.14941692352294922
+  }
+}

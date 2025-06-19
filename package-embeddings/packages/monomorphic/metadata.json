@@ -1,0 +1,1463 @@
+{
+  "package": "monomorphic",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 206,
+  "creation_timestamp": "2025-06-18T16:59:37.834504",
+  "modules": [
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Ephemeron.Kn.Make",
+      "description": "Compares keys for equality and generates hash values for use in associative structures. Operates on arbitrary key types, ensuring consistent hashing behavior based on provided equality checks. Used to implement custom hashing for tables or sets requiring specific comparison semantics.",
+      "description_length": 285,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Ephemeron.Kn.MakeSeeded",
+      "description": "Compares keys using a custom equality function and generates seeded hash values for them. It operates on a type `t` representing keys, ensuring consistent hashing behavior based on a provided seed. This is used to implement hash tables with deterministic, collision-resistant key hashing.",
+      "description_length": 288,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Ephemeron.Kn.Bucket",
+      "description": "Creates and manages a collection of ephemeron entries, where each entry is associated with a key array and data. Supports adding, removing, and retrieving the most recent entry matching a key array, and provides methods to check size and empty the collection. Used to track temporary associations between key groups and data in scenarios requiring weak references.",
+      "description_length": 364,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Ephemeron.K2.Make",
+      "description": "Compares keys for equality and generates hash values for use in hash tables. Operates on arbitrary key types, ensuring consistent hashing behavior based on specified equality rules. Used to implement custom hash table semantics for objects requiring precise control over comparison and hashing.",
+      "description_length": 294,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Ephemeron.K2.MakeSeeded",
+      "description": "Compares keys for equality using a custom predicate and generates seeded hash values for key indexing. Operates on a type `t` representing key values, ensuring consistent hashing when equality holds. Used to implement hash tables with deterministic, collision-resistant key mapping.",
+      "description_length": 282,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Ephemeron.K2.Bucket",
+      "description": "Maintains a collection of ephemeron entries indexed by two keys, allowing insertion, lookup, and removal based on key pairs. Supports operations to add data associated with unique key combinations and retrieve the most recent entry matching specific keys. Useful for managing temporary associations in garbage-collected environments where references may be weak.",
+      "description_length": 362,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Ephemeron.K1.Make",
+      "description": "Compares keys for equality and generates hash values for key-based data structures. Operates on arbitrary key types, ensuring consistent hashing and equality checks for use in hash tables or associative structures. Supports custom equality and hashing strategies, including physical equality and safe float handling.",
+      "description_length": 316,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Ephemeron.K1.MakeSeeded",
+      "description": "Compares keys using a custom equality function and generates hash values with a seeded algorithm, ensuring consistent hashing for equivalent keys. Operates on a type `t` representing keys in a hash table or similar structure. Used to implement deterministic hash-based data structures with user-defined equality and hashing.",
+      "description_length": 324,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Ephemeron.K1.Bucket",
+      "description": "Maintains a collection of ephemeron entries, allowing insertion, removal, and lookup by key. Each key maps to a data value, with operations tracking the most recent addition. Useful for managing temporary associations that can be automatically reclaimed by the garbage collector.",
+      "description_length": 279,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Ephemeron.GenHashTable.MakeSeeded",
+      "description": "Provides hash and equality operations for a key type `t` used in containers, along with methods to create, inspect, and modify containers that hold keys and associated data. Works with `t` and parameterized `container` types that track key and data lifetimes. Used to manage ephemeral key-value pairs where validity of keys and data must be checked and updated dynamically.",
+      "description_length": 373,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.MoreLabels.Hashtbl.Make",
+      "description": "Compares keys for equality and generates hash values for key-based data structures. Operates on arbitrary types through user-defined equality and hashing functions. Used to implement hash tables or sets where custom key comparison and hashing are required.",
+      "description_length": 256,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.MoreLabels.Hashtbl.MakeSeeded",
+      "description": "Compares keys using a custom equality function and generates hash values with a seeded algorithm, ensuring consistent hashing for equivalent keys. It operates on a type `t` representing keys in a hash table or similar structure. This is used to implement deterministic hash tables with user-defined equality and hashing strategies.",
+      "description_length": 331,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.MoreLabels.Map.Make",
+      "description": "Compares two values of type t using a total ordering, returning -1, 0, or 1 based on their relative positions. It operates on the abstract type t, which represents keys in a structured format. This function is used to sort or order elements in a way that ensures consistent and predictable comparisons.",
+      "description_length": 302,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.MoreLabels.Set.Make",
+      "description": "Compares elements of type t using a total ordering, returning -1, 0, or 1 based on their relative values. Works with any data type that supports structural comparison. Used to sort lists of t values or determine equality in custom data structures.",
+      "description_length": 247,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Sys.Immediate64.Make",
+      "description": "Provides functions to construct and manipulate build configurations, including parsing input specifications, generating dependency graphs, and executing build steps. Operates on the `t` type, which represents a structured build plan with targets, dependencies, and execution rules. Used to automate software compilation workflows by defining precise build sequences and handling incremental builds.",
+      "description_length": 398,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Ephemeron.Kn.Make",
+      "description": "Compares keys for equality and generates hash values for use in hash tables. Operates on arbitrary key types, ensuring consistent hashing behavior based on specified equality rules. Used to implement custom equality and hashing for objects in data structures like hashtables and sets.",
+      "description_length": 284,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Ephemeron.Kn.MakeSeeded",
+      "description": "Compares keys using a custom equality function and generates hash values with a seeded algorithm, ensuring consistent hashing for equivalent keys. It operates on a type `t` representing keys in a hash table or similar structure. This is used to implement deterministic hash-based data structures with controlled collision behavior.",
+      "description_length": 331,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Ephemeron.Kn.Bucket",
+      "description": "Creates and manages a collection of ephemeron entries, where each entry is associated with a key array and a data value. Supports adding, removing, and retrieving the most recent entry matching a specific key array, and provides methods to check the size and empty the collection. Used to track temporary associations between key arrays and data, such as in caching or resource management scenarios.",
+      "description_length": 399,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Ephemeron.K2.Make",
+      "description": "Compares keys for equality and generates hash values for key-based data structures. Operates on arbitrary types through provided equality and hashing functions. Used to ensure consistent key handling in hash tables and associative structures.",
+      "description_length": 242,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Ephemeron.K2.MakeSeeded",
+      "description": "Compares keys for equality and generates seeded hash values for them. It operates on a custom key type `t` and ensures consistent hashing behavior based on a provided seed. This is used to implement hash tables with deterministic key hashing in scenarios requiring reproducible results.",
+      "description_length": 286,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Ephemeron.K2.Bucket",
+      "description": "Manages collections of ephemeron entries indexed by two keys, allowing insertion, lookup, and removal based on key pairs. Supports operations to track the most recently added entry for a given key combination and provides methods to inspect and empty the collection. Useful for caching or tracking transient associations where key uniqueness and order of insertion matter.",
+      "description_length": 372,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Ephemeron.K1.Make",
+      "description": "Compares keys for equality and generates hash values for use in hash tables. Operates on arbitrary key types, ensuring consistent hashing for equal values. Used to define custom equality and hashing for objects in data structures like hashtables and sets.",
+      "description_length": 255,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Ephemeron.K1.MakeSeeded",
+      "description": "Compares keys using a custom equality function and generates hash values with a seeded algorithm, ensuring consistent hashing for equivalent keys. It operates on a type `t` representing keys in a hash table or similar structure. This is used to implement deterministic hash-based data structures with user-defined equality and hashing.",
+      "description_length": 335,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Ephemeron.K1.Bucket",
+      "description": "Maintains a collection of ephemeron entries, associating keys with data and tracking the most recent addition per key. Supports adding, removing, and retrieving entries based on keys, with operations that reflect the latest insertion. Useful for managing temporary associations where recent data takes precedence, such as caching or state tracking.",
+      "description_length": 348,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Ephemeron.GenHashTable.MakeSeeded",
+      "description": "Provides hash and equality functions for managing keyed data with lifecycle awareness. Operates on `t` for keys and `'a container` for storing key-data pairs with validity checks. Enables creating, updating, and querying containers while ensuring keys and data remain active.",
+      "description_length": 275,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.MoreLabels.Hashtbl.Make",
+      "description": "Compares keys for equality and generates hash values for use in hash tables. Operates on arbitrary key types through provided equality and hashing functions. Used to ensure consistent key comparison and hashing in data structures requiring hash-based lookups.",
+      "description_length": 259,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.MoreLabels.Hashtbl.MakeSeeded",
+      "description": "Compares keys using a custom equality function and generates hash values with a seeded algorithm, ensuring consistent hashing for equivalent keys. Operates on a type `t` representing keys in hash tables or similar structures. Used to implement deterministic hash-based data structures with controlled collision behavior.",
+      "description_length": 320,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.MoreLabels.Map.Make",
+      "description": "Compares two instances of type t using a total ordering, returning -1, 0, or 1 based on their relative values. It operates on the abstract type t, which represents keys in a structured format. This function is used to sort or order key-based data in applications like configuration management or dependency resolution.",
+      "description_length": 318,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.MoreLabels.Set.Make",
+      "description": "Compares elements of type t using a total ordering, returning -1, 0, or 1 based on their relative values. Operates on individual values of the t type without additional structure. Used to sort lists of t values or determine equality in custom data types.",
+      "description_length": 254,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Sys.Immediate64.Make",
+      "description": "Provides functions to construct and manipulate build configurations, including parsing input specifications, generating dependency graphs, and executing build steps. Operates on the `t` type, which represents a structured build plan with targets, dependencies, and execution rules. Used to automate software compilation workflows by defining and executing precise build sequences.",
+      "description_length": 380,
+      "index": 29,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Random.State",
+      "description": "Generates and manipulates pseudorandom numbers using a provided state, offering methods to extract bits, integers, floats, and boolean values. It supports multiple numeric types including 32-bit, 64-bit, and native integers, and allows for state duplication and initialization with custom or system-generated seeds. Used to control random number generation in applications requiring deterministic or reproducible sequences.",
+      "description_length": 423,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Hashtbl.Make",
+      "description": "Compares keys for equality and generates hash values for key-based data structures. Operates on arbitrary types through user-defined equality and hashing functions. Used to implement hash tables or sets where custom key comparison and hashing are required.",
+      "description_length": 256,
+      "index": 31,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Hashtbl.MakeSeeded",
+      "description": "Compares keys using a custom equality function and generates hash values with a seeded algorithm, ensuring consistent hashing for equivalent keys. It operates on a type `t` representing keys in a hash table or similar structure. This is used to implement deterministic hash-based data structures with controlled collision behavior.",
+      "description_length": 331,
+      "index": 32,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Ephemeron.K1",
+      "description": "manages ephemeron-based key-value mappings with customizable equality and hashing. it supports arbitrary key types through equality checks and hash generation, enabling deterministic operations on hash tables and associative structures. it allows insertion, removal, and lookup of key-value pairs, with automatic garbage collection of unused entries. examples include caching with weak keys or tracking temporary object relationships.",
+      "description_length": 434,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Ephemeron.K2",
+      "description": "Manages ephemeron entries using two keys, with customizable equality and hashing strategies. Provides type `t` for key values, along with operations to compare, hash, and index keys for precise control over hash table behavior. Supports inserting, retrieving, and removing entries based on key pairs, enabling efficient management of temporary, weakly referenced data. Examples include tracking object relationships in garbage-collected systems or caching with deterministic key resolution.",
+      "description_length": 490,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Ephemeron.Kn",
+      "description": "provides a system for managing ephemeron entries with flexible key handling, allowing custom equality and hashing for key arrays. it defines types for key comparison and hashing, enabling deterministic hash table behavior, and offers operations to manipulate collections of key-data associations. users can create associative structures that respect custom equality semantics and manage weakly referenced data. examples include implementing cache systems or tracking temporary object relationships with controlled memory management.",
+      "description_length": 532,
+      "index": 35,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Ephemeron.GenHashTable",
+      "description": "Manages hash tables with keys and values that have lifetimes, supporting automatic cleanup of dead entries. Key operations include creating, updating, and inspecting containers, with hash and equality functions tailored to the key type. It handles ephemeral data, ensuring only live keys remain in the table. Examples include managing temporary session data or caching with expiration.",
+      "description_length": 385,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Gc.Memprof",
+      "description": "Tracks memory allocations by sampling words at a configurable rate, triggering callbacks for allocation, promotion, and deallocation events with detailed metadata. Operates on heap blocks, recording callstacks and tracking samples across minor and major heap regions. Used to implement low-overhead memory profiling with precise control over event tracking and callback execution.",
+      "description_length": 380,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Obj.Closure",
+      "description": "Provides operations to extract and manipulate closure information, including environment variables and captured values. Works with the `t` type representing closures and the `info` type containing metadata about their captured context. Used to analyze runtime behavior of closures in debugging or optimization scenarios.",
+      "description_length": 320,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Obj.Extension_constructor",
+      "description": "Constructs and inspects extension constructors, providing a way to embed values into a tagged structure. It supports retrieving the name and unique identifier of each constructor. Used to serialize and deserialize variant types with custom metadata.",
+      "description_length": 249,
+      "index": 39,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Obj.Ephemeron",
+      "description": "Provides operations to manage ephemeral key-value pairs with arbitrary arity, including setting, retrieving, and clearing keys and data. Works with `obj_t` and `t` types, where `t` represents an ephemeron structure. Used to track temporary associations between objects that can be garbage-collected, such as caching or reference tracking in dynamic data structures.",
+      "description_length": 365,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.MoreLabels.Hashtbl",
+      "description": "The module offers operations for inserting, deleting, and looking up key-value pairs in hash tables, along with iteration and sequence conversion, enabling dynamic data manipulation. It works with hash tables structured around keys of type `key` and values of type `'a`, supporting construction from sequences and in-place modifications. Use cases include efficient caching mechanisms, configuration management, and aggregating mutable state in applications requiring frequent key-based access.",
+      "description_length": 494,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.MoreLabels.Map",
+      "description": "This module provides key-based operations for managing associative arrays, including insertion, deletion, lookup, and transformation of key-value pairs, along with traversal and comparison functions. It works with ordered maps where keys determine structure, enabling tasks like configuration management, data indexing, and ordered data processing. Specific use cases include efficiently retrieving values by unique identifiers, filtering mappings based on criteria, and splitting structured data for algorithmic processing.",
+      "description_length": 524,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.MoreLabels.Set",
+      "description": "This module provides standard set operations like membership testing, union, intersection, and element insertion/removal, along with querying capabilities such as filtering, counting, and finding min/max elements, all while maintaining ordered structures. It works with typed sets and sequences, enabling conversions between sets and lists/sequences, and supports efficient construction from iterable data sources. Use cases include data normalization, combinatorial processing, and maintaining ordered collections with guaranteed element uniqueness.",
+      "description_length": 550,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Map.Make",
+      "description": "Compares two instances of type t using a total ordering, returning -1, 0, or 1 based on their relative values. It operates on the abstract type t, which represents keys in a structured format. This function is used to sort key-based data structures or determine precedence in ordered collections.",
+      "description_length": 296,
+      "index": 44,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Sys.Immediate64",
+      "description": "Provides functions to manipulate 64-bit signed integers, including addition, subtraction, bitwise operations, and comparisons. Works with the `t` type, representing 64-bit values in a platform-independent manner. Used to handle arithmetic in environments where native integer sizes may vary, such as when interfacing with low-level data formats.",
+      "description_length": 345,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Scanf.Scanning",
+      "description": "Provides functions to create and manage input channels for reading text or binary data from files, strings, or standard input. Works with in_channel, scanbuf, and file_name types to handle character streams and track input position. Enables efficient scanning of structured data from various sources like files, strings, or custom input functions.",
+      "description_length": 347,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Bigarray.Genarray",
+      "description": "Creates and manipulates multidimensional arrays with specified element types and memory layouts, supporting operations like initialization, dimension access, layout conversion, and element access. Works with Bigarrays that have up to 16 dimensions, using kinds like float32, int32, and layouts such as C or Fortran. Enables efficient slicing, subarray extraction, and data copying between arrays with shared memory.",
+      "description_length": 415,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Bigarray.Array0",
+      "description": "Provides operations to create, initialize, and manipulate zero-dimensional arrays that hold a single scalar value. Works with types representing array elements, layouts, and array descriptors, enabling low-level memory management and layout transformations. Used to wrap individual values in array-like structures for compatibility with functions expecting array inputs or for efficient memory sharing.",
+      "description_length": 402,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Bigarray.Array1",
+      "description": "Provides functions to create, initialize, and manipulate one-dimensional arrays with specified element types and layouts. Works with Bigarray types that encode element kind, layout, and dimension. Enables efficient data processing tasks like array slicing, memory copying, and layout conversion for numerical computations.",
+      "description_length": 322,
+      "index": 49,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Bigarray.Array2",
+      "description": "Creates and manipulates two-dimensional arrays with specified element types and layouts, supporting operations like initialization, dimension retrieval, and element access. Works with Bigarray types that encode element kind, layout, and storage structure. Enables efficient data handling in scientific computing, such as matrix operations or image processing, by allowing direct memory access and layout transformations.",
+      "description_length": 420,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Bigarray.Array3",
+      "description": "The module offers operations for creating, manipulating, and inspecting three-dimensional arrays, including layout transformations between C and Fortran orders, slicing, and element access. It works with specialized 3D storage types and OCaml's native arrays, enabling efficient handling of arbitrary element types. Use cases include scientific computing and data processing tasks requiring high-performance 3D array operations, particularly where low-level control over memory layout is necessary.",
+      "description_length": 498,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Printexc.Slot",
+      "description": "Provides functions to check if a slot represents a raising point or an inlined call, retrieve associated location or function names, and generate formatted string representations of backtrace slots. Works with backtrace_slot data structures, which encapsulate information about program execution points. Used to analyze and debug program flow by inspecting compiler-generated backtrace information.",
+      "description_length": 398,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Float.Array",
+      "description": "This module offers extensive operations for manipulating float arrays, including element-wise transformations (e.g., `iter2`, `map2`), bulk queries (e.g., `for_all`, `exists`), and sorting (e.g., `sort`, `stable_sort`), alongside conversions between arrays, lists, and sequences. It handles packed float arrays efficiently, enabling tasks like numerical computations, data filtering, and large-scale data processing. Specific use cases include scientific simulations, signal processing, and scenarios requiring high-performance array operations with precise floating-point control.",
+      "description_length": 581,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Float.ArrayLabels",
+      "description": "This module provides operations for creating, modifying, and querying float arrays with labeled parameters, including indexing, slicing, concatenation, and element-wise transformations. It supports iteration, mapping, folding, and stable sorting, along with predicate checks, making it suitable for numerical computations and data processing tasks requiring precise array manipulation and ordered operations.",
+      "description_length": 408,
+      "index": 54,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Weak.Make",
+      "description": "Compares keys for equality and generates hash values for them, ensuring consistent behavior between the two. It operates on arbitrary key types, including mutable or cyclic structures. Used to implement hash tables or other data structures requiring key comparison and hashing.",
+      "description_length": 277,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Set.Make",
+      "description": "Compares elements of type t using a total ordering, returning -1, 0, or 1 based on their relative values. Works with any data type that supports structural comparison. Used to sort lists of build targets or dependencies in a consistent order.",
+      "description_length": 242,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Random.State",
+      "description": "Generates random integers, floats, and boolean values from a provided or system-generated seed. It supports multiple numeric types including 32-bit, 64-bit, and native integers, and maintains internal state for reproducible sequences. The module allows for explicit state management, enabling deterministic random number generation across different contexts.",
+      "description_length": 358,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Hashtbl.Make",
+      "description": "Compares keys for equality and generates hash values for use in hash tables. Operates on arbitrary key types through provided equality and hashing functions. Used to ensure consistent key comparison and hashing in data structures like hashtables and sets.",
+      "description_length": 255,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Hashtbl.MakeSeeded",
+      "description": "Compares keys using a custom equality function and generates hash values with a seeded algorithm, ensuring consistent hashing for equivalent keys. It operates on a type `t` representing keys in a hash table or similar structure. This is used to implement deterministic hash-based data structures with user-defined equality and hashing.",
+      "description_length": 335,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Ephemeron.K1",
+      "description": "Manages ephemeron entries with key-based associations, supporting custom equality and hashing for flexible data handling. Provides operations to add, remove, and retrieve entries, prioritizing the most recent data per key. Allows for deterministic hashing using user-defined functions and seed values, enabling tailored behavior in hash-based structures. Can be used to implement caches, state trackers, or other systems requiring temporary, key-driven data management.",
+      "description_length": 469,
+      "index": 60,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Ephemeron.K2",
+      "description": "Provides a system for managing ephemeron entries using two keys, with support for custom equality, hashing, and seeded hash generation. Operates on arbitrary types through user-provided functions, enabling consistent key handling in associative structures. Supports insertion, lookup, and removal of entries by key pairs, with tracking of the most recently added entry for each combination. Can be used for caching or managing transient associations where deterministic hashing and key uniqueness are required.",
+      "description_length": 510,
+      "index": 61,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Ephemeron.Kn",
+      "description": "Manages ephemeron entries with key arrays, enabling temporary associations between keys and data. Provides custom equality and hashing mechanisms for key types, ensuring deterministic behavior in hash-based structures. Supports operations like adding, removing, and querying entries based on key arrays, making it suitable for caching or tracking transient data. Examples include managing session data or temporary object references with controlled lifetime.",
+      "description_length": 458,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Ephemeron.GenHashTable",
+      "description": "manages keyed data with lifecycle awareness, using `t` for keys and `'a container` to store active key-data pairs, with automatic cleanup of dead entries. It supports creating, updating, and querying containers while enforcing validity checks on keys and data. Operations include inserting, retrieving, and removing entries based on active states. Example uses include managing session data or caching with automatic expiration.",
+      "description_length": 428,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Gc.Memprof",
+      "description": "Tracks memory allocations by sampling words at a configurable rate, triggering user-defined callbacks for allocation, promotion, and deallocation events. Operates on heap blocks, recording callstacks and tracking samples through a custom tracker type. Used to implement low-overhead memory profiling with fine-grained control over event tracking and sampling precision.",
+      "description_length": 369,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Obj.Closure",
+      "description": "Provides operations to extract and inspect closure information, including captured variables and environment details. Works with the `t` type representing closures and the `info` type containing structured metadata. Used to analyze runtime behavior of closures in debugging or optimization contexts.",
+      "description_length": 299,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Obj.Extension_constructor",
+      "description": "Constructs and inspects extension constructors, providing a way to embed values into a tagged structure. It supports retrieving the original value, constructor name, and unique identifier. Used to serialize and deserialize variant types with custom metadata.",
+      "description_length": 258,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Obj.Ephemeron",
+      "description": "Provides operations to manage ephemeral key-value pairs with arbitrary arity, including setting, retrieving, and clearing keys and data. Works with `obj_t` and `t` types, where `t` represents an ephemeron structure. Used to track temporary associations between objects that can be garbage-collected when no longer referenced.",
+      "description_length": 325,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.MoreLabels.Hashtbl",
+      "description": "This module offers functions for manipulating hash tables through insertion, deletion, lookup, and iteration, along with conversion to sequences. It works with key-value pairs stored in mutable hash tables, utilizing sequences as input for construction and modification. Specific use cases include dynamically updating entries or initializing tables from external data sources like lists or streams.",
+      "description_length": 399,
+      "index": 68,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.MoreLabels.Map",
+      "description": "This module provides operations for managing key-value associations, including insertion, deletion, modification, and querying of elements, along with traversal and transformation functions like iteration, folding, and filtering. It works with ordered data structures where keys define the organization, enabling efficient lookups and structured manipulations such as splitting maps or retrieving extremal bindings. Use cases include implementing dictionaries, maintaining sorted configurations, or processing hierarchical data with key-based access patterns.",
+      "description_length": 559,
+      "index": 69,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.MoreLabels.Set",
+      "description": "This module offers core set operations like membership checks, insertion, deletion, union, intersection, and difference, along with ordered traversal and element selection, working with immutable sets of type `t` and elements of type `elt` ordered via a comparison function. It supports sequence-based construction and modification through functions like `add_seq` and `of_seq`, enabling efficient data transformation and processing tasks such as converting unstructured data into sets or filtering elements. Additional utilities include min/max finding, counting, and list/sequence conversions, tailored for scenarios requiring structured data manipulation.",
+      "description_length": 658,
+      "index": 70,
+      "embedding_norm": 1.0000001192092896
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Map.Make",
+      "description": "Compares two values of type t using a total ordering, returning -1, 0, or 1 based on their relative positions. It operates on the abstract type t, which represents keys in a structured format. This function is used to sort or order elements in a consistent manner, such as when implementing custom sorting logic for a data structure.",
+      "description_length": 333,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Sys.Immediate64",
+      "description": "Provides functions to manipulate 64-bit unsigned integers, including bitwise operations, arithmetic shifts, and conversions to and from native integers. Works with the `t` type, representing 64-bit values. Used to handle low-level numeric operations in systems programming and binary data parsing.",
+      "description_length": 297,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Scanf.Scanning",
+      "description": "Provides functions to create and manage input channels for reading text or binary data from files, strings, or custom sources. Works with in_channel, scanbuf, and file_name types to handle structured input operations. Enables reading from standard input, files, or arbitrary character generators, with support for checking input boundaries and source names.",
+      "description_length": 357,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Bigarray.Genarray",
+      "description": "Creates and manipulates multi-dimensional arrays with specified element types and layouts, supporting operations like initialization, dimension querying, and sub-array extraction. Works with Bigarrays that have element kinds (e.g., float32, int8_signed) and layouts (C or Fortran). Used for efficiently handling large numerical datasets, such as creating 3D tensor structures or slicing portions of multi-dimensional data for processing.",
+      "description_length": 437,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Bigarray.Array0",
+      "description": "Provides operations to create, initialize, and manipulate zero-dimensional arrays that hold a single scalar value. Works with Bigarray types defined by element kind, layout, and dimensionality, enabling direct access to the contained value. Used to wrap individual values in array-like structures for interoperability with functions expecting array inputs or for consistent data handling in numerical computations.",
+      "description_length": 414,
+      "index": 75,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Bigarray.Array1",
+      "description": "Provides functions to create, manipulate, and inspect one-dimensional arrays with specified element types and layouts. Operates on arrays with a single dimension, supporting operations like indexing, slicing, sub-array extraction, and data copying. Used for efficient numerical computations, memory-efficient data storage, and interfacing with low-level array representations.",
+      "description_length": 376,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Bigarray.Array2",
+      "description": "Creates and manipulates two-dimensional arrays with specified element types and memory layouts, supporting operations like initialization, dimension retrieval, and element access. Works with Bigarray structures that store elements in either C or Fortran layouts, enabling efficient memory management and direct access to elements by index. Used for tasks such as initializing matrices from nested arrays, extracting sub-arrays, and performing in-place data copying between arrays.",
+      "description_length": 480,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Bigarray.Array3",
+      "description": "The module provides operations for creating, modifying, and inspecting three-dimensional arrays with C and Fortran layouts, working with arrays of type ('a, 'b, 'c) t and OCaml's native arrays. It supports layout-aware slicing, sub-array extraction, and direct element access, enabling efficient manipulation for numerical computations and data processing tasks. Unsafe operations allow low-level access without bounds checks, ideal for performance-critical applications where layout-specific optimizations are required.",
+      "description_length": 520,
+      "index": 78,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.List",
+      "description": "The module includes functions for list manipulation, transformation, and querying, working with standard lists and association lists (key-value pairs), featuring operations like mapping, filtering, and associative lookups. It provides efficient variants for tasks such as reversing with `rev_append`, processing paired lists, and handling custom equality checks in operations like `mem_assoc` and `remove_assoc`. Use cases include data processing pipelines, efficient list transformations, and managing structured data through associative operations.",
+      "description_length": 550,
+      "index": 79,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.ListLabels",
+      "description": "This module offers extensive list manipulation capabilities, including transformations, filtering, sorting, and association list operations, with support for custom equality and comparison functions. It handles arbitrary element lists, pairs, and key-value pairs, enabling tasks like safe element access, efficient folding, and structured data processing. Specific use cases include sorting with tailored ordering, managing paired data through combination and splitting, and optimizing operations with tail recursion or physical equality checks.",
+      "description_length": 545,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Pervasives",
+      "description": "provides specialized functions for integer operations, including arithmetic, comparison, and conversion. it defines basic data types such as int and supports operations like addition, subtraction, and equality checks. users can perform type-safe integer manipulations and leverage built-in functions for common computations. examples include calculating factorials, comparing integer values, and converting between numeric types.",
+      "description_length": 429,
+      "index": 81,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.LargeFile",
+      "description": "Provides functions to manipulate file positions and sizes using 64-bit integers, enabling handling of files larger than the maximum value of 32-bit integers. Works with input and output channels, offering precise control over file pointers and lengths. Used for reading from and writing to large files where standard integer types would overflow.",
+      "description_length": 346,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Arg",
+      "description": "Provides functions to parse command line options and anonymous arguments, handling types like strings, integers, and flags. Processes option specifications with associated actions and documentation, and supports custom parsing of argument lists. Enables dynamic option handling and error reporting with detailed usage messages.",
+      "description_length": 327,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Array",
+      "description": "This module offers array manipulation, transformation, and conversion operations, including element access, in-place modification, mapping, folding, and sequence interoperability. It handles arrays of arbitrary types, with specialized support for floating-point data and matrix structures, enabling tasks like data processing, numerical computations, and iterative transformations. Functions such as `to_seq` and `of_seq` facilitate seamless integration with sequence-based workflows, while traversal and query operations support efficient array analysis and modification.",
+      "description_length": 572,
+      "index": 84,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.ArrayLabels",
+      "description": "This module provides array manipulation, transformation, and conversion operations, including creation, slicing, in-place modification, and mapping, with support for float arrays and matrix operations. It enables sequence-array interoperability and indexed traversal, suitable for data processing pipelines, numerical computations, and integrating array-based with sequence-based algorithms.",
+      "description_length": 391,
+      "index": 85,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Atomic",
+      "description": "Creates and manipulates atomic references, allowing safe read, write, and update operations on shared values in a sequential context. Works with mutable reference types that support atomic exchanges, comparisons, and arithmetic operations. Used to ensure consistent state updates in environments where true concurrency is not available.",
+      "description_length": 336,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Bigarray",
+      "description": "Provides efficient, low-level manipulation of multi-dimensional numerical arrays with support for up to 16 dimensions, element types like float32, int32, and layouts such as C or Fortran. Offers operations for creating, accessing, and transforming arrays, including slicing, subarray extraction, and memory sharing between OCaml and external numerical code. Zero-dimensional arrays wrap single values for compatibility, while one-, two-, and three-dimensional arrays enable high-performance numerical processing, matrix operations, and 3D data handling. Key data types include array descriptors, element kinds, and layout specifications, with functions for initialization, layout conversion, and direct memory access.",
+      "description_length": 717,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Bool",
+      "description": "Provides negation, logical conjunction, and disjunction with short-circuit evaluation; compares and converts boolean values to integers, floats, and strings. Operates on the built-in boolean type, supporting conditional logic and representation conversions. Used to implement control flow decisions, evaluate expressions conditionally, and generate human-readable boolean outputs.",
+      "description_length": 380,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Buffer",
+      "description": "The module provides efficient operations for building and manipulating mutable buffers, supporting appending of strings, characters, and binary data, along with UTF-8/UTF-16 encoding and conversion between string and byte representations. It dynamically resizes to enable linear-time concatenation, making it ideal for tasks like constructing large strings, processing binary streams, or handling encoded data efficiently.",
+      "description_length": 422,
+      "index": 89,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Bytes",
+      "description": "The module provides low-level operations for manipulating mutable byte sequences, including indexing, slicing, copying, and encoding/decoding UTF-8/16 characters, as well as writing/reading integers with endianness control. It works with mutable arrays of bytes (type `bytes`) to enable precise in-place modifications and binary data processing. Use cases include network protocol parsing, file format handling, and efficient string transformations requiring direct byte-level access.",
+      "description_length": 484,
+      "index": 90,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.BytesLabels",
+      "description": "The module provides low-level operations for manipulating mutable byte sequences, including in-place modifications, range-based access, and encoding/decoding of UTF-8/16 as well as integer serialization with endianness control. It works with OCaml's `bytes` type, enabling tasks like text processing, network protocol parsing, and binary data handling through functions for case conversion, substring extraction, and character-level transformations. Specific use cases include efficient byte-level editing, protocol message serialization, and handling of ASCII/Latin-1 character sets with precise control over memory layout.",
+      "description_length": 624,
+      "index": 91,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Callback",
+      "description": "Registers OCaml values and exceptions under symbolic names for access from C code. It works with arbitrary OCaml values and exception values, enabling C functions to invoke OCaml functions or trigger exceptions by name. This supports interoperability in embedded systems or performance-critical applications where C and OCaml components must interact directly.",
+      "description_length": 360,
+      "index": 92,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Char",
+      "description": "Converts characters to and from ASCII codes, escapes special characters for string representation, and performs case conversion using ASCII and Latin-1 sets. Operates on individual characters and provides comparison and equality checks. Used for processing text input, generating escaped string literals, and ensuring consistent character handling in parsing or formatting tasks.",
+      "description_length": 379,
+      "index": 93,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Complex",
+      "description": "Performs arithmetic and mathematical operations on complex numbers represented as pairs of double-precision floats. Includes addition, multiplication, conjugation, inversion, square roots, and polar conversions. Supports calculations for signal processing and mathematical modeling involving complex domains.",
+      "description_length": 308,
+      "index": 94,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Digest",
+      "description": "Computes MD5 digests of strings, byte sequences, and files, and supports substring and channel-based processing. Provides functions to convert digests to and from hexadecimal strings, and to compare or check equality of digests. Used for generating unique checksums for data verification or integrity checks.",
+      "description_length": 308,
+      "index": 95,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Either",
+      "description": "Provides operations to construct and inspect values that can be in one of two distinct forms, Left or Right. Works with the sum type ('a, 'b) t, allowing transformations, checks, and comparisons based on the variant. Used to handle results from functions that may return one of two different types, such as parsing inputs that can succeed or fail with distinct error representations.",
+      "description_length": 383,
+      "index": 96,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Ephemeron",
+      "description": "This module provides operations for managing weak hash tables where keys are tracked for liveness, enabling automatic removal of entries when keys become unreachable. It supports standard manipulations like insertion, deletion, and iteration, along with utilities to clean dead bindings and retrieve statistics, making it suitable for scenarios like caching or tracking transient data structures. Users must account for garbage collection effects, as lookups may fail even if a key is present, and modifications during iteration require using filter_map_inplace to ensure consistency.",
+      "description_length": 584,
+      "index": 97,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Filename",
+      "description": "This module provides functions for manipulating file paths through operations like constructing, splitting, and modifying strings representing file names and directories, as well as checking properties such as relative/absolute status. It includes tools for safely quoting file names and command lines to avoid security issues when interfacing with system commands, handling platform-specific escaping rules. Use cases include generating secure command arguments and managing cross-platform path conventions.",
+      "description_length": 508,
+      "index": 98,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Float",
+      "description": "Offers advanced array manipulation with functions for iteration, transformation, and querying, supporting both packed and labeled arrays. Key data types include float arrays, lists, and sequences, with operations like `iter2`, `map2`, `sort`, and `exists`. It enables tasks such as numerical simulations, signal processing, and data filtering with precise control over floating-point values. Examples include sorting arrays, applying element-wise functions, and checking array properties efficiently.",
+      "description_length": 500,
+      "index": 99,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Format",
+      "description": "This module provides structured pretty-printing operations, managing line breaks, indentation, and text layout through boxes (compact, horizontal, vertical) and semantic tags, while formatting values like strings, integers, floats, and complex data types (lists, options, results) with customizable separators. It works with formatters targeting standard outputs, buffers, or custom channels, enabling precise control over formatting for debugging, report generation, or human-readable output. Specific use cases include decoupling text presentation from content, handling nested data structures, and tailoring output behavior for different destinations like terminals or files.",
+      "description_length": 678,
+      "index": 100,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Fun",
+      "description": "Provides identity, constant, flipped, and negated functions for manipulating unary and binary functions. Operates on functions with arbitrary input and output types, including predicates and side-effecting operations. Used to reverse function arguments, invert boolean results, ensure cleanup actions, and create constant outputs.",
+      "description_length": 330,
+      "index": 101,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Gc",
+      "description": "Tracks memory allocations through sampled events, capturing detailed metadata such as callstacks and heap region information. Supports callbacks for allocation, promotion, and deallocation, enabling real-time monitoring and analysis. Operates on heap blocks, providing precise control over memory profiling and event handling. Can be used to detect memory leaks, optimize garbage collection behavior, and analyze allocation patterns in applications.",
+      "description_length": 449,
+      "index": 102,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Genlex",
+      "description": "Generates token streams from character streams using a customizable set of keywords, distinguishing between identifiers, keywords, and special characters while skipping whitespace and comments. It processes input using a stream-based approach, returning tokens such as identifiers, keywords, and special symbols. Used to build lexers for domain-specific languages or simple calculators by defining relevant keywords and parsing token sequences.",
+      "description_length": 444,
+      "index": 103,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Hashtbl",
+      "description": "The module provides operations for inserting, deleting, and looking up key-value pairs in hash tables, along with iteration and conversion to sequences. It works with hash tables structured around keys of type `key` and values of type `'a`, enabling dynamic data management. Use cases include efficiently managing mutable mappings, such as caching systems or counting occurrences, and constructing hash tables from sequential data sources.",
+      "description_length": 439,
+      "index": 104,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.In_channel",
+      "description": "This module offers low-level input operations for reading data from files or standard input, including opening, seeking, and closing channels with support for binary and text modes. It utilizes the `t` type to represent input channels and `open_flag` to configure access options, enabling precise control over file positioning and newline translation. Use cases include processing structured data files, handling streaming input, or managing error-prone I/O scenarios with fine-grained control.",
+      "description_length": 494,
+      "index": 105,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Int32",
+      "description": "This module provides arithmetic operations (addition, subtraction, multiplication, division, remainder) and bitwise operations (shifts, logical operations) on 32-bit signed integers, with all arithmetic performed modulo 2\u00b3\u00b2. It includes conversions between int32 and types like int, float, and string, catering to applications requiring exact 32-bit precision, such as low-level data processing or protocol implementations, while noting that its use involves higher memory and computational overhead compared to native integers.",
+      "description_length": 528,
+      "index": 106,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Int64",
+      "description": "This module offers arithmetic operations (addition, subtraction, multiplication, division, remainder), bitwise manipulations (shifts, logical operations), and comparisons (min, max) on 64-bit signed integers. It supports conversions between int64 and other integer types (int, int32, nativeint), float interactions, and string serialization, catering to scenarios requiring precise 64-bit computations or interoperability with heterogeneous numeric formats. Its use cases include systems programming, large-scale numerical processing, and applications demanding consistent 64-bit behavior across platforms.",
+      "description_length": 606,
+      "index": 107,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Lazy",
+      "description": "Forces suspended computations, applies functions to their results, and checks if they have been evaluated. Works with suspended values of any type, represented as `'a t`. Used to delay evaluation of expressions, apply transformations on demand, and efficiently handle pre-computed values.",
+      "description_length": 288,
+      "index": 108,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Lexing",
+      "description": "Provides functions to create and manage lexer buffers from channels, strings, or custom input functions, with support for tracking input positions. Works with `position` records and `lexbuf` structures to track character offsets and file names during lexical analysis. Enables precise extraction of matched tokens and their locations, useful for parsing and error reporting in compilers or interpreters.",
+      "description_length": 403,
+      "index": 109,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Map",
+      "description": "The module offers operations for managing ordered key-value mappings, including insertion, deletion, lookup, and transformation, with support for structured manipulations like folding, filtering, and splitting. It works with associative arrays where keys are ordered, enabling ordered traversal, min/max key retrieval, and arbitrary binding selection. Use cases include efficient data processing, configuration management, and scenarios requiring ordered key access for consistent state management.",
+      "description_length": 498,
+      "index": 110,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Marshal",
+      "description": "Encodes and decodes arbitrary OCaml values to and from byte sequences, supporting binary I/O and in-memory serialization. Handles complex data structures including closures, shared references, and extensible variants, with control over marshaling behavior via flags. Used for inter-process communication, persistent storage of structured data, and network transmission of OCaml values.",
+      "description_length": 385,
+      "index": 111,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.MoreLabels",
+      "description": "Provides labeled operations for hash tables, ordered maps, and sets, enabling efficient key-based data manipulation. It supports insertion, deletion, lookup, iteration, and transformation of key-value pairs, as well as set operations like union, intersection, and membership testing. Users can process structured data, manage configurations, and perform ordered data analysis with typed, labeled functions. For example, it allows iterating over hash tables with named parameters, filtering map entries, or finding the minimum element in a set.",
+      "description_length": 543,
+      "index": 112,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Nativeint",
+      "description": "This module offers arithmetic and bitwise operations on platform-dependent signed integers (32 or 64 bits), including addition, multiplication, shifts, and type conversions between nativeint, int, int32, and floats. It supports numeric formatting and parsing, catering to scenarios requiring precise control over integer widths, such as low-level system programming or interoperability with C code. Its operations are optimized for cases where pointer-sized integers are essential, despite higher memory and computational overhead compared to standard integers.",
+      "description_length": 561,
+      "index": 113,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Obj",
+      "description": "manages low-level value representations, offering tools to inspect closures, extension constructors, and ephemeral data. It handles `t` and `info` types for closure analysis, `obj_t` and `t` for managing ephemeral associations, and provides methods to extract constructor names and identifiers. Users can analyze closure environments, serialize variant types with metadata, and track temporary object relationships. This enables advanced debugging, serialization, and memory management tasks.",
+      "description_length": 492,
+      "index": 114,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Oo",
+      "description": "Creates and manipulates objects with method and variable duplication, using unique integer identifiers for object tracking. Supports deep copying of objects and retrieves unique identifiers for object comparison and hashing. Useful for managing object state during serialization and ensuring consistent behavior in data structures.",
+      "description_length": 331,
+      "index": 115,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Option",
+      "description": "Provides operations to handle optional values, including extracting underlying values, transforming them with functions, and combining options. Works with the option type, which represents values that may be absent. Used to safely unwrap values, convert options to lists or sequences, and handle missing data without raising exceptions.",
+      "description_length": 336,
+      "index": 116,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Out_channel",
+      "description": "This module provides functions for writing data to output channels, including handling binary and text modes, managing file positioning, and controlling buffering. It operates on output channels and file descriptors, enabling precise manipulation of string, character, and byte data. Use cases include logging, data serialization, and interacting with standard output/error streams where low-level control over I/O operations is required.",
+      "description_length": 438,
+      "index": 117,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Parsing",
+      "description": "Returns character offsets and positions for grammar rule components, enabling precise tracking of parsed input segments. Provides methods to access start and end points of the current symbol or specific right-hand side items in a rule. Facilitates memory management and debugging during parser execution.",
+      "description_length": 304,
+      "index": 118,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Printexc",
+      "description": "captures and analyzes program execution points through backtrace_slot data structures, enabling inspection of exception origins and call stack details. It offers operations to determine if a slot is a raising point or inlined, extract location and function names, and format backtrace information. Users can trace program flow, debug exceptions, and inspect compiler-generated stack traces. Examples include identifying where an exception was raised and generating human-readable stack traces.",
+      "description_length": 493,
+      "index": 119,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Printf",
+      "description": "Formats and outputs values to channels, strings, or buffers using a rich set of conversion specifiers for integers, floats, strings, and custom types. Supports precise control over formatting through flags, widths, and precisions, enabling output tailored to specific display or storage needs. Used for generating log messages, error reports, and structured text outputs with consistent formatting rules.",
+      "description_length": 404,
+      "index": 120,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Queue",
+      "description": "Provides operations to manage first-in first-out data structures, including adding elements to the end, removing from the front, inspecting elements, and iterating over contents. Works with a mutable queue type that stores elements of any type. Used to process tasks in order, buffer data streams, or manage event sequences where order preservation is critical.",
+      "description_length": 361,
+      "index": 121,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Random",
+      "description": "Generates and manipulates pseudorandom numbers using a state, supporting extraction of bits, integers, floats, and booleans across multiple numeric types. It enables state duplication, custom seeding, and deterministic sequence generation. Applications can control randomness with precise control over output ranges and formats. For example, it can produce a 64-bit integer, a float between 0 and 1, or a boolean value based on the current state.",
+      "description_length": 446,
+      "index": 122,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Result",
+      "description": "Provides operations to construct and manipulate result values, including binding, mapping, and error handling. Works with a two-variant type representing success (Ok) or failure (Error). Used to safely propagate errors through function chains, convert results to options, and extract values with fallback defaults.",
+      "description_length": 314,
+      "index": 123,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Scanf",
+      "description": "Reads structured data from diverse input sources using in_channel, scanbuf, and file_name types. Supports parsing text and binary content with position tracking and custom input functions. Allows extraction of formatted values from files, strings, or standard input. Examples include parsing integers from a string or reading records from a binary file.",
+      "description_length": 353,
+      "index": 124,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Seq",
+      "description": "The module provides lazy evaluation and transformation operations for sequences, including mapping, filtering, and folding, which process elements on demand to handle potentially infinite or large data efficiently. It works with lazy, persistent sequences that can be combined, iterated, or consumed eagerly, making it suitable for scenarios like streaming data or memoization of computed elements. Functions like `map` and `filter` generate sequences that compute elements only when accessed, while `iter` and `fold_left` force immediate evaluation for aggregation or side effects.",
+      "description_length": 582,
+      "index": 125,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Set",
+      "description": "The module offers core set operations like membership testing, insertion, deletion, union, intersection, and difference, along with traversal utilities such as filtering, min/max retrieval, and conversion to lists/sequences. It operates on ordered sets of type `elt` using an underlying ordering mechanism for efficient comparisons. Use cases include data deduplication, efficient membership checks, and transforming sequential data into structured set representations.",
+      "description_length": 469,
+      "index": 126,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Stack",
+      "description": "Provides operations to manipulate last-in first-out (LIFO) data structures, including pushing elements to the top, popping from the top, inspecting the top element, and iterating over elements in order. Works with a mutable stack type that stores elements of any type. Used for managing temporary data in algorithm implementations, such as tracking function call states in recursive processes or reversing element order in traversal.",
+      "description_length": 433,
+      "index": 127,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Stream",
+      "description": "Provides functions to construct streams from functions, lists, strings, bytes, and input channels. Processes streams by iterating, extracting elements, checking emptiness, and peeking at upcoming values. Used for sequential processing of data sources like files, strings, or dynamically generated sequences.",
+      "description_length": 307,
+      "index": 128,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.String",
+      "description": "The module provides operations for creating, manipulating, and analyzing immutable byte sequences, including substring extraction, concatenation, character-level transformations, and UTF-8/UTF-16 decoding. It works with strings and byte sequences, supporting tasks like text processing, encoding validation, and low-level binary data parsing. Specific use cases include internationalization workflows, network protocol parsing, and legacy system interoperability through deprecated in-place mutation functions.",
+      "description_length": 510,
+      "index": 129,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.StringLabels",
+      "description": "The module offers functions for substring extraction, character-level transformations, and UTF-8/UTF-16 decoding, operating on immutable byte sequences and Unicode text. It enables tasks like text normalization, binary data parsing, and string composition, with support for case conversion, trimming, and low-level byte manipulations. Specific use cases include validating encoded text, converting between string and sequence representations, and interpreting raw byte data as numeric values.",
+      "description_length": 492,
+      "index": 130,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Sys",
+      "description": "Handles 64-bit signed integer operations with platform-independent precision, supporting addition, subtraction, bitwise logic, and comparisons on the `t` type. Enables reliable arithmetic in heterogeneous environments, such as parsing binary data or managing large numerical ranges. Functions include bitwise shifts, logical operations, and value comparisons. Examples include safely performing arithmetic in cross-platform applications or manipulating bit-level data structures.",
+      "description_length": 479,
+      "index": 131,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Uchar",
+      "description": "The module offers operations for manipulating Unicode scalar values, including arithmetic progression, validation, and conversions between integers and characters, along with Latin1 compatibility functions. It provides utilities for UTF decoding and encoding, calculating byte lengths for UTF-8 and UTF-16 representations. These tools are useful for validating and transforming Unicode data, ensuring compatibility with legacy systems, and handling efficient encoding/decoding processes.",
+      "description_length": 487,
+      "index": 132,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Unit",
+      "description": "Provides equality and comparison operations for unit values, and a conversion to string. Works with the unit type, which represents empty values. Used to standardize comparisons and string representations in contexts where no data is present.",
+      "description_length": 242,
+      "index": 133,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib.Weak",
+      "description": "Provides operations to manage a weak hash set storing values of type data, including adding, removing, and finding elements. Supports merging data to ensure unique instances and iterating over or folding across elements. Useful for tracking object references without preventing garbage collection, such as in caching or resource management scenarios.",
+      "description_length": 350,
+      "index": 134,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Printexc.Slot",
+      "description": "Provides functions to check if a slot represents a raising point or an inlined call, retrieve location and function name information, and generate formatted string representations of backtrace slots. Works with backtrace_slot data structures, which encapsulate details about program execution points. Used to analyze and debug program flow by inspecting compiler-generated backtrace information.",
+      "description_length": 395,
+      "index": 135,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Float.Array",
+      "description": "This module offers extensive functionality for manipulating float arrays, including element-wise transformations, bulk processing, and sorting operations. It works with packed float arrays, enabling efficient numerical computations and data transformations. Use cases include scientific computing, data analysis, and scenarios requiring high-performance array operations like sorting, membership checks, and conversions between arrays, lists, and sequences.",
+      "description_length": 457,
+      "index": 136,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Float.ArrayLabels",
+      "description": "The module offers array manipulation, iteration, and transformation operations tailored for float arrays with packed storage, enabling efficient element-wise computations and data processing. It supports tasks like initializing arrays via functions, slicing, concatenation, and sorting with specialized handling for IEEE standards and stable sorting. Use cases include numerical analysis, data transformation pipelines, and high-performance array operations where memory efficiency and speed are critical.",
+      "description_length": 505,
+      "index": 137,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Weak.Make",
+      "description": "Compares and hashes key values for consistent equality and hashing behavior across different data types. Operates on arbitrary types through provided equality and hashing functions. Used to ensure correct key handling in hash tables or other structures requiring stable key comparisons.",
+      "description_length": 286,
+      "index": 138,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Set.Make",
+      "description": "Compares elements of type t using a total ordering, returning -1, 0, or 1 based on their relative values. Operates on individual values of the t type without additional structure. Used to sort lists of t values or determine equality in custom data comparisons.",
+      "description_length": 260,
+      "index": 139,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stdlib",
+      "description": "The Stdlib module provides foundational data types and operations for integers, floating points, strings, lists, arrays, and I/O, with specialized support for large files, binary data, and numerical computations. It includes core operations like arithmetic, comparison, and conversion, along with advanced features such as lazy evaluation, pretty printing, and memory management. Key data types include int, float, string, list, array, and custom types for options, results, and hashes, enabling tasks like parsing command-line arguments, handling file I/O, and performing complex mathematical operations. Examples include calculating MD5 digests, manipulating byte sequences, and managing mutable references in sequential programs.",
+      "description_length": 732,
+      "index": 140,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.List",
+      "description": "This module offers a comprehensive set of operations for list manipulation, including transformations like mapping, filtering, and folding, as well as structural operations such as reversing, concatenating, and sorting. It works with standard lists, association lists (key-value pairs), and sequences, supporting tasks like associative lookups, conditional element removal, and efficient traversal via tail-recursive variants. Specific use cases include data processing pipelines, dictionary-like operations on key-value pairs, and optimizing performance-critical list operations through specialized functions like `rev_append` or custom equality checks.",
+      "description_length": 654,
+      "index": 141,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.ListLabels",
+      "description": "This module offers a range of list manipulation functions, including transformations like mapping, filtering, and folding, as well as operations for reversing, concatenating, and sorting lists, with support for custom comparison functions. It handles arbitrary element lists, key-value pairs, and association lists, enabling tasks such as efficient membership checks, element removal, and ordered processing. Specific use cases include processing structured data via predicates, managing associative data with user-defined equality, and optimizing traversal patterns through tail recursion or early exits.",
+      "description_length": 605,
+      "index": 142,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Pervasives",
+      "description": "provides specialized integer operations through a set of focused utilities includes basic types like int and operations such as arithmetic and comparison enables precise manipulation of integer values in low-level computations supports tasks like range validation, integer division, and bitwise masking",
+      "description_length": 302,
+      "index": 143,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.LargeFile",
+      "description": "Provides functions to manipulate file positions and sizes using 64-bit integers. Works with input and output channels to track and adjust current positions and determine file lengths. Enables precise handling of large files exceeding the maximum size supported by 32-bit integers.",
+      "description_length": 280,
+      "index": 144,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Arg",
+      "description": "Provides functions to parse command line options and anonymous arguments, handling types like strings, integers, and flags. Processes option specifications with associated actions and documentation, and supports custom parsing of argument lists. Enables dynamic option handling and error reporting with detailed usage messages.",
+      "description_length": 327,
+      "index": 145,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Array",
+      "description": "The module provides array manipulation, transformation, and conversion operations, working with arrays of arbitrary types, floats, matrices, and sequences. It includes functions for direct element access, in-place modification, mapping, folding, paired operations, and sequence conversions, suitable for tasks like data processing pipelines, algorithm implementations, and interoperability with sequence-based APIs. Specialized sorting and equality checks further enable efficient handling of structured data and performance-critical applications.",
+      "description_length": 547,
+      "index": 146,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.ArrayLabels",
+      "description": "The module provides array manipulation, transformation, and conversion operations, working with arrays of arbitrary types, float arrays, matrices, and sequences. It supports tasks like data processing pipelines, numerical computations, and sequence-array interoperability through functions for mapping, folding, indexed iteration, and element-wise operations. Specific use cases include modifying in-place arrays, combining paired data structures, and extracting subarrays for analysis.",
+      "description_length": 486,
+      "index": 147,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Atomic",
+      "description": "Creates and manipulates atomic references, allowing safe read, write, and update operations on values. Works with mutable reference types that support atomic updates, including integers and arbitrary values. Enables thread-safe increment, decrement, and conditional updates in environments where full multicore support is not available.",
+      "description_length": 336,
+      "index": 148,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Bigarray",
+      "description": "Provides multi-dimensional numerical array operations with support for various element types and memory layouts. Offers specialized functions for handling arrays of dimensions 0 to 3, including scalar values, 1D, 2D, and 3D structures, with operations like slicing, sub-array extraction, and element access. Supports efficient data sharing with C and Fortran code through compatible memory layouts and includes unsafe operations for performance-critical tasks. Examples include creating 3D tensors, extracting matrix sub-arrays, and wrapping scalars for interoperability.",
+      "description_length": 571,
+      "index": 149,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Bool",
+      "description": "Provides negation, logical conjunction, and disjunction with short-circuit evaluation for boolean expressions. Converts boolean values to integers, floats, and strings, and defines equality and ordering comparisons. Supports conditional branching and boolean-based type conversions in control flow logic.",
+      "description_length": 304,
+      "index": 150,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Buffer",
+      "description": "The module provides efficient operations for dynamically building and manipulating mutable string buffers, including appending, inserting, and extracting data while automatically expanding storage. It supports UTF-8/UTF-16 encodings, binary integer serialization, and conversions between buffers, strings, and sequences, enabling linear-time string concatenation and handling of large-scale data processing. Use cases include streaming data aggregation, log construction, and protocol encoding where performance and flexibility are critical.",
+      "description_length": 541,
+      "index": 151,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Bytes",
+      "description": "The module offers low-level operations for manipulating mutable byte sequences, including in-place modifications, encoding/decoding UTF-8/UTF-16, and handling integers with endianness-specific serialization. It works with mutable arrays of characters (bytes) to enable efficient memory control, pattern matching, and text transformation. Use cases include network protocol parsing, binary data processing, and scenarios requiring precise control over byte-level representations.",
+      "description_length": 478,
+      "index": 152,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.BytesLabels",
+      "description": "The module provides low-level operations for manipulating mutable byte sequences, including modifying individual bytes, copying data, encoding/decoding UTF-8/16, and handling integers with endianness-specific formats. It works with the `bytes` type, enabling precise control over binary data through in-place modifications and range-based operations. Use cases include network protocol parsing, file format processing, and serialization tasks requiring direct byte-level access or text transformation.",
+      "description_length": 501,
+      "index": 153,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Callback",
+      "description": "Registers OCaml values and exceptions under symbolic names for access from C code. Works with arbitrary OCaml values and exception values, enabling C code to invoke OCaml functions or trigger exceptions by name. Used to bridge OCaml and C components in embedded systems or performance-critical applications.",
+      "description_length": 307,
+      "index": 154,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Char",
+      "description": "Returns the ASCII code of a character, converts ASCII codes to characters, and escapes special characters for string representation. Handles case conversion for ASCII characters and provides comparison and equality checks. Used for processing individual characters in string manipulation and data serialization tasks.",
+      "description_length": 317,
+      "index": 155,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Complex",
+      "description": "Provides arithmetic operations for complex numbers, including addition, subtraction, multiplication, division, and inversion, along with functions for conjugation, square roots, and exponentiation. Works with a type representing complex numbers as pairs of double-precision floats for real and imaginary components. Enables calculations such as converting between polar and cartesian forms, computing norms, and evaluating complex logarithms and exponentials.",
+      "description_length": 459,
+      "index": 156,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Digest",
+      "description": "Computes MD5 digests of strings, byte sequences, and files, and provides functions to extract substrings, read from channels, and convert between hexadecimal and binary representations. Operates on 16-byte strings as the digest type, supporting comparisons, equality checks, and serialization. Used for generating unique checksums for data integrity verification, such as validating file contents or identifying duplicate data.",
+      "description_length": 427,
+      "index": 157,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Either",
+      "description": "Provides operations to construct and inspect values that can be in one of two distinct forms, Left or Right. Works with the sum type ('a, 'b) t, allowing transformations, checks, and extraction of values from either branch. Used to handle outcomes of functions that may return different types, such as parsing results or error handling where each case requires separate processing.",
+      "description_length": 381,
+      "index": 158,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Ephemeron",
+      "description": "This module provides operations for managing weak hash tables where keys are tracked for liveness, ensuring entries are automatically removed when their keys become unreachable. It supports standard manipulations like insertion, lookup, iteration, and filtering, along with utilities to clean dead bindings and retrieve statistics. Use cases include managing temporary data structures or caching scenarios where key lifetimes are tied to external references.",
+      "description_length": 458,
+      "index": 159,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Filename",
+      "description": "The module offers functions for manipulating file paths, including constructing, splitting, and modifying names, as well as checking properties like relative status or extensions, and handling temporary files. It also provides tools for safely quoting file names and command lines to avoid injection issues, adhering to platform-specific formatting rules. These operations are essential for tasks such as directory traversal, secure command execution, and cross-platform file management.",
+      "description_length": 487,
+      "index": 160,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Float",
+      "description": "Provides efficient manipulation of packed float arrays with operations for transformation, sorting, and bulk processing. Supports element-wise computations, array initialization, slicing, and conversions between arrays, lists, and sequences. Handles IEEE 754 special values like infinity and NaN, ensuring correct propagation through calculations. Examples include sorting large datasets, applying mathematical functions to array elements, and converting between data structures for numerical analysis.",
+      "description_length": 502,
+      "index": 161,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Format",
+      "description": "This module enables structured text formatting through pretty-printing boxes (horizontal, vertical, hybrid) and semantic tags, allowing precise control over line breaks, indentation, and text layout. It operates on formatter objects that direct output to standard streams, buffers, or custom channels, supporting data types like lists, options, and numeric values while enabling custom separators and output behaviors. Use cases include generating readable logs, formatting complex data structures, and managing semantic presentation in applications requiring flexible, hierarchical text output.",
+      "description_length": 595,
+      "index": 162,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Fun",
+      "description": "Provides identity, constant, flipped, and negated functions for manipulating and transforming behavior of other functions. Operates on functions with various input and output types, including predicates and side-effecting operations. Used to invert function arguments, create constant outputs, and ensure cleanup actions are executed after a computation.",
+      "description_length": 354,
+      "index": 163,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Gc",
+      "description": "Tracks memory allocations through sampled heap block events, capturing callstacks and managing custom tracking data. Provides operations to register callbacks for allocation, promotion, and deallocation, with control over sampling rates and event granularity. Supports low-overhead profiling by correlating memory events with execution context. Example uses include analyzing memory usage patterns and optimizing garbage collection behavior.",
+      "description_length": 441,
+      "index": 164,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Genlex",
+      "description": "Provides a function to convert character streams into token streams based on a set of keywords, handling identifiers, special characters, whitespace, and nested comments. Operates on character streams and produces token streams with distinct representations for keywords, identifiers, and special characters. Used to build custom lexical analyzers for domain-specific languages or simple calculators by defining relevant keywords and processing tokens accordingly.",
+      "description_length": 464,
+      "index": 165,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Hashtbl",
+      "description": "Provides operations for inserting, removing, looking up, and iterating over key-value pairs in hash tables, along with replacing entries and constructing tables from sequences. Works with associative data structures using keys of a specific type and values of a generic type, enabling efficient data management. Useful for scenarios like implementing dictionaries, caches, or processing structured data sequences.",
+      "description_length": 413,
+      "index": 166,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.In_channel",
+      "description": "This module enables reading from files or standard input through operations like opening, seeking, and closing channels, supporting both binary and text modes with newline translation. It works with input channels and open flags, focusing on low-level management and configuration. Use cases include processing structured data streams, handling file positioning, or managing error-prone input sources.",
+      "description_length": 401,
+      "index": 167,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Int32",
+      "description": "This module offers arithmetic operations (addition, subtraction, multiplication, division, remainder), bitwise manipulations (shifts, logical operations), and conversions for 32-bit signed integers, with both signed and unsigned variants for division and comparison. It handles type conversions between int32 and int, float, or string representations, ensuring precise 32-bit handling where platform-independent bit-width is critical. Use cases include low-level system programming, network protocol parsing, or embedded systems requiring strict 32-bit arithmetic guarantees.",
+      "description_length": 575,
+      "index": 168,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Int64",
+      "description": "This module offers arithmetic operations (addition, subtraction, multiplication, division, remainder), bitwise manipulations (AND, OR, XOR, shifts), and comparisons (min, max) on 64-bit signed integers, along with conversions to and from other numeric types and string serialization. It handles precise 64-bit computations, ensuring consistency across platforms, and supports specialized behaviors for unsigned interpretations and IEEE 754 float conversions. Use cases include cross-platform numerical consistency, large integer handling, and interoperability with external data formats requiring exact 64-bit representations.",
+      "description_length": 626,
+      "index": 169,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Lazy",
+      "description": "Provides deferred evaluation of expressions through suspensions, allowing controlled execution of potentially expensive or side-effect-heavy operations. Works with suspended computations of any type, enabling safe and efficient transformation and inspection of values. Used to delay computation until needed, handle exceptions in suspended values, and optimize performance by avoiding redundant evaluations.",
+      "description_length": 407,
+      "index": 170,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Lexing",
+      "description": "Provides functions to create and manage lexer buffers from channels, strings, or custom input functions, with support for tracking input positions. Works with `position` records and `lexbuf` structures to track character offsets and file locations during lexical analysis. Enables precise extraction of matched tokens and their positions, useful for error reporting and source code navigation.",
+      "description_length": 393,
+      "index": 171,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Map",
+      "description": "This module offers key-based operations for managing immutable, ordered maps, including insertion, lookup, traversal, and transformation of associations between specific key types and polymorphic values. It supports advanced manipulations like splitting maps, finding extremal bindings, and filtering, tailored for scenarios requiring efficient symbolic computation or structured data organization. Use cases include implementing symbolic expressions, configuration systems, or persistent data structures where immutability and ordered key access are critical.",
+      "description_length": 560,
+      "index": 172,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Marshal",
+      "description": "Encodes and decodes arbitrary OCaml values to and from byte sequences, supporting binary I/O and in-memory serialization. Operates on polymorphic types, including closures, integers, and complex structures, with control over sharing and 32/64-bit compatibility. Used to persist data structures to files, transmit them over networks, or share between processes running identical code.",
+      "description_length": 383,
+      "index": 173,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.MoreLabels",
+      "description": "Provides labeled interfaces for hash tables, maps, and sets, enhancing usability with named parameters. Hash tables support insertion, deletion, and iteration over key-value pairs, while maps enable ordered key-based operations like insertion, folding, and splitting. Sets offer immutable set manipulations, including union, intersection, and membership checks, with sequence-based construction and element selection. Examples include dynamically updating hash tables, building sorted dictionaries, and transforming lists into sets with filtering.",
+      "description_length": 547,
+      "index": 174,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Nativeint",
+      "description": "The module offers arithmetic and bitwise operations on platform-dependent signed integers (32 or 64 bits), including addition, subtraction, multiplication, shifts, and conversions between nativeint and types like int, int32, and float. It supports low-level bit manipulation, numeric formatting, and handling of pointer-sized integers, making it suitable for systems programming or interfacing with C code where precise control over integer width is required.",
+      "description_length": 459,
+      "index": 175,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Obj",
+      "description": "Manipulates internal value representations through operations on closures, extension constructors, and ephemeral key-value pairs. It handles `t` and `info` types for closure analysis, supports tagging and untagging variant values with metadata, and manages temporary object associations using `obj_t` and `t`. Users can inspect closure environments, serialize variant data, and track transient object relationships. This enables low-level debugging, serialization, and efficient memory management.",
+      "description_length": 497,
+      "index": 176,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Oo",
+      "description": "Creates and manipulates objects with method and variable duplication, using unique integer identifiers for object tracking. Operates on objects with arbitrary method signatures, enabling safe copying and identity-based comparisons. Useful for managing object lifecycles in serialized data structures or when preserving object state across sessions.",
+      "description_length": 348,
+      "index": 177,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Option",
+      "description": "Provides operations to handle optional values, including extracting underlying values, transforming them with functions, and combining options. Works with the option type, which represents values that may be absent. Used to safely unwrap values, convert options to lists or sequences, and handle missing data without raising exceptions.",
+      "description_length": 336,
+      "index": 178,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Out_channel",
+      "description": "This module provides functions for writing data to output streams, including handling binary and text modes, managing file positioning, and controlling buffering. It operates on file descriptors and output channels, enabling precise manipulation of data flow for tasks like logging, file serialization, or real-time data transmission. Specific use cases include configuring output behavior for different file types, ensuring proper data encoding, and optimizing performance through buffer management.",
+      "description_length": 500,
+      "index": 179,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Parsing",
+      "description": "Returns character offsets and positions for grammar rule components, enabling precise tracking of parsed input segments. Provides methods to access start and end points of the current symbol or specific right-hand side items in a rule. Facilitates memory management and debugging during parser execution.",
+      "description_length": 304,
+      "index": 180,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Printexc",
+      "description": "captures and analyzes program execution points through backtrace_slot data structures, enabling inspection of exception origins and call stack details. It offers operations to determine if a slot is a raising point, extract location and function names, and format backtrace information. Users can trace program flow, debug exceptions, and generate human-readable stack traces. Examples include identifying where an exception was raised and displaying function call sequences.",
+      "description_length": 475,
+      "index": 181,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Printf",
+      "description": "Formats values into strings using a flexible syntax, supporting integers, floats, strings, and custom printers. Outputs to standard streams, buffers, or returns formatted results as strings. Enables precise control over numeric formatting, string interpolation, and conditional printing.",
+      "description_length": 287,
+      "index": 182,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Queue",
+      "description": "Provides operations to manage first-in first-out data structures, including adding elements to the end, removing from the front, inspecting elements, and iterating over contents. Works with the `'a t` type, representing a queue of arbitrary elements. Used for task scheduling, buffer management, and processing ordered data streams.",
+      "description_length": 332,
+      "index": 183,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Random",
+      "description": "Generates random integers, floats, and booleans with support for various numeric types and explicit state control. It maintains internal state for reproducibility and allows deterministic output across runs. Operations include generating values within specified ranges and manipulating random number generator states. Examples include creating a sequence of 64-bit integers or generating a boolean with a custom seed.",
+      "description_length": 417,
+      "index": 184,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Result",
+      "description": "Provides operations to construct and manipulate result values, including mapping, binding, and error handling. Works with a two-variant type representing either a success value or an error. Used to safely propagate errors through function chains and extract values with fallback defaults.",
+      "description_length": 288,
+      "index": 185,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Scanf",
+      "description": "reads text or binary data from various sources using in_channel, scanbuf, and file_name, supporting structured input operations and boundary checks. It allows parsing from standard input, files, or custom generators, with functions to manage input flow and source identification. Operations include scanning formatted strings, handling end-of-input conditions, and retrieving source names. Examples include parsing integers from a string, reading lines from a file, or processing binary data from a custom source.",
+      "description_length": 513,
+      "index": 186,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Seq",
+      "description": "The module provides lazy evaluation and transformation operations for sequences, including mapping, filtering, concatenation, and zipping, alongside eager consumption functions like iteration and folding. It works with delayed, potentially infinite sequences of arbitrary elements, enabling efficient handling of large or unbounded data through deferred computation. Use cases include processing infinite streams, stateful generation, and composing sequences while avoiding redundant computations.",
+      "description_length": 497,
+      "index": 187,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Set",
+      "description": "This module offers standard set operations like membership testing, union, intersection, and element insertion/removal, along with querying capabilities such as finding min/max elements and filtering via predicates. It works with ordered sets of typed elements, supporting conversions to and from lists or sequences, and includes sequence-based construction methods for building sets from iterable data. Use cases include data transformation pipelines, mathematical set computations, and efficient membership checks in structured data.",
+      "description_length": 535,
+      "index": 188,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stack",
+      "description": "Provides operations to manipulate last-in first-out (LIFO) data structures, including pushing elements onto a stack, popping elements from the top, inspecting the top element, and iterating over elements in order. Works with the `'a t` type, representing a stack of elements of any type. Supports use cases like managing function call contexts, undo operations, and temporary data storage where order of access matters.",
+      "description_length": 419,
+      "index": 189,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Stream",
+      "description": "Provides functions to construct streams from functions, lists, strings, bytes, and input channels. Processes stream elements with operations like iteration, element retrieval, and peeking, and allows modification of the stream state through consumption and inspection. Used for sequential processing of data sources such as file input, character sequences, and dynamically generated values.",
+      "description_length": 390,
+      "index": 190,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.String",
+      "description": "The module provides operations for manipulating immutable byte sequences, including substring extraction, concatenation, comparison, and search functions, along with encoding/decoding utilities for UTF-8 and UTF-16, and binary data parsing. It works with strings and byte arrays, enabling tasks like text processing, Unicode handling, and low-level byte manipulation. Specific use cases include converting between string representations, validating encodings, and interpreting raw byte sequences as numeric values.",
+      "description_length": 514,
+      "index": 191,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.StringLabels",
+      "description": "This module provides operations for substring extraction, concatenation, comparison, and character-level transformations, along with UTF-8/UTF-16 encoding/decoding and binary data interpretation. It works with byte sequences, immutable strings, and Unicode-encoded text, enabling tasks like text processing, pattern matching, and low-level data parsing. Specific use cases include case conversion, trimming, escaping, and decoding integers from binary string representations.",
+      "description_length": 475,
+      "index": 192,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Sys",
+      "description": "manages 64-bit unsigned integers with bitwise and arithmetic operations, supporting conversions to and from native integers for low-level system tasks. It defines the `t` type for 64-bit values and provides functions like bitwise AND, OR, XOR, shifts, and arithmetic operations. This enables precise control over binary data and numeric manipulation in system-level code. Examples include parsing binary headers, implementing network protocols, or handling memory-mapped I/O.",
+      "description_length": 475,
+      "index": 193,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Uchar",
+      "description": "The module provides operations for manipulating Unicode scalar values, including arithmetic transformations (succ, pred), validation (is_valid), and conversions between integers, OCaml chars, and Unicode characters (of_int, to_char). It handles UTF decoding and encoding tasks, such as determining byte lengths for UTF-8/UTF-16 representations and decoding Unicode characters from byte sequences. These functionalities are critical for processing multilingual text, ensuring character validity, and managing efficient encoding/decoding in internationalized applications.",
+      "description_length": 570,
+      "index": 194,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Unit",
+      "description": "Provides equality and comparison operations for unit values, and a conversion to string. Works with the unit type, which represents the absence of a value. Used to standardize behavior for unit values in pattern matching and output formatting.",
+      "description_length": 243,
+      "index": 195,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Stdlib.Weak",
+      "description": "Provides operations to manage a weak hash set storing values of type data, including adding, removing, and finding elements. Supports merging data to ensure unique instances and iterating over or folding across elements. Useful for tracking object references without preventing garbage collection, such as in caching or resource management scenarios.",
+      "description_length": 350,
+      "index": 196,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic.Make",
+      "description": "Provides functions to construct and manipulate build configurations, including parsing input specifications, generating dependency graphs, and executing build steps. Operates on the `t` type, which represents a structured build plan with targets, dependencies, and execution rules. Used to automate software compilation workflows by defining precise build sequences and managing task execution order.",
+      "description_length": 400,
+      "index": 197,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.None",
+      "description": "Provides comparison and ordering operations for unit values, including equality, inequality, and ordering checks. Supports min and max functions to determine the smallest or largest unit value. Designed for use in scenarios where unit-typed expressions need logical or comparative evaluation.",
+      "description_length": 292,
+      "index": 198,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Int",
+      "description": "Compares and manipulates integer values using standard relational operators and comparison functions. Provides direct access to arithmetic comparisons and extremum selection between two integers. Used for conditional logic and value normalization in numerical computations.",
+      "description_length": 273,
+      "index": 199,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Bool",
+      "description": "Compares and manipulates boolean values using standard relational operators and ordering functions. Supports operations like equality, inequality, and ordering to determine the relationship between two boolean inputs. Used to implement logical decision-making in conditional expressions and sorting algorithms.",
+      "description_length": 310,
+      "index": 200,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Float",
+      "description": "Provides equality and comparison operations for floating-point numbers, including ordered comparisons and min/max selection. Works with the float data type to support numerical decision-making. Used to determine relationships between floating-point values in mathematical or algorithmic contexts.",
+      "description_length": 296,
+      "index": 201,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.String",
+      "description": "Compares strings using standard lexicographical ordering, supporting equality checks, inequality checks, and ordering operations. Returns the lexicographically smaller or larger of two strings based on their character sequences. Used to sort string collections or determine string precedence in data processing workflows.",
+      "description_length": 321,
+      "index": 202,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Monomorphic.Stdlib",
+      "description": "The Stdlib module provides foundational data types and operations for integers, floating points, strings, lists, arrays, and I/O, with specialized support for large files, binary data, and numerical computations. It includes core operations like arithmetic, comparison, and conversion, along with advanced features such as lazy evaluation, pretty printing, and memory management. Key data types include int, float, string, list, array, and custom types for options, results, and hashes, enabling tasks like parsing command-line arguments, handling file I/O, and performing complex mathematical operations. Examples include calculating MD5 digests, manipulating byte sequences, and managing mutable references in sequential programs.",
+      "description_length": 732,
+      "index": 203,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "monomorphic",
+      "description": "Provides functions to replace polymorphic operators like (=) and (<>) with monomorphic equivalents, ensuring type safety during comparisons. Works with OCaml's built-in types such as int, string, and list, preventing unintended type coercions. Useful in scenarios where strict type checking is required to avoid runtime errors in complex data structures.",
+      "description_length": 354,
+      "index": 204,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Monomorphic",
+      "description": "Combines build configuration management, unit, integer, boolean, float, and string comparison, and foundational data manipulation into a unified set of tools for structured workflows and data processing. It supports operations on types like `t`, int, float, string, and bool, enabling tasks such as generating dependency graphs, evaluating logical conditions, and sorting string collections. Functions include equality checks, ordering, min/max selection, and arithmetic comparisons, with applications in automation, numerical logic, and data sorting. Examples include defining build sequences, determining the largest integer, and comparing string precedence for data organization.",
+      "description_length": 682,
+      "index": 205,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 220,
+    "meaningful_modules": 206,
+    "filtered_empty_modules": 14,
+    "retention_rate": 0.9363636363636364
+  },
+  "statistics": {
+    "max_description_length": 732,
+    "min_description_length": 242,
+    "avg_description_length": 410.7135922330097,
+    "embedding_file_size_mb": 0.74871826171875
+  }
+}

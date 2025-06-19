@@ -1,0 +1,77 @@
+{
+  "package": "session",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 8,
+  "creation_timestamp": "2025-06-18T16:31:58.388189",
+  "modules": [
+    {
+      "module_path": "Session.Lift.Ident",
+      "description": "Provides binding and lifting operations for computations that do not introduce asynchronous behavior. Works with a parameterized type 'a t representing computations that yield values of type 'a. Used to execute blocking operations in a monadic context without altering their synchronous nature.",
+      "description_length": 294,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Session.Lift.IO",
+      "description": "Handles asynchronous value wrapping and chaining, enabling sequential execution of I/O operations. Operates on monadic structures representing deferred computations. Used to manage file reads, network requests, and event-driven workflows with explicit control flow.",
+      "description_length": 265,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Session.Lift.Thread_IO",
+      "description": "Provides asynchronous computation sequencing and thread-based execution, allowing operations to be chained with >>= and wrapped in separate threads using in_thread. Works with a monadic type 'a t that represents delayed or concurrent computations. Enables non-blocking I/O operations and parallel task execution within a single-threaded environment.",
+      "description_length": 349,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Session.Lift",
+      "description": "Combines synchronous and asynchronous computation handling through a unified monadic interface, supporting both blocking and non-blocking operations. It defines a type 'a t for encapsulating computations, with operations like binding, lifting, and sequencing to manage control flow. Synchronous tasks can be executed directly, while asynchronous ones handle I/O and concurrency via deferred execution and thread isolation. Examples include performing file I/O in sequence, executing network calls without blocking, and running multiple tasks in parallel within a single thread.",
+      "description_length": 577,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Session.Memory",
+      "description": "Provides functions to manage in-memory session data with expiration, including generating keys with custom or default expiry, retrieving session values, and clearing entries. Operates on strings for keys and values, and integer-based periods for expiry management. Used to handle temporary user sessions in applications requiring short-lived data storage.",
+      "description_length": 355,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Session.S",
+      "description": "Provides monadic binding and lifting for blocking computations, enabling sequential composition of operations that produce values wrapped in a type parameterized by the result. Works with a type `'a t` representing computations that yield values of type `'a`. Used to structure synchronous I/O operations or other blocking tasks in a composable manner.",
+      "description_length": 352,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "session",
+      "description": "Handles cookie-based session management and persistence, including creation, retrieval, and expiration of session data. Operates on HTTP request and response objects, integrating with CoHTTP, Async, and Lwt for request handling. Used to implement authenticated routes where access is granted after a client completes an authentication flow.",
+      "description_length": 340,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Session",
+      "description": "Encapsulates computations with a unified monadic interface, supporting both synchronous and asynchronous operations through type 'a t, enabling control flow management via binding, lifting, and sequencing. Manages in-memory session data with string keys and integer-based expiration, allowing retrieval, storage, and cleanup of temporary values. Supports structured execution of blocking tasks, enabling sequential composition of I/O or computation-heavy operations. Examples include performing file operations, handling network requests without blocking, and managing user sessions with time-limited data.",
+      "description_length": 606,
+      "index": 7,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 8,
+    "meaningful_modules": 8,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 606,
+    "min_description_length": 265,
+    "avg_description_length": 392.25,
+    "embedding_file_size_mb": 0.02944660186767578
+  }
+}

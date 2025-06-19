@@ -1,0 +1,56 @@
+{
+  "package": "lastfm",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 5,
+  "creation_timestamp": "2025-06-18T16:28:01.269046",
+  "modules": [
+    {
+      "module_path": "Lastfm_generic.Audioscrobbler_generic",
+      "description": "Provides functions to send HTTP requests with customizable timeout, headers, and port, and handles request formatting for a specific API. Works with string-based URLs, host names, and a custom request type encapsulating query parameters. Used to interact with music recommendation services by submitting user listening data.",
+      "description_length": 324,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lastfm_generic.Radio_generic",
+      "description": "Provides functions to send HTTP requests with customizable timeout, headers, and port, and returns the response as a string. Works with the `request` type to structure outgoing HTTP messages and uses a float reference for the default timeout value. Used to fetch data from remote servers with precise control over connection parameters.",
+      "description_length": 336,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "lastfm",
+      "description": "Provides functions to fetch artist information, track scrobbles, and search for music data from Lastfm. Works with JSON-encoded responses and opaque session tokens. Used to integrate music metadata and user activity into OCaml applications.",
+      "description_length": 240,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Lastfm_constants",
+      "description": "Provides the API version string for Last.fm interactions. Works with string data to ensure compatibility with the Last.fm API. Used to construct requests that require a specific API version.",
+      "description_length": 190,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Lastfm_generic",
+      "description": "Handles HTTP requests to the Last.fm API with customizable timeout, headers, and port settings. Operates on string-based URLs and request structures to fetch data from specified hosts. Used to retrieve specific API responses like user profiles or track information.",
+      "description_length": 265,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 6,
+    "meaningful_modules": 5,
+    "filtered_empty_modules": 1,
+    "retention_rate": 0.8333333333333334
+  },
+  "statistics": {
+    "max_description_length": 336,
+    "min_description_length": 190,
+    "avg_description_length": 271.0,
+    "embedding_file_size_mb": 0.018591880798339844
+  }
+}

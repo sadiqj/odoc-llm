@@ -1,0 +1,140 @@
+{
+  "package": "xoshiro",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 17,
+  "creation_timestamp": "2025-06-18T16:35:48.778694",
+  "modules": [
+    {
+      "module_path": "Xoshiro.Splitmix64.State",
+      "description": "Generates random values of various types using a provided pseudo-random number generator (PRNG) state. Operates on the `t` type, which encapsulates the internal state of a PRNG. Supports creating initialized states, copying states, and generating integers, floats, and booleans while advancing the state.",
+      "description_length": 304,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Xoshiro.Xoshiro256plusplus.State",
+      "description": "Generates random values of various types using a provided pseudo-random number generator (PRNG) state. Operates on an opaque state type `t` that encapsulates the internal PRNG configuration. Used to produce integers, floats, and boolean values with controlled randomness in applications requiring reproducible or seeded random sequences.",
+      "description_length": 337,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xoshiro.Xoshiro256plusplus.LowLevel",
+      "description": "Converts between a 4-element int64 array and a state, generates the next int64 value from the state, and advances the state by 2\u00b9\u00b2\u2078 or 2\u00b9\u2079\u00b2 steps to produce non-overlapping subsequences for parallel processing. Works with 64-bit integers and a hidden state type. Used to split random number generation into independent streams for concurrent or distributed tasks.",
+      "description_length": 363,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xoshiro.Xoshiro256plusplus",
+      "description": "manages a pseudo-random number generator's state to produce controlled, reproducible random values and supports parallelization through state manipulation. It handles 64-bit integers, generates various data types from an opaque state, and allows splitting the state into non-overlapping sequences. Operations include converting states to and from int64 arrays, generating next values, and advancing the state by large steps. Examples include creating deterministic random sequences, splitting streams for concurrent processing, and generating floats, integers, or booleans with explicit state control.",
+      "description_length": 601,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Xoshiro.State",
+      "description": "Generates random values of various types using a provided pseudo-random number generator state. Operates on the `t` type, which encapsulates the internal state of a PRNG. Allows deterministic random number generation by explicitly passing and updating the state during value generation.",
+      "description_length": 286,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Xoshiro.LowLevel",
+      "description": "Converts between a fixed-size int64 array and a state object, generates the next 64-bit integer in a sequence, and advances the state by large jumps to produce non-overlapping subsequences for parallel processing. Operates on 64-bit integer arrays and an opaque state type. Used to manage random number generation in parallel and distributed systems with predictable subsequence separation.",
+      "description_length": 390,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Xoshiro.Splitmix64",
+      "description": "creates and manipulates pseudo-random number generator states, enabling deterministic random value generation across multiple threads. It defines the `t` type for managing PRNG state and provides operations to generate integers, floats, and booleans. States can be initialized, copied, and advanced explicitly. For example, you can generate a random integer between 0 and 100 or a random boolean value while preserving the state for future use.",
+      "description_length": 444,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Xoshiro256plusplus_bindings.LowLevel",
+      "description": "Converts between OCaml int64 arrays and Bigarray int64 arrays, advances a state by one step, and skips ahead in the sequence using jump or long_jump operations. Operates on Bigarray arrays with int64 elements and internal state representations. Used for efficiently generating pseudorandom numbers in high-performance numerical computations.",
+      "description_length": 341,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Xoshiro256plusplus_bindings.State",
+      "description": "Generates and manipulates pseudo-random numbers using a custom state object. It supports extracting bits, integers, 32-bit integers, native integers, 64-bit integers, and floats from the state, as well as generating boolean values. The module allows creating states from arrays or system entropy, and copying existing states for deterministic behavior.",
+      "description_length": 352,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xoshiro256plusplus_pure.LowLevel",
+      "description": "Provides functions to manipulate arrays of 64-bit integers, including rotating bits left, generating next values, and advancing the state with jump or long jump operations. Works with arrays of type int64 array to manage pseudo-random number generator states. Used to advance and reseed random number generators in cryptographic or simulation contexts.",
+      "description_length": 352,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xoshiro256plusplus_pure.State",
+      "description": "Generates random values of various types using a provided pseudo-random number generator state. Operates on the `t` type, which encapsulates the internal state of a PRNG. Allows deterministic random generation by explicitly passing and updating the state during value generation.",
+      "description_length": 279,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Splitmix64_pure.State",
+      "description": "Generates random values of various types using a provided pseudo-random number generator state. Operates on the `t` type, which encapsulates the internal state of a PRNG. Used to produce integers, floats, and booleans with customizable seeding and state management.",
+      "description_length": 265,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "xoshiro",
+      "description": "Generates pseudorandom numbers using Xoshiro256++ and Xoshiro256** algorithms, maintaining a large internal state for extended periods. Accepts and returns 64-bit unsigned integers, supporting uniform distribution across the full range. Enables high-quality random number generation for simulations, games, and statistical sampling where cryptographic security is not required.",
+      "description_length": 377,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xoshiro",
+      "description": "Provides a set of functions for managing and generating pseudorandom numbers using Xoshiro PRNGs, with explicit state control for deterministic and parallelizable generation. It supports operations on 64-bit integers, generates floats, integers, and booleans, and allows splitting states to create independent random sequences. Functions include converting states to int64 arrays, advancing states by large steps, and generating values without global state interference. Examples include creating reproducible random sequences, generating values in multi-threaded environments, and splitting streams for parallel processing.",
+      "description_length": 624,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Xoshiro256plusplus_bindings",
+      "description": "Manages pseudorandom number generation through explicit state manipulation, enabling deterministic and thread-safe usage. Provides operations to advance, jump, or skip ahead in the sequence, and converts between OCaml and Bigarray int64 arrays. Supports extracting various numeric types and booleans from the state, and allows state initialization from arrays or entropy. Enables efficient, controlled random number generation for applications requiring reproducibility or performance.",
+      "description_length": 485,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Xoshiro256plusplus_pure",
+      "description": "manages pseudo-random number generator states through explicit manipulation of 64-bit integer arrays and a state type `t`, enabling deterministic generation and advancement of random sequences. It supports bit rotation, state advancement via jumps, and generation of random values including integers, floats, and booleans. Operations on `int64 array` and `t` allow precise control over PRNG behavior in multi-threaded or cryptographic applications. Examples include reseeding a generator, generating a sequence of random numbers, and advancing the state by a large jump to avoid overlap.",
+      "description_length": 587,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Splitmix64_pure",
+      "description": "creates and manipulates pseudo-random number generator states, enabling deterministic random value generation. it supports operations on the `t` type to produce integers, floats, and booleans with controlled seeding. users can advance the state explicitly, ensuring isolation in multi-threaded environments. for example, it allows generating a random float between 0 and 1 or a boolean with a specified probability.",
+      "description_length": 415,
+      "index": 16,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 17,
+    "meaningful_modules": 17,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 624,
+    "min_description_length": 265,
+    "avg_description_length": 400.11764705882354,
+    "embedding_file_size_mb": 0.06218719482421875
+  }
+}

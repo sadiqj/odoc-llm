@@ -1,0 +1,56 @@
+{
+  "package": "varint",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 5,
+  "creation_timestamp": "2025-06-18T16:28:57.371611",
+  "modules": [
+    {
+      "module_path": "Varint.VarInt32",
+      "description": "Encodes and decodes 32-bit integers using a variable-length format suitable for efficient serialization. Operates on raw byte sequences via Cstruct and Mstruct for reading and writing. Converts between 32-bit integers and their compact byte representations for network or file protocols.",
+      "description_length": 287,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Varint.VarInt64",
+      "description": "Encodes and decodes 64-bit integers using a variable-length format, working with `Cstruct.t` and `Mstruct.t` for serialization. Converts between `t` (an alias for `int64`) and native OCaml `int` values. Used to efficiently transmit or store large integers in binary protocols.",
+      "description_length": 276,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Varint.LengthFieldPrefixing",
+      "description": "Encodes and decodes values of type `t` as variable-length integers within Cstruct and Mstruct buffers. Converts between `t` and integer values, enabling efficient serialization and parsing of length-prefixed data. Used to manage message framing in network protocols where payload sizes are prefixed with variable-length integers.",
+      "description_length": 329,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "varint",
+      "description": "Encodes and decodes 32-bit and 64-bit integers using variable-length encoding, where smaller values occupy fewer bytes. Works with raw byte sequences and integer values, optimizing storage size at the cost of increased processing time. Used to implement efficient data serialization in custom protocols, particularly when minimizing payload size is critical.",
+      "description_length": 358,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Varint",
+      "description": "Encodes and decodes variable-length integers using a compact binary format, working with `Cstruct.t` and `Mstruct.t` for buffer manipulation. Converts between integer values and their serialized representations, supporting both reading from and writing to mutable buffers. Used to efficiently transmit integers over networks or storage with reduced byte overhead.",
+      "description_length": 363,
+      "index": 4,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 5,
+    "meaningful_modules": 5,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 363,
+    "min_description_length": 276,
+    "avg_description_length": 322.6,
+    "embedding_file_size_mb": 0.018602371215820312
+  }
+}

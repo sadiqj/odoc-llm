@@ -1,0 +1,133 @@
+{
+  "package": "dune-site",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 16,
+  "creation_timestamp": "2025-06-18T16:34:14.500913",
+  "modules": [
+    {
+      "module_path": "Dune_site_plugins.Private_.Meta_parser.Parse",
+      "description": "Processes a stream of tokens to build a list of parsed entries, using a provided lexing buffer and initial entry list. Operates on lexing buffers, integers, and custom entry records. Used to incrementally parse and accumulate structured data from a token stream.",
+      "description_length": 262,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_site_plugins.Private_.Plugins.Make",
+      "description": "Provides functions to generate and manipulate file paths, working with strings and lists of strings. Processes directory structures and constructs absolute or relative path representations. Used to build dependency graphs and track file changes during build processes.",
+      "description_length": 268,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_site.Private_.Helpers.Location",
+      "description": "Provides functions to parse, compare, and format location strings representing file paths or identifiers. Works with string-based data to extract components like directory hierarchies or file names. Used to validate input paths and generate human-readable representations in error messages.",
+      "description_length": 290,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_site.Private_.Helpers.Hardcoded_ocaml_path",
+      "description": "Provides a lazy value representing a hardcoded OCaml path, allowing deferred computation of the path string. Works with the `t` type, which is a lazy promise of a string. Used to safely access the OCaml installation path without immediate evaluation.",
+      "description_length": 250,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_site_plugins.Private_.Plugins",
+      "description": "Provides functions to retrieve and manage plugin paths, list loaded plugins, and dynamically load plugins by name. Operates on strings and maintains internal state for loaded plugin modules. Used to initialize and access plugin resources during site generation.",
+      "description_length": 261,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dune_site_plugins.Private_.Meta_parser",
+      "description": "Processes a stream of tokens to construct a list of structured entries by iterating over a lexing buffer and appending results to an initial list. It handles lexing buffers, integers, and custom entry records, enabling incremental parsing of complex data. Operations include token consumption, entry creation, and list accumulation. For example, it can parse a sequence of tokens into a list of key-value pairs or nested data structures.",
+      "description_length": 437,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_site.Private_.Helpers",
+      "description": "Handles location-based operations through parsing, formatting, and path management. Exposes a `t` type for lazy path evaluation and functions to process string-based locations into structured components. Enables validation of input paths, extraction of file names, and safe access to OCaml installation paths. Examples include formatting error messages with path details or deferring path computation until needed.",
+      "description_length": 414,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dune_site_backend.Linker",
+      "description": "Loads a shared library from a file path, initializing its contents for execution. Works with file paths and dynamic library structures. Used to integrate external compiled code into an application at runtime.",
+      "description_length": 208,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_site_plugins.V1",
+      "description": "Loads a specified library by name and checks if a library is available for loading, considering dependencies and module loading success. Works with strings to represent library names and boolean values to indicate availability. Used to dynamically manage library dependencies in runtime environments.",
+      "description_length": 300,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_site_plugins.Private_",
+      "description": "manages string-based plugin paths, loaded module states, and token streams to build structured data. It handles lexing buffers, integers, and custom records, supporting dynamic plugin loading and incremental parsing. Operations include appending entries, consuming tokens, and managing plugin resources. It can convert token sequences into key-value lists or nested structures and track active plugins during site generation.",
+      "description_length": 425,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_site.Private_",
+      "description": "Encapsulates path and location management with a `t` type for delayed evaluation, supporting parsing, validation, and extraction of file components. Provides functions to format paths, access OCaml installation directories, and generate error messages with location context. Operations include safe path resolution and lazy computation to avoid unnecessary I/O. Examples include deferring path resolution in build systems or extracting filenames from user-provided strings.",
+      "description_length": 473,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "dune-site",
+      "description": "Handles project configuration and build automation for OCaml projects by parsing and executing build rules, managing dependencies, and generating necessary artifacts. Operates on OCaml source files, libraries, and metadata stored in structured configuration files. Used to compile and package OCaml applications, ensuring consistent builds across different environments.",
+      "description_length": 370,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_site_backend",
+      "description": "Loads a shared library from a file path, initializing its contents for execution. It handles file paths and dynamic library structures, enabling runtime integration of external compiled code. Functions include loading, symbol resolution, and execution setup. This allows embedding external functionality, such as plugins or extensions, into an application without recompilation.",
+      "description_length": 378,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_site_plugins",
+      "description": "Loads libraries by name, checks availability, and manages dependencies using strings and booleans, enabling dynamic library management. Handles plugin paths, module states, and token streams, supporting lexing, parsing, and structured data construction through operations like token consumption and entry appending. Converts token sequences into key-value pairs or nested structures while tracking active plugins. Supports incremental parsing and resource management during site generation.",
+      "description_length": 490,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_site",
+      "description": "Manages file paths and locations through a `t` type that enables delayed evaluation, allowing safe resolution and manipulation of file components. It offers functions to format paths, access OCaml installation directories, and generate location-aware error messages. Operations like parsing and validation ensure robust handling of user input, while lazy computation minimizes I/O. Users can defer path resolution in build workflows or extract filenames from arbitrary strings efficiently.",
+      "description_length": 489,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dune_site_private",
+      "description": "Provides functions to encode and decode lists of directory entry structures, using a specific path separator character. Operates on a custom `entry` type representing directory location data. Used to parse and generate environment variable values for Dune build system configurations.",
+      "description_length": 284,
+      "index": 15,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 16,
+    "meaningful_modules": 16,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 490,
+    "min_description_length": 208,
+    "avg_description_length": 349.9375,
+    "embedding_file_size_mb": 0.058559417724609375
+  }
+}

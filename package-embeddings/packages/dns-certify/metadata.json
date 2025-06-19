@@ -1,0 +1,70 @@
+{
+  "package": "dns-certify",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 7,
+  "creation_timestamp": "2025-06-18T16:31:04.998055",
+  "modules": [
+    {
+      "module_path": "Dns_certify_mirage.Make.UDP",
+      "description": "Provides functions to manage UDP connections, including listening on ports, handling incoming packets, writing datagrams with optional source and TTL settings, and disconnecting. Operates on types such as IP addresses, Cstruct.t for packet data, and custom error types. Used to route network traffic, process incoming UDP messages, and send packets with controlled network parameters.",
+      "description_length": 384,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dns_certify_mirage.Make.TCP",
+      "description": "The module provides TCP connection management and data transfer operations, including reading, writing, and state control (e.g., shutdown, close), leveraging Lwt for asynchronous I/O. It works with network flows, IP addresses, and ports, alongside a type `t` for connection representation. Use cases include building reliable networked applications, handling real-time data exchange, and managing connection lifecycles in asynchronous environments.",
+      "description_length": 448,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dns_certify_mirage.Make.IP",
+      "description": "Provides pretty-printers for errors, IP addresses, and prefixes. Handles IP layer operations such as demultiplexing incoming packets, sending data with configurable fragmentation and TTL, and generating pseudoheaders for checksums. Works with IP addresses, prefixes, and network interfaces, supporting use cases like packet inspection, custom IP routing, and network diagnostics.",
+      "description_length": 379,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dns_certify_mirage.Make",
+      "description": "Manages network communication through UDP and TCP protocols, enabling packet handling, connection control, and data transfer with asynchronous support. It processes IP addresses, Cstruct.t, and custom types to route traffic, inspect packets, and generate checksums. Functions include sending datagrams with TTL settings, reading and writing TCP streams, and pretty-printing network-related data. Examples include building real-time messaging systems, implementing custom routing logic, and diagnosing network issues through packet analysis.",
+      "description_length": 540,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "dns-certify",
+      "description": "Processes DNS queries and responses using wire-format parsing and serialization. Operates on structured data like domain names, resource records, and message headers. Used to implement DNS resolvers and authoritative servers that handle zone overrides and private IP lookups.",
+      "description_length": 275,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dns_certify_mirage",
+      "description": "Handles network communication via UDP and TCP, processing IP addresses, Cstruct.t, and custom types to route, inspect, and generate packets. Supports asynchronous data transfer, including sending datagrams with TTL, reading and writing TCP streams, and pretty-printing network data. Enables real-time messaging, custom routing, and network diagnostics through packet analysis. Operations include checksum generation, connection management, and protocol-specific data handling.",
+      "description_length": 476,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dns_certify",
+      "description": "Generates and validates X.509 signing requests and TLSA records for DNS-based certificate management, including encoding certificates and CAs into TLSA format and checking certificate validity against CSRs. Processes domain names with specific prefixes and handles DNS updates signed with provided keys. Performs DNS queries to retrieve certificates matching a given CSR and validates their alignment with the request.",
+      "description_length": 418,
+      "index": 6,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 7,
+    "meaningful_modules": 7,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 540,
+    "min_description_length": 275,
+    "avg_description_length": 417.14285714285717,
+    "embedding_file_size_mb": 0.02585887908935547
+  }
+}

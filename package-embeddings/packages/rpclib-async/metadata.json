@@ -1,0 +1,63 @@
+{
+  "package": "rpclib-async",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 6,
+  "creation_timestamp": "2025-06-18T16:30:24.709750",
+  "modules": [
+    {
+      "module_path": "Rpc_async.T",
+      "description": "Provides asynchronous lifting, binding, and extraction operations for values wrapped in a `box` type, enabling sequential execution of deferred computations. Works with `box`, `resultb`, and `rpcfn` types to manage asynchronous results and RPC responses. Supports direct access to deferred values and conversion between deferreds and boxed values.",
+      "description_length": 347,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_async.ErrM",
+      "description": "Provides operations to construct and chain results with error handling, including lifting values into a result type, binding functions that may fail, and handling both success and error cases explicitly. Works with the `resultb` type, which represents computations that can either succeed with a value or fail with an error. Used to manage error propagation in parsing, validation, and stateful computations where failure must be explicitly handled at each step.",
+      "description_length": 462,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_async.GenClient",
+      "description": "Generates client-side RPC implementations using Async.Deferred, with functions to define method signatures, handle argument and return types, and declare RPCs and notifications. It works with OCaml function types, parameter descriptions, and error-handling structures to construct asynchronous client interfaces. Used to create typed, structured RPC clients for services requiring JSON-RPC or similar protocols.",
+      "description_length": 411,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_async.GenServer",
+      "description": "Generates server-side implementations for remote procedure calls using Async.Deferred, defining function signatures, return types, and parameter handling. It works with OCaml function types, error-handling structures, and JSON-RPC-compatible interfaces. It enables creating RPCs that handle unit arguments, structured returns, and notifications.",
+      "description_length": 345,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "rpclib-async",
+      "description": "Provides functions to serialize and deserialize OCaml values to and from XML and JSON strings, supporting custom type definitions. Works with OCaml's native types and user-defined variants, records, and polymorphic variants. Enables data exchange between OCaml applications and external systems using standardized encoding formats.",
+      "description_length": 331,
+      "index": 4,
+      "embedding_norm": 0.9999998807907104
+    },
+    {
+      "module_path": "Rpc_async",
+      "description": "Combines asynchronous computation management, error handling, and RPC generation for both client and server sides. Supports operations on `box`, `resultb`, and `rpcfn` types to sequence deferred actions, handle failures, and structure RPC calls. Enables defining typed RPC methods, converting between deferred and boxed values, and managing error flows in asynchronous workflows. Examples include parsing JSON responses, chaining async validation steps, and implementing client-server communication with structured data exchange.",
+      "description_length": 529,
+      "index": 5,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 6,
+    "meaningful_modules": 6,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 529,
+    "min_description_length": 331,
+    "avg_description_length": 404.1666666666667,
+    "embedding_file_size_mb": 0.02222442626953125
+  }
+}

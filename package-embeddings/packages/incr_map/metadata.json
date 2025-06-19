@@ -1,0 +1,742 @@
+{
+  "package": "incr_map",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 103,
+  "creation_timestamp": "2025-06-18T16:50:17.182867",
+  "modules": [
+    {
+      "module_path": "Incr_map_collate.Collate.Stable.Which_range.V1.Diff",
+      "description": "Provides operations to serialize and deserialize values with differential encoding, supporting custom serialization via Sexp and Bin_prot. Works with tuples representing a value and its associated differential data. Enables applying diffs to reconstruct modified values and combining lists of diffs into a single differential structure.",
+      "description_length": 336,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Make.Let_syntax.Let_syntax.Open_on_rhs",
+      "description": "Monitors a variable for changes and returns a value that evaluates to the current state of the variable when accessed. It operates on `Var.t` and `t` types, where `t` represents a reactive value. This is used to create reactive dependencies in a dataflow system, such as updating a display when a configuration variable changes.",
+      "description_length": 328,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.Collated.Stable.V1.Diff",
+      "description": "Provides serialization and deserialization routines for difference structures using Sexp and Bin_prot formats, along with operations to compute and apply diffs between two values. Works with parameterized types representing pairs of values and their corresponding difference types. Enables efficient storage and reconstruction of changes between structured data, such as versioned records or incremental updates.",
+      "description_length": 412,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.Collated.Make_concrete.Intermediate.Part",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot and Sexp formats, including size calculation, writing, reading, and shape definition. Works with the type `t` and supports polymorphic variants through a constructor tag reader. Used to encode and decode structured data in binary and s-expression formats for storage or communication.",
+      "description_length": 367,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.Collated.Make_concrete.Update.Diff",
+      "description": "Provides serialization and deserialization functions for a custom type `t` using Bin_prot and Sexp formats. Supports size calculation, writing, reading, and conversion to and from S-expressions. Designed for efficient data persistence and interoperability with tools that use S-expressions.",
+      "description_length": 290,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map_collate.With_caching.Range_memoize_bucket.Map.Key",
+      "description": "Provides serialization to S-expression format and a comparator for ordered operations. Works with the abstract type `t` and its associated comparator witness. Used to enable ordered comparisons and S-expression encoding in data structures requiring custom typing.",
+      "description_length": 263,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.With_caching.Range_memoize_bucket.Map.Diff",
+      "description": "Generates and applies differences between maps using key-based comparisons. Operates on typed maps and difference representations derived from key-value pairs. Applies changes from a list of diffs to reconstruct updated maps or computes differences between two map states.",
+      "description_length": 272,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.With_caching.Range_memoize_bucket.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Operates on S-expressions and the Key module's type. Used to deserialize structured data from S-expression format into a domain-specific key representation.",
+      "description_length": 229,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map_collate.With_caching.Range_memoize_bucket.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t, supporting both direct and variant-based reading. Used to persist or transmit Key.t values in a binary format across processes or storage.",
+      "description_length": 310,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.With_caching.Range_memoize_bucket.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison operations. It operates on custom data types, particularly those defined with `Key.t`, and enforces proper folding by incorporating structural metadata like size before element-wise processing. This approach is critical for reliable hashing in persistent data structures and serialization contexts.",
+      "description_length": 461,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.With_caching.Range_memoize_bucket.Set.Elt",
+      "description": "Provides serialization to S-expression format and a type-safe comparator for values of type `t`. Operates on the abstract type `t` and its associated comparator witness. Used to enable consistent ordering and S-expression representation in data processing pipelines.",
+      "description_length": 266,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map_collate.With_caching.Range_memoize_bucket.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including generating a diff from two sets and applying a diff to a set. Works with sets of elements and optional difference structures representing additions and removals. Used to track changes between versions of a dataset and reconstruct a modified dataset from a base version and a diff.",
+      "description_length": 369,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.With_caching.Range_memoize_bucket.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type `Elt.t` using a provided function. Operates on `Sexplib0.Sexp.t` values, transforming them into structured data. Used to parse and validate S-expressions into application-specific representations.",
+      "description_length": 240,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.With_caching.Range_memoize_bucket.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape definition. Operates on a type `t` that is parameterized by `Elt.t`, supporting polymorphic variants through a constructor tag reader. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 357,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.With_caching.Range_memoize_bucket.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Operates on custom data types defined with `Elt.t`, supporting recursive and nested structures. Used to generate consistent, collision-resistant hash values for complex types in serialization and equality checks.",
+      "description_length": 410,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.Collate.Stable.Which_range.V1",
+      "description": "Encodes and decodes values along with their differential changes, using Sexp or Bin_prot for customization. Processes tuples containing a value and its delta, allowing reconstruction of modified states and aggregation of multiple diffs. Supports applying individual diffs to original values and merging lists of changes into a unified structure. Enables efficient versioning and incremental updates of data structures.",
+      "description_length": 418,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Make.Lookup.M",
+      "description": "Provides functions to compare values of type t using a predefined comparator, and to generate comparator witnesses for type t. Works with the t type and its associated comparator_witness to enable ordered operations. Used to sort lists of t values and check equality in a type-safe manner.",
+      "description_length": 289,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Make.Lookup.For_debug",
+      "description": "Converts a map with custom key and value pretty-printing into an S-expression. Accepts functions to serialize keys and values, and operates on associative maps with ordered keys. Used to generate structured debug output for complex data layouts.",
+      "description_length": 245,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Make.State.Stats",
+      "description": "Calculates and aggregates performance metrics such as elapsed time, memory usage, and event counts. It processes data structures like timestamps, counters, and duration records to track system behavior during execution. Used to generate detailed runtime statistics for debugging and optimization purposes.",
+      "description_length": 305,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map.Make.Observer.Update",
+      "description": "Compares two updates using a custom comparator function, enabling precise control over equality checks. Converts updates into S-expression representations using a provided mapping for 'a. Used to serialize or debug update values in a structured format.",
+      "description_length": 252,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Make.Let_syntax.Let_syntax",
+      "description": "Tracks variable changes and provides reactive values that update automatically. It works with `Var.t` for variable tracking and `t` for reactive outputs, enabling dynamic dataflow updates. For example, it can refresh a UI element in response to a configuration change. This allows for declarative, event-driven programming patterns.",
+      "description_length": 332,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map.Make.Expert.Dependency",
+      "description": "Provides functions to create and inspect dependencies that track changes in incremental values. Works with a type representing dependencies tied to incremental computations, allowing retrieval of current values and serialization to S-expressions. Used to manage dynamic data flows where updates need to trigger actions or be logged.",
+      "description_length": 332,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map.Make.Expert.Node",
+      "description": "Provides functions to serialize node values to S-expressions, create nodes with observability callbacks, and manage dependencies and state changes. Operates on a generic node type that encapsulates incremental computation state and dependencies. Used to track and propagate changes in reactive systems, such as updating derived values when underlying data sources change.",
+      "description_length": 371,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map.Make.Expert.Step_result",
+      "description": "Provides serialization of step result data to S-expressions. Works with a type representing the outcome of incremental computation steps, including success or failure states. Used to encode step results for logging or communication between components.",
+      "description_length": 251,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opaque_map.Stable.V1.Diff",
+      "description": "Provides functions to serialize and deserialize a type parameterized by two types, 'a and 'a_diff, using Sexp and Bin_prot formats. Supports operations to compute and apply differences between values of type 'a, with explicit handling of optional diffs. Enables transformation of lists of differences into a single difference structure.",
+      "description_length": 336,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opaque_map.Key.Stable.V1",
+      "description": "Provides serialization and deserialization functions for a type using Bin_prot, including size calculation, writing, reading, and shape definitions. Supports comparison, hashing, and S-expression conversion for the type. Used to enable persistent storage, network transmission, and interoperability with tools relying on S-expressions.",
+      "description_length": 335,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opaque_map.Key.Map.Key",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons in data structures.",
+      "description_length": 269,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opaque_map.Key.Map.Diff",
+      "description": "Provides operations to convert between a structured data type and S-expressions, and to compute and apply differences between maps of key-value pairs. Works with maps where keys are of type Key.t and values are augmented with difference information. Enables precise tracking of changes between two versions of a map, such as in version control or state synchronization.",
+      "description_length": 369,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opaque_map.Key.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with S-expressions and key representations derived from them. Used to deserialize structured data into a specific key format for lookup or comparison operations.",
+      "description_length": 240,
+      "index": 28,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Opaque_map.Key.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t. Used to persist and reconstruct key data structures in binary format for storage or communication.",
+      "description_length": 304,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opaque_map.Key.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information to prevent prefix-based collisions. Used to generate reliable hash values for complex structures like lists and records in hashing algorithms.",
+      "description_length": 383,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Opaque_map.Key.Set.Elt",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons in data structures.",
+      "description_length": 269,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opaque_map.Key.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting between S-expressions and internal representations. Works with sets of elements and optional difference structures representing changes between two states. Used to track modifications between two versions of a dataset and apply those changes to a base set.",
+      "description_length": 356,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opaque_map.Key.Set.Provide_of_sexp",
+      "description": "Converts a S-expression into a custom type `Elt.t` using a provided function. Operates on `Sexplib0.Sexp.t` values, transforming them into structured data. Used to deserialize specific data formats into application-defined types during parsing.",
+      "description_length": 244,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opaque_map.Key.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and variant-based decoding. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 343,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Opaque_map.Key.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, requiring explicit handling of structure size during folding. Used to generate reliable hash values for complex types in hashing-based data structures.",
+      "description_length": 361,
+      "index": 35,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map_collate.Collated.Stable.V1",
+      "description": "Serializes and deserializes structured data using Sexp and Bin_prot, supporting efficient computation and application of diffs between parameterized value pairs. Operations include generating difference types and applying them to transform one value into another. Enables version control for records and incremental updates by tracking changes in structured data. Examples include tracking modifications in a versioned configuration or applying incremental updates to a dataset.",
+      "description_length": 478,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.Collated.Make_concrete.Key",
+      "description": "Provides serialization and deserialization functions for a key type using Bin_prot and Sexp, including size calculation, writing, reading, and shape definition. Works with the `t` type, representing a key, and supports comparison and equality checks. Used to persist and reconstruct key values in binary and s-expression formats.",
+      "description_length": 329,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.Collated.Make_concrete.Value",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot, including size calculation, writing, reading, and shape definition. Supports S-expressions conversion and comparison operations for ordering and equality checks. Designed for efficient binary encoding and decoding of structured data.",
+      "description_length": 317,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.Collated.Make_concrete.Update",
+      "description": "Encodes and decodes a custom type `t` using Bin_prot and Sexp, enabling efficient data storage and exchange. Offers size estimation, direct writing to and reading from binary or textual formats, and conversion between representations. Users can serialize complex structures for persistence or transmission and reconstruct them accurately. Example tasks include saving application state to disk or parsing configuration files from S-expressions.",
+      "description_length": 444,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.Collated.Make_concrete.Intermediate",
+      "description": "Serializes and deserializes values of type `t` using Bin_prot and Sexp, supporting binary and s-expression formats. Includes operations for calculating size, writing to, and reading from streams, along with shape definitions for type compatibility. Polymorphic variants are handled via constructor tag readers, enabling flexible data encoding. Examples include saving complex data structures to files or transmitting them over networks in a structured format.",
+      "description_length": 459,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.Collated.Intermediate.Part",
+      "description": "Provides serialization and deserialization functions for a custom type `t` using Bin_prot and Sexp formats. Works with the type `t` and includes specific operations for reading, writing, and shaping data. Used to encode and decode instances of `t` in binary and S-expression formats for persistence or communication.",
+      "description_length": 316,
+      "index": 41,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map_collate.Collated.Update.Diff",
+      "description": "Provides serialization and deserialization functions for a custom type `t` using Bin_prot and Sexp formats. Supports size calculation, writing, reading, and conversion to and from S-expressions. Designed for efficient data persistence and interoperability with external systems.",
+      "description_length": 278,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.With_caching.Range_memoize_bucket.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a specific type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports polymorphic comparison through the `compare` function. Used to implement custom ordering logic in data structures like priority queues or sorted lists.",
+      "description_length": 372,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.With_caching.Range_memoize_bucket.Map",
+      "description": "combines serialization, comparison, and difference computation for custom key types, enabling ordered operations, data reconstruction, and consistent hashing. it supports S-expression and binary (Bin_prot) encoding/decoding, key parsing, and hash folding for structured data. operations include applying diffs, converting between formats, and generating collision-resistant hashes. examples include deserializing keys from S-expressions, applying incremental updates to maps, and hashing complex key structures for reliable storage or transmission.",
+      "description_length": 548,
+      "index": 44,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map_collate.With_caching.Range_memoize_bucket.Set",
+      "description": "offers a comprehensive set of tools for handling structured data, including S-expression and binary serialization, difference computation, parsing, and hash folding. it works with abstract types and custom data structures, enabling operations like diff generation, data reconstruction, and hash-based comparisons. functions include converting S-expressions to custom types, applying diffs to sets, and folding data into hash states. examples include serializing a dataset to binary, tracking changes between set versions, and generating collision-resistant hashes for nested structures.",
+      "description_length": 586,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.Collate.Stable.Which_range",
+      "description": "Encodes and decodes values with their differential changes, supporting Sexp or Bin_prot for serialization. It handles tuples of values and deltas, enabling reconstruction of modified states and merging of multiple updates. Operations include applying individual diffs and aggregating changes into a unified structure. This allows efficient versioning and incremental updates of complex data.",
+      "description_length": 391,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.Collate.Stable.V1",
+      "description": "Provides serialization and deserialization routines for a three-tuple structure using Bin_prot and S-expressions. Operates on polymorphic types 'k, 'filter, and 'order, enabling binary and textual representation of structured data. Supports custom conversion functions for integrating with external serialization frameworks.",
+      "description_length": 324,
+      "index": 47,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map_collate.Collate.Which_range.Diff",
+      "description": "Provides functions to serialize and deserialize a type parameterized by two types, 'a and 'a_diff, using Sexp and Bin_prot. Supports operations to compute and apply differences between values of 'a, with specialized handling for optional diffs. Works with list-based difference transformations and ensures type-safe binary encoding and decoding.",
+      "description_length": 345,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Make.Instrumentation",
+      "description": "Provides functions to instrument operations like `Incr_map.fold_symmetric_diff` by wrapping their execution with custom timing or logging logic. Operates on a record type `t` containing a polymorphic function that wraps a unit-returning function and returns its result. Used to track execution time of specific map operations, such as measuring how long a transformation takes during a profiling session.",
+      "description_length": 404,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Make.Lookup",
+      "description": "offers ordered operations and pretty-printing for structured data by combining value comparison with custom serialization. It supports sorting and equality checks using a comparator for type t, and enables structured output through S-expression generation with user-defined key and value formatting. Operations include sorting lists, checking equality, and exporting maps to readable formats. Examples include sorting a list of custom objects and generating debug logs for nested associative structures.",
+      "description_length": 503,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Make.For_testing",
+      "description": "Finds the first key in a map that falls within a specified integer range, returning the key and its optional corresponding value. It operates on OCaml's Base.Map type with three generic parameters. Used to quickly locate entries in a map where keys represent numerical intervals.",
+      "description_length": 279,
+      "index": 51,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map.Lookup.M",
+      "description": "Provides functions to compare values of type t using a predefined comparator_witness, and to generate hash values for t. Works with the t type and comparator_witness to ensure consistent ordering and hashing. Used to implement sorted data structures and hash-based lookups in custom types.",
+      "description_length": 289,
+      "index": 52,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map.Lookup.For_debug",
+      "description": "Converts a map with key and value serializers into a S-expression representation. Operates on maps with ordered keys using a comparison function. Used to generate debug-friendly output for inspecting map contents during development.",
+      "description_length": 232,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Incr.Cutoff",
+      "description": "Provides functions to create, modify, and query cutoff values that limit the maximum number of elements processed in a stream. Works with the 'a Incremental.Cutoff.t type, which encapsulates a threshold and a tracking mechanism. Used to enforce processing limits in real-time data pipelines, such as capping the number of events handled per second.",
+      "description_length": 348,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Make.State",
+      "description": "Tracks system behavior by calculating and aggregating performance metrics like elapsed time, memory usage, and event counts. It works with timestamps, counters, and duration records to provide detailed runtime statistics. Operations include data collection, aggregation, and analysis to support debugging and optimization. For example, it can measure the execution time of specific functions or track memory allocation patterns over multiple runs.",
+      "description_length": 447,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Make.Infix",
+      "description": "Processes monadic transformations on wrapped values, applying functions to extract or chain computations within a context. Operates on types conforming to the `t` type constructor, such as option or result. Enables fluent sequencing of operations like optional value unwrapping or error-propagating computations.",
+      "description_length": 312,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Make.Unordered_array_fold_update",
+      "description": "Provides functions to fold over an unordered array while updating a state, supporting accumulation and modification of a secondary value. Operates on tuples of type ('a, 'b) where 'a is the element type and 'b is the accumulated state. Used to process collections in arbitrary order while maintaining and updating a running result, such as aggregating statistics or building a map during traversal.",
+      "description_length": 398,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Make.Scope",
+      "description": "Provides operations to manage and query scope states, including retrieving the top scope, accessing the current scope, and executing code within a specific scope. Works with a scoped state type that tracks hierarchical context. Used to isolate computations and check scope hierarchy during incremental processing.",
+      "description_length": 313,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Make.Var",
+      "description": "Provides functions to create, update, and observe values with change tracking, including setting values, watching for updates, and retrieving current or latest values. Operates on a typed reference structure that encapsulates a value and its change history. Used to manage dynamic state in reactive systems, such as updating UI elements in response to value changes.",
+      "description_length": 366,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Make.Observer",
+      "description": "Provides functions to compare updates with a custom comparator and serialize them into S-expressions using a mapping for 'a. Supports precise equality checks and structured debugging or transmission of update data. Allows developers to define how updates are evaluated and represented. For example, it can compare versioned data changes or convert event logs into readable formats.",
+      "description_length": 381,
+      "index": 60,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map.Make.Update",
+      "description": "Compares two values using a custom comparator function, producing an integer result. Converts a value into an S-expression using a provided conversion function. Designed for use with incremental update structures in data processing pipelines.",
+      "description_length": 242,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Make.Cutoff",
+      "description": "Provides functions to define and evaluate cutoff conditions based on value comparisons, including custom predicates, equality checks, and reference identity. Works with arbitrary data types through provided comparison and equality functions. Used to determine if a value change should trigger an update in incremental computation systems.",
+      "description_length": 338,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Make.Node_value",
+      "description": "Converts values of a wrapped type to S-expressions using a provided converter function. Operates on a polymorphic variant type that encapsulates values of any type. Used to serialize internal node representations for debugging or logging purposes.",
+      "description_length": 247,
+      "index": 63,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map.Make.Packed",
+      "description": "Generates Graphviz DOT format representations of graph structures, supporting edge emission control and user-defined labels/attributes. Operates on a list of `t` values, which encapsulate incremental graph data. Enables visualization of graph states with customizable node metadata for debugging or analysis.",
+      "description_length": 308,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Make.Let_syntax",
+      "description": "Tracks variable changes and generates reactive outputs that update automatically, using `Var.t` for state tracking and `t` for dynamic values. It supports declarative, event-driven updates, such as refreshing a UI element when a configuration changes. Operations include creating, updating, and observing reactive values. Example use cases include real-time data synchronization and interactive application states.",
+      "description_length": 414,
+      "index": 65,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map.Make.Before_or_after",
+      "description": "Handles conversion of time-based state representations to S-expression format. Operates on a specialized time state type that captures whether a point in time is before or after a reference event. Used to serialize logging or event tracking data for debugging or persistence.",
+      "description_length": 275,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Make.Clock",
+      "description": "Provides methods to manipulate a simulated clock, including advancing time, setting alarms, and creating incremental time-based computations. Operates with time values as 63-bit integers, time spans, and incremental state transitions. Used to simulate real-time behavior in event-driven systems, such as scheduling tasks or testing time-sensitive logic.",
+      "description_length": 353,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Make.Expert",
+      "description": "Manages reactive data flows by tracking incremental computations and their dependencies, enabling value retrieval, change propagation, and serialization. It handles node state with observability, allowing callbacks on updates and managing step results that capture computation outcomes. Operations include serializing values, dependencies, and step results to S-expressions. Users can log changes, update derived values dynamically, and encode computation states for inter-component communication.",
+      "description_length": 497,
+      "index": 68,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opaque_map.Stable.V1",
+      "description": "Encapsulates serialization and deserialization for a type parameterized by 'a and 'a_diff, supporting Sexp and Bin_prot formats. Offers operations to compute and apply differences between 'a values, with support for optional diffs and list-to-single difference transformation. Allows precise manipulation of value changes through structured difference representations. Can be used to track incremental updates in data structures or version control systems.",
+      "description_length": 456,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opaque_map.Key.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a specific type `t`, including standard relational operators and functions to determine minimum and maximum values. Works with any data type that supports polymorphic comparison, enabling direct comparison of values without explicit type-specific implementations. Used to enforce consistent ordering in data structures like sorted lists or priority queues.",
+      "description_length": 404,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opaque_map.Key.Map",
+      "description": "offers serialization and deserialization capabilities for structured data using S-expressions and binary formats, along with operations for comparing, tracking changes, and hashing complex types. It supports key types derived from S-expressions, enables difference computation between maps, and ensures consistent hashing through content integration. Users can persist and reconstruct data, track state changes, and generate collision-resistant hashes for custom types. Examples include storing map states, synchronizing versions, and generating unique identifiers for nested data structures.",
+      "description_length": 592,
+      "index": 71,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Opaque_map.Key.Set",
+      "description": "Encodes and decodes values between S-expressions and custom types, supports ordered operations via comparators, and enables efficient binary serialization with size tracking. Offers difference computation and application for sets, allowing version tracking and incremental updates. Transforms S-expressions into structured data using user-defined parsing functions. Implements hash folding for custom types, ensuring consistent and collision-resistant hashing for use in hash tables and similar structures.",
+      "description_length": 506,
+      "index": 72,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Opaque_map.Key.Stable",
+      "description": "Serializes and deserializes values using Bin_prot, with support for size calculation, writing, reading, and shape definitions. Provides comparison, hashing, and S-expressions conversion for seamless data handling. Enables persistent storage, network communication, and tool integration. For example, it allows saving complex data structures to disk or transmitting them over a network.",
+      "description_length": 385,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.Collated.Diff",
+      "description": "Provides serialization and deserialization functions for difference structures using Sexp and Bin_prot formats. Operates on tuples representing key-value pairs and their corresponding differences. Enables conversion of lists of difference structures into a single aggregated difference.",
+      "description_length": 286,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.Collated.Stable",
+      "description": "Provides efficient serialization and deserialization of structured data using Sexp and Bin_prot, with support for generating and applying diffs between parameterized values. Key data types include serialized representations, difference types, and transformed values, with operations for computing and applying changes. It enables version control for records and incremental updates, such as tracking configuration changes or updating datasets with minimal overhead. Examples include maintaining history of data modifications or efficiently propagating updates across distributed systems.",
+      "description_length": 587,
+      "index": 75,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.Collated.Private",
+      "description": "Provides functions to construct a structured data container from an opaque map, row counts, and range specifications. Operates on key-value pairs, collation ranges, and integer ranges to define filtered data segments. Used to encapsulate query results with precise positional and filtering metadata.",
+      "description_length": 299,
+      "index": 76,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map_collate.Collated.For_testing",
+      "description": "Creates a collated structure from a list of key-value pairs, using specified ranges and counts to define the structure's boundaries and size. Operates on lists of tuples and range specifications for keys and ranks. Used to generate test data with precise control over row distribution and filtering.",
+      "description_length": 299,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.Collated.Make_concrete",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot and Sexp formats, along with comparison and equality checks. Works with a custom type `t` to enable binary and s-expression encoding. Used to persist and reconstruct data structures efficiently in binary or textual formats.",
+      "description_length": 306,
+      "index": 78,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.With_caching.Range_memoize_bucket",
+      "description": "Combines comparison, serialization, and difference computation for structured data, enabling ordered operations, data reconstruction, and consistent hashing. It supports S-expression and binary encoding, key parsing, and hash folding, allowing tasks like deserializing keys, applying incremental updates, and generating collision-resistant hashes. Abstract types and custom data structures are handled through functions for diff application, data conversion, and hash state folding. Examples include serializing datasets, tracking set changes, and hashing nested structures for reliable storage.",
+      "description_length": 595,
+      "index": 79,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map_collate.Collate.Which_range",
+      "description": "Encodes and decodes values parameterized by two types, supporting difference computations and applications. Offers type-safe serialization via Sexp and Bin_prot, with specialized handling for optional diffs and list-based transformations. Allows for efficient storage and transmission of structured data with change tracking. Examples include versioning data structures and synchronizing state across systems.",
+      "description_length": 409,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.Collate.Stable",
+      "description": "Encodes and decodes values with differential updates, supporting Sexp and Bin_prot for efficient serialization of tuples and deltas, allowing state reconstruction and merge operations. Handles polymorphic three-tuples with customizable serialization, enabling flexible representation of structured data. Applies individual diffs to update states incrementally or aggregates multiple changes into a unified structure. Examples include versioning complex data structures and converting custom types between binary and textual formats.",
+      "description_length": 532,
+      "index": 81,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map_collate.Collated.Key",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot, including size calculation, writing, reading, and shape definition. Supports S-expressions conversion and comparison operations for ordering and equality checks. Designed for efficient binary encoding and decoding of structured data.",
+      "description_length": 317,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.Collated.Value",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot, including size calculation, writing, reading, and shape definition. Supports S-expressions conversion and comparison operations for ordering and equality checks. Designed for efficient binary encoding and decoding in data interchange scenarios.",
+      "description_length": 328,
+      "index": 83,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map_collate.Collated.Update",
+      "description": "Serializes and deserializes a custom type `t` using Bin_prot and Sexp, enabling efficient data storage and exchange. It offers size estimation, writing to and reading from binary or symbolic formats, and conversion between representations. Users can persist complex data structures and integrate with systems relying on S-expressions. For example, it allows saving a tree structure to disk and reconstructing it later, or converting a list of records into a human-readable S-expression.",
+      "description_length": 486,
+      "index": 84,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map_collate.Collated.Intermediate",
+      "description": "Serializes and deserializes values of type `t` using Bin_prot and Sexp, enabling data persistence and inter-process communication. Supports reading, writing, and transforming `t` instances in both binary and textual formats. Examples include saving a `t` to a file and reconstructing it later, or converting a `t` to a string representation for logging. Operations are tailored to handle the structure and constraints of `t` directly.",
+      "description_length": 434,
+      "index": 85,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Instrumentation",
+      "description": "Provides functions to instrument operations like `Incr_map.fold_symmetric_diff` by wrapping their execution with custom timing or logging logic. Works with the `Instrumentation.t` type, which includes a function that takes a thunk and returns a result after executing it. Used to track execution time of specific map operations, such as measuring how long a transformation takes during a profiling session.",
+      "description_length": 406,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Lookup",
+      "description": "offers operations for comparing and hashing values of type t using a comparator_witness, enabling ordered and hashed data structures, and provides a way to serialize maps with ordered keys into S-expressions for debugging. It supports t and map types, with functions for comparison, hashing, and serialization. Users can create sorted lists or hash tables based on t, and generate human-readable representations of maps. For example, it allows debugging a map of string keys to integer values by converting it into a structured S-expression.",
+      "description_length": 541,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.For_testing",
+      "description": "Finds the minimum and maximum keys within a specified range in a Base.Map.t, returning the key and its optional corresponding value. It operates on maps with arbitrary key and value types, using integer bounds to define the search range. This is useful for efficiently narrowing down key subsets in a map during testing scenarios.",
+      "description_length": 330,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Make",
+      "description": "Combines runtime metrics tracking, monadic computation, and state management to enable detailed system analysis, reactive updates, and incremental computation. It handles types like timestamps, options, results, and scoped states, supporting operations such as folding over collections, comparing values, and serializing data. Examples include measuring function performance, chaining error-prone computations, and generating graph visualizations. It also facilitates reactive UI updates, time simulation, and structured logging of state changes.",
+      "description_length": 546,
+      "index": 89,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opaque_map.Key",
+      "description": "Combines comparison, serialization, and conversion capabilities for structured data, supporting ordered operations, binary and S-expression formats, and hash-based integrity checks. It enables efficient data persistence, version tracking, and consistent ordering across custom types, with operations for minimum/maximum selection, difference computation, and size estimation. Users can serialize complex structures for storage or transmission, compare and hash values for integrity, and transform S-expressions into typed representations. Examples include storing map states, synchronizing data versions, and generating unique identifiers for nested records.",
+      "description_length": 658,
+      "index": 90,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opaque_map.Diff",
+      "description": "Provides functions to serialize and deserialize a type parameterized by two types, 'a and 'a_diff, using Sexp and Bin_prot. Supports generating and applying diffs between values of type 'a, with operations for converting lists of diffs into a single diff. Works with structured data requiring versioned transformations and binary serialization.",
+      "description_length": 344,
+      "index": 91,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Opaque_map.Stable",
+      "description": "Provides serialization and deserialization for values parameterized by 'a and 'a_diff, supporting Sexp and Bin_prot. Enables computation and application of differences between 'a values, including optional diffs and conversion of lists to single differences. Supports tracking incremental changes in data structures or version control systems. Examples include versioning documents, applying small updates to large datasets, and synchronizing state across systems.",
+      "description_length": 464,
+      "index": 92,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.Collate",
+      "description": "Encodes and decodes values with support for differential updates, enabling efficient state tracking and serialization via Sexp and Bin_prot. Provides operations to compute, apply, and merge diffs, with specialized handling for lists, optional changes, and polymorphic tuples. Allows for versioning data structures, incremental state updates, and conversion between binary and textual representations. Examples include synchronizing distributed systems, tracking changes in complex types, and reconstructing states from deltas.",
+      "description_length": 526,
+      "index": 93,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map_collate.Collated",
+      "description": "Encodes and decodes values of type `t` using Bin_prot and Sexp, supporting binary and symbolic representations. Provides size estimation, reading, writing, and conversion between formats, along with equality and ordering operations. It enables persistent storage of complex structures, such as trees or lists, and facilitates data exchange between systems. For instance, it can serialize a record to a file and later deserialize it, or convert a value to an S-expression for debugging.",
+      "description_length": 485,
+      "index": 94,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map_collate.Compare",
+      "description": "Provides functions to convert structured data into S-expression format, supporting custom key, value, and comparison type encodings. Works with tuples of key-value pairs and comparison functions to enable ordered serialization. Used to generate consistent, ordered representations for data that requires partial ordering during serialization.",
+      "description_length": 342,
+      "index": 95,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate.Fold",
+      "description": "Creates a stateful accumulator that processes key-value pairs through add, remove, and optional update operations, maintaining an internal accumulation state. Operates on key-value pairs with a customizable accumulation type, allowing for controlled mutation during data processing. Used to build complex aggregations like counters, maps, or summaries from streams of events.",
+      "description_length": 375,
+      "index": 96,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_map_collate.With_caching",
+      "description": "Provides cached incremental computation for ordered data, using memoization to retain results for specific combinations of order, filter, and range bucket. It handles structured data with comparison, serialization, and difference operations, supporting S-expressions, binary formats, and hash folding for reliable data management. Users can serialize datasets, track incremental changes, and generate consistent hashes for nested structures. Cached results are reused when inputs remain semantically equivalent, even if underlying incremental nodes change.",
+      "description_length": 556,
+      "index": 97,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map.Incr",
+      "description": "Manages dynamic thresholds for stream processing using a tracked value that enforces upper limits on element counts. It supports creating, adjusting, and inspecting cutoffs through operations on the 'a Incremental.Cutoff.t type. For example, it can restrict event processing to 100 per second or adjust limits based on system load. This enables controlled data flow in real-time applications.",
+      "description_length": 392,
+      "index": 98,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "incr_map",
+      "description": "Provides functions to incrementally update a map by applying a transformation to its values, with support for merging changes and handling key existence. Works with associative maps where keys are comparable and values are transformable. Used to efficiently manage dynamic configurations or state updates in real-time systems.",
+      "description_length": 326,
+      "index": 99,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map",
+      "description": "manages dynamic thresholds, instrumentation, comparison, and range queries for maps. It defines types such as 'a Incremental.Cutoff.t, Instrumentation.t, and t, supporting operations like adjusting limits, wrapping functions for timing, comparing values, and finding key extremes. Users can enforce rate limits, profile map operations, generate debuggable S-expressions, and query key ranges efficiently. For instance, it can restrict event processing, measure fold execution time, serialize a map of strings to integers, or find the maximum key within a given interval.",
+      "description_length": 570,
+      "index": 100,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Opaque_map",
+      "description": "provides serialization, deserialization, and difference computation for structured data, supporting Sexp, Bin_prot, and incremental updates. It handles types parameterized by 'a and 'a_diff, enabling version tracking, binary storage, and efficient state synchronization. Users can generate and apply diffs, convert lists of changes into single updates, and ensure data consistency across systems. Examples include versioning documents, applying incremental updates, and storing map states with integrity checks.",
+      "description_length": 511,
+      "index": 101,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_map_collate",
+      "description": "Encodes and decodes values with differential updates, enabling efficient state tracking and serialization through Sexp and Bin_prot. Supports operations to compute, apply, and merge diffs, with specialized handling for lists, optional changes, and polymorphic tuples, while also providing ordered serialization, stateful accumulation, and cached incremental computation. It allows for versioning data structures, incremental updates, and consistent hashing, with examples including synchronizing distributed systems, building aggregations from event streams, and reconstructing states from deltas. Provides size estimation, equality checks, and format conversion, enabling persistent storage and data exchange between systems.",
+      "description_length": 726,
+      "index": 102,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 105,
+    "meaningful_modules": 103,
+    "filtered_empty_modules": 2,
+    "retention_rate": 0.9809523809523809
+  },
+  "statistics": {
+    "max_description_length": 726,
+    "min_description_length": 229,
+    "avg_description_length": 378.31067961165047,
+    "embedding_file_size_mb": 0.37108707427978516
+  }
+}

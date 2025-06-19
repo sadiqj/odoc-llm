@@ -1,0 +1,259 @@
+{
+  "package": "simlog",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 34,
+  "creation_timestamp": "2025-06-18T16:38:40.881270",
+  "modules": [
+    {
+      "module_path": "Simlog.Printer.Builtin.Stdout_Printer",
+      "description": "Provides functions to configure and output strings to standard output. Operates with a configuration record and string data. Used to dynamically control output behavior and display formatted messages during runtime.",
+      "description_length": 215,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Printer.Builtin.Stderr_Printer",
+      "description": "Provides functions to configure and output messages to standard error. Operates with a configuration record and string data. Used to log error messages or debug information during program execution.",
+      "description_length": 198,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Simlog.Printer.Builtin.Stdout_Mutex_Printer",
+      "description": "Provides atomic printing to standard output using a mutex to prevent interleaving of concurrent outputs. Operates on strings and a configuration record controlling behavior such as buffering or formatting. Ensures thread-safe logging in multi-threaded applications where output order must be preserved.",
+      "description_length": 302,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Printer.Builtin.Stderr_Mutex_Printer",
+      "description": "Provides atomic printing to standard error using a mutex to prevent interleaving of output. Operates on strings and a configuration record controlling behavior. Used to safely log messages from concurrent threads without corruption.",
+      "description_length": 232,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Printer.Builtin.File_Printer",
+      "description": "Prints the contents of a file to standard output, using the provided file path. Operates on string-based file paths and outputs raw text. Used to display log files or configuration files during runtime diagnostics.",
+      "description_length": 214,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Printer.Builtin.File_Mutex_Printer",
+      "description": "Provides functions to acquire a mutex, write formatted messages to a file, and release the mutex. Operates on file paths, mutexes, and formatted strings. Used to safely log messages from concurrent processes to a shared file.",
+      "description_length": 225,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Simlog.Filter.Builtin.Filter",
+      "description": "Filters records based on predefined criteria, returning a new record or none if no match is found. It operates on `Recorder.t` type, which encapsulates structured data entries. Used to refine log entries or event data by specific attributes during processing pipelines.",
+      "description_length": 269,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Recorder.Builtin.Recorder",
+      "description": "Records and manipulates option values, offering a direct way to handle presence or absence of data. It works with the 'a option type, enabling safe access and transformation. Used to safely extract values from optional fields in configuration or user input.",
+      "description_length": 257,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Simlog.Builtin.Logger.Filter",
+      "description": "Filters records based on predefined criteria, returning a new record or none if no match is found. Works with the Recorder.t data type, which represents structured data entries. Used to refine log entries or data streams by applying specific exclusion rules.",
+      "description_length": 258,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Builtin.Logger.Printer",
+      "description": "Provides functions to access and modify printing configuration and to output strings. Operates with a configuration record and string data. Used to dynamically adjust output settings and log messages during runtime.",
+      "description_length": 215,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Builtin.Logger.Formatter",
+      "description": "Formats a recorded event into a string using a specified output target, enabling structured logging. Works with `Recorder.t` to extract event data and `Printer.Target.t` to determine output formatting. Used to generate human-readable logs for debugging or system monitoring.",
+      "description_length": 274,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Builtin.Logger.Recorder",
+      "description": "Records and retrieves configuration values from a structured data source. Operates on key-value pairs stored in a custom record type. Used to dynamically access settings during application runtime.",
+      "description_length": 197,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Simlog.Formatter.Builtin.Formatter",
+      "description": "Formats a recorded event into a string using a specified output target. Works with `Recorder.t` to extract event data and `Printer.Target.t` to determine output formatting. Used to generate human-readable logs or structured data outputs for debugging or analysis.",
+      "description_length": 263,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Printer.Target",
+      "description": "Provides functions to create, compare, and serialize target identifiers, including parsing from strings and converting to JSON. Works with the `t` type, which represents a uniquely identifiable target entity. Used to validate user input against predefined targets and generate consistent representations for storage or transmission.",
+      "description_length": 332,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Printer.Builtin",
+      "description": "manages input/output operations through configurable, thread-safe functions for standard output and error, file content display, and cross-process logging. it handles string formatting, mutex-protected writes, and file-based output using configuration records and file paths. examples include safely printing debug messages, displaying log files, and ensuring ordered writes to shared logs. operations support dynamic control over buffering, formatting, and concurrency.",
+      "description_length": 470,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Filter.Builtin",
+      "description": "Filters process `Recorder.t` data by applying criteria to extract or discard records, enabling precise data selection. Key operations include `find` and `filter`, which return either a single matching record or a list of matches. For example, it can isolate log entries with a specific status or timestamp range. This supports efficient data refinement in workflows like analytics or error tracking.",
+      "description_length": 399,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Recorder.Level",
+      "description": "Converts a level value to its string representation. Works with an abstract type representing hierarchical or ordinal levels. Used to generate human-readable labels for game difficulty settings or progress tracking.",
+      "description_length": 215,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Recorder.Trace",
+      "description": "Returns the current trace identifier as a string, allowing for contextual logging and debugging. Operates on a single global state represented by a string type. Used to inject unique identifiers into log messages for tracking request flows in distributed systems.",
+      "description_length": 263,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Recorder.Builtin",
+      "description": "Handles optional values using the 'a option type, providing safe access and transformation mechanisms. It allows for chaining operations and unwrapping values with defined fallbacks, ensuring robust error handling. Users can safely extract data from configuration or input sources that may lack certain fields. For example, it can retrieve a user's email from a record, returning a default value if the field is missing.",
+      "description_length": 420,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Builtin.Logger",
+      "description": "filters refine log entries by applying exclusion rules to recorder.t data, while printer functions adjust output settings and format events into strings using target configurations; configuration values are stored and retrieved from structured key-value records, enabling dynamic control over logging behavior and output; this system allows for precise log filtering, customizable formatting, and runtime configuration adjustments; examples include filtering out debug messages, changing log verbosity on the fly, and generating timestamped output for monitoring.",
+      "description_length": 563,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Simlog.Formatter.Level",
+      "description": "Converts level values to human-readable strings and formats messages with ASCII representations based on the level. Works with the internal level type used to represent log severity. Used to generate log output strings and customize message formatting in diagnostic tools.",
+      "description_length": 272,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Formatter.Builtin",
+      "description": "Handles event formatting by combining recorded data with output targets, enabling customizable log generation. It uses `Recorder.t` to access event details and `Printer.Target.t` to define output structure. This allows for creating readable logs or structured outputs like JSON or CSV. Examples include generating debug traces or exporting event data for external processing.",
+      "description_length": 375,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Simlog.Make.Filter",
+      "description": "Filters out invalid or incomplete records from a stream, returning a new record or nothing if the input is not usable. Works with the Recorder.t type, which represents structured data entries. Used to clean sensor data streams before processing or storage.",
+      "description_length": 256,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Make.Printer",
+      "description": "Provides functions to access and modify output formatting settings, and to print strings with those settings applied. Works with configuration records that define formatting options. Used to generate consistent log outputs and user-facing messages with controlled styling.",
+      "description_length": 272,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Make.Formatter",
+      "description": "Formats a recorded event into a string using a specified output target. It processes data from the Recorder module and directs the output to a Printer.Target. This is used to generate human-readable logs or structured data outputs.",
+      "description_length": 231,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Make.Recorder",
+      "description": "Records and retrieves configuration values from a structured data source. Operates on key-value pairs stored in a custom configuration type. Used to dynamically adjust application behavior based on environment-specific settings.",
+      "description_length": 228,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Filter",
+      "description": "Filters out invalid or incomplete records from a stream, returning a new record or nothing if the input is not usable. Works with the Recorder.t type, which represents structured data entries. Used to clean sensor data before processing, ensuring only valid measurements are passed to downstream systems.",
+      "description_length": 304,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Formatter",
+      "description": "Formats a recorded event into a string using a specified output target. It operates on `Recorder.t` instances and `Printer.Target.t` configurations. Used to generate human-readable logs for debugging or system monitoring.",
+      "description_length": 221,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Recorder",
+      "description": "Records timing and performance data for specific code segments, capturing start and end timestamps and durations. Operates on mutable state and timestamp values to track execution intervals. Used to profile critical sections of code during testing and optimization phases.",
+      "description_length": 272,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Printer",
+      "description": "Provides functions to access and modify printing configuration and to output strings. Operates with a configuration record and string data. Used to dynamically adjust output settings and log messages during runtime.",
+      "description_length": 215,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Builtin",
+      "description": "filters refine log entries by applying exclusion rules to recorder.t data, while printer functions format events into strings using target configurations; key-value records store and retrieve configuration values, enabling dynamic control over logging behavior; this system supports filtering out specific log levels, adjusting verbosity at runtime, and generating timestamped output for real-time monitoring.",
+      "description_length": 409,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog.Make",
+      "description": "Filters process and refine data streams by validating records, formatting output, and managing configuration settings. It handles Recorder.t for structured data, configuration records for settings, and Printer.Target for output destinations. Operations include cleaning sensor data, generating styled logs, and applying dynamic configuration values. Examples include filtering unreliable sensor readings, printing formatted debug messages, and adjusting output based on environment variables.",
+      "description_length": 492,
+      "index": 31,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "simlog",
+      "description": "Provides functions to log messages at different severity levels, including info, warning, and error, with a configurable output destination. Works with a Logger type that defines how messages are formatted and delivered. Used to instrument simulation code with structured logs for debugging and monitoring.",
+      "description_length": 306,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Simlog",
+      "description": "Filters process and refine data streams by validating records, adjusting output settings, formatting events, and tracking performance metrics. It handles `Recorder.t` for structured data, `Printer.Target.t` for output configuration, and timestamped intervals for performance analysis. Operations include cleaning sensor inputs, dynamically modifying log outputs, generating formatted logs, and profiling code execution. Examples include filtering unreliable sensor readings, adjusting log verbosity at runtime, creating debug-friendly event logs, and measuring function execution times.",
+      "description_length": 586,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 34,
+    "meaningful_modules": 34,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 586,
+    "min_description_length": 197,
+    "avg_description_length": 300.5882352941176,
+    "embedding_file_size_mb": 0.12395381927490234
+  }
+}

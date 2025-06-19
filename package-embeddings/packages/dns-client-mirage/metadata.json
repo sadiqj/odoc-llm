@@ -1,0 +1,77 @@
+{
+  "package": "dns-client-mirage",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 8,
+  "creation_timestamp": "2025-06-18T16:31:05.441934",
+  "modules": [
+    {
+      "module_path": "Dns_client_mirage.Make.Transport",
+      "description": "Provides DNS client operations including creating a client with nameservers, establishing connections, sending and receiving DNS messages, and managing context lifecycle. Works with DNS protocols, network addresses, and Lwt-based asynchronous I/O structures. Used to implement DNS resolution with timeout control, random number generation for query IDs, and asynchronous network communication.",
+      "description_length": 393,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dns_client_mirage.Make.UDP",
+      "description": "Provides functions to manage UDP connections, including listening for incoming packets, writing datagrams with optional source and TTL settings, and handling errors through a pretty-printer. Operates on IP addresses, ports, and Cstruct buffers to route and process network data. Used to establish and terminate UDP communication, demultiplex incoming traffic, and send packets with controlled network parameters.",
+      "description_length": 412,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dns_client_mirage.Make.TCP",
+      "description": "This module handles TCP connection lifecycle management, including establishing, closing, and shutting down connections, along with data transfer operations like reading and writing. It works with network flows, IP addresses, ports, and a type `t` for connection state, supporting buffered and nodelay write strategies. Use cases include building reliable networked applications, managing flow control, and handling error conditions during data transmission.",
+      "description_length": 458,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dns_client_mirage.Make.IP",
+      "description": "Provides pretty-printers for errors, IP addresses, and prefixes. Handles IP layer operations such as demultiplexing incoming packets, sending data with configurable fragmentation and TTL, and generating pseudoheaders for checksums. Works with IP addresses, prefixes, and network interfaces, supporting use cases like packet inspection, custom IP layer communication, and network configuration retrieval.",
+      "description_length": 403,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dns_client_mirage.Make",
+      "description": "Manages network communication through UDP and TCP protocols, enabling packet reception, transmission, and connection control. Supports IP address manipulation, error reporting, and low-level network operations like checksum generation and flow management. Functions include sending datagrams with custom TTL, establishing reliable TCP connections, and pretty-printing network-related data. Examples include building custom network protocols, inspecting incoming traffic, and configuring IP layer parameters.",
+      "description_length": 507,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dns_client_mirage.Transport",
+      "description": "Provides DNS client operations including connecting to nameservers, sending and receiving DNS messages, and managing connections with timeouts. Works with DNS protocols, network addresses, and Lwt-based asynchronous I/O structures. Used to establish reliable DNS queries, handle network context management, and generate random values for query IDs.",
+      "description_length": 348,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "dns-client-mirage",
+      "description": "Processes DNS queries and constructs responses using strict protocol adherence. Operates on packet structures, domain names, and resource records. Enables implementation of recursive DNS resolvers and authoritative name servers for custom zone configurations.",
+      "description_length": 259,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dns_client_mirage",
+      "description": "Handles DNS query lifecycle with asynchronous I/O, managing connections, timeouts, and message exchange over network protocols. Operates on types like DNS messages, network addresses, and Lwt promises, supporting query initiation, response parsing, and ID generation. Enables reliable domain name resolution by coordinating with nameservers and handling network context. Examples include resolving a domain, setting custom timeouts, and generating unique query identifiers.",
+      "description_length": 473,
+      "index": 7,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 8,
+    "meaningful_modules": 8,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 507,
+    "min_description_length": 259,
+    "avg_description_length": 406.625,
+    "embedding_file_size_mb": 0.029483795166015625
+  }
+}

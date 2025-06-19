@@ -1,0 +1,378 @@
+{
+  "package": "dolmen_loop",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 51,
+  "creation_timestamp": "2025-06-18T16:42:35.037983",
+  "modules": [
+    {
+      "module_path": "Dolmen_loop.Typer.T.Ty.Var",
+      "description": "Provides comparison, printing, and manipulation functions for type variables, including creating named variables and wildcards. Works with a type `t` representing type variables, supporting tagging and untagging of values. Used to track and annotate type variables during type inference or parsing.",
+      "description_length": 298,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Typer.T.Ty.Const",
+      "description": "Compares, prints, and inspects type constants, which are represented as `Dolmen.Std.Expr.ty_cst` values. It allows creating constants with specific arities and associating values with tags for metadata. Used to manage symbolic representations of types in abstract syntax trees.",
+      "description_length": 277,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Typer.T.T.Var",
+      "description": "Creates and manipulates typed variables used in term expressions, supporting type retrieval, tagging, and comparison. Operates on a specific variable type with string names and associated types. Enables tracking of metadata via tags, useful for attaching additional information during symbolic computation.",
+      "description_length": 306,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dolmen_loop.Typer.T.T.Const",
+      "description": "Provides functions to create, compare, and inspect constant symbols used in terms, including printing, type retrieval, and tagging. Operates on a type representing term constants, which includes path and type information. Used to manage symbolic constants in formal logic representations, such as assigning tags for metadata during parsing or analysis.",
+      "description_length": 352,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dolmen_loop.Typer.T.T.Cstr",
+      "description": "Returns the type of a constant symbol and compares constant symbols. Operates on terms representing algebraic data constructors, extracting type information and validating pattern matching arguments. Used to ensure type consistency when applying constructors in typed pattern matching scenarios.",
+      "description_length": 295,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dolmen_loop.Typer.T.T.Field",
+      "description": "Compares constant symbols using a custom ordering defined by the compare function. Operates on the abstract type t, representing symbolic constants. Used to establish consistent ordering in symbolic expressions during parsing and transformation.",
+      "description_length": 245,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.State.M.Key",
+      "description": "Creates a typed key with associated metadata, allowing for safe comparisons and equality checks. Operates on custom types wrapped in an info structure and a hidden type representation. Used to generate unique identifiers for configuration settings and runtime parameters.",
+      "description_length": 271,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dolmen_loop.Typer.T.Tag",
+      "description": "Creates a tag with an optional pretty-printing function, allowing custom formatting of associated values. Works with polymorphic tagged values wrapped in a type constructor. Used to annotate syntax nodes with metadata during parsing or transformation workflows.",
+      "description_length": 261,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Typer.T.Ty",
+      "description": "Manages type variables and constants with specialized operations for comparison, printing, and inspection. Type variables are represented as `t` and support naming, tagging, and wildcard creation, while constants are handled as `Dolmen.Std.Expr.ty_cst` with arity and tag management. It enables tracking of annotated type variables during inference and symbolic type representation in ASTs. Examples include creating a named type variable, printing a constant with its metadata, and comparing two type variables for equality.",
+      "description_length": 525,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Typer.T.T",
+      "description": "manages symbolic entities in term expressions through variable and constant handling, enabling type-aware operations, tagging, and comparison. It supports variable names with types, constant symbols with path and type metadata, and algebraic constructors with type validation. Operations include retrieving types, comparing symbols, and enforcing ordering for consistent symbolic manipulation. Examples include tracking variable types during expression evaluation, tagging constants for semantic analysis, and ensuring correct pattern matching with constructor types.",
+      "description_length": 567,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Typer.Typer.Ext",
+      "description": "Provides functions to manage custom typing extensions, including creating extensions with specific names and built-in symbols, retrieving built-in symbols for a given language, and listing all registered extensions. Operates on a `t` type representing an extension and a `lang` type for language identifiers. Used to register and access extensions like `bv2nat` that add specialized type handling.",
+      "description_length": 397,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Response.P.Lexer",
+      "description": "Provides functions to describe tokens and process lexical input. Works with lexing buffers and token structures to extract and interpret lexical elements. Used to generate detailed token information during parsing and to drive custom lexical analysis routines.",
+      "description_length": 260,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dolmen_loop.Response.P.Parser",
+      "description": "Parses input streams into structured answer representations using a provided lexer. It processes lexing buffers and token generators to extract sequences of answers or a single answer. Used to convert raw text input into abstract syntax trees for further analysis.",
+      "description_length": 264,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Report.Warning.Status",
+      "description": "Prints a status value to a formatter or converts it to a string representation. Works with the abstract type `t` that represents operational states. Used to generate human-readable logs or error messages from status values.",
+      "description_length": 223,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.State.M",
+      "description": "Encapsulates typed keys with metadata, enabling safe and precise comparisons and equality checks through custom type wrapping. Provides operations to generate and manipulate unique identifiers for configuration and runtime use. Supports structured access to key properties and ensures type safety in key-based data management. Examples include creating versioned configuration keys and enforcing type constraints in dynamic parameter systems.",
+      "description_length": 442,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dolmen_loop.Pipeline.Make",
+      "description": "Creates and manages key-value stores with typed keys, supporting retrieval, setting, and updating values. Works with custom key types and a generic state type `t`, enabling configuration and reporting mechanisms. Used to track configuration settings, manage warnings and errors, and control execution constraints like time and size limits.",
+      "description_length": 339,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dolmen_loop.Typer.T",
+      "description": "Provides a type-checking framework that handles tagged values, type variables, and symbolic expressions. It defines types for tagged values, type variables with names and tags, and symbolic terms with metadata, supporting operations like comparison, printing, and type inspection. Users can create annotated type variables, track variable types during evaluation, and manage symbolic constants with path and type information. Examples include formatting tagged values, comparing type variables, and enforcing type consistency in term expressions.",
+      "description_length": 546,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dolmen_loop.Typer.Typer",
+      "description": "Creates and manages key-value pairs with typed keys, allowing retrieval, setting, and updating of values. Works with custom key types and a state structure that tracks various configuration and diagnostic information. Used to handle warnings, errors, and configuration settings during parsing or analysis workflows.",
+      "description_length": 315,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Typer.Make",
+      "description": "Provides operations for constructing and manipulating type and term expressions, including variable binding, constant definition, and formula generation. Works with structured data types such as `ty`, `term`, and `formula` to represent logical and algebraic constructs. Used to build and analyze symbolic expressions in theorem proving and type inference systems.",
+      "description_length": 363,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Response.P",
+      "description": "Processes input streams by first extracting lexical elements through token description and analysis, then converting these into structured answer representations. It handles lexing buffers and token generators to produce abstract syntax trees from raw text. Key data types include token structures, lexing buffers, and answer representations. Examples include generating detailed token metadata and parsing text into hierarchical answer structures for analysis.",
+      "description_length": 461,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Headers.Field",
+      "description": "Provides hash, equality, and comparison operations for a type `t`, along with functions to retrieve and print its name in different languages. Works with a type `t` representing header fields, supporting language-specific string representations. Used to generate localized field names and format them for output in various languages.",
+      "description_length": 333,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Headers.Make",
+      "description": "Creates and manages key-value stores with typed keys, supporting retrieval, setting, and updating of values. Operates on custom types `t` and `'a key`, enabling configuration and state management through specific keys like `debug`, `reports`, and `time_limit`. Used to handle program state, configuration, and error reporting in a structured, type-safe manner.",
+      "description_length": 360,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Parser.Make",
+      "description": "Creates and manages key-value stores with typed keys, allowing retrieval, setting, and updating of values. Supports operations like fetching with defaults, emitting warnings and errors, and tracking configuration parameters such as report styles, time limits, and file paths. Works with custom key types and a generic state type to manage program-specific settings and diagnostics.",
+      "description_length": 381,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Flow.Make",
+      "description": "Creates and manages key-value pairs with typed keys, allowing retrieval, setting, and updating of values. Works with custom key types and a generic state type `t`, supporting operations like conditional updates and default fallbacks. Used to configure and track runtime settings such as warning limits, report styles, and time constraints.",
+      "description_length": 339,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Report.T",
+      "description": "Provides functions to retrieve and inspect reports, including listing all reports, finding by mnemonic, and extracting attributes like name, mnemonic, kind, and category. Works with polymorphic variants representing different report types such as errors, warnings, and generic reports. Used to generate documentation and query specific report details during analysis or reporting.",
+      "description_length": 380,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Report.Error",
+      "description": "Provides functions to extract error codes, names, and mnemonics, and to print errors, hints, and documentation. Works with a polymorphic error type that wraps error-specific data. Used to construct and handle specific error conditions like user interrupts, timeouts, and internal errors, as well as to report uncaught exceptions with backtraces.",
+      "description_length": 345,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Report.Warning",
+      "description": "Provides functions to convert abstract operational state values into human-readable formats, either as strings or via a formatter. The core type `t` represents different status outcomes, and operations include formatting and string conversion. This enables clear logging, debugging, and user feedback based on internal state representations. For example, it can transform a `t` value into a string like \"success\" or \"timeout\" for display or storage.",
+      "description_length": 449,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dolmen_loop.Report.Conf",
+      "description": "Creates and manipulates configuration settings for warning handling, allowing per-warning or global control over status, enabling, disabling, and marking as fatal. Operates on a custom type `t` and warning-specific identifiers. Used to fine-tune warning behavior in a compiler or linter workflow.",
+      "description_length": 296,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Response.Lexer",
+      "description": "Produces tokens from a lexing buffer and associates descriptive information with each token for precise error reporting. Operates on lexing buffers and custom token types defined by the language's grammar. Used to parse input streams and generate meaningful diagnostics during lexical analysis.",
+      "description_length": 294,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Response.Parser",
+      "description": "Parses a stream of tokens into abstract syntax trees, handling both full file parsing and incremental statement processing. Accepts a lexer function and a lexing buffer, producing lists or optional single results. Designed for use in interactive environments or batch processing of source code.",
+      "description_length": 294,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Logic.Lexer",
+      "description": "Produces tokens from a lexing buffer and associates descriptive information with each token for precise error reporting. Operates on lexing buffers and custom token types defined by the language's grammar. Used to parse input streams and generate meaningful diagnostics during lexical analysis.",
+      "description_length": 294,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Logic.Parser",
+      "description": "Parses a stream of tokens into a list of statements or a single statement, depending on the input source. Works with lexing buffers and custom token types to process structured language input. Used to read and validate source files or handle interactive input line by line.",
+      "description_length": 273,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Typer_intf.Ext",
+      "description": "Provides functions to manage custom typing extensions, including creating extensions with specific names and built-in symbols, retrieving built-in symbols for a given language, and listing all registered extensions. Operates on a `t` type representing an extension and a `lang` type for language identifiers. Used to register and access extensions like `bv2nat` that add specialized type handling.",
+      "description_length": 397,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Alarm",
+      "description": "Creates an alarm with specified time and size constraints, and allows for its removal. Operates on a custom type `t` representing alarm instances. Used to manage timed events with resource limits in real-time systems.",
+      "description_length": 217,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Code",
+      "description": "Provides functions to manage exit codes with integer and string representations, including creation, comparison, and hashing. Initializes exit codes from association lists and defines specific codes for errors, parsing, typing, and generic use cases. Offers utilities to check and trigger exits or aborts based on code definitions.",
+      "description_length": 331,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Expr_intf",
+      "description": "Provides operations for constructing, manipulating, and analyzing type and term expressions, including binding variables, applying constants, and forming logical formulas. Works with structured data types such as type variables, type constants, term variables, and logical formulas. Used to represent and transform expressions in theorem proving and type inference systems.",
+      "description_length": 373,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Flow",
+      "description": "Manages typed key-value stores with flexible state handling, enabling configuration and tracking of dynamic settings through custom keys and generic state. Supports operations like retrieval, conditional updates, and default value fallbacks. It allows precise control over runtime parameters such as warning thresholds and time limits. Examples include adjusting log verbosity or enforcing execution time caps.",
+      "description_length": 410,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dolmen_loop.Flow_intf",
+      "description": "Initializes a flow check with a given state, inspects individual statements to update the state, and finalizes the flow check process. Works with a custom `state` type and labeled keys for tracking flow-sensitive information. Used to analyze control flow in code during static analysis.",
+      "description_length": 286,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Headers",
+      "description": "manages header field operations and configuration state through typed key-value stores, combining type-safe data handling with localization support. It defines a type `t` for header fields with hash, equality, and comparison functions, along with language-specific name retrieval and printing. It also provides a key-value system using custom `t` and `'a key` types, enabling structured access to settings like `debug` and `time_limit`. This allows for dynamic configuration management and localized output generation in a type-safe environment.",
+      "description_length": 545,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Headers_intf",
+      "description": "Provides functions to initialize and inspect header-related state, including license validation and language version checks. Operates on a custom `state` type, a `header_state` type, and key-value pairs with various data types. Used to enforce header constraints during a parsing pipeline, ensuring compliance with specified licenses and language versions.",
+      "description_length": 356,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Logic",
+      "description": "Processes input streams by first generating and annotating tokens, then parsing those tokens into structured statements. Supports custom token types and lexing buffers to enable precise error handling and syntax validation. Allows for both batch processing of source files and line-by-line interaction. Can be used to build interpreters, compilers, or linters with detailed feedback on input correctness.",
+      "description_length": 404,
+      "index": 40,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dolmen_loop.Parser",
+      "description": "manages program state through typed key-value stores, enabling configuration and diagnostic tracking with custom key types and a generic state. It supports setting, retrieving, and updating values, along with error handling and default fallbacks. Operations include configuring report styles, time limits, and file paths, while tracking changes and issuing warnings. Examples include adjusting output formats, enforcing execution time constraints, and managing input/output locations dynamically.",
+      "description_length": 496,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Parser_intf",
+      "description": "Provides functions to initialize parsing state, handle syntax errors, and manage interactive prompts. Works with `state` and `'a key` types to configure parsing behavior and track configuration values. Parses logic files with preludes, processes response statements, and expands statements into generators or raw output.",
+      "description_length": 320,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Pipeline",
+      "description": "manages state through typed key-value stores, enabling configuration, error tracking, and execution control via custom key types and a generic state type `t`. It supports operations such as retrieving, setting, and updating values, allowing for dynamic adjustment of pipeline behavior. This module integrates with pipeline components to influence processing based on runtime conditions. For example, it can enforce time limits or log warnings during pipeline execution.",
+      "description_length": 469,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Report",
+      "description": "offers functions to retrieve, inspect, and format reports, error details, and operational states, while managing warning configurations. It handles polymorphic report and error types, converts internal states to readable formats, and controls warning behavior through configurable settings. Users can list reports, extract error codes, format statuses, and adjust warning levels dynamically. For example, it can generate a report summary, display a specific error with its backtrace, or convert a status value to a string like \"timeout\" for logging.",
+      "description_length": 549,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Response",
+      "description": "Processes input streams by first generating and annotating tokens, then constructing abstract syntax trees from those tokens. Supports detailed error reporting through token metadata and handles both complete file parsing and incremental processing. Accepts custom lexers and buffers, producing structured representations of source code for analysis or execution. Enables tasks such as syntax validation, code transformation, and interactive evaluation.",
+      "description_length": 453,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.State",
+      "description": "Creates and manages key-value stores with typed keys, supporting retrieval, setting, and updating of values. Operates on custom types like `t` and `'a key`, enabling configuration and state tracking for tools with specific constraints. Used to track warnings, errors, logging settings, and resource limits during processing.",
+      "description_length": 324,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Typer",
+      "description": "manages type-checking, configuration, and symbolic expression construction through integrated data structures and operations. It handles tagged values, typed keys, and logical expressions, supporting comparisons, annotations, and term manipulation. Users can track variable types, manage configuration states, and generate formulas for theorem proving. Examples include formatting type variables, resolving key-value mappings, and constructing symbolic terms with bindings.",
+      "description_length": 473,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dolmen_loop.Typer_intf",
+      "description": "This module handles type-checking, inference, and state management for parsing and analyzing code, focusing on dependency-aware processing and incremental checks. It operates on statement structures, type/term representations, and constraint-solving mechanisms to manage definitions, assumptions, and type-checking flow. Use cases include resolving implicit declarations, tracking progress in complex type relationships, and controlling stack-based analysis during compilation.",
+      "description_length": 477,
+      "index": 48,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "dolmen_loop",
+      "description": "Parses input strings into abstract syntax trees for logical languages, with support for custom grammar definitions. Validates parsed structures against type systems specific to theorem proving and logic frameworks. Processes input from formal proof systems and interactive theorem provers.",
+      "description_length": 289,
+      "index": 49,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dolmen_loop",
+      "description": "Combines alarm management, exit code handling, and type-term manipulation with key-value state tracking and flow analysis to support real-time, statically analyzed, and configurable systems. It provides custom types for alarms, exit codes, state configurations, and logical expressions, along with operations to create, inspect, update, and enforce constraints. Users can manage timed events, track program flow, validate headers, and generate structured reports, such as setting a time limit, checking license compliance, or constructing logical formulas. It enables dynamic configuration, error handling, and precise control over parsing, type-checking, and execution workflows.",
+      "description_length": 680,
+      "index": 50,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 51,
+    "meaningful_modules": 51,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 680,
+    "min_description_length": 217,
+    "avg_description_length": 370.47058823529414,
+    "embedding_file_size_mb": 0.18215465545654297
+  }
+}

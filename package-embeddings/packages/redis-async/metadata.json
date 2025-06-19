@@ -1,0 +1,833 @@
+{
+  "package": "redis-async",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 116,
+  "creation_timestamp": "2025-06-18T16:50:55.472068",
+  "modules": [
+    {
+      "module_path": "Redis.Role.Replica.Connection_state",
+      "description": "Manages connection states with operations to convert to S-expression format and compare states for ordering. Works with an abstract type representing the current status of a connection. Used to serialize and evaluate the relative state of network connections in logging and monitoring contexts.",
+      "description_length": 294,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Role.Leader.Replica",
+      "description": "Replica converts internal representations to S-expression format and defines ordering between instances based on their fields. It operates on a structured type containing named fields with specific values. This enables serialization for debugging and consistent sorting in data processing pipelines.",
+      "description_length": 299,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Consumer.Map.Key",
+      "description": "Provides serialization to S-expression format and a comparator for equality and ordering. Works with the abstract type `t` and its associated comparator witness. Used to enable structured data representation and deterministic comparisons in data processing pipelines.",
+      "description_length": 267,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Consumer.Map.Diff",
+      "description": "Generates and applies differences between maps using key-based comparisons. Operates on typed maps and difference representations derived from key-value pairs. Computes changes between map states and applies them to produce updated maps.",
+      "description_length": 237,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Consumer.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with Sexp.t and Key.t data structures. Used to deserialize configuration keys from S-expression formatted data.",
+      "description_length": 190,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Consumer.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with the Key.t type, supporting both direct and variant-based reading. Used to persist or transmit Key.t values in a binary format across processes or storage.",
+      "description_length": 319,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Consumer.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Operates on custom data types with a defined `Key.t` type, using a stateful approach to build consistent and unique hash values. Used to generate reliable hash values for complex structures like lists and variants, ensuring deterministic and collision-free hashing in applications requiring precise data comparison.",
+      "description_length": 513,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Consumer.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key value by parsing and extracting the first element. Works with Sexp.t and string-based keys. Used to deserialize structured data from S-expressions into a keyed format for lookup or processing.",
+      "description_length": 228,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Consumer.Table.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary encoding and decoding, particularly those involving polymorphic variants. Enables efficient storage and transmission of structured data in binary format.",
+      "description_length": 346,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Consumer.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific element type using a provided constructor. Works with S-expressions and custom data types defined by the user. Used to parse structured data from S-expression representations into typed values.",
+      "description_length": 233,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Consumer.Hash_set.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that need to be encoded and decoded in binary format. Used to enable persistent storage or network transmission of structured data.",
+      "description_length": 314,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Consumer.Set.Elt",
+      "description": "Provides serialization to S-expression format and a comparator for equality and ordering. Works with the abstract type `t` and its associated comparator witness. Enables structured data representation and comparison in contexts requiring ordered or serialized values.",
+      "description_length": 267,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Consumer.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting differences to S-expressions and constructing differences from lists. Works with sets of elements and optional difference structures representing additions and removals. Used to track changes between two versions of a set and apply those changes to a base set.",
+      "description_length": 360,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Consumer.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and the module's defined type `Elt.t`. Used to parse structured data from S-expressions into typed values during deserialization.",
+      "description_length": 224,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Consumer.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a specific type `Elt.t` and its polymorphic variant form when needed. Used to persist and reconstruct instances of `Elt.t` in binary format for storage or communication.",
+      "description_length": 331,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Consumer.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Operates on custom data types defined with `Elt.t`, supporting recursive and nested structures. Used to generate consistent, collision-resistant hash values for complex types in serialization and equality checks.",
+      "description_length": 410,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Bulk_io.Make_binable.Redis_bulk_io",
+      "description": "Provides functions to compute the length of a Redis bulk string, consume raw data from an Iobuf with a specified length, and write bulk strings to an async writer. Operates on a custom `T.t` type representing Redis bulk strings, and converts between strings and this type. Used to parse and serialize Redis bulk string data in network protocols.",
+      "description_length": 345,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Bulk_io.Make_stringable.Redis_bulk_io",
+      "description": "Provides functions to determine the length of a Redis bulk string, consume raw data into a bulk string, write a bulk string to an async writer, and convert between strings and the internal representation. Operates on the `T.t` type, which encapsulates Redis bulk string data. Used to parse incoming network data and serialize values for Redis protocol transmission.",
+      "description_length": 365,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Bulk_io.String.Redis_bulk_io",
+      "description": "Provides operations to determine the length of a Redis bulk string, consume raw data from an Iobuf, and write to an Async writer. Works with custom data type `t` representing Redis bulk strings and Iobufs for efficient byte-level processing. Used to parse incoming Redis protocol data and serialize values for network transmission.",
+      "description_length": 331,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Bulk_io.Float.Redis_bulk_io",
+      "description": "Provides operations to determine the length of a Redis bulk string, consume raw data from an Iobuf, and write to an Async writer. Works with custom `t` type representing Redis bulk strings and Iobufs. Used to parse and serialize bulk string data in network protocols.",
+      "description_length": 267,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Bulk_io.Int.Redis_bulk_io",
+      "description": "Provides operations to determine the length of a Redis bulk string, consume data from an Iobuf with a specified length, and write bulk strings to an async writer. Works with custom `t` type representing Redis bulk strings and Iobufs. Used to parse and serialize Redis bulk strings in network communication protocols.",
+      "description_length": 316,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Stream_id.Map.Key",
+      "description": "Handles serialization of key values to S-expressions and provides a comparator for ordered operations. Works with the abstract type `t` and its associated comparator witness. Used to enable ordered data structures and external representation of keys in symbolic formats.",
+      "description_length": 270,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Stream_id.Map.Diff",
+      "description": "Generates and applies differences between maps using key-based comparisons. Operates on typed maps and difference representations derived from key-value pairs. Enables precise transformation of map states by applying computed diffs or deriving diffs from map transitions.",
+      "description_length": 271,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Stream_id.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with Sexp.t and Key.t data structures. Used to deserialize configuration keys from S-expressions in parsing workflows.",
+      "description_length": 197,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Stream_id.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t. Used to persist or transmit Key.t values in a binary format across processes or storage.",
+      "description_length": 294,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Stream_id.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information to prevent prefix-based collisions. Used to generate reliable hash values for complex structures in hashing and equality checks.",
+      "description_length": 369,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Stream_id.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key by parsing its structure and extracting the relevant value. Works with `Sexplib0.Sexp.t` and returns a `key` type. Used to deserialize structured data from S-expressions into a specific domain type during parsing.",
+      "description_length": 249,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Stream_id.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary encoding, particularly those involving polymorphic variants. Used to enable efficient binary persistence of data structures in applications needing fast I/O operations.",
+      "description_length": 376,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Stream_id.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific element type using a provided constructor. Works with S-expressions and custom data types defined by the user. Used to parse structured data from S-expression representations into typed values.",
+      "description_length": 233,
+      "index": 28,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Stream_id.Hash_set.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of a specific type using Bin_prot, including size calculation, writing to a buffer, reading from a buffer, and shape information. Works with custom types that require binary encoding and decoding, particularly those involving polymorphic variants. Used to enable efficient binary persistence of data structures in applications requiring fast I/O operations.",
+      "description_length": 417,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Stream_id.Set.Elt",
+      "description": "Provides serialization to S-expression format and a type-safe comparator for values of type `t`. Operates on the abstract type `t` and its associated comparator witness. Used to enable consistent ordering and S-expression representation in data processing pipelines.",
+      "description_length": 266,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Stream_id.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting a difference to an S-expression and constructing a difference from a list. Works with sets of elements and optional differences between them. Used to track changes between two versions of a set and apply those changes to a base set.",
+      "description_length": 332,
+      "index": 31,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Stream_id.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type `Elt.t` using a provided deserialization function. Operates on `Sexplib0.Sexp.t` values and the `Elt.t` type defined elsewhere. Used to parse structured data from S-expression formats into application-specific representations.",
+      "description_length": 270,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Stream_id.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a specific type `Elt.t` and its polymorphic variant form when required. Used to persist and reconstruct instances of `Elt.t` in binary format, such as saving game states or configuration data.",
+      "description_length": 354,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Stream_id.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of a structured type into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Operates on custom types defined with `Elt.t`, supporting recursive and nested data structures. Used to generate consistent, collision-resistant hash values for complex data during serialization or equality checks.",
+      "description_length": 414,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Group.Map.Key",
+      "description": "Provides serialization to S-expression format and a comparator for equality and ordering. Works with the abstract type `t` and its associated comparator witness. Used to enable structured data representation and deterministic comparisons in data processing pipelines.",
+      "description_length": 267,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Group.Map.Diff",
+      "description": "Generates and applies differences between maps using key-based comparisons. Operates on typed maps and difference representations derived from key-value pairs. Enables precise transformation of map states by applying computed diffs or extracting changes between two map instances.",
+      "description_length": 280,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Group.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with Sexp.t and Key.t data structures. Used to deserialize configuration keys from textual S-expression formats.",
+      "description_length": 191,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Group.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t, supporting efficient binary encoding. Used to persist or transmit Key.t values across processes or storage systems.",
+      "description_length": 321,
+      "index": 38,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Group.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Works with custom data types and collections, using a deterministic and secure hashing strategy. Used to generate consistent and unique hash values for complex types in hashing-based data structures.",
+      "description_length": 397,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Group.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key by parsing its structure and extracting the relevant value. Works with `Sexplib0.Sexp.t` and returns a custom key type. Used to deserialize structured data from S-expressions into a specific domain key for lookup or comparison.",
+      "description_length": 263,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Group.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, including polymorphic variants. Used to enable efficient binary persistence of data structures in applications needing fast serialization.",
+      "description_length": 349,
+      "index": 41,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Group.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific element type using a provided constructor. Works with S-expressions and custom data types defined by the user. Used to parse structured data from S-expression representations into typed values.",
+      "description_length": 233,
+      "index": 42,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Group.Hash_set.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of type `elt` using the Bin_prot format, including size calculation, writing, and reading operations. Works with custom types that need to be encoded and decoded as binary data. Used to enable persistent storage or network transmission of structured data.",
+      "description_length": 315,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Group.Set.Elt",
+      "description": "Provides serialization to S-expression format and a comparator for ordering values. Works with the abstract type `t` and its associated comparator witness. Used to enable consistent ordering and external representation in data serialization pipelines.",
+      "description_length": 251,
+      "index": 44,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Group.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting differences to S-expressions and constructing differences from lists. Works with sets of elements and their corresponding difference representations. Used to track changes between two versions of a set and apply those changes to produce a new set.",
+      "description_length": 347,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Group.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type `Elt.t` using a provided function. Operates on `Sexplib0.Sexp.t` values, transforming them into structured data. Used to deserialize specific domain objects from S-expression formatted data.",
+      "description_length": 234,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Group.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape inspection. Operates on a user-defined type `Elt.t` and its polymorphic variants when necessary. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 319,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Group.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of a structured type into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Operates on custom types defined with `Elt.t`, supporting recursive and composite data structures. Used to generate consistent, collision-resistant hash values for complex data during serialization or equality checks.",
+      "description_length": 417,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Sha1.Map.Key",
+      "description": "Provides serialization to S-expression format and a comparator for equality and ordering. Works with the abstract type `t` and its associated comparator witness. Used to enable consistent comparison and representation of key values in data structures and serialization pipelines.",
+      "description_length": 279,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Sha1.Map.Diff",
+      "description": "Generates and applies differences between maps using key-based comparisons. Operates on typed maps and difference representations derived from key-value pairs. Enables precise transformation of map states by applying computed diffs or extracting changes between specific map instances.",
+      "description_length": 285,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Sha1.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with S-expressions and key data structures derived from a specific domain model. Used to deserialize configuration data from textual S-expression formats into typed key representations.",
+      "description_length": 264,
+      "index": 51,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Sha1.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t, a custom type that may include polymorphic variants. Used to persist or transmit Key.t values efficiently in binary format.",
+      "description_length": 295,
+      "index": 52,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Sha1.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. It operates on custom data types, particularly those defined with `Key.t`, and enforces proper handling of collections by incorporating their size before element-wise folding. Used to generate reliable hash values for complex structures in hashing-based data structures like hash tables.",
+      "description_length": 451,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Sha1.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key by parsing its structure and extracting the relevant value. Works with Sexp.t and custom key types defined in the module. Used to deserialize structured data from S-expressions into a specific key format for lookup or comparison.",
+      "description_length": 265,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Sha1.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of a specific type using the Bin_prot library, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, including polymorphic variants. Used to enable efficient binary persistence of data structures in applications like network protocols or file storage.",
+      "description_length": 383,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Sha1.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific element type using a provided constructor. Works with S-expressions and custom data types defined by the user. Used to parse structured data from S-expression representations into typed values.",
+      "description_length": 233,
+      "index": 56,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Sha1.Hash_set.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of type `elt` using the Bin_prot format, including size calculation, writing, and reading operations. Works with custom data types that require binary encoding, such as records, variants, and polymorphic variants. Used to persist or transmit structured data efficiently in applications needing binary I/O.",
+      "description_length": 365,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Sha1.Set.Elt",
+      "description": "Provides serialization to S-expression format and a comparator for type `t`. Works with the abstract type `t` and its associated comparator witness. Used to enable ordered comparisons and S-expression encoding in data structures requiring custom typing.",
+      "description_length": 253,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Sha1.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting differences to S-expressions and constructing differences from lists. Works with sets of elements and their derived versions, using a specific diff structure for optional changes. Used to track and apply incremental updates between set states in a precise, error-checked manner.",
+      "description_length": 378,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Sha1.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type `Elt.t` using a provided function. Operates on `Sexplib0.Sexp.t` values, transforming them into structured data. Used to deserialize specific domain objects from S-expression formatted data.",
+      "description_length": 234,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Sha1.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a specific type `Elt.t` and its polymorphic variants when necessary. Used to persist and reconstruct instances of `Elt.t` in binary format for storage or communication.",
+      "description_length": 330,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Sha1.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of a data structure into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Works with custom data types defined using the `Elt` module, supporting recursive and nested structures. Used to generate consistent, collision-resistant hash values for serialization, equality checks, and deterministic data processing.",
+      "description_length": 435,
+      "index": 62,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Role.Replica",
+      "description": "Encapsulates connection state management with operations for serialization and comparison, enabling efficient logging and monitoring. It uses an abstract type to represent connection statuses and provides methods to convert these to S-expressions and order them. This allows for structured data representation and prioritization of connection events. For example, it can serialize a connection's state for storage or compare two states to determine which is more recent.",
+      "description_length": 470,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Role.Leader",
+      "description": "Manages structured data by converting it to S-expressions and enforcing field-based ordering. It works with a type that includes named fields and associated values, enabling serialization and deterministic sorting. This allows for easy debugging and reliable data manipulation in pipelines. For example, it can serialize a configuration record or sort a list of events by timestamp.",
+      "description_length": 382,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Role.Sentinel",
+      "description": "Provides serialization to S-expression format and lexicographical comparison for lists of strings. Operates on structured string sequences, enabling ordered data handling and interoperability with S-expression-based systems. Used to standardize string list representations in parsing and data exchange contexts.",
+      "description_length": 311,
+      "index": 65,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Role.For_testing",
+      "description": "Removes all port entries from a network configuration structure. Operates on a custom type representing network settings, modifying it in place. Used to reset network-related properties during test scenarios.",
+      "description_length": 208,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Consumer.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports polymorphic comparison through the `compare` function. Used to implement custom sorting logic and value-based decision making in data processing pipelines.",
+      "description_length": 374,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Consumer.Map",
+      "description": "Combines serialization, comparison, and difference computation for structured data, enabling deterministic operations on key-value mappings. Supports S-expression and binary formats for data exchange, with tools to parse, serialize, and hash complex types. Allows tracking and applying changes between map states, as well as generating collision-resistant hashes for structured content. Examples include deserializing configuration keys, applying delta updates to maps, and generating unique hashes for variant types.",
+      "description_length": 517,
+      "index": 68,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Consumer.Set",
+      "description": "offers serialization to S-expressions and binary formats, along with difference computation, parsing, and hash folding for custom types. it handles operations on sets and structured data, including comparing, tracking changes, and generating consistent hashes. it supports converting between S-expressions and typed values, applying set differences, and serializing to binary. examples include parsing a serialized set, applying a difference to update a set, and generating a hash for a nested structure.",
+      "description_length": 504,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Consumer.Table",
+      "description": "Parses S-expressions into key-value structures and handles binary serialization and deserialization of custom types. Supports operations on Sexp.t and Bin_prot for encoding and decoding, including size calculation and data traversal. Allows conversion of structured data between textual and binary formats for efficient processing. Can be used to read and write polymorphic variant types or extract fields from S-expressions for further manipulation.",
+      "description_length": 450,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Consumer.Hash_set",
+      "description": "Converts S-expressions to typed values using a custom constructor and supports binary serialization and deserialization of custom types with Bin_prot, including size, write, read, and shape operations. Handles structured data by parsing from S-expressions and encoding to binary formats for storage or transmission. Users can define custom types and perform conversions between their in-memory representations and serialized forms. For example, a user might parse an S-expression into a custom record type or save a list of integers in binary format for later retrieval.",
+      "description_length": 570,
+      "index": 71,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Consumer.Hash_queue",
+      "description": "This module provides operations for managing key-value pairs in a structured queue, including insertion, lookup, modification, and traversal with support for ordered element access and key-based reordering. It works with a hybrid data structure that combines hash table efficiency for key access with queue semantics for ordered processing, enabling safe or unsafe (exn) variants for operations like dequeuing and updating. Use cases include scenarios requiring ordered data management with fast lookups, such as task scheduling or caching systems where element position and uniqueness are critical.",
+      "description_length": 599,
+      "index": 72,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Bulk_io.String",
+      "description": "Handles Redis bulk string operations, including length calculation, data parsing from Iobufs, and serialization to Async writers. It works with the custom type `t` and Iobufs to process and transmit Redis protocol data efficiently. Examples include parsing incoming network data and encoding values for output. Supports low-level byte manipulation and stream-based I/O operations.",
+      "description_length": 380,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Bulk_io.Int",
+      "description": "Handles Redis bulk string length validation, data consumption from Iobufs, and serialization to async writers. Operates on custom `t` types for bulk strings and Iobufs, supporting parsing and encoding operations. Allows reading a bulk string of known length from a buffer and writing it to a stream. Enables efficient handling of Redis protocol messages in networked applications.",
+      "description_length": 380,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Bulk_io.Float",
+      "description": "Handles Redis bulk string data by calculating lengths, parsing from Iobufs, and writing to Async writers. Operates on a custom `t` type and Iobufs, enabling low-level network protocol manipulation. Supports reading and writing bulk strings in binary formats. Examples include parsing incoming data streams and generating serialized output for network transmission.",
+      "description_length": 364,
+      "index": 75,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Bulk_io.Make_stringable",
+      "description": "Converts values of type `t` to and from string representations, enabling serialization and deserialization. Works with custom data types that require textual encoding. Used to generate human-readable logs and parse configuration inputs.",
+      "description_length": 236,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Bulk_io.Make_binable",
+      "description": "Provides functions for serializing and deserializing values of type `t` using the Bin_prot library, including size calculation, writing, and reading operations. Works with the `t` type, supporting both direct and polymorphic variant representations. Used to enable binary serialization of custom types in applications requiring efficient data persistence or network transmission.",
+      "description_length": 379,
+      "index": 77,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Stream_id.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports the `compare` function to establish order. Used to implement custom sorting logic or decision-making based on value relationships.",
+      "description_length": 349,
+      "index": 78,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Stream_id.Map",
+      "description": "Encapsulates key-value mapping functionality with support for serialization, comparison, and transformation. It manages operations on abstract map types, including S-expression and binary serialization, difference computation, and hash folding for structured data. Key types can be parsed from S-expressions, serialized with Bin_prot, and compared for ordered use. It enables precise map manipulation, configuration deserialization, and consistent hashing for complex data structures.",
+      "description_length": 484,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Stream_id.Set",
+      "description": "Combines serialization, comparison, and difference tracking for sets of elements, enabling structured data handling and version control. Supports S-expression and binary formats, along with hash folding for secure data representation. Converts between S-expressions and custom types, applies set differences, and ensures consistent ordering. Can parse configuration data, track set modifications, and generate collision-resistant hashes for nested structures.",
+      "description_length": 459,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Stream_id.Table",
+      "description": "Converts S-expressions into domain-specific keys and enables binary serialization and deserialization of custom types with efficient I/O. It handles `Sexplib0.Sexp.t` for key extraction and supports Bin_prot operations like writing, reading, and size calculation for polymorphic variants. Users can parse structured data into typed keys and persist complex data structures in binary format. This allows for seamless data transformation between textual and binary representations in applications requiring both flexibility and performance.",
+      "description_length": 538,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Stream_id.Hash_set",
+      "description": "Converts S-expressions to typed values using user-defined constructors and supports binary serialization and deserialization of custom types with Bin_prot, including size, write, read, and shape operations. Handles structured data parsing and efficient binary storage for polymorphic variants and user-defined types. Allows conversion of nested data structures from textual S-expressions to in-memory values and enables compact binary representation for storage or transmission. Examples include parsing configuration files and persisting complex data across sessions.",
+      "description_length": 568,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Stream_id.Hash_queue",
+      "description": "This module provides operations for managing key-value queues with ordered insertion and retrieval, including enqueueing, dequeuing, and key-based modifications like replacement or removal. It supports traversal, filtering, and transformation of elements while maintaining uniqueness and order, with functions for safe or exception-raising variants. Use cases include task scheduling, ordered data processing, and maintaining consistent state in systems requiring key-based access and FIFO/LIFO semantics.",
+      "description_length": 505,
+      "index": 83,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Group.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports polymorphic comparison, enabling direct use in sorting and decision-making logic. Used to implement custom ordering in data structures like priority queues or to enforce specific sorting rules in algorithms.",
+      "description_length": 426,
+      "index": 84,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Group.Map",
+      "description": "combines serialization, comparison, and transformation capabilities for structured data, enabling efficient handling of key-value mappings. It supports S-expression and binary formats for data exchange, along with operations to compute and apply differences between map states. Custom parsing and hashing mechanisms allow for flexible key manipulation and secure data integrity checks. Examples include deserializing configuration keys from S-expressions, applying incremental updates to maps, and generating stable hashes for complex data structures.",
+      "description_length": 551,
+      "index": 85,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Group.Set",
+      "description": "offers serialization to S-expressions and binary formats, along with difference computation, deserialization to custom types, and hash folding. It handles operations on sets and their representations, enabling version tracking, data persistence, and structured hashing. Functions include converting between S-expressions and domain objects, applying set differences, and generating collision-resistant hashes. Users can serialize data for storage, track changes between set states, and ensure consistent hashing for equality checks.",
+      "description_length": 532,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Group.Table",
+      "description": "Extracts domain-specific keys from S-expressions and enables binary serialization/deserialization of custom types, including polymorphic variants. Operates on `Sexplib0.Sexp.t` to generate keys and uses Bin_prot for efficient binary I/O. Supports operations like parsing structured data, converting to keys, and serializing complex types to binary. Examples include deserializing configuration data into lookup keys and persisting polymorphic variant data in binary format.",
+      "description_length": 473,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Group.Hash_set",
+      "description": "Converts S-expressions to typed values using a custom constructor and supports binary serialization and deserialization of elements using Bin_prot. Handles structured data parsing and storage, enabling efficient data manipulation and transfer. Can parse an S-expression representing a list of integers into a typed list or serialize a custom record to a binary buffer. Provides direct control over data conversion and persistence workflows.",
+      "description_length": 440,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Group.Hash_queue",
+      "description": "The module provides operations for managing key-value queues, including enqueueing, dequeuing, lookup, and modification, with support for both safe and exception-raising variants. It works with a structured, ordered data structure that ensures key uniqueness while enabling traversal, aggregation, and transformation of elements. Use cases include task scheduling, data processing pipelines, and cache management, where ordered access and key-based operations are critical.",
+      "description_length": 473,
+      "index": 89,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Sha1.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports comparison via the `compare` function. Used to implement custom sorting logic and value comparisons in data structures like trees or lists.",
+      "description_length": 358,
+      "index": 90,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Sha1.Map",
+      "description": "combines serialization, comparison, and transformation capabilities for key types, enabling efficient storage, comparison, and versioning of map data. it supports S-expression and binary serialization, difference computation, and hash folding for structured data. operations include parsing, diff application, and hash generation for key-based types. examples include converting maps to text format, applying incremental updates, and generating stable hashes for key values.",
+      "description_length": 474,
+      "index": 91,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Sha1.Set",
+      "description": "Offers serialization to S-expressions and binary formats, along with diff operations and deserialization capabilities for custom types. Supports ordered comparisons, incremental updates, and hash folding for structured data. Converts between S-expressions and domain objects, and enables efficient persistence and reconstruction of elements. Can track set changes, serialize and deserialize complex types, and generate collision-resistant hashes for consistent data handling.",
+      "description_length": 475,
+      "index": 92,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Sha1.Table",
+      "description": "Parses S-expressions into structured keys and enables binary serialization and deserialization of custom types. Supports operations like size calculation, writing, and reading using Bin_prot, with support for polymorphic variants. Converts nested S-expressions into usable key formats for efficient data handling. Can transform JSON-like data into lookup keys and persist complex data structures in binary form for storage or transmission.",
+      "description_length": 439,
+      "index": 93,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Sha1.Hash_set",
+      "description": "Converts S-expressions to typed values using a custom constructor and supports binary serialization and deserialization of `elt` values with Bin_prot. Enables parsing of structured data from textual S-expressions and efficient storage or transmission of custom data types in binary form. Examples include converting an S-expression representing a list of integers into a typed list and writing a record to a binary file for later reconstruction. Operations include parsing, size estimation, writing, and reading of binary data.",
+      "description_length": 527,
+      "index": 94,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Sha1.Hash_queue",
+      "description": "The module provides operations for managing key-value pairs in a structured queue, including enqueueing, dequeuing, lookup, and modification with support for both safe and unsafe variants. It enables traversal, aggregation, and transformation of elements while maintaining insertion order and key uniqueness. Use cases include ordered data processing, task scheduling, and maintaining consistent state in scenarios requiring efficient key-based access and modification.",
+      "description_length": 469,
+      "index": 95,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Make.Redis_bulk_io",
+      "description": "Provides operations to determine the length of a Redis bulk string, consume raw data from an Iobuf, and write to an Async writer. Works with custom data types representing Redis bulk strings and Iobufs. Used to parse and serialize Redis protocol elements in network communication.",
+      "description_length": 280,
+      "index": 96,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Bulk_io.Redis_bulk_io",
+      "description": "Provides operations to determine the length of a Redis bulk string, consume raw data from an Iobuf, and write to an Async writer. Works with custom data type `t` representing Redis bulk strings and Iobufs for efficient byte-level manipulation. Used to parse incoming Redis protocol data and serialize values for network transmission.",
+      "description_length": 333,
+      "index": 97,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Make_field.Redis_bulk_io",
+      "description": "Provides functions to determine the length of a Redis bulk string, consume raw data into a buffer, write bulk strings to an async writer, and convert between strings and the internal representation. Operates on a custom type `t` that encapsulates bulk string data. Used to process Redis protocol messages efficiently during network I/O operations.",
+      "description_length": 347,
+      "index": 98,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Bulk_io",
+      "description": "Handles Redis bulk string operations including length calculation, data consumption from Iobufs, and writing to Async writers. Operates on custom type `t` and Iobufs, enabling efficient parsing and serialization of Redis protocol data. Supports reading and writing bulk strings in network communication. Examples include parsing incoming messages and encoding values for transmission.",
+      "description_length": 384,
+      "index": 99,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Resp3",
+      "description": "Provides functions to parse and manipulate RESP3 data elements, including simple strings, blob strings, errors, and numeric values from byte buffers. Works with custom types representing RESP3 messages and low-level Iobuf operations for reading and validating input. Used to process Redis protocol messages in networked applications, ensuring correct parsing of structured data streams.",
+      "description_length": 386,
+      "index": 100,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Key_event",
+      "description": "Handles key space notifications from Redis, mapping event types to and from strings. Works with a variant type representing specific event triggers like \"keyevent\" or \"expired\". Used to parse and serialize Redis key event messages for monitoring changes in the data store.",
+      "description_length": 272,
+      "index": 101,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Cursor",
+      "description": "Provides operations to compare cursors for equality, convert between string representations, and generate S-expressions. Works with a custom type `t` representing a cursor state. Used to serialize and deserialize cursor values in command implementations like SCAN.",
+      "description_length": 264,
+      "index": 102,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Role",
+      "description": "manages Redis node operations through structured data handling, connection state tracking, and network configuration manipulation. It supports serialization to S-expressions, field-based sorting, and string list comparison, along with network port removal. Operations include converting connection states to readable formats, sorting event records by timestamp, and standardizing string lists for data exchange. It enables precise control over node behavior and state management in distributed systems.",
+      "description_length": 502,
+      "index": 103,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Auth",
+      "description": "Provides functions to validate credentials, generate tokens, and check expiration dates. Works with user records containing identifiers, passwords, and token timestamps. Used to authenticate API requests and manage session lifetimes.",
+      "description_length": 233,
+      "index": 104,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Stream_id",
+      "description": "Manages Redis Stream IDs with custom comparison, serialization, and data structure operations. Supports ordered comparisons, map and set manipulations with serialization, and key-value queue management. Converts S-expressions to typed keys, tracks set differences, and handles binary I/O for complex data. Enables task scheduling, configuration parsing, and consistent data versioning in stream-based applications.",
+      "description_length": 414,
+      "index": 105,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Consumer",
+      "description": "manages structured key-value data with support for serialization, comparison, and change tracking across multiple formats. it handles custom types, enabling operations like parsing S-expressions, applying set differences, and generating hashes for nested structures. it supports ordered access and modification of elements, allowing efficient task scheduling or cache management. examples include deserializing a configuration map, updating a set with a delta, and generating a unique hash for a variant type.",
+      "description_length": 509,
+      "index": 106,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Group",
+      "description": "Encapsulates Redis consumer group operations with support for custom data types, serialization, and key management. It handles comparison, serialization, and transformation of structured data, enabling efficient key extraction, set operations, and binary I/O. Users can parse S-expressions into typed values, track set changes, and manage ordered key-value queues with precise control over data flow. Examples include deserializing configuration keys, applying incremental map updates, and persisting polymorphic variants in binary format.",
+      "description_length": 539,
+      "index": 107,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Redis.Sha1",
+      "description": "Combines comparison, serialization, and transformation capabilities for structured data, enabling efficient storage, versioning, and manipulation of key-based types. Supports S-expression and binary formats, with operations for parsing, diffing, hashing, and converting between textual and binary representations. Examples include serializing maps for storage, applying incremental updates to data structures, and generating stable hashes for consistent lookups. Provides tools for managing custom types, including ordered comparisons, size calculation, and safe or unsafe modifications of key-value pairs.",
+      "description_length": 606,
+      "index": 108,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Make",
+      "description": "Handles Redis bulk string length calculations, data parsing from Iobufs, and serialization to Async writers. Operates on custom types for bulk strings and Iobufs, enabling low-level protocol manipulation. Supports reading and writing Redis elements over network streams. Can extract string lengths, process incoming data, and encode responses for transmission.",
+      "description_length": 360,
+      "index": 109,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Make_field",
+      "description": "Encapsulates bulk string handling with a custom type `t` for efficient Redis protocol processing. Offers functions to calculate length, parse raw data into buffers, write to async writers, and convert between string formats. Supports low-level network I/O operations by managing bulk string serialization and deserialization. Examples include parsing incoming Redis messages and constructing response payloads for transmission.",
+      "description_length": 427,
+      "index": 110,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Key",
+      "description": "Provides functions to generate, compare, and hash cryptographic keys of type `t`. Operates on key structures used in secure communication protocols. Used to validate key pairs and ensure consistency in encrypted data exchanges.",
+      "description_length": 227,
+      "index": 111,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Field",
+      "description": "Provides functions to create, compare, and serialize field identifiers, along with operations to check their validity and retrieve associated metadata. Works with the `t` type, representing unique field descriptors in a structured data model. Used to enforce consistency in data validation and transformation pipelines.",
+      "description_length": 319,
+      "index": 112,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis.Value",
+      "description": "Provides functions to compare, serialize, and deserialize values of type t, including equality checks and conversion to and from JSON. Works with the abstract type t, which represents arbitrary values in a unified format. Used to implement dynamic typing in a scripting engine and to store configuration data in a portable form.",
+      "description_length": 328,
+      "index": 113,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "redis-async",
+      "description": "Provides functions for connecting to a Redis server, executing commands, and handling responses with automatic serialization and deserialization of OCaml values. Works with Redis data types such as strings, hashes, lists, and sets, as well as custom application-defined types. Enables real-time client tracking and supports Redis 6+ features like server-side caching and module interactions.",
+      "description_length": 391,
+      "index": 114,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Redis",
+      "description": "Encapsulates cryptographic key management, field identifier handling, and value serialization, each operating on abstract types for secure and structured data manipulation. Supports key validation, field metadata retrieval, and JSON-based value conversion for flexible data processing. Enables secure communication, data consistency checks, and dynamic configuration storage. Can validate key pairs, enforce field constraints, and serialize arbitrary data for storage or transmission.",
+      "description_length": 484,
+      "index": 115,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 122,
+    "meaningful_modules": 116,
+    "filtered_empty_modules": 6,
+    "retention_rate": 0.9508196721311475
+  },
+  "statistics": {
+    "max_description_length": 606,
+    "min_description_length": 190,
+    "avg_description_length": 359.23275862068965,
+    "embedding_file_size_mb": 0.42183494567871094
+  }
+}

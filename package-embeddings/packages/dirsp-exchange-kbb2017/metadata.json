@@ -1,0 +1,140 @@
+{
+  "package": "dirsp-exchange-kbb2017",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 17,
+  "creation_timestamp": "2025-06-18T16:34:17.425904",
+  "modules": [
+    {
+      "module_path": "Dirsp_exchange_kbb2017.Make.Crypto.ED25519",
+      "description": "Computes ED25519 public keys from 32-byte secret keys and verifies or generates signatures using 32-byte keys. Operates on 32-byte raw key and message data, ensuring cryptographic validity. Used to validate signed messages with a known public key or produce signatures with a precomputed key pair.",
+      "description_length": 297,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dirsp_exchange_kbb2017.Make.TOPLEVEL",
+      "description": "Creates and manages KBB2017 sessions using prekey exchange, enabling secure message sending and receiving with cryptographic authentication. Operates on keypair records, session states, and message structures to establish shared secrets and verify message integrity. Used to initiate secure communication channels where one party authenticates with a long-term identity key and verifies messages using signed pre-keys.",
+      "description_length": 418,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dirsp_exchange_kbb2017.Make.Type_key",
+      "description": "Creates and manipulates key objects, converting them to and from bitstrings, validating their structure, and producing copies. Operates on opaque key types representing cryptographic keys. Used to ensure data integrity during serialization and validation processes.",
+      "description_length": 265,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dirsp_exchange_kbb2017.Make.Type_iv",
+      "description": "Creates and manipulates initialization vectors, converting them to and from bitstring representations. Operates on a custom type `t` that encapsulates IV data. Validates IV objects and raises an exception if they are malformed.",
+      "description_length": 227,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dirsp_exchange_kbb2017.Make.Type_msg",
+      "description": "Creates a message structure with a validation check to ensure it conforms to a specific record_msg type, raising an error if validation fails. Operates on a custom record_msg type wrapped in a module-specific namespace. Used to enforce type correctness during message construction in protocol exchanges.",
+      "description_length": 303,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dirsp_exchange_kbb2017.Make.Type_keypair",
+      "description": "Creates and validates a cryptographic keypair structure, clones existing keypair instances, and ensures type safety during operations. Works with a specific record type representing public and private key pairs. Used to manage secure communication endpoints in protocol implementations.",
+      "description_length": 286,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dirsp_exchange_kbb2017.Make.Type_them",
+      "description": "Tracks conversation sessions with specific parties using a structured record type. It includes a construction function to initialize session records and an assertion function to validate their integrity. Used to ensure session data remains consistent during protocol interactions.",
+      "description_length": 280,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dirsp_exchange_kbb2017.Make.Type_sendoutput",
+      "description": "Creates and validates a record structure used to track message-sending state in a cryptographic protocol exchange. Operates on a custom record type that encapsulates session-specific data for message persistence. Ensures integrity of state transitions by enforcing type correctness before processing message updates.",
+      "description_length": 316,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dirsp_exchange_kbb2017.Make.Type_recvoutput",
+      "description": "Creates and validates objects representing the state of received message updates for persistence. Operates on a custom record type encapsulating message-specific data. Ensures integrity of message state tracking during protocol exchanges.",
+      "description_length": 238,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dirsp_exchange_kbb2017.Make.UTIL",
+      "description": "Performs key derivation using HKDF with input keying material, salt, and info, returning two derived keys. Executes X3DH key agreement protocols for both initiating and responding to messages using elliptic curve Diffie-Hellman. Generates cryptographic key pairs from a seed, supporting both ED25519 and DH25519 algorithms.",
+      "description_length": 323,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dirsp_exchange_kbb2017.Make.RATCHET",
+      "description": "Derives send and receive keys for secure message transmission using cryptographic ratchet structures, and attempts to decrypt messages with provided key pairs. It operates on record types encapsulating key pairs, ratchet states, and message data. Used to establish and maintain forward secrecy in encrypted communication protocols.",
+      "description_length": 331,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dirsp_exchange_kbb2017.Make.HANDLE",
+      "description": "Calculates key exchange requirements and generates messages for secure session updates using cryptographic key pairs and message records. Processes sending and receiving operations to produce output structures for communication protocols. Handles state transitions in a KBB2017 session exchange context.",
+      "description_length": 303,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dirsp_exchange_kbb2017.Make.Encoding",
+      "description": "Converts bytes to hexadecimal buffers, parses hexadecimal buffers into 32-byte or 12-byte arrays, and handles encoding failures. Operates on byte buffers and individual byte elements. Used for encoding binary data as hex strings and decoding hex representations into binary formats.",
+      "description_length": 282,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dirsp_exchange_kbb2017.Make.Crypto",
+      "description": "Computes and verifies ED25519 signatures using 32-byte keys, handling raw byte sequences for messages and keys. It generates public keys from secret keys and validates signatures against known public keys. Operations include signing messages with a secret key and verifying signatures with a corresponding public key. This enables secure message authentication and key-based digital signatures.",
+      "description_length": 394,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dirsp_exchange_kbb2017.Make",
+      "description": "Encodes and decodes binary data between byte buffers and hexadecimal representations, supporting 32-byte and 12-byte array conversions. It also generates and verifies ED25519 signatures using 32-byte keys, enabling secure message signing and verification. Operations include converting bytes to hex, parsing hex to binary, signing messages, and validating signatures. This allows for secure data encoding, transmission, and authentication in cryptographic workflows.",
+      "description_length": 466,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "dirsp-exchange-kbb2017",
+      "description": "Provides functions for key exchange, message encryption, and authentication using the KBB2017 protocol. Operates on cryptographic keys, session states, and encrypted message payloads. Enables secure communication channels in applications requiring end-to-end encryption and formal verification guarantees.",
+      "description_length": 305,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dirsp_exchange_kbb2017",
+      "description": "Encodes and decodes binary data to and from hexadecimal, handling 32-byte and 12-byte arrays, and supports ED25519 signature generation and verification. It enables secure message signing, signature validation, and binary-hex conversion for cryptographic communication. Users can transform byte buffers into human-readable hex strings, reconstruct binary data from hex, and ensure message integrity through digital signatures. This facilitates secure data exchange by providing encoding, decoding, and authentication mechanisms.",
+      "description_length": 528,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 17,
+    "meaningful_modules": 17,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 528,
+    "min_description_length": 227,
+    "avg_description_length": 327.1764705882353,
+    "embedding_file_size_mb": 0.062209129333496094
+  }
+}

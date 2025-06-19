@@ -1,0 +1,329 @@
+{
+  "package": "aws-sts",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 44,
+  "creation_timestamp": "2025-06-18T16:40:55.872300",
+  "modules": [
+    {
+      "module_path": "Aws_sts.Types.PolicyDescriptorType",
+      "description": "Provides operations to construct, parse, and serialize policy descriptors using AWS ARN strings. Works with a record type containing an optional ARN field. Used to generate query parameters and JSON representations for AWS policy configurations.",
+      "description_length": 245,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.Tag",
+      "description": "Provides operations to create, parse, and serialize tag structures. Works with string-based key-value pairs and JSON or query format representations. Used to construct and process AWS resource tags from XML, JSON, or query parameters.",
+      "description_length": 234,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.Credentials",
+      "description": "Encapsulates AWS credentials including access key, secret key, session token, and expiration time. Parses credentials from XML nodes and converts them to query parameters or JSON format. Used to manage temporary security credentials in AWS API requests.",
+      "description_length": 253,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.FederatedUser",
+      "description": "Represents a user from a federated identity provider, supporting creation from ID and ARN, parsing from XML nodes, and conversion to query parameters, JSON, and from JSON. Works with string-based identifiers and AWS-specific data structures. Used to handle user authentication tokens and map them to AWS resources.",
+      "description_length": 314,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Aws_sts.Types.PolicyDescriptorListType",
+      "description": "Provides functions to construct, parse, serialize, and deserialize lists of policy descriptors. Operates on lists of `PolicyDescriptorType.t` values, converting them to XML nodes, query parameters, and JSON structures. Used to handle AWS policy descriptor data in request and response serialization workflows.",
+      "description_length": 309,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.TagListType",
+      "description": "Creates and manipulates lists of tags, supporting parsing from XML nodes, conversion to AWS query parameters, and serialization/deserialization to JSON. Operates on lists of `Tag.t` values, enabling structured data handling in cloud-related workflows. Used to process tag collections in API requests and responses, ensuring consistent data representation.",
+      "description_length": 355,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.AssumedRoleUser",
+      "description": "Provides operations to construct, parse, and serialize objects representing assumed role users, including converting between XML nodes, query parameters, and JSON representations. Works with string-based identifiers and AWS ARN values. Used to process AWS STS response data and prepare inputs for API requests.",
+      "description_length": 310,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.TagKeyListType",
+      "description": "Provides operations to create a list of strings, parse XML nodes into such a list, convert the list to a query structure, serialize to JSON, and deserialize from JSON. Works with lists of string-type values, typically used for handling AWS tag keys. Used to process and format tag key data for API requests and responses.",
+      "description_length": 321,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.PackedPolicyTooLargeException",
+      "description": "Provides functions to construct, parse, and serialize a policy size exception, including converting between XML nodes, query parameters, and JSON representations. Works with AWS-specific types such as `Aws.BaseTypes.String.t`, `Ezxmlm.nodes`, and `Aws.Json.t`. Used to handle and transmit errors when an IAM policy exceeds size limits in AWS API interactions.",
+      "description_length": 359,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.GetFederationTokenResponse",
+      "description": "Provides functions to construct, parse, and serialize AWS GetFederationTokenResponse data, including handling credentials, federated user details, and policy size. Works with custom types such as Credentials.t, FederatedUser.t, and Aws.BaseTypes.Integer.t. Used to process API responses and prepare data for HTTP queries or JSON serialization.",
+      "description_length": 343,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.InvalidIdentityTokenException",
+      "description": "Provides constructors and parsers for handling invalid identity token errors, including conversion to and from JSON and query formats. Works with AWS string types and JSON structures. Used to serialize and deserialize error responses in AWS API interactions.",
+      "description_length": 258,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.GetAccessKeyInfoRequest",
+      "description": "Provides functions to construct, parse, and serialize a request containing an access key ID, including converting between XML nodes, query parameters, and JSON representations. Works with string-based access key identifiers and structured request data. Used to process incoming API requests that require validation or transformation of access key information.",
+      "description_length": 359,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.GetFederationTokenRequest",
+      "description": "Provides functions to construct, parse, and serialize requests for federated token generation, including setting names, policies, ARNs, duration, and tags. Works with string, integer, list, and JSON data types. Used to generate AWS STS requests for temporary credentials with custom permissions.",
+      "description_length": 295,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.IDPRejectedClaimException",
+      "description": "Provides functions to construct, parse, and serialize an exception type representing rejected claims in an identity management system. Works with string-based messages and XML or JSON data structures for input and output. Used to handle and communicate specific validation failures during identity proofing processes.",
+      "description_length": 317,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.AssumeRoleWithSAMLResponse",
+      "description": "Provides functions to construct, parse, and serialize SAML-based role assumption responses, including setting credentials, assumed role user details, and SAML-specific attributes. Works with custom types such as Credentials.t, AssumedRoleUser.t, and base types like Integer and String. Used to process AWS STS responses from SAML assertions, enabling role-based access in federated environments.",
+      "description_length": 395,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.MalformedPolicyDocumentException",
+      "description": "Provides constructors and parsers for handling AWS policy document errors, including creating instances from messages, parsing XML nodes, and serializing to query parameters, JSON, and deserializing from JSON. Works with AWS-specific types such as strings, XML nodes, query parameters, and JSON structures. Used to process and validate malformed policy documents in AWS request handling.",
+      "description_length": 387,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.RegionDisabledException",
+      "description": "Provides functions to create, parse, and serialize exceptions related to disabled regions, including converting between XML nodes, query parameters, and JSON representations. Works with custom exception type containing optional message information. Used to handle AWS API responses where region availability is restricted.",
+      "description_length": 322,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.IDPCommunicationErrorException",
+      "description": "Provides functions to construct, parse, and serialize error objects from AWS IDP communication failures. Works with XML nodes, JSON structures, and query parameters. Used to handle and convert error responses in AWS SDK interactions.",
+      "description_length": 233,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.GetCallerIdentityRequest",
+      "description": "Provides functions to create, parse, and serialize a request structure for retrieving caller identity information. Operates on a unit type, converting it to query parameters and JSON representations. Used to prepare and process identity validation requests in AWS integration workflows.",
+      "description_length": 286,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Aws_sts.Types.ExpiredTokenException",
+      "description": "Provides operations to create, parse, and serialize exceptions related to expired tokens, including converting between XML nodes, query parameters, and JSON representations. Works with custom exception type containing optional message and error details. Used to handle AWS API responses where token expiration is a specific error condition.",
+      "description_length": 340,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.DecodeAuthorizationMessageResponse",
+      "description": "Provides operations to construct, parse, and serialize authorization message responses, including converting between XML nodes, query parameters, and JSON representations. Works with AWS string types, XML node structures, and JSON data formats. Used to process and encode responses from AWS authorization services in API interactions.",
+      "description_length": 334,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.AssumeRoleResponse",
+      "description": "Provides functions to construct, parse, and serialize responses containing temporary security credentials, assumed role user information, and policy size details. Works with types representing AWS credentials, assumed role user data, and integer policy sizes. Used to process and format AWS STS assume role responses for API interactions and data exchange.",
+      "description_length": 356,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.GetAccessKeyInfoResponse",
+      "description": "Provides functions to construct, parse, and serialize access key information, including converting between XML nodes, query parameters, and JSON representations. Works with AWS-specific string types and structured data formats like JSON and XML. Used to process and encode responses from AWS API calls related to access key details.",
+      "description_length": 332,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.DecodeAuthorizationMessageRequest",
+      "description": "Encodes and decodes authorization messages using XML and JSON formats, supporting parsing from XML nodes and serialization to query parameters. It works with AWS string types and JSON structures, enabling integration with AWS service requests. The module is used to process and validate authorization tokens in API gateway interactions.",
+      "description_length": 336,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.GetSessionTokenResponse",
+      "description": "Provides functions to construct, parse, and serialize session token responses, including converting between XML nodes, query parameters, and JSON structures. Works with credentials and structured data representing AWS session tokens. Used to process API responses and prepare data for HTTP requests.",
+      "description_length": 299,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.InvalidAuthorizationMessageException",
+      "description": "Provides constructors and parsers for handling invalid authorization error responses, including conversion to and from JSON and query formats. Works with string messages and AWS-specific data structures like `Aws.Query.t` and `Aws.Json.t`. Used to generate and process error payloads in API interactions where authorization checks fail.",
+      "description_length": 336,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.GetSessionTokenRequest",
+      "description": "Provides functions to construct, parse, and serialize a request for a session token, including setting duration, serial number, and token code. Works with integer and string types for configuration parameters and XML or JSON data formats. Used to generate AWS STS session token requests from structured data or XML input.",
+      "description_length": 321,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.AssumeRoleWithSAMLRequest",
+      "description": "Provides operations to construct, parse, and serialize requests for assuming an IAM role using SAML assertions. Works with strings, integers, and custom types representing SAML assertions, role ARNs, and policy details. Used to generate AWS API-compatible query parameters and JSON payloads for federated access scenarios.",
+      "description_length": 322,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.AssumeRoleWithWebIdentityResponse",
+      "description": "Provides functions to construct, parse, and serialize responses from assuming an IAM role with a web identity token, including handling credentials, assumed role user details, and policy sizes. Works with custom types such as Credentials.t, AssumedRoleUser.t, and base types like String.t and Integer.t. Used to process AWS STS API responses in applications requiring temporary security credentials via federated identities.",
+      "description_length": 424,
+      "index": 28,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Aws_sts.Types.GetCallerIdentityResponse",
+      "description": "Provides operations to construct, parse, and serialize AWS GetCallerIdentity response data, including methods to convert between XML, query parameters, and JSON formats. Works with string-based identifiers such as user ID, account, and ARN. Used to process AWS API responses in applications requiring identity verification or role-based access control.",
+      "description_length": 352,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.AssumeRoleWithWebIdentityRequest",
+      "description": "Provides functions to construct, parse, and serialize requests for assuming an IAM role using a web identity token. Works with strings, integers, and custom types like PolicyDescriptorListType and Aws.Json.t. Used to generate AWS API queries and JSON payloads for role assumption workflows.",
+      "description_length": 290,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types.AssumeRoleRequest",
+      "description": "Provides functions to construct, parse, and serialize AWS assume role request data, including setting role ARN, session name, policies, duration, tags, and external IDs. Works with types such as strings, lists of policy descriptors, tag lists, and JSON structures. Used to generate HTTP query parameters and JSON payloads for AWS STS API calls.",
+      "description_length": 344,
+      "index": 31,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Aws_sts.AssumeRole",
+      "description": "Handles AWS STS AssumeRole requests by converting input parameters into signed HTTP requests and parsing HTTP responses into structured outputs. Processes input of type AssumeRoleRequest and produces output of type AssumeRoleResponse, along with service-specific errors. Parses HTTP status codes and XML error responses to validate and map AWS errors to internal representations.",
+      "description_length": 379,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.AssumeRoleWithSAML",
+      "description": "Converts SAML-based role assumption requests into HTTP format, including setting action and version parameters. Processes HTTP responses to extract structured output or specific error details based on AWS XML formatting. Operates on SAML request and response types, handling error parsing for AWS-specific failure conditions.",
+      "description_length": 325,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Aws_sts.AssumeRoleWithWebIdentity",
+      "description": "Handles the conversion of input parameters into HTTP requests for assuming an AWS role via web identity, including proper query encoding and setting action and version parameters. Processes HTTP responses to extract structured output or specific error details based on AWS error formats. Works with AWS service-specific request and response structures, as well as internal error representations.",
+      "description_length": 395,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.DecodeAuthorizationMessage",
+      "description": "Handles conversion between native input and HTTP requests for AWS authorization messages, encoding parameters into query format and setting action and version. Processes HTTP responses into structured outputs or specific error types based on AWS XML deserialization. Parses AWS error responses into domain-specific errors, validating status codes and error types against defined specifications.",
+      "description_length": 394,
+      "index": 35,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Aws_sts.Errors_internal",
+      "description": "Provides functions to convert error values to HTTP status codes, string representations, and from strings, along with a list of common errors. Works with the abstract type `t` representing error states. Used to handle error serialization and HTTP response mapping in API layers.",
+      "description_length": 278,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Aws_sts.GetAccessKeyInfo",
+      "description": "Handles AWS request signing and HTTP conversion for accessing IAM access key information. Converts between native input and HTTP requests, and parses AWS XML responses into structured outputs or errors. Works with specific request and response types defined for the GetAccessKeyInfo API.",
+      "description_length": 287,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Aws_sts.GetCallerIdentity",
+      "description": "Handles AWS request signing and HTTP conversion for identity retrieval, using service-specific parameters and signature versions. Converts between native input and HTTP requests, and decodes HTTP responses into structured output or error types. Parses AWS error responses into domain-specific error representations based on HTTP status and XML content.",
+      "description_length": 352,
+      "index": 38,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Aws_sts.GetFederationToken",
+      "description": "Handles AWS security token generation by converting input parameters into signed HTTP requests for the specified service, encoding necessary action and version parameters. Processes HTTP responses to extract federated credentials or specific error details based on AWS XML structure. Works with service-specific request and response types, and custom error representations for AWS API interactions.",
+      "description_length": 398,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.GetSessionToken",
+      "description": "Handles AWS request signing and HTTP conversion for session token operations. Converts input data into HTTP requests with proper query encoding and parses HTTP responses into structured outputs or errors. Processes AWS error responses and maps them to internal error types based on specified status codes.",
+      "description_length": 305,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts.Types",
+      "description": "Encapsulates AWS-related data structures for policy descriptors, tags, credentials, and user information, enabling construction, parsing, and serialization across XML, JSON, and query formats. Operates on record types like `PolicyDescriptorType.t`, `Tag.t`, `Credentials.t`, and `FederatedUser.t`, supporting conversions between data representations for API interactions. Examples include generating query parameters for IAM policies, processing STS responses with temporary credentials, and handling tag collections in resource management. Facilitates error handling, token validation, and role assumption workflows through specialized data types and format conversions.",
+      "description_length": 671,
+      "index": 41,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "aws-sts",
+      "description": "Provides functions for constructing and sending HTTP requests to AWS services, parsing JSON responses, and handling authentication signatures. Works with types such as request configurations, HTTP methods, headers, and JSON-encoded data. Used to interact with specific AWS services like S3 for object storage or DynamoDB for database operations.",
+      "description_length": 345,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Aws_sts",
+      "description": "Handles AWS STS operations by converting input parameters into signed HTTP requests and parsing responses into structured outputs, supporting role assumption, SAML, web identity, and federated token workflows. Processes request and response types such as AssumeRoleRequest, SAMLResponse, and Credentials, with error handling for AWS-specific XML and status code mappings. Enables tasks like generating temporary credentials, validating SAML assertions, and extracting federated user information from API responses. Supports data conversions between XML, JSON, and query formats for policy descriptors, tags, and credentials.",
+      "description_length": 624,
+      "index": 43,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 44,
+    "meaningful_modules": 44,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 671,
+    "min_description_length": 233,
+    "avg_description_length": 341.6818181818182,
+    "embedding_file_size_mb": 0.16026020050048828
+  }
+}

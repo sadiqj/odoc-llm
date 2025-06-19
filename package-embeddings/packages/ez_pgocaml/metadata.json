@@ -1,0 +1,49 @@
+{
+  "package": "ez_pgocaml",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 4,
+  "creation_timestamp": "2025-06-18T16:27:39.077823",
+  "modules": [
+    {
+      "module_path": "EzPG.Mtimes",
+      "description": "Provides functions to generate initialization lists for database schema upgrades and downgrades, and to retrieve table-specific upgrade or downgrade steps by name. Works with lists of strings representing migration steps. Used to manage version-specific database changes during deployment or rollback.",
+      "description_length": 301,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "ez_pgocaml",
+      "description": "Provides functions to compare and apply versioned database schema changes, including checking current version, generating migration scripts, and applying patches. Works with version records, migration steps, and SQL statements. Used to automate schema updates during application deployment.",
+      "description_length": 290,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzPGUpdater",
+      "description": "Handles database schema updates by applying a list of upgrade steps, each associated with a version number and a function that modifies the database. Operates on versioned upgrade and downgrade operations, using a PGOCaml connection to execute changes. Used to incrementally migrate a PostgreSQL database to a new state while supporting rollbacks.",
+      "description_length": 347,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "EzPG",
+      "description": "Generates and retrieves database migration steps as lists of strings, enabling version-controlled schema updates and rollbacks. Supports structured handling of upgrade and downgrade sequences for specific tables. Allows developers to programmatically construct migration workflows and execute targeted database changes. Example tasks include generating a list of steps for a specific version or fetching downgrade instructions for a given table.",
+      "description_length": 445,
+      "index": 3,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 4,
+    "meaningful_modules": 4,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 445,
+    "min_description_length": 290,
+    "avg_description_length": 345.75,
+    "embedding_file_size_mb": 0.014962196350097656
+  }
+}

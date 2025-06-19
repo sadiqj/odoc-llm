@@ -1,0 +1,273 @@
+{
+  "package": "mirage-tc",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 36,
+  "creation_timestamp": "2025-06-18T16:38:20.496488",
+  "modules": [
+    {
+      "module_path": "Tc.As_L0.K",
+      "description": "Provides operations for equality, comparison, and hashing of values, along with JSON serialization and deserialization, size calculation, and binary reading/writing. Works with a single abstract type `t` representing serialized data. Used to handle data interchange between systems, ensuring consistent representation and transformation across formats.",
+      "description_length": 352,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.As_AL1.K",
+      "description": "Provides operations for equality, comparison, and hashing of values, along with JSON serialization and deserialization, size calculation, and binary reading/writing. Works with the abstract type `t` used to represent structured data. Used to encode and decode data for network transmission and persistent storage.",
+      "description_length": 313,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.Bin_prot0",
+      "description": "Converts values to and from JSON, compares values, and serializes/deserializes values using Bin_prot encoding. Operates on a single type `t` with fixed serialization semantics. Used for data persistence, network communication, and interoperability with binary formats.",
+      "description_length": 268,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tc.Bin_prot1",
+      "description": "Converts values between JSON and a binary format using specialized serialization and deserialization functions. Handles custom data types wrapped in a polymorphic variant 'a t, enabling efficient binary storage and retrieval. Supports comparison operations and size calculations for structured data.",
+      "description_length": 299,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.Bin_prot2",
+      "description": "Converts between JSON representations of two distinct types, compares tuples of values from separate type-specific comparison functions, and serializes/deserializes tuples using binary protocols. Works with pairs of types wrapped in a polymorphic variant type. Used to encode and decode structured data in formats requiring precise type mapping and binary efficiency.",
+      "description_length": 367,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.Bin_prot3",
+      "description": "Converts and compares tuples of three elements by serializing to and from JSON, and by calculating binary sizes and writing/reading binary representations. Operates on tuples where each element has corresponding serialization, comparison, and binary handling functions. Used to encode structured data for storage or transmission and to ensure consistent ordering of composite values.",
+      "description_length": 383,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.App1",
+      "description": "Provides operations to compare, hash, and serialize values of a generic type 'a t, including JSON conversion, size calculation, and binary reading/writing. Works with custom data types wrapped in 'a t, enabling interoperability with serialization and communication protocols. Used to ensure consistent representation and transformation of data structures in networked and persisted contexts.",
+      "description_length": 391,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.App2",
+      "description": "Provides operations to combine equality, comparison, hashing, JSON serialization, and binary I/O functions for pairs of types. Works with tuples structured as ('a, 'b) t, enabling consistent handling of paired data. Used to implement protocol buffers or message formats that require bidirectional conversion between structured data and serialized representations.",
+      "description_length": 363,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tc.App3",
+      "description": "Provides equality, comparison, and hashing operations for a custom type `t`, along with JSON serialization and deserialization functions for REST communication. Includes methods to determine the size of serialized data and functions for writing to and reading from binary streams. Designed for efficient data handling in networked and persisted storage scenarios.",
+      "description_length": 363,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tc.Bool",
+      "description": "Provides equality, comparison, and hashing operations for boolean values. Supports JSON serialization and deserialization, along with binary writing and reading for efficient storage. Works directly with the built-in boolean type to enable safe data interchange and persistence.",
+      "description_length": 278,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tc.String",
+      "description": "Provides string comparison, hashing, and JSON serialization/deserialization. Works with the built-in string type for operations like size calculation and binary writing/reading. Used to encode and decode string values in REST APIs and serialize data for storage or transmission.",
+      "description_length": 278,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.Cstruct",
+      "description": "Provides equality, comparison, and hashing operations for binary data structures. Handles serialization and deserialization to and from JSON, and supports reading from and writing to binary streams. Works with raw byte sequences represented as Cstruct.t for low-level network and file I/O tasks.",
+      "description_length": 295,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tc.Unit",
+      "description": "Provides equality, comparison, and hashing operations for the unit type. Serializes and deserializes unit values to and from JSON, and computes size for serialization formats. Includes reader and writer interfaces for handling unit data in I/O contexts.",
+      "description_length": 253,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.Option",
+      "description": "Provides equality, comparison, and hashing operations for optional values. Works with the `t` type, representing values that may be absent. Serializes and deserializes values using JSON and a custom format, and supports size calculation and I/O operations.",
+      "description_length": 256,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.O1",
+      "description": "Provides operations to compare, hash, and serialize values wrapped in an option type. Supports JSON conversion, size calculation, and custom serialization through reader/writer interfaces. Enables safe handling of optional values in data exchange and storage contexts.",
+      "description_length": 268,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.Pair",
+      "description": "Provides equality, comparison, and hashing operations for pairs, along with JSON serialization and deserialization functions. Works with the `t` type, representing structured data tuples. Used to validate, sort, and transmit pair data between systems via REST and binary formats.",
+      "description_length": 279,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.P2",
+      "description": "Combines two type-specific operations into a tuple structure, enabling unified handling of equality, comparison, hashing, JSON serialization, and binary I/O for paired data. Works with any two data types wrapped in a product type, supporting operations like checking equality, generating hashes, and converting to or from JSON. Used to standardize interactions with structured data in network protocols and data storage formats.",
+      "description_length": 428,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.Triple",
+      "description": "Provides equality, comparison, and hashing operations for a custom type `t`, along with JSON serialization and deserialization functions for REST communication. Includes methods to determine the size of serialized data and to write or read instances to or from a stream. Used to handle structured data in network protocols and persistent storage.",
+      "description_length": 346,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.T3",
+      "description": "Provides equality, comparison, and hashing operations for tuples of three elements, along with JSON serialization and deserialization, size calculation, and binary I/O for structured data. Works with tuples where each component has corresponding operations for equality, comparison, hashing, JSON conversion, and serialization. Used to standardize handling of triplets in data exchange formats and persistent storage.",
+      "description_length": 417,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tc.Int",
+      "description": "Provides operations for comparing, hashing, and serializing integer values. Supports JSON conversion and binary serialization through specific reader and writer functions. Handles integer equality checks and size calculations for data formatting.",
+      "description_length": 246,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.Int32",
+      "description": "Provides operations for comparing, hashing, and serializing 32-bit integers. Supports JSON conversion and binary reading/writing for data interchange. Works with the `int32` type to ensure consistent handling in network and storage contexts.",
+      "description_length": 241,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.Int64",
+      "description": "Handles 64-bit integer operations including equality checks, comparisons, and hashing. Supports JSON serialization and deserialization, as well as binary reading and writing for storage or transmission. Works with the `int64` type for precise numeric handling in systems requiring large integer values.",
+      "description_length": 302,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.List",
+      "description": "Provides operations to compare, hash, and serialize list structures, along with JSON conversion and size calculation. Works with the `t` type, representing a list of elements. Used to validate list equality, generate JSON representations, and manage data serialization in network protocols.",
+      "description_length": 290,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.L1",
+      "description": "Provides operations to compare, hash, and serialize list-based data structures, with support for JSON conversion and custom serialization formats. Includes methods to determine size, write to, and read from binary streams. Designed for handling lists in contexts requiring structured data exchange and efficient storage.",
+      "description_length": 320,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.Set",
+      "description": "Provides operations to compare, hash, and serialize sets, along with deserialization and size retrieval. Works with the `t` type, representing a set structure. Used to encode sets into JSON, decode from JSON, and determine their serialized size for data transmission.",
+      "description_length": 267,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tc.Biject",
+      "description": "Converts values between a custom type and another type A, enabling bidirectional mapping. Operates on the type `t` and type `A.t`, ensuring type-safe conversions. Used to serialize or deserialize data between different representations in a structured format.",
+      "description_length": 258,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.As_L0",
+      "description": "Handles value equality, comparison, hashing, and conversion between JSON, binary, and size representation. Operates on an abstract type `t` to ensure consistent data handling across formats. Supports reading and writing serialized data, enabling interoperability between systems. Examples include converting a value to JSON, comparing two instances, and calculating its binary size.",
+      "description_length": 382,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tc.As_L1",
+      "description": "Converts between a custom list-like structure and standard OCaml lists. Accepts a list and returns the custom type, and vice versa. Used to interface with external systems that expect standard lists while maintaining internal consistency with the custom type.",
+      "description_length": 259,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tc.As_AL1",
+      "description": "Manages structured data through operations on an abstract type `t`, including equality checks, comparisons, hashing, and JSON/Binary I/O. Supports serialization, deserialization, and size computation for efficient data handling. Enables encoding data for network transfer and decoding it back, as well as reading and writing binary representations. Examples include converting a data structure to JSON, comparing two instances, and calculating the memory footprint of a value.",
+      "description_length": 476,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.Reader",
+      "description": "Reads and constructs values from binary data using custom deserialization logic, supporting pairs, triples, lists, and options. Operates on type-erased reader functions that parse data into specific OCaml types. Used to decode structured binary formats like protocol buffers or custom serialization schemes.",
+      "description_length": 307,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.Writer",
+      "description": "Writes values to a binary format using Bin_prot, supporting custom serialization for pairs, triples, lists, and options. Accepts and returns writer functions that encode data types like integers, strings, and custom records. Enables structured binary serialization for network protocols and persistent storage.",
+      "description_length": 310,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.Compare",
+      "description": "Generates comparison functions for tuples, lists, and options based on provided element comparisons. Operates on pairs, triples, and nested structures by recursively applying given comparison logic. Enables precise ordering of complex data types in sorting and equality checks.",
+      "description_length": 277,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.Equal",
+      "description": "Provides equality checks for tuples, lists, and options by combining equality functions for their elements. Works with arbitrary types through polymorphic equality functions. Enables precise comparison of nested data structures like lists of pairs or optional triples.",
+      "description_length": 268,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tc.Size_of",
+      "description": "Calculates the size of composite data structures by combining size computations for individual elements. It handles tuples, lists, and optional values by recursively applying size functions to their components. Specific operations include pairing, tripling, and wrapping sizes for list and option types.",
+      "description_length": 303,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "mirage-tc",
+      "description": "Provides functions for parsing and validating TCP header fields, including sequence numbers, acknowledgment numbers, and flags. Operates on byte sequences and custom record types representing TCP headers. Used to inspect and manipulate TCP packets in network protocol implementations.",
+      "description_length": 284,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tc",
+      "description": "Provides equality, comparison, and hashing operations for abstract identifiers. Works with the `t` type, which represents unique identifier structures. Enables JSON serialization and deserialization, as well as size calculation and binary writing/reading for network or file storage.",
+      "description_length": 283,
+      "index": 35,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 36,
+    "meaningful_modules": 36,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 476,
+    "min_description_length": 241,
+    "avg_description_length": 313.05555555555554,
+    "embedding_file_size_mb": 0.1311359405517578
+  }
+}

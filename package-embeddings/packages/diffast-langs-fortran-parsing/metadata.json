@@ -1,0 +1,1547 @@
+{
+  "package": "diffast-langs-fortran-parsing",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 218,
+  "creation_timestamp": "2025-06-18T17:03:44.817186",
+  "modules": [
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.TrunkF.TBF.P.MenhirInterpreter",
+      "description": "This module provides low-level operations for managing parser state, including stack manipulation, token acceptance, and control flow, alongside functions for inspecting and modifying parser checkpoints and environments. It works with data structures such as parser states, grammar symbols, productions, terminals, nonterminals, and token suppliers to support incremental execution and state management in LR(1) parsing. Specific use cases include implementing custom parsing strategies, handling complex grammar rules, and resuming parsing from saved states during error recovery or interactive input processing.",
+      "description_length": 613,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.TrunkF.TBF.P.Incremental",
+      "description": "This module specializes in incremental parsing and error recovery, constructing partial AST nodes for language elements like tokens, expressions, and OpenMP directives while tracking source positions via Lexing.position. It leverages MenhirInterpreter checkpoints to manage parsing state, enabling resumption of processing after errors or partial input. Key use cases include building structured representations of program units and handling complex syntactic constructs in a stepwise manner.",
+      "description_length": 492,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.TrunkF.TBF.BranchF.TokenF",
+      "description": "This module provides functions for converting abstract syntax tree (AST) nodes into token-location pairs and analyzing token properties, such as type checks and size calculations. It operates on AST structures like program units and expressions, alongside token data types, enabling tasks like syntactic validation and preprocessing directive identification. Specific use cases include parsing program components and inspecting token characteristics during compiler or linter workflows.",
+      "description_length": 486,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.T.TBF.P.MenhirInterpreter",
+      "description": "The module provides operations for managing parser states, stack manipulation, and control flow in LR(1) parsers, working with data structures like checkpoints, environments, lr1 states, stacks, and symbols to enable incremental parsing and error recovery. It includes functionalities for inspecting parser states, comparing symbols, and analyzing productions, supporting tasks such as symbol comparison, reduction, and tracking token positions during parsing. Specific use cases involve debugging parser logic, handling complex grammars, and implementing custom error recovery strategies.",
+      "description_length": 589,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.T.TBF.P.Incremental",
+      "description": "This module facilitates incremental parsing by handling operations such as constructing and tracking partial Abstract Syntax Trees (ASTs) through checkpointing, utilizing `Lexing.position` and producing `MenhirInterpreter.checkpoint` values. It processes syntactic elements like function heads, expressions, assignments, and OpenMP directives, generating `Ast.Partial.t` nodes for program components. Specific use cases include parsing complex language constructs incrementally while maintaining state for error recovery or dynamic analysis.",
+      "description_length": 541,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.T.TBF.BranchF.TokenF",
+      "description": "This module handles operations such as converting abstract syntax tree (AST) nodes into token-location pairs and analyzing tokens for type classification, size determination, and preprocessing. It works with AST specifications, tokens, and program elements like expressions, statements, and type definitions. Use cases include compiler phases requiring tokenization, syntax validation, and semantic analysis of program structures.",
+      "description_length": 430,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.TBF.P.MenhirInterpreter",
+      "description": "The module offers operations for managing parser states during incremental parsing, including resuming processing, handling tokens, and inspecting internal environments and LR(1) states. It works with abstract representations of grammar symbols, terminals, nonterminals, and stack elements, enabling control flow management and symbolic comparisons. Specific use cases include backtracking and detailed analysis of parsing progress through checkpointing and state inspection.",
+      "description_length": 475,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.TBF.P.Incremental",
+      "description": "This module facilitates incremental parsing and error recovery by processing syntactic elements like function heads, expressions, and OpenMP directives, constructing partial AST nodes while tracking source locations via `Lexing.position`. It leverages `MenhirInterpreter` checkpoints to manage parsing state, enabling efficient handling of program units, statements, and declarations. Specific use cases include robust error recovery during syntax analysis and incremental updates in complex language constructs.",
+      "description_length": 512,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.TBF.BranchF.TokenF",
+      "description": "This module handles operations such as converting abstract syntax tree (AST) nodes into token-location pairs and analyzing tokens for syntactic properties like type checks and size calculations. It works with AST specifications, tokens, and program structures, enabling tasks like preprocessing directive identification and expression parsing. Specific use cases include semantic analysis of code fragments and generating structured token data for compiler or linter workflows.",
+      "description_length": 477,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.TrunkF.TBF.TokenF",
+      "description": "This module handles syntactic analysis by converting AST nodes into token-location pairs and extracting token properties like size and preprocessor directives. It operates on abstract syntax tree (AST) nodes and partial specifications, enabling tasks such as token classification and source code annotation. Specific use cases include parsing program units, analyzing expressions, and managing token construction during compiler or linter workflows.",
+      "description_length": 449,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.TrunkF.TBF.A",
+      "description": "The module provides functions for parsing Fortran code, managing symbol tables, and manipulating AST nodes, including error reporting, scope boundaries, and attribute handling. It operates on AST nodes, labels, lexical positions, and symbol tables, enabling tasks like registering program entities, extracting type information, and transforming syntax structures. Specific use cases include handling scope resolution during compilation, converting name representations for symbol lookup, and analyzing AST nodes for semantic validation.",
+      "description_length": 536,
+      "index": 10,
+      "embedding_norm": 1.0000001192092896
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.TrunkF.TBF.P",
+      "description": "Manages parser state and incremental execution with operations on grammar symbols, productions, and checkpoints, enabling custom parsing strategies and error recovery. Supports construction of partial ASTs for language elements while tracking source positions, allowing resumption of parsing after errors or incomplete input. Provides direct manipulation of parser environments and token suppliers for fine-grained control over LR(1) parsing workflows. Examples include resuming parsing from saved states, building structured representations of program fragments, and handling complex syntactic constructs in a stepwise manner.",
+      "description_length": 627,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.TrunkF.TBF.BranchF",
+      "description": "Tracks and manages token and location state during parsing, including the current queue of tokens, previous and last encountered tokens and their locations, and an end-of-paragraph flag. Operates on mutable state variables representing tokens and source locations. Used to maintain context during sequential processing of Fortran source code.",
+      "description_length": 342,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.TrunkF.U.Aux",
+      "description": "This module provides functions for managing error reporting, scope boundaries, and symbol table operations, along with parsing and transformation of Fortran AST nodes, focusing on label normalization, attribute management, and metadata registration. It works with custom data structures like AST nodes, labels, name frames, and lexical positions, enabling tasks such as name resolution, access specification handling, and OCL directive conversion. Specific use cases include parsing Fortran code, tracking program element scopes, and extracting type/location information during syntax analysis.",
+      "description_length": 594,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.TrunkF.U.TokenF",
+      "description": "This module provides functions for converting AST nodes into token-location pairs and analyzing token properties, such as type classification and size determination. It operates on abstract syntax tree structures, including program units, statements, and expressions, alongside language-specific tokens and location metadata. Use cases include generating token streams for parsing, validating syntactic elements during compilation, and inspecting program structure for static analysis.",
+      "description_length": 485,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.TrunkF.TBF.P.MenhirInterpreter",
+      "description": "This module provides low-level operations for managing parser states, including resuming parsing, inspecting environments, and handling tokens, while supporting LR(1) grammar analysis through state manipulation, reduction, and symbol comparison. It works with internal parser constructs like checkpoints, productions, symbols, and token positions to enable incremental parsing and detailed grammar inspection. Use cases include debugging parser behavior, optimizing grammar rules, and implementing custom parsing strategies.",
+      "description_length": 524,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.TrunkF.TBF.P.Incremental",
+      "description": "This module facilitates incremental parsing by handling checkpointing and partial AST construction, operating on lexical positions and returning MenhirInterpreter checkpoints while tracking partial AST nodes of type `Ast.Partial.t` for language constructs like expressions and OpenMP directives. It enables fine-grained parsing of syntactic components, such as function heads and statements, allowing stateful processing of incomplete input. Use cases include interactive development environments and large-scale code analysis where partial results are needed for error recovery or incremental updates.",
+      "description_length": 602,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.TrunkF.TBF.BranchF.TokenF",
+      "description": "This module handles syntactic analysis and token classification by converting AST nodes into token-location pairs and extracting token metadata, such as type checks (e.g., preprocessor directives) and size calculations. It operates on abstract syntax trees and token streams, enabling tasks like code transformation and static analysis. Specific use cases include parsing program units, validating expression structures, and processing type definitions with precise location tracking.",
+      "description_length": 484,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.T.TBF.TokenF",
+      "description": "This module handles operations such as converting abstract syntax tree (AST) nodes into token-location pairs and processing tokens for classification, type checking, and size determination. It works with AST specifications, tokens, and node structures to enable tasks like program analysis and transformation. Use cases include compiler preprocessing, static code validation, and semantic analysis where precise token and AST interactions are critical.",
+      "description_length": 452,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.T.TBF.A",
+      "description": "The module provides error handling, symbol table management, scope creation, and AST node transformation for Fortran parsing, involving operations like name registration, label normalization, and attribute setting. It operates on AST nodes, symbol tables, labels, name frames, and position data, supporting tasks such as syntax parsing, metadata extraction, and code analysis. Use cases include managing symbol metadata, resolving names during compilation, and transforming AST structures for code generation or verification.",
+      "description_length": 525,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.T.TBF.P",
+      "description": "manages LR(1) parser states, stacks, and control flow with operations for symbol comparison, reduction, and position tracking, while enabling incremental AST construction through checkpointing and partial node generation. It handles data types such as parser states, checkpoints, environments, and `Ast.Partial.t` nodes, supporting tasks like debugging, error recovery, and parsing complex language features. Operations include inspecting lr1 states, building partial ASTs, and tracking token positions during parsing. Examples include analyzing production rules, reconstructing partial programs, and implementing custom error handling during incremental parsing.",
+      "description_length": 663,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.T.TBF.BranchF",
+      "description": "Maintains state for tracking tokens and locations during Fortran parsing, including the current queue of elements and metadata about the last and previous tokens. It stores token values and their corresponding source locations, enabling precise error reporting and navigation through the input stream. The end-of-paragraph flag aids in controlling parsing flow based on structural markers in the code.",
+      "description_length": 401,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.T.U.Aux",
+      "description": "The module provides functions for error reporting, symbol table management, and scope control, operating on AST nodes, labels, and custom types like `Label.t` and `Pinfo.Name.Attribute.c`. It handles Fortran-specific tasks such as label normalization, attribute management, and AST node transformation, including parsing, metadata registration, and structure modification. Use cases include parsing Fortran code, managing program entities, and extracting type/location information during analysis.",
+      "description_length": 497,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.T.U.TokenF",
+      "description": "This module handles AST traversal and tokenization by converting program elements like statements, expressions, and type definitions into token-location pairs, leveraging `Ast.Partial.spec` and `Ast.node` structures. It also performs token analysis, including type validation and size determination, working with tokens and AST specifications to support preprocessing and classification tasks. Use cases include syntax validation, code transformation, and semantic analysis during compiler or linter workflows.",
+      "description_length": 510,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.TBF.P.MenhirInterpreter",
+      "description": "The module provides operations for managing parser state, including checkpoint manipulation, stack inspection, and production rule lookups, working with parser environments, checkpoints, and LR(1) states to support incremental parsing and error recovery. It handles internal parsing logic through functions that compare grammar elements, traverse states, and inspect token positions, utilizing data structures like token suppliers and stack structures to facilitate LR(1) parsing mechanisms and grammar analysis.",
+      "description_length": 512,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.TBF.P.Incremental",
+      "description": "This module facilitates incremental parsing and checkpointing of program structures, constructing partial abstract syntax tree (AST) nodes for elements like declarations, statements, and function heads while tracking source positions via `Lexing.position`. It processes syntactic components such as expressions, OpenMP directives, and program units, enabling step-by-step tree building for complex language constructs. Use cases include compiler development and syntax analysis where gradual parsing of nested or conditional code segments is required.",
+      "description_length": 551,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.TBF.BranchF.TokenF",
+      "description": "This module handles operations such as converting abstract syntax tree (AST) nodes into token-location pairs and processing tokens for classification, type checks, and size determination. It works with AST nodes, tokens, and partial AST specifications to enable tasks like syntax analysis and preprocessing. Use cases include compiler components requiring tokenization of program constructs or validation of AST elements against lexical rules.",
+      "description_length": 443,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.BF.TokenF",
+      "description": "This module handles operations such as converting AST nodes into token-location pairs and analyzing tokens for type, size, and classification, leveraging structures like AST specifications and token data. It processes program elements including statements, expressions, and type definitions, enabling tasks like syntax validation and code transformation. Specific use cases involve preprocessing tokens for compiler stages or generating structured output from abstract syntax trees.",
+      "description_length": 482,
+      "index": 27,
+      "embedding_norm": 0.9999998807907104
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.P.MenhirInterpreter",
+      "description": "The functions provide state management, stack manipulation, and control flow operations for LR(1) parsers, working with checkpoints, environments, LR(1) states, tokens, and symbolic representations of grammar elements. They enable tasks like incremental parsing, error recovery, and symbolic analysis of productions, terminals, and nonterminals, supporting advanced parser customization and grammar inspection.",
+      "description_length": 410,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.P.Incremental",
+      "description": "This module handles incremental parsing by constructing and managing partial AST nodes, utilizing `Ast.Partial.t` and `Lexing.position` to track syntax state. It enables checkpointing at specific input positions, supporting parsing of program elements like function heads, expressions, and OpenMP directives. Use cases include incremental analysis of code segments, partial evaluation, and error recovery during syntax processing.",
+      "description_length": 430,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.TBF.TokenF",
+      "description": "This module handles operations for converting abstract syntax tree (AST) nodes into token-location pairs and analyzing tokens for syntactic classification. It works with AST specifications, tokens, and location data to extract token details, validate token types (e.g., preprocessor directives, includes), and assess token characteristics. Use cases include static analysis, code transformation, and validation tasks requiring precise token-level insights.",
+      "description_length": 456,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.TBF.A",
+      "description": "This module provides functions for managing symbol tables, scope boundaries, and error reporting in a Fortran parser, focusing on registering program entities like functions and variables while tracking their attributes and lexical positions. It operates on abstract syntax tree (AST) nodes, labels, name frames, and attribute maps, enabling tasks such as name resolution, scope traversal, and semantic analysis during parsing. Specific use cases include handling program unit declarations, converting between name representations, and extracting type information from AST constructs.",
+      "description_length": 584,
+      "index": 31,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.TBF.P",
+      "description": "manages parser state through abstract grammar symbols, enabling control flow, backtracking, and detailed inspection of LR(1) states and stack elements. It supports incremental parsing by processing syntactic components such as function heads and expressions, while tracking source positions and using checkpoints for error recovery. Operations include resuming parsing, inspecting environments, and constructing partial ASTs. Examples include analyzing parsing progress, handling complex language constructs incrementally, and recovering from syntax errors.",
+      "description_length": 557,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.TBF.BranchF",
+      "description": "Tracks and manages token and location state during parsing, including the current queue, previous and last tokens, and end-of-paragraph flag. Operates on mutable values of token and location types from the Fortran_parsing module. Used to maintain context during sequential processing of Fortran source code.",
+      "description_length": 307,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.TrunkF.TokenF",
+      "description": "This module processes abstract syntax tree (AST) nodes to generate token and location data, enabling analysis of program structures like statements, expressions, and type definitions. It manipulates tokens and AST elements to extract metadata, validate token types, and handle preprocessor directives, supporting tasks such as compiler diagnostics and code transformation.",
+      "description_length": 372,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.TrunkF.TBF",
+      "description": "Manages a token queue and parsing state for Fortran code, tracking regular tokens and cached parse results. It operates on token queues, boolean flags, and parse result structures. Used to control token consumption and store intermediate parsing outcomes during analysis.",
+      "description_length": 271,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.TrunkF.U",
+      "description": "This module handles low-level text processing and formatting control, managing state through mutable flags, counters, and custom types like `PA.char_context` and `margin_stat` to track indentation, separators, line statistics, and parenthesis nesting. It supports operations such as monitoring line completeness, character context, and comment counts, enabling precise control over code formatting and parsing workflows. Specific use cases include analyzing code structure for indentation-aware formatting or parsing nested expressions with context-sensitive rules.",
+      "description_length": 565,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.TrunkF.A",
+      "description": "This module provides error handling, scope management, and Fortran syntax parsing, working with AST nodes, labels, and name frames to register constructs and manage symbol tables. It enables tasks like attribute setting, label manipulation, and AST transformations, supporting compiler development and structured program analysis through operations on lexical positions and node structures. Specific use cases include parsing Fortran code, validating program units, and extracting type/location information for static analysis.",
+      "description_length": 527,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.U.Aux",
+      "description": "This module provides functions for error handling, symbol table management, and scope tracking in Fortran parsing, operating on AST nodes, labels, and custom types like `Label.t` and `Pinfo.Name.Attribute.c`. It supports tasks such as parsing syntax, managing attributes, converting OCL directives, and extracting type and location information from AST structures, aiding in program analysis and transformation. Specific use cases include handling access specifications, manipulating labels, and modifying operator precedence during Fortran code processing.",
+      "description_length": 557,
+      "index": 38,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.U.TokenF",
+      "description": "This module handles operations such as converting AST nodes into token-location pairs and analyzing tokens for type classification, size, and structural information. It works with AST nodes, tokens, and partial AST specifications to process program structures like expressions, statements, and type definitions. Use cases include compiler preprocessing, syntax validation, and metadata extraction during parsing workflows.",
+      "description_length": 422,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Trunk.F.TBF.P.MenhirInterpreter",
+      "description": "The module offers low-level operations for managing LR(1) parser states, including checkpoint manipulation, stack inspection, and production rule analysis, working with environments, checkpoints, terminals, and nonterminals. It supports tasks like token acceptance verification, symbol comparison, and reduction tracking, enabling precise control over parsing workflows. These capabilities are critical for implementing incremental parsing, backtracking, or custom error recovery in parser implementations.",
+      "description_length": 506,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Trunk.F.TBF.P.Incremental",
+      "description": "This module facilitates incremental parsing by constructing and tracking partial AST nodes (`Ast.Partial.t`) through checkpointing mechanisms, utilizing `Lexing.position` to manage syntactic components like function heads, expressions, and OpenMP directives. It enables precise control over parsing workflows, allowing partial results to be stored and resumed, which is critical for handling complex language constructs or large programs. The use of `MenhirInterpreter.checkpoint` values supports resumable parsing, making it suitable for interactive environments or error recovery scenarios.",
+      "description_length": 592,
+      "index": 41,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Trunk.F.TBF.BranchF.TokenF",
+      "description": "This module provides functions for converting abstract syntax tree (AST) nodes into token-location pairs and analyzing token properties, such as type classification (e.g., preprocessor directives) and size. It operates on AST structures like program units, expressions, and type definitions, along with token data, enabling tasks like syntactic inspection and source code traversal. Use cases include generating token streams for debugging, validating syntax, and extracting metadata from parsed programs.",
+      "description_length": 505,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.TBF.P.MenhirInterpreter",
+      "description": "The module provides functions for managing parser states, including checkpoint manipulation, stack inspection, and production rule lookups, operating on LR(1) states, environments, and parsing positions. It enables grammar symbol comparisons, terminal iteration, and abstract syntax tree component handling, supporting incremental parsing and error recovery. These operations are critical for internal parser mechanics, such as state transitions and symbol analysis during parsing workflows.",
+      "description_length": 491,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.TBF.P.Incremental",
+      "description": "This module facilitates incremental parsing of program structures, capturing partial abstract syntax trees (ASTs) and lexical positions to track parsing states during complex language constructs. It processes elements like function heads, expressions, and OpenMP directives, leveraging `Ast.Partial.t` and `Lexing.position` to enable resumable parsing workflows. Specific use cases include handling program units, statements, and type specifications with checkpointed AST nodes for robust error recovery or dynamic analysis.",
+      "description_length": 524,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.TBF.BranchF.TokenF",
+      "description": "This module handles operations such as converting abstract syntax tree (AST) nodes into token-location pairs and analyzing tokens for syntactic properties like type classification, size, and preprocessor directives. It works with AST specifications, nodes, and token data to support tasks like code parsing, syntax validation, and preprocessing. Specific use cases include extracting token information for error reporting or transforming program structures during compilation.",
+      "description_length": 476,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.TrunkF.TBF.TokenF",
+      "description": "This module handles operations that convert abstract syntax tree (AST) nodes into token-location pairs and analyze tokens for syntactic properties, such as type checking and size determination. It works with AST specifications, nodes, and token data to support tasks like preprocessing directives analysis and code structure validation. Specific use cases include parsing program units, extracting token metadata, and enforcing syntactic constraints during compilation.",
+      "description_length": 469,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.TrunkF.TBF.A",
+      "description": "This module handles error reporting, symbol registration, and scope management within a Fortran parsing system, operating on abstract syntax tree (AST) nodes, labels, and name frames to track program elements and their metadata. It includes functions for string manipulation, attribute setting, and AST transformation, enabling tasks like semantic analysis, label conversion, and type information extraction during compilation. Specific use cases involve managing program structures, resolving symbols, and processing attributes in a compiler or parser context.",
+      "description_length": 561,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.TrunkF.TBF.P",
+      "description": "manages parser state and incremental parsing through checkpointing, symbol comparison, and AST construction, with support for LR(1) grammar analysis and partial result tracking. It operates on internal parser structures like productions, symbols, and token positions, as well as partial AST nodes of type `Ast.Partial.t`. Users can inspect environments, resume parsing from saved states, and build partial syntax trees for expressions, statements, or OpenMP directives. This enables advanced debugging, custom parsing strategies, and efficient handling of incomplete or evolving input.",
+      "description_length": 585,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.TrunkF.TBF.BranchF",
+      "description": "Maintains state for tracking tokens and locations during Fortran parsing, including the current queue of elements and markers for previous and last tokens and their positions. Operates on custom token and location types from the Fortran_parsing module. Used to manage parsing flow and error recovery by preserving contextual information from processed tokens.",
+      "description_length": 359,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.TrunkF.U.Aux",
+      "description": "This module provides functions for error reporting, symbol registration, and scope management in Fortran parsing, operating on abstract syntax tree (AST) nodes, symbol tables, name frames, and labels. It includes operations for validating program structures, handling derived types, extracting attributes, and transforming AST elements like converting OCL tuples to names or constructing layered locations. Use cases involve parsing validation, symbol table updates, and error node generation during Fortran code analysis.",
+      "description_length": 522,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.TrunkF.U.TokenF",
+      "description": "This module handles operations such as converting abstract syntax tree (AST) nodes into token-location pairs and analyzing tokens for syntactic properties like type checks, data extraction, and size determination. It works with AST specifications, tokens, and program structures including expressions, statements, and type definitions. Use cases include preprocessing directives analysis, code structure inspection, and semantic validation during compilation.",
+      "description_length": 459,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenbuffer.F.P.MenhirInterpreter",
+      "description": "The module offers low-level operations for managing parser state, stack manipulation, and control flow, working with LR(1) states, environments, and checkpoints to enable incremental and backtracking parsing. It includes functions for comparing grammar symbols, extracting state information, and iterating terminals, supporting tasks like debugging or customizing parser behavior. The types and functions facilitate detailed introspection and manipulation of parsing processes, particularly in complex grammar scenarios.",
+      "description_length": 520,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenbuffer.F.P.Incremental",
+      "description": "This module facilitates incremental parsing of program structures by processing syntactic components such as function heads, expressions, and directives, while tracking state through lexical positions and checkpointing mechanisms. It manipulates abstract syntax tree (AST) fragments, returning partial AST nodes or fully constructed AST nodes wrapped in checkpointed contexts. Use cases include interactive development environments or large-scale code analysis where partial parsing and state preservation are critical.",
+      "description_length": 519,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenbuffer.F.BranchF.TokenF",
+      "description": "This module handles operations for converting abstract syntax tree (AST) nodes into token-location pairs and processing tokens for classification, extraction, and type checks, working with AST specifications and token data. It supports tasks like preprocessing program structures, analyzing expressions, and validating token properties during language processing workflows. Specific applications include syntax validation, code transformation, and static analysis where precise token and AST interactions are critical.",
+      "description_length": 518,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.T.TokenF",
+      "description": "This module provides functions for converting abstract syntax tree (AST) nodes into token-location pairs and processing tokens to extract metadata, such as type checks and size calculations. It operates on AST structures, tokens, and preprocessor directives, enabling precise manipulation of program elements. Use cases include code analysis, transformation, or generation tasks requiring detailed token and location information.",
+      "description_length": 429,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.T.TBF",
+      "description": "Manages a token queue and parsing state for Fortran code, tracking whether the current context is a regular section and caching parsed results. It operates on token queues, boolean flags, and parse results from the token buffer. Used to control parsing flow and reuse previously parsed structures during incremental processing.",
+      "description_length": 327,
+      "index": 56,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.T.U",
+      "description": "This module handles low-level text processing tasks, managing state for parsing and formatting through custom types like `PA.char_context` and `margin_stat`, along with strings and integers to track elements such as indentation, line statistics, and parenthesis levels. It supports use cases like code formatting, comment handling, and context-aware text processing by maintaining detailed control over character contexts, separator tracking, and margin adjustments.",
+      "description_length": 466,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.T.A",
+      "description": "The module provides functions for error handling, symbol table management, and scope control in a Fortran parser, operating on AST nodes, labels, and name frames to track metadata and manage program structures. It includes parsing, label manipulation, and AST transformation capabilities, enabling tasks like name resolution, directive conversion, and code analysis through detailed node traversal and attribute extraction.",
+      "description_length": 423,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.TBF.TokenF",
+      "description": "This module provides functions for converting abstract syntax tree (AST) nodes into token and location pairs, as well as operations to inspect and classify tokens and their associated AST locations. It works with AST structures like program units, statements, and expressions, alongside language-specific tokens and metadata. Use cases include compiler phases requiring token-level analysis, such as code generation or static checking, where precise location tracking and token validation are critical.",
+      "description_length": 502,
+      "index": 59,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.TBF.A",
+      "description": "This module handles error reporting, scope management, and AST node manipulation, focusing on registering program entities, resolving names, and constructing labeled objects. It operates on AST nodes, strings, labels, and location data, with functions for parsing, attribute setting, and symbol tracking. Key use cases include Fortran code parsing, symbol table management, and AST transformation with precise error handling and scope resolution.",
+      "description_length": 446,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.TBF.P",
+      "description": "manages parser state and incremental parsing through checkpointing, stack manipulation, and LR(1) state traversal, with support for syntax tree construction and position tracking. It handles token suppliers, parser environments, and grammar elements, enabling operations like state comparison, token inspection, and AST node assembly. Functions allow building partial ASTs for declarations, expressions, and OpenMP directives while maintaining source position data. This supports compiler development tasks such as error recovery, incremental parsing of nested code, and syntax analysis of complex language constructs.",
+      "description_length": 618,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.TBF.BranchF",
+      "description": "Tracks and manages token and location state during parsing, including the current queue of tokens and metadata about previous and last processed tokens. Operates on mutable state variables representing tokens and source locations. Used to control end-of-paragraph detection and token sequencing in Fortran parsing workflows.",
+      "description_length": 324,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.TrunkF",
+      "description": "Provides access to a stack of lexing buffers, a flag indicating processing completion, and a current lexing buffer for incremental parsing. Operates with `Sedlexing.lexbuf` and `Stack.t` to manage state during tokenization. Used to process large or streaming input by maintaining context across multiple lexing steps.",
+      "description_length": 317,
+      "index": 63,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.TokenF",
+      "description": "This module handles conversions between abstract syntax tree (AST) nodes and token-location pairs, along with token analysis tasks like type checking and size determination. It operates on AST specifications, tokens, and program structures such as statements and type declarations. Use cases include syntactic validation, preprocessing directive identification, and code structure inspection during compilation or static analysis.",
+      "description_length": 430,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.TBF",
+      "description": "Handles token buffering and parsing state, managing a queue of token tokens and tracking whether the current context is regular Fortran. Stores parsed results in a cache for reuse. Used to control token flow during syntax analysis and error recovery.",
+      "description_length": 250,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.BF",
+      "description": "Maintains state for token tracking during Fortran parsing, including the current queue, previous and last tokens and their locations, and an end-of-paragraph flag. Operates on tokens and location data from the Fortran_parsing module. Used to manage token flow and locate errors in input streams.",
+      "description_length": 295,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.U",
+      "description": "This module handles low-level text processing tasks, managing state for parsing and formatting by tracking elements like indentation, line statistics, character contexts, and parenthesis levels through custom types such as `PA.char_context` and `margin_stat`. It operates on strings, integers, and structured state variables to enforce formatting rules, handle comments, and manage complex text layouts. Specific use cases include code formatting, structured document parsing, and real-time text analysis where precise control over indentation and line boundaries is required.",
+      "description_length": 576,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.P",
+      "description": "manages LR(1) parsing state, checkpointing, and incremental AST construction, combining symbolic grammar analysis with partial syntax tree tracking. It operates on types like `Ast.Partial.t`, `Lexing.position`, and LR(1) state representations, enabling tasks such as parsing function headers, recovering from syntax errors, and inspecting grammar rules incrementally. Operations include building partial ASTs, managing environments, and navigating parser checkpoints. Examples include parsing code segments on demand, analyzing production rules, and reconstructing syntax after errors.",
+      "description_length": 585,
+      "index": 68,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP.A",
+      "description": "This module provides operations for managing symbol tables, handling scope boundaries, and parsing Fortran syntax, working with AST nodes, labels, lexical positions, and custom data structures. It enables tasks like registering program entities, extracting type information, and converting name representations, primarily used in semantic analysis and code transformation workflows. Specific use cases include tracking symbol attributes, validating program structures, and processing Fortran directives during parsing.",
+      "description_length": 518,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.U.Aux",
+      "description": "This module provides functions for error handling, scope management, and symbol table operations within a Fortran parser, focusing on AST node manipulation, label normalization, and metadata registration. It works with AST nodes, custom types like `Label.t` and `Pinfo.Name.Attribute.c`, and name frames to track program elements and their attributes. Specific use cases include parsing Fortran syntax, converting OCL directives, and managing scope boundaries during AST traversal.",
+      "description_length": 481,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.U.TokenF",
+      "description": "This module provides functions for converting abstract syntax tree (AST) nodes into token-location pairs and analyzing token properties, such as type checks and size calculations. It operates on AST constructs like program units, expressions, and type definitions, alongside language-specific tokens and location metadata. Use cases include compiler components requiring precise token tracking or AST-to-token transformation during parsing or code generation.",
+      "description_length": 459,
+      "index": 71,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Trunk.F.TBF.TokenF",
+      "description": "This module provides functions for converting abstract syntax tree (AST) nodes into token-location pairs and performing token analysis, such as type checking and size determination. It operates on AST specifications, nodes, and token data to support tasks like syntax validation and code instrumentation. Specific use cases include preprocessing tokens for error reporting and extracting structural information during compiler passes.",
+      "description_length": 434,
+      "index": 72,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Trunk.F.TBF.A",
+      "description": "The module offers functions for error handling, symbol registration, and scope management in Fortran parsing, operating on AST nodes, labels, name frames, and location data. It enables parsing and manipulation of Fortran syntax, including attribute setting, label management, and conversion between identifier representations, while extracting type and positional information from AST structures. Key use cases involve constructing symbol tables, tracking program elements like modules and functions, and facilitating AST traversal for analysis or transformation.",
+      "description_length": 563,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Trunk.F.TBF.P",
+      "description": "Manages LR(1) parser states with operations on checkpoints, stacks, and production rules, supporting tasks like token verification, symbol comparison, and reduction tracking. It enables incremental parsing by constructing and resuming partial ASTs using `Lexing.position` and `MenhirInterpreter.checkpoint` values. Operations include tracking function heads, expressions, and OpenMP directives, allowing parsing to be paused, stored, and resumed. This supports advanced features like backtracking, error recovery, and interactive parsing of complex programs.",
+      "description_length": 558,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Trunk.F.TBF.BranchF",
+      "description": "Tracks and manages token and location state during parsing, including the current queue of tokens and metadata about previous and last processed tokens. Operates on mutable state variables containing tokens and source locations. Used to monitor parsing progress and detect end-of-paragraph conditions in Fortran source processing.",
+      "description_length": 330,
+      "index": 75,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Trunk.F.U.Aux",
+      "description": "The module provides functions for error handling, symbol registration, and scope management in Fortran parsing, operating on AST nodes, symbol tables, labels, and name frames. It supports tasks like label normalization, attribute management, and AST transformations, aiding in parsing complex constructs such as modules and derived types while ensuring accurate name resolution and location tracking.",
+      "description_length": 400,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Trunk.F.U.TokenF",
+      "description": "This module handles operations such as converting abstract syntax tree (AST) nodes into token-location pairs and processing tokens for classification, type checks, and size determination. It works with AST structures, tokens, and partial specifications to analyze program elements like statements, expressions, and type definitions. Use cases include syntax validation, code transformation, and preprocessing tasks in compiler or linter workflows.",
+      "description_length": 447,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.BF.TokenF",
+      "description": "This module handles operations such as converting AST nodes into token-location pairs and processing tokens to extract metadata, type information, and size details, working with structures like AST nodes, tokens, and specifications. It supports use cases like analyzing program structure during traversal, inspecting preprocessing directives, and validating token properties in compiler or linter workflows.",
+      "description_length": 407,
+      "index": 78,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.P.MenhirInterpreter",
+      "description": "The module provides low-level operations for managing parser states, including checkpoint manipulation, stack inspection, and production rule lookups, working with structures like environments, LR(1) states, and token sequences. It enables grammar analysis and transformation through functions that handle productions, terminals, nonterminals, and symbols, supporting use cases such as incremental parsing and detailed state tracking during parsing.",
+      "description_length": 449,
+      "index": 79,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.P.Incremental",
+      "description": "This module facilitates incremental parsing by constructing and tracking partial abstract syntax tree (AST) nodes, utilizing `Lexing.position` to manage parsing state and returning `MenhirInterpreter.checkpoint` values to capture intermediate results. It works with `Ast.Partial.t` to represent incomplete language constructs, such as function statements, expressions, and OpenMP/OpenCL directives, enabling progressive parsing of complex code structures. Specific use cases include handling partial code analysis and incremental compilation scenarios where partial ASTs are dynamically extended.",
+      "description_length": 596,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.TBF.TokenF",
+      "description": "This module provides functions for converting AST nodes into token-location pairs and analyzing token properties, operating on constructs like program units, statements, and expressions through types such as `Ast.Partial.spec` and `Ast.node`. It enables tasks like syntax validation and code generation by inspecting token types, sizes, and associations with AST elements. Specific use cases include static analysis and parser integration, leveraging detailed token and location data for language processing.",
+      "description_length": 508,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.TBF.A",
+      "description": "This module provides parsing, symbol management, and AST manipulation functionalities tailored for Fortran code analysis, focusing on error handling, scope tracking, and metadata registration. It operates on AST nodes, symbol tables, labels, and position data, enabling tasks like attribute extraction, label conversion, and scope boundary management. Specific use cases include managing program entity metadata, tracking lexical scopes during parsing, and transforming OCL directives within Fortran ASTs.",
+      "description_length": 505,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.TBF.P",
+      "description": "manages parser state transitions, symbol comparisons, and AST construction through LR(1) state operations, environment manipulations, and position tracking. It supports incremental parsing by capturing partial ASTs and lexical positions, enabling resumption of parsing after interruptions. Key data types include LR(1) states, environments, and `Ast.Partial.t`, with operations for stack inspection, production rule lookups, and terminal iteration. Examples include parsing function heads, handling OpenMP directives, and reconstructing partial program structures for error recovery or analysis.",
+      "description_length": 595,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.TBF.BranchF",
+      "description": "Maintains state for tracking tokens and locations during Fortran parsing, including the current queue, previous and last token and location, and an end-of-paragraph flag. Operates on parsed token data and location metadata from the Fortran_parsing module. Used to manage token flow and locate syntax boundaries during source code analysis.",
+      "description_length": 339,
+      "index": 84,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.TrunkF.TokenF",
+      "description": "This module provides functions for converting AST nodes into token and location pairs, as well as operations to inspect and classify tokens and their associated AST locations. It works with abstract syntax tree structures, language tokens, and location metadata to enable detailed program analysis. Use cases include syntax validation, code transformation, and static analysis tasks requiring precise token-level information.",
+      "description_length": 425,
+      "index": 85,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.TrunkF.TBF",
+      "description": "Manages a token queue and parsing state for Fortran code, tracking the current position and parsing results. It works with token data structures and parse results from the Fortran parser. Used to efficiently traverse and analyze token streams during syntax processing.",
+      "description_length": 268,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.TrunkF.U",
+      "description": "This module handles state management for code parsing and formatting, focusing on tracking mutable variables like indentation levels, line statistics, and stack-based branch structures. It operates on data including character contexts, parenthesis levels, and margin controls, using counters and flags to manage formatting rules. Specific use cases involve real-time code analysis tools or formatters that require context-aware adjustments during syntax processing.",
+      "description_length": 465,
+      "index": 87,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.TrunkF.A",
+      "description": "The module provides error reporting, symbol registration, and scope management for Fortran parsing, operating on AST nodes, symbol tables, and name frames. It includes functions for parsing syntax, transforming ASTs, manipulating labels, and tracking lexical positions, enabling tasks like symbol resolution and code analysis. Specific use cases involve handling program entities, managing access specifications, and converting between name and label representations during compilation.",
+      "description_length": 486,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.U.Aux",
+      "description": "This module provides operations for managing symbol tables, handling scope boundaries, and normalizing labels within Fortran parsing, working with AST nodes, custom types like `Label.t`, and attribute structures. It includes functions for parsing syntax, resolving names, manipulating identifiers, and extracting semantic information, such as type details and access specifications, tailored for Fortran code analysis. Key use cases involve attribute handling, label construction, and semantic transformation of AST nodes during compilation.",
+      "description_length": 541,
+      "index": 89,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.U.TokenF",
+      "description": "This module provides functions for converting abstract syntax tree (AST) nodes into token-location pairs and for analyzing tokens through classification, type checks, and size calculations. It operates on AST structures, language tokens, and location metadata, enabling tasks like syntax validation and code transformation. Specific use cases include compiler phases requiring token-level inspection or AST-to-token mapping for error reporting and semantic analysis.",
+      "description_length": 466,
+      "index": 90,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Pinfo.Name.IntentSpec",
+      "description": "Converts an intent specification to its string representation and constructs one from a Fortran-specific label type. Works with internal representations of Fortran intent specifications. Used to generate human-readable output for compiler diagnostics and to parse intent information from label data.",
+      "description_length": 299,
+      "index": 91,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Pinfo.Name.AccessSpec",
+      "description": "Provides operations to convert access specifications to strings, check if an access level is public or private. Works with an opaque type representing access control settings. Used to generate human-readable access labels and enforce access restrictions in API responses.",
+      "description_length": 271,
+      "index": 92,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Pinfo.Name.Dimension",
+      "description": "Provides operations to convert a dimension value to a string, retrieve its rank, create a dimension from a label, and define an explicit shape. Works with a custom type representing dimensional data. Used to generate human-readable representations, enforce shape constraints, and map labels to dimensional structures in data processing pipelines.",
+      "description_length": 346,
+      "index": 93,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Pinfo.Name.Codimension",
+      "description": "Converts a codimension value to its string representation and constructs it from a label. Works with the internal type `t` and the label type `L.t`. Used to generate human-readable outputs and map labels to codimension values in geometric computations.",
+      "description_length": 252,
+      "index": 94,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Pinfo.Name.Attribute",
+      "description": "Provides functions to manipulate and inspect access specifications, including mutable access checks. Works with the `AccessSpec.t` type to enforce or verify access rules. Used to control visibility and mutability of module components during compilation.",
+      "description_length": 253,
+      "index": 95,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Pinfo.Name.Spec",
+      "description": "Provides functions to access and manipulate attribute accessibility options. Works with option types wrapped around attribute metadata. Used to check and modify visibility settings in type definitions.",
+      "description_length": 201,
+      "index": 96,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Pinfo.Name.ScopingUnit",
+      "description": "Creates and manipulates scoped module and type definitions, supporting operations to generate string representations and deep copies. Works with abstract module and type identifiers encapsulated in a custom type. Used to track and transform scoping information during code generation and analysis.",
+      "description_length": 297,
+      "index": 97,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Pinfo.Name.ImplicitSpec",
+      "description": "Provides operations to manage character range specifications, bid options, and declaration location mappings. Works with lists of character pairs, optional BID values, and location-to-identifier associations. Used to track and manipulate declarative syntax elements during parsing or analysis.",
+      "description_length": 293,
+      "index": 98,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Tokens_.T.MenhirInterpreter",
+      "description": "Provides parsing and interpretation of input using a parser generated by Menhir, handling tokens defined by the terminal type. Works with abstract syntax trees and input streams, supporting error recovery and incremental processing. Enables execution of actions associated with grammar rules during parsing.",
+      "description_length": 307,
+      "index": 99,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenbuffer.F.TokenF",
+      "description": "This module provides functions for converting abstract syntax tree (AST) nodes into token-location pairs and for analyzing tokens within AST structures, focusing on preprocessing, classification, and size determination. It operates on AST specifications, nodes, and token data, enabling tasks like syntax validation and code structure inspection. Use cases include compiler phases requiring token extraction from program units, expressions, or type definitions, as well as semantic analysis relying on token-type checks.",
+      "description_length": 520,
+      "index": 100,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenbuffer.F.A",
+      "description": "This module provides operations for parsing and transforming Fortran ASTs, including error handling, symbol table management, and scope tracking, while facilitating name and label manipulation. It works with AST nodes, symbol tables, name frames, labels, and location data to support structured program analysis and metadata registration. Specific use cases include managing program unit declarations, converting name representations, and extracting type/location information during syntax processing.",
+      "description_length": 501,
+      "index": 101,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenbuffer.F.P",
+      "description": "Manages parser state, stack operations, and control flow using LR(1) states and checkpoints, enabling backtracking and detailed introspection through functions that compare symbols, extract state data, and iterate terminals. Supports incremental parsing of program structures, handling AST fragments and preserving state via checkpoints for tasks like interactive development or code analysis. Operations include manipulating lexical positions, constructing partial or complete ASTs, and customizing parsing behavior. Examples include debugging complex grammars, building interactive editors, and performing partial analysis on large codebases.",
+      "description_length": 644,
+      "index": 102,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenbuffer.F.BranchF",
+      "description": "Maintains state for tracking tokens and locations during Fortran parsing, including the current queue of elements and metadata about the last and previous tokens. It stores token values and their corresponding source locations, enabling precise error reporting and navigation through the input stream. The end-of-paragraph flag aids in controlling parsing flow based on structural markers in the code.",
+      "description_length": 401,
+      "index": 103,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Branch.F.TokenF",
+      "description": "This module facilitates syntactic analysis by converting abstract syntax tree (AST) nodes into token-location pairs, enabling detailed tracking of program constructs like expressions and type specifications. It also provides token classification and inspection capabilities, such as identifying preprocessor directives or assessing token properties, working with AST specifications and raw tokens to support tasks like code validation or transformation. These operations are particularly useful for tools requiring precise token-level insights during parsing or static analysis.",
+      "description_length": 578,
+      "index": 104,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokens.Make.MenhirInterpreter",
+      "description": "Provides parsing operations for context-free grammars using a precomputed table-driven interpreter. Works with terminal symbols represented as polymorphic variants and parse stacks. Enables efficient execution of parser states during runtime parsing.",
+      "description_length": 250,
+      "index": 105,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.TBF",
+      "description": "Handles token buffering and parsing state for Fortran code, managing a queue of tokens and tracking whether the current context is regular. Operates on token queues, boolean flags, and parsed AST results. Used to control token consumption and cache parsing outcomes during syntax analysis.",
+      "description_length": 289,
+      "index": 106,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.T",
+      "description": "Provides functions for managing a stack of lexing buffers and tracking parsing state. Operates on `Sedlexing.lexbuf` and `Stack.t` to handle incremental tokenization. Used to switch between multiple input sources during parsing.",
+      "description_length": 228,
+      "index": 107,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.PP",
+      "description": "Provides functions to track the last parsed token, check if the parsing context is empty, and access the current parsing context. Works with token data from Fortran parsing and context state. Used to inspect parsing progress and state during token processing.",
+      "description_length": 259,
+      "index": 108,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.U",
+      "description": "This module handles state management for code parsing and formatting, tracking elements like indentation levels, statement separators, and character contexts through custom types such as `PA.char_context` and `margin_stat`. It operates on strings, integers, and structured data to monitor line statistics, parenthesis levels, and comment states, enabling precise control over code structure. Use cases include enforcing consistent formatting rules, analyzing syntactic patterns, and maintaining accurate parsing contexts in code transformation tools.",
+      "description_length": 550,
+      "index": 109,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F.A",
+      "description": "This module provides operations for parsing and managing Fortran ASTs, including symbol registration, scope handling, and attribute manipulation, operating on AST nodes, labels, names, and location data. It supports tasks like error reporting, declaration tracking, and syntactic transformations, particularly for handling program elements such as modules, functions, and derived types. Specific use cases include processing Fortran declarations, managing symbol tables, and extracting type/location information during parsing.",
+      "description_length": 527,
+      "index": 110,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Trunk.F.TokenF",
+      "description": "This module provides functions for converting abstract syntax tree (AST) nodes into token-location pairs and performing syntactic analysis on tokens, such as type checking and size determination. It operates on AST specifications, tokens, and program structures like expressions and type definitions. Use cases include parsing program units, extracting preprocessor directives, and analyzing token-level details for code transformation or validation.",
+      "description_length": 450,
+      "index": 111,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Trunk.F.TBF",
+      "description": "Manages a token queue and parsing state for Fortran code, tracking whether the current context is a regular section and caching parsed results. It operates on token queues, boolean flags, and parse results from the token buffer. Used to control parsing flow and reuse previously parsed structures during code analysis.",
+      "description_length": 318,
+      "index": 112,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Trunk.F.U",
+      "description": "This module handles state management for parsing and formatting operations, tracking elements like indentation levels, character contexts, and parenthesis balances using custom types such as `PA.char_context` and margin statistics. It processes strings and integers to manage line-based metrics, non-blank character counts, and comment tracking, enabling precise control over text layout. Specific use cases include code formatting tools and parsers requiring detailed control over indentation and structural syntax elements.",
+      "description_length": 525,
+      "index": 113,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Trunk.F.A",
+      "description": "The module provides functions for parsing and transforming Fortran AST nodes, managing symbol tables, scopes, and labels, with operations including error handling, attribute setting, and name registration. It works with AST structures, lexical positions, and program entities to support tasks like scope boundary management, label manipulation, and type information extraction. Use cases include compiler development, AST-based analysis, and representation conversion for Fortran code.",
+      "description_length": 485,
+      "index": 114,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Ulexer.F.Aux",
+      "description": "The module provides functions for managing symbol tables, error reporting, and scope control in a Fortran parser, operating on AST nodes, labels, and name frames. It handles tasks like attribute setting, label normalization, and AST transformations, focusing on symbol registration, name resolution, and OCL directive conversions. These operations are critical for parsing and analyzing Fortran code with complex scoping and attribute management requirements.",
+      "description_length": 459,
+      "index": 115,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Ulexer.F.TokenF",
+      "description": "This module handles operations such as converting abstract syntax tree (AST) nodes into token-location pairs and analyzing tokens for type classification, size, and syntactic context. It works with AST specifications, tokens, and program structures like expressions and type definitions to support tasks such as syntax validation and code transformation. Specific use cases include processing preprocessor directives, extracting semantic information from code, and facilitating low-level program analysis.",
+      "description_length": 505,
+      "index": 116,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Disambg.F.Aux",
+      "description": "This module provides operations for managing symbol tables, parsing and transforming AST nodes, and handling scope boundaries, particularly for Fortran parsing. It works with AST nodes, labels, name frames, symbol specifications, and location data, enabling tasks like attribute extraction, label conversion, and OCL directive processing. Specific use cases include compiler components for symbol registration, scope management, and AST analysis in Fortran code transformation pipelines.",
+      "description_length": 487,
+      "index": 117,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.TrunkF",
+      "description": "Provides access to a stack of lexing buffers, a flag indicating processing completion, and the current lexing buffer for incremental parsing. Operates with `Sedlexing.lexbuf` and `Stack.t` to manage state during tokenization. Used to process large or streaming input by maintaining context across multiple lexing steps.",
+      "description_length": 319,
+      "index": 118,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.TokenF",
+      "description": "This module handles operations such as converting AST nodes into token-location pairs and processing tokens for classification, type checks, and size determination. It works with AST specifications, tokens, and node structures to support tasks like preprocessing and semantic analysis. Use cases include compiler workflows, code transformation pipelines, and static analysis tools requiring detailed token and AST interactions.",
+      "description_length": 427,
+      "index": 119,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.TBF",
+      "description": "Manages a token queue and parsing state for Fortran code, tracking whether the current context is regular Fortran syntax. It stores parsed results in a cache for reuse during analysis. Used to control token consumption and maintain state during recursive descent parsing.",
+      "description_length": 271,
+      "index": 120,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.BF",
+      "description": "Maintains state for token tracking during Fortran parsing, including the last and previous tokens and their locations. It manages an internal queue for temporary storage of parsed elements. Used to control end-of-paragraph detection and token sequencing in the parsing process.",
+      "description_length": 277,
+      "index": 121,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.U",
+      "description": "This module handles low-level code analysis and formatting by tracking indentation, character contexts, parenthesis levels, and line statistics through custom types like `PA.char_context` and `margin_stat`, alongside strings and integers. It supports precise control over parsing and formatting workflows, such as managing comment boundaries, ensuring proper spacing, and enforcing syntax rules in tools like code formatters or linters.",
+      "description_length": 436,
+      "index": 122,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.P",
+      "description": "manages parser state and incremental parsing through low-level operations on LR(1) states, environments, and token sequences, while enabling the construction of partial ASTs using `Ast.Partial.t` and tracking progress with `MenhirInterpreter.checkpoint`. It supports operations like production rule lookups, stack inspection, and position-based parsing, allowing for detailed analysis of grammars and dynamic extension of incomplete code structures. Functions handle terminals, nonterminals, and symbols, facilitating tasks such as tracking state changes during parsing and building partial representations of programs. Examples include parsing function bodies incrementally, analyzing OpenMP directives, and managing complex token sequences with precise state control.",
+      "description_length": 769,
+      "index": 123,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F.A",
+      "description": "The module provides functions for parsing and manipulating Fortran ASTs, including error reporting, symbol table management, and scope handling, with operations on AST nodes, labels, and name frames. It enables tasks like identifier registration, program structure tracking, and attribute extraction, supporting structured program analysis and AST transformations. Specific use cases involve managing lexical positions, converting name representations, and marking syntactic constructs during compilation.",
+      "description_length": 505,
+      "index": 124,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Parser.Make.MenhirInterpreter",
+      "description": "The module supports low-level parser state management, including checkpointing, environment manipulation, and token stream handling, working with structures like stacks, LR(1) states, and parsing positions. It enables operations such as reducing grammar rules, checking terminals, and traversing terminals for complex grammar processing. Specific use cases include interactive parsing scenarios, error recovery, and incremental analysis in language implementations.",
+      "description_length": 465,
+      "index": 125,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Parser.Make.Incremental",
+      "description": "This module specializes in incremental parsing and error recovery, constructing partial AST nodes for program units, statements, and declarations while tracking source locations via Lexing.position. It processes syntactic elements like function heads, expressions, and OpenMP directives, enabling step-by-step AST building and checkpointing during complex parsing tasks. Use cases include handling incomplete code segments and resuming parsing after errors.",
+      "description_length": 457,
+      "index": 126,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Pinfo.Rank",
+      "description": "Provides operations to convert rank values to strings, create ranks from integers, and check if a rank is zero or non-zero. Works with an abstract type representing ranks, including special values like none, unknown, zero, and non_zero. Used to handle enumerated rank states in data processing pipelines.",
+      "description_length": 304,
+      "index": 127,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Pinfo.TypeSpec",
+      "description": "Converts type specifications to strings, extracts their names, constructs them from labels, and checks if they are fully resolved. Works with type representations that include names and resolution status. Used to generate human-readable type info during compiler diagnostics and to validate type definitions before code generation.",
+      "description_length": 331,
+      "index": 128,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Pinfo.ProcInterface",
+      "description": "Provides string conversion and name extraction from interface representations. Operates on labeled data structures to determine interface validity and derive identifiers. Used to validate and inspect network interface configurations during system initialization.",
+      "description_length": 262,
+      "index": 129,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Pinfo.Name",
+      "description": "Provides functions to manage scoping units, lookup symbol specifications via hash tables, and track implicit specifications and module usage. Operates on types such as `ScopingUnit.t`, `Spec.t`, `ImplicitSpec.c`, and `AccessSpec.t`. Used to enforce Fortran scoping rules, manage symbol visibility, and track dependencies during parsing.",
+      "description_length": 336,
+      "index": 130,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokens_.T",
+      "description": "Processes input through a Menhir-generated parser, converting tokens into abstract syntax trees while executing associated actions. Supports error recovery and incremental parsing, allowing flexible handling of input streams. Manipulates and evaluates abstract syntax trees through built-in operations. Enables tasks such as evaluating expressions, analyzing program structure, or transforming input based on grammar rules.",
+      "description_length": 423,
+      "index": 131,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenbuffer.F",
+      "description": "Provides access to an environment record and a context stack, enabling management of execution contexts and configuration settings. Works with custom types `env` and `Context.stack` to track and modify runtime state. Used to retrieve and update environment variables and maintain nested context layers during processing.",
+      "description_length": 320,
+      "index": 132,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Branch.F",
+      "description": "Provides access to an environment record and a context stack, enabling state management during parsing or evaluation processes. Works with custom types `env` and `Context.stack` to track variable bindings and nested scopes. Used to resolve variable references and maintain execution context in a compiler or interpreter.",
+      "description_length": 320,
+      "index": 133,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokens.Make",
+      "description": "Provides access to environment variables and a stack-based context for tracking configuration state during build processes. Operates on environment records and context stacks to manage dynamic build settings. Used to retrieve current environment values and inspect nested context layers during task execution.",
+      "description_length": 309,
+      "index": 134,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Token.F",
+      "description": "Provides access to an environment record and a stack of context objects, enabling stateful operations within a computation. Works with custom types `env` and `Context.stack` to manage nested execution contexts. Used to track and modify runtime settings during parsing or evaluation processes.",
+      "description_length": 292,
+      "index": 135,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner.F",
+      "description": "Provides access to an environment record and a context stack, enabling tracking of execution contexts and configuration settings. Operates with an `env` type and `Context.stack` for managing nested scopes. Used to retrieve and modify runtime configuration during processing of structured data.",
+      "description_length": 293,
+      "index": 136,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Trunk.F",
+      "description": "Provides access to an environment record and a stack of context objects, enabling stateful operations within a computation. Works with custom types `env` and `Context.stack` to manage execution contexts. Used to retrieve and modify runtime environment settings during processing.",
+      "description_length": 279,
+      "index": 137,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Ulexer.F",
+      "description": "This module manages state tracking for text parsing and formatting, utilizing mutable integers, strings, and hash tables to monitor line numbers, statement content, and structural elements like indentation and parenthesis levels. It supports operations such as updating counters for comments and line formats, as well as tracking nested code structures during analysis. Specific use cases include syntax validation, code formatting tools, and statistical text analysis.",
+      "description_length": 469,
+      "index": 138,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Ast.Partial",
+      "description": "This module offers functions to construct, analyze, and modify program structures, focusing on creating abstract syntax tree (AST) nodes for elements like variables, expressions, and declarations, while managing specifications, tags, and lengths. It works with types such as `spec`, `t`, and `node`, along with lists of nodes, enabling precise manipulation of program components. Use cases include building language-specific constructs, validating structural properties, and generating executable or declarative code segments.",
+      "description_length": 526,
+      "index": 139,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.F_xlf.Assertion",
+      "description": "Provides functions to convert assertion data into string representations and tagged formats, supporting structured data extraction. Works with a custom type `t` that encapsulates assertion details. Used to generate human-readable logs and parse assertion metadata in testing frameworks.",
+      "description_length": 286,
+      "index": 140,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_xlf.Directive",
+      "description": "Converts directive data between string representations, including detailed and simplified formats, and extracts or modifies directive names. Operates on custom types for source indicators, priority levels, and directive structures. Used to generate human-readable outputs, annotate directives with metadata, and handle name-based logic in parsing or transformation workflows.",
+      "description_length": 375,
+      "index": 141,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Disambg.F",
+      "description": "Provides access to an environment record and a stack of context objects, enabling state management during parsing or evaluation processes. Works with custom types `env` and `Context.stack` to track and modify execution context. Used to retrieve and update configuration settings and nested scope information in a parser or interpreter.",
+      "description_length": 335,
+      "index": 142,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_dec.Directive",
+      "description": "Provides functions to convert directive data to strings, extract names, and classify directives as specification or execution parts. Operates on a custom type representing directives, including associated labels. Used to generate human-readable representations, extract identifiers, and modify directives for anonymization.",
+      "description_length": 323,
+      "index": 143,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.F_dec.Clause",
+      "description": "Provides operations to convert clauses to formatted strings, extract tagged representations with metadata, and generate anonymized versions. Works with an abstract type representing logical clauses. Used to generate human-readable outputs, serialize clauses with context, and prepare data for privacy-sensitive processing.",
+      "description_length": 322,
+      "index": 144,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_dec.Attribute",
+      "description": "Provides functions to convert attribute values to strings, extract names, and create attributes from keywords or labels. Works with a custom type `t` and associated label names. Used to generate HTML-like tags, anonymize data, and construct attributes from string or integer inputs.",
+      "description_length": 282,
+      "index": 145,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Parser_aux.LineStat",
+      "description": "Processes line data to determine line characteristics. Evaluates if a line is a pure comment, assumed blank, or continued. Works with an opaque line type representing source code lines. Used to filter and categorize lines during static analysis.",
+      "description_length": 245,
+      "index": 146,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Parser_aux.F",
+      "description": "Provides access to an environment record and a stack of context objects, enabling stateful operations within a computation. Works with custom types `env` and `Context.stack` to manage scoped variables and execution contexts. Used to retrieve and modify runtime configuration and nested context layers during processing.",
+      "description_length": 319,
+      "index": 147,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Common.DirectiveLine",
+      "description": "Converts tag values to strings, constructs specialized queue-based data structures for processing directives, and generates raw directive records with specific parameters. Operates on custom tag types, object queues, and a raw record structure containing directive metadata. Used to build and manipulate directive components in a parsing or transformation pipeline.",
+      "description_length": 365,
+      "index": 148,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Common.LangSpec",
+      "description": "Converts internal representation of language specifications to human-readable strings. Works with abstract type representing syntax rules and grammar structures. Used to generate error messages and debug output during parsing.",
+      "description_length": 226,
+      "index": 149,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Common.LangExtension",
+      "description": "Provides access to a set of language extensions represented as tagged values. Operates on `t` type and `Xset.t` for managing extension configurations. Used to query supported extensions in compiler workflows.",
+      "description_length": 208,
+      "index": 150,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Common.SourceForm",
+      "description": "Converts a source form representation into a human-readable string. Works with an abstract type representing parsed source code structures. Used to generate debug output or serialize code for inspection.",
+      "description_length": 203,
+      "index": 151,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Common.LangConfig",
+      "description": "Provides access to and modification of language-specific configuration settings, including source formatting rules, extension sets, and line length constraints. Operates on types such as LangSpec.t, LangExtension.set, and SourceForm.t. Used to customize code parsing and formatting behavior based on language-specific requirements.",
+      "description_length": 331,
+      "index": 152,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp.F",
+      "description": "Provides operations to manage and query a parsing context, check if the context is empty, and retrieve the most recently added token. Works with a mutable state containing a parsing context, a boolean flag, and a token queue. Used to track parsing progress and inspect the latest token during Fortran source analysis.",
+      "description_length": 317,
+      "index": 153,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Parser.Make",
+      "description": "Provides functions to access and manipulate build environments and context stacks. Operates on environment records and context stacks representing build states. Used to retrieve current build settings and manage nested build contexts during configuration.",
+      "description_length": 255,
+      "index": 154,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Ast",
+      "description": "Provides operations to manage location, labels, and child nodes in abstract syntax tree nodes, along with information, bindings, and binding lists. Works with location data, labels, lists of nodes, and binding structures. Used to track source positions, annotate nodes with metadata, and represent hierarchical tree structures during parsing or analysis.",
+      "description_length": 354,
+      "index": 155,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Branch",
+      "description": "Provides access to an environment record and a context stack for managing state during parsing or evaluation. It supports custom types `env` for variable bindings and `Context.stack` for nested scopes, enabling resolution of variable references. Operations include pushing and popping contexts, looking up variables, and maintaining scope integrity. This module is essential for implementing interpreters or compilers that require dynamic variable resolution.",
+      "description_length": 459,
+      "index": 156,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Common",
+      "description": "Provides utilities for processing and representing language-related data, including tag value conversion, directive construction, syntax visualization, extension management, and configuration tuning. Operates on custom tag types, abstract syntax representations, and configuration records to support parsing, transformation, and code generation tasks. Examples include generating debug strings from syntax rules, building directive queues for processing, and adjusting formatting settings for specific languages. Enables fine-grained control over language processing pipelines through direct manipulation of internal representations.",
+      "description_length": 633,
+      "index": 157,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Context",
+      "description": "Maintains a stack of context states and associated callbacks for tracking changes. It uses a hash table to store checkpointed states indexed by key, along with mutable stack and suspension flags. It supports pushing, popping, and activating/deactivating callbacks to manage state transitions and event handling.",
+      "description_length": 311,
+      "index": 158,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Disambg",
+      "description": "Manages execution context and configuration through a record and stack structure, allowing dynamic tracking of scopes and settings during parsing or evaluation. It supports operations to access and modify custom types `env` and `Context.stack`. Users can retrieve current configuration values, push or pop context layers, and maintain nested scope information. This enables precise control over state changes in complex computational workflows.",
+      "description_length": 444,
+      "index": 159,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Elaborate",
+      "description": "Handles hash table operations for mapping Fortran AST nodes to lists of AST nodes, enabling efficient lookups and associations. Works with OCaml's Hashtbl module and Fortran parsing abstract syntax tree structures. Used to track relationships between language constructs during static analysis.",
+      "description_length": 294,
+      "index": 160,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_acc_clause",
+      "description": "Handles financial clause data with operations to convert to formatted strings, extract tags with associated values, and generate anonymized versions. Works with a custom type representing clause data, including structured metadata. Used to prepare clause data for logging, reporting, and privacy-compliant data handling.",
+      "description_length": 320,
+      "index": 161,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_acc_construct",
+      "description": "provides a framework for constructing accumulator structures with no operational capabilities. it defines no data types or functions, serving as a placeholder or base for future extensions. no computations or transformations can be performed using this module. it is intended to be combined with other modules that implement specific accumulator behaviors.",
+      "description_length": 356,
+      "index": 162,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.F_acc_directive",
+      "description": "Provides conversion functions to string representations and tag formatting for labeled structures, along with methods to extract names and determine part types. Works with custom types representing atomic sub-components and labeled entities. Used to generate human-readable outputs, analyze structure composition, and prepare data for processing or logging.",
+      "description_length": 357,
+      "index": 163,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_access_spec",
+      "description": "Converts internal access specifications to various string representations, including detailed and simplified formats. Handles conversion to tag-based structures, attribute specifications, and specialized type and procedure attribute formats. Used to generate human-readable output and support type-checking and code generation workflows.",
+      "description_length": 337,
+      "index": 164,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_ambiguous",
+      "description": "Provides functions to convert values to strings, including a simplified version and a tagged format with additional metadata. Works with a custom type that encapsulates labeled names and array specifications. Enables extraction of names, checks for array specifications, and generates anonymized versions of the data.",
+      "description_length": 317,
+      "index": 165,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_attr_spec",
+      "description": "Converts attribute specifications to formatted strings, including a tagged representation with key-value pairs. Works with an abstract type representing attribute specifications, often used in parsing or generating structured data. Processes keyword-based inputs to construct attribute representations for configuration or metadata handling.",
+      "description_length": 341,
+      "index": 166,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.F_binding_attr",
+      "description": "Provides functions to convert binding attributes to strings, extract names, and anonymize data. Works with a custom type representing binding attributes, including labels and associated metadata. Used to generate human-readable representations, extract identifiers for processing, and sanitize data in code analysis tools.",
+      "description_length": 322,
+      "index": 167,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_case_selector",
+      "description": "Provides functions to convert a case value into different string representations, including a tagged format that pairs a string with a list of arbitrary values. Works with an abstract type representing case data, exposing internal structure through conversion functions. Used to generate human-readable output and structured tags for logging or serialization.",
+      "description_length": 359,
+      "index": 168,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_case_value_range",
+      "description": "Provides functions to convert a value range representation into formatted strings, including a simplified version and a tagged format with associated data. Works with an opaque type representing a range of values, typically used in parsing or serialization contexts. Used to generate human-readable output and structured tags for data processing pipelines.",
+      "description_length": 356,
+      "index": 169,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.F_close_spec",
+      "description": "Provides functions to convert a structured representation into strings, tags, and connection specifications, and to extract or modify its label. Works with a custom type representing close specifications, including associated labels and keywords. Used to generate human-readable outputs, serialize data for tagging, and prepare configurations for connections.",
+      "description_length": 359,
+      "index": 170,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_connect_spec",
+      "description": "Provides functions to convert a value to various string representations, extract labels, and transform between related types. Works with a custom type representing connection specifications, including labels and keywords. Used to generate human-readable formats, extract metadata, and prepare data for inquiry operations.",
+      "description_length": 321,
+      "index": 171,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_constant",
+      "description": "Provides functions to convert, inspect, and construct constant values with specific representations, including string conversion, name extraction, and value creation from raw strings. Works with a custom type `t` that encapsulates various constant forms such as integers, real numbers, characters, and labeled values. Used to process and manipulate compiler or parser internal representations of constants, including anonymizing them for output.",
+      "description_length": 445,
+      "index": 172,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_control_edit_desc",
+      "description": "Handles text-based control structures, converting them to formatted strings, simplified representations, and tagged formats with metadata. Operates on an abstract type representing control flow elements. Used for generating human-readable outputs, anonymizing sensitive data, and preparing structures for further processing.",
+      "description_length": 324,
+      "index": 173,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_dec",
+      "description": "manages directive, clause, and attribute data through custom types, enabling string conversion, metadata extraction, and anonymization. It supports operations like name extraction, classification, and formatted output generation across logical structures. Users can transform directives into readable formats, serialize clauses with metadata, and construct attributes from labels or keywords. Examples include generating HTML-like tags, anonymizing directive labels, and producing human-readable clause representations.",
+      "description_length": 519,
+      "index": 174,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_defined_operator",
+      "description": "Provides functions to convert, inspect, and construct instances of a custom type, including string representation, name extraction, and anonymization. Works with a hidden type that encapsulates a string and associated metadata. Used to generate human-readable outputs, extract identifiers, and create sanitized versions of data for logging or display.",
+      "description_length": 351,
+      "index": 175,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_flush_spec",
+      "description": "Provides functions to convert a value to string representations, extract a label, and anonymize the data. Operates on a custom type `t` that encapsulates labeled data. Used to generate simplified strings, extract metadata, and remove identifying information from structured data.",
+      "description_length": 279,
+      "index": 176,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_format",
+      "description": "Converts a structured data type to various string representations, including a detailed tag format with associated labels. Processes and extracts specific labels from the data structure, and generates an anonymized version of the data. Used to prepare data for logging, debugging, or transmission where sensitive information needs to be removed or formatted.",
+      "description_length": 358,
+      "index": 177,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_format_item",
+      "description": "Converts specialized edit descriptions to formatted strings and simplified representations, checks if a value is in a minimal form, and generates tag-based output. Works with custom types representing edit descriptions and core data structures. Used to prepare structured data for logging, display, and anonymized output in a specific application context.",
+      "description_length": 355,
+      "index": 178,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_generic_spec",
+      "description": "Converts record kinds and structured data to strings, labels, and tags, with options to extract or anonymize names. Operates on custom types representing record kinds and structured data elements. Used to generate human-readable representations, process metadata, and handle name-based lookups in parsing or serialization workflows.",
+      "description_length": 332,
+      "index": 179,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_header_file",
+      "description": "Provides functions to extract unquoted strings, convert header data to various representations, and retrieve attributes, name, and length. Works with a custom type representing header data, including user-defined, system, macro, and generated headers. Used to process and transform header information in code generation and analysis workflows.",
+      "description_length": 343,
+      "index": 180,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.F_inquire_spec",
+      "description": "Provides functions to convert a value to detailed and simplified string representations, extract labels, and generate tagged formats. Works with a custom type `t` that encapsulates structured data including labels. Used to process and transform specification entries for logging, display, or data manipulation tasks.",
+      "description_length": 316,
+      "index": 181,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.F_intent_spec",
+      "description": "Converts intent specifications to formatted strings, extracts tags with associated data, and parses keywords into intent representations. Works with a custom type representing intent structures, including tags and metadata. Used to generate human-readable outputs, extract structured data from intents, and map user input to predefined intent models.",
+      "description_length": 350,
+      "index": 182,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_internal_subprogram",
+      "description": "Converts internal subprogram representations to strings, simplified strings, and tagged formats; extracts and optionally retrieves the name of the subprogram. Operates on a custom type representing internal subprograms, including label names and associated data. Used to generate human-readable outputs, serialize data, and handle name extraction in compiler or analysis workflows.",
+      "description_length": 381,
+      "index": 183,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_intrinsic_operator",
+      "description": "Provides string conversion functions for internal representation, including a detailed tag format with associated values. Works with an abstract type representing intrinsic operations. Used to generate human-readable output and structured tags for debugging or logging purposes.",
+      "description_length": 278,
+      "index": 184,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.F_io_control_spec",
+      "description": "Provides operations to convert internal representations to strings, extract labels and names, and create instances from keywords. Works with a custom type representing input/output control specifications, including labels and names from a separate module. Used to generate human-readable outputs, extract metadata, and anonymize control structures for privacy.",
+      "description_length": 360,
+      "index": 185,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_linda_call",
+      "description": "Provides functions to convert a value to a string representation, a simplified string, and a tagged format with associated data. Works with an abstract type `t` that encapsulates structured data. Used to serialize and annotate internal state for logging or debugging purposes.",
+      "description_length": 276,
+      "index": 186,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_module_subprogram",
+      "description": "Converts internal representations to formatted strings, including detailed and simplified versions, and extracts or modifies names while preserving structure. Operates on a custom type representing program entities with associated labels. Used to generate human-readable outputs and anonymize data for privacy in logging or serialization.",
+      "description_length": 338,
+      "index": 187,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.F_omp_clause",
+      "description": "This module provides conversion functions for OpenMP clause types, transforming data sharing attributes, policies, map types, and other clause categories into standardized string representations, simplified formats, and tagged structures. It operates on enumerated types representing specific clause semantics, enabling consistent formatting and anonymization. Use cases include debugging parallel code, generating human-readable diagnostics, or processing OpenMP directives in compiler or analysis tools.",
+      "description_length": 505,
+      "index": 188,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.F_omp_directive",
+      "description": "Converts various OpenMP directive components\u2014such as atomic sub-clauses, SIMD flags, and memory orderings\u2014into string representations, including simplified and tagged formats. Works with custom types like `atomic_sub`, `construct_type`, and a generic `t` representing directive structures. Used to generate human-readable or machine-processable representations of OpenMP directives during parsing or code analysis.",
+      "description_length": 414,
+      "index": 189,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_position_spec",
+      "description": "Provides operations to convert a position specification into various string formats, extract labels, and transform into specialized command specifications. Works with a custom type representing position data and associated labels. Used to generate human-readable outputs, extract metadata, and prepare commands for system interactions.",
+      "description_length": 335,
+      "index": 190,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_prefix_spec",
+      "description": "Handles prefix labels with operations to convert to strings, tags, and extract names. Works with custom type t and Label_common.name. Used to process and anonymize label prefixes in parsing or serialization workflows.",
+      "description_length": 217,
+      "index": 191,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_proc_attr_spec",
+      "description": "Provides string conversion functions for process attributes, including detailed and simplified formats, and a method to extract tags with associated labels. Works with a custom type representing process attribute specifications. Used to generate human-readable output and to process attribute metadata in system monitoring tools.",
+      "description_length": 329,
+      "index": 192,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_proc_component_attr_spec",
+      "description": "Provides functions to convert component attributes to strings, extract names, and anonymize data. Works with a custom type representing component attributes, including labels and metadata. Used to generate human-readable representations, extract identifiers for processing, and sanitize data for privacy.",
+      "description_length": 304,
+      "index": 193,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_program_unit",
+      "description": "Provides functions to convert program units to strings, extract names, and anonymize them. Works with a custom type representing program units, including labels and metadata. Used to generate human-readable representations, extract identifiers for analysis, and modify program units for privacy or testing.",
+      "description_length": 306,
+      "index": 194,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_stmt",
+      "description": "This module provides operations for inspecting, classifying, and transforming structured Fortran statement representations, including type checks, metadata extraction, and relabeling. It works with abstract statement types `_t` and their labeled variants, enabling manipulation of constructs like assignments, loops, and calls. Use cases include static analysis, code transformation, and generating intermediate representations for compiler or interpreter workflows.",
+      "description_length": 466,
+      "index": 195,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_type_attr_spec",
+      "description": "Provides conversion of type attributes to formatted strings, simple strings, and tagged representations with labeled names. Works with a custom type `t` that encapsulates type information and labels. Used to generate human-readable outputs and anonymize type data for inspection or logging.",
+      "description_length": 290,
+      "index": 196,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_type_spec",
+      "description": "Provides functions to convert type specifications to strings, labels, and tags, and to extract or modify their names. Works with a custom type representing type specifications, including associated labels and keywords. Used to generate human-readable representations, process type metadata, and create anonymized versions for debugging or serialization.",
+      "description_length": 353,
+      "index": 197,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.F_wait_spec",
+      "description": "Provides functions to convert a state representation to various string formats, extract labels, and anonymize the state. Works with a custom type representing a state machine state, including labels and associated data. Used to generate human-readable outputs, serialize state information, and prepare data for privacy-sensitive operations.",
+      "description_length": 340,
+      "index": 198,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.F_xlf",
+      "description": "Converts assertion and directive data into structured string formats, enabling metadata extraction and human-readable output. It handles custom types for assertions and directives, supporting operations like name modification, priority tagging, and format conversion. Users can generate logs, annotate directives with metadata, and transform data between detailed and simplified representations. Examples include parsing test assertions and modifying directive names during processing workflows.",
+      "description_length": 495,
+      "index": 199,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Keyword",
+      "description": "Locates specific keywords in a string and returns corresponding token values, including positions, flush, wait, close, connect, I/O control, and language binding directives. Processes lists of strings to identify separated keywords and map them to tokens. Used to parse and interpret structured command sequences in protocol or language specifications.",
+      "description_length": 352,
+      "index": 200,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Label",
+      "description": "The module provides operations for constructing, validating, and analyzing Fortran label data structures, including handling directives, clauses, and construct markers through custom types like `t`, `LindaCall.t`, and `Stmt._t`. It enables tasks such as syntactic analysis, metadata extraction, and semantic validation, with specific applications in parsing Fortran code, managing OpenMP/ACC directives, and classifying statement properties. Key functions include attribute extraction, category checks, and conversion between labeled representations of code constructs.",
+      "description_length": 569,
+      "index": 201,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Lib",
+      "description": "This module handles parsing state management and incremental processing for Fortran code, utilizing token buffers and scope contexts to track syntactic components like program units, specifications, and statements. It supports partial parsing of specific sections, such as type declarations or procedure definitions, by leveraging token-level analysis and source location tracking. These capabilities enable efficient, modular parsing of complex Fortran constructs during compiler or analyzer workflows.",
+      "description_length": 503,
+      "index": 202,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Parser",
+      "description": "Manages build environments and context stacks, enabling retrieval and modification of build settings across nested configurations. Operates on environment records and context stacks to track and alter build states dynamically. Supports operations like pushing new contexts, popping existing ones, and querying current settings. Can be used to isolate build configurations or propagate settings through hierarchical structures.",
+      "description_length": 426,
+      "index": 203,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Parser_aux",
+      "description": "The module manages parsing state, context tracking, and control flow through mutable state mechanisms, utilizing structures like stacks, hash tables, and AST nodes to handle complex scenarios. It supports context-sensitive parsing for Fortran, including nested structures, semantic analysis, and syntactic context flags, while enabling incremental processing via queues and lexical mode tracking. Specific use cases involve managing macro expansions, location layers, and nested parsing contexts such as conditionals or loops.",
+      "description_length": 526,
+      "index": 204,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Pinfo",
+      "description": "manages rank conversions, type validation, interface inspection, and scoping logic through abstract types and lookup mechanisms. It handles rank states, type resolution, interface identifiers, and symbol visibility with specialized operations. Functions include converting ranks to strings, checking type resolution, validating interfaces, and managing symbol lookups. It supports tasks like processing enumerated data, generating diagnostics, and enforcing scoping rules in compiler and system tools.",
+      "description_length": 501,
+      "index": 205,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Printer",
+      "description": "Generates string representations of tree-like structures by recursively combining child nodes' string outputs. Accepts objects with a `to_string` method and a `children` list for traversal. Outputs formatted results to the console or captures them as strings for logging or debugging.",
+      "description_length": 284,
+      "index": 206,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Scanner",
+      "description": "Combines environment tracking and context management to support dynamic configuration during data processing. Exposes an `env` type for storing runtime parameters and a `Context.stack` for handling nested execution scopes. Allows retrieval and modification of configuration values within active processing contexts. Enables consistent state management across complex data transformations.",
+      "description_length": 388,
+      "index": 207,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Source",
+      "description": "Provides functions to retrieve language configuration and extract OpenMP C++ lines from source code. Operates on parsed Fortran and C++ data structures. Used to filter and process parallel directives in mixed-language projects.",
+      "description_length": 227,
+      "index": 208,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Token",
+      "description": "Provides access to an environment record and a stack of context objects, enabling stateful operations within a computation. It works with custom types `env` and `Context.stack` to manage nested execution contexts. This allows tracking and modifying runtime settings during parsing or evaluation. For example, it can be used to maintain variable bindings or control flow information across different scopes.",
+      "description_length": 406,
+      "index": 209,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenbuffer",
+      "description": "Manages execution contexts and configuration through an environment record and context stack, supporting nested layers and dynamic state changes. Operates on custom types `env` and `Context.stack` to track and modify runtime settings. Allows retrieval and modification of environment variables during processing. Enables structured handling of configuration across different execution phases.",
+      "description_length": 392,
+      "index": 210,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokenpp",
+      "description": "Provides operations to manage and query a parsing context, check if the context is empty, and retrieve the most recently added token. It works with a mutable state containing a parsing context, a boolean flag, and a token queue. This enables tracking of parsing progress and inspection of the latest token during Fortran source analysis. Functions include checking emptiness, updating the state, and accessing the most recent token.",
+      "description_length": 432,
+      "index": 211,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Tokens",
+      "description": "manages dynamic build configurations through environment records and context stacks, enabling retrieval of current settings and inspection of nested layers. It supports operations like pushing, popping, and querying context states, as well as accessing environment variables. Users can track changes in configuration across different build stages and access values from specific stack levels. For example, it allows retrieving the value of a variable from the top of the stack or restoring a previous configuration state.",
+      "description_length": 521,
+      "index": 212,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Tokens_",
+      "description": "Parses input into abstract syntax trees using a Menhir parser, executing actions and supporting error recovery and incremental processing. Provides operations to manipulate, evaluate, and transform these trees for tasks like expression evaluation and structural analysis. The main data types include parsed trees and token streams, with operations for traversal and modification. Examples include evaluating arithmetic expressions or extracting program components based on defined grammar rules.",
+      "description_length": 495,
+      "index": 213,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing.Trunk",
+      "description": "Provides access to an environment record and a stack of context objects, enabling stateful operations within a computation. It works with custom types `env` and `Context.stack` to manage execution contexts. Operations include retrieving and modifying runtime environment settings during processing. This allows for dynamic control over execution state in complex workflows.",
+      "description_length": 373,
+      "index": 214,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fortran_parsing.Ulexer",
+      "description": "Manages text parsing and formatting by tracking state through mutable integers, strings, and hash tables, including line numbers, indentation, and parenthesis levels. Supports updating counters for comments, line formats, and nested code structures during analysis. Enables syntax validation, code formatting, and statistical text analysis. Provides operations to monitor and modify structural elements in real-time.",
+      "description_length": 416,
+      "index": 215,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "diffast-langs-fortran-parsing",
+      "description": "Compares abstract syntax trees (ASTs) of programming languages like Python, Java, and C/C++ by analyzing node-level differences using a tree edit distance (TED) algorithm with heuristics to manage computational complexity. Generates detailed change reports and exports syntactic and semantic information in XML or N-Triples formats for integration with RDF stores. Enables tasks such as code homology analysis and change pattern mining by structuring program differences as queryable facts.",
+      "description_length": 490,
+      "index": 216,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fortran_parsing",
+      "description": "The module integrates functionality for managing abstract syntax trees, execution contexts, and data transformations, supporting operations on custom types like `env`, `Context.stack`, and various labeled structures. It enables tracking of source positions, variable bindings, and state transitions, while providing string conversion, metadata extraction, and anonymization for diverse data formats. Examples include generating human-readable outputs from AST nodes, managing nested scopes during parsing, and converting OpenMP directives to structured representations. It also handles hash table operations, directive processing, and state management for efficient analysis and code generation.",
+      "description_length": 695,
+      "index": 217,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 457,
+    "meaningful_modules": 218,
+    "filtered_empty_modules": 239,
+    "retention_rate": 0.47702407002188185
+  },
+  "statistics": {
+    "max_description_length": 769,
+    "min_description_length": 201,
+    "avg_description_length": 417.697247706422,
+    "embedding_file_size_mb": 0.7920923233032227
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "package": "wcs-lib",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 23,
+  "creation_timestamp": "2025-06-18T16:36:27.289524",
+  "modules": [
+    {
+      "module_path": "wcs-lib",
+      "description": "Provides functions to interact with Watson Conversation Service, including parsing intents, managing dialog flows, and handling user input. Works with custom data types such as conversation contexts, intent definitions, and message payloads. Used to build and deploy chatbots that process natural language input and generate structured responses.",
+      "description_length": 346,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Translation",
+      "description": "Constructs condition expressions from strings or expressions and generates context or output JSON structures from Wcs_t inputs. Transforms dialog nodes into Wcs_t-compatible node lists, enabling integration with JSON-based processing pipelines. Converts entire dialog structures into lists of nodes for structured data manipulation.",
+      "description_length": 332,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wcs_j",
+      "description": "This module handles serialization, deserialization, and parsing of JSON data structures specific to the Watson Conversation Service, including workspaces, intents, entities, dialog nodes, logs, and message responses. It operates on OCaml types representing conversational logic, user inputs, system outputs, and API interactions, enabling structured manipulation of service-specific parameters. Use cases include building chatbots, managing conversation workflows, and integrating with Watson's API for natural language processing tasks.",
+      "description_length": 537,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Spel_parse",
+      "description": "Provides functions to parse and transform Spel expressions from files or strings, including desugaring and resugaring shorthand syntax for variables, entities, and intents. Works with Spel_t.expression and boolean references to control parsing behavior. Used to process and normalize Spel expressions in natural language processing pipelines.",
+      "description_length": 342,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Log",
+      "description": "Provides functions to log errors, warnings, and debug messages with module-specific prefixes. Works with boolean references to control output levels and string-based messages for error handling. Enables error recovery by returning default values instead of raising exceptions when configured.",
+      "description_length": 292,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Context_spel",
+      "description": "Provides functions to construct and manipulate JSON objects containing Spel expressions, with specific fields for user input skipping, action lists, continuations, and return values. Operates on `Wcs_t.json_spel` type, allowing extraction, modification, and insertion of structured data. Used to manage workflow state in systems requiring dynamic JSON-based control flow.",
+      "description_length": 371,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Spel",
+      "description": "The module provides operations for constructing, validating, and evaluating Spel expressions, including logical, arithmetic, and string manipulations, as well as embedding contextual elements like entities and conversation state. It works with `Spel_t.expression` types, strings, and values such as booleans, integers, and variables to enable dynamic expression creation and conditional logic. Use cases include parsing user input, generating structured queries, and integrating with systems requiring runtime expression evaluation.",
+      "description_length": 532,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Context",
+      "description": "Provides functions to manipulate JSON objects with fields like \"skip_user_input,\" \"actions,\" \"continuation,\" and \"return.\" It includes creating, updating, extracting, and modifying these fields using specific labels and action lists. Used to manage execution context in a workflow system by adding, removing, or inspecting actions and control flow markers.",
+      "description_length": 356,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wcs",
+      "description": "The module provides functions to construct and serialize workspace-related data structures, including intents, entities, dialog nodes, and actions, working with types like `workspace`, `intent_def`, and `dialog_node`. It handles serialization of these structures into JSON or JSON-Spel formats, enabling API communication and data exchange in conversation systems. Use cases include building request payloads, managing workspace configurations, and converting internal representations for external interactions.",
+      "description_length": 511,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Spel_j",
+      "description": "Converts Spel expressions to and from JSON, handling errors through a result type. Operates on Spel expressions and JSON-safe values. Used to serialize query conditions for storage or transmission in systems relying on JSON.",
+      "description_length": 224,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Json",
+      "description": "Reads and constructs JSON values from files using a custom reader, and provides functions to build and manipulate JSON objects and arrays. It handles basic types like integers, booleans, and strings, as well as operations to add, retrieve, and modify fields in JSON objects. It supports list operations, field extraction, and merging of JSON objects.",
+      "description_length": 350,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Json_spel",
+      "description": "Provides functions to construct and manipulate JSON-like structures with embedded expressions, including creating null, integer, boolean, and string values, building objects and lists, and modifying fields. Converts between these structures and standard JSON, preserving expressions as strings during serialization. Supports operations like adding, retrieving, and removing fields, as well as updating specific types like booleans and strings.",
+      "description_length": 443,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Json_t",
+      "description": "Writes JSON values to a buffer, parses JSON from a lexing buffer, and converts JSON to strings. Operates on Yojson's basic and safe JSON types. Used to serialize data for network transmission and deserialize incoming JSON payloads.",
+      "description_length": 231,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Json_spel_j",
+      "description": "Converts between a safe JSON representation and an AST format for embedded Spel expressions, handling errors through a result type. Operates on JSON values and Spel AST structures, ensuring type safety during conversion. Used to serialize Spel expressions within JSON payloads and reconstruct them accurately.",
+      "description_length": 309,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wcs_t",
+      "description": "This module defines JSON-based data structures for conversational workflows, including workspace configurations, dialog nodes, intents, entities, and message logs, enabling natural language processing and chatbot logic modeling. It supports operations like managing conversational resources, handling request-response patterns, and structuring dialogue flows for tasks such as intent recognition and dialogue management. Specific use cases involve building interactive chatbots, tracking conversation history, and organizing dialogue nodes for dynamic user interactions.",
+      "description_length": 570,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Spel_util",
+      "description": "Constructs and manipulates expression nodes with location metadata, handles lexer state updates, and manages string buffers for parsing tasks. Operates on expression descriptions, locations, lexer buffers, and string buffers. Used to build parsed expressions, track source positions during lexing, and accumulate output during parsing.",
+      "description_length": 335,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Json_spel_t",
+      "description": "Converts between a custom JSON-like structure with embedded expressions and a basic JSON representation. Handles serialization to and from byte buffers and lexing input, producing or consuming strings directly. Processes data that includes both standard JSON elements and evaluatable expression fragments.",
+      "description_length": 305,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Spel_sedlexer_j",
+      "description": "This module handles character classification, state transitions, and tokenization for lexical analysis, focusing on Unicode characters (Uchar.t) and buffer/lexbuf structures. It processes elements like strings, quoted identifiers, and colon-separated tokens, enabling precise lexical parsing for SPeL syntax. Specific operations include partitioning input for state-based parsing and extracting structured tokens from buffered input.",
+      "description_length": 433,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Spel_parser_j",
+      "description": "Parses conditional expressions and bodies from a lexed input, extracting structured Spel_t.expression values. It processes tokens generated by a lexer, handling both boolean conditions and executable code blocks. Used to convert raw input into abstract syntax trees for evaluation in a domain-specific language.",
+      "description_length": 311,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Spel_print",
+      "description": "Generates string representations of Spel expressions, including specialized handling for text nodes. Processes abstract syntax tree nodes defined in Spel_t. Used to produce human-readable output for debugging or logging purposes.",
+      "description_length": 229,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wcs_pretty",
+      "description": "This module specializes in serializing Wcs_t data structures into human-readable JSON format, handling specific types such as workspace responses, intent definitions, dialog nodes, action definitions, log entries, and pagination objects. It enables structured data representation for debugging, logging, or API interaction scenarios where clarity and readability of complex Wcs data are essential. The consistent serialization approach ensures compatibility with tools requiring JSON-formatted outputs from these specialized data types.",
+      "description_length": 536,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Spel_t",
+      "description": "Provides operations to construct and manipulate abstract syntax trees for a domain-specific language, including functions to create literals, apply operations, and track source locations. Works with custom types such as location, expression, and op to represent parsed code structures. Used to generate and analyze structured representations of input expressions during parsing and evaluation.",
+      "description_length": 393,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Dialog_t",
+      "description": "Provides functions to construct and manipulate dialogue trees, including adding nodes, extracting slots from responses, and traversing the structure. Works with nested data types such as responses containing slots, and nodes that form a hierarchical dialog structure. Used to parse and generate interactive dialogue flows in applications like chatbots or narrative-driven games.",
+      "description_length": 378,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 23,
+    "meaningful_modules": 23,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 570,
+    "min_description_length": 224,
+    "avg_description_length": 376.7826086956522,
+    "embedding_file_size_mb": 0.08394145965576172
+  }
+}

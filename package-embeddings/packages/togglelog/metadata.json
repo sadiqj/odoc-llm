@@ -1,0 +1,49 @@
+{
+  "package": "togglelog",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 4,
+  "creation_timestamp": "2025-06-18T16:28:53.317331",
+  "modules": [
+    {
+      "module_path": "Togglelog.Mapper",
+      "description": "Provides functions to generate and manipulate logging expressions within OCaml ASTs, including creating null expressions, invoking log calls, and expanding log statements with context-aware type checking. Works with Ppxlib's location data, AST expressions, and string-based log configurations. Used to inject conditional logging code into compiled programs, enabling or disabling logs based on runtime flags while preserving type safety.",
+      "description_length": 437,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Togglelog.Register",
+      "description": "Provides functions to check if a feature is active via a mutable boolean flag and to create pattern matchers for parsing OCaml AST nodes. Works with reference types, AST payloads, and expression structures. Used to conditionally process syntax tree elements during code transformation pipelines.",
+      "description_length": 295,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "togglelog",
+      "description": "Adds logging macros that inject instrumentation into OCaml code, with compile-time removal in release builds. Operates on OCaml expressions and patterns, inserting log statements that can be filtered at runtime. Enables tracing of function calls and values without runtime overhead in production.",
+      "description_length": 296,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Togglelog",
+      "description": "Injects and manages conditional logging into OCaml programs by generating AST expressions with type-checked context, using mutable flags to control activation and pattern matchers to process syntax tree elements. Key data types include AST expressions, location data, and reference flags, with operations for creating log calls, checking feature states, and parsing nodes. Examples include inserting runtime-controlled log statements into code and filtering AST nodes based on active features. The module enables dynamic logging behavior without compromising type safety or code structure.",
+      "description_length": 589,
+      "index": 3,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 4,
+    "meaningful_modules": 4,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 589,
+    "min_description_length": 295,
+    "avg_description_length": 404.25,
+    "embedding_file_size_mb": 0.014935493469238281
+  }
+}

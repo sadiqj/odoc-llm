@@ -1,0 +1,49 @@
+{
+  "package": "sequencer_table",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 4,
+  "creation_timestamp": "2025-06-18T16:28:41.232507",
+  "modules": [
+    {
+      "module_path": "Sequencer_table.Make",
+      "description": "Provides operations to convert a value to an S-expression, fold a value into a hash state, compute a hash value, and compare two values. Works with the abstract type `t` representing build configurations. Used to serialize build settings for logging, ensure consistent hashing in data structures, and enforce ordering during build dependency resolution.",
+      "description_length": 353,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sequencer_table.For_testing",
+      "description": "Provides a function to trigger an alert when a specific state is found, used exclusively in sequencer table tests. Operates with a reference to a unit-returning function. Enables conditional debugging during test execution.",
+      "description_length": 223,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "sequencer_table",
+      "description": "Provides functions to manage and query a table of sequenced events, including inserting entries with unique identifiers, retrieving entries by sequence, and checking for the presence of specific entries. Operates on a custom table type that stores key-value pairs with ordered insertion tracking. Used to track and validate event order in distributed systems or logging pipelines.",
+      "description_length": 380,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sequencer_table",
+      "description": "Maintains a collection of sequencers, each associated with a key, ensuring exclusive execution of jobs per key while allowing parallelism across keys. It manages state for each key and provides operations to schedule and control job execution. The module supports serialization, hashing, and comparison of build configurations, enabling consistent data handling and dependency tracking. It also includes a testing utility to trigger alerts based on specific states.",
+      "description_length": 465,
+      "index": 3,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 4,
+    "meaningful_modules": 4,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 465,
+    "min_description_length": 223,
+    "avg_description_length": 355.25,
+    "embedding_file_size_mb": 0.014967918395996094
+  }
+}

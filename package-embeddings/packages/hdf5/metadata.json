@@ -1,0 +1,770 @@
+{
+  "package": "hdf5",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 107,
+  "creation_timestamp": "2025-06-18T16:49:58.404622",
+  "modules": [
+    {
+      "module_path": "Hdf5_caml.Struct.Make.Array",
+      "description": "Provides operations to create, manipulate, and persist array-like structures, including initializing with functions, iterating, and accessing elements by index. Works with typed arrays and HDF5 tables, enabling direct interaction with binary data storage. Supports writing and reading tables, appending or overwriting records, and retrieving underlying data pointers.",
+      "description_length": 367,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_caml.Struct.Make.Vector",
+      "description": "Provides operations to manage dynamic arrays with adjustable capacity and growth factors, including appending elements, resizing, and iterating. Works with a custom vector type that stores elements of a generic type and an associated array type. Used to efficiently handle growing datasets, such as dynamically expanding logs or buffers.",
+      "description_length": 337,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_caml.Struct.Make.Queue",
+      "description": "Provides operations to manage a first-in, first-out data structure, including adding elements to the end, removing from the front, checking emptiness, and retrieving the front element. Works with a custom queue type that stores elements of a generic type. Used to process tasks in order, buffer data streams, or manage request queues in event-driven systems.",
+      "description_length": 358,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5o.Info.Meta_size",
+      "description": "type t = { size : int; mutable offset : int } Provides operations to track and update a size and an offset, including incrementing the offset based on the size, resetting the offset, and checking if the offset exceeds the size. Works with a record type containing an integer size and a mutable integer offset. Used to manage progress in streaming data or pagination, ensuring offset boundaries align with the total size.",
+      "description_length": 420,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5o.Hdr_info.Space",
+      "description": "type t = { x : float; y : float; z : float } Provides vector arithmetic operations such as addition, subtraction, scalar multiplication, and dot product. Works with 3D coordinate structures representing positions or directions in space. Used for physics simulations and 3D graphics transformations.",
+      "description_length": 298,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5o.Hdr_info.Mesg",
+      "description": "type t = { id: int; content: string; timestamp: float } Provides functions to create messages with unique IDs, parse message content from strings, and compare messages by timestamp. Operates on structured message records and string representations. Used to process incoming network messages and log them with accurate timing information.",
+      "description_length": 337,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5r.Hdset_reg_ref.Bigarray",
+      "description": "Creates and manipulates arrays with direct memory access, supporting operations to get and set elements at specific indices. Works with custom types representing register references and Bigarray structures for low-level data handling. Used for efficient interaction with hardware registers and memory-mapped data in system-level programming.",
+      "description_length": 341,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5r.Hobj_ref.Bigarray",
+      "description": "Provides operations to create and manipulate arrays with direct memory access, including unsafe read and write operations using integer indices. Works with custom array types that reference heap objects and can be converted to generic arrays with unsigned 8-bit elements. Used for low-level memory management and interoperability with C-based data structures.",
+      "description_length": 359,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5f.Info.Sohm",
+      "description": "Provides functions to manipulate and query a structured record type containing a string identifier, a boolean flag, and a list of integer values. Includes operations to filter entries based on the boolean flag, extract the identifier, and compute aggregate statistics on the integer list. Used to process configuration data where conditional behavior and numerical analysis are required.",
+      "description_length": 387,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_caml.Struct.Ext",
+      "description": "Provides functions for manipulating values of type t, including comparison, conversion to string, and merging with default values. Works with custom data types that require lightweight, reusable operations. Used to standardize behavior across different modules handling similar data structures.",
+      "description_length": 294,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_caml.Struct.Mem",
+      "description": "Provides operations for creating, merging, and querying in-memory key-value stores. Works with the `t` type, which represents a collection of associations between strings and arbitrary values. Used to manage session data and cache frequently accessed information in web applications.",
+      "description_length": 283,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_caml.Struct.Ptr",
+      "description": "Provides methods to manipulate a pointer-like structure, including moving relative to a position, reading and writing integers, 64-bit integers, floats, and strings at specific offsets. Works with a custom type `t` representing a memory or buffer pointer. Used for low-level data parsing and serialization, such as reading a sequence of values from a binary buffer or writing structured data to a memory region.",
+      "description_length": 411,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_caml.Struct.Make",
+      "description": "Provides access to a list of field definitions, enabling structured data manipulation. Operates on custom field types with specific metadata. Used to generate configuration templates based on predefined field schemas.",
+      "description_length": 217,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_caml.H5.Float32",
+      "description": "Writes and reads single-precision floating-point data to and from HDF5 datasets and attributes, supporting arrays of varying dimensions and Bigarray types. Handles both raw float arrays and structured Genarray and Array1/2/3 layouts with optional compression. Enables storage and retrieval of scalar floats and float arrays as dataset or attribute values.",
+      "description_length": 355,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_caml.H5.Float64",
+      "description": "Writes and reads 1D, 2D, and 3D float arrays and generic arrays of 64-bit floating-point numbers to and from HDF5 datasets, along with attributes. Supports in-place data loading using provided array buffers and compression via the deflate parameter. Handles both simple float values and array attributes for metadata storage and retrieval.",
+      "description_length": 339,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_caml.Struct_intf.Array",
+      "description": "Provides operations to create, manipulate, and interact with arrays, including initializing with values, iterating, and accessing elements by index. Works with array data structures and HDF5 tables for reading and writing binary data. Used to append, overwrite, or read specific records in an HDF5 file.",
+      "description_length": 303,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_caml.Struct_intf.Vector",
+      "description": "Provides operations to manage dynamic arrays with adjustable capacity and growth factors, including appending elements, resizing, and iterating. Works with a custom vector type that stores elements of type `e` and supports array conversions. Used to efficiently handle growing datasets, such as dynamically expanding logs or input buffers.",
+      "description_length": 339,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_caml.Struct_intf.Queue",
+      "description": "Provides operations to manage a first-in, first-out data structure, including adding elements to the end, removing from the front, checking emptiness, and retrieving the front element. Works with a custom type representing the queue and its elements. Used to process tasks in order, buffer data streams, or manage requests in a sequential manner.",
+      "description_length": 346,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5d.Layout",
+      "description": "Provides functions to calculate dimensions, position elements, and adjust spacing within a grid-based structure. Works with nested lists and coordinate pairs to represent and manipulate layout configurations. Used to generate responsive UI layouts and align components dynamically.",
+      "description_length": 281,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5d.Alloc_time",
+      "description": "Provides functions to calculate and compare time intervals, including duration computation and time difference checks. Works with custom time representations and interval ranges. Used to enforce resource limits and track execution timing in concurrent systems.",
+      "description_length": 260,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5d.Space_status",
+      "description": "Provides functions to check if a space is occupied, mark it as reserved, and calculate available space in a grid-based system. Works with a custom type representing grid cells and a list of reserved positions. Used to manage parking lot allocations and display real-time space availability.",
+      "description_length": 290,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5d.Fill_time",
+      "description": "Provides functions to calculate time intervals, check for overlaps, and merge adjacent time ranges. Works with a custom type representing time spans, typically used in scheduling or event management systems. Enables precise manipulation of time segments for conflict detection and aggregation.",
+      "description_length": 293,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5d.Fill_value",
+      "description": "Provides functions to fill missing values in a list of floats using specified strategies such as forward fill, backward fill, and constant value replacement. Works with lists and individual float values to handle gaps in sequential data. Used to preprocess time-series data for machine learning pipelines or data visualization tools.",
+      "description_length": 333,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5d.C_string",
+      "description": "Provides functions to create, convert, and manage null-terminated string representations. Operates on the `t` type, which encapsulates C-style strings. Used to interface with C libraries requiring null-terminated strings and to safely release allocated memory.",
+      "description_length": 260,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5p.Cls_id",
+      "description": "Provides functions to generate, compare, and hash unique identifiers, operating on the `t` type which represents a structured, opaque identifier. Includes parsing from and pretty-printing to strings, and supports equality checks and hashing for use in maps and sets. Used to manage entity keys in a domain model where uniqueness and stable representation are critical.",
+      "description_length": 368,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5p.Alloc",
+      "description": "Provides functions to create and manipulate functions that allocate values based on an integer index, such as generating elements on demand. Works with the polymorphic function type 'a t, which maps integers to values of any type. Used to implement dynamic data structures like sparse arrays or lazy-initialized collections.",
+      "description_length": 324,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5p.Free",
+      "description": "Provides functions to create and manipulate callbacks that take a single value and return unit. Works with the function type 'a -> unit, enabling event-driven or asynchronous behavior. Used to register handlers for system signals or custom event triggers.",
+      "description_length": 255,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5o.Copy",
+      "description": "Provides functions to deep-copy values of type t, including nested structures. Operates on recursive data types with custom equality and hashing. Used to create independent duplicates of complex configurations during runtime manipulation.",
+      "description_length": 238,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5o.Type",
+      "description": "Provides functions to compare, serialize, and deserialize values of a custom type, including equality checks and conversion to and from JSON. Works with a polymorphic variant type that represents different data structures. Used to validate and transform input data during parsing and to ensure consistency in data exchange between components.",
+      "description_length": 342,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5o.Hdr_info",
+      "description": "Encapsulates vector operations and message handling, offering structured manipulation of 3D coordinates and network message records. Supports vector addition, scaling, and dot products, as well as message creation, parsing, and timestamp-based comparison. Vectors represent spatial data for simulations, while messages track network events with timing. Examples include calculating force vectors and logging message sequences with precise timestamps.",
+      "description_length": 450,
+      "index": 29,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5o.Info",
+      "description": "Tracks a size and a mutable offset, allowing increment, reset, and boundary checks. The core data type is a record with `size` and `offset`, supporting operations to advance the offset by the size, reset it to zero, and verify if it exceeds the size. This enables precise control over data traversal in scenarios like streaming or paginated results. For example, it can manage a cursor that moves through a dataset, ensuring it does not go beyond the total number of elements.",
+      "description_length": 476,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5o.Msg_crt_idx",
+      "description": "Provides functions to create, manipulate, and compare indices represented as integers. Includes operations for incrementing, decrementing, and checking validity of indices within a defined range. Used to track positions in message buffers and manage sequence numbers in communication protocols.",
+      "description_length": 294,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5t.Class",
+      "description": "Provides functions to create, compare, and manipulate class identifiers, including parsing strings into class representations and generating unique keys for class instances. Works with the `t` type, which encapsulates class metadata and relationships. Used to enforce type constraints in object-oriented systems and generate runtime type information for class hierarchies.",
+      "description_length": 372,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5t.Order",
+      "description": "Provides functions to compare, sort, and determine the order of numeric values and custom data types. Works with integers, floats, and algebraic data types that implement ordering logic. Used to implement custom sorting in a database query engine and to validate input sequences in a configuration parser.",
+      "description_length": 305,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5t.Sign",
+      "description": "Provides functions to create, compare, and convert sign values, including negation and absolute value operations. Works with the abstract type `t` representing mathematical signs. Used to enforce sign consistency in numerical computations and validate input in financial calculations.",
+      "description_length": 284,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5t.Norm",
+      "description": "Provides functions to normalize vectors, compute their magnitudes, and scale them to unit length. Works with a custom type representing vectors, typically composed of floating-point components. Used in graphics processing to ensure consistent movement speeds regardless of direction.",
+      "description_length": 283,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5t.Cset",
+      "description": "Provides set operations such as union, intersection, and difference on integer sets. Works with the `t` type, which represents a set of integers. Used to efficiently manage and query collections of unique integer values in algorithms requiring set logic.",
+      "description_length": 254,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5t.Str",
+      "description": "Provides string manipulation functions such as splitting, trimming, and concatenating, with support for regular expressions. Works with OCaml's string type and pattern matching constructs. Used for parsing log files, processing user input, and generating formatted output.",
+      "description_length": 272,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5t.Pad",
+      "description": "Provides functions to pad strings with a specified character until they reach a minimum length, and to truncate them if they exceed a given maximum length. Works with string values and integer constraints for padding and truncation. Used to format output for consistent display in logs and user interfaces.",
+      "description_length": 306,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5t.Cmd",
+      "description": "Provides functions to parse command-line arguments, construct command strings, and execute external processes. Works with strings, lists, and process exit codes. Parses user input into structured commands, builds shell-safe argument lists, and runs system commands with controlled environment variables.",
+      "description_length": 303,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5t.Bkg",
+      "description": "Provides functions to parse, validate, and manipulate background configurations, including loading from JSON and checking for required fields. Works with nested records and variant types representing different background styles. Used to ensure consistency in UI rendering by enforcing schema constraints during initialization.",
+      "description_length": 326,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5t.Cdata",
+      "description": "Provides functions to parse, manipulate, and serialize structured binary data using a schema-defined format. Works with nested records, arrays, and primitive types such as integers, strings, and floats. Used to efficiently read and write game save files and network protocol messages.",
+      "description_length": 284,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5t.Pers",
+      "description": "Provides functions to parse and serialize values from and to a custom binary format, including reading and writing integers, strings, and nested structures. Works with primitive types and compound data structures encoded in a compact, platform-independent representation. Used to implement efficient data exchange between OCaml applications and external systems.",
+      "description_length": 362,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5t.Direction",
+      "description": "Provides functions to rotate, invert, and compare directional values. Works with the `t` type, representing cardinal and intercardinal directions. Enables precise movement calculations in grid-based game mechanics.",
+      "description_length": 214,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5t.Conv_except",
+      "description": "Provides functions to handle exceptions during convolution operations, including safe application of kernels and error propagation. Works with arrays and nested list structures representing image data and filters. Enables robust processing of 2D data by catching out-of-bounds access and invalid input patterns.",
+      "description_length": 311,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5t.Conv_ret",
+      "description": "Provides functions to convert between different representations of retention policies, including parsing from strings, serializing to JSON, and comparing policy values. Works with custom types representing time-based and count-based retention rules. Used to standardize policy configurations in logging and data management systems.",
+      "description_length": 331,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5i.Type",
+      "description": "Provides functions to compare, hash, and serialize values of a custom type, including equality checks and conversion to string. Works with a user-defined type `t` that encapsulates structured data. Used to ensure consistent handling of domain-specific objects in parsing and data exchange workflows.",
+      "description_length": 299,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5a.Info",
+      "description": "Provides functions to extract and compare specific fields from a structured record, including name, identifier, and timestamp. Operates on a custom record type containing string and int fields, with methods for filtering and sorting based on these attributes. Used to process user metadata in a system that requires quick lookup and chronological ordering of entries.",
+      "description_length": 367,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5a.Iterate",
+      "description": "Provides functions to iterate over HDF5 datasets using a custom iterator type that encapsulates dataset access parameters. Operates on H5_raw.Iter.t and Hid.t to process data in a structured manner. Enables efficient traversal of large datasets by abstracting low-level HDF5 interaction details.",
+      "description_length": 295,
+      "index": 48,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5g.Storage_type",
+      "description": "Provides functions to serialize and deserialize values between OCaml and a binary format, with support for custom type encodings. Works with OCaml's variant types, records, and polymorphic variants. Used to store and retrieve complex data structures in a persistent storage system.",
+      "description_length": 281,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5g.Info",
+      "description": "Provides functions to extract and compare fields from a record type representing system information, including timestamps, process IDs, and status codes. Operates on a structured type containing fields like `time`, `pid`, and `status`. Used to filter and analyze log entries based on process lifecycle events.",
+      "description_length": 309,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5g.Iterate",
+      "description": "Provides functions to iterate over HDF5 datasets using a custom iterator type that takes a handle, name, and value to produce raw iteration data. Operates on HDF5 data structures through the Hid and H5_raw modules. Enables precise control during traversal of complex data hierarchies in scientific computing applications.",
+      "description_length": 321,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5s.Class",
+      "description": "Provides functions to create, compare, and manipulate class instances, including methods for checking inheritance and retrieving class attributes. Works with the `t` type, representing class definitions and their metadata. Used to enforce type constraints in object-oriented constructs and validate class hierarchies at runtime.",
+      "description_length": 328,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5s.Select",
+      "description": "Provides functions to filter, map, and reduce elements of a list based on custom predicates. Works with lists and individual elements, supporting transformations and conditional selection. Used to extract specific items from a dataset or apply stateful computations during iteration.",
+      "description_length": 283,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5_raw.Time",
+      "description": "Provides functions to convert time values between nanoseconds, microseconds, and milliseconds, and to calculate time differences. Works with the int64 type to represent time durations. Used to synchronize event timing in real-time applications and measure execution intervals accurately.",
+      "description_length": 287,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5_raw.Addr",
+      "description": "Provides functions to convert integer representations to IP address strings, validate numeric addresses, and perform bitwise operations for subnet calculations. Works with 32-bit integer values representing IPv4 addresses. Used to parse and manipulate network addresses in low-level networking applications.",
+      "description_length": 307,
+      "index": 55,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5_raw.Iter_order",
+      "description": "Provides functions to compare and order elements based on a custom comparison function, including sorting and checking for ordered properties. Works with lists and sequences, supporting both ascending and descending order configurations. Used to validate input data integrity and prepare structured outputs for downstream processing.",
+      "description_length": 333,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5_raw.Iter",
+      "description": "Provides functions for iterating over lists, including `map`, `filter`, and `fold`, with support for transforming and reducing elements. Works with linked list structures, applying functions to each element in sequence. Used to process and aggregate data from list-based inputs in a linear, imperative style.",
+      "description_length": 308,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5_raw.Index",
+      "description": "Provides functions to create, update, and query a mapping from unique identifiers to values, supporting efficient lookups and insertions. Works with a custom type `t` that represents the index structure, typically built from lists or arrays. Used to quickly retrieve data based on keys in applications like database indexing or symbol tables.",
+      "description_length": 342,
+      "index": 58,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5_raw.Ih_info",
+      "description": "Provides functions to extract and manipulate information from input sources, including parsing, filtering, and aggregating data. Works with structured data types such as lists, maps, and custom records containing metadata and annotations. Used to process configuration files, log entries, and parsed input streams for analysis and reporting.",
+      "description_length": 341,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5z.Filter",
+      "description": "Provides functions to filter lists based on predicate functions, including `filter` and `filter_map`. Works with lists and optional values, applying conditions to retain or transform elements. Used to process event streams by selecting relevant entries or clean data by removing invalid items.",
+      "description_length": 293,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5z.Flag",
+      "description": "Provides functions to parse command-line flags from a list of strings, validate their values, and retrieve their current state. Works with a custom type representing flag definitions, including name, description, and default value. Used to implement command-line argument handling in CLI tools, enabling users to set configuration options via terminal input.",
+      "description_length": 358,
+      "index": 61,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5z.Filter_config",
+      "description": "Provides functions to parse, validate, and apply filtering rules based on user-defined criteria. Works with structured data including lists of key-value pairs and nested records. Used to dynamically exclude or include specific elements in data processing pipelines.",
+      "description_length": 265,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5r.Hobj_ref",
+      "description": "Manages custom array types with direct memory access, enabling low-level manipulation through unsafe read and write operations using integer indices. Supports conversion to generic arrays of unsigned 8-bit elements for interoperability. Allows direct interaction with heap-allocated objects, facilitating efficient memory handling and integration with C-compatible data formats. Examples include modifying binary data in place and optimizing data transfers between OCaml and C libraries.",
+      "description_length": 487,
+      "index": 63,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5r.Hdset_reg_ref",
+      "description": "Manages low-level memory and register access through direct array manipulation, using custom register reference types and Bigarray for efficient data handling. Supports element retrieval and modification at specific indices, enabling precise control over hardware registers and memory-mapped structures. Operations include setting and fetching values, allowing direct interaction with system-level resources. Examples include reading from a memory-mapped I/O address or updating a hardware register's value.",
+      "description_length": 507,
+      "index": 64,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5tb.Field_info",
+      "description": "type t = { name : string; field_type : string; required : bool; default : string option } Provides functions to create, inspect, and manipulate field metadata, including checking if a field is required, retrieving its name and type, and accessing default values. Works with structured data representing form or schema fields. Used to validate input data against predefined field configurations and generate dynamic forms.",
+      "description_length": 421,
+      "index": 65,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5tb.Data",
+      "description": "Converts Bigarray structures of varying dimensions into a unified data type. Accepts 1D, 2D, and 3D arrays as well as general arrays. Used to standardize input from heterogeneous array representations for further processing.",
+      "description_length": 224,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5l.Type",
+      "description": "Provides functions to compare, hash, and serialize values of a custom type, including equality checks and conversion to and from strings. Works with a user-defined type `t` that represents structured data. Used to ensure consistent handling of domain-specific objects in parsing and data exchange workflows.",
+      "description_length": 307,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5l.Info",
+      "description": "Provides functions to extract and compare specific fields from a structured record, including name, identifier, and timestamp. Operates on a custom record type containing string and int fields. Used to filter and sort user activity logs based on predefined criteria.",
+      "description_length": 266,
+      "index": 68,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5l.Iterate",
+      "description": "Provides functions to iterate over HDF5 links and attributes, applying user-defined operations to each element. Works with H5_raw.Iter.t and Hid.t types, enabling traversal of hierarchical data structures. Used to process datasets and metadata in scientific computing workflows.",
+      "description_length": 278,
+      "index": 69,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5f.Acc",
+      "description": "Provides functions to accumulate values, including adding elements to a collection and retrieving the total sum. Works with a custom type `t` that represents an accumulator state. Used to track running totals in real-time data processing pipelines.",
+      "description_length": 248,
+      "index": 70,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5f.Obj",
+      "description": "Provides functions to inspect and manipulate values of arbitrary types, including type information, field access, and polymorphic variants. Works with OCaml's internal representation of values, allowing runtime type checks and dynamic access. Used to implement serialization, reflection, and generic traversal of complex data structures.",
+      "description_length": 337,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5f.Scope",
+      "description": "Provides functions to manage variable bindings and lookups within a hierarchical structure, including adding, removing, and resolving identifiers. Works with a tree-like data structure where each node represents a scope containing named values. Used to implement lexical scoping in a custom interpreter or compiler.",
+      "description_length": 315,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5f.Close_degree",
+      "description": "Provides functions to calculate and compare the degree of closeness between graph nodes, including shortest path computation and threshold-based filtering. Works with graph representations using adjacency lists and node identifiers. Used to identify tightly connected subgraphs in social network analysis and recommendation systems.",
+      "description_length": 332,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5f.Info",
+      "description": "Processes structured records with an identifier, a boolean flag, and a list of integers, enabling filtering by the flag, retrieval of the identifier, and calculation of statistics like sum or average on the integer list. Supports conditional data processing and numerical analysis within configuration workflows. Can extract and summarize specific data points based on boolean criteria. For example, filter entries where the flag is true and compute the total of their integer lists.",
+      "description_length": 483,
+      "index": 74,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5f.Mem",
+      "description": "Provides functions to allocate, free, and manipulate memory blocks, including reading from and writing to raw byte sequences. Works with opaque memory regions represented as pointers and byte arrays. Used to manage low-level memory operations in system-level programming and performance-critical applications.",
+      "description_length": 309,
+      "index": 75,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5f.Libver",
+      "description": "Provides functions to parse, compare, and increment version numbers represented as strings. Works with opaque type t, encapsulating semantic versioning semantics. Enables precise version control in package management and dependency resolution.",
+      "description_length": 243,
+      "index": 76,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5lt.Dataset_info",
+      "description": "type t = { name: string; rows: int; columns: int; schema: (string * string) list } Provides functions to retrieve the number of rows and columns, inspect the schema as a list of name-type pairs, and access the dataset's name. Works with structured dataset metadata stored in a record type. Used to validate data formats before processing and generate summary reports for data pipelines.",
+      "description_length": 386,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_h5struct.Type",
+      "description": "Converts type representations to strings and retrieves their width in bits. Operates on abstract type t, which encapsulates type information. Used to generate human-readable type names and determine memory layout sizes during code generation.",
+      "description_length": 242,
+      "index": 78,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_h5struct.Field",
+      "description": "type t = { x : int; y : int; width : int; height : int } Provides operations to calculate the area, check if a point lies within bounds, and adjust dimensions. Works with rectangular regions defined by integer coordinates and size. Used to validate user input in a grid-based game interface and compute collision detection in a 2D environment.",
+      "description_length": 343,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_caml.Field",
+      "description": "Creates a structured field representation with a name and type, suitable for schema definitions. Works with string identifiers and type metadata to enforce constraints in data modeling. Used to generate validated input structures for form handling or database migrations.",
+      "description_length": 271,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_caml.H5",
+      "description": "handles reading and writing of single- and multi-dimensional float arrays, including 1D, 2D, and 3D structures, as well as structured Genarray and Array1/2/3 layouts, with support for compression and in-place data loading. it manages both scalar values and array-based attributes, enabling efficient storage and retrieval of 64-bit floating-point data. operations include dataset creation, attribute handling, and data serialization with flexible dimensionality. examples include saving a 2D temperature grid or loading a 3D image volume with metadata attached as attributes.",
+      "description_length": 575,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_caml.Struct",
+      "description": "Provides access to a list of field definitions, enabling inspection and manipulation of structured data elements. Works with custom data types that include named fields and their associated metadata. Used to dynamically analyze and process records in a type-safe manner during serialization or validation workflows.",
+      "description_length": 315,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_caml.Struct_intf",
+      "description": "Manages array-based data structures with support for fixed-size arrays, dynamic vectors, and queues. Offers operations for initializing, modifying, and accessing elements, along with specialized functions for HDF5 I/O, dynamic resizing, and ordered processing. Users can append to vectors, read and write HDF5 records, and process elements in FIFO order. Examples include logging dynamic data, handling binary file I/O, and managing task sequences.",
+      "description_length": 448,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_caml.Type",
+      "description": "Returns the number of elements in a type-erased collection. Operates on opaque type representations, enabling size queries without exposing internal structure. Used to determine the cardinality of custom data structures during serialization and validation processes.",
+      "description_length": 266,
+      "index": 84,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5a",
+      "description": "Extracts and compares fields from structured records, including name, identifier, and timestamp, while enabling efficient traversal of HDF5 datasets through a custom iterator. Operates on record types with string and int fields and H5_raw.Iter.t and Hid.t for dataset access. Supports filtering, sorting, and chronological ordering of user metadata, as well as structured iteration over large HDF5 data. Can be used to quickly locate entries by name or timestamp and process dataset contents without direct HDF5 API exposure.",
+      "description_length": 525,
+      "index": 85,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5d",
+      "description": "combines grid layout management, time interval handling, and data preprocessing capabilities. It includes types for coordinates, time spans, grid cells, and null-terminated strings, along with operations to calculate dimensions, check overlaps, fill missing values, and manage reservations. Users can generate responsive UIs, track resource usage, and clean time-series data efficiently. It supports tasks like parking lot allocation, scheduling conflicts, and data normalization for analysis.",
+      "description_length": 493,
+      "index": 86,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5f",
+      "description": "Combines operations for accumulating values, inspecting arbitrary types, managing scoped variables, analyzing graph distances, processing structured records, handling raw memory, and manipulating version strings. Each component operates on distinct data types such as accumulators, OCaml values, scope trees, graphs, records, memory blocks, and versioned strings, enabling tasks like real-time summing, reflection, scoping, pathfinding, data filtering, memory manipulation, and version comparison. Examples include tracking running totals, serializing complex structures, resolving identifiers in nested scopes, finding connected subgraphs, summarizing filtered records, and incrementing version numbers. Together, they support a wide range of low-level and high-level data processing needs.",
+      "description_length": 791,
+      "index": 87,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5g",
+      "description": "combines serialization/deserialization of OCaml values with binary formats, field extraction and comparison from system records, and custom iteration over HDF5 datasets. It handles OCaml variants, records, and polymorphic types, along with structured system data and HDF5 hierarchies. Users can store complex data, filter logs by process ID or status, and traverse scientific data with fine-grained control. Examples include saving a polymorphic variant to disk, extracting timestamps from log entries, and iterating over dataset attributes in a scientific application.",
+      "description_length": 569,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5i",
+      "description": "Offers utilities for comparing, hashing, and serializing values of a custom type `t`, enabling consistent manipulation of structured data. Includes equality checks, string conversion, and serialization routines for use in parsing and data exchange. Operations support domain-specific objects by providing standardized behavior across different processing stages. Example tasks include validating data integrity, generating human-readable representations, and preparing data for storage or transmission.",
+      "description_length": 502,
+      "index": 89,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5l",
+      "description": "offers functions for comparing, hashing, and serializing custom values, extracting and comparing record fields, and iterating over HDF5 structures. It handles types such as `t`, custom records, H5_raw.Iter.t, and Hid.t, supporting operations like equality checks, string conversion, field extraction, and traversal. Users can normalize domain objects, filter activity logs by specific attributes, and process hierarchical data with custom logic. Examples include converting structured data to strings, sorting logs by timestamp, and applying transformations to HDF5 metadata.",
+      "description_length": 575,
+      "index": 90,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5lt",
+      "description": "Manages structured dataset metadata through a record type containing name, row count, column count, and schema. Offers accessors for row and column counts, schema inspection, and dataset name retrieval. Enables validation of data formats and generation of summary reports. Can check if a dataset has a specific column or verify row counts against expected values.",
+      "description_length": 363,
+      "index": 91,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5o",
+      "description": "manages complex data manipulation through a set of interrelated utilities, including deep copying, comparison, serialization, vector arithmetic, offset tracking, and index management. It handles custom types, polymorphic variants, and records with operations like equality checks, JSON conversion, vector addition, and boundary validation. It enables tasks such as duplicating nested configurations, validating data structures, calculating spatial forces, and controlling data traversal with precise offsets. Examples include serializing custom data for transmission, managing message sequences with timestamps, and ensuring safe index access in buffers.",
+      "description_length": 654,
+      "index": 92,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5p",
+      "description": "manages unique identifiers, dynamic value allocation, and event callbacks through three distinct but integrated capabilities. It handles structured identifiers with equality, hashing, and string conversion, supports on-demand value generation via indexed functions, and enables event-driven programming with single-argument side-effect functions. Users can generate stable entity keys, build sparse data structures, and register handlers for asynchronous events. Operations include parsing identifiers, creating lazy value generators, and defining callback functions for system interactions.",
+      "description_length": 591,
+      "index": 93,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5r",
+      "description": "Provides low-level memory and array manipulation capabilities through direct index-based access and custom data types, enabling efficient interaction with system resources and C-compatible data. Features include unsafe read/write operations, conversion to unsigned 8-bit arrays, and direct handling of heap-allocated objects. It supports precise control over memory-mapped registers and binary data, allowing in-place modifications and direct hardware interaction. Examples include updating a hardware register's value or optimizing data transfers between OCaml and C.",
+      "description_length": 568,
+      "index": 94,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5s",
+      "description": "Manages class definitions and their relationships, enabling creation, comparison, and manipulation of objects with methods for inheritance checks and attribute retrieval. Supports list transformations through filtering, mapping, and reduction, allowing custom logic for data processing and element selection. Operations on `t` types ensure type safety in object hierarchies, while list functions enable dynamic data handling. Examples include validating class inheritance structures and extracting filtered subsets from large datasets.",
+      "description_length": 535,
+      "index": 95,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5tb",
+      "description": "Manages structured field metadata and array normalization, enabling consistent handling of form configurations and multidimensional data. It supports operations like checking field requirements, extracting types, and converting arrays into a uniform representation. Users can validate data against field definitions and process arrays regardless of their original dimensionality. This allows for dynamic form generation and flexible array manipulation in data-intensive applications.",
+      "description_length": 483,
+      "index": 96,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5t",
+      "description": "Combines type management, numeric ordering, sign handling, vector operations, set logic, string manipulation, padding, command execution, configuration parsing, binary serialization, direction control, and error handling for convolution. Operates on diverse types such as `t` for classes, signs, directions, and vectors, along with integers, strings, and binary data. Enables tasks like enforcing type constraints, sorting custom data, normalizing vectors, managing integer sets, and parsing command-line arguments. Supports applications in graphics, databases, configuration systems, and data serialization.",
+      "description_length": 608,
+      "index": 97,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.H5z",
+      "description": "Filters, parses, and processes data through predicate-based selection, command-line argument handling, and rule-based filtering. Operates on lists, optional values, flag definitions, and structured data, supporting operations like `filter`, `filter_map`, parsing, validation, and dynamic rule application. Enables event stream processing, CLI configuration, and data pipeline customization. Examples include cleaning invalid entries, extracting flag values, and applying user-defined inclusion/exclusion rules.",
+      "description_length": 510,
+      "index": 98,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.H5_raw",
+      "description": "Offers time conversion and calculation, IP address manipulation, custom sorting, list iteration, key-value indexing, and data extraction capabilities. Operates on int64, 32-bit integers, lists, sequences, and custom mappings to handle timing, networking, ordering, transformation, lookup, and parsing tasks. Enables precise time synchronization, subnet calculations, data sorting, list processing, fast key-based retrieval, and structured data analysis. Examples include measuring execution time, validating IP addresses, sorting custom data, transforming list elements, building lookup tables, and extracting metadata from logs.",
+      "description_length": 629,
+      "index": 99,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.Hid",
+      "description": "Provides functions to initialize, read from, and close HID devices, along with parsing raw input reports into structured data. Operates on device handles and binary input data from USB HID interfaces. Used to interact with custom hardware devices that communicate via HID protocol, such as game controllers or specialized sensors.",
+      "description_length": 330,
+      "index": 100,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw.Hsize",
+      "description": "Provides operations to compare, add, and subtract size values represented as integers, with a special constant for unlimited size. Works with integer-based size measurements and enforces constraints during arithmetic operations. Used to manage resource limits in systems where sizes need to be dynamically adjusted or checked against an unbounded value.",
+      "description_length": 353,
+      "index": 101,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Hdf5_raw.Layout",
+      "description": "Provides functions to calculate dimensions, position elements, and adjust spacing within a grid-based structure. Works with nested lists and coordinate pairs to represent and manipulate layout configurations. Used to generate responsive UI layouts and align components dynamically.",
+      "description_length": 281,
+      "index": 102,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "hdf5",
+      "description": "Provides functions for reading and writing HDF5 files, including handling large arrays of records with optimized performance. Works with HDF5 file structures, datasets, and compound data types. Used to efficiently store and retrieve structured data, such as scientific datasets or tabular data with complex schemas.",
+      "description_length": 315,
+      "index": 103,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_h5struct",
+      "description": "Encapsulates type metadata and geometric region operations, enabling type inspection and spatial calculations. It handles abstract type representations for string conversion and bit-width retrieval, and defines a rectangle type with methods for area computation, point inclusion checks, and dimension adjustments. This allows for generating type descriptions during code generation and managing 2D spatial logic in applications. Examples include validating grid coordinates and determining collision boundaries in game development.",
+      "description_length": 531,
+      "index": 104,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_caml",
+      "description": "Provides structured data modeling, array I/O, and collection inspection capabilities. It supports field definitions with named types, float array operations across multiple dimensions, and dynamic array management, along with size queries for opaque collections. Users can create validated schemas, save 2D temperature grids, inspect field metadata, and manage dynamic vectors with HDF5 integration. Examples include generating form schemas, loading 3D image data, and tracking collection sizes during serialization.",
+      "description_length": 516,
+      "index": 105,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Hdf5_raw",
+      "description": "Combines field extraction, dataset iteration, and metadata management with support for structured records, HDF5 access, and custom data processing. Handles types like record fields, H5_raw.Iter.t, Hid.t, and grid coordinates, enabling tasks such as filtering logs by timestamp, traversing scientific datasets, and generating responsive layouts. Includes operations for comparison, serialization, normalization, and memory manipulation, allowing efficient data handling and transformation. Examples include extracting user metadata, processing time-series data, and managing grid-based UI elements.",
+      "description_length": 597,
+      "index": 106,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 107,
+    "meaningful_modules": 107,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 791,
+    "min_description_length": 214,
+    "avg_description_length": 364.49532710280374,
+    "embedding_file_size_mb": 0.38916683197021484
+  }
+}

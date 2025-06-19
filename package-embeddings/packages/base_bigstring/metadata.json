@@ -1,0 +1,105 @@
+{
+  "package": "base_bigstring",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 12,
+  "creation_timestamp": "2025-06-18T16:32:11.935460",
+  "modules": [
+    {
+      "module_path": "Base_bigstring.Int_repr.Unsafe.Local",
+      "description": "Extracts 64-bit signed and unsigned integers in little-endian and big-endian formats from a binary buffer. Operates on a buffer type representing raw byte sequences. Used for parsing binary file formats or network protocols requiring precise byte-level access.",
+      "description_length": 260,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Base_bigstring.Int_repr.Local",
+      "description": "Reads 64-bit signed and unsigned integers in little-endian and big-endian formats from a binary buffer. Operates on a buffer type representing raw byte data, allowing direct access to specific positions. Used for parsing binary file formats or network protocols requiring precise byte-level interpretation.",
+      "description_length": 306,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Base_bigstring.Int_repr.Unsafe",
+      "description": "Provides low-level byte manipulation for extracting 64-bit integers in both signed and unsigned forms, supporting little-endian and big-endian byte orders from a raw byte buffer. Key operations include reading and interpreting binary data with precise control over endianness and integer representation. Examples include parsing binary file headers or decoding network packet fields. The buffer type serves as the primary input for all extraction functions.",
+      "description_length": 457,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Base_bigstring.To_string",
+      "description": "Converts byte sequences to strings by extracting substrings with specified positions and lengths. Operates on byte buffers, supporting both safe and unsafe memory copying. Used for efficient string generation from binary data in network protocols or file parsing.",
+      "description_length": 263,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Base_bigstring.From_string",
+      "description": "Provides operations to copy and extract substrings into a mutable buffer type `t`, including safe and unsafe blitting with position and length controls, and optional parameters for flexible slicing. Works with `Base.string` and the mutable `t` type, which likely represents a byte or character buffer. Used for efficient string manipulation in low-level data processing tasks, such as parsing or network protocol handling.",
+      "description_length": 422,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Base_bigstring.To_bytes",
+      "description": "Provides functions for copying and extracting byte sequences from a source type `t` into `Base.bytes`. Includes `blit` and `unsafe_blit` for in-place copying with position and length parameters, and `sub` for creating a slice of the source. Supports optional parameters for flexible data extraction in scenarios like network packet processing or file format parsing.",
+      "description_length": 366,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Base_bigstring.From_bytes",
+      "description": "Provides functions for copying and extracting byte sequences from a byte buffer, including `blit` for in-place copying, `sub` for creating subviews, and variants with optional parameters for flexible data manipulation. Operates on `Base.bytes` and a custom `t` type representing a byte buffer. Used to efficiently slice and transfer data in network protocols or file parsing tasks.",
+      "description_length": 381,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Base_bigstring.Local",
+      "description": "Extracts 64-bit integers in little-endian or big-endian format from a binary buffer at a specified position, with and without bounds checking. Retrieves strings of a given length from a buffer starting at a specific offset, with and without safety checks. Designed for low-level binary data parsing where direct memory access is required.",
+      "description_length": 338,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Base_bigstring.Int_repr",
+      "description": "Reads and interprets 64-bit signed and unsigned integers from a raw byte buffer, supporting both little-endian and big-endian formats. The buffer type enables direct access to byte positions, facilitating precise data extraction. Operations include parsing binary headers, decoding network packets, and processing file formats with strict byte-order requirements. Key data types include the buffer and 64-bit integer representations, with functions for endianness-aware reading.",
+      "description_length": 478,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Base_bigstring.Private",
+      "description": "Extends the sign of a 16-bit integer to a 32-bit integer by replicating the 16th bit across the higher bits. Operates on 32-bit signed integers, ensuring correct interpretation of negative values. Used in low-level data parsing to handle signed 16-bit values within 32-bit registers.",
+      "description_length": 283,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "base_bigstring",
+      "description": "Provides functions for creating, slicing, and manipulating large contiguous byte arrays, including operations for copying, comparing, and converting to and from strings. Works with the Bigstring type, which is optimized for handling large binary data efficiently. Used for high-performance I/O operations, network protocol parsing, and binary data serialization.",
+      "description_length": 362,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Base_bigstring",
+      "description": "Provides efficient byte-level manipulation and binary data parsing through operations on mutable and immutable byte buffers. Key data types include buffers (`t`), byte sequences, and 64-bit integers, with functions for blitting, subview creation, and endianness-aware reading. It enables tasks like extracting strings from network packets, parsing binary file headers, and converting signed 16-bit values to 32-bit integers. Operations support both safe and unsafe memory access, allowing fine-grained control over data extraction and transformation.",
+      "description_length": 550,
+      "index": 11,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 12,
+    "meaningful_modules": 12,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 550,
+    "min_description_length": 260,
+    "avg_description_length": 372.1666666666667,
+    "embedding_file_size_mb": 0.044013023376464844
+  }
+}

@@ -1,0 +1,553 @@
+{
+  "package": "cactus",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 76,
+  "creation_timestamp": "2025-06-18T16:47:10.281848",
+  "modules": [
+    {
+      "module_path": "Btree.Make.Private.Store.Common.Version",
+      "description": "Sets a field value in a byte buffer at a specific offset, using a marker function to track changes. Retrieves field values from a byte buffer using an offset. Converts between integer representations and a custom type `t`, and provides pretty-printing for debugging. Works with byte buffers, offsets, and an opaque type `t` representing metadata versions. Used to manage versioning in persistent storage systems, ensuring in-memory and on-disk representations stay synchronized.",
+      "description_length": 478,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Make.Private.Store.Common.Magic",
+      "description": "Sets a marker in a byte buffer at a specific offset, marking the page as dirty. Retrieves values from a byte buffer using an offset. Converts between strings and a custom type `t`, and provides pretty-printing for debugging. Used to manage metadata headers in a btree or page structure, ensuring consistency between in-memory and on-disk representations.",
+      "description_length": 354,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Btree.Make.Private.Store.Common.Address",
+      "description": "Sets a field value in a byte buffer at a specific offset, marking the page as dirty. Retrieves field values from a byte buffer using an offset. Converts between integer representations and the abstract address type, and provides pretty-printing for debugging. Works with bytes, integers, and an abstract address type to manage page metadata. Used to manipulate and inspect page addresses during serialization and deserialization.",
+      "description_length": 429,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Btree.Make.Private.Store.Common.Pointer",
+      "description": "Sets a field value in a byte buffer at a specific offset, using a marker function to track changes. Retrieves values from a byte buffer using an offset. Works with byte buffers and integer offsets, converting between raw integers and a typed pointer representation. Used to manage metadata storage and retrieval in a way that separates in-memory and on-disk formats.",
+      "description_length": 366,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Make.Private.Store.Common.Kind",
+      "description": "Provides operations to set and get values from a byte buffer using an offset, along with functions to convert between a custom type and a Btree field kind. Works with byte buffers, offsets, and a type representing vertex kinds. Used to encode and decode vertex types in a B-tree structure based on depth and marker functions.",
+      "description_length": 325,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Make.Private.Entry.Key",
+      "description": "Provides operations to create, compare, and manipulate key structures, including setting and retrieving data from byte buffers. Works with `t` for key representations and `input_key` for input conversions. Used to serialize keys to strings, compare key values, and store/retrieve key data in binary formats.",
+      "description_length": 307,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Make.Private.Entry.Value",
+      "description": "Provides operations to manipulate values as bytes, including setting and retrieving data at specific offsets. Works with a custom type `t` and an associated input value type. Used to serialize and deserialize data structures in binary formats.",
+      "description_length": 243,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Btree.Make.Private.Store.Common",
+      "description": "Manages metadata and versioning in persistent storage by setting and retrieving field values in byte buffers using offsets, with support for custom type conversions and pretty-printing. Handles marker tracking, dirty page flags, and abstract address representations to ensure consistency between in-memory and on-disk data. Converts between integers, strings, and typed pointers, enabling precise control over page metadata and B-tree vertex encoding. Examples include updating version fields, marking pages as dirty, and serializing address information for storage.",
+      "description_length": 566,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Btree.Make.Private.Store.Page",
+      "description": "Provides operations to determine the type of a page (Node or Leaf), access its byte content, mark it as dirty, and write its contents to disk. Works with a page type and integer pointers to reference page locations. Used to manage in-memory page states and ensure data persistence during database operations.",
+      "description_length": 308,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Make.Private.Store.Private",
+      "description": "Provides operations to retrieve a directory path, access a cache size, write data, and manage migration states with a specific type `t`. Works with a custom type representing a private state, including an address type for migration endpoints. Used to initialize and finalize data migration processes while storing and accessing persistent information.",
+      "description_length": 351,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Make.Private.Common.Version",
+      "description": "Sets a field value in a byte buffer at a specific offset, using a marker function to track changes. Retrieves field values from a byte buffer using an offset. Works with byte buffers, integers, and an abstract type `t` representing version data. Used to serialize and deserialize version numbers in persistent storage formats.",
+      "description_length": 326,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Make.Private.Common.Magic",
+      "description": "Sets a marker in a byte buffer at a specific offset, retrieves values from a buffer, and converts between strings and a custom type `t` representing magic values. Operates on bytes, integers, and the abstract type `t` used to encode metadata headers. Used to manage on-disk page markers and ensure consistency between in-memory and persisted data.",
+      "description_length": 347,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Btree.Make.Private.Common.Address",
+      "description": "Sets a field value in a byte buffer at a specific offset, using a marker function to track changes. Retrieves values from a byte buffer at a given offset. Converts between integer representations and a page address type, and formats addresses for output. Used to manage metadata storage and retrieval in a persistent data structure.",
+      "description_length": 332,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Btree.Make.Private.Common.Pointer",
+      "description": "Sets a field value in a byte buffer at a specific offset, using a marker function to track changes. Retrieves values from a byte buffer using an offset. Works with bytes and integer offsets, converting between raw integers and a typed pointer representation. Used to manage metadata storage by abstracting page offsets and tracking dirty pages during updates.",
+      "description_length": 359,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Make.Private.Common.Kind",
+      "description": "Provides operations to set and get values from a byte buffer using an offset, along with functions to convert between a custom type and a Btree field kind. Works with bytes, integers, and a custom type representing vertex kinds. Used to encode and decode vertex types in a B-tree structure based on depth and marker functions.",
+      "description_length": 326,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Make.Private.Params.Debug",
+      "description": "Generates a random boolean to simulate unexpected failures during testing. Works with primitive boolean values to introduce non-determinism. Used to stress-test error handling in critical system paths.",
+      "description_length": 201,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Btree.Private.Data.Make.Key",
+      "description": "Provides operations to create, compare, and manipulate key structures, including setting and retrieving data from byte buffers. Works with the `t` type for keys and `input_key` for input representations. Used to serialize, deserialize, and manage key data in low-level binary formats.",
+      "description_length": 284,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Data.Make.Value",
+      "description": "Provides operations to manipulate values as bytes, including setting and retrieving data at specific offsets. Works with byte sequences and a custom input_value type for external data representation. Used to serialize and deserialize structured data in low-level binary formats.",
+      "description_length": 278,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Input.Default.Size.Debug",
+      "description": "Generates a random boolean value to simulate unpredictable failure scenarios. Works with primitive boolean data. Used to introduce non-determinism in testing or stress scenarios.",
+      "description_length": 178,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Store.Common.Version",
+      "description": "Sets a field value in a byte buffer at a specific offset, using a marker function to track changes. Retrieves field values from a byte buffer using an offset. Converts between integer representations and a custom type `t`, with pretty-printing capabilities for debugging and logging. Used to manage version numbers in a structured, memory-efficient format within a larger metadata system.",
+      "description_length": 388,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Store.Common.Magic",
+      "description": "Sets a marker in a byte buffer at a specific offset, marking a page as dirty. Retrieves values from a byte buffer using an offset. Converts between strings and a custom type `t`, and provides pretty-printing for debugging. Works with byte buffers and a serialized metadata type `t` to manage on-disk and in-memory representations. Used to validate and manipulate btree headers during file parsing and page management.",
+      "description_length": 417,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Store.Common.Address",
+      "description": "Sets a field value in a byte buffer at a specific offset, using a marker function to track changes. Retrieves values from a byte buffer at a given offset. Converts between integer representations and a page address type, and formats addresses for output. Used to manage metadata storage and retrieval in a persistent data structure.",
+      "description_length": 332,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Btree.Private.Store.Common.Pointer",
+      "description": "Sets a field value in a byte buffer at a specific offset, using a marker function to track changes. Retrieves values from a byte buffer using an offset. Works with byte arrays and integer offsets, converting between integers and a custom pointer type. Used to manage metadata offsets in a persistent storage system, ensuring in-memory and on-disk representations stay synchronized.",
+      "description_length": 381,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Store.Common.Kind",
+      "description": "Provides operations to set and get values from a byte buffer using an offset, along with functions to convert between depth and kind representations. Works with byte buffers and an abstract type `t` representing vertex kinds. Used to manage node and leaf distinctions in a B-tree structure during serialization and depth-based logic.",
+      "description_length": 333,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Make.Private.Params",
+      "description": "Provides a mechanism for introducing non-determinism through random boolean generation, enabling stress testing of error-handling logic. The core data type is a boolean, with operations that toggle or generate random values to simulate failures. It allows developers to test system resilience by injecting unexpected conditions during execution. For example, it can trigger a simulated network drop or authentication failure in a controlled manner.",
+      "description_length": 448,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Make.Private.Common",
+      "description": "Manages metadata and versioning in persistent storage by setting and retrieving values in byte buffers using offsets and marker functions. It handles conversions between raw integers, page addresses, and custom types like version data, magic values, and vertex kinds. Operations include serializing and deserializing structured data, tracking changes, and ensuring consistency between in-memory and persisted states. Examples include encoding page markers, managing dirty page tracking, and translating between integer offsets and typed pointers.",
+      "description_length": 546,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Make.Private.Entry",
+      "description": "manages key and value data through specialized types and binary operations, enabling serialization, comparison, and manipulation of structured data. It supports `t` for key and value representations, along with input conversions for efficient data handling. Users can store and retrieve key-value pairs in binary formats, and serialize complex data structures to byte streams. Examples include converting keys to strings, comparing value contents, and extracting specific data segments from buffers.",
+      "description_length": 499,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Btree.Make.Private.Store",
+      "description": "manages metadata, page states, and migration processes by manipulating byte buffers, tracking page types, and handling custom data representations. It supports operations like marking pages as dirty, serializing addresses, and managing migration states through a private type. It enables precise control over versioning, B-tree encoding, and data persistence. Examples include updating version fields, writing page content to disk, and initializing migration workflows.",
+      "description_length": 469,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Btree.Make.Private.Leaf",
+      "description": "This module manages B-tree leaf nodes through operations like splitting, merging, inserting, and removing key-value pairs, while tracking overflow and underflow states. It works with structured data including key-value pairs and a `value` type alias referencing `Value.t` for consistent data handling. Use cases include efficient database indexing and file system management, where balanced tree operations ensure scalable data retrieval and modification.",
+      "description_length": 455,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Make.Private.Node",
+      "description": "This module handles B-tree node management through operations like splitting, merging, and traversing, working with key-value stores and structured types such as `t`, `key`, and `neighbour` to represent node relationships. It supports serialization/deserialization and overflow/underflow handling, enabling efficient tree maintenance and debugging via pretty-printing. Specific use cases include balancing tree structures during insertions/deletions and inspecting node states for troubleshooting.",
+      "description_length": 497,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Stats.Func",
+      "description": "Creates a handle for tracking function call statistics, including custom counters for input sizes and call counts. Supports incrementing counters, timing function executions, and retrieving counts or total durations. Used to monitor performance metrics during execution of critical code paths.",
+      "description_length": 293,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Stats.Btree",
+      "description": "Provides functions to manage and query statistics for a module, including adding, finding, and checking membership in a statistical context. Operates on custom types such as `module_stats` and `Func.t`, and supports logging with string lists. Used to track and format operational metrics during runtime.",
+      "description_length": 303,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Stats.Nodes",
+      "description": "Provides functions to manage node statistics, including creating, loading, splitting, shifting, adding, finding, and checking membership in statistical data. Operates on custom module_stats type and functions from the Func module. Used to track and manipulate node-level metrics during system initialization and runtime.",
+      "description_length": 320,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Stats.Store",
+      "description": "Provides functions to retrieve and manage module statistics, including resetting state, setting up logging, and tracking I/O operations through specific function hooks. Works with module_stats records and system call counters. Used to monitor and debug performance metrics in real-time during application execution.",
+      "description_length": 315,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Btree.Private.Stats.Utils",
+      "description": "Provides functions to retrieve module statistics, reset internal state, configure logging, and perform binary search on function data. Operates with strings, unit, and a custom module_stats type. Used to monitor module behavior and analyze function structures during runtime.",
+      "description_length": 275,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Stats.Miscellaneous",
+      "description": "Provides functions to retrieve a private state object and update it with density samples. Operates on a private type representing some internal state. Used to collect and manage statistical data during runtime.",
+      "description_length": 210,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Data.Make",
+      "description": "Encodes and decodes values of type `t` to and from strings, ensuring the encoded output has a fixed byte size. The module enforces that decoding a string produced by `encode` reconstructs the original value. It supports operations where data must be reliably transformed into a compact, fixed-length representation.",
+      "description_length": 315,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Data.Key",
+      "description": "Provides operations to create, compare, and manipulate key structures, including setting and retrieving data from byte buffers. Works with the `t` type for keys and `input_key` for input representations. Used to serialize and deserialize keys, check equality, and generate human-readable dumps for debugging.",
+      "description_length": 308,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Btree.Private.Data.Value",
+      "description": "Provides operations to manipulate and serialize values between internal and input representations, including setting and retrieving data from byte buffers. Works with the `t` type and `input_value` as its primary data structures. Used to encode and decode values in binary formats, such as when parsing or generating protocol messages.",
+      "description_length": 335,
+      "index": 38,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Btree.Input.Default.Size",
+      "description": "Provides a mechanism for introducing non-determinism through random boolean generation, useful for simulating failure conditions. Operates on boolean values, offering a single function to return either true or false unpredictably. Can be employed in tests to mimic unreliable system behavior or to stress-test error-handling logic. For example, it can trigger alternate code paths based on the generated value.",
+      "description_length": 410,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Input.Default.Key",
+      "description": "Provides operations to encode and decode values of type `t` into and from strings, with a fixed output size determined by `encoded_size`. The `encode` function transforms `t` into a string of exactly `encoded_size` bytes, and `decode` reverses this process reliably. Used to serialize and deserialize cryptographic keys or identifiers with strict size constraints.",
+      "description_length": 364,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Input.Default.Value",
+      "description": "Provides operations to encode values into a fixed-size byte string, decode them from a string at a specific offset, and access a representation of the value. Works with a custom type `t` and a related representation type `Repr.t`. Used to serialize and deserialize values in a format that ensures consistent byte size for storage or transmission.",
+      "description_length": 346,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Entry.Key",
+      "description": "Provides operations to create, compare, and manipulate key structures, including setting and retrieving data from byte buffers. Works with the `t` type for keys and `input_key` for input representations. Used to serialize and deserialize keys, check equality, and generate human-readable dumps for debugging.",
+      "description_length": 308,
+      "index": 42,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Btree.Private.Entry.Value",
+      "description": "Provides operations to manipulate and serialize values between an internal representation and an input format. Works with the `t` type and `input_value` to store and retrieve data using byte buffers and offsets. Enables setting and extracting values from specific positions in memory, with pretty-printing support for debugging.",
+      "description_length": 328,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Store.Common",
+      "description": "Manages structured metadata in byte buffers with operations to set and retrieve values at specific offsets, using marker functions to track modifications. Supports conversions between integers, strings, and custom types like page addresses, pointers, and vertex kinds, with pretty-printing for debugging. Enables precise control over versioning, btree headers, and persistent storage metadata. Examples include updating version numbers, validating btree headers, and synchronizing in-memory and on-disk representations.",
+      "description_length": 519,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Store.Page",
+      "description": "Provides operations to determine the type of a page (Node or Leaf), access its byte content, mark it as dirty, and write its contents to disk. Works with a page type and integer pointers to reference page locations. Used to manage in-memory page states and ensure data persistence during updates.",
+      "description_length": 296,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Store.Private",
+      "description": "Provides operations to retrieve a directory path, access a cache size, write data, and manage migration states with a specific type. Works with a custom type representing a private state, including an address. Used to handle data persistence and migration workflows in a system requiring controlled file operations.",
+      "description_length": 315,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Common.Version",
+      "description": "Sets a field value in a byte buffer at a specific offset, using a marker function to track changes. Retrieves field values from a byte buffer using an offset. Converts between integer representations and a custom type `t`, and provides pretty-printing for debugging. Works with byte buffers, integers, and an opaque type `t` representing metadata versions. Used to manage versioning in persistent storage systems, ensuring in-memory and on-disk representations stay synchronized.",
+      "description_length": 479,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Common.Magic",
+      "description": "Sets a marker in a byte buffer at a specific offset, marking a page as dirty. Retrieves values from a byte buffer using an offset. Handles conversion between strings and a custom type `t`, and provides pretty-printing for debugging. Used to manage metadata headers in a btree or page structure, ensuring consistency between in-memory and on-disk representations.",
+      "description_length": 362,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Common.Address",
+      "description": "Sets a field value in a byte buffer at a specific offset, using a marker function to track changes. Retrieves values from a byte buffer at a given offset. Converts between integer representations and a page address type, and formats addresses for output. Used to manage metadata storage and retrieval in a persistent data structure.",
+      "description_length": 332,
+      "index": 49,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Btree.Private.Common.Pointer",
+      "description": "Sets a field value in a byte buffer at a specific offset, using a marker function to track changes. Retrieves values from a byte buffer using an offset. Works with byte arrays and integer offsets, converting between integers and a custom pointer type. Used to manage metadata storage and retrieval in a persistent data structure.",
+      "description_length": 329,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Common.Kind",
+      "description": "Provides operations to set and get values from a byte buffer using an offset, along with functions to convert between depth and kind representations. Works with byte buffers and an abstract type `t` representing vertex kinds. Used to manage node and leaf distinctions in a B-tree structure during serialization and depth-based logic.",
+      "description_length": 333,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Params.Debug",
+      "description": "Generates a random boolean value to simulate unpredictable failure scenarios. Works with primitive boolean data to introduce variability in test conditions. Used to stress-test error handling by occasionally triggering failure paths.",
+      "description_length": 233,
+      "index": 52,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Btree.Make.Private",
+      "description": "manages non-deterministic behavior, metadata, key-value storage, and B-tree operations through specialized data types and binary manipulations. it handles booleans, version data, page markers, key-value pairs, and B-tree nodes, supporting operations like random failure injection, serialization, splitting, and merging. it enables testing system resilience, persistent state management, and efficient data indexing. examples include simulating network failures, encoding page metadata, and maintaining balanced tree structures for database operations.",
+      "description_length": 551,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Index.Make",
+      "description": "Provides operations to encode and decode a structured data type `t` into and from a string, with a fixed size determined by `encoded_size`. Supports parsing from a string buffer using a specific offset. Used to serialize and deserialize binary representations of configuration or state data.",
+      "description_length": 291,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Index.Stats",
+      "description": "Tracks and aggregates system statistics including read and write operations, and replacement counts. It operates on a record type containing these metrics. Used to monitor I/O activity and replacement events in a caching or storage system.",
+      "description_length": 239,
+      "index": 55,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Btree.Private.Utils",
+      "description": "Provides binary search with custom comparison, exponentiation, and validation of sorted string lists. Translates integer lists to offset lists, generates key strings from integers, and handles low-level file I/O with assertions. Converts between integers and base-256 encoded strings, and includes a no-operation function.",
+      "description_length": 322,
+      "index": 56,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Btree.Private.Stats",
+      "description": "Calculates and tracks performance metrics for specific code sections, using a custom `module_stats` type that holds counters and timing data. It supports logging multiple named sections and formatting statistics for human-readable output. The module is used to monitor execution duration and frequency of critical operations during testing and profiling.",
+      "description_length": 354,
+      "index": 57,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Btree.Private.Index_stats",
+      "description": "Provides functions to retrieve and modify statistics tracking read and write operations, increment replace counters, and reset all metrics. Works with a record type containing counters for reads, writes, and replacements. Used to monitor I/O activity and replacement events in a system's indexing component.",
+      "description_length": 307,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Tag",
+      "description": "Provides functions to create and manipulate log tags, including defining tag kinds and constructing tag sets. Operates with custom tag kinds and log tag sets, enabling structured logging. Used to generate unique tag identifiers and combine them into sets for logging contexts.",
+      "description_length": 276,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Data",
+      "description": "Provides operations to create, manipulate, and inspect values of type `t` using a `input_key` for serialization. Includes functions to set and retrieve data from byte buffers, compare, check equality, and generate string representations. Used to handle structured data in memory and convert it to and from a compact input key format.",
+      "description_length": 333,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Input.Default",
+      "description": "Generates random booleans for non-deterministic behavior, encodes and decodes values into fixed-size byte strings, and provides methods to serialize and deserialize custom types with consistent size requirements. It supports boolean-based simulation, cryptographic serialization, and structured data representation. Functions include random boolean generation, encoding to a fixed byte length, decoding from a string, and accessing a value's representation. Examples include testing error recovery, storing keys with strict size limits, and ensuring consistent data formatting during transmission.",
+      "description_length": 597,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Make.Debug",
+      "description": "Generates a random boolean value to simulate unpredictable failure scenarios. Works with primitive boolean data. Used to introduce non-determinism in testing or stress scenarios.",
+      "description_length": 178,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Input.Debug",
+      "description": "Generates a random boolean value to simulate unpredictable failure scenarios. Works with primitive boolean data. Used to introduce non-determinism in testing or stress scenarios.",
+      "description_length": 178,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Params",
+      "description": "Provides a mechanism for introducing randomness into test environments by generating boolean values. Supports conditional logic based on probabilistic outcomes, enabling dynamic simulation of failure states. Allows developers to test error recovery and resilience strategies under varying conditions. Can be used to trigger rare edge cases or validate system behavior in unpredictable scenarios.",
+      "description_length": 395,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Common",
+      "description": "Manages metadata and versioning in persistent storage by setting and retrieving values in byte buffers using offsets, with support for custom types, markers, and conversions between integers, strings, and addresses. Provides operations for tracking changes, ensuring consistency between in-memory and on-disk representations. Converts between integer representations and abstract types like page addresses, metadata versions, and vertex kinds. Examples include marking pages as dirty, serializing B-tree nodes, and synchronizing versioned metadata.",
+      "description_length": 548,
+      "index": 65,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Btree.Private.Entry",
+      "description": "manages key-value pairs by enabling creation, comparison, and serialization of keys and values using byte buffers. It supports operations on `t` types and input representations like `input_key` and `input_value`, allowing data to be stored, retrieved, and inspected at specific memory offsets. Users can generate debug dumps, check equality, and convert between internal and external formats. For example, it can serialize a key into a byte buffer or extract a value from a specific position in memory.",
+      "description_length": 502,
+      "index": 66,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Btree.Private.Store",
+      "description": "manages structured byte-level data with precise control over metadata, page states, and file operations. It supports type conversions, page classification, and persistent storage management through custom types like page addresses, pointers, and private states. Operations include updating version numbers, marking pages as dirty, and writing data to disk. It enables efficient handling of in-memory and on-disk data synchronization, directory management, and migration workflows.",
+      "description_length": 480,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Leaf",
+      "description": "This module handles tree management operations such as creation, splitting, merging, and key-value manipulation for structured data containers, specifically designed for leaf nodes in B-tree-like structures. It works with a `t` type representing these nodes, along with key-value pairs and a value type alias for consistent data handling. Use cases include maintaining balanced tree structures during insertions/deletions and optimizing storage efficiency in hierarchical data systems.",
+      "description_length": 485,
+      "index": 68,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Private.Node",
+      "description": "This module handles B-tree node management through operations like splitting, merging, and traversing, along with serialization and overflow/underflow checks, working with a node type `t` that stores key-value bindings. It also includes pretty-printing functionality for visualizing node structures and defines auxiliary types like `key` and `neighbour` to represent node data. Use cases include efficient tree maintenance in persistent data structures and debugging via formatted node output.",
+      "description_length": 493,
+      "index": 69,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Btree.Private",
+      "description": "manages probabilistic testing, metadata versioning, key-value storage, and structured data persistence through specialized operations. It includes boolean generation for failure simulation, byte buffer manipulation for metadata and version tracking, and key-value serialization with memory offset control. It also supports B-tree node management, including splitting, merging, and pretty-printing, along with page state updates and data synchronization. Examples include simulating system failures, serializing B-tree nodes, and marking pages as dirty for persistence.",
+      "description_length": 568,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Input",
+      "description": "Generates random boolean values to introduce non-determinism in testing or stress scenarios. Supports primitive boolean operations and allows for conditional branching based on random outcomes. Can simulate failure conditions in controlled environments. Example: randomly skip a network request or trigger an error during a test run.",
+      "description_length": 333,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree.Make",
+      "description": "Generates random boolean values to introduce non-determinism in testing or stress scenarios. Operates on primitive boolean data types and provides a single function to produce unpredictable outcomes. Can be used to simulate failure conditions in code paths or to test error handling. For example, it can trigger a random branch in a conditional statement during execution.",
+      "description_length": 372,
+      "index": 72,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Btree.Index",
+      "description": "Provides operations to manage key-value bindings with caching, including creating, clearing, querying, and modifying indexes. Works with keys, values, and cache structures to handle persistent storage and in-memory operations. Supports controlled flushing, merging, and filtering for efficient data management under specific constraints.",
+      "description_length": 337,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "cactus",
+      "description": "Provides insertion, deletion, and lookup operations on ordered key-value pairs using a B-Tree structure. Operates on ordered types such as integers, strings, and custom comparators. Used to efficiently manage large datasets in persistent storage systems or in-memory databases.",
+      "description_length": 277,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Btree",
+      "description": "manages probabilistic testing, metadata versioning, and B-tree persistence through boolean generation, byte buffer manipulation, and key-value serialization. It handles B-tree node operations like splitting, merging, and pretty-printing, along with page state updates and data synchronization. Users can simulate system failures, serialize nodes, and mark pages as dirty. It enables structured data persistence with memory offset control and version tracking.",
+      "description_length": 459,
+      "index": 75,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 86,
+    "meaningful_modules": 76,
+    "filtered_empty_modules": 10,
+    "retention_rate": 0.8837209302325582
+  },
+  "statistics": {
+    "max_description_length": 597,
+    "min_description_length": 178,
+    "avg_description_length": 363.5,
+    "embedding_file_size_mb": 0.2693901062011719
+  }
+}

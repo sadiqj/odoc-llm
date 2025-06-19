@@ -1,0 +1,217 @@
+{
+  "package": "nbd",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 28,
+  "creation_timestamp": "2025-06-18T16:36:58.018961",
+  "modules": [
+    {
+      "module_path": "Nbd.Protocol.Error",
+      "description": "Encodes and decodes error values to and from S-expressions, and converts error representations to human-readable strings. Works with a variant type that represents different failure scenarios. Used to serialize error states for logging or communication protocols.",
+      "description_length": 263,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nbd.Protocol.Command",
+      "description": "Handles conversion between command representations and S-expressions, as well as string serialization. Operates on an abstract command type encapsulating user input. Used to transmit structured commands over a network connection.",
+      "description_length": 229,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nbd.Protocol.PerExportFlag",
+      "description": "Handles conversion between a flag representation and S-expressions, as well as string serialization. Works with an opaque type representing disk export flags. Used to serialize and deserialize flag states during server communication.",
+      "description_length": 233,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nbd.Protocol.GlobalFlag",
+      "description": "Handles conversion between a protocol flag representation and S-expressions, as well as string serialization. Operates on an opaque type representing negotiated protocol flags. Used to parse and serialize server-sent flags during protocol setup.",
+      "description_length": 245,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nbd.Protocol.ClientFlag",
+      "description": "Encodes and decodes protocol flags between their internal representation and S-expressions, and converts them to strings for logging or display. Works with an abstract type representing client-sent protocol variant indicators. Used to serialize and deserialize flags during network protocol initialization.",
+      "description_length": 306,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nbd.Protocol.Option",
+      "description": "Provides functions to convert between a custom type and S-expressions, along with a string representation. Works with a hidden data type representing negotiated options. Used to serialize and deserialize option states during protocol negotiations.",
+      "description_length": 247,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nbd.Protocol.OptionResponse",
+      "description": "Handles conversion between a custom type and S-expressions, as well as string representation. Works with a sealed type that encapsulates option responses from a server. Used to serialize and deserialize responses in a protocol that requires structured data exchange.",
+      "description_length": 266,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nbd.Protocol.Announcement",
+      "description": "Represents server greetings with two distinct formats, V1 and V2, supporting serialization and deserialization via Sexp. Operates on a polymorphic variant type that encodes message structure and version. Used to parse and generate initial connection messages in network protocols.",
+      "description_length": 280,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nbd.Protocol.Negotiate",
+      "description": "Converts protocol versions v1 and v2 to and from S-expressions, serializes protocol data to strings, calculates size in bytes for announcements, and marshals/unmarshals data into Cstruct buffers. Works with v1 records, lists of global flags, and a generic protocol type. Used to encode and decode initial server greetings in network communication protocols.",
+      "description_length": 357,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nbd.Protocol.NegotiateResponse",
+      "description": "Handles serialization and deserialization of client response data using S-expressions and Cstruct buffers. Operates on a list of client flags to represent the initial response. Used to encode and decode handshake responses in network communication protocols.",
+      "description_length": 258,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nbd.Protocol.OptionRequestHeader",
+      "description": "Provides serialization and deserialization functions for a fixed-header data structure using S-expressions and Cstruct. Works with a concrete record type containing a fixed-size header. Used to encode and decode network protocol headers in binary format during message parsing and transmission.",
+      "description_length": 294,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nbd.Protocol.ExportName",
+      "description": "Provides serialization and deserialization functions for string-based identifiers using S-expressions, along with size calculation and Cstruct marshaling. Operates on the `string` type to encode and decode data in a binary format. Used to prepare name data for network transmission or persistent storage.",
+      "description_length": 304,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nbd.Protocol.DiskInfo",
+      "description": "Provides functions to serialize and deserialize data structures using S-expressions, calculate size, and marshal/unmarshal data into and from Cstruct buffers. Works with a custom type `t` that includes fields described in the module's documentation. Used to handle structured data in network protocols or file formats requiring binary serialization.",
+      "description_length": 349,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nbd.Protocol.OptionResponseHeader",
+      "description": "Provides functions to serialize, deserialize, and manipulate a structured response header used in server-client communication. Works with a concrete record type containing fields specific to option response metadata. Used to encode and decode headers in network protocols, ensuring consistent data representation during transmission.",
+      "description_length": 333,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nbd.Protocol.Server",
+      "description": "Handles serialization and deserialization of server messages using S-expressions, and calculates the size of message structures. Processes Cstruct buffers to extract valid server messages or return errors. Manages a structured data type containing server responses and acknowledgment signals.",
+      "description_length": 292,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Nbd.Protocol.Request",
+      "description": "Handles serialization and deserialization of I/O requests using S-expressions and binary formats. Operates on a structured type containing request metadata and payload. Used to encode requests into network buffers and decode incoming data streams.",
+      "description_length": 247,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nbd.Protocol.Reply",
+      "description": "Provides serialization and deserialization using S-expressions, conversion to string, and size calculation. Works with a structured data type containing server response information. Used to process and inspect network replies during protocol parsing.",
+      "description_length": 250,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nbd.Mux.Make",
+      "description": "Handles receiving and sending HTTP/1.1 protocol messages by extracting request IDs from headers, reading response bodies into a provided buffer, and ensuring serialized request transmission. Operates on transport endpoints, request and response headers, and body buffers to manage network communication. Processes unrequested packets by inspecting their headers and updates the transport state accordingly.",
+      "description_length": 406,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nbd.Mirror.Make",
+      "description": "Provides pretty-printers for error and write error types, and functions to disconnect from a device, retrieve block device information, and perform asynchronous read and write operations on a block device using Cstruct buffers. Operates on custom error types, write error types, and a device handle type `t`. Used to manage I/O operations on storage devices, ensuring proper buffer alignment and handling of read-only and I/O failure scenarios.",
+      "description_length": 444,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nbd.Channel",
+      "description": "Converts TLS and cleartext channels into a unified generic channel type for consistent handling. Operates on structured channel types that encapsulate network connection details. Used to standardize communication protocols in secure and non-secure network interactions.",
+      "description_length": 269,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nbd.Client",
+      "description": "Provides functions to disconnect from a remote block device, query its properties, read from and write to specific sectors, and list available exports. Operates with types such as `Cstruct.t list` for data buffers, `int64` for sector positions, and custom error types for I/O and write failures. Used to interact with remote storage systems, enabling data retrieval and modification while handling low-level protocol details.",
+      "description_length": 425,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nbd.Mirror",
+      "description": "Handles I/O operations on storage devices through custom error and write error types, along with a device handle `t`. Offers functions to disconnect, retrieve block device details, and perform asynchronous read/write operations using Cstruct buffers. Supports buffer alignment and error handling for read-only and I/O failure cases. Examples include safely reading data from a block device or disconnecting after an error occurs.",
+      "description_length": 429,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nbd.Mux",
+      "description": "Handles receiving and processing HTTP/2 frames by extracting headers and bodies, validating request IDs, and managing unrequested packets. Operates on transport streams, request and response headers, and body data structures. Sends individual requests through a synchronized channel and ensures proper header-body alignment during reception.",
+      "description_length": 341,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nbd.Protocol",
+      "description": "Encodes and decodes protocol elements including errors, commands, flags, options, and messages using S-expressions and Cstruct buffers. Operates on abstract, opaque, and concrete types representing protocol states, responses, and headers. Supports serialization, deserialization, string conversion, and size calculation for structured data exchanged in network protocols. Enables handling of server greetings, client responses, I/O requests, and option negotiations with precise data formatting and validation.",
+      "description_length": 510,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nbd.S",
+      "description": "Provides functions to establish and manage NBD server connections, process block device requests, and handle session cleanup. Operates with channel structures, block devices, and string-based export names. Used to expose a local block device to remote clients, ensuring read-only access or handling client disconnections gracefully.",
+      "description_length": 332,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nbd.Server",
+      "description": "Handles NBD protocol communication by establishing connections, negotiating export names, and serving block devices. Operates on channel objects, block device types, and string-based export names. Used to expose local storage over a network, allowing remote clients to access it as a block device.",
+      "description_length": 297,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "nbd",
+      "description": "Handles reading from and writing to remote block devices using the NBD protocol, including negotiation, data transfer, and error handling. Operates on raw byte streams, network sockets, and block device metadata. Enables direct access to remote disk images for virtualization and storage applications.",
+      "description_length": 301,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Nbd",
+      "description": "Encapsulates network communication and block device interaction through unified channel handling, protocol encoding, and I/O operations. Supports reading and writing sectors using `Cstruct.t` buffers, `int64` sector positions, and custom error types, while managing HTTP/2 and NBD protocol frames. Enables remote storage access by establishing connections, negotiating exports, and handling asynchronous data transfers. Examples include securely disconnecting from a device, reading specific sectors, and decoding protocol messages for accurate data exchange.",
+      "description_length": 559,
+      "index": 27,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 28,
+    "meaningful_modules": 28,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 559,
+    "min_description_length": 229,
+    "avg_description_length": 323.7857142857143,
+    "embedding_file_size_mb": 0.1021413803100586
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "package": "scid",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 8,
+  "creation_timestamp": "2025-06-18T16:30:26.794249",
+  "modules": [
+    {
+      "module_path": "Scid.E.Manual",
+      "description": "Adds bytes to a buffer for encoding, allowing partial writes and tracking remaining space. Operates on byte sequences and integer offsets to manage data output. Used to handle incremental encoding where buffer space is limited and needs precise tracking.",
+      "description_length": 254,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Scid.D.Manual",
+      "description": "Provides functions to refill a decoder with byte data from a string or bytes buffer, specifying the start index and length of the data. Works with string and Bytes.t types, allowing precise control over input streams. Used to feed data into a decoder during parsing, particularly when handling manual input sources.",
+      "description_length": 315,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Scid.H",
+      "description": "Provides functions to validate, check, and write SCID headers. Operates on byte sequences and integer positions. Validates header content, checks for correctness at a specific offset, and writes a specified portion of the header to a buffer.",
+      "description_length": 241,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Scid.R",
+      "description": "Provides serialization and comparison operations for a record type, including pretty-printing, size calculation, and reading/writing to byte buffers. Works with a concrete record type that includes fields such as timestamps and identifiers. Used to efficiently store and retrieve structured data in binary format within network protocols or file storage systems.",
+      "description_length": 362,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Scid.D",
+      "description": "Encapsulates input handling and error management for decoding operations. Supports byte data injection from strings or byte buffers, with fine-grained control over data segments. Provides methods to update decoder state using specified ranges of input. Enables precise parsing of structured data by dynamically supplying input fragments.",
+      "description_length": 337,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Scid.E",
+      "description": "Manages output by tracking buffer space and enabling incremental byte writes through offset-based operations. Supports byte sequences and integer offsets to handle partial data outputs efficiently. Allows precise control over encoding processes under memory constraints. Can be used to build streaming encoders or manage limited buffer allocations.",
+      "description_length": 348,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "scid",
+      "description": "Provides functions for parsing and validating SCID (Secure Cryptographic Identifier) strings, including encoding binary data into SCID format and extracting metadata from existing SCID values. Operates on byte sequences and structured data representations of cryptographic keys. Used to generate unique identifiers for cryptographic keys in secure communication protocols.",
+      "description_length": 372,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Scid",
+      "description": "Handles SCID header validation, record serialization, input decoding, and output buffering. Operates on byte sequences, integers, and structured records with fields like timestamps and identifiers. Supports header checks, binary data encoding/decoding, and incremental buffer management. Enables efficient data handling in network protocols, file systems, and streaming applications.",
+      "description_length": 383,
+      "index": 7,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 8,
+    "meaningful_modules": 8,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 383,
+    "min_description_length": 241,
+    "avg_description_length": 326.5,
+    "embedding_file_size_mb": 0.02949047088623047
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "package": "resp",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 7,
+  "creation_timestamp": "2025-06-18T16:30:23.471202",
+  "modules": [
+    {
+      "module_path": "Resp.Reader",
+      "description": "Reads binary data, lines, and individual characters from an input channel, and parses lexemes into structured data. Operates on input channels and lexeme representations, returning results in a lazy, non-blocking manner. Used for processing streamed or file-based input with asynchronous I/O and error handling.",
+      "description_length": 311,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resp.Writer",
+      "description": "Writes a string to a file descriptor, appends a separator, writes a lexical token, and serializes a custom type to a file descriptor. Operates on file descriptors and lexical tokens. Used to generate structured output files from parsed data.",
+      "description_length": 241,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resp.Make",
+      "description": "Writes a string to a file descriptor, separates lines, writes a lexeme with formatting, and serializes a custom type to a stream. Operates on file descriptors and a custom data type. Used to generate structured output in compiler or parser tools.",
+      "description_length": 246,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resp.String_reader",
+      "description": "Reads a specified number of characters from a string-based input channel, retrieves lines or individual characters, extracts lexemes with error handling, and decodes lexemes into a structured type. Operates on string references as input channels and returns results through Lwt promises. Used for parsing structured text data from in-memory strings in asynchronous workflows.",
+      "description_length": 375,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resp.String_writer",
+      "description": "Writes a string to a file-like object represented by a mutable reference, with support for writing lexemes and encoding structured data. Operates on mutable string references and lexeme data structures. Used to construct output streams with controlled formatting and encoding.",
+      "description_length": 276,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "resp",
+      "description": "Encodes and decodes values according to the Redis Serialization Protocol, handling integers, strings, arrays, and bulk strings. It supports streaming operations for efficient data processing in networked applications. Used to implement Redis clients and servers by parsing and generating protocol messages.",
+      "description_length": 306,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resp",
+      "description": "Processes input by reading and parsing binary, line, and character data into structured formats, while supporting asynchronous I/O and error handling. Outputs structured data by writing strings, separators, and custom types to file descriptors. Supports lazy, non-blocking operations for efficient data handling. Can parse streamed logs and generate formatted output files with consistent delimiters.",
+      "description_length": 400,
+      "index": 6,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 12,
+    "meaningful_modules": 7,
+    "filtered_empty_modules": 5,
+    "retention_rate": 0.5833333333333334
+  },
+  "statistics": {
+    "max_description_length": 400,
+    "min_description_length": 241,
+    "avg_description_length": 307.85714285714283,
+    "embedding_file_size_mb": 0.025831222534179688
+  }
+}

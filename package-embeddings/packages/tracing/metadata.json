@@ -1,0 +1,322 @@
+{
+  "package": "tracing",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 43,
+  "creation_timestamp": "2025-06-18T16:41:15.365125",
+  "modules": [
+    {
+      "module_path": "Tracing_zero.Writer_intf.Expert.Event_type",
+      "description": "Provides operations to create and identify specific event types used in tracing and performance analysis. Works with the `t` type to represent distinct event categories such as instants, counters, durations, and asynchronous or flow events. Used to precompute header and size information for event data structures in low-level instrumentation.",
+      "description_length": 343,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tracing_zero.Writer_intf.Expert.Write_arg_unchecked",
+      "description": "Writes raw values of various types\u2014strings, 32-bit and 64-bit integers, pointers, and floats\u2014into a trace buffer using explicit name identifiers. Operates on a mutable trace state object and directly appends data without validation. Used to inject low-level instrumentation data during program execution for debugging or analysis.",
+      "description_length": 330,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing_zero.Writer.Expert.Event_type",
+      "description": "Provides operations to create and identify specific event types used in tracing and performance analysis. Works with the `t` type to represent distinct event categories such as instants, counters, durations, and asynchronous or flow events. Used to precompute header and size information for event data structures in low-level instrumentation.",
+      "description_length": 343,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tracing_zero.Writer.Expert.Write_arg_unchecked",
+      "description": "Writes raw values of various types\u2014strings, 32-bit and 64-bit integers, pointers, and floats\u2014into a trace buffer using explicit name identifiers. Operates on a mutable trace state object and directly appends data without validation. Used to inject low-level instrumentation data during program execution.",
+      "description_length": 304,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tracing.Parser.Event_type",
+      "description": "Handles serialization to S-expression format and comparison of event identifiers. Operates on the abstract type `t` representing distinct event categories. Used to ensure consistent ordering and representation in logging and data exchange contexts.",
+      "description_length": 248,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing.Parser.Thread",
+      "description": "Provides operations to convert thread identifiers to S-expressions and to compare threads for ordering. Works with thread data structures representing concurrent execution units. Used to serialize thread states for logging and to enforce consistent ordering in thread management systems.",
+      "description_length": 287,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing.Parser.Parse_error",
+      "description": "Provides functions to convert error representations into S-expression format for serialization or debugging. Works with custom error types that encapsulate parsing issues. Used to generate structured error outputs in tools that process or display parse failures.",
+      "description_length": 262,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tracing.Parser.Warnings",
+      "description": "Provides functions to convert warning data into S-expression format. Works with a record type containing warning details such as message, location, and severity. Used to serialize warnings for logging or debugging purposes.",
+      "description_length": 223,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing.Parser.String_index",
+      "description": "Provides operations to compare, hash, and convert string indices, which are represented as private integers in the range 1 to 32767. Includes functions to generate S-expressions, check equality, and retrieve integer values. Used to safely handle and manipulate string positions in contexts requiring type confinement and consistent hashing.",
+      "description_length": 340,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing.Parser.Thread_index",
+      "description": "Provides comparison, hashing, and conversion operations for thread indices represented as private integers. Supports conversion to S-expressions and integer values, enabling safe handling of thread identifiers within a fixed range. Used to ensure consistent and type-safe manipulation of thread numbers in concurrent systems.",
+      "description_length": 325,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tracing.Parser.Event_arg",
+      "description": "Provides operations to convert values and tuples of string indices with values to S-expressions, and to compare them numerically. Works with custom types representing string indices paired with associated values. Used to serialize and order event arguments in a structured format for logging or serialization.",
+      "description_length": 309,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing.Parser.Event",
+      "description": "Provides operations to convert event data to S-expression format and to compare events for ordering. Works with a structured type containing event details. Used to serialize events for logging and to sort events in chronological order.",
+      "description_length": 235,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing.Parser.Record",
+      "description": "Provides operations to convert records to S-expression format and to compare records lexicographically. Works with a custom record type that encapsulates structured data. Used to serialize data for debugging and to enable ordered comparisons in sorted collections.",
+      "description_length": 264,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing.Trace.Thread",
+      "description": "Provides functions to create, start, and join threads, along with synchronization primitives like mutexes and condition variables. Operates on the `t` type to represent thread identifiers and manages concurrent execution. Used to implement parallel processing tasks such as background computation or event handling.",
+      "description_length": 315,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing.Trace.Arg",
+      "description": "Provides functions to convert named arguments, represented as key-value pairs, into S-expression format for serialization. Works with types `value` and `t`, where `t` is a tuple of a string and a `value`. Used to encode event metadata for display in Perfetto's interface.",
+      "description_length": 271,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing.Trace.Async",
+      "description": "Provides asynchronous execution of tasks, including waiting for events, scheduling callbacks, and managing concurrency. Operates on values of type `t` to represent ongoing operations. Used to handle non-blocking I/O, coordinate parallel computations, and respond to external events in real time.",
+      "description_length": 295,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing.Trace.Expert",
+      "description": "Handles ID allocation and string interning for tracing data, using a `Tracing_zero.Writer.t` as the underlying output. Operates on `Core.Time_ns.t` for timestamp tracking and manages temporary string slots for efficient data serialization. Used to prepare tracing data for file output, ensuring consistent ID and string management during event recording.",
+      "description_length": 354,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing_zero.Destinations.Buffer_until_initialized",
+      "description": "Maintains a buffer for events until a destination is set, then transfers buffered data to the new destination on the next buffer switch. Works with a custom writer interface type to manage event output. Ensures writes after closure are silently ignored, useful for reliable tracing during application shutdown.",
+      "description_length": 310,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tracing_zero.Writer.String_id",
+      "description": "Compares string identifiers for equality and generates unique identifiers from integers. It manages an internal pool of temporary string slots, with a maximum limit defined by a constant. Used to efficiently handle and compare string-based identifiers in performance-critical code.",
+      "description_length": 281,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tracing_zero.Writer.Thread_id",
+      "description": "Generates a thread identifier from a 32-bit integer, mapping it to an 8-bit representation for efficient storage and comparison. Works with 32-bit integers and 8-bit thread IDs derived from process and thread identifiers. Used to uniquely reference threads in tracing data with reduced memory overhead.",
+      "description_length": 302,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing_zero.Writer.Arg_types",
+      "description": "Handles argument configuration for event records by defining the number of each type of argument\u2014int64, int32, float, and string\u2014that will be written. Provides `none` for events with no arguments and `create` to specify counts for each argument type upfront. Used to ensure correct argument counts when writing event data, preventing runtime errors from mismatched expectations.",
+      "description_length": 378,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing_zero.Writer.Write_arg",
+      "description": "Writes arguments of various types\u2014strings, 32-bit and 64-bit integers, pointers, and floats\u2014associated with event records. Operates on a custom type `t` and requires named identifiers from `String_id.t` to associate values with specific argument slots. Used to populate event data structures with typed values in low-level tracing or logging systems.",
+      "description_length": 350,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing_zero.Writer.Expert",
+      "description": "Encapsulates event classification and data injection for low-level tracing, using a type `t` to define event categories like instants, durations, and counters. Supports direct writing of raw values\u2014such as integers, strings, and floats\u2014into a trace buffer via a mutable state. Enables precise control over event headers and data layout during program execution. Can be used to log performance metrics or instrument specific code paths with minimal overhead.",
+      "description_length": 457,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing_zero.Writer_intf.String_id",
+      "description": "Provides operations to compare string identifiers, generate empty identifiers, and convert integers to identifiers. Works with the `t` type, representing unique string-based identifiers. Used to manage temporary string slots and ensure consistent identifier comparisons in systems requiring deterministic string handling.",
+      "description_length": 321,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tracing_zero.Writer_intf.Thread_id",
+      "description": "Generates a thread identifier from a 32-bit integer, mapping it to an 8-bit representation for efficient storage and comparison. Works with 32-bit integers and 8-bit thread IDs derived from process and thread identifiers. Used to uniquely reference threads in tracing data with reduced memory overhead.",
+      "description_length": 302,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing_zero.Writer_intf.Arg_types",
+      "description": "Handles argument counting and validation for event records, ensuring the correct number of each type is written before finalizing an event. Works with integer and floating-point values, as well as strings, tracking their counts through a stateful type. Used to enforce strict argument constraints when serializing event data.",
+      "description_length": 325,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tracing_zero.Writer_intf.Write_arg",
+      "description": "Writes arguments of various types\u2014strings, 32-bit and 64-bit integers, pointers, and floats\u2014associated with event records. Operates on `String_id.t` for argument names and a custom `t` type representing the writer state. Used to annotate events with specific data values in low-level tracing or logging systems.",
+      "description_length": 311,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing_zero.Writer_intf.Expert",
+      "description": "Encapsulates event classification and data injection for low-level tracing, using a type `t` to define event categories like instants, durations, and counters. Supports direct writing of raw values\u2014such as integers, strings, and floats\u2014into a trace buffer via a mutable state. Enables precise control over event headers and data layout during program execution. Can be used to record function call timestamps, memory addresses, or performance metrics in real-time.",
+      "description_length": 464,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing.Trace",
+      "description": "Encapsulates thread management, event serialization, asynchronous task handling, and ID/string tracking to generate Fuchsia trace data. Supports operations on thread identifiers, S-expression encoding, asynchronous workflows, and timestamped string interning. Enables creation of structured traces with metadata, parallel execution, and real-time event coordination. Example uses include logging background task timelines, encoding event attributes, and managing concurrent I/O operations for performance analysis.",
+      "description_length": 514,
+      "index": 28,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tracing.Flow",
+      "description": "Provides functions to create, write steps to, and finish a flow, using a unique identifier and writer context. Operates on a custom type `t` that encapsulates flow state and interacts with `Tracing_zero.Writer.t` for event recording. Used to manage and finalize traceable processes in a structured, event-driven manner.",
+      "description_length": 319,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing.Queue_to_spans",
+      "description": "Provides functions to calculate event start times based on input and output timestamps, using a single-threaded processing constraint. Operates on time spans and maintains internal state to track the last output time. Used to infer processing timelines in systems where only queue entry and exit times are known.",
+      "description_length": 312,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tracing.Parser",
+      "description": "The module offers utilities for serializing and comparing various trace-related data types, including event categories, thread identifiers, string indices, and records, all represented as abstract types. It provides S-expression conversion, comparison, and hashing functions to enable consistent representation, ordering, and debugging of trace elements. Operations include converting thread states, event data, and error messages to S-expressions, as well as comparing and ordering elements for logging and analysis. Examples include serializing event arguments, generating structured error outputs, and ensuring consistent thread ordering in concurrent systems.",
+      "description_length": 663,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing.Record_writer",
+      "description": "Wraps a Tracing_zero.Writer.t to enable writing parsed records back into a trace file, maintaining original string and thread internings. Accepts Parser.Record.t values and writes them directly to the underlying writer. Used to reconstruct traces after modifying or analyzing individual records.",
+      "description_length": 295,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing.Buffer",
+      "description": "Manages trace data by consuming and outputting events from an iobuf, validating against a writer's configuration. Operates on buffers of binary trace data and requires matching configuration parameters between readers and writers. Used to process and reconstruct traces while maintaining consistency in string interning and event parsing.",
+      "description_length": 338,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing_tool_output.Serve",
+      "description": "Provides functions to start a server with a specified port and browser opening option, and to serve individual trace files through the server. Operates on a server state type and command-line parameters. Used to inspect and navigate trace files via a web interface.",
+      "description_length": 265,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing_zero.Writer",
+      "description": "provides a set of utilities for managing identifiers, argument configurations, and event data in low-level tracing systems. it includes string and thread ID generation, argument count specification, and argument writing capabilities, all working with custom types like `String_id.t` and `t`. it enables efficient handling of event records with typed arguments and supports direct injection of raw values into trace buffers. examples include generating unique string identifiers, mapping thread IDs for compact storage, and writing structured event data with predefined argument counts.",
+      "description_length": 585,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing_zero.Writer_intf",
+      "description": "provides a set of low-level utilities for efficiently writing Fuchsia Trace Format traces, focusing on zero-alloc operations and deterministic data handling. it includes types for string identifiers, thread IDs, and event states, along with operations to manage argument counts, write typed values, and classify events. it supports tasks like converting integers to unique identifiers, mapping thread IDs for compact storage, and injecting raw values into trace buffers. examples include recording function call timestamps, annotating events with string keys, and validating argument counts before finalizing event records.",
+      "description_length": 623,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing_zero.Destinations",
+      "description": "manages event buffering and output routing, switching data delivery to a newly set destination without data loss. It uses a writer interface to handle event serialization and ensures no writes occur after closure. Buffered events are delivered once a destination is available, supporting reliable logging in dynamic environments. Examples include tracing application events during startup and shutdown or redirecting logs to different outputs mid-execution.",
+      "description_length": 457,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "tracing",
+      "description": "Provides functions to parse and generate trace data in the Fuchsia Trace Format, including event logging and timestamp handling. Works with structured data such as trace packets, events, and metadata. Used to export trace logs for analysis in Perfetto and to instrument applications with detailed performance metrics.",
+      "description_length": 317,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing",
+      "description": "manages thread coordination, event serialization, and trace reconstruction, offering tools to track IDs, encode events in S-expressions, and handle asynchronous workflows. It defines custom types for flows, time spans, and trace records, supporting operations like timestamp calculation, event writing, and data comparison. Functions enable structured logging of task timelines, reconstruction of modified traces, and validation of binary event streams. Examples include encoding event attributes, inferring processing durations, and preserving string internings during trace analysis.",
+      "description_length": 585,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing_destinations_unix",
+      "description": "Writes to files or file descriptors with varying performance and buffering strategies, including synchronous and optimized asynchronous approaches. Operates on file paths, file descriptors, and temporary string buffers for efficient logging. Used for capturing tracing data into persistent storage or low-level I/O streams.",
+      "description_length": 323,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Tracing_tool_output",
+      "description": "starts a server with configurable port and browser integration, serving trace files through a web interface. It manages a server state and processes command-line arguments to control operation. Users can inspect and navigate trace files interactively. Examples include launching a server on port 8080 or serving a specific trace file for real-time analysis.",
+      "description_length": 357,
+      "index": 41,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Tracing_zero",
+      "description": "manages low-level tracing operations with focused utilities for identifier management, event data structuring, and buffer handling. it defines custom types such as `String_id.t` and thread IDs, enabling efficient argument writing, event classification, and raw value injection into trace buffers. it supports tasks like generating unique identifiers, mapping thread IDs, and injecting timestamps or string keys into events. it also ensures reliable event delivery by buffering data and routing it to new destinations without loss.",
+      "description_length": 530,
+      "index": 42,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 46,
+    "meaningful_modules": 43,
+    "filtered_empty_modules": 3,
+    "retention_rate": 0.9347826086956522
+  },
+  "statistics": {
+    "max_description_length": 663,
+    "min_description_length": 223,
+    "avg_description_length": 356.5581395348837,
+    "embedding_file_size_mb": 0.14949417114257812
+  }
+}

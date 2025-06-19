@@ -1,0 +1,119 @@
+{
+  "package": "producer",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 14,
+  "creation_timestamp": "2025-06-18T16:32:57.422578",
+  "modules": [
+    {
+      "module_path": "Producer.Make.Dependencies",
+      "description": "Handles dependency resolution and traversal for producer nodes, supporting operations like checking dependencies, merging, and filtering. Works with nested tuples representing node relationships and dependency hierarchies. Used to validate input requirements before processing and to optimize execution order in data pipelines.",
+      "description_length": 327,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Producer.Make.Node",
+      "description": "Creates a node in a producer graph by combining dependency resolution and output generation. Accepts a dependency specification and a function to extract dependencies from a context, then returns a node that produces output based on the context. Used to model computational steps where outputs depend on resolved dependencies within a specific context.",
+      "description_length": 352,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Producer.Make.Graph",
+      "description": "Encapsulates a graph of producer nodes, allowing construction from a root node and tracking dependencies. It works with node structures that carry context and output types, ensuring acyclic relationships. Used to model data processing pipelines where each node generates output based on its inputs.",
+      "description_length": 298,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Producer.Make2.Dependencies",
+      "description": "Handles dependency resolution and tracking for producer nodes, supporting operations like adding, removing, and checking dependencies. Works with a four-tuple type representing different dependency states and relationships. Used to manage versioned component dependencies in a build system.",
+      "description_length": 290,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Producer.Make2.Node",
+      "description": "Creates a node from dependencies and a context transformation, linking input dependencies to output values. Operates on context-aware structures with paired output types. Used to model data processing steps in a graph where each node transforms context and emits two output values.",
+      "description_length": 281,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Producer.Make2.Graph",
+      "description": "Creates a graph structure from a set of producer nodes, with a designated output node. Operates on node types that carry context and multiple output values, ensuring no cyclic dependencies exist. Used to construct data processing pipelines where output is explicitly defined and dependencies are strictly enforced.",
+      "description_length": 314,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Producer.Make",
+      "description": "Provides operations to lift values into a monadic context and chain computations that produce monadic results. Works with a parameterized type 'a t representing monadic values. Enables sequential processing of computations that may involve side effects or asynchronous operations.",
+      "description_length": 280,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Producer.Make2",
+      "description": "Provides operations to lift values into a monadic context and chain computations that may fail, using a type that represents computations with a possible error. Works with a polymorphic type that pairs a success value with an error value. Enables structured error handling in workflows where operations depend on previous results.",
+      "description_length": 330,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Producer.Sync",
+      "description": "Provides operations for sequencing computations in a monadic context, including lifting values into the context and chaining functions that return values in the same context. Works with a type constructor that wraps values without additional structure. Used to manage sequential execution of operations that produce results in a consistent type.",
+      "description_length": 345,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Producer.Dependencies",
+      "description": "Processes and tracks dependencies between producer nodes, including direct and transitive relationships. Operates on tuples representing component, dependency, and edge information. Used to resolve dependency chains during build processes and validate node relationships.",
+      "description_length": 271,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Producer.Node",
+      "description": "Creates nodes for a producer graph by binding a dependency resolution function to a context. Operates on context and output types, along with dependency structures. Used to construct graph nodes that produce values based on resolved dependencies.",
+      "description_length": 246,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Producer.Graph",
+      "description": "Creates a graph structure from a producer node, ensuring no cyclic dependencies exist. Operates on node-based structures with context and output types, linking nodes through dependencies. Used to construct execution graphs where a single node defines the output result.",
+      "description_length": 269,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "producer",
+      "description": "Produces values through a monadic dependency graph, enabling structured computation with sequential dependencies. It operates on custom node types and monadic workflows, allowing for compositional value construction. Used to chain authentication steps and inject resolved values into subsequent processing stages.",
+      "description_length": 313,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Producer",
+      "description": "Provides operations to lift values into a monadic context and chain computations that produce monadic results. Works with a parameterized type that pairs a result type with an error or state type. Used to sequence operations where each step may produce a context-aware value, such as handling I/O or state transformations.",
+      "description_length": 322,
+      "index": 13,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 14,
+    "meaningful_modules": 14,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 352,
+    "min_description_length": 246,
+    "avg_description_length": 302.7142857142857,
+    "embedding_file_size_mb": 0.0513153076171875
+  }
+}

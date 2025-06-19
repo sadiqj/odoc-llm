@@ -1,0 +1,49 @@
+{
+  "package": "slug",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 4,
+  "creation_timestamp": "2025-06-18T16:28:44.299876",
+  "modules": [
+    {
+      "module_path": "Slug.Charmap",
+      "description": "Generates a character mapping structure from a list of string pairs, enabling custom character replacements during text processing. It works with a type `t` that encapsulates these mappings, supporting locale-specific or user-defined transformations. Used to prepare replacement rules for slug generation, such as converting special characters to ASCII equivalents.",
+      "description_length": 365,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Slug.Slug_data",
+      "description": "Provides mappings of language-specific slugs to their corresponding identifiers, using lists of string pairs. Works with language codes and their associated slug values. Used to translate between language identifiers and URL-friendly slugs in multilingual applications.",
+      "description_length": 269,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "slug",
+      "description": "Converts strings into URL-safe slugs using a transformation algorithm that handles non-Latin characters and special symbols. Processes UTF-8 encoded strings and applies case normalization, character replacement, and hyphenation. Used to generate clean, readable URLs from titles or headings in web applications.",
+      "description_length": 311,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Slug",
+      "description": "Generates URL-safe slugs by normalizing input, replacing special characters, and transforming whitespace. Uses a mapping type to define custom character substitutions and language-specific slug translations. Examples include converting \"my string\" to \"my-string\" or handling Vietnamese characters with locale-specific rules. Supports flexible configuration through user-defined charmaps and language code associations.",
+      "description_length": 418,
+      "index": 3,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 4,
+    "meaningful_modules": 4,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 418,
+    "min_description_length": 269,
+    "avg_description_length": 340.75,
+    "embedding_file_size_mb": 0.014929771423339844
+  }
+}

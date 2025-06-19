@@ -1,0 +1,126 @@
+{
+  "package": "ocsipersist-pgsql",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 15,
+  "creation_timestamp": "2025-06-18T16:34:29.889010",
+  "modules": [
+    {
+      "module_path": "Ocsipersist.Functorial.Column.String",
+      "description": "Provides functions to encode and decode string values into an internal representation, and retrieves a column type identifier from a string. Operates on the built-in string type and internal representations used for data serialization. Used to transform database column names into a standardized format for storage and retrieval.",
+      "description_length": 329,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocsipersist.Functorial.Column.Float",
+      "description": "Provides functions to convert between a float value and an internal representation, using a specific column type identifier. Works with the float data type for numerical data handling. Used to serialize and deserialize float values in data processing pipelines.",
+      "description_length": 261,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocsipersist.Functorial.Column.Marshal",
+      "description": "Provides functions to serialize and deserialize values of type t using OCaml's built-in binary format. Works with arbitrary OCaml data structures, including tuples, lists, and variants. Used to save and load complex data structures from files or over networks.",
+      "description_length": 260,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocsipersist.Functorial.Table.Variable",
+      "description": "Provides functions to create variables with immediate, lazy, or Lwt-based default values, and operations to retrieve and update their contents. Works with a custom type `t` representing variable state. Used to manage dynamic configuration values or mutable state in asynchronous contexts.",
+      "description_length": 288,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ocsipersist.Functorial.Table",
+      "description": "Provides operations to create and manipulate tables with string keys and arbitrary values. Works with associative structures where each entry maps a unique string to a corresponding value. Used to store configuration settings and lookup data during runtime.",
+      "description_length": 257,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ocsipersist.Functorial.Column",
+      "description": "Encodes and decodes string and float values into internal representations, using column type identifiers for consistent data handling. Supports serialization and deserialization of arbitrary OCaml data types through binary formats. Converts database column names to standardized forms, handles numerical data with precision, and preserves complex structures during storage or transmission. Examples include converting \"user_name\" to a type identifier, serializing a float for storage, and saving a list of records to a file.",
+      "description_length": 524,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ocsipersist.Lwt_thread",
+      "description": "Provides asynchronous programming capabilities through promise-based I/O and concurrency control. Main data types include promises (`'a Lwt.t`) and operations like `Lwt.bind`, `let%lwt`, and `Lwt_main.run` to manage asynchronous execution. Examples include reading input lines, running I/O operations concurrently, and managing callback execution order. Supports structured concurrency and cancellation handling through auxiliary modules.",
+      "description_length": 438,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ocsipersist.PGOCaml",
+      "description": "The module offers database connection management, transaction control, and low-level query execution, working with connection descriptors, PostgreSQL-specific data types (OIDs, UUIDs, arrays), and result descriptions. It includes serialization and deserialization functions for converting between OCaml types and PostgreSQL formats, such as dates, JSON, and arrays, with support for custom types and nullable elements. Use cases involve handling complex data interactions, ensuring safe array operations, and enabling precise control over database communication protocols.",
+      "description_length": 572,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocsipersist.Functorial",
+      "description": "Provides functions to convert between a custom type `t` and an internal representation, with `encode` mapping `t` to `internal` and `decode` performing the reverse. Works with a specific string-based column type identifier and a structured `t` type. Used to serialize and deserialize data for storage or transmission.",
+      "description_length": 317,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocsipersist.Polymorphic",
+      "description": "Provides asynchronous operations for managing key-value stores with polymorphic values, including retrieving and modifying entries, iterating over keys, and folding over the store's contents. Works with a table type that encapsulates key-value pairs where the value can be of any type. Used to handle persistent data storage with support for concurrent access and structured data traversal.",
+      "description_length": 390,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocsipersist.Store",
+      "description": "Provides functions to open a store, create persistent data structures with lazy or eager initialization, and retrieve or update values asynchronously. Works with store identifiers, persistent data containers, and values of arbitrary type. Used to manage shared, persistent state across processes, such as caching results of expensive computations or maintaining session data.",
+      "description_length": 375,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocsipersist.Ref",
+      "description": "Provides atomic read-write operations for storing and retrieving values, supporting persistent storage through a given store. Works with a generic reference type that wraps values in a Lwt-aware structure. Used to manage shared state across asynchronous processes, such as maintaining session data or configuration settings.",
+      "description_length": 324,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "ocsipersist-pgsql",
+      "description": "Provides functions to establish PostgreSQL connections, execute parameterized queries, and manage transactions. Works with SQL query strings, parameter lists, and result sets from PostgreSQL. Used to persist and retrieve application data in a relational database, such as user sessions or configuration settings.",
+      "description_length": 312,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocsipersist",
+      "description": "provides asynchronous database interaction and persistent storage through a combination of promise-based I/O, database connection management, and key-value store operations. it supports converting custom types to and from a serialized format, managing transactions, and performing atomic reads and writes on persistent data structures. examples include handling JSON data in PostgreSQL, serializing application-specific types, and maintaining shared state across concurrent processes. it enables efficient, structured access to persistent data with support for complex queries and concurrent modifications.",
+      "description_length": 606,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocsipersist_settings",
+      "description": "Sets connection parameters for a database client, including host, port, user, password, database name, Unix domain socket directory, and connection pool size. Operates on primitive types such as strings and integers to configure a persistent storage backend. Used to customize database connectivity settings before establishing a session.",
+      "description_length": 338,
+      "index": 14,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 20,
+    "meaningful_modules": 15,
+    "filtered_empty_modules": 5,
+    "retention_rate": 0.75
+  },
+  "statistics": {
+    "max_description_length": 606,
+    "min_description_length": 257,
+    "avg_description_length": 372.73333333333335,
+    "embedding_file_size_mb": 0.05493354797363281
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "package": "prometheus",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 15,
+  "creation_timestamp": "2025-06-18T16:33:55.356913",
+  "modules": [
+    {
+      "module_path": "Prometheus.MetricName",
+      "description": "Validates and wraps metric names, ensuring they conform to specific naming rules. Provides pretty-printing and comparison operations for internal use. Used to enforce consistent metric identification across monitoring and logging systems.",
+      "description_length": 238,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Prometheus.LabelName",
+      "description": "Validates and wraps a string as a label name, ensuring it meets specific criteria. Provides pretty-printing and comparison operations for label name instances. Used to enforce consistent label naming in configuration parsing and output formatting.",
+      "description_length": 247,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Prometheus.MetricInfo",
+      "description": "Provides functions to create, retrieve, and update metric metadata, including name, unit, and description. Works with a record type containing fields for identifier, unit, and textual description. Used to annotate time-series data with structured metadata for monitoring systems.",
+      "description_length": 279,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Prometheus.LabelSetMap",
+      "description": "This module provides operations for managing key-value pairs with ordered labels, including adding, removing, and transforming entries, as well as querying min/max bindings and splitting maps. It works with structured keys, specifically lists of strings, enabling ordered traversal and conditional searches. Use cases include configuration management, where labeled data requires ordered access, or processing hierarchical data with dynamic key structures.",
+      "description_length": 456,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Prometheus.MetricFamilyMap",
+      "description": "This module provides operations for managing and querying maps keyed by metric families, including standard associative functions like addition, removal, and lookup, as well as higher-order transformations such as folding, filtering, and merging. It works with key-value pairs where keys are metric family identifiers, supporting ordered traversal, selective binding retrieval, and structural manipulations like splitting or converting to lists. Use cases include metrics aggregation, real-time monitoring, and data transformation workflows where efficient key-based access and traversal are critical.",
+      "description_length": 601,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Prometheus.Sample_set",
+      "description": "Constructs a sample with optional extension, bucket label, and value. Works with label names and floating-point values to create structured metric samples. Used to generate time-series data with labeled thresholds or quantiles.",
+      "description_length": 227,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Prometheus.CollectorRegistry",
+      "description": "Tracks and aggregates metrics through registered collectors, enabling retrieval of current values and pre-collection setup. Works with metric information and sample sets, supporting both synchronous and asynchronous data collection. Used to gather metrics for monitoring systems or logging, with pre-collection hooks for efficient data gathering.",
+      "description_length": 346,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Prometheus.Counter",
+      "description": "Creates metrics with labeled dimensions and unidirectional counters, supporting single or multiple labels. Operates on label lists, families, and individual counter instances. Used to track increments in specific contexts, such as counting requests per endpoint or monitoring event frequencies.",
+      "description_length": 294,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Prometheus.Gauge",
+      "description": "Creates and manages metrics that track a single numerical value, allowing increments, decrements, and direct value setting. It works with labeled and unlabeled gauge families, where each label combination defines a distinct metric instance. Use cases include tracking concurrent requests, measuring execution time, and monitoring resource usage in real-time.",
+      "description_length": 358,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Prometheus.Summary",
+      "description": "Provides functions to create metrics that track counts and totals, with support for labeled and unlabeled metrics. Works with label lists, families of metrics, and individual metric instances. Used to record observations, time function executions, and manage labeled summaries in monitoring systems.",
+      "description_length": 299,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Prometheus.Histogram_spec",
+      "description": "Creates a histogram with evenly spaced buckets from a start value and interval, or exponentially spaced buckets based on a factor, or custom buckets from a list. Works with float values and constructs a histogram type representing these ranges. Used to categorize numerical data into predefined intervals for analysis.",
+      "description_length": 318,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Prometheus.Histogram",
+      "description": "Provides functions to create and manipulate histograms based on specified ranges and bins. Works with numeric data and interval-based structures to aggregate values into frequency distributions. Used to analyze data distributions in statistical reporting and visualization pipelines.",
+      "description_length": 283,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Prometheus.DefaultHistogram",
+      "description": "Provides functions to create and manage histograms for measuring network request times, including labeled and unlabeled metrics. Works with label names, collector registries, and time-based observations. Enables tracking of request durations by observing float values and timing function executions.",
+      "description_length": 299,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "prometheus",
+      "description": "Tracks and reports real-time metrics such as memory usage, queue lengths, and log counts to a Prometheus server. It supports atomic updates to counter and gauge types, and provides methods to register and expose metrics via HTTP endpoints. Used to monitor service health and trigger alerts based on predefined thresholds.",
+      "description_length": 321,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Prometheus",
+      "description": "Creates metrics with labeled dimensions for monitoring, including families of metrics with multiple labels, single-label metrics, and no-label metrics. Operates on label lists, metric families, and individual metric instances to track numerical values and execution times. Used to instrument code for real-time performance tracking and system health monitoring.",
+      "description_length": 361,
+      "index": 14,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 15,
+    "meaningful_modules": 15,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 601,
+    "min_description_length": 227,
+    "avg_description_length": 328.46666666666664,
+    "embedding_file_size_mb": 0.054931640625
+  }
+}

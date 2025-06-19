@@ -1,0 +1,98 @@
+{
+  "package": "sexp_macro",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 11,
+  "creation_timestamp": "2025-06-18T16:33:02.048030",
+  "modules": [
+    {
+      "module_path": "Sexp_macro.Loader.Monad.Monad_infix",
+      "description": "Provides bind operation for monadic types, enabling sequential composition of actions that produce values in a context. Works with any type equipped with a `t` constructor and a `bind` function. Used to chain computations in effectful or lazy contexts, such as handling optional values or asynchronous operations.",
+      "description_length": 313,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_macro.Loader.Monad.List",
+      "description": "Iterates over a list and applies a function that returns a monadic value, then maps each element through a function that lifts results into a monadic context, producing a new list of monadic values. Works with lists of any type and functions that return computations in a monad. Used to process sequences of values while maintaining side-effect tracking or asynchronous behavior.",
+      "description_length": 379,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_macro.Monad.Monad_infix",
+      "description": "Performs binding operations on monadic values, allowing sequential computation where each step returns a wrapped result. Operates on types conforming to the monad interface, such as option, list, and result. Enables concise chaining of operations that may fail or produce multiple outcomes.",
+      "description_length": 290,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_macro.Monad.List",
+      "description": "Iterates over a list, applying a function that returns a monadic effect to each element, and transforms a list by applying a function that lifts each element into a monadic context. Works with lists of any type and functions that produce effects. Used to process lists in a monadic workflow, such as performing I/O or handling optional values during iteration and transformation.",
+      "description_length": 379,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_macro.Loader.Monad",
+      "description": "Combines monadic binding and list transformation to handle sequences of computations within a context. Supports operations on lists where each element is processed through a function that returns a monadic value, allowing for side-effect tracking or asynchronous execution. Key data types include lists and monadic values, with operations like bind and map. For example, it can sequence API calls that return optional results or accumulate state across a list of inputs.",
+      "description_length": 470,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_macro.Blocking",
+      "description": "Loads S-expressions from files with macro expansion, supporting both single and multiple S-expressions. Processes files with optional inclusion checks and converts parsed S-expressions to custom types using provided functions. Returns lists of included files to track dependencies during macro expansion.",
+      "description_length": 304,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_macro.Loader",
+      "description": "Sequences computations within a context using monadic binding and list transformations, enabling side-effect tracking or asynchronous execution. It operates on lists and monadic values, providing bind and map to process elements through functions that return wrapped results. This allows for chaining API calls that return optional values or maintaining state across list elements. For instance, it can handle a list of user IDs, fetching associated data for each in a safe, sequential manner.",
+      "description_length": 493,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sexp_macro.Macro_loader",
+      "description": "Loads S-expressions from a file with include support, converting them using a provided function. Works with S-expressions and file paths, handling asynchronous operations. Tracks included files to manage dependencies during parsing.",
+      "description_length": 232,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_macro.Monad",
+      "description": "binds monadic values to functions, enabling sequential computation with types like option, list, and result. It supports operations that transform and chain effects, handling failures or multiple outcomes gracefully. The module allows iterating over lists, applying monadic functions to each element, and lifting values into a monadic context. For example, it can process a list of optional values, applying a function that may fail, or collect results from a list of I/O actions.",
+      "description_length": 480,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "sexp_macro",
+      "description": "Provides functions for parsing and evaluating S-expressions with macro expansion, enabling the inclusion of one S-expression file within another. Works with S-expression data structures and macro definitions embedded in text files. Used to simplify configuration management and modularize S-expression-based data formats.",
+      "description_length": 321,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sexp_macro",
+      "description": "provides a framework for sequencing monadic operations across different effect types, enabling safe and expressive handling of optional, list, and result values. It offers functions to bind, map, and fold over monadic structures, supporting failure propagation and outcome aggregation. Users can process lists of potentially failing computations, accumulate results from I/O operations, or flatten nested monadic contexts. For instance, it can safely parse a list of S-expressions, handling missing or malformed data without crashing.",
+      "description_length": 534,
+      "index": 10,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 11,
+    "meaningful_modules": 11,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 534,
+    "min_description_length": 232,
+    "avg_description_length": 381.3636363636364,
+    "embedding_file_size_mb": 0.04039478302001953
+  }
+}

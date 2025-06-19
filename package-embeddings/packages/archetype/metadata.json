@@ -1,0 +1,651 @@
+{
+  "package": "archetype",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 90,
+  "creation_timestamp": "2025-06-18T16:50:20.470803",
+  "modules": [
+    {
+      "module_path": "Archetype.Typing.Env.Label",
+      "description": "Provides operations to manage a collection of labeled identifiers, including looking up, retrieving, checking existence, and adding new labels. Works with a custom type `t` representing a label environment and `label_kind` to distinguish label types. Used to track and access labels during parsing or type checking in a compiler pipeline.",
+      "description_length": 338,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Typing.Env.Type",
+      "description": "Provides operations to search, retrieve, and manipulate type information using longident and fullname keys. Works with type environments represented as a structured data type, supporting lookups and modifications. Used to access type definitions during parsing or analysis, such as resolving type references in a program's abstract syntax tree.",
+      "description_length": 344,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.Typing.Env.Local",
+      "description": "Manages symbol bindings in a scope, supporting lookups, existence checks, and additions of identifier-type pairs with location information. It operates on a custom environment type and tracks variables with their types and kind annotations. Used to track local variables during parsing or type checking, ensuring correct scoping and resolution.",
+      "description_length": 344,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Typing.Env.Var",
+      "description": "Provides operations to manage variable declarations in a scope, including looking up by long identifier, checking existence, retrieving by full name, and adding new declarations. Works with abstract types representing scopes and variable declarations. Used to track and access variables during parsing or type checking in a compiler.",
+      "description_length": 333,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Typing.Env.Function",
+      "description": "Provides operations to search, retrieve, and manage function declarations within a structured environment. Works with longident and fullname data types to uniquely identify and access functions. Used to dynamically query and update a function registry during code analysis or transformation processes.",
+      "description_length": 301,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Typing.Env.State",
+      "description": "Provides operations to query and manipulate a state structure, including looking up values by long identifiers, checking existence, retrieving states by full names, and pushing new states onto a stack. Works with custom data types such as `longident`, `fullname`, and `statedecl`. Used to track and access contextual information during parsing or analysis workflows.",
+      "description_length": 366,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.Typing.Env.Record",
+      "description": "Provides operations to search, retrieve, and manipulate records by their identifiers or full names, including checking existence and extracting field information. Works with record structures containing longident and fullname keys, along with associated declarations. Used to navigate and update record hierarchies in type-checking or code analysis workflows.",
+      "description_length": 359,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Typing.Env.Event",
+      "description": "Provides operations to search, retrieve, and manipulate event records using longident and fullname keys. Works with record and rfielddecl data structures to manage event metadata. Used to query specific fields in event data and update event contents with new records.",
+      "description_length": 267,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Typing.Env.Asset",
+      "description": "Provides operations to search, retrieve, and manipulate assets within a structured collection. Works with longident and fullname types to uniquely identify assets and their fields. Used to access specific asset declarations, check presence, and build updated asset sets.",
+      "description_length": 270,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Typing.Env.Tentry",
+      "description": "Provides operations to search, retrieve, and manage entries in a symbol table, including looking up by long identifiers, checking existence, and inserting new entries. Works with custom data types such as `longident` for identifier paths and `fullname` for fully qualified names. Used to track and access declaration information during parsing or type checking processes.",
+      "description_length": 371,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Typing.Env.Context",
+      "description": "Provides operations to manage a context stack, where `the` retrieves the current identifier and `push` adds a new local identifier to the stack. Works with `Ident.ident` and `A.lident` types, representing identifiers in an abstract syntax tree. Used to track variable scopes during parsing or type checking.",
+      "description_length": 307,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Typing.Env.Import",
+      "description": "Handles symbol lookup and management for imported declarations, supporting operations to retrieve, add, and cache import definitions. Works with identifiers, import declarations, and string-based keys to manage symbolic references. Used to resolve module paths during compilation and track imported symbols within a scope.",
+      "description_length": 322,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.Typing.Env.FunctionProperties",
+      "description": "Checks and modifies whether a function has side effects, uses storage, or returns a value, operating on a custom function state type. It allows updating these properties through dedicated setters and querying them with accessor functions. Used to analyze and configure function behavior in a static analysis tool.",
+      "description_length": 313,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Typing.Type.Michelson",
+      "description": "Checks properties of Michelson type representations, such as comparability, storability, and packability. Operates on abstract type structures (A.ptyp) used in Michelson's type system. Used to validate type constraints during smart contract compilation and verification.",
+      "description_length": 270,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.Mtyping.Env.Contract",
+      "description": "Provides functions to extract specific components from a contract representation, including parameters, storage, and code. Operates on a contract type that encapsulates these elements. Used to access and manipulate the internal structure of a contract during execution or analysis.",
+      "description_length": 281,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Tools.List.Exn",
+      "description": "Provides functions to look up values in lists of pairs, filter elements in a list, and apply a mapping function before performing an association lookup. Works with lists of tuples and functions that transform or filter elements. Used to safely retrieve values from configuration data or map keys to associated values with default handling.",
+      "description_length": 339,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Tools.Map.Make",
+      "description": "Compares two instances of type t using a total ordering, returning -1, 0, or 1 based on their relative values. It operates on the abstract type t, which represents keys in a structured format. This function is used to sort or order key-based data structures efficiently.",
+      "description_length": 270,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Tools.Set.Make",
+      "description": "Compares two values of type t using a total ordering, returning -1, 0, or 1 based on their relative positions. It operates on the abstract type t, which represents keys in a structured format. This function is used to sort or order elements in a consistent manner, such as when implementing ordered data structures or maintaining sorted lists.",
+      "description_length": 343,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Model.Utils",
+      "description": "This module offers data extraction and introspection operations, enabling retrieval of model components like variables, enums, and assets through identifier-based queries, along with field-level access and type validation. It supports manipulations such as rational term processing, API storage sorting, and function structure analysis, tailored for tasks like model validation, asset type checking, and term evaluation.",
+      "description_length": 420,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Ufind.Make",
+      "description": "Provides operations to create and combine data structures while tracking side effects. It includes a function to generate new data instances and another to merge two data elements, returning both the combined result and updated effect state. Used to manage state transitions in build systems where tracking changes is critical.",
+      "description_length": 327,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.UF.UF",
+      "description": "Provides operations to manage disjoint sets, including creating a new structure, finding the root of an element, merging two sets, and duplicating the structure. Works with an abstract type representing a union-find data structure. Used to efficiently track and merge connected components in graph algorithms.",
+      "description_length": 309,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.Ast.Utils",
+      "description": "Extracts specific asset fields, keys, and container data from an abstract syntax tree, enabling precise access to structured data elements. Operates on types like `ast`, `lident`, `pterm`, `container`, and `type_` to retrieve and validate identifiers and their associated metadata. Used to inspect and manipulate parsed code structures, such as retrieving variable types or checking if an identifier refers to a literal value.",
+      "description_length": 426,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Gen_michelson.MapString",
+      "description": "This module offers a suite of operations for manipulating maps with string keys, including insertion, deletion, lookup, and traversal, alongside higher-order functions like iteration, transformation, and filtering. It works with maps where keys are of type `Tools.String.t` and values are arbitrary, supporting conversions to and from lists and sequences for flexible data handling. Use cases include configuration management, data aggregation, and dynamic key-based value retrieval.",
+      "description_length": 483,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.PureLexer.Lexer",
+      "description": "Provides functions to initialize and manage a tokenization process, including advancing to the next token, retrieving the current token, and skipping tokens based on a predicate. Operates on a state type `t` and interacts with lexing buffers and position data. Used to parse input streams by sequentially extracting and processing tokens according to defined rules.",
+      "description_length": 365,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.Ident.Mid",
+      "description": "The module provides functions for managing key-value collections, including insertion, deletion, updating, and querying, alongside higher-order operations like mapping, folding, and filtering. It works with generic key-value structures and string-based keys, enabling tasks such as data aggregation, configuration management, and sequence transformations. Specific use cases involve merging maps, grouping values by keys, and extracting bindings for efficient data processing.",
+      "description_length": 476,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Ident.Sid",
+      "description": "The module provides set operations like insertion, deletion, and union, along with traversal and transformation functions for ordered collections, and conversions between sets and sequences. It works with generic element types and specifically handles sequences of strings for set manipulation. Use cases include dynamic data management, ordered processing pipelines, and efficient data transformation between structured and sequential formats.",
+      "description_length": 444,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Core.Format",
+      "description": "The module provides pretty-printing operations with box management, break hints, and format string annotations to control line breaks, indentation, and spacing, enabling structured text formatting. It operates on formatters, buffers, output channels, and data types like strings, integers, and custom structures, supporting use cases such as debugging, log formatting, and tabular output. Advanced features include symbolic output buffering, custom formatting rules, and semantic tags for precise control over text layout and post-processing.",
+      "description_length": 542,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.Typing.Type",
+      "description": "Checks properties of Michelson type representations, including comparability, storability, and packability, by analyzing abstract type structures (A.ptyp). It enables validation of type constraints during smart contract compilation and verification. Operations include determining if a type can be used in a specific context, such as being stored in a contract's storage or compared in a condition. For example, it can verify that a type is packable before generating Michelson code that serializes data.",
+      "description_length": 504,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Typing.Env",
+      "description": "manages structured environments for tracking identifiers, types, variables, functions, records, events, assets, and imports, using longident and fullname keys for precise lookups. It supports operations like insertion, retrieval, existence checks, and modification across custom data types such as `t`, `label_kind`, `statedecl`, and `Ident.ident`. For example, it can resolve type references in an AST, track variable scopes during parsing, or update function properties for static analysis. Each sub-module specializes in a distinct aspect of symbol and declaration management within a compiler or analysis pipeline.",
+      "description_length": 618,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Typing.Micheline",
+      "description": "Parses a Micheline string into a structured object, extracts specific fields by path, and splits objects into key-value pairs. It processes Micheline abstract syntax trees and retrieves type information, entrypoints, and view definitions. Used to analyze smart contract schemas and extract type metadata for validation or code generation.",
+      "description_length": 338,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Michelson.Utils",
+      "description": "Extracts and manipulates function names from type definitions, transforms code structures into flattened representations, and converts various internal data formats\u2014such as types, code, and Michelson instructions\u2014into a standardized Micheline object format. Processes and optimizes code, replaces macro expansions, and checks type storability. Used to prepare data for serialization or execution in a Michelson-based system.",
+      "description_length": 424,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.Parser.MenhirInterpreter",
+      "description": "This module provides low-level operations for managing parser state during incremental parsing, including checkpoint manipulation, stack inspection, and state querying, while supporting LR(1) grammar analysis through symbol comparison, production handling, and terminal iteration. It works with structured data like environments, parsing states, stacks, and token positions to enable fine-grained control over parsing workflows. Use cases include debugging complex grammars, implementing custom parsing strategies, or integrating parser state into larger interactive systems.",
+      "description_length": 575,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Parser.Incremental",
+      "description": "Provides functions to initialize parsing checkpoints for expressions and archetypes using lexical positions. Operates on `Lexing.position` and `ParseTree.expr`/`ParseTree.archetype` types. Used to begin parsing at specific source locations during incremental processing.",
+      "description_length": 270,
+      "index": 32,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.Gen_transform.MapString",
+      "description": "The module provides operations for managing maps with string keys and arbitrary values, including insertion, deletion, lookup, iteration, and merging, with support for sequence-based manipulation and transformation. It enables tasks like filtering, folding, and mapping over key-value pairs, making it suitable for scenarios such as configuration management or structured data processing. Specific functions handle optional results and list-valued operations, catering to dynamic data aggregation and query needs.",
+      "description_length": 513,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.Gen_transform.SetString",
+      "description": "This module provides set operations such as adding, removing, and querying elements, along with transformations, filtering, and conversions between sets and sequences, tailored for handling collections of strings. It supports efficient membership checks, subset validation, and sequence-based manipulations, making it suitable for tasks like data deduplication, symbolic processing, and structured data filtering.",
+      "description_length": 413,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Gen_decompile.Decomp_dir",
+      "description": "Decomp_dir processes Michelson code by decompiling it into a structured representation, using an environment to track context and state. It operates on an environment type and a Michelson abstract syntax tree, producing an updated environment and a decoded structure. This is used to analyze and transform low-level Michelson instructions into higher-level constructs for further processing.",
+      "description_length": 391,
+      "index": 35,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.Gen_decompile.Decomp_model",
+      "description": "Handles the conversion of typed programs into model representations, using environment context to preserve semantic information. Operates on typed program structures and environment records to generate abstract models. Used to transform compiled code into structured representations for analysis or transformation pipelines.",
+      "description_length": 324,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Mtyping.Env",
+      "description": "Extracts and manipulates contract components such as parameters, storage, and code from a contract type. Supports operations like accessing, modifying, and inspecting these elements during execution or analysis. Allows developers to interact with the internal structure of contracts in a structured way. For example, it enables retrieving the initial storage state or modifying the contract's code before execution.",
+      "description_length": 415,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.Mtyping.Ty",
+      "description": "The module provides type-checking and validation operations for stack-based data structures, focusing on cryptographic types like BLS12-381 groups and common data constructs such as integers, lists, and options. It processes stack1 elements to enforce type constraints, verify signatures, and validate tickets while preserving stack integrity. These operations are critical for ensuring correctness in blockchain smart contracts and secure data processing pipelines.",
+      "description_length": 466,
+      "index": 38,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.Mtyping.Stack",
+      "description": "Pops elements from a stack, returning the removed elements and the remaining stack in various combinations. Operates on a stack structure composed of elements of a single type. Used to decompose or combine stacks in specific ways, such as splitting into two parts or merging optional stacks.",
+      "description_length": 291,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Tools.Bool",
+      "description": "Compares two boolean values, returning 0 if they are equal and -1 or 1 based on their order. Operates on the built-in bool type, enforcing a total order. Used to sort lists of booleans or determine precedence in conditional logic.",
+      "description_length": 230,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Tools.String",
+      "description": "This module offers string manipulation, character-level transformations, and binary data decoding, including operations for constructing strings, extracting substrings, and performing case conversions or searches. It handles integers (32/64-bit, signed/unsigned) and UTF-8/UTF-16 encodings, decoding them from strings with endianness specifications. Use cases include parsing binary protocols, processing text data, and handling network byte order conversions.",
+      "description_length": 460,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Tools.Option",
+      "description": "The module provides operations for safely unwrapping, transforming, and combining optional values, including flattening nested options, comparing with custom predicates, and extracting components from tuple options. It works exclusively with the `option` type, enabling robust handling of potentially missing data. Use cases include parsing inputs, managing optional parameters, and avoiding null references in functional workflows.",
+      "description_length": 432,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Tools.List",
+      "description": "Processes lists of tuples by enabling key-based lookups, filtering, and transformation. Supports operations like `assoc`, `filter`, and `map` to manipulate and extract data. Can safely retrieve values from configuration structures or map keys to defaults. Examples include extracting user settings from a list of (key, value) pairs or filtering logs by severity.",
+      "description_length": 362,
+      "index": 43,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.Tools.Map",
+      "description": "Orders key-based data structures by comparing instances of the abstract type t using a total ordering, returning -1, 0, or 1. The core operation is a comparison function that enables sorting and ordered traversal. It works with keys represented as t, allowing precise control over ordering logic. This supports tasks like maintaining sorted lists or implementing custom sorting in data structures.",
+      "description_length": 397,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Tools.Set",
+      "description": "Orders values of type t using a total ordering, returning -1, 0, or 1 to indicate their relative positions. It supports consistent sorting and comparison operations essential for ordered data structures. Functions like compare enable the creation of sorted lists or trees. For example, it can determine the correct insertion point for a key in a sorted collection.",
+      "description_length": 364,
+      "index": 45,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.Tools.Sint",
+      "description": "The module provides set operations like adding, removing, and combining elements, along with queries for cardinality, min, max, and membership, working with collections of type 'elt and integers. It includes functional transformations, iteration, and sequence conversions, enabling dynamic data manipulation and processing of ordered elements. Specific use cases include efficiently managing evolving datasets, aggregating elements from sequences, and performing set unions for structured data operations.",
+      "description_length": 505,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Tools.Mint",
+      "description": "The module provides operations for creating, modifying, and querying integer-indexed maps, including insertion, deletion, updating, merging, and traversal. It supports functional transformations like mapping, filtering, and folding over key-value pairs, along with converting sequences and lists into structured collections. Use cases include managing configuration data, caching systems, and aggregating values by integer keys.",
+      "description_length": 428,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Tools.Sstr",
+      "description": "This module offers set operations like addition, removal, and union, along with list-like manipulations such as traversal and filtering, all tailored for generic elements or strings. It handles collections represented by a type `t`, supporting both abstract set logic and sequence-based transformations. Use cases include managing dynamic element collections, processing structured data, and efficiently combining string sets through functional patterns.",
+      "description_length": 454,
+      "index": 48,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.Tools.Mstr",
+      "description": "The module provides operations for manipulating key-value stores with string keys, including adding, removing, updating, and querying entries, along with higher-order functions like mapping, filtering, and folding over collections. It supports building and transforming these structures through sequence-based construction, grouping, and membership checks, suitable for applications like configuration management or data aggregation pipelines.",
+      "description_length": 443,
+      "index": 49,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.Michelson_parser.MenhirInterpreter",
+      "description": "This module enables low-level manipulation of parser state, including stack management, token acceptance, and control flow, while inspecting and modifying LR(1) parser internals like states, productions, and symbols. It works with structured data such as checkpoints, environments, token suppliers, and symbolic grammar representations to support incremental parsing and grammar analysis. Specific use cases include custom error recovery, parser debugging, and implementing specialized reduction strategies in LR(1) parsing workflows.",
+      "description_length": 534,
+      "index": 50,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.Michelson_parser.Incremental",
+      "description": "Handles parsing of Michelson code using a positioned input, returning a checkpointed parsing state. Operates on Lexing.position and Michelson.obj_micheline types to track source locations and parsed structures. Used to incrementally process and validate Michelson programs during compilation or analysis.",
+      "description_length": 304,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Ast",
+      "description": "Extracts and validates structured data from an abstract syntax tree, handling types such as `ast`, `lident`, `pterm`, `container`, and `type_` to access identifiers, their metadata, and container contents. Provides operations to retrieve variable types, check for literal values, and navigate parsed code elements. For example, it can extract the type of a function parameter or determine if an identifier refers to a built-in value. These capabilities support detailed analysis and transformation of code structures during compilation or static analysis.",
+      "description_length": 555,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Compile",
+      "description": "This module handles error management, model transformation, and output generation across parsing and compilation stages, working with structured data like ASTs, Michelson intermediate representations, and contract parameters. It enables tasks such as converting internal representations to Michelson code, extracting string-based models, and processing inputs between JSON, strings, and typed structures. Specific use cases include type checking, storage generation, and code serialization for blockchain contract development.",
+      "description_length": 526,
+      "index": 53,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.Core",
+      "description": "formats text with precise control over line breaks, indentation, and spacing using formatters and buffers, supporting a range of data types including strings, integers, and custom structures. It enables structured output for debugging, logging, and tabular displays, with features like symbolic buffering and semantic tags. Operations include breaking hints, format string annotations, and custom rule definitions. Examples include generating aligned logs, pretty-printing nested data, and producing formatted reports.",
+      "description_length": 518,
+      "index": 54,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.Error",
+      "description": "Handles error and warning tracking with position-aware reporting. Processes lists of position annotations and error messages, supporting termination, raising, or resuming execution based on configured behavior. Provides mechanisms to inject errors, warnings, or global alerts during computation, with context-sensitive message formatting.",
+      "description_length": 338,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Gen_api_storage",
+      "description": "Formats and displays error descriptions for API storage operations. Processes model data to generate storage configurations, validating inputs when enabled. Handles custom error types to provide detailed diagnostic information.",
+      "description_length": 227,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Gen_decompile",
+      "description": "Decompiles Michelson code into structured representations using environment contexts, transforming low-level instructions into higher-level constructs. Processes typed programs to generate abstract models that retain semantic information through environment records. Supports analysis and transformation pipelines by converting compiled code into structured formats. Operates on abstract syntax trees and typed program structures to produce updated environments and model representations.",
+      "description_length": 488,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Gen_michelson",
+      "description": "manages string-keyed maps with insertion, deletion, lookup, and traversal, along with higher-order operations for transformation and filtering. It supports arbitrary value types and provides conversions between maps, lists, and sequences. Users can build dynamic configurations, aggregate data, or perform key-based value retrieval. Operations include map iteration, filtering, and conversion to structured data formats.",
+      "description_length": 420,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Gen_storage",
+      "description": "Provides pretty-printing and string representation for error descriptions, and emits errors with a generic return type. Operates on custom error types and model data structures. Used to handle and report validation issues during model transformation processes.",
+      "description_length": 260,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Gen_transform",
+      "description": "Manages string-keyed maps and string sets with rich transformation and manipulation capabilities. Offers insertion, deletion, lookup, and iteration for maps, alongside set operations like addition, removal, and membership checks. Functions support filtering, folding, and converting between structures, enabling tasks such as configuration updates, data deduplication, and structured query processing. Examples include merging maps, transforming sets into lists, and filtering key-value pairs based on criteria.",
+      "description_length": 511,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Io",
+      "description": "Provides functions to format, display, and emit error descriptions with location information. Handles lexical buffer creation from channels or strings, checks bracket balance, and supports parser recovery and state updates. Parses archetype and expression structures from input sources with strict or standard validation.",
+      "description_length": 321,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Lexer",
+      "description": "Handles lexical analysis for a custom language, processing tokens, comments, and strings while integrating with parser tokens. Operates on lexing buffers, location data, and hash tables mapping keywords to token types. Parses and emits errors during lexical scanning, supporting multi-line comments, string literals, and extended string syntax.",
+      "description_length": 344,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Micheline",
+      "description": "Extracts and manipulates location data and annotations from structured data nodes, enabling precise control over canonical representations. Operates on nested node structures and canonical forms, supporting transformations and location injection. Used to process and modify Michelson ASTs by preserving or altering location metadata during parsing or serialization.",
+      "description_length": 365,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Micheline_printer",
+      "description": "Prints Micheline expressions with location-aware formatting, supporting custom comments and annotation handling. Operates on location-aware node structures containing strings and metadata. Used to generate human-readable representations of Tezos smart contract bytecode with precise source mapping.",
+      "description_length": 298,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Michelson",
+      "description": "Converts Michelson code and types into standardized Micheline objects, enabling structured manipulation and optimization. Supports function name extraction, code flattening, and macro expansion replacement, while ensuring type compatibility for storage. Operations include type validation, instruction transformation, and code optimization. Examples include preparing contract code for execution, analyzing type constraints, and generating optimized Micheline representations.",
+      "description_length": 476,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Michelson_lexer",
+      "description": "Handles lexical analysis for Michelson code, including token recognition, error reporting, and comment and string parsing. Processes `Lexing.lexbuf` and `Location.t` to extract tokens and manage input buffers. Used to parse Michelson source code, identify syntax elements, and track position information during lexing.",
+      "description_length": 318,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Michelson_parser",
+      "description": "Manages LR(1) parser state with operations on checkpoints, environments, and symbolic grammar, enabling custom error handling, debugging, and reduction strategies. Processes Michelson code using positioned input, tracking source locations and parsed structures through Lexing.position and Michelson.obj_micheline. Supports incremental parsing by maintaining and restoring parsing states during validation or compilation. Examples include debugging parser behavior, implementing custom error recovery, and analyzing Michelson programs in stages.",
+      "description_length": 544,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Model",
+      "description": "Provides identifier-based access to model components, including variables, enums, and assets, with support for field-level operations and type validation. Enables processing of rational terms, sorting of API storage, and analysis of function structures for tasks like model validation and asset type checking. Offers direct manipulation of model elements through query-based retrieval and structural analysis. Examples include checking asset compatibility, evaluating term expressions, and inspecting function signatures.",
+      "description_length": 521,
+      "index": 68,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.Mtyping",
+      "description": "provides tools for analyzing and manipulating contract structures, validating stack-based data, and managing stack operations. It includes types for contract components, cryptographic stacks, and stack elements, along with operations to extract, modify, and validate these structures. Users can retrieve contract storage, check stack element types, and split or merge stacks as needed. For instance, it allows verifying a BLS12-381 signature on a stack or extracting a contract's initial state for simulation.",
+      "description_length": 509,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Opt_model",
+      "description": "provides a framework for defining and manipulating optimization models through a set of specialized components includes types such as `problem`, `variable`, and `constraint` along with operations for building and modifying these structures allows users to construct optimization scenarios by adding variables, setting objectives, and applying constraints supports tasks like linear programming formulation and model validation through direct manipulation of its core elements",
+      "description_length": 475,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Options",
+      "description": "Provides pretty-printing, string conversion, and management of configuration flags for language targets, command-line options, and LSP-related types, along with serialization/deserialization of optional values. It operates on boolean and string flags, lists, target_lang, lsp_kind, and language types, enabling control over compiler behavior, output formatting, and metadata handling. Use cases include configuring code generation, parsing settings, and interfacing with language servers by managing mutable user-defined parameters and type representations.",
+      "description_length": 557,
+      "index": 71,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.ParseError",
+      "description": "Provides functions to analyze and report parsing errors with contextual information, including extracting incomplete elements from the parser stack and filtering prediction symbols. Works with parser environments, checkpoints, and position data to generate detailed error messages. Used to enhance error reporting by identifying the syntactic context in which a parse failure occurred.",
+      "description_length": 385,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Parser",
+      "description": "manages incremental parsing workflows by enabling state manipulation, checkpoint initialization, and detailed inspection of parsing structures. It handles `Lexing.position`, `ParseTree.expr`, and `ParseTree.archetype` types, supporting operations like state querying, stack inspection, and terminal iteration. Users can debug complex grammars, resume parsing from specific positions, or integrate parser state into interactive tools. Functions allow initializing checkpoints for expressions and archetypes, facilitating controlled and modular parsing processes.",
+      "description_length": 561,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Position",
+      "description": "The module provides functions to manage positioned values, including extracting, modifying, and combining positions, along with applying transformations to underlying values while updating their positional metadata. It operates on custom position types and lexing positions, enabling tasks like string conversion, optional position handling, and precise location tracking. These capabilities are particularly useful for parsing and lexical analysis, where accurate input position tracking is critical.",
+      "description_length": 501,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Printer_ast",
+      "description": "This module provides pretty-printing functions for diverse Abstract Syntax Tree (AST) elements, including identifiers, types, constants, terms, records, functions, and metadata, with consistent handling of nested or polymorphic structures. It operates on AST nodes and formatter objects to generate structured, human-readable output for language constructs. Use cases include debugging, code generation, and analysis tools requiring formatted representations of complex syntactic elements.",
+      "description_length": 489,
+      "index": 75,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Printer_michelson",
+      "description": "This module offers pretty-printing functionalities for Michelson-specific constructs, including primitives, expressions, programs, and off-chain views, transforming low-level representations into structured or human-readable formats. It operates on specialized types like `Michelson.prim`, `Michelson.dexpr`, and `Michelson.offchain_view`, enabling detailed formatting of abstract syntax trees and code elements. Use cases include debugging Michelson programs, analyzing structured data, and generating readable outputs for off-chain view definitions.",
+      "description_length": 551,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Printer_model",
+      "description": "The functions offer pretty-printing for data types in Model and Core modules, including storage, variables, enums, and API structures, using a formatter to generate human-readable outputs. They support debugging and logging by converting complex objects into structured string representations, with helpers for direct string conversion. Specific use cases include inspecting model configurations and generating readable error messages.",
+      "description_length": 435,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Printer_model_tools",
+      "description": "Formats and displays error descriptions and environments using custom pretty-printing and string conversion functions. Handles structured data like error descriptions, environments, and model terms, supporting operations such as comparing update rules and extracting constant values. Used to generate human-readable outputs and perform predicate indexing during model analysis.",
+      "description_length": 377,
+      "index": 78,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Printer_pt",
+      "description": "This module handles operator precedence and associativity calculations, using structured representations like integer-association tuples to format arithmetic, logical, and unary operations. It provides pretty-printing functionality for abstract syntax tree (AST) elements, including contract structures, expressions, and identifiers, by converting parser-generated types such as `ParseTree.container` and `Printer_tools.assoc` into human-readable strings. Specific use cases include rendering parsed contracts, serializing AST nodes, and ensuring correct operator formatting during code output.",
+      "description_length": 594,
+      "index": 79,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.Printer_tools",
+      "description": "The module provides pretty-printing utilities for diverse data types such as strings, big integers, lists, options, identifiers, and positions, enabling customized output formatting with features like conditional styling, parentheses control, and handling of optional values. It supports operations like enclosing, prefixing, and postfixing, along with managing empty lists, making it suitable for generating structured logs, debugging outputs, or formatted reports where clarity and precision are essential.",
+      "description_length": 508,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Pt_helper",
+      "description": "Checks for JSON compatibility of an archetype by validating its structure and types. Works with ParseTree.archetype data structures to ensure they conform to expected JSON representation rules. Used to enforce data integrity before exporting or serializing archetypes.",
+      "description_length": 268,
+      "index": 81,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.PureLexer",
+      "description": "manages a tokenization process through a stateful interface, allowing sequential extraction and manipulation of tokens from an input stream. It supports operations like advancing, retrieving, and skipping tokens, using a state type `t` and integrating with lexing buffers and position tracking. Users can define custom predicates to control token skipping, enabling flexible parsing workflows. For example, it can be used to filter out comments or whitespace during lexical analysis.",
+      "description_length": 483,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Symbol",
+      "description": "Converts parser tokens, menhir symbols, and production items to their string representations. Operates on parser-specific types including tokens, production indices, and symbolic representations. Used to generate human-readable output during parsing and error reporting.",
+      "description_length": 270,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Tools",
+      "description": "Combines boolean, string, option, list, and numeric operations to enable precise data manipulation, comparison, and transformation across multiple data types. Supports boolean ordering, string decoding, optional value handling, tuple list processing, and key-based data structures with custom comparison logic. Provides functions for sorting, filtering, mapping, and querying structured data, including set operations, integer maps, and string-keyed dictionaries. Examples include sorting boolean lists, parsing binary data, handling missing values, and managing configuration settings through key-value stores.",
+      "description_length": 611,
+      "index": 84,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Typing",
+      "description": "provides type validation, environment management, and Micheline parsing capabilities. it includes checks for Michelson type properties, symbol tracking with custom data types, and Micheline structure analysis. it can validate packable types, resolve AST references, and extract contract metadata. examples include ensuring a type is safe for storage, tracking variable scopes, and parsing contract schemas for view definitions.",
+      "description_length": 427,
+      "index": 85,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype.UF",
+      "description": "Manages disjoint sets with operations for creation, root finding, merging, and duplication. Uses an abstract type to represent union-find structures, enabling efficient tracking of connected components. Supports graph algorithms by dynamically grouping elements. Examples include merging nodes in a graph or checking connectivity between elements.",
+      "description_length": 347,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Archetype.Ufind",
+      "description": "Provides operations to manage and query a disjoint-set data structure, including finding the root of an item, checking if two items belong to the same set, retrieving associated data, updating data, and merging sets with priority control. Works with custom types for items, data, effects, and the internal state representation. Used to efficiently track connected components in dynamic graphs or manage equivalence relations in constraint systems.",
+      "description_length": 447,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "archetype",
+      "description": "Provides arithmetic and bitwise operations for manipulating large integers, along with encoding and decoding functions for binary data. Works with custom data types such as signed and unsigned integers, byte sequences, and structured data formats. Used to implement cryptographic checks and data serialization in smart contract logic.",
+      "description_length": 334,
+      "index": 88,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Archetype",
+      "description": "The module integrates data extraction, error handling, pretty-printing, and transformation across code analysis and compilation workflows. It manages structured data like ASTs, Michelson code, and maps, with operations to extract types, format output, and handle errors with location awareness. It enables tasks such as converting code to human-readable formats, validating contract structures, and tracking lexical positions. Examples include generating formatted logs, checking type compatibility, and debugging parser states.",
+      "description_length": 528,
+      "index": 89,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 130,
+    "meaningful_modules": 90,
+    "filtered_empty_modules": 40,
+    "retention_rate": 0.6923076923076923
+  },
+  "statistics": {
+    "max_description_length": 618,
+    "min_description_length": 227,
+    "avg_description_length": 407.46666666666664,
+    "embedding_file_size_mb": 0.327392578125
+  }
+}

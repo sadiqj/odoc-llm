@@ -1,0 +1,427 @@
+{
+  "package": "sihl",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 58,
+  "creation_timestamp": "2025-06-18T16:44:30.003505",
+  "modules": [
+    {
+      "module_path": "Sihl.Database.Migration.Make.Migration.Fields.Direct",
+      "description": "Processes a structured data type by applying custom operations to its fields, including namespace, version, and dirty status. Supports iteration, folding, predicate checks, list conversion, and field transformation with specific type constraints. Enables bulk updates to mutable fields within the structure.",
+      "description_length": 307,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl.Database.Migration.Make.Migration.Fields",
+      "description": "manages structured data with field-specific operations, supporting namespace, version, and dirty status tracking. It provides functions for iterating, folding, filtering, and transforming fields, with type-safe bulk updates. Operations include converting fields to lists and applying predicates. Examples include checking if a field is dirty or updating multiple fields in a single pass.",
+      "description_length": 387,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Database.Migration.Make.Migration",
+      "description": "handles structured data with field-specific operations, tracking namespace, version, and dirty status. It supports iteration, folding, filtering, and transformation of fields, along with type-safe bulk updates. Functions include converting fields to lists, applying predicates, and checking dirty status. Examples include updating multiple fields in one pass or verifying if a field has changed.",
+      "description_length": 395,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl.Web.Csrf.Crypto.Secret",
+      "description": "Generates a fixed-length SHA256 digest from a string, ensuring compatibility with AES key size requirements. Converts a secret into a Cstruct.t for low-level byte manipulation. Used to prepare cryptographic keys for secure data encryption.",
+      "description_length": 239,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Web.Csrf.Crypto.Encrypted_token",
+      "description": "Converts encrypted tokens to and from URI-safe base64 strings for secure transmission, and serializes/deserializes them to and from raw byte buffers using AES encryption with optional randomization. Works with opaque token representations and cryptographic secrets. Used to generate CSRF tokens that remain valid across different encoding contexts and to securely store tokens in structured data formats.",
+      "description_length": 404,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Web.Csrf.Crypto.Decrypted_token",
+      "description": "Compares decrypted tokens for equality and with raw byte sequences using AES decryption. Decrypts encrypted tokens using a secret key, with specialized handling for randomized token formats. Transforms standard encrypted tokens into randomized ones by re-encrypting after decryption.",
+      "description_length": 283,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Contract.User.Hashing",
+      "description": "Computes a cryptographic hash of a string with an optional count parameter, returning a result type that may include an error. Validates whether a plain text string matches a previously generated hash. Used for secure password verification and data integrity checks.",
+      "description_length": 266,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Contract.User.Web",
+      "description": "Provides functions to extract a user from a Bearer token or session cookie in an HTTP request. Operates on request objects and session tokens, using specified keys and secrets to retrieve user identifiers. Used to authenticate users based on tokens in headers or signed session cookies.",
+      "description_length": 286,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Test.Session.StrMap",
+      "description": "The module provides operations for managing associative collections with string keys and generic values, including insertion, deletion, lookup, merging, and traversal. It supports transformations, filtering, and conversions between maps and lists/sequences, making it suitable for tasks like configuration management or dynamic data aggregation.",
+      "description_length": 345,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl.Database.Migration.Logs",
+      "description": "Provides logging operations for different severity levels, including error, warning, info, and debug, with support for formatted messages and error handling. Works with log levels, formatted strings, and result types to capture and process errors. Used to inject structured logging into application flows and handle failures with custom recovery logic.",
+      "description_length": 352,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Database.Migration.Map",
+      "description": "This module offers operations for managing key-value maps, including insertion, deletion, lookup, and traversal, with support for list-valued entries and custom merging logic. It enables sequence-based transformations and constructions, particularly for string-keyed maps, alongside filtering, mapping, and predicate-driven selection. Use cases include dynamic data management, configuration handling, and processing structured datasets with key-based operations.",
+      "description_length": 463,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Database.Migration.Make",
+      "description": "manages structured data with field-specific operations, maintaining namespace, version, and dirty tracking. It provides type-safe updates, iteration, filtering, and transformation of fields, along with utilities to convert fields to lists or check modification status. Operations include bulk updates, predicate-based filtering, and version-aware modifications. For example, it enables updating multiple fields in a single operation or determining if a specific field has been altered.",
+      "description_length": 485,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Database.Migration.PostgreSql",
+      "description": "Registers and executes database schema migrations, tracking their status and handling pending updates. Operates on migration definitions consisting of named steps and context pairs. Used to ensure database consistency during application startup and deployment.",
+      "description_length": 260,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Database.Migration.MariaDb",
+      "description": "Registers and executes database schema migrations using a series of steps defined per migration. Operates on migration names and step lists, interacting with a database to apply or check changes. Executes pending migrations, verifies their status, and integrates with application lifecycle events.",
+      "description_length": 297,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl.Web.Csrf.Crypto",
+      "description": "Computes SHA256 hashes for key generation, encodes and decodes encrypted tokens in URI-safe base64, and decrypts and compares tokens with byte sequences. Provides functions to convert secrets into byte buffers, serialize tokens with AES, and handle randomized encryption formats. Supports generating CSRF tokens that persist across encoding methods and ensures secure key preparation for encryption. Enables secure token handling, from creation to verification, with flexible encoding and decryption capabilities.",
+      "description_length": 513,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl.Contract.Cache",
+      "description": "Provides operations to set, find, and manage cache entries using key-value pairs with optional values. Works with strings for keys and values, and supports context propagation through lists of string tuples. Used to store session data, configuration values, and temporary results in a web application's runtime environment.",
+      "description_length": 323,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Contract.Database",
+      "description": "Provides functions to prepare and execute SQL queries with filtering, sorting, and pagination, and to manage database connection pools. Works with CAQTI request types, connection pools, and SQL result sets. Used for retrieving paginated data with dynamic filters, executing transactions, and handling database connections in a web application.",
+      "description_length": 343,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl.Contract.Email",
+      "description": "Provides functions to manage an in-memory email inbox, send individual or bulk emails, and handle email context during delivery. Operates with email messages represented as `t` and manages their lifecycle within a service framework. Used in testing to verify email delivery and in production to handle asynchronous email sending with context.",
+      "description_length": 342,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Contract.Email_template",
+      "description": "Provides functions to retrieve and manage email templates by ID or label, supporting optional context and language parameters. Works with templates containing text and optional HTML content, along with labels and identifiers. Used to dynamically generate and update email content based on specific criteria during application workflows.",
+      "description_length": 336,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl.Contract.Http",
+      "description": "Registers HTTP routes with optional middleware and custom not-found handling, using Opium request and response types. Processes web requests and manages lifecycle events for service initialization and shutdown. Integrates with Sihl components for building web services.",
+      "description_length": 269,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl.Contract.Migration",
+      "description": "Registers and executes database schema migrations, tracking their status and pending actions. Operates on migration records and connection context to apply changes incrementally. Used to ensure database schema consistency during application startup or deployment.",
+      "description_length": 263,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Contract.Password_reset",
+      "description": "Creates and validates password reset tokens for user accounts, associating them with email addresses and managing password updates. Operates on strings and Lwt threads for asynchronous operations. Used to securely reset user passwords via a temporary token sent to their email.",
+      "description_length": 277,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl.Contract.Queue",
+      "description": "Provides functions to route a job queue dashboard, dispatch and batch-queue jobs with optional delays and context, and register jobs for later execution. Operates with web routers, job data structures, and time spans. Used to set up an admin interface for managing job processing and to handle asynchronous task scheduling.",
+      "description_length": 323,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Contract.Random",
+      "description": "Generates random byte sequences and Base64-encoded strings of specified lengths, with `bytes` returning raw bytes and `base64` providing a safe string representation. Works with integer lengths and string outputs, ensuring compatibility with web-safe formats. Used to create secure tokens, random identifiers, or cryptographic values in application workflows.",
+      "description_length": 359,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl.Contract.Schedule",
+      "description": "Handles scheduling and registration of timed tasks, allowing execution of operations at specified intervals or times. Operates with schedule definitions and service lifecycle events to manage background processes. Used to set up recurring data backups and timed system checks.",
+      "description_length": 276,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Contract.Storage",
+      "description": "Retrieves and manages file metadata and base64-encoded content, including uploading, updating, and downloading data. Operates on stored file objects and context-aware requests. Used to handle file persistence and data exchange in a service-oriented workflow.",
+      "description_length": 258,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl.Contract.Token",
+      "description": "Creates and manages signed tokens with expiration, allowing storage and retrieval of key-value data. Tokens can be verified, deactivated, and checked for validity or expiration using a provided secret or default. Supports reading specific values or all data from a token, with options to bypass expiration or signature checks when necessary.",
+      "description_length": 341,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Contract.User",
+      "description": "Handles user authentication by extracting identifiers from HTTP requests using Bearer tokens or session cookies. Processes request objects and session tokens, leveraging keys and secrets to validate and retrieve user data. Supports operations like token parsing, cookie verification, and user lookup. Examples include authenticating a request with a JWT in the Authorization header or extracting a user from a signed session cookie.",
+      "description_length": 432,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Test.Session",
+      "description": "manages associative collections with string keys and generic values, offering insertion, deletion, lookup, merging, and traversal. It supports transformations, filtering, and conversions between maps and lists or sequences. Users can efficiently handle configuration data, aggregate dynamic information, or manipulate structured datasets. Operations include merging multiple maps, extracting specific entries, and converting between representations.",
+      "description_length": 449,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Time.Span",
+      "description": "Constructs time spans from integer values representing seconds, minutes, hours, days, and weeks using the Ptime module. Operates on the Ptime.span type to represent durations. Used to create precise time intervals for scheduling or time-based calculations.",
+      "description_length": 256,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Database.Migration",
+      "description": "Registers and executes database schema migrations, tracking applied and pending steps for specified namespaces. Operates on migration definitions consisting of a string namespace and a list of step operations. Executes migrations against a connection pool, checks their status, and logs warnings for mismatched migration counts.",
+      "description_length": 328,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Container.Service",
+      "description": "Handles the initialization, execution, and termination of long-running processes using a defined lifecycle structure. Operates on custom state machines and event-driven workflows. Used to manage background tasks such as network services or periodic data synchronization.",
+      "description_length": 270,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Container.Map",
+      "description": "Provides functions to create, update, and query mappings from keys to values, including insertion, deletion, and lookup operations. Works with the polymorphic type 'a t, representing a map from keys of any type to values of another type. Used to efficiently manage associative data, such as translating error codes to messages or storing configuration settings.",
+      "description_length": 361,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Web.Request",
+      "description": "The module provides functions to create and manipulate HTTP request objects, handling body formats like JSON, URL-encoded, and multipart/form-data, along with header, cookie, and query parameter management. It supports operations for parsing and extracting structured data such as Bearer tokens from authorization headers, enabling tasks like processing form uploads or managing authenticated requests. Specific use cases include safely re-reading request bodies with Body.copy and handling signed cookies for secure session management.",
+      "description_length": 536,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl.Web.Http",
+      "description": "Registers HTTP routes with optional middleware and custom not-found handling, using Opium's request and response types. Processes web requests and manages lifecycle events for service initialization and shutdown. Integrates with Sihl for structured HTTP service execution.",
+      "description_length": 272,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl.Web.Csrf",
+      "description": "Generates and verifies CSRF tokens using SHA256, AES, and URI-safe base64 encoding. Handles secret conversion to byte buffers, token serialization, and secure comparison of decrypted tokens. Supports token creation with randomized encryption formats and cross-encoding persistence. Examples include generating a token from a secret, encoding it for URL transmission, and verifying it upon receipt.",
+      "description_length": 397,
+      "index": 35,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl.Web.Flash",
+      "description": "Provides functions to retrieve and store key-value pairs in a request's flash storage, including specific alert and notice messages. Operates on request and response objects, associating temporary data that persists across redirects. Used to display user feedback like error messages or success notifications after form submissions or redirects.",
+      "description_length": 345,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Web.Rest",
+      "description": "Provides operations to retrieve, search, insert, update, and delete records of type `t` with asynchronous support. Supports filtering, sorting, limiting, and offsetting results during searches. Enables managing a persistent collection of entities with error handling for each operation.",
+      "description_length": 286,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl.Web.Htmx",
+      "description": "Provides functions to check if a request is an HTMX request, extract specific headers like current URL, prompt, and trigger information, and modify responses with HTMX directives such as push, redirect, and trigger events. Works with request and response objects from the web framework, using options to handle missing headers. Used to dynamically update parts of a web page, handle form submissions, and manage client-side interactions via HTMX.",
+      "description_length": 446,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Web.Id",
+      "description": "Provides a function to extract an identifier from a request object, returning an optional string. Operates on the `Request.t` type and relies on an associated middleware to ensure the identifier is available. Used to retrieve a unique request identifier for logging or tracking purposes.",
+      "description_length": 287,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Web.Session",
+      "description": "Provides functions to retrieve, modify, and manage session data associated with HTTP requests and responses. Operates on key-value pairs stored in a session, using a session cookie and secret for authentication. Enables setting individual values, updating existing entries, and extracting all session data for a given request.",
+      "description_length": 326,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Web.Middleware",
+      "description": "Provides CSRF protection for unsafe requests using a double submit cookie method, error handling with optional email reporting and custom logging, flash message storage via cookies, request ID generation, migration status checks, trailing slash normalization, and static file serving. Operates on request and response objects, session data, and configuration values. Used to secure forms, handle exceptions gracefully, manage session flash messages, track requests, enforce database migration checks, and serve static assets.",
+      "description_length": 525,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Schedule.Logs",
+      "description": "Provides logging operations for different severity levels, including error, warning, info, and debug, with support for formatted messages and error handling. Works with log levels, formatted strings, and result types to capture and process errors. Used to inject structured logging into application flows and handle failures with custom recovery logic.",
+      "description_length": 352,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Contract",
+      "description": "Manages web service components through caching, database interactions, email handling, routing, and authentication. Supports key-value storage, SQL query execution, in-memory email management, template retrieval, HTTP route registration, schema migrations, password resets, job queuing, random token generation, scheduled tasks, file handling, signed token management, and user authentication. Operations include storing session data, executing paginated queries, sending emails, generating templates, defining routes, applying migrations, issuing reset tokens, queuing jobs, creating secure tokens, scheduling tasks, managing files, validating tokens, and extracting user identities. Examples include storing user preferences in a cache, retrieving paginated user data, testing email delivery, generating password reset links, setting up job dashboards, scheduling backups, and authenticating API requests.",
+      "description_length": 907,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.App",
+      "description": "Provides operations to construct and configure an application, including adding services, registering pre- and post-start callbacks, and launching the app with custom commands and logging. Works with service lists, Lwt-based callbacks, and command-line interfaces. Used to initialize a Sihl application, integrate services, and manage startup/shutdown logic in a structured way.",
+      "description_length": 378,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Command",
+      "description": "Provides functions to create and manage command-line commands with names, help text, descriptions, and lifecycle dependencies. Operates on command structures that encapsulate execution logic and metadata. Used to print command lists, display help information, and execute commands with argument parsing.",
+      "description_length": 303,
+      "index": 45,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl.Configuration",
+      "description": "The module handles loading, storing, and accessing configuration data from environment variables, .env files, and schemas, using key-value pairs and typed structures to validate and retrieve deploy-specific settings. It manages credentials, resource handles, and dynamic values like hostnames, ensuring environment-aware configuration management. Use cases include securing external service access, adapting to staging/production differences, and encapsulating deploy-specific parameters.",
+      "description_length": 488,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Web",
+      "description": "provides HTTP request handling, routing, and session management with support for body parsing, headers, cookies, and CSRF protection. it includes operations for managing flash messages, session data, and request identifiers, along with tools for HTMX integration and database record manipulation. functions like token generation, route registration, and body copying enable secure and dynamic web interactions. examples include securing forms with CSRF tokens, tracking requests with unique IDs, and updating web pages with HTMX directives.",
+      "description_length": 540,
+      "index": 47,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl.Log",
+      "description": "Provides functions to retrieve the current log level, determine the logs directory, and create log reporters. Works with log levels, file paths, and formatter-based reporting structures. Configures console and file-based logging with customizable message formatting and output destinations.",
+      "description_length": 290,
+      "index": 48,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl.Cleaner",
+      "description": "Manages a collection of asynchronous cleanup tasks that can be executed individually or all at once. It works with a list of functions that take an optional context and return a unit Lwt.t. Used to ensure resources are properly released during application shutdown or specific event triggers.",
+      "description_length": 292,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Container",
+      "description": "Manages service initialization, execution, and termination through state machines and event-driven logic, while supporting key-value mappings with polymorphic types. It enables ordered service startup based on dependencies and efficient data association. Operations include inserting, deleting, and looking up values in maps, as well as managing background processes like network services. Examples include translating error codes to messages and orchestrating service dependencies in a distributed system.",
+      "description_length": 506,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Database",
+      "description": "manages database schema migrations by applying, tracking, and validating steps within specified namespaces, using a connection pool for execution. It handles migration definitions as namespace-string and operation-list pairs, ensuring consistency and logging discrepancies. Operations include applying pending migrations, checking applied steps, and verifying migration counts. Example tasks include initializing a pool, applying all pending migrations for a namespace, and checking if a migration has already been applied.",
+      "description_length": 523,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Time",
+      "description": "Converts integer values into precise time spans using Ptime.span, enabling accurate time interval representation. Supports operations like addition, subtraction, and conversion between different time units. Allows for creating and manipulating durations for scheduling tasks or calculating time differences. Examples include calculating a 2-hour interval or converting 3 days into seconds.",
+      "description_length": 389,
+      "index": 52,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl.Schedule",
+      "description": "Logs messages at various severity levels using formatted strings and result types, enabling structured error tracking and recovery. Supports error handling, level-based filtering, and custom logging behaviors. Can capture stack traces, annotate messages with context, and integrate with application workflows. Examples include logging debug information during data processing and handling API call failures with retry logic.",
+      "description_length": 424,
+      "index": 53,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl.Random",
+      "description": "Generates random byte sequences and encodes them into Base64 strings. Accepts an integer to specify the length of the output. Useful for creating secure tokens or random identifiers in web applications.",
+      "description_length": 202,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sihl.Test",
+      "description": "manages associative collections with string keys and generic values, enabling insertion, deletion, lookup, merging, and traversal. It supports transformations, filtering, and conversions between maps, lists, and sequences, allowing efficient handling of configuration data or structured datasets. Users can merge multiple maps, extract specific entries, or convert between representations. Operations include filtering maps based on key patterns or transforming values during traversal.",
+      "description_length": 486,
+      "index": 55,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "sihl",
+      "description": "Provides functions for handling HTTP requests, database interactions, and logging with support for custom middleware. Works with request and response objects, database connections, and log records. Used to build scalable web services with structured data flow and error handling.",
+      "description_length": 279,
+      "index": 56,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sihl",
+      "description": "Manages web application components through caching, database interactions, routing, and authentication, with support for session management, email handling, and job queuing. Provides tools for application configuration, command-line interface setup, logging, and service orchestration, enabling structured initialization and shutdown. Handles HTTP requests, session data, and CSRF protection, while offering utilities for time manipulation, random token generation, and associative data management. Examples include storing user preferences, generating password reset links, scheduling backups, and managing configuration settings across environments.",
+      "description_length": 651,
+      "index": 57,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 63,
+    "meaningful_modules": 58,
+    "filtered_empty_modules": 5,
+    "retention_rate": 0.9206349206349206
+  },
+  "statistics": {
+    "max_description_length": 907,
+    "min_description_length": 202,
+    "avg_description_length": 371.0,
+    "embedding_file_size_mb": 0.2111053466796875
+  }
+}

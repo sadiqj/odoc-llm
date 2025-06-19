@@ -1,0 +1,49 @@
+{
+  "package": "anycache-async",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 4,
+  "creation_timestamp": "2025-06-18T16:27:14.637704",
+  "modules": [
+    {
+      "module_path": "Anycache_async.Monad",
+      "description": "Provides operations to construct and chain computations that may fail, using a result type encapsulating either a value or an exception. Works with deferred computations and Core's result type, enabling error-aware asynchronous workflows. Supports chaining via >>=, allowing error handling and transformation of successful or failed outcomes.",
+      "description_length": 342,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Anycache_async.Make",
+      "description": "Provides functions to manage a cache that stores asynchronous results, including creating a cache with a fixed capacity, retrieving values with `get`, and inserting values with `set`. It supports caching asynchronous computations with `with_cache` and validating cached values with `with_validator`, using keys of type `K.t` and values wrapped in `Async.Std.Deferred.Or_error.t`. Used to reduce redundant computation in systems requiring persistent, asynchronous data retrieval.",
+      "description_length": 478,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "anycache-async",
+      "description": "Provides efficient cache operations including insertion, lookup, and eviction using a scan-resistant LRU/2Q algorithm. Works with key-value pairs where keys are comparable and values are arbitrary OCaml values. Ideal for applications requiring fast access to frequently used data while minimizing cache pollution.",
+      "description_length": 313,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Anycache_async",
+      "description": "Encapsulates asynchronous error handling and caching mechanisms, combining result-based computation with deferred value storage. It defines key types K.t for identifiers and operations on Async.Std.Deferred.Or_error.t for handling asynchronous results or errors. Users can build resilient workflows with error propagation and recovery, while efficiently managing cached data through get, set, and validated insertion. For example, it enables caching of API responses with automatic revalidation or retrying failed computations with structured error handling.",
+      "description_length": 558,
+      "index": 3,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 4,
+    "meaningful_modules": 4,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 558,
+    "min_description_length": 313,
+    "avg_description_length": 422.75,
+    "embedding_file_size_mb": 0.014931678771972656
+  }
+}

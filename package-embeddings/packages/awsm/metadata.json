@@ -1,0 +1,672 @@
+{
+  "package": "awsm",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 93,
+  "creation_timestamp": "2025-06-18T16:48:25.599276",
+  "modules": [
+    {
+      "module_path": "Awsm.Import.String.Stable.V1.Map",
+      "description": "Provides serialization and deserialization functions for map structures using Bin_prot, along with Sexp conversion and comparison capabilities. Operates on maps where keys are ordered and values are arbitrary types. Enables efficient storage and retrieval of key-value pairs in binary and S-expression formats.",
+      "description_length": 310,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Stable.V1.Set",
+      "description": "Provides serialization and deserialization functions for sets using Bin_prot, along with S-expression conversion for interoperability. Works with the internal set type that wraps a stable, ordered collection of unique elements. Enables efficient storage and retrieval of sets in binary format and facilitates parsing and generation of S-expressions.",
+      "description_length": 349,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Stable.V1.Table",
+      "description": "Converts between a hash table type and S-expressions or binary formats, supporting serialization and deserialization. Operates on hash tables that map keys to values, using custom serialization strategies for each element. Used to persist or transmit hash table data in a compact binary format or human-readable S-expression form.",
+      "description_length": 330,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Stable.V1.Hash_set",
+      "description": "Provides serialization and deserialization functions for hash sets using S-expressions and binary formats. Works with the `t` type, which represents a hash set from the Core library. Enables efficient storage and retrieval of hash set data in persistent formats.",
+      "description_length": 262,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Caseless.Map.Key",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot and Sexp formats, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to encode and decode values for persistence or communication, and to enable ordered comparisons in data structures.",
+      "description_length": 332,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Caseless.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key value using a custom parsing function. Operates on Sexp.t and Key.t types, ensuring structured data representation. Used to deserialize configuration keys from textual S-expression formats.",
+      "description_length": 224,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Caseless.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with the Key.t data type and its associated binary representation. Used to persist or transmit Key.t values efficiently in binary format.",
+      "description_length": 297,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Caseless.Map.Provide_hash",
+      "description": "Hashes values of a custom type using a provided folding function, supporting efficient and deterministic hash computation. It operates on the Key.t type, enabling integration with hash-based data structures. This is used to generate consistent hash values for custom data in contexts like memoization or hash tables.",
+      "description_length": 316,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Caseless.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key by parsing its structure and extracting the relevant value. Works with Sexp.t and custom key types defined in the module. Used to deserialize structured data from S-expressions into a specific key format for lookup or comparison.",
+      "description_length": 265,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Caseless.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of a specific type using Bin_prot, including size calculation, writing to binary, reading from binary, and shape inspection. Works with custom types that have been annotated with Bin_prot's type class instances. Used to persist complex data structures to files or transmit them over networks in a compact binary format.",
+      "description_length": 379,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Caseless.Hash_set.Provide_of_sexp",
+      "description": "Converts an S-expression into a specific type using a provided constructor function. Works with S-expressions and custom data types defined by the user. Used to parse structured data from S-expression representations into typed values.",
+      "description_length": 235,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Caseless.Hash_set.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Operates on custom data types by generating appropriate reader and writer instances. Used to enable binary persistence of custom types in data serialization workflows.",
+      "description_length": 326,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Import.String.Caseless.Set.Elt",
+      "description": "Provides serialization and deserialization functions for converting values to and from S-expressions and binary formats using Bin_prot. Works with the abstract type `t` and includes comparison functionality via a comparator. Used to enable persistent storage and efficient data interchange in applications requiring binary encoding and ordered comparisons.",
+      "description_length": 356,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Caseless.Set.Named",
+      "description": "Checks if one named entity is a subset of another and verifies equality between two named entities, returning errors on failure. Works with named entities represented as structured data types. Used to validate hierarchical relationships and ensure consistency in configuration or data models.",
+      "description_length": 292,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Import.String.Caseless.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and the module's defined type `Elt.t`. Used to parse structured data from S-expressions into application-specific values.",
+      "description_length": 216,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Caseless.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a specific type, including size calculation, writing, reading, and shape definition. Operates on values of type `Elt.t` and supports custom reader and writer implementations. Used to persist and reconstruct instances of `Elt.t` in binary format efficiently.",
+      "description_length": 311,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Caseless.Set.Provide_hash",
+      "description": "Handles hash folding for elements of type Elt.t, using a stateful approach to incrementally compute hash values. Operates on custom data types wrapped in the Elt module, allowing integration with hashing mechanisms that require stateful accumulation. Used to generate consistent hash representations for custom types in contexts like serialization or memoization.",
+      "description_length": 363,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Stable.V1",
+      "description": "Handles serialization and deserialization of ordered maps, sets, hash tables, and hash sets using Bin_prot and S-expressions. Supports efficient storage and retrieval of key-value pairs, unique elements, and associative data in both binary and human-readable formats. Allows conversion between OCaml data structures and external representations for persistence or communication. Examples include saving a map to binary, converting a set to S-expressions, and restoring a hash table from a compact binary stream.",
+      "description_length": 511,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Import.String.Caseless.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports comparison semantics. Used to implement custom sorting logic and value comparisons in domain-specific data structures.",
+      "description_length": 337,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Caseless.Map",
+      "description": "Encodes and decodes values of type `t` and `Key.t` using Bin_prot and Sexp, enabling persistence, communication, and structured data handling. Supports ordered operations via a comparator and provides hash functions for `Key.t` to integrate with hash-based structures. Converts S-expressions to `Key.t` using custom parsing, and calculates binary sizes for efficient serialization. Enables efficient storage, transmission, and comparison of custom data types in various formats.",
+      "description_length": 478,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Import.String.Caseless.Set",
+      "description": "Converts, validates, and serializes structured data between S-expressions, binary formats, and custom types, supporting comparison, subset checks, and hash computation. Operates on types such as `t`, `Elt.t`, and named entities, enabling efficient storage, parsing, and consistency checks. Examples include parsing S-expressions into application-specific values, validating hierarchical data relationships, and generating incremental hashes for custom types. Supports binary I/O with customizable readers and writers, and integrates with comparison and hashing mechanisms for ordered and consistent data handling.",
+      "description_length": 613,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Caseless.Table",
+      "description": "Extracts keys from S-expressions and enables binary serialization and deserialization of custom types. Supports operations like parsing, writing, reading, and inspecting data structures using Bin_prot. Can convert structured data into lookup-friendly keys and store complex objects in compact binary form. Examples include deserializing configuration data and transmitting tree-like structures over a network.",
+      "description_length": 409,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Import.String.Caseless.Hash_set",
+      "description": "Converts S-expressions to custom types using a constructor function and supports binary serialization and deserialization of custom types with Bin_prot, including size, write, and read operations. Handles structured data parsing and binary persistence for user-defined types. Allows converting between textual S-expression formats and compact binary representations. Enables efficient storage and transmission of custom data structures.",
+      "description_length": 436,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Caseless.Hash_queue",
+      "description": "This module provides operations for managing key-value pairs in a structure that combines hash table and queue semantics, enabling efficient insertion, removal, and lookup while maintaining order and uniqueness. It supports traversals, folds, conversions to lists/arrays, and bidirectional dequeuing, with functions tailored for scenarios requiring ordered data persistence and rapid access, such as task scheduling or cache eviction policies. Both safe and unsafe variants for modifications and iteration ensure flexibility in handling edge cases.",
+      "description_length": 548,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Map.Key",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot and Sexp formats, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to encode and decode values for persistence or communication, and to enable ordered comparisons in data structures.",
+      "description_length": 332,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type by parsing its structure. Operates on Sexp.t and Key.t, ensuring precise mapping between serialized data and internal representations. Used to deserialize configuration keys from textual S-expression formats.",
+      "description_length": 248,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Import.String.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with the Key.t data type and its associated binary representation. Used to persist or transmit Key.t values efficiently in binary format.",
+      "description_length": 297,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Map.Provide_hash",
+      "description": "Hashes values of type Key.t using a fold operation, incrementally building a hash state. It operates on the Key.t data type and the Hash.state structure from the Base library. This function is used to integrate custom types into hash-based data structures like hashtables.",
+      "description_length": 272,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Table.Provide_of_sexp",
+      "description": "Converts a S-expression into a key by parsing its structure and extracting the relevant value. Works with Sexp.t and custom key types defined in the module. Used to deserialize structured data from S-expressions into a specific key format for lookup or comparison.",
+      "description_length": 264,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of a specific type using Bin_prot, including size calculation, writing to, and reading from binary formats. Works with custom types that have been annotated with Bin_prot's type class instances. Used to persist and reconstruct data structures in binary form for efficient storage or communication.",
+      "description_length": 357,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Hash_set.Provide_of_sexp",
+      "description": "Converts an S-expression into a specific type using a provided constructor function. Operates on Sexp.t values and returns instances of the associated type. Used to parse structured data from S-expressions into typed values during deserialization.",
+      "description_length": 247,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Hash_set.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Operates on custom data types through sizers, writers, readers, and type classes. Used to enable binary persistence of custom types in data storage and network communication.",
+      "description_length": 333,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Set.Elt",
+      "description": "Provides serialization and deserialization functions for converting values to and from S-expressions and binary formats using Bin_prot. Works with the abstract type `t` and its associated comparator. Used to enable persistent storage, network transmission, and ordered comparisons of values.",
+      "description_length": 291,
+      "index": 32,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Import.String.Set.Named",
+      "description": "Checks if one named entity is a subset of another and verifies equality between two named entities, returning errors on failure. Works with named entities represented as structured data types. Used to validate hierarchical relationships and ensure consistency in configuration or data models.",
+      "description_length": 292,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Import.String.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and the module's defined type `Elt.t`. Used to parse structured data from S-expressions into typed values during deserialization.",
+      "description_length": 224,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Import.String.Set.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Elt.t using Bin_prot, including size calculation, writing, reading, and shape inspection. Works with binary I/O operations for structured data. Used to persist and load custom data types in binary format for efficient storage and transmission.",
+      "description_length": 306,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Set.Provide_hash",
+      "description": "Handles hash folding for custom data types, allowing efficient integration with hash-based structures. Operates on values of type Elt.t, producing a hash state suitable for use in hash tables or equality checks. Used to define consistent hashing behavior for user-defined types in performance-critical code.",
+      "description_length": 307,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Import.String.Hexdump.Pretty",
+      "description": "Generates S-expression representations from values of type t using a custom serialization function. Works with user-defined types that require explicit conversion to Sexp format. Used to produce human-readable debug output or configuration dumps.",
+      "description_length": 246,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Cfg.S3_custom_command_settings.Fields.Direct",
+      "description": "Provides operations to iterate over, fold, check conditions, convert to list, map, and update mutable fields of a configuration structure. Works with a custom type `t` that encapsulates settings like concurrency limits, queue sizes, and endpoint configurations. Used to process and modify AWS-related client parameters dynamically during runtime.",
+      "description_length": 346,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Caseless",
+      "description": "offers comparison, encoding, decoding, and key extraction capabilities for custom types, enabling efficient data handling, persistence, and ordered operations. It supports type `t`, `Key.t`, and related structures with functions for serialization, deserialization, parsing, and hash computation. Users can convert S-expressions to custom values, serialize data for storage or transmission, and manage ordered key-value pairs with queue-like behavior. Examples include parsing configuration files, transmitting hierarchical data, and implementing ordered caches with fast lookups.",
+      "description_length": 579,
+      "index": 39,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Import.String.Hexdump",
+      "description": "Encodes and decodes values of type t into and from S-expression format, supporting custom serialization for user-defined types. Provides functions to generate structured, human-readable representations for debugging or configuration. Examples include converting a complex data structure to a readable Sexp string or parsing a configuration file into a typed value. Operations focus on transformation and inspection, enabling seamless integration with tools that consume or produce Sexp.",
+      "description_length": 486,
+      "index": 40,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Import.String.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including equality checks, relational comparisons, and functions to determine minimum and maximum values. Works with any data type that supports these operations through polymorphic comparison. Used to implement custom sorting logic and value comparisons in data processing pipelines.",
+      "description_length": 351,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Map",
+      "description": "encodes and decodes values of type `t` and `Key.t` using Bin_prot and Sexp, enabling persistence, communication, and ordered operations through a comparator. It parses S-expressions into `Key.t`, serializes `Key.t` in binary format, and computes hashes for integration into hash tables. Functions include encoding, decoding, parsing, writing, reading, and hashing operations. This allows for efficient data handling, configuration deserialization, and seamless use of custom types in ordered and hashed collections.",
+      "description_length": 515,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Set",
+      "description": "Converts, serializes, and compares structured data types, supporting S-expression and binary formats. Provides subset checks, equality validation, and hash folding for named entities and custom types. Enables parsing of S-expressions into typed values and efficient binary I/O for custom data. Facilitates persistent storage, network transfer, and consistent hashing for complex data models.",
+      "description_length": 391,
+      "index": 43,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Import.String.Table",
+      "description": "Parses S-expressions into custom key types for structured data lookup, and serializes/deserializes values using Bin_prot for efficient binary storage and transmission. Supports operations like converting Sexp.t to keys and encoding/decoding custom types with size, write, and read functions. Can transform nested S-expressions into searchable keys and save complex data structures in binary format. Enables efficient data handling by bridging symbolic and binary representations.",
+      "description_length": 479,
+      "index": 44,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Import.String.Hash_set",
+      "description": "Converts Sexp.t values into typed instances using a constructor function, enabling structured data deserialization. Supports binary serialization and deserialization of custom types via Bin_prot, including size computation, writing, and reading operations. Allows for efficient storage and transmission of custom data structures. Example tasks include parsing configuration files from S-expressions and saving complex objects to binary files.",
+      "description_length": 442,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Hash_queue",
+      "description": "This module provides operations for managing key-value pairs in a hash-based queue, including insertion, deletion, traversal, and transformation. It supports indexed folding, serialization to S-expressions, and bidirectional dequeuing, working with structured data that enables efficient membership checks, value retrieval, and element manipulation. Use cases include implementing caches, priority queues, or ordered data structures requiring hash-based lookups alongside sequential access.",
+      "description_length": 490,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String.Stable",
+      "description": "Serializes and deserializes ordered maps, sets, hash tables, and hash sets using Bin_prot and S-expressions, enabling efficient storage and conversion between OCaml structures and external formats. Key operations include writing maps to binary, converting sets to S-expressions, and reading hash tables from binary streams. Data types include ordered maps, sets, hash tables, and hash sets, with support for both compact binary and human-readable representations. This facilitates persistent storage, data exchange, and interoperability with external systems.",
+      "description_length": 559,
+      "index": 47,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Http.Io.Error",
+      "description": "Converts between S-expression representations and structured error or call data, enabling serialization and deserialization of specific error conditions and API call metadata. Works with custom types representing malformed responses and API call details. Used to process and generate structured data for logging, debugging, or inter-process communication.",
+      "description_length": 355,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Http.Monad.Make",
+      "description": "Provides functions to construct, transform, and deconstruct values of type 'a t, including mapping over contained values and combining them with custom logic. Operates on monadic-like structures, enabling sequential computation and error handling. Used to build complex data pipelines where each step depends on the successful outcome of the previous.",
+      "description_length": 351,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Http.Pipe.Reader",
+      "description": "Provides functions to transform and compose values within a context, including mapping, binding, and lifting operations. Works with the 'a t type, representing a computation that depends on an external environment. Used to chain asynchronous or environment-dependent computations in a clean, sequential manner.",
+      "description_length": 310,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Http.Pipe.Flushed",
+      "description": "Provides functions to flush output buffers, check if a buffer is empty, and retrieve the contents of a buffer as a string. Works with the `t` type, which represents a buffered output stream. Used to ensure all data is written to a file or network socket before proceeding.",
+      "description_length": 272,
+      "index": 51,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Cfg.S3_custom_command_settings.Fields",
+      "description": "Offers dynamic manipulation of configuration structures through iteration, folding, condition checks, list conversion, mapping, and mutation. Core operations work with a custom `t` type containing AWS client parameters such as concurrency limits and queue sizes. Allows runtime adjustments like increasing a limit or filtering endpoints based on criteria. Enables programmatic control over system behavior without recompilation.",
+      "description_length": 428,
+      "index": 52,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Botodata.Json",
+      "description": "Converts OCaml values to JSON-compatible scalar or full JSON representations. Works with OCaml's native value types, including integers, strings, and booleans. Used to serialize configuration data into JSON format for external processing.",
+      "description_length": 238,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import.String",
+      "description": "Provides indexed search and transformation capabilities for strings, with functions to locate characters and handle results as options or exceptions. Offers serialization, deserialization, and comparison utilities for custom types, supporting S-expressions, binary formats, and ordered operations. Enables efficient data handling through encoding, decoding, and key-based lookups, with examples including parsing configuration files, serializing complex structures, and managing ordered caches. Supports structured data conversion, hash computation, and bidirectional data flow between symbolic and binary representations.",
+      "description_length": 622,
+      "index": 54,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Import.Test",
+      "description": "Provides functions to report test outcomes with detailed context. Accepts a message and an association list of named values to describe the test's state. Used to mark tests as passing with \"OK\" or failing with \"FIXME\" during test execution.",
+      "description_length": 240,
+      "index": 55,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Http.Meth",
+      "description": "Provides serialization to S-expression and pretty-printing for custom data types. Works with abstract type t and variant type standard, enabling structured representation and human-readable output. Used to convert internal representations into debug-friendly formats and for interoperability with S-expression-based systems.",
+      "description_length": 324,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Http.Headers",
+      "description": "Provides functions to convert between a header structure and S-expressions or a pretty-printed format, and to create or extract headers from a list of key-value pairs. Works with a custom type `t` representing HTTP headers. Used to serialize and deserialize headers in a structured, human-readable format.",
+      "description_length": 305,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Http.Monad",
+      "description": "Injects a value of type 'a s into a context-aware structure, and projects it back out. Works with two types: 'a s representing a base value and t representing a transformed or wrapped state. Used to manage side effects in a controlled way, such as handling optional values or error states within a computation chain.",
+      "description_length": 316,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Http.Range",
+      "description": "Provides functions to construct and manipulate HTTP byte range specifications, including creating ranges from start or end positions and converting to header values. Operates on lists of byte range specifications, each representing a segment of a resource. Used to generate HTTP range headers for partial content requests.",
+      "description_length": 322,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Http.Status",
+      "description": "Converts various HTTP status categories and their specific values into S-expression representations. Works with discriminated unions representing informational, successful, redirection, client error, server error, and standard status codes. Used to serialize status information for logging or data exchange in systems relying on S-expressions.",
+      "description_length": 343,
+      "index": 60,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Http.Request",
+      "description": "Returns the protocol version and headers of an HTTP request, along with the method and body string. Constructs request objects with optional version, headers, and body, using a specified method. Formats request representations for output using a pretty-printer.",
+      "description_length": 261,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Http.Response",
+      "description": "Returns the HTTP status code from a response object and extracts headers as a list of key-value pairs. Works with HTTP response data structured as a custom type `t`. Used to inspect server responses in web client implementations.",
+      "description_length": 229,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Http.Call",
+      "description": "Handles HTTP method, request, and URI transformations into a monadic computation. Accepts a method, request, and URI to produce a result containing a response or error. Used to construct and execute API calls within a monadic workflow.",
+      "description_length": 235,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Http.Io",
+      "description": "Provides injection and projection between a stream type and a monadic app, enabling seamless integration of asynchronous data flows. Works with stream structures and a generic error-tolerant call type to handle HTTP requests and responses. Used to construct HTTP handlers that return structured, error-aware responses within a monadic context.",
+      "description_length": 343,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Cfg.S3_custom_command_settings",
+      "description": "Provides runtime control over AWS client configurations by enabling iteration, filtering, and transformation of parameter structures stored in a custom `t` type. Supports operations like mapping over settings, folding to aggregate values, and conditionally modifying parameters such as concurrency limits or endpoint lists. Allows dynamic updates like adjusting queue sizes or applying filters without recompiling code. Examples include modifying thresholds based on load or restricting endpoints to specific regions.",
+      "description_length": 517,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Cfg.Config_file",
+      "description": "Parses a string into a configuration structure using the AWS CLI format and retrieves the default configuration file path. It works with a custom type `t` representing parsed configuration data. Used to load and locate AWS CLI configuration files programmatically.",
+      "description_length": 264,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Cfg.Shared_credentials_file",
+      "description": "Parses a string into a credentials structure using AWS CLI formatting rules. Retrieves the default file path used by the AWS CLI for credential storage. Represents parsed credentials data for programmatic access.",
+      "description_length": 212,
+      "index": 67,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Auth.Date_header",
+      "description": "Converts a Core.Time.t value to an RFC 822 formatted date string and generates a date string representing the current time. Works with Core.Time.t to produce standardized date headers. Used to create HTTP date headers in messages or logs.",
+      "description_length": 238,
+      "index": 68,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Auth.Session_token_header",
+      "description": "Adds a session token to an HTTP header, replacing any existing token with the same name. Works with Cohttp.Header.t to manage HTTP headers in web requests and responses. Used to securely inject or update session identifiers in API calls.",
+      "description_length": 237,
+      "index": 69,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Client.Query",
+      "description": "Constructs a query structure from a value and generates a list of key-value pairs with associated strings for output. It operates on a custom query type and a variant type representing various value formats. Used to serialize structured data into a format suitable for HTTP query parameters.",
+      "description_length": 291,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Arn.Error",
+      "description": "Handles serialization and deserialization of the `make` type to and from S-expressions. The module supports pattern matching on the `make` variant type through custom parsing functions. Used to convert build configuration data between runtime representation and textual S-expression format.",
+      "description_length": 290,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Arn.Default",
+      "description": "Partitions a string into segments based on the \"aws\" delimiter, returning a list of substrings. It processes UTF-8 encoded text and handles edge cases like empty or repeated delimiters. This is useful for splitting log lines or configuration strings into manageable components.",
+      "description_length": 277,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Arn.Exn",
+      "description": "Provides functions to construct error objects with specific service, resource, and contextual attributes, including a specialized S3 error constructor. Works with types such as Service.t, Region.t, resource_type, qualifier, and string. Used to generate structured error representations for AWS services, particularly for S3 bucket and key operations.",
+      "description_length": 350,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Http.Deferred",
+      "description": "Provides functions to create, chain, and resolve asynchronous values, including `bind`, `map`, and `return`. Works with the `'a t` type to represent delayed computations. Used to handle non-blocking I/O operations and coordinate asynchronous workflows in event-driven applications.",
+      "description_length": 281,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Http.Pipe",
+      "description": "combines context-aware value transformation with buffer management, enabling sequential computation and reliable output handling. It supports operations like mapping, binding, and lifting on computations wrapped in a context, and provides methods to manage buffered output streams, including flushing and inspecting their contents. Users can chain environment-dependent operations and ensure data is fully written before termination. For example, it allows transforming data within a computation context and then safely writing the result to a file or socket.",
+      "description_length": 559,
+      "index": 75,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Http.Body",
+      "description": "Provides functions to convert between a custom type and string representations, including asynchronous string conversion and piping. Works with the `t` type and `Pipe.Reader.t` for stream-based data handling. Used to process and transform data streams from strings or pipes into the custom type and back.",
+      "description_length": 304,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Http.Client",
+      "description": "Provides HTTP methods for sending GET, POST, PUT, and DELETE requests with customizable headers, request bodies, and chunked transfer encoding. Operates on Cohttp.Header.t, Uri.t, and Body.t types to construct and process HTTP interactions. Used to interact with RESTful APIs, submit form data, update resources, and remove endpoints asynchronously.",
+      "description_length": 349,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Arn",
+      "description": "Encapsulates Amazon Resource Name (ARN) parsing, construction, and error handling, with utilities for working with service-specific formats and structured error messages. It includes functions to deconstruct ARNs into components, build service-specific ARNs with enforced constraints, and generate error objects with service, resource, and contextual details. The module supports S-expression serialization of build configurations and string partitioning using the \"aws\" delimiter for processing log or config data. Examples include constructing S3 bucket ARNs, splitting resource strings, and creating S3-specific error messages.",
+      "description_length": 630,
+      "index": 78,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Auth",
+      "description": "Handles AWS Signature Version 4 authentication by managing time-based headers and session tokens. Provides functions to convert time values to RFC 822 format and to modify HTTP headers with session tokens. Supports generating standardized date headers and updating authentication tokens in HTTP requests. Enables secure and accurate timestamping and session management in API interactions.",
+      "description_length": 389,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Botocore_endpoints",
+      "description": "Provides functions to determine credential scopes based on region and service, and to resolve endpoint URIs with specified protocol. Works with region identifiers, service names, and protocol choices. Used to construct signed requests and establish secure connections to AWS services.",
+      "description_length": 284,
+      "index": 80,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Botodata",
+      "description": "Provides types to represent Amazon service specifications, including metadata, operations, and structured input/output types. Supports conversion of OCaml values to JSON-compatible formats for external use. Operations include serializing native OCaml values like integers and strings into JSON. Enables precise handling of service definitions and data serialization for integration with AWS APIs.",
+      "description_length": 396,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Cfg",
+      "description": "manages AWS client configurations by allowing dynamic manipulation of parameter structures through mapping, folding, and conditional updates, enabling runtime adjustments like modifying concurrency limits or filtering endpoints. It includes parsers for AWS CLI configuration and credentials files, extracting values from standard locations and supporting programmatic access to stored settings. Operations include loading config files, extracting default paths, and transforming parsed data into usable formats. Examples include adjusting queue sizes based on load or restricting API calls to specific regions.",
+      "description_length": 610,
+      "index": 82,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Client",
+      "description": "Encapsulates logic for converting structured data into HTTP-compatible query strings by processing a custom query type and handling multiple value representations. Supports operations that transform values into key-value pairs, with string serialization for each element. Can generate URL-encoded parameters from nested data structures or simple key-value mappings. Examples include encoding a record into a query string or flattening a list of options into a parameter list.",
+      "description_length": 475,
+      "index": 83,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Data",
+      "description": "Provides serialization and deserialization between internal representations and S-expressions, XML, JSON, and string formats. Works with type `t` and associated type `ty`, and supports asynchronous conversion to values, queries, and headers. Enables direct conversion from XML, JSON, or string inputs to internal data structures.",
+      "description_length": 329,
+      "index": 84,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Http",
+      "description": "manages asynchronous HTTP interactions through a pipeline of context-aware computations, enabling non-blocking I/O, data transformation, and response inspection. It handles `t` types for delayed computations, HTTP responses, and data streams, supporting operations like binding, mapping, and piping. Users can send HTTP requests, process response headers, and manage buffered outputs with precise control over data flow. For example, it allows converting a string stream into a structured HTTP request, transforming the response within a computation context, and safely writing results to a file.",
+      "description_length": 596,
+      "index": 85,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Import",
+      "description": "Offers string manipulation, data serialization, and test reporting capabilities. Includes operations for indexed string searches, custom type encoding/decoding, and ordered data management, along with functions to track test results using contextual information. Examples include parsing configuration files, serializing nested data, and logging test outcomes with detailed metadata. Supports bidirectional data conversion, hash generation, and structured test reporting.",
+      "description_length": 471,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Json",
+      "description": "The module provides basic support for JSON-related operations through a collection of specialized components. It includes types for representing JSON values and functions for parsing and serializing data. Operations such as converting between OCaml values and JSON strings are available. Example uses include reading configuration files and transmitting structured data over networks.",
+      "description_length": 384,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Awsm.Region",
+      "description": "This module handles serialization, deserialization (sexp conversion), comparison, and string conversion for AWS region identifiers. It operates on a private type `t` representing predefined regions, including constants for known regions and a list of all available regions. Use cases include configuring AWS services or managing region-specific resource allocations.",
+      "description_length": 366,
+      "index": 88,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Service",
+      "description": "The module offers functions for creating and managing client interfaces for AWS services, operating on a type `t` that represents service configurations, endpoints, or client instances. It includes constants for specific services like S3, EC2, and IAM, enabling interactions with cloud infrastructure, storage, compute, and identity management tools. Use cases span configuring service endpoints, accessing APIs for data storage/processing, and integrating with managed services such as DynamoDB, SageMaker, and Step Functions.",
+      "description_length": 527,
+      "index": 89,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm.Xml",
+      "description": "Provides functions to extract and manipulate XML elements, including retrieving child elements by name, accessing raw string data, and parsing XML responses. Works with XML fragment types and structured data representations derived from XML content. Used to process XML input for data extraction, validation, and transformation in XML-based protocols.",
+      "description_length": 351,
+      "index": 90,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "awsm",
+      "description": "Provides functions for interacting with AWS services, including request signing, HTTP communication, and response parsing. Works with types such as HTTP requests, JSON payloads, and AWS-specific data structures like S3 object keys and EC2 instance IDs. Used to implement custom AWS integrations, such as uploading large files to S3 in parts or querying DynamoDB with specific filters.",
+      "description_length": 384,
+      "index": 91,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Awsm",
+      "description": "Encapsulates AWS resource management, authentication, and API interaction through ARN handling, signature generation, and endpoint resolution. Provides types for service specifications, regions, and HTTP interactions, along with serialization to and from JSON, XML, and S-expressions. Supports constructing S3 ARNs, signing requests, encoding query parameters, and processing XML responses. Enables dynamic client configuration, asynchronous HTTP pipelines, and test reporting with structured data conversion.",
+      "description_length": 509,
+      "index": 92,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 97,
+    "meaningful_modules": 93,
+    "filtered_empty_modules": 4,
+    "retention_rate": 0.9587628865979382
+  },
+  "statistics": {
+    "max_description_length": 630,
+    "min_description_length": 212,
+    "avg_description_length": 360.35483870967744,
+    "embedding_file_size_mb": 0.3382711410522461
+  }
+}

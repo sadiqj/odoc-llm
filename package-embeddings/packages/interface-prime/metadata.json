@@ -1,0 +1,84 @@
+{
+  "package": "interface-prime",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 9,
+  "creation_timestamp": "2025-06-18T16:32:35.280678",
+  "modules": [
+    {
+      "module_path": "Interface'.Monad_result.Make",
+      "description": "Constructs a value from an exception, enabling error handling within a custom type. Operates on exception values and converts them into a structured representation. Used to propagate and manage errors in a controlled manner during program execution.",
+      "description_length": 249,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Interface'.Monad.Make",
+      "description": "Provides operations for sequencing computations with context, including lifting values into a context and chaining operations that produce contextual results. Works with a parameterized type that represents computations with side effects or dependencies. Used to construct workflows where each step depends on the successful outcome of the previous one, such as building complex data transformations or orchestrating I/O operations.",
+      "description_length": 432,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Interface'.Io.M",
+      "description": "Provides monadic operations for chaining computations, including binding, sequencing, and mapping over values wrapped in a context. Works with a parameterized type 'a t, supporting sequential execution and transformation of wrapped values. Enables structured handling of effectful computations, such as parsing or stateful operations, by composing functions that return values in the same context.",
+      "description_length": 397,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Interface'.Monad_result.E",
+      "description": "Converts an exception into a specific type, enabling error handling within a custom error domain. Works with the type `t` and exception values to encapsulate and propagate errors. Used to safely wrap exceptions in a structured format for controlled error flow in application logic.",
+      "description_length": 281,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Interface'.Io",
+      "description": "Encapsulates effectful computations through a parameterized type 'a t, enabling sequential execution and transformation of wrapped values. Supports monadic operations like binding, sequencing, and mapping to compose functions that handle side effects or state. Allows parsing, state management, and other context-dependent tasks by chaining operations that preserve computational context. For example, it can sequence a series of I/O operations or manage state transitions in a functional way.",
+      "description_length": 493,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Interface'.Monad",
+      "description": "Provides binding and lifting operations for sequencing computations with side effects, including monadic composition via bind and sequential execution with >>. Works with parameterized types representing computational contexts, such as option, list, or state. Enables chaining of I/O operations, error handling, and asynchronous workflows in a structured manner.",
+      "description_length": 362,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Interface'.Monad_result",
+      "description": "Encapsulates exceptions within a custom error type, allowing structured error handling and propagation. It operates on the type `t` and provides functions to convert and manage exceptions as part of a controlled error flow. This enables safe wrapping of error-prone operations and consistent error representation. For example, it can transform a `Not_found` exception into a domain-specific error value for use in a result type.",
+      "description_length": 428,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "interface-prime",
+      "description": "Provides monadic operations such as bind, map, and return, along with applicative and functor interfaces for handling effectful computations. Works with type constructors that support these patterns, including asynchronous and lazy evaluation structures. Enables seamless integration with libraries like Lwt and Async by abstracting their specific implementations.",
+      "description_length": 364,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Interface'",
+      "description": "Encapsulates effectful computations using a parameterized type 'a t, supporting monadic operations like bind, map, and sequencing to manage side effects, state, and I/O in a compositional way. Provides tools for error handling by wrapping exceptions in a custom error type, enabling structured propagation and conversion of errors into domain-specific representations. It allows chaining of context-aware operations, such as parsing, state transitions, or asynchronous workflows, while maintaining type safety and control flow. For instance, it can sequence file reads, manage optional values, or convert exceptions into result types for robust error handling.",
+      "description_length": 660,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 10,
+    "meaningful_modules": 9,
+    "filtered_empty_modules": 1,
+    "retention_rate": 0.9
+  },
+  "statistics": {
+    "max_description_length": 660,
+    "min_description_length": 249,
+    "avg_description_length": 407.3333333333333,
+    "embedding_file_size_mb": 0.03315925598144531
+  }
+}

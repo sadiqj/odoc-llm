@@ -1,0 +1,161 @@
+{
+  "package": "spotify-web-api",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 20,
+  "creation_timestamp": "2025-06-18T16:35:45.264681",
+  "modules": [
+    {
+      "module_path": "Spotify_web_api.Common",
+      "description": "Provides functions to convert a mode value to its string representation and validate a URI against a given mode. Operates on the `mode` type and strings. Used to ensure hrefs conform to expected formats based on application modes.",
+      "description_length": 230,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Spotify_web_api.Search",
+      "description": "Performs asynchronous searches for albums, artists, and tracks using a string query, returning paginated results. Operates on specific data types including simplified album records, artist details, and track information. Used to retrieve structured music metadata in applications requiring searchable music libraries.",
+      "description_length": 317,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "spotify-web-api",
+      "description": "Provides functions to interact with Spotify's API, including fetching artist details, searching tracks, and retrieving playlists. Works with data types such as JSON-encoded responses, URI strings, and opaque tokens. Used to build music recommendation features and integrate Spotify data into custom applications.",
+      "description_length": 312,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Followers_t",
+      "description": "type followers = { user_id : int; follower_ids : Int_set.t } Provides functions to manage a set of user IDs representing followers, including adding, removing, and checking membership. Works with integers and the Int_set module to efficiently store and manipulate follower relationships. Used to track and query user follow relationships in a social media context.",
+      "description_length": 364,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "External_urls_t",
+      "description": "Provides functions to parse, validate, and manipulate a list of tuples representing external URLs and their associated identifiers. Works with the external_urls type, which maps strings to strings for URL relationships. Used to process and verify external link data during content validation workflows.",
+      "description_length": 302,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "External_ids_j",
+      "description": "Serializes and deserializes values of type external_ids to and from JSON format using specific input and output functions. Operates on the external_ids type, which is an alias for External_ids_t.external_ids. Processes JSON data from strings or lexing buffers, and outputs to buffers or strings with customizable buffer sizes.",
+      "description_length": 326,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Track_t",
+      "description": "Provides functions to parse and manipulate track data including artist, album, and external identifiers, along with pagination and search result wrappers. Works with structured data like track details, artist summaries, and URL/ID mappings from music APIs. Used to process and extract specific information from API responses, such as fetching track metadata or navigating paginated results.",
+      "description_length": 390,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Album_t",
+      "description": "Provides functions to handle paginated results, extract image data, and manage external URLs associated with music albums. Works with custom types for pagination, images, external links, and wrapped search results. Used to process API responses from music services, enabling efficient navigation through large datasets and retrieval of relevant album metadata.",
+      "description_length": 360,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "External_urls_j",
+      "description": "Writes and reads JSON representations of external URLs, converting between in-memory data and string formats. Operates on the `external_urls` type, which encapsulates URL metadata. Used to parse and generate JSON content for external resource references in data processing pipelines.",
+      "description_length": 283,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Image_j",
+      "description": "Provides functions to serialize and deserialize image data in JSON format, including writing to a buffer, converting to a string with adjustable buffer size, parsing from a lexer state, and constructing an image from a string. Operates on the `image` type, which represents structured image metadata. Used to encode and decode image information for storage or transmission in JSON.",
+      "description_length": 381,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Image_t",
+      "description": "type image = { width : int; height : int; data : bytes } Processes pixel data by allowing direct access to raw byte arrays, enabling operations like color manipulation and image filtering. Supports resizing by adjusting width and height fields while preserving data integrity. Used to load and modify PNG images by accessing and altering the underlying byte representation.",
+      "description_length": 373,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Spotify_web_api",
+      "description": "Converts mode values to strings and validates URIs against mode constraints, working with the `mode` type and strings to enforce format consistency. Enables asynchronous searches for albums, artists, and tracks, returning paginated results in structured formats. Supports operations like checking if a URI matches a specific mode or fetching searchable music data. Examples include validating a playback mode or retrieving a list of tracks matching a query.",
+      "description_length": 457,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "External_ids_t",
+      "description": "Provides functions to create, merge, and query a list of external identifier pairs, where each pair consists of a string label and a string value. Operates on the `external_ids` type, which is a list of tuples representing named external identifiers. Used to manage and manipulate external references in data exchange scenarios, such as linking records across systems.",
+      "description_length": 368,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Followers_j",
+      "description": "Provides functions to serialize and deserialize a `followers` type to and from JSON, including writing to a buffer, converting to a string with optional buffer size, parsing from a lexer state, and parsing from a string. Operates on the `followers` type, which represents a structured data format for tracking user follow relationships. Used to process user follower data in network communication and persistent storage.",
+      "description_length": 420,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Paging_j",
+      "description": "Serializes and deserializes values of type 'a paging to and from JSON using custom buffer and lexer state handlers. Operates on a polymorphic record type 'a paging that includes pagination metadata. Used to encode query results with page numbers and item counts for API responses or decode incoming paginated data from client requests.",
+      "description_length": 335,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Album_j",
+      "description": "This module handles serialization, deserialization, and JSON output for structured data like paging information, images, external URLs, simplified albums, and search wrappers, enabling efficient data manipulation. It operates on type aliases representing music-related metadata, such as album details and search results, tailored for integration with larger systems. Specific use cases include processing API responses for music platforms and managing structured data in applications requiring JSON-based data exchange.",
+      "description_length": 519,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Artist_t",
+      "description": "Provides functions to parse and manipulate artist data, including pagination, image retrieval, follower counts, and external URL handling. Works with custom types such as `image`, `followers`, `external_urls`, and nested `artist` structures. Used to process search results and artist profiles from music APIs.",
+      "description_length": 309,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Artist_j",
+      "description": "This module handles JSON encoding and decoding for custom OCaml types such as `paging`, `image`, `artist`, and `search_wrapper`, utilizing Yojson and Buffer for efficient serialization and deserialization. It supports operations like converting data to strings, parsing from input, and reading from lexers, enabling seamless integration with external systems or APIs. Use cases include processing music-related data structures, such as artist profiles or search results, for storage, transmission, or further analysis.",
+      "description_length": 518,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Paging_t",
+      "description": "type 'a paging = { items : 'a list; total : int; page : int; size : int } Provides functions to create, modify, and query paginated data structures, including calculating total pages, checking page boundaries, and extracting subsets. Works with lists and integers to manage structured data retrieval. Used to handle database query results and API responses with pagination support.",
+      "description_length": 381,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Track_j",
+      "description": "This module handles JSON serialization and deserialization for specific data structures such as artist and track metadata, pagination objects, and wrapper types, utilizing Yojson for parsing and Buffer for output. It enables efficient conversion between in-memory representations and JSON formats, supporting operations like writing to buffers, string conversion, and parsing from lexer buffers, which are critical for processing API responses or storing structured data. Use cases include handling music catalog data, API interactions, and data exchange scenarios requiring precise type-specific encoding/decoding.",
+      "description_length": 615,
+      "index": 19,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 20,
+    "meaningful_modules": 20,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 615,
+    "min_description_length": 230,
+    "avg_description_length": 378.0,
+    "embedding_file_size_mb": 0.07303810119628906
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "package": "ppx_monad",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 10,
+  "creation_timestamp": "2025-06-18T16:31:47.728369",
+  "modules": [
+    {
+      "module_path": "ppx_monad",
+      "description": "Provides binding and return operations for monadic workflows, supporting custom monad types through syntax extensions. Works with algebraic data types that implement monadic interfaces, enabling chained computations. Used to simplify error handling and state management in parser implementations.",
+      "description_length": 296,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_monad_lib",
+      "description": "Registers a custom monadic syntax for PPX transformations, defining how return, bind, fail, and catch operations are expanded. Operates on OCaml AST elements like expressions, patterns, and locations. Used to implement domain-specific monadic notations in generated code.",
+      "description_length": 271,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_monad_ppx_option",
+      "description": "Generates AST nodes for monadic operations on option types, including return, bind, fail, and catch. Operates on Ppxlib's location and expression types to construct lifted computations. Used to transform code that uses option values in a monadic style during ppx expansion.",
+      "description_length": 273,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_monad_ppx_result",
+      "description": "Generates AST nodes for monadic operations, including returning a value, binding a function to a result, failing with an error, and catching exceptions. Operates on OCaml AST expressions and location metadata. Used to transform code that uses the result monad into explicit monadic compositions during ppx expansion.",
+      "description_length": 316,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_monad_ppx_monad",
+      "description": "Generates AST nodes for monadic operations, including returning a value, binding a computation, failing with an error, and catching exceptions. Operates on OCaml AST expressions and location metadata. Used to transform monadic code during ppx expansion, enabling custom monad semantics in generated code.",
+      "description_length": 304,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_monad_ppx_list",
+      "description": "Transforms expressions into monadic operations by generating `return` and `bind` constructs for list comprehensions. Operates on OCaml AST expressions and location data to inject monadic semantics. Used to syntactically enhance list processing with monadic chaining in generated code.",
+      "description_length": 284,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_monad_ppx_seq",
+      "description": "Generates AST nodes for monadic return and bind operations, transforming expressions into structured monadic workflows. Operates on OCaml AST expressions and location metadata to construct sequential monadic chains. Used to implement custom monadic syntax in code transformed by ppx rewriters.",
+      "description_length": 293,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_monad_ppx_do",
+      "description": "Converts OCaml expressions into patterns, extracts bind operations from attributes with location information, and expands expressions within a monadic context. Works with OCaml parse trees, attributes, and location data. Used to transform do-notation syntax into monadic bind operations during ppx preprocessing.",
+      "description_length": 312,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_monad_ppx_either",
+      "description": "Generates AST nodes for monadic operations on either types, including returning a value, binding a function, failing with an error, and catching exceptions. Works with OCaml's AST structures and location metadata to transform code during ppx expansion. Used to implement custom syntax for error-handling workflows in domain-specific languages.",
+      "description_length": 343,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_monad",
+      "description": "Registers custom monadic transformations for PPX, including return, bind, fail, and catch operations, with optional error handling. Operates on OCaml AST elements such as expressions, patterns, and locations. Used to implement domain-specific monadic syntax in generated code, such as effectful computations or asynchronous workflows.",
+      "description_length": 334,
+      "index": 9,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 11,
+    "meaningful_modules": 10,
+    "filtered_empty_modules": 1,
+    "retention_rate": 0.9090909090909091
+  },
+  "statistics": {
+    "max_description_length": 343,
+    "min_description_length": 271,
+    "avg_description_length": 302.6,
+    "embedding_file_size_mb": 0.03678417205810547
+  }
+}

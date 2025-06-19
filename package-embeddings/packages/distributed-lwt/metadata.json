@@ -1,0 +1,56 @@
+{
+  "package": "distributed-lwt",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 5,
+  "creation_timestamp": "2025-06-18T16:27:33.253920",
+  "modules": [
+    {
+      "module_path": "Distributed_lwt.Make.Remote_config",
+      "description": "type t = { host: string; port: int; timeout: float } Provides functions to parse configuration from a string, validate connection parameters, and retrieve timeout values. Works with structured data containing host addresses, port numbers, and timeout durations. Used to set up communication parameters for distributed systems where nodes interact over a network.",
+      "description_length": 362,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Distributed_lwt.Make.Local_config",
+      "description": "Provides functions to load, parse, and validate local node configuration data from a file. Works with a record type containing fields like node_id, port, and storage_path. Used to initialize a node's local environment without network communication capabilities.",
+      "description_length": 261,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Distributed_lwt.Make",
+      "description": "Logs messages at a specified level, ensuring execution waits for the log to complete. Works with log levels and Lwt threads to coordinate asynchronous logging. Used to enforce sequential logging in concurrent workflows, such as during build steps or event processing.",
+      "description_length": 267,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "distributed-lwt",
+      "description": "Provides functions for creating and managing distributed processes, sending and receiving typed messages, and monitoring process lifecycles. Operates on process identifiers, message queues, and typed message structures. Enables fault-tolerant, concurrent execution across nodes by allowing process spawning, message passing, and supervision in a distributed environment.",
+      "description_length": 370,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Distributed_lwt",
+      "description": "Provides a logging mechanism that emits messages at specified severity levels, ensuring asynchronous execution completes before proceeding. Operates with Log_lwt's log structure and Lwt threads. Used to track event sequences in distributed systems with guaranteed log delivery.",
+      "description_length": 277,
+      "index": 4,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 5,
+    "meaningful_modules": 5,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 370,
+    "min_description_length": 261,
+    "avg_description_length": 307.4,
+    "embedding_file_size_mb": 0.018621444702148438
+  }
+}

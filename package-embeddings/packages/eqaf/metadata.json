@@ -1,0 +1,49 @@
+{
+  "package": "eqaf",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 4,
+  "creation_timestamp": "2025-06-18T16:27:37.263984",
+  "modules": [
+    {
+      "module_path": "eqaf",
+      "description": "Provides constant-time string equality checking and related operations to prevent timing-based side-channel attacks. Works with strings and byte sequences, ensuring execution time remains independent of input values. Used to securely compare sensitive data such as passwords or cryptographic keys.",
+      "description_length": 297,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Eqaf_bytes",
+      "description": "Provides comparison functions for bytes in big-endian and little-endian order, with and without length constraints. Supports searching for bytes that satisfy a predicate and checking for the existence of such bytes. Designed for low-level byte manipulation in protocols or file formats requiring precise byte-level comparisons.",
+      "description_length": 327,
+      "index": 1,
+      "embedding_norm": 0.9999998807907104
+    },
+    {
+      "module_path": "Eqaf",
+      "description": "The module provides constant-time operations for secure string and byte comparisons, bitwise manipulations, and integer conversions, focusing on preventing timing side-channel leaks through deterministic execution patterns. It handles strings, bytes, and 32-bit integers, enabling use cases like secure authentication protocols and cryptographic key comparisons where branch-free logic is critical. A key function, `select_a_if_in_range`, facilitates constant-time conditional selections between integers based on range checks, supporting secure decision-making in sensitive computations.",
+      "description_length": 588,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Eqaf_bigstring",
+      "description": "Compares bigstrings lexicographically in big-endian or little-endian order, with or without length constraints. Processes unsigned 8-bit values within bigstrings using predicate-based searches and existence checks. Designed for efficient binary data comparison and inspection in network protocols or file format parsing.",
+      "description_length": 320,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 4,
+    "meaningful_modules": 4,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 588,
+    "min_description_length": 297,
+    "avg_description_length": 383.0,
+    "embedding_file_size_mb": 0.014946937561035156
+  }
+}

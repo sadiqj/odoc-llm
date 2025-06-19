@@ -1,0 +1,245 @@
+{
+  "package": "sodium-fmt",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 32,
+  "creation_timestamp": "2025-06-18T16:37:51.871960",
+  "modules": [
+    {
+      "module_path": "Sodium_fmt.Password_hash.Bytes",
+      "description": "Formats a bytes value as a salt, validating its length against the expected salt size. Outputs a formatted string with the bytes content or an error message for size mismatches. Works directly with bytes values to represent cryptographic salts in a structured way.",
+      "description_length": 264,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sodium_fmt.Password_hash.Bigbytes",
+      "description": "Formats a `Sodium.bigbytes` value as a password hash salt, validating its size and presenting it in a structured format. Handles size mismatches by explicitly noting the discrepancy. Used to serialize and validate cryptographic salt values in password hashing workflows.",
+      "description_length": 270,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sodium_fmt.Generichash.Bytes",
+      "description": "Formats byte sequences using specific cryptographic conventions, including hash and secret key representations with size validation. Accepts byte arrays as input and applies conditional formatting based on length constraints. Outputs structured strings like (Generichash.hash AAAAAA==) or error indicators for invalid sizes.",
+      "description_length": 324,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sodium_fmt.Generichash.Bigbytes",
+      "description": "Formats cryptographic values using specific encoding rules, including hash and secret key representations with size validation. Operates on `Sodium.bigbytes` values, ensuring proper formatting based on predefined size constraints. Used to safely display cryptographic outputs in a structured, validated manner within security-sensitive applications.",
+      "description_length": 349,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sodium_fmt.Scalar_mult.Bytes",
+      "description": "Formats byte sequences into human-readable representations for specific cryptographic types, validating their length against predefined sizes. It handles group elements and integers, ensuring correct formatting or reporting size mismatches. Used to serialize and debug cryptographic values in a structured, readable format.",
+      "description_length": 323,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sodium_fmt.Scalar_mult.Bigbytes",
+      "description": "Formats cryptographic group elements and integers from a fixed-size byte buffer, validating their length during output. Uses a specific byte-based storage type derived from Sodium's bigbytes implementation. Outputs structured representations like (Scalar_mult.group_elt AAAAAA==) or error indicators for size mismatches.",
+      "description_length": 320,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sodium_fmt.Sign.Bytes",
+      "description": "Formats cryptographic values from byte sequences, validating their length against specific size constants. Outputs structured representations like (Sign.secret_key AAAAAA==) or error indicators for size mismatches. Works with raw byte arrays to ensure correct encoding and validation of cryptographic keys and signatures.",
+      "description_length": 321,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sodium_fmt.Sign.Bigbytes",
+      "description": "Formats cryptographic keys, signatures, and seeds using a specific encoded structure, validating their byte lengths against predefined sizes. Works with the `Sodium.bigbytes` type to ensure correct formatting and error reporting for mismatched sizes. Used to serialize and verify cryptographic data in applications requiring strict byte-length checks.",
+      "description_length": 351,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sodium_fmt.Secret_box.Bytes",
+      "description": "Formats cryptographic values from a bytes storage type, ensuring correct size validation for secret keys and nonces. Secret keys are displayed with a prefix and base64 encoding, while nonces follow a similar pattern. Incorrectly sized values trigger specific error-based formatting.",
+      "description_length": 282,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sodium_fmt.Secret_box.Bigbytes",
+      "description": "Formats cryptographic keys and nonces with size validation, outputting structured strings like (Secret_box.secret_key AAAAAA==) or error indicators for mismatched sizes. Works exclusively with Sodium.bigbytes values, ensuring proper encoding and size checks during formatting. Used to safely represent and debug cryptographic values in serialized outputs.",
+      "description_length": 355,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sodium_fmt.Stream.Bytes",
+      "description": "Formats byte sequences for cryptographic keys and nonces, validating their length against specific size requirements. Outputs structured representations with base64-encoded values or error indicators for size mismatches. Works directly with OCaml's bytes type for efficient binary data handling.",
+      "description_length": 295,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sodium_fmt.Stream.Bigbytes",
+      "description": "Formats cryptographic values like secret keys and nonces, ensuring correct byte lengths and providing structured output with size validation. Works with Sodium.bigbytes to represent raw binary data in a formatted string. Used to safely serialize and validate cryptographic primitives in stream contexts.",
+      "description_length": 303,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sodium_fmt.Auth.Bytes",
+      "description": "Formats a storage value as an authenticated secret key, validating its length against Sodium.Auth.key_size. Works with the bytes type to represent binary data. Used to safely encode and validate cryptographic keys in formatted output.",
+      "description_length": 234,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sodium_fmt.Auth.Bigbytes",
+      "description": "Formats a storage value as an authenticated secret key, validating its length against Sodium.Auth.key_size. Works with Sodium.bigbytes to represent large byte sequences. Used to safely serialize cryptographic keys with explicit size checks.",
+      "description_length": 240,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sodium_fmt.Hash.Bytes",
+      "description": "Formats a bytes value as a hash, checking for correct length and displaying a size mismatch if invalid. Handles byte sequences for cryptographic hash representations. Used to serialize hash values in a standardized, verifiable format.",
+      "description_length": 234,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sodium_fmt.Hash.Bigbytes",
+      "description": "Formats a Sodium.bigbytes value as a hash with specific validation, ensuring correct byte length or indicating mismatches. Works with the storage type, which is an alias for Sodium.bigbytes. Used to consistently represent cryptographic hash values in a structured format within protocol implementations.",
+      "description_length": 303,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sodium_fmt.Box.Bytes",
+      "description": "Formats cryptographic values as strings with specific prefixes and base64-encoded representations, validating their byte lengths against predefined sizes. Works with raw byte sequences to ensure correct formatting for secret keys, public keys, channel keys, and nonces. Used to generate consistent, human-readable representations of cryptographic data for logging or display.",
+      "description_length": 375,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sodium_fmt.Box.Bigbytes",
+      "description": "Formats cryptographic keys and nonces using a specific string representation, validating their size against predefined constants. Works with the `Sodium.bigbytes` type to ensure correct encoding and error reporting for mismatched sizes. Used to serialize Box protocol elements in a structured, size-checked manner.",
+      "description_length": 314,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sodium_fmt.One_time_auth.Bytes",
+      "description": "Formats a storage value as a One_time_auth secret key, validating its length against Sodium.One_time_auth.key_size. Works with bytes type to represent binary data. Used to safely serialize and validate cryptographic key structures in formatted output.",
+      "description_length": 251,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sodium_fmt.One_time_auth.Bigbytes",
+      "description": "Formats cryptographic keys and values using a specific syntax, validating byte sizes for correctness. Works with Sodium.bigbytes to ensure proper encoding and error reporting for key mismatches. Used to serialize and debug cryptographic structures in a structured, human-readable format.",
+      "description_length": 287,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sodium_fmt.Box",
+      "description": "Formats cryptographic values such as secret keys, public keys, channel keys, and nonces using a specific string representation. Validates that each value matches the expected byte length for its type, issuing a size mismatch warning otherwise. Works with the `storage` type, which represents raw byte sequences.",
+      "description_length": 311,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sodium_fmt.Scalar_mult",
+      "description": "Formats binary data as human-readable representations of group elements and integers, validating their byte lengths against predefined sizes. Uses the `storage` type to represent raw byte sequences during formatting. Outputs structured strings like `(Scalar_mult.group_elt AAAAAA==)` or error indicators for size mismatches.",
+      "description_length": 324,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sodium_fmt.Sign",
+      "description": "Formats cryptographic values including secret keys, public keys, signatures, and seeds using a specific encoding. Validates that input data matches expected byte lengths for each type, issuing warnings for mismatches. Works with the `storage` type to ensure proper representation of cryptographic material.",
+      "description_length": 306,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sodium_fmt.Password_hash",
+      "description": "Formats a salt value with a specific prefix and ensures it meets the required byte length for password hashing. Works with the `storage` type, which represents raw byte sequences used in cryptographic operations. Used to validate and display salts in a standardized format during authentication workflows.",
+      "description_length": 305,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sodium_fmt.Secret_box",
+      "description": "Formats secret keys and nonces for cryptographic operations, validating their byte lengths against predefined sizes. Uses a custom `storage` type to represent raw byte sequences. Outputs human-readable representations with size checks, ensuring correct usage in encryption workflows.",
+      "description_length": 283,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sodium_fmt.Stream",
+      "description": "Formats cryptographic keys and nonces from raw byte sequences, validating their length against predefined sizes. Accepts byte arrays of type `storage` and produces human-readable representations with error handling for size mismatches. Used to ensure correct encoding of cryptographic values in stream-based operations.",
+      "description_length": 319,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sodium_fmt.Auth",
+      "description": "Handles cryptographic key operations, validating and formatting secret keys based on exact byte length requirements. Works with the `storage` type, ensuring it matches the expected size for cryptographic safety. Used to enforce key consistency in authentication workflows, such as generating or verifying session tokens.",
+      "description_length": 320,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sodium_fmt.One_time_auth",
+      "description": "Generates and validates one-time authentication tags using a secret key, ensuring message integrity with a fixed-size cryptographic key. It operates on a `storage` type representing binary key data, enforcing a strict size requirement for cryptographic safety. Used to authenticate single-use messages in secure communication protocols where key reuse must be strictly avoided.",
+      "description_length": 377,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sodium_fmt.Hash",
+      "description": "Formats a storage value as a hash string, handling size validation and special formatting for mismatched lengths. Works with the storage type, which represents binary data of a specific size. Used to generate consistent hash representations for cryptographic values in output logs and user-facing messages.",
+      "description_length": 306,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sodium_fmt.Generichash",
+      "description": "Formats byte sequences as hashed values or secret keys using specific encoding rules. Validates input lengths against defined size constraints for hashing and key generation. Used to safely represent and debug cryptographic outputs in a structured, human-readable format.",
+      "description_length": 271,
+      "index": 29,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "sodium-fmt",
+      "description": "Formats values from the Sodium library using Fmt, including byte sequences and bigbyte buffers. It supports direct formatting of Sodium-specific types and provides methods to interpret raw bytes as formatted Sodium values. Used to generate human-readable representations of cryptographic data during debugging or logging.",
+      "description_length": 321,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sodium_fmt",
+      "description": "Provides unified formatting and validation for cryptographic values, including keys, nonces, salts, and hashes, using a shared `storage` type for raw byte sequences. Each module enforces strict byte-length checks, producing structured strings like `(Scalar_mult.group_elt AAAAAA==)` or error indicators when validations fail. Operations include encoding secret keys, generating authentication tags, and formatting salts for secure authentication workflows. Examples include validating a 32-byte secret key, formatting a 64-byte nonce, or generating a hash string with size-specific encoding.",
+      "description_length": 591,
+      "index": 31,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 32,
+    "meaningful_modules": 32,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 591,
+    "min_description_length": 234,
+    "avg_description_length": 313.40625,
+    "embedding_file_size_mb": 0.11658096313476562
+  }
+}

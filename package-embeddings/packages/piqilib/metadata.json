@@ -1,0 +1,637 @@
+{
+  "package": "piqilib",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 88,
+  "creation_timestamp": "2025-06-18T16:51:01.725221",
+  "modules": [
+    {
+      "module_path": "Piqi_db.Idtable.M",
+      "description": "This module supports operations for manipulating key-value structures with string keys and arbitrary values, including insertion, deletion, lookup, and bulk transformations like merging, folding, and filtering. It enables traversal, extraction, and predicate-based searches, along with min/max selection, making it suitable for tasks such as configuration management, data processing, or priority-based data organization. The polymorphic design allows flexibility in handling diverse data types within structured key-value associations.",
+      "description_length": 536,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqi_util.Std.List",
+      "description": "The module offers operations for list traversal, transformation, and comparison, including mapping, filtering, folding, and reversing, with optimized functions like `rev_append` and `rev_map`. It handles lists of tuples and key-value pairs, supporting pairwise processing, sorting, merging, and splitting into separate lists. Use cases include data transformation, structured data manipulation, and efficient list operations in algorithms requiring element-wise processing or tuple-based computations.",
+      "description_length": 501,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqi_db.Idtable",
+      "description": "manages string-keyed, value-agnostic mappings with insertion, deletion, and lookup, while supporting complex operations like merging, folding, and filtering. it provides traversal, extraction, and predicate-based queries, along with min/max selection based on value comparisons. users can process configurations, manage dynamic data, or organize priority-based structures. examples include merging multiple tables, filtering entries by key patterns, and extracting the highest-value entry.",
+      "description_length": 489,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqi_objstore.Int",
+      "description": "Compares two integer values, returning -1, 0, or 1 based on their order. Operates on the built-in integer type. Used to sort lists of integers or determine equality in custom data structures.",
+      "description_length": 191,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_objstore.M",
+      "description": "This module offers operations for managing generic key-value stores, including insertion, deletion, membership checks, and transformations via folding, filtering, and mapping. It works with a polymorphic type 'a t, where keys are specifically defined as integers (Int.t), enabling structured data manipulation. Use cases include configuration management, caching systems, or data processing pipelines requiring efficient key-based access and modification.",
+      "description_length": 455,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_piqi.Piqi_piqi",
+      "description": "The module provides type aliases and data structures for numeric, binary, and string data, alongside PIQI schema elements like records, fields, and enums, supporting serialization and schema modeling. It operates on OCaml's built-in types, Piqi-specific types, and abstract syntax tree nodes to represent data formats and schema components. These are applied in protocol buffer and PIQI serialization to enable structured data handling and format specifications.",
+      "description_length": 462,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_piqi.Record",
+      "description": "type t = { id: int; name: string; timestamp: float } Provides functions to create records with validated IDs, update timestamps, and serialize to JSON. Operates on structured data containing identifiers, textual labels, and numeric time values. Used to manage event logs where each entry must have a unique identifier and a precise capture time.",
+      "description_length": 345,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqi_piqi.Field",
+      "description": "type t = { x : int; y : int; mutable value : int } Provides operations to update and retrieve the value of a grid cell, calculate distance between cells, and check if a cell is within specified bounds. Works with grid-based data structures representing 2D spatial coordinates. Used to manage game board states and perform localized grid transformations.",
+      "description_length": 353,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_piqi.Variant",
+      "description": "type t = { name : string; value : int; is_active : bool } Provides functions to create, update, and query records with string names, integer values, and boolean flags. Includes methods to filter active entries and transform values using custom mappings. Used to manage configuration settings where each entry has a labeled value and status.",
+      "description_length": 340,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_piqi.Option",
+      "description": "Provides functions to map, bind, and fold over optional values, including `map`, `bind`, and `value` for extracting the underlying value. Works with the `t` type, which represents a value that may be absent. Used to safely handle computations that may fail or return no result, such as looking up a key in a dictionary or parsing a string to an integer.",
+      "description_length": 353,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqi_piqi.Enum",
+      "description": "Provides functions to iterate over, transform, and filter lists and arrays, including map, filter, and fold operations. Works with list and array data structures, enabling efficient processing of sequential data. Used to generate transformed versions of datasets, such as converting string lists to uppercase or aggregating numeric values.",
+      "description_length": 339,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_piqi.Alias",
+      "description": "type t = { name : string; value : string } Provides functions to create, retrieve, and compare aliases, including parsing from a string format and checking equality based on the name field. Operates on structured data containing string-based identifiers and their corresponding values. Used to manage configuration mappings where each alias must uniquely reference a specific value.",
+      "description_length": 382,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqi_piqi.Piqi_list",
+      "description": "Provides functions to manipulate lists with custom equality and hashing, including filtering, mapping, and checking membership. Works with lists of any type that supports the `equal` and `hash` operations. Used to process structured data streams where precise list comparisons are required.",
+      "description_length": 290,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqi_piqi.Piqi",
+      "description": "Provides functions to parse, serialize, and manipulate data in the Piqi format, including converting between Piqi and OCaml types. Works with structured data represented as records, variants, and nested types. Used to handle protocol buffers and schema definitions in distributed systems.",
+      "description_length": 288,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqi_piqi.Import",
+      "description": "type t = { name: string; path: string; content: string } Provides functions to parse, validate, and load structured data from external sources, including reading file contents, checking format compliance, and constructing in-memory representations. Operates on strings, files, and custom record types to support configuration and data import workflows. Used to integrate external JSON or CSV data into application state by transforming raw input into typed records.",
+      "description_length": 465,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqi_piqi.Any",
+      "description": "Provides functions to create, compare, and serialize values of type t, which represents structured data with named fields. Includes operations to extract specific fields and check for the presence of required attributes. Used to validate and process configuration objects in application setup workflows.",
+      "description_length": 303,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_piqi.Func",
+      "description": "Provides functions to compose, apply, and manipulate unary and binary functions, including currying, partial application, and function chaining. Works with function types such as 'a -> 'b and 'a -> 'b -> 'c. Enables creating reusable transformation pipelines for data processing tasks like parsing, filtering, and mapping over lists.",
+      "description_length": 333,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_piqi.Piqi_bundle",
+      "description": "type t = { name : string; contents : string list; metadata : (string * string) list } Provides functions to create, inspect, and manipulate bundles containing named collections of strings and key-value metadata. Operates on structured data with hierarchical and labeled components. Used to package and transport configuration snippets or small data sets within applications.",
+      "description_length": 374,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_impl_piqi.Piqi_impl_piqi",
+      "description": "This module provides functions for type normalization, schema structuring, and structural composition, focusing on PIQI schema elements. It operates on primitive data types, abstract syntax tree (AST) components, and domain-specific constructs like records, enums, and variant types, enabling precise control over data serialization. Specific use cases include defining reusable schema components, managing inheritance through \"extend\" operations, and ensuring consistent type representations in protocol definitions.",
+      "description_length": 517,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_impl_piqi.Pib_typehint",
+      "description": "type t = { name : string; type_ : string; required : bool; default : string option } Provides functions to parse and validate type hints from comments, extract structured metadata, and check compliance with defined schemas. Operates on strings and nested associative lists representing parsed documentation. Used to enforce consistent parameter and return type annotations in generated code.",
+      "description_length": 391,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqi_impl_piqi.Record",
+      "description": "type t = { id: int; name: string; value: float } Provides functions to create records with validated fields, extract specific fields, and convert records to JSON format. Operates on structured data containing integer, string, and floating-point values. Used to manage configuration settings in a game engine, where each record represents an in-game item with unique identifiers and numerical properties.",
+      "description_length": 403,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqi_impl_piqi.Field",
+      "description": "type t = { x : int; y : int; mutable value : int } Provides operations to update and retrieve the value of a grid cell, calculate distance between cells, and check if a cell is within specified bounds. Works with grid-based data structures represented as a 2D array of cells. Used to manage game board states and perform spatial queries in a turn-based strategy game.",
+      "description_length": 367,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_impl_piqi.Variant",
+      "description": "type t = { name : string; value : int; is_active : bool } Provides functions to create, update, and compare records based on name, value, and activation status. Works with structured data containing string, integer, and boolean fields. Used to manage configuration settings where each entry has a unique identifier and status flag.",
+      "description_length": 331,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_impl_piqi.Option",
+      "description": "Provides functions to map, bind, and fold over optional values, including `map`, `bind`, and `fold`. Works with the `t` type, which represents values that may be absent. Used to safely handle computations that might fail or return no result, such as looking up a key in a dictionary or parsing a string to an integer.",
+      "description_length": 317,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_impl_piqi.Enum",
+      "description": "Provides functions to iterate over, transform, and filter lists and arrays, including map, filter, and fold operations. Works with list and array data structures, enabling efficient processing of sequential data. Used to generate derived values from collections, such as computing sums or extracting subsets based on predicates.",
+      "description_length": 328,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_impl_piqi.Alias",
+      "description": "type t = { name : string; value : int } Provides functions to create, compare, and retrieve fields of records representing named values. Operates on tuples of strings and integers to map aliases to numeric identifiers. Used to manage configuration mappings where string keys correspond to integer constants.",
+      "description_length": 307,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqi_impl_piqi.Piqi_list",
+      "description": "Provides functions to manipulate lists with custom equality and hashing, including filtering, mapping, and checking membership. Works with lists of any type that supports the `equal` and `hash` operations. Used to process structured data streams where list elements need precise comparison and efficient lookup.",
+      "description_length": 311,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_impl_piqi.Piqi",
+      "description": "Provides functions to parse, serialize, and manipulate data in the Piqi format, including conversion between Piqi and OCaml types. Works with structured data represented as records, variants, and nested types. Used to handle protocol buffers and Piqi schema definitions in network communication and data interchange scenarios.",
+      "description_length": 326,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_impl_piqi.Import",
+      "description": "type t = { name: string; path: string; content: string } Provides functions to parse, validate, and transform import declarations from source code, working with structured data representing module imports. Processes and resolves relative and absolute paths, and extracts metadata from import statements. Used to generate dependency graphs and analyze module relationships in static analysis tools.",
+      "description_length": 397,
+      "index": 28,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqi_impl_piqi.Any",
+      "description": "Provides functions to create, compare, and serialize values of type t, which represents structured data with named fields. Includes operations to extract specific fields and check for the presence of required attributes. Used to validate and process configuration objects in system initialization workflows.",
+      "description_length": 307,
+      "index": 29,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqi_impl_piqi.Func",
+      "description": "Provides functions to compose, apply, and manipulate unary and binary functions, including currying, partial application, and function chaining. Works with function types such as 'a -> 'b and 'a -> 'b -> 'c. Used to create reusable transformation pipelines in data processing workflows.",
+      "description_length": 286,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_impl_piqi.Piqi_bundle",
+      "description": "type t = { name : string; contents : string list; metadata : (string * string) list } Provides functions to create, parse, and manipulate bundled data structures, including adding, retrieving, and serializing content and metadata. Operates on strings and associative lists to manage structured data collections. Used to package configuration files and binary data into a single, transportable unit for deployment or logging.",
+      "description_length": 424,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_impl_piqi.Includ",
+      "description": "Provides functions to parse and manipulate inclusion directives in source code, including checking for duplicate inclusions and extracting file paths. Works with structured data representing source files and their included dependencies. Used to enforce inclusion policies and prevent circular dependencies in codebases.",
+      "description_length": 319,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_impl_piqi.Extend",
+      "description": "Provides functions to manipulate and combine time intervals represented as records with start and end timestamps. Includes operations for merging overlapping intervals, checking for overlaps, and calculating the union of multiple intervals. Used in scheduling systems to manage and resolve time conflicts.",
+      "description_length": 305,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqi_piqirun.List",
+      "description": "This module offers a range of list operations including traversal, transformation, and comparison, with functions for filtering, mapping, folding, and element-wise manipulation. It works with lists, sequences, and key-value pairs, enabling tasks like data aggregation, conditional selection, and ordered processing. Specific use cases include building pipelines for data transformation, performing pairwise operations, and managing structured data through association lookups.",
+      "description_length": 476,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_piqirun.IBuf",
+      "description": "Provides operations to create and manipulate buffered input data, including converting from channels or strings, retrieving position and size, reading bytes and blocks, and handling errors. Works with a custom buffer type that encapsulates input data and tracking state. Used to efficiently process large input streams or parse structured data from raw byte sequences.",
+      "description_length": 368,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_piqirun.OBuf",
+      "description": "Provides operations to construct and manipulate buffer-like structures from strings, characters, and lists, and to convert them to strings, buffers, or output channels. Works with a custom type `t` representing aggregated data segments. Used to efficiently build and output concatenated data streams, such as assembling HTTP headers or binary payloads.",
+      "description_length": 352,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piq_piqi.Piq_piqi",
+      "description": "Parses and serializes data using a binary format, handling numeric types, strings, and structured data with location tracking. It processes nested lists, named fields, and type annotations, supporting efficient data transformation. Used for converting between in-memory representations and compact binary encodings in protocol implementations.",
+      "description_length": 343,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piq_piqi.Piq_node",
+      "description": "type t = { id : int; name : string; children : t list; attributes : (string * string) list } Provides functions to create nodes with unique identifiers, retrieve and modify child nodes, and access attribute key-value pairs. Operates on hierarchical tree structures where each node contains a name, unique ID, and associated attributes. Used to build and manipulate XML-like data structures in parsing and serialization workflows.",
+      "description_length": 429,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piq_piqi.Loc",
+      "description": "type t = { line : int; col : int; pos : int } Provides operations to create, compare, and manipulate source code positions, including converting to and from integer offsets. Works with line, column, and absolute position data to track locations in text. Used to generate error messages with precise location information during parsing or lexing.",
+      "description_length": 345,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piq_piqi.Named",
+      "description": "Provides functions to create, compare, and serialize named entities with unique identifiers. Works with a record type containing an identifier and a name string. Used to manage user profiles in a system requiring deterministic key generation and equality checks.",
+      "description_length": 262,
+      "index": 40,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piq_piqi.Splice",
+      "description": "Provides functions to merge, split, and transform lists of tokens, with support for inserting and removing elements at specific positions. Works with list structures containing token representations, including ranges and annotations. Used to modify abstract syntax trees during code generation or transformation pipelines.",
+      "description_length": 322,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piq_piqi.Typed",
+      "description": "type t = { id : int; name : string; value : float } Provides functions to create, compare, and serialize instances with unique identifiers, string labels, and numeric values. Operates on structured records containing integer, string, and floating-point fields. Used to manage configuration settings in a system that requires persistent storage and exact matching of named parameters.",
+      "description_length": 383,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piq_ast.Piq_ast",
+      "description": "Provides functions to parse and manipulate abstract syntax trees representing Piqi schema definitions, including operations to extract form names, traverse nodes, and validate structure. Works with custom data types such as `ast` for schema elements and `form_name` for identifier resolution. Used to generate type-safe representations of Piqi schemas for code generation and validation tasks.",
+      "description_length": 393,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piq_ast.Typed",
+      "description": "type t = { id : int; name : string; value : float } Provides functions to create, compare, and serialize instances with unique identifiers, string labels, and numeric values. Operates on structured records containing integer, string, and float fields. Used to manage configuration settings where each entry must have a distinct identifier and associated metadata.",
+      "description_length": 363,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piq_ast.Named",
+      "description": "Provides functions to create, compare, and serialize named entities with unique identifiers. Works with a record type containing a string name and an integer identifier. Used to manage user-defined labels in a configuration system, ensuring uniqueness and efficient lookup.",
+      "description_length": 273,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqobj.Piqobj",
+      "description": "Provides functions to serialize and deserialize data between OCaml values and Piqi format, supporting records, variants, enums, lists, and options. Works with custom types defined in Piqi schemas, enabling precise control over field names and encoding rules. Used to generate efficient, type-safe data exchange layers between OCaml applications and external systems.",
+      "description_length": 366,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqobj.Record",
+      "description": "type t = { id: int; name: string; value: float } Provides functions to create records with validated fields, extract specific fields, and convert records to JSON format. Operates on structured data containing integer, string, and floating-point values. Used to manage user profile data in a data processing pipeline.",
+      "description_length": 316,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqobj.Field",
+      "description": "type t = { x : int; y : int; mutable value : int } Provides operations to update the value of a grid cell, retrieve its coordinates, and check if it lies within a specified rectangular area. Works with grid-based data structures representing a 2D space. Used to manage interactive game tiles that respond to user input and change state dynamically.",
+      "description_length": 348,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqobj.Variant",
+      "description": "type t = { name : string; value : int; is_active : bool } Provides functions to create, update, and check the state of records with named values and boolean flags. Operates on structured data containing string identifiers, integer values, and status indicators. Used to manage configuration settings where each entry has a label, numeric value, and activation status.",
+      "description_length": 367,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqobj.Enum",
+      "description": "Provides functions to iterate over, transform, and filter lists and arrays, including map, filter, and fold operations. Works with list and array data structures, enabling efficient processing of sequential data. Used to generate transformed versions of input collections, such as converting strings to uppercase or extracting specific elements from a dataset.",
+      "description_length": 360,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqobj.Option",
+      "description": "Provides functions to map, bind, and fold over optional values, including `map`, `bind`, and `fold`. Works with the `t` type, which represents values that may be absent. Enables safe handling of potentially missing data, such as parsing JSON fields or retrieving elements from a list.",
+      "description_length": 284,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqobj.List",
+      "description": "Provides functions to manipulate lists, including mapping, filtering, folding, and concatenation. Works with the built-in list type, supporting operations that transform elements or aggregate values. Used to process sequences of data, such as filtering valid entries from a dataset or accumulating results from a computation.",
+      "description_length": 325,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqobj.Alias",
+      "description": "type t = { name : string; email : string; alias_of : string option } Provides functions to create, validate, and resolve email aliases, including checking if an alias points to another alias. Works with structured data containing names, emails, and optional parent aliases. Used to manage email routing in a mail server by resolving chains of aliases to their final destination.",
+      "description_length": 378,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqobj.Any",
+      "description": "Provides functions to create, compare, and serialize values of type t, which represents structured data with named fields. Includes operations to extract specific fields and check for the presence of required attributes. Used to validate and process configuration records in application setup workflows.",
+      "description_length": 303,
+      "index": 54,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqi_util.Std",
+      "description": "Provides list traversal, transformation, and comparison with functions like map, filter, fold, and rev_append, supporting tuples and key-value pairs. Enables pairwise processing, sorting, merging, and splitting of lists into separate components. Operations include rev_map for transformed reversals and efficient element-wise manipulations. Examples include converting lists of pairs into separate lists, sorting by tuple elements, and merging sorted lists.",
+      "description_length": 457,
+      "index": 55,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqi_json_parser.Lexing",
+      "description": "Provides functions to create and manipulate lexer buffers, extract matched text and its positions, and manage input sources like channels and strings. Works with lexbuf type for tracking input state and position type for source location metadata. Used to access the current token's characters, offsets, and line information during lexical analysis.",
+      "description_length": 348,
+      "index": 56,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "piqilib",
+      "description": "Converts between various data formats including JSON, XML, and Protocol Buffers using schema definitions. Processes schema files to generate code and perform data serialization/deserialization. Enables precise control over data representation and transformation workflows.",
+      "description_length": 272,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_db",
+      "description": "Provides a framework for managing and manipulating key-value stores with flexible operations. It supports insertion, deletion, and lookup of arbitrary values using string keys, along with advanced functions like merging, folding, filtering, and min/max selection. Users can process configurations, organize dynamic data, or build priority structures by applying predicates, key patterns, or value comparisons. Examples include combining multiple mappings, extracting specific entries, or identifying the highest-value item.",
+      "description_length": 523,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqobj_to_protobuf",
+      "description": "The module provides a framework for converting Piqobj data structures into Protocol Buffer formats. It includes basic type definitions for representing message fields and encoding rules. Users can define mappings between Piqobj schemas and protobuf messages, enabling structured data serialization. Example use cases include generating protobuf messages from Piqobj inputs and validating field conversions.",
+      "description_length": 406,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_convert",
+      "description": "Provides a set of utilities for converting between different data formats. Includes basic type definitions and helper functions for serialization and deserialization. Supports operations such as converting between JSON, ProtoBuf, and XML formats. Enables straightforward integration of data transformation workflows.",
+      "description_length": 316,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_base64",
+      "description": "Encodes and decodes strings using Base64 transformation. Operates on raw string data to convert between binary and text representations. Used to prepare data for transmission over media that handle text only.",
+      "description_length": 208,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_json_gen",
+      "description": "is a utility for generating JSON-related code, focusing on type definitions and serialization routines. It includes basic type declarations such as json_value and functions for converting between OCaml values and JSON representations. Users can define custom JSON encoders and decoders for their data types. It supports generating boilerplate code for common JSON operations.",
+      "description_length": 375,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_c",
+      "description": "Converts a string to an 64-bit unsigned integer using base 10. Handles numeric strings with potential leading zeros and ensures overflow checks. Used for parsing numeric fields from text-based data formats with strict type safety.",
+      "description_length": 230,
+      "index": 63,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqobj_to_json",
+      "description": "The module provides a direct conversion pathway from Piqobj representations to JSON format. It relies on underlying types such as Piqobj values and JSON-encoded strings, enabling seamless serialization. Operations include parsing Piqobj structures and outputting valid JSON. This allows for easy integration of Piqobj data into systems that require JSON input.",
+      "description_length": 360,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_xml_type",
+      "description": "Provides functions to parse and serialize XML data, including converting between XML elements and their string representations. Works with custom types such as `xml` and `xml_elem`, which represent XML nodes and their attributes. Used to generate and process XML structures in protocol buffer and message encoding scenarios.",
+      "description_length": 324,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_objstore",
+      "description": "Compares integer values and manages integer-keyed key-value stores, offering sorting, equality checks, insertion, deletion, and data transformation. The core data types include integers and a polymorphic key-value store type 'a t. Operations like folding and mapping enable complex data processing, while comparisons support ordered data structures and efficient lookups. Examples include sorting integer lists, maintaining configuration settings, or building in-memory caches with integer identifiers.",
+      "description_length": 502,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_light",
+      "description": "Provides a minimal interface for working with Piqi data formats, focusing on core type definitions and basic serialization. Includes type aliases for common data structures and operations for converting between formats. Supports parsing and generating Piqi-compatible data in various representations. Can be used to define and manipulate structured data with lightweight dependencies.",
+      "description_length": 384,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_protobuf",
+      "description": "The module provides a set of utilities for working with Protocol Buffers data formats. It includes basic data types such as messages, fields, and options, along with operations for parsing, serializing, and manipulating protocol buffer definitions. Users can construct and validate message structures, extract field information, and convert between different representation formats. It supports tasks like generating code from schema definitions and inspecting message layouts at runtime.",
+      "description_length": 488,
+      "index": 68,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqi_piqi",
+      "description": "Combines type definitions and operations for structured data, including records, grids, configurations, and optional values, along with functions for serialization, transformation, and validation. Supports numeric, string, and binary data, as well as grid coordinates, event logs, and configuration mappings, enabling tasks like updating timestamps, checking bounds, filtering active entries, and parsing external data. Provides utilities for list manipulation, function composition, and working with Piqi schema elements to handle protocol buffer and schema-based data formats. Examples include serializing event records to JSON, managing game board states, and validating configuration objects with named fields.",
+      "description_length": 714,
+      "index": 69,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqi_version",
+      "description": "Provides a function to retrieve the current version string of the Piqi library. Works with string data types to expose version information. Used to dynamically check the library version at runtime for compatibility verification.",
+      "description_length": 228,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_pp",
+      "description": "Provides a set of utilities for pretty-printing Piqi data structures. Includes basic types such as strings, lists, and options, along with functions for formatting and outputting structured data. Supports custom formatting rules and integrates with Piqi's serialization framework. Can generate human-readable representations of Piqi schemas and data instances.",
+      "description_length": 360,
+      "index": 71,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqi_impl_piqi",
+      "description": "Combines type normalization, schema structuring, and data manipulation capabilities, supporting primitive types, AST components, and domain-specific constructs like records, enums, and variant types. Offers operations to parse and validate metadata, manage grid cells, handle optional and list-based data, and serialize structured data in Piqi format. Specific tasks include defining reusable schema elements, validating configuration settings, and processing time intervals. Functions enable safe computation with optional values, transform lists, and manage dependencies in code analysis.",
+      "description_length": 590,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_piqirun",
+      "description": "offers list, buffer, and string manipulation capabilities through custom data types, enabling efficient data processing, transformation, and output. It supports list operations like mapping and folding, buffer management for input and output streams, and string aggregation with flexible conversion options. Tasks include parsing byte sequences, building data pipelines, and constructing structured outputs like HTTP headers. Functions handle both sequential and indexed data access, with support for error tracking and state management.",
+      "description_length": 537,
+      "index": 73,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqobj_of_json",
+      "description": "The module provides a direct mapping from JSON values to Piqobj representations, enabling structured data conversion. It includes basic types such as integers, strings, and lists, along with operations to parse and transform JSON inputs. Users can convert JSON objects into Piqobj records and handle nested data structures. For example, a JSON object with embedded arrays can be translated into a corresponding Piqobj structure with typed fields.",
+      "description_length": 446,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_utf8",
+      "description": "Provides operations for processing UTF-8 encoded strings, including calculating code point widths, extracting code points, and converting between strings and integer arrays. Works with strings, integer arrays, and character streams to handle encoding and decoding tasks. Used to parse UTF-8 data from streams, compute character lengths, and convert between representations for text processing.",
+      "description_length": 393,
+      "index": 75,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqi_boot",
+      "description": "Provides access to preloaded Piqi schema definitions for specification and language constructs. Works with Piqi_impl_piqi.Piqi.t data structures representing parsed schema data. Used to initialize and reference standard schema formats in protocol buffer and data interchange workflows.",
+      "description_length": 285,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqobj_of_protobuf",
+      "description": "provides a set of utilities for converting Protocol Buffer data into Piqobj format, offering direct access to underlying types and operations. It includes basic type definitions such as `t` and functions like `of_protobuf` for data transformation. Users can serialize and deserialize structured data between protocol buffer and Piqobj representations. Example use cases include integrating with existing protobuf-based systems or processing binary data in a more structured format.",
+      "description_length": 481,
+      "index": 77,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piq_piqi",
+      "description": "handles binary serialization and parsing of structured data, including numeric types, strings, and nested hierarchies, with support for location tracking and efficient data transformation. it manages tree-like structures with nodes containing identifiers, names, children, and attributes, and provides tools to manipulate source code positions and token lists. it also supports creating and serializing entities with unique IDs and structured records with numeric values. examples include building XML-like data, generating error messages with precise locations, and managing configuration parameters with exact matches.",
+      "description_length": 620,
+      "index": 78,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piq_ast",
+      "description": "combines parsing, manipulation, and serialization capabilities for structured data, including schema definitions, configuration records, and named entities. It handles types such as `ast`, `form_name`, and custom records with fields like `id`, `name`, and `value`, supporting operations like traversal, validation, and comparison. Users can extract form names from schema trees, manage configuration entries with unique identifiers, and ensure consistent labeling in system configurations. Examples include generating type-safe schema representations, serializing structured settings, and enforcing unique entity labels.",
+      "description_length": 620,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_iolist",
+      "description": "Produces and manipulates iolists, which are nested lists of strings and characters, supporting concatenation, indentation, and conversion to buffers, strings, and channels. Provides operations to build structured output, such as adding line breaks, escaping quotes, and formatting data for serialization. Used to efficiently construct and output protocol buffer or Piqi-encoded data in a readable format.",
+      "description_length": 404,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_getopt",
+      "description": "is a utility for parsing command-line options, offering a structured way to define and process flags and arguments. It includes types for option definitions, parsing results, and error handling, along with operations to configure and execute the parsing process. Users can define custom options, validate input, and extract values in a type-safe manner. For example, it can parse --verbose flags or --input files from a command line.",
+      "description_length": 433,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqobj",
+      "description": "combines serialization and data manipulation capabilities, offering type-safe conversion between OCaml and Piqi formats, record operations for structured data, grid cell management, configuration handling, list transformations, and optional value processing. It supports types like records with integer, string, and float fields, grid cells with coordinates, configuration entries, and optional values, enabling tasks such as validating user profiles, updating game tiles, and resolving email aliases. Functions include creating, extracting, updating, and converting data, as well as iterating over lists and handling missing values. Examples include generating JSON from records, checking if a grid cell is within bounds, and filtering lists based on conditions.",
+      "description_length": 763,
+      "index": 82,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqi_util",
+      "description": "Traverses, transforms, and compares lists using map, filter, fold, and rev_append, with support for tuples and key-value pairs. Enables pairwise processing, sorting, merging, and splitting of lists into components, along with rev_map for efficient reversed transformations. Converts lists of pairs into separate lists, sorts by tuple elements, and merges sorted lists. Operations handle element-wise manipulations and maintain efficiency in list processing tasks.",
+      "description_length": 463,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_json_parser",
+      "description": "handles input source management and lexical state tracking, offering tools to process text streams and extract positional data during parsing. it defines lexbuf for tracking input state and position for source location metadata, enabling precise control over token extraction. functions include creating buffers, managing input channels, and retrieving matched text with offset and line information. this supports detailed analysis of input streams during lexical processing.",
+      "description_length": 475,
+      "index": 84,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqi_json_type",
+      "description": "Provides functions to convert between Piqi type definitions and JSON representations. Works with the `json` type, which includes variants for null, boolean, number, string, list, and object structures. Used to serialize and deserialize type definitions for interoperability with JSON-based tools and configurations.",
+      "description_length": 315,
+      "index": 85,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Piqi_file",
+      "description": "Provides functions to manipulate file paths and extensions, including stripping various types of extensions, extracting base and directory names, and constructing OS-specific paths. Works with string representations of file names and paths, supporting operations like finding PIQI files in specified directories. Used to process and locate PIQI schema files during build or conversion workflows.",
+      "description_length": 395,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Piqobj_to_piq",
+      "description": "The module provides a direct conversion pathway from Piqobj representations to Piq format. It relies on underlying definitions for data serialization and transformation. Basic types such as integers, strings, and nested structures are translated without modification. It enables straightforward output of Piq data from existing Piqobj inputs.",
+      "description_length": 342,
+      "index": 87,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 180,
+    "meaningful_modules": 88,
+    "filtered_empty_modules": 92,
+    "retention_rate": 0.4888888888888889
+  },
+  "statistics": {
+    "max_description_length": 763,
+    "min_description_length": 191,
+    "avg_description_length": 384.6363636363636,
+    "embedding_file_size_mb": 0.3201160430908203
+  }
+}

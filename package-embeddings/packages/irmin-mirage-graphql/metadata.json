@@ -1,0 +1,924 @@
+{
+  "package": "irmin-mirage-graphql",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 129,
+  "creation_timestamp": "2025-06-18T16:52:39.251364",
+  "modules": [
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Commit.Node.Val.Metadata",
+      "description": "Provides functions to create, retrieve, and merge metadata objects. Works with the `t` type, representing structured metadata. Used to combine metadata during version control operations, ensuring consistent state representation.",
+      "description_length": 228,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Commit.Node.Contents.Key",
+      "description": "Provides operations to convert a key to a hash value and define the type of key used in storage. Works with the `t` type representing a key and the `hash` type for unique identifiers. Used to generate hash representations for keys in versioned data systems.",
+      "description_length": 257,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Commit.Node.Contents.Val",
+      "description": "Provides functions to handle versioned values, including a type `t` representing values and a merge function that resolves conflicts during merges, returning `None` to indicate deletion or `Conflict` when values are incompatible. Works with `t` as the core data type and integrates with Irmin's merge logic. Used to manage consistent state updates in distributed systems where value conflicts must be explicitly handled.",
+      "description_length": 420,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Commit.Node.Contents.Hash",
+      "description": "Computes a deterministic store key from a string and generates a compact integer hash for use in OCaml Hashtbl. Operates on string values and produces fixed-size hash values. Used to create unique identifiers for data in versioned storage systems.",
+      "description_length": 247,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Commit.Node.Val.Metadata",
+      "description": "Provides functions to create, retrieve, and merge metadata objects. Operates on the `t` type, which represents structured metadata. Used to combine metadata from different sources during data synchronization.",
+      "description_length": 208,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Commit.Node.Contents.Key",
+      "description": "Provides operations to convert a key to a hash value and define the type of key used in storage. Works with the `t` type representing a key and the `hash` type for unique identifiers. Used to generate hash representations for keys in data persistence workflows.",
+      "description_length": 261,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Commit.Node.Contents.Val",
+      "description": "Provides operations to define and merge values, including a merge function that handles conflicts and deletions when combining different versions of a value. Works with the `t` type, which represents a value in a versioned store. Used to resolve discrepancies between different branches when updating or combining data.",
+      "description_length": 319,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Commit.Node.Contents.Hash",
+      "description": "Computes a deterministic store key from a string and generates a compact integer hash for use in OCaml hashtables. Operates on string values and produces fixed-size hash values of 32 bytes. Used to create unique identifiers for data in versioned storage systems.",
+      "description_length": 262,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Commit.Node.Key",
+      "description": "Provides operations to convert a key to a hash value and retrieve the type representation of a key. Works with the `t` type, which represents a key, and the `hash` type, which is a cryptographic hash. Used to generate unique identifiers for key-based data in versioned storage systems.",
+      "description_length": 285,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Commit.Node.Path",
+      "description": "Creates and manipulates sequences of steps representing node paths. Operates on lists of steps and path structures, supporting operations like prepending, appending, and mapping over elements. Used to construct and analyze hierarchical data structures in version control systems.",
+      "description_length": 279,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Commit.Node.Metadata",
+      "description": "Handles metadata merging using a custom merge function, with support for default values and type representation. Operates on a specific `t` type representing node metadata. Used to combine metadata from different sources during repository operations.",
+      "description_length": 250,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Commit.Node.Val",
+      "description": "Manages structured metadata through creation, retrieval, and merging operations on the `t` type. Supports version control by maintaining consistent state representations across changes. Allows combining metadata from multiple sources into a unified structure. Enables tracking of properties like timestamps, authors, and revision numbers.",
+      "description_length": 338,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Commit.Node.Hash",
+      "description": "Computes a deterministic store key from a string and generates a compact integer hash for use in OCaml Hashtbl. Operates on string values and produces fixed-size hash values. Used to create unique identifiers and optimize hash table lookups.",
+      "description_length": 241,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Commit.Node.Contents",
+      "description": "Encapsulates key hashing, versioned value management, and string-based identifier generation. Supports operations on `t` for keys, values, and hash computations, with merge logic for resolving conflicts. Converts strings to compact integer hashes for efficient storage and retrieval. Enables consistent data management in distributed systems by generating unique identifiers and handling value conflicts.",
+      "description_length": 404,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Node.Val.Metadata",
+      "description": "Provides functions to create, retrieve, and merge metadata objects. Works with the `t` type, representing structured metadata. Used to combine metadata during version control operations, ensuring consistent attribute propagation.",
+      "description_length": 229,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Node.Contents.Key",
+      "description": "Provides operations to convert a key to a hash value and define the type of keys used in storage. Works with the `t` type representing keys and the `hash` type for unique identifiers. Used to generate hash representations for key-based data structures in persistent storage systems.",
+      "description_length": 282,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Node.Contents.Val",
+      "description": "Provides operations to represent and merge values, including a type for storing values and a merge function that handles conflicts and deletions. Works with the `t` type, which encapsulates value data, and supports merging scenarios where values may be absent or conflicting. Used to resolve discrepancies in value states during version control operations.",
+      "description_length": 356,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Node.Contents.Hash",
+      "description": "Computes a deterministic store key from a string and generates a compact integer hash for use in OCaml Hashtbl. Operates on string values and produces fixed-size hash values. Used to create unique identifiers for data in versioned storage systems.",
+      "description_length": 247,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Commit.Node.Key",
+      "description": "Provides operations to convert a key to a hash value and define the type of key used in storage systems. Works with the `t` type representing a key and the `hash` type for unique identifiers. Used to generate hash representations for key-based data retrieval and storage.",
+      "description_length": 271,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Commit.Node.Path",
+      "description": "Creates and manipulates sequences of steps representing node paths. Operates on lists of steps and path structures, supporting operations like prepending, appending, and mapping over elements. Used to build and traverse hierarchical data structures in version control systems.",
+      "description_length": 276,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Commit.Node.Metadata",
+      "description": "Handles metadata merging using a custom merge function, with support for default values and type representation. Operates on the `t` type, which encapsulates node metadata. Used to combine metadata from different branches during repository operations.",
+      "description_length": 251,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Commit.Node.Val",
+      "description": "Manages structured metadata through creation, retrieval, and merging operations on the `t` type. Supports combining metadata from multiple sources during synchronization workflows. Allows for precise manipulation and aggregation of metadata attributes. Example tasks include appending additional fields to existing metadata or consolidating version information from separate data entries.",
+      "description_length": 388,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Commit.Node.Hash",
+      "description": "Computes a deterministic store key from a string and generates a compact integer hash for use in OCaml Hashtbl. Operates on string values and produces fixed-size hash values. Used to create unique identifiers for data in versioned storage systems.",
+      "description_length": 247,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Commit.Node.Contents",
+      "description": "Encapsulates key and value management for versioned storage, handling hash generation, value merging, and key conversion. It operates on `t` types for keys and values, producing 32-byte hashes from strings and resolving conflicts during merges. Functions include key-to-hash conversion, value merging with conflict resolution, and deterministic key generation. This enables efficient data persistence, version control, and unique identifier creation in OCaml-based storage systems.",
+      "description_length": 481,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Node.Val.Metadata",
+      "description": "Provides functions to create, retrieve, and merge metadata objects. Works with the `t` type, representing structured metadata. Used to combine metadata during version control operations, ensuring consistent state representation.",
+      "description_length": 228,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Node.Contents.Key",
+      "description": "Provides operations to convert a key to a hash value and define the type of key used in Irmin. Works with the `t` type representing a key and the `hash` type for unique identifiers. Used to generate hash representations for keys in version control contexts.",
+      "description_length": 257,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Node.Contents.Val",
+      "description": "Provides functions to define and merge values representing atomic data. Works with the `t` type, which encapsulates a single value. Used to handle conflicts during repository merges by evaluating whether two values can be combined or if a conflict arises.",
+      "description_length": 255,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Node.Contents.Hash",
+      "description": "Computes a deterministic store key from a string and generates a compact integer hash for use in OCaml Hashtbl. Operates on string values and produces fixed-size hash values. Used to create unique identifiers for data storage and efficient hashing in hash tables.",
+      "description_length": 263,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Tree.Private.Env",
+      "description": "Provides operations to check if a collection of environment variables is empty and to retrieve a type representation for Irmin. Works with the `t` type, which represents environment variables. Used to validate and serialize environment configurations in a versioned storage system.",
+      "description_length": 281,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Branch.Key",
+      "description": "Provides operations to validate and identify key values used in branch management. Works with the `t` type, representing unique branch identifiers. Used to check the validity of a branch key and reference the main branch.",
+      "description_length": 221,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Branch.Val",
+      "description": "Provides operations to convert values to their hash representation and retrieve a type descriptor for values. Works with custom value types and their corresponding hash values. Used to generate unique identifiers for data entries in a versioned store.",
+      "description_length": 251,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Commit.Key",
+      "description": "Provides operations to convert a key to a hash value and define the type of keys used in storage. Works with the `t` type representing keys and the `hash` type for unique identifiers. Used to generate hash representations for key-based data retrieval and storage.",
+      "description_length": 263,
+      "index": 31,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Commit.Val",
+      "description": "Creates commit values with associated node keys, commit keys, and metadata. Operates on types such as node_key, commit_key, and Info.t to represent and extract commit details. Used to construct and inspect commit objects in version control workflows.",
+      "description_length": 250,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Commit.Hash",
+      "description": "Computes a deterministic hash from a string and provides a compact integer representation for use in hash tables. Operates on string values and produces fixed-size byte sequences. Used to generate unique keys for data storage and efficient hashing in associative structures.",
+      "description_length": 274,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Commit.Node",
+      "description": "manages key hashing, path construction, and metadata handling to support versioned data storage. it operates on types such as `t`, `hash`, and path structures, enabling tasks like generating unique identifiers, building hierarchical paths, and merging metadata. it allows for deterministic key generation from strings, manipulation of node paths, and combining metadata from multiple sources. examples include creating compact hash keys for efficient lookups, constructing versioned node paths, and merging metadata with custom conflict resolution.",
+      "description_length": 548,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Contents.Key",
+      "description": "Provides operations to convert a key to a hash value and define the type of keys used in storage. Works with the `t` type representing keys and the `hash` type for unique identifiers. Used to generate hash representations for key-based data structures in persistent storage systems.",
+      "description_length": 282,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Contents.Val",
+      "description": "Provides operations to define and merge values in a versioned data store. Works with the `t` type, representing a value, and includes a merge function that handles conflicts and deletions during synchronization. Used to resolve discrepancies when combining different versions of a key's value.",
+      "description_length": 293,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Contents.Hash",
+      "description": "Computes a deterministic hash value from a string and provides a compact integer representation for use in hash tables. Operates on string-based values and produces fixed-size byte sequences. Used to generate unique keys for data storage and efficient hashing in associative structures.",
+      "description_length": 286,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Node.Key",
+      "description": "Provides operations to convert a key to a hash value and define the type of key used in storage. Works with the `t` type representing a key and the `hash` type for unique identifiers. Used to generate hash representations for keys in data persistence workflows.",
+      "description_length": 261,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Node.Val",
+      "description": "Manages structured metadata through operations that create, access, and combine metadata objects. The `t` type represents metadata, supporting merges critical for version control workflows. It enables consistent attribute handling across data transformations. For example, it can combine changes from multiple branches while preserving relevant metadata.",
+      "description_length": 354,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Node.Hash",
+      "description": "Computes a deterministic store key from a string and generates a compact integer hash for use in hash tables. Operates on string values and produces fixed-size byte sequences representing unique identifiers. Used to create stable, compact keys for in-memory data structures and persistent storage.",
+      "description_length": 297,
+      "index": 40,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Node.Contents",
+      "description": "Encapsulates key and value management for persistent storage, offering hash generation from strings, key type definitions, and value merging with conflict resolution. It supports operations on `t` for keys and values, along with a merge function that handles missing or conflicting data. Hashes are computed as compact integers for efficient lookup in OCaml Hashtbl. This enables creating unique identifiers, managing versioned data, and resolving value discrepancies in storage systems.",
+      "description_length": 487,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Tree.Private.Env",
+      "description": "Provides operations to check if a data structure is empty and to retrieve its type information. Works with a custom type `t` representing environment states. Used to validate environment configurations before applying changes.",
+      "description_length": 226,
+      "index": 42,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Branch.Key",
+      "description": "Provides operations to validate and identify key values used in version control. Works with the `t` type, representing branch identifiers. Used to check the validity of a branch name and reference the main branch.",
+      "description_length": 213,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Branch.Val",
+      "description": "Provides functions to convert values to their hash representation and retrieve a type descriptor for values. Works with custom value types and their corresponding hash representations. Used to generate unique identifiers for value instances in data storage systems.",
+      "description_length": 265,
+      "index": 44,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Commit.Key",
+      "description": "Provides operations to convert a key to a hash value and define the type of key used in storage. Works with the `t` type representing a key and the `hash` type for unique identifiers. Used to generate hash representations for keys in data persistence workflows.",
+      "description_length": 261,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Commit.Val",
+      "description": "Creates commit values with associated node keys, commit keys, and metadata. Operates on types such as node_key, commit_key, and Info.t to represent and extract commit details. Used to construct and inspect commit objects in version control workflows.",
+      "description_length": 250,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Commit.Hash",
+      "description": "Computes a deterministic hash from a string and provides a compact integer representation for use in hash tables. Operates on custom types `t` and `value` to generate fixed-size hash outputs. Used to create unique identifiers for data storage and efficient lookup in hash-based structures.",
+      "description_length": 289,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Commit.Node",
+      "description": "manages key and value storage with hash generation, path manipulation, and metadata handling. it defines key types, computes deterministic hashes, constructs node paths, and merges metadata with custom logic. operations include converting strings to compact hashes, building hierarchical paths, and combining metadata from multiple sources. examples include generating unique identifiers for versioned data, traversing node structures, and resolving merge conflicts during synchronization.",
+      "description_length": 489,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Contents.Key",
+      "description": "Provides operations to convert a key to a hash value and retrieve the type representation of a key. Works with the `t` type, which represents a key, and the `hash` type, which represents a cryptographic hash. Used to generate unique identifiers for key-based data in versioned storage systems.",
+      "description_length": 293,
+      "index": 49,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Contents.Val",
+      "description": "Provides operations to define and merge values representing arbitrary data, with a focus on conflict resolution during merges. Works with a `t` type encapsulating values and supports merging that handles presence, absence, and conflict scenarios. Used to manage versioned data where consistent merging of different states is required.",
+      "description_length": 334,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Contents.Hash",
+      "description": "Computes a deterministic hash from a string and provides a compact integer representation for use in hash tables. Operates on string values and produces fixed-size byte sequences. Used to generate unique keys for data storage and efficient hashing in associative structures.",
+      "description_length": 274,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Node.Key",
+      "description": "Provides operations to convert a key to a hash value and define the type of keys used in storage. Works with the `t` type representing keys and the `hash` type for unique identifiers. Used to generate hash representations for key-based data structures in persistent storage systems.",
+      "description_length": 282,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Node.Val",
+      "description": "manages structured metadata through creation, retrieval, and merging operations on the `t` type. It supports version control by maintaining consistent state representations across changes. Functions allow combining metadata from multiple sources or revisions. Examples include appending revision notes or consolidating configuration settings from different branches.",
+      "description_length": 366,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Node.Hash",
+      "description": "Computes a deterministic store key from a string and generates a compact integer hash for use in OCaml Hashtbl. Operates on string values and produces fixed-size hash values. Used to create unique identifiers for data storage and efficient hashing in hash tables.",
+      "description_length": 263,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Node.Contents",
+      "description": "encapsulates key hashing, value merging, and string-based hashing to support efficient data storage and conflict resolution. it handles operations on `t` for key representation, value encapsulation, and string-to-hash conversion. it enables generating unique identifiers from strings, resolving value conflicts during merges, and creating compact hash values for fast lookups. examples include converting a key to a hash, merging two atomic values, and generating a hash for a string to use in a hash table.",
+      "description_length": 507,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Tree.Contents",
+      "description": "Provides operations to compute hashes, retrieve keys, and force evaluation of lazy content values. Works with a lazy content type that may hold a value or an error. Used to access and manage content from a repository, ensuring safe retrieval and cache management.",
+      "description_length": 263,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Tree.Proof",
+      "description": "Provides functions to construct and manipulate proof structures used in state transitions, including hash-based type definitions, inode and tree representations, and methods to extract initial and final states from a proof. Works with kinded hashes, inodes, tree structures, and extended inode types to track changes between computational states. Used to validate state advancements by ensuring proofs contain minimal necessary data and can be verified without I/O.",
+      "description_length": 465,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Tree.Private",
+      "description": "Checks if a collection of environment variables is empty and generates type representations for Irmin, enabling validation and serialization of environment configurations in a versioned storage system. The `t` type represents environment variables and supports operations for inspection and conversion. It allows developers to ensure configurations are properly structured before storage and to inspect their internal representation. For example, it can verify that no variables are set or generate a serializable format for persistent storage.",
+      "description_length": 544,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Schema.Hash",
+      "description": "Computes a deterministic store key from strings and generates short hashes for use in OCaml hashtables. Operates on byte sequences and provides conversions between raw strings and hash values. Efficiently computes short hashes from specific offsets in byte buffers without intermediate allocations.",
+      "description_length": 298,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Schema.Branch",
+      "description": "Provides functions to check the validity of a branch and retrieve the main branch. Works with the `t` type, representing a branch identifier. Used to validate branch names and access the default branch in a repository.",
+      "description_length": 218,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Schema.Info",
+      "description": "Provides functions to create and inspect commit metadata, including author, message, and timestamp. Works with string-based author and message types, and a timestamp represented as an int64. Used to generate commit information for version control systems, such as setting the author name and commit message in a Git backend.",
+      "description_length": 324,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Schema.Metadata",
+      "description": "Provides functions to create, retrieve, and merge metadata objects. Operates on a custom type `t` representing structured metadata. Used to combine metadata during version control operations, ensuring consistent state representation.",
+      "description_length": 233,
+      "index": 62,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Schema.Path",
+      "description": "Provides operations to construct, manipulate, and inspect paths composed of ordered steps. Works with `t` for paths and `step` for individual elements in the sequence. Used to build and traverse hierarchical data structures, such as versioned file system paths in Irmin.",
+      "description_length": 270,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Schema.Contents",
+      "description": "Provides a type `t` for storing content and a merge function that combines two optional values, returning a conflict if they cannot be merged or `None` to indicate deletion. The merge function handles cases where values are missing from either side of the merge. Used to resolve content differences in version control systems.",
+      "description_length": 326,
+      "index": 64,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Contents",
+      "description": "Encapsulates key hashing, value versioning, and string-based hashing to manage data in persistent storage. It supports operations on key types, versioned values with conflict resolution, and deterministic string hashing for efficient lookups. Users can generate unique identifiers, merge conflicting data versions, and create compact hash representations. This enables reliable data storage, synchronization, and retrieval in distributed or versioned systems.",
+      "description_length": 459,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Node",
+      "description": "Manages key hashing, metadata handling, and persistent storage operations through integrated types and functions. It defines key types and computes compact integer hashes for efficient lookup, while supporting metadata merges and value conflict resolution. Operations include generating stable identifiers, combining versioned data, and maintaining consistent attributes during transformations. Examples include creating unique keys for in-memory structures and resolving conflicts in distributed storage systems.",
+      "description_length": 513,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Commit",
+      "description": "manages key hashing, path construction, and metadata handling to support versioned data storage. it operates on types such as `t`, `hash`, and path structures, enabling tasks like generating unique identifiers, building hierarchical paths, and merging metadata. it allows for deterministic key generation from strings, manipulation of node paths, and combining metadata from multiple sources. examples include creating compact hash keys for efficient lookups, constructing versioned node paths, and merging metadata with custom conflict resolution.",
+      "description_length": 548,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Branch",
+      "description": "manages branch identifiers and value hashing, enabling validation, reference, and unique identification of data. It handles the `t` type for branch keys and supports hash generation and type inspection for custom values. Operations include checking branch validity, referencing the main branch, and creating hash-based identifiers. This allows for reliable branch management and data tracking in versioned systems.",
+      "description_length": 414,
+      "index": 68,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Slice",
+      "description": "Provides operations to create, modify, and iterate over slices, including adding values and traversing their contents. Works with custom types representing data structures like commits, nodes, and values, each paired with their respective hashes. Used to manage and process incremental data updates in a version-controlled system.",
+      "description_length": 330,
+      "index": 69,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Repo",
+      "description": "Provides functions to create and manage a repository handle, including fetching read-only types for contents, nodes, and commits, and a read-write batch operation for backend stores. Works with Irmin configuration objects and branch identifiers. Used to initialize a repository, access versioned data structures, and perform atomic updates within a transactional context.",
+      "description_length": 371,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend.Remote",
+      "description": "Provides functions to fetch and push data between a local store and a remote repository using URI endpoints. Operates on types such as commit, branch, and endpoint, which represent version control elements and network addresses. Used to synchronize local changes with a remote server or retrieve the latest state of a remote branch.",
+      "description_length": 332,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.History.V",
+      "description": "Provides operations to compare, hash, and check equality of vertices, along with creating and retrieving their labels. Works with vertex identifiers and associated labels, where vertices are comparable. Used to manage unique vertex identities in graph algorithms and data structures.",
+      "description_length": 283,
+      "index": 72,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.History.E",
+      "description": "Provides functions to compare edges, extract source and destination vertices, retrieve labels, and construct edges from vertices and labels. Operates on edges represented as ordered types with associated vertex and label data. Used to model directed connections in graph structures where edge direction and labels matter.",
+      "description_length": 321,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Tree.Contents",
+      "description": "Provides operations to compute hashes, retrieve keys, and force evaluation of lazy content values. Works with a lazy content type that may hold a value or an error. Used to safely access and validate content from a repository, ensuring cached results are up-to-date.",
+      "description_length": 266,
+      "index": 74,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Tree.Proof",
+      "description": "Provides functions to construct and manipulate proof structures for state transitions, including hash-based type definitions, inode and tree representations, and methods to extract initial and final states from proofs. Works with kinded hashes, inodes, tree structures, and extended inode types to track computational changes. Used to validate state transitions by ensuring proofs contain minimal necessary data to reconstruct a tree from a starting hash to an ending hash.",
+      "description_length": 473,
+      "index": 75,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Tree.Private",
+      "description": "Offers utilities to inspect and validate environment states through a custom type `t`, including checks for emptiness and retrieval of type metadata. Supports pre-validation of configurations to ensure correctness before modifications. Can determine if an environment is empty or identify its underlying type structure. Enables safe manipulation by enforcing checks on state integrity.",
+      "description_length": 385,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Schema.Hash",
+      "description": "Computes deterministic store keys from strings and generates short hashes for use in OCaml hashtables. Operates on raw byte sequences of fixed length, providing conversions between hash values and strings. Efficiently computes short hashes from specific offsets in byte buffers without intermediate allocations.",
+      "description_length": 311,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Schema.Branch",
+      "description": "Provides operations to check the validity of a branch and retrieve the main branch. Works with the `t` type, representing a branch identifier. Used to validate branch names and access the default branch in a repository.",
+      "description_length": 219,
+      "index": 78,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Schema.Info",
+      "description": "Provides functions to create and inspect commit metadata, including author, message, and timestamp. Works with string-based author and message types, and a timestamp represented as an int64. Used to generate commit information for version control systems, such as setting the author name and commit message in a Git backend.",
+      "description_length": 324,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Schema.Metadata",
+      "description": "Provides functions to create, retrieve, and merge metadata objects. Works with a custom type `t` representing structured metadata. Used to combine metadata during version control operations, ensuring consistent state representation.",
+      "description_length": 232,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Schema.Path",
+      "description": "Represents sequences of steps for navigating structured data, supporting construction, modification, and traversal. Operates on lists of steps and path structures, enabling operations like prepending, appending, and mapping over elements. Used to build and manipulate hierarchical data references in version control systems.",
+      "description_length": 324,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Schema.Contents",
+      "description": "Provides a type `t` for storing content and a merge function that handles combining values from different sources, returning a conflict if they cannot be reconciled. The merge function accepts optional values to represent missing data and can result in deletion when appropriate. Used in version control systems to resolve content differences during merges.",
+      "description_length": 357,
+      "index": 82,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Contents",
+      "description": "Encapsulates key hashing, value merging, and string-based hashing to support versioned data management. It handles operations on key types to generate cryptographic hashes, merges values with conflict resolution, and computes compact hashes from strings. Users can generate unique identifiers, resolve data conflicts, and create efficient hash tables. This enables robust storage and retrieval of versioned information with consistent and deterministic behavior.",
+      "description_length": 462,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Node",
+      "description": "manages key hashing, metadata versioning, and string-based hash generation, providing tools for persistent storage systems. it defines key types, computes compact integer hashes, and supports merging structured data while maintaining consistent state. operations include converting strings to hashes, combining metadata, and resolving value conflicts. examples include generating hash keys for storage, merging configuration settings, and creating efficient hash table entries.",
+      "description_length": 477,
+      "index": 84,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Commit",
+      "description": "manages data persistence and version control through key hashing, commit construction, and metadata handling. it defines key and hash types, generates deterministic identifiers, constructs commit objects with metadata, and supports path-based storage operations. users can create unique identifiers, build hierarchical node structures, and resolve merge conflicts during data synchronization. operations include converting strings to compact hashes, extracting commit details, and merging metadata from multiple sources.",
+      "description_length": 520,
+      "index": 85,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Branch",
+      "description": "manages branch identifiers and value hashing, offering validation, naming, and unique identifier generation. It handles the `t` type for branch names and custom value types with hash-based representations. Users can verify branch names, locate the main branch, and create hash-based keys for data storage. Operations include checking validity, generating hashes, and retrieving type metadata.",
+      "description_length": 392,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Slice",
+      "description": "Provides operations to create, modify, and iterate over a slice data structure, including adding values and traversing its contents. Works with typed data structures such as contents, nodes, commits, and values, each represented as tuples of hashes and their corresponding values. Used to manage and process incremental data updates in a version-controlled system.",
+      "description_length": 364,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Repo",
+      "description": "Provides functions to create and manage a repository handle, retrieve type-safe access to content, node, and commit stores, and perform batch operations in read-write mode. Works with Irmin configuration objects, permission-protected store types, and branch identifiers. Used to initialize a repository, access versioned data structures, and execute atomic updates against a backend storage system.",
+      "description_length": 398,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend.Remote",
+      "description": "Provides functions to fetch and push data between a local store and a remote repository using URI endpoints. Operates on types such as commit, branch, and endpoint, which represent version control elements and network addresses. Used to synchronize local changes with a remote server or retrieve the latest state of a remote branch.",
+      "description_length": 332,
+      "index": 89,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.History.V",
+      "description": "Compares, hashes, and checks equality of vertices based on their internal representation. Constructs vertices from labels and retrieves labels from vertices. Used to manage unique identifiers in graph algorithms where vertex equality and ordering are critical.",
+      "description_length": 260,
+      "index": 90,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.History.E",
+      "description": "Provides functions to compare edges, extract source and destination vertices, retrieve labels, and construct edges from vertices and labels. Operates on edges represented as ordered types with associated vertex and label data. Used to manage directed connections in graph structures where edge direction and labels are significant.",
+      "description_length": 331,
+      "index": 91,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.IO",
+      "description": "Provides monadic operations for sequencing IO actions, including binding results and lifting values into IO contexts. Works with input and output channels, connection handles, and error representations. Enables reading lines and bytes, writing strings, flushing buffers, and handling IO errors in a structured way.",
+      "description_length": 314,
+      "index": 92,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Schema",
+      "description": "Encodes and decodes byte sequences into short, deterministic hashes for efficient hashtable use, and validates branch identifiers to access default branches. Manages commit metadata with author, message, and timestamp fields, and merges structured metadata objects during version control operations. Handles hierarchical paths composed of ordered steps, enabling traversal of nested data structures. Resolves content conflicts by merging optional values, supporting conflict detection and deletion tracking in versioned systems.",
+      "description_length": 528,
+      "index": 93,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Info",
+      "description": "Provides functions to create and inspect commit metadata, including author, message, and timestamp. Works with string-based author and message fields, and a timestamp represented as an int64. Used to generate structured commit information for version control systems like Git.",
+      "description_length": 276,
+      "index": 94,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Repo",
+      "description": "Provides functions to connect to, configure, and close a repository, along with operations to list heads and branches. Supports exporting and importing data slices, traversing commit graphs, and iterating over repository elements with customizable traversal logic. Works with commit, branch, node, and content keys, as well as commit lists and slices.",
+      "description_length": 351,
+      "index": 95,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Status",
+      "description": "Provides operations to retrieve the value type for a repository and to pretty-print status information. Works with the `t` type, which represents repository status, and the `repo` type, which encapsulates repository data. Used to inspect and display the state of a repository in a human-readable format.",
+      "description_length": 303,
+      "index": 96,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Head",
+      "description": "Provides operations to manage commit heads in a store, including listing all heads, retrieving the current head, setting a new head, performing fast-forward updates, and merging commits. Works with commit objects and stores, supporting both persistent and temporary branch states. Used to update repository references, ensure safe head transitions, and integrate changes from specific commits into a store.",
+      "description_length": 406,
+      "index": 97,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Hash",
+      "description": "Computes deterministic store keys from sequences of strings and generates compact integer hashes for efficient lookup. Operates on byte sequences and provides methods to convert between raw bytes and hash values. Efficiently extracts short hashes from specific offsets in byte buffers without intermediate allocations.",
+      "description_length": 318,
+      "index": 98,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Commit",
+      "description": "Provides functions to create and inspect immutable commit objects, including building commits with specified parents, tree, and info, and retrieving their hash, key, tree, and parent commits. Works with repository objects, commit keys, hashes, and tree structures. Used to retrieve commits by hash or key, generate human-readable commit representations, and manage commit metadata during store updates.",
+      "description_length": 402,
+      "index": 99,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Contents",
+      "description": "Provides functions to handle content objects in a store, including merging values with conflict detection, generating hashes, and retrieving content by key or hash. Works with content objects and their associated hashes, supporting operations that track and resolve content changes. Used to manage versioned data where content retrieval and merge logic depend on unique identifiers.",
+      "description_length": 382,
+      "index": 100,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Tree",
+      "description": "Computes and manages hashes, retrieves keys, and evaluates lazy content, handling errors and caching. Constructs and verifies proof structures for state transitions using inodes, trees, and kinded hashes to track changes efficiently. Checks and serializes environment variables, ensuring configurations are valid and structured for versioned storage. Examples include validating state proofs without I/O, ensuring empty environments, and generating serializable representations for storage.",
+      "description_length": 490,
+      "index": 101,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.History",
+      "description": "Tracks a directed acyclic graph (DAG) of heads through vertex and edge operations. Vertices are managed with identity and label comparisons, while edges define directed relationships between vertices with associated labels. It supports constructing, comparing, and extracting information from both vertices and edges. This enables efficient graph traversal, validation, and manipulation in applications like version control or dependency tracking.",
+      "description_length": 447,
+      "index": 102,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Branch",
+      "description": "Checks if a branch exists in a repository, retrieves or sets its associated commit, and manages branch listings and watches for changes. Operates on branch names and commit identifiers, supporting asynchronous operations. Used to monitor branch updates, enforce branch validity, and track branch creation or deletion events.",
+      "description_length": 324,
+      "index": 103,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Path",
+      "description": "Creates and manipulates path structures composed of ordered steps, supporting operations like prepending, appending, and mapping over elements. Works with `t` representing a sequence of `step` values. Used to build and traverse hierarchical data structures in a store.",
+      "description_length": 268,
+      "index": 104,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Metadata",
+      "description": "Handles metadata merging using a custom merge function, with support for default values and type representation. Operates on the `metadata` type, which encapsulates node-specific information. Used to combine metadata from different branches during repository operations.",
+      "description_length": 270,
+      "index": 105,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make.Backend",
+      "description": "combines key hashing, versioned data management, and persistent storage operations to enable reliable data handling in distributed systems. it defines types for keys, hashes, and paths, and provides operations for generating unique identifiers, resolving conflicts, merging metadata, and constructing versioned paths. it supports tasks like creating compact hash keys, managing branch identifiers, and synchronizing data between local and remote repositories. examples include generating deterministic keys for efficient lookups, merging versioned values, and pushing changes to a remote store.",
+      "description_length": 594,
+      "index": 106,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Http.IO",
+      "description": "Provides monadic operations for sequencing I/O actions, including binding results and lifting values into the I/O context. Works with input and output channels, connection handles, and error representations. Enables reading lines or bytes from input, writing strings, flushing buffers, and handling I/O errors in a structured way.",
+      "description_length": 330,
+      "index": 107,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Schema",
+      "description": "Encapsulates utilities for handling branch identifiers, commit metadata, and content merging, along with path navigation and hash generation. It manages `t` types for branches, commits, and metadata, and supports operations like validating branch names, creating commit records, and merging content with conflict detection. Functions include generating short hashes from byte sequences, constructing commit details, and manipulating data paths. It enables efficient version control operations such as validating defaults, tracking changes, and resolving content conflicts.",
+      "description_length": 572,
+      "index": 108,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Info",
+      "description": "Provides functions to create and inspect commit metadata, including author, message, and timestamp. Works with string-based author and message fields, and a timestamp represented as an int64. Used to generate structured commit information for version control systems like Git.",
+      "description_length": 276,
+      "index": 109,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Repo",
+      "description": "Provides functions to connect to, configure, and close a repository, along with operations to list heads and branches, export and import data slices, and traverse the repository's graph. Works with commit, branch, node, and content keys, as well as commit lists and slices. Used to export a subset of a repository's history for backup or transfer, and to process repository contents in topological or breadth-first order for analysis or synchronization.",
+      "description_length": 453,
+      "index": 110,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Status",
+      "description": "Provides operations to retrieve the value type for a repository and to pretty-print status information. Works with the `t` type, which represents repository status, and the `repo` type, which encapsulates repository data. Used to inspect and format the state of a repository in a human-readable form.",
+      "description_length": 300,
+      "index": 111,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Head",
+      "description": "Provides operations to manage and manipulate commit heads in a version-controlled store. It supports listing all heads, retrieving the current head, setting a new head, performing fast-forward updates, and merging commits with conflict resolution. Works with commit objects and stores, enabling actions like resetting to a specific commit or merging changes from another commit.",
+      "description_length": 378,
+      "index": 112,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Hash",
+      "description": "Computes deterministic store keys from sequences of strings and generates compact integer hashes for use in hash tables. Operates on byte sequences and provides direct access to raw hash data. Efficiently extracts short hashes from raw byte buffers without intermediate allocations.",
+      "description_length": 282,
+      "index": 113,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Commit",
+      "description": "Provides functions to create and inspect immutable commit objects, including building commits with specified parents, tree, and metadata, and retrieving commit details like hash, tree, and info. Works with repository objects, commit keys, hashes, and tree structures. Used to retrieve commits by hash or key, and to construct new commits with controlled caching behavior.",
+      "description_length": 371,
+      "index": 114,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Contents",
+      "description": "Provides functions to merge content values, compute hashes, and retrieve content by key or hash from a repository. Works with content objects and their associated hashes. Used to resolve conflicts during merges and to fetch specific content entries efficiently.",
+      "description_length": 261,
+      "index": 115,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Tree",
+      "description": "Manages tree structures and their associated proofs, enabling hash computation, content validation, and state transition verification. Operates on lazy content, kinded hashes, inodes, and environment states, supporting operations like hash retrieval, proof construction, and metadata inspection. Allows validation of tree integrity, reconstruction of state transitions, and pre-validation of environment configurations. Examples include checking if an environment is empty, extracting states from proofs, and ensuring cached content is up-to-date.",
+      "description_length": 547,
+      "index": 116,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.History",
+      "description": "Tracks a directed acyclic graph (DAG) of heads, using vertex and edge operations to manage unique identifiers and directional connections. Vertices are compared, hashed, and labeled, while edges are constructed, inspected, and compared for direction and metadata. It supports graph algorithms requiring precise vertex equality and edge tracking, such as merging branches or resolving dependencies. Examples include verifying graph consistency, building dependency trees, and detecting cycles in version control systems.",
+      "description_length": 519,
+      "index": 117,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Branch",
+      "description": "Checks if a branch exists in a repository, retrieves or sets its associated commit, and manages branch listings and changes. Operates on branch names and commit identifiers, supporting asynchronous operations for branch tracking and updates. Used to monitor branch modifications, enforce branch validity, and handle branch-specific events in version control systems.",
+      "description_length": 366,
+      "index": 118,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Path",
+      "description": "Creates and manipulates path structures composed of ordered steps, supporting operations like prepending, appending, and mapping over elements. Works with a custom `t` type representing paths and a `step` type representing individual components. Used to build and traverse hierarchical data structures in a store.",
+      "description_length": 313,
+      "index": 119,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Metadata",
+      "description": "Handles metadata merging using a custom merge function, with support for default values and type representation. Operates on the `metadata` type, which encapsulates node-specific information. Used to combine metadata from different sources during repository operations.",
+      "description_length": 269,
+      "index": 120,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store.Backend",
+      "description": "combines key hashing, value merging, and versioned data management with tools for persistent storage, commit handling, and repository operations. it defines types for keys, hashes, and structured data, enabling operations like generating compact hashes, merging conflicts, and constructing commit objects. users can manage versioned data, synchronize repositories, and handle branch identifiers with deterministic, hash-based workflows. examples include creating unique identifiers for storage, merging configuration settings, and pushing local changes to a remote repository.",
+      "description_length": 576,
+      "index": 121,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Make",
+      "description": "Manages versioned data through commit-based stores, supporting branch operations, content merging, and path traversal. It handles commit metadata, content keys, and branch identifiers, enabling efficient conflict resolution and state tracking. Operations include creating commits, managing heads, and inspecting repository status, with support for both persistent and temporary branches. Examples include merging content, generating compact hashes, and traversing commit graphs.",
+      "description_length": 478,
+      "index": 122,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Pclock",
+      "description": "Returns the current POSIX time in days and picoseconds, retrieves the local time zone offset in seconds, and provides the clock's picosecond period when available. Operates with integer and 64-bit integer tuples to represent time values. Used to synchronize time-sensitive applications with precise time measurements and timezone-aware calculations.",
+      "description_length": 349,
+      "index": 123,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Http",
+      "description": "Manages I/O operations through a monadic interface, allowing sequential execution of actions like reading from or writing to channels, handling errors, and managing connections. Key data types include input and output channels, connection handles, and error representations, with operations for binding, lifting, and transforming values within the I/O context. It supports reading lines or bytes, writing strings, and flushing buffers while maintaining error handling. For example, it can read a line from a socket, process it, and write a response in a structured, composable manner.",
+      "description_length": 584,
+      "index": 124,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server.Store",
+      "description": "manages versioned data through branch-based state management, supporting commit creation, merging, and repository traversal. it handles `t` types for branches, commits, and metadata, with operations like hash generation, content merging, and path manipulation. examples include merging changes with conflict detection, exporting repository slices, and validating tree integrity. it enables efficient version control workflows, from branch management to content retrieval and graph analysis.",
+      "description_length": 490,
+      "index": 125,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql.Server",
+      "description": "Provides precise time management, I/O handling, and version control through integrated operations. It works with time tuples, I/O channels, and versioned data structures to enable synchronized timing, structured I/O workflows, and branch-based data management. Users can read and write network data, track time with picosecond accuracy, and manage repository states with merging and conflict resolution. Examples include timestamping events, processing socket input, and merging code changes with metadata tracking.",
+      "description_length": 515,
+      "index": 126,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "irmin-mirage-graphql",
+      "description": "Provides versioned storage and retrieval of custom data types with support for branching, merging, and conflict resolution. Operates on structured data, enabling efficient tracking of changes in distributed systems. Used to manage state in unikernel applications, allowing automated synchronization across multiple nodes with customizable storage backends.",
+      "description_length": 356,
+      "index": 127,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Irmin_mirage_graphql",
+      "description": "manages time, I/O, and versioned data with precise operations on time tuples, channels, and repository states. It supports reading and writing network data, tracking time at picosecond resolution, and merging changes with conflict resolution. Users can timestamp events, process socket input, and manage code branches with metadata. Operations include structured I/O workflows, versioned data manipulation, and synchronized timing across distributed systems.",
+      "description_length": 458,
+      "index": 128,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 146,
+    "meaningful_modules": 129,
+    "filtered_empty_modules": 17,
+    "retention_rate": 0.8835616438356164
+  },
+  "statistics": {
+    "max_description_length": 594,
+    "min_description_length": 208,
+    "avg_description_length": 343.7596899224806,
+    "embedding_file_size_mb": 0.46178245544433594
+  }
+}

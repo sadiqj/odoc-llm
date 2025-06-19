@@ -1,0 +1,112 @@
+{
+  "package": "containers-thread",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 13,
+  "creation_timestamp": "2025-06-18T16:32:17.324690",
+  "modules": [
+    {
+      "module_path": "CCPool.Make.Fut.Infix",
+      "description": "Provides monadic binding and sequencing operations for effectful computations, including lifting functions into contexts, combining results, and chaining operations with specific syntax. Works with type constructors that support monadic interfaces, such as option, result, and custom effectful types. Enables concise handling of asynchronous workflows, error propagation, and nested computations.",
+      "description_length": 396,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "CCPool.Make.Fut",
+      "description": "Manages asynchronous computations through monadic operations, enabling seamless chaining and composition of effectful tasks. Supports types like option, result, and custom effectful structures, allowing for structured error handling and asynchronous flow control. Callbacks are registered and executed within a pool, with results stored and propagated through defined interfaces. Examples include combining multiple asynchronous calls, handling failures in a pipeline, and managing nested computations with clean syntax.",
+      "description_length": 520,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "CCThread.Arr",
+      "description": "Creates arrays of thread-safe values and synchronizes their execution. Operates on arrays of thread handles and integer indices. Used to parallelize computations across array elements and ensure all threads complete before proceeding.",
+      "description_length": 234,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "CCThread.Barrier",
+      "description": "Provides functions to coordinate thread synchronization through a barrier mechanism. Operates on a mutable state type `t` that tracks whether the barrier has been activated. Used to pause threads until a specific event (activation) occurs, ensuring coordinated execution in concurrent programs.",
+      "description_length": 294,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "CCPool.Make",
+      "description": "Provides functions to manage thread pool configurations, including setting and retrieving the maximum number of threads. Operates on integer values representing resource limits. Used to control concurrency levels in parallel processing tasks.",
+      "description_length": 242,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "CCLock.LockRef",
+      "description": "Provides functions to retrieve, assign, and modify the value stored in a reference-like structure. Operates on a polymorphic type that wraps a value with lock semantics. Used to safely update shared state in concurrent contexts.",
+      "description_length": 228,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "containers-thread",
+      "description": "Provides safe and extended list operations such as map, fold_right, and append, along with combinators for working with arrays, options, and results. Operates on core OCaml types like lists, arrays, and option types, enhancing their functionality with additional utilities. Used to simplify list transformations, handle optional values with more expressive patterns, and manage iterative processes efficiently.",
+      "description_length": 410,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "CCThread",
+      "description": "Manages concurrent execution by creating and coordinating thread arrays, using barrier synchronization to control thread flow. It handles arrays of thread handles and integer indices, enabling parallel computation and ensuring completion order. The mutable barrier state type `t` allows threads to pause until a shared event is triggered. This supports tasks like parallel array processing and synchronized task completion.",
+      "description_length": 423,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "CCPool",
+      "description": "Provides functions to manage a thread pool with a fixed maximum size, including creating, resizing, and querying the pool's configuration. Operates on thread pools represented as opaque structures, tracking active and idle threads. Used to control resource usage in concurrent applications, such as limiting database connections or API requests.",
+      "description_length": 345,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "CCLock",
+      "description": "wraps a value with mutex protection, enabling safe access and modification in concurrent environments. It supports operations like reading, writing, and updating the wrapped value, all under lock control. Polymorphic types allow usage with any data type, ensuring thread-safe state management. For example, it can safely manage a shared counter or configuration state across multiple threads.",
+      "description_length": 392,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "CCTimer",
+      "description": "Provides functions to schedule and manage timed events, including one-time and recurring callbacks. Operates on a timer type that tracks state and handles exceptions from scheduled tasks. Used to delay execution, trigger actions at specific times, or repeat operations at intervals.",
+      "description_length": 282,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "CCBlockingQueue",
+      "description": "Provides blocking and non-blocking operations for managing a bounded buffer, including pushing and taking elements, with support for list operations. Works with a parameterized type 'a t representing a queue with a fixed capacity. Used in concurrent programming to synchronize data flow between producers and consumers, such as in task scheduling or stream processing.",
+      "description_length": 368,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "CCSemaphore",
+      "description": "Provides operations to manage a counting semaphore, including acquiring and releasing units, checking the current value, and executing actions while holding a semaphore. Works with an abstract type `t` representing the semaphore state. Used to coordinate access to shared resources, such as limiting concurrent database connections or controlling thread execution in parallel tasks.",
+      "description_length": 382,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 13,
+    "meaningful_modules": 13,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 520,
+    "min_description_length": 228,
+    "avg_description_length": 347.38461538461536,
+    "embedding_file_size_mb": 0.04768657684326172
+  }
+}

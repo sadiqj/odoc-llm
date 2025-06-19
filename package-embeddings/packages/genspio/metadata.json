@@ -1,0 +1,336 @@
+{
+  "package": "genspio",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 45,
+  "creation_timestamp": "2025-06-18T16:45:16.095128",
+  "modules": [
+    {
+      "module_path": "Genspio.Compile.To_slow_flow.Script",
+      "description": "Produces a POSIX shell script from a structured representation. Operates on a custom type representing script content, enabling precise control over command sequences and syntax. Used to generate executable shell scripts from programmatic constructs.",
+      "description_length": 250,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.Language.Literal.Str",
+      "description": "Checks if a string contains characters that are likely to cause issues in shell command execution and determines if a string cannot be safely used as a variable value in a shell context. Works with strings represented as Genspio.Common.String.t. Used to validate user input before incorporating it into shell commands or environment variables.",
+      "description_length": 343,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.Language.Construct.C_string",
+      "description": "Compares C-style strings for equality and performs list concatenation operations. Converts C-strings to byte arrays using direct memory access. Handles null-terminated string operations and list-based concatenation of string segments.",
+      "description_length": 234,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.Language.Construct.Byte_array",
+      "description": "Compares byte arrays for equality and inequality using custom operators, converts byte arrays to C-style strings for interoperability with C libraries, and provides a direct mapping from byte arrays to C string representations for low-level operations.",
+      "description_length": 252,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.Language.Construct.Base",
+      "description": "This module enables constructing and composing sequences of operations through a monadic interface, supporting boolean, integer, and string-like values while managing control flow, error handling, and command execution. It manipulates file descriptors, byte arrays, and strings, facilitating I/O redirection, process control, and data transformation. Specific use cases include scripting workflows, system process management, and efficient byte-level data processing.",
+      "description_length": 467,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Genspio.Language.Construct.Bool",
+      "description": "Converts between boolean values and C-style string representations, handling true as \"1\" and false as \"0\". Operates on wrapped boolean types and C strings, ensuring compatibility with low-level interfaces. Used to serialize boolean flags for logging or configuration output.",
+      "description_length": 274,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.Language.Construct.Integer",
+      "description": "This module handles conversions between custom integer types `Common.int t` and string/byte array formats, alongside arithmetic operations like addition, subtraction, multiplication, division, and modulo. It also provides comparison functions to evaluate equality, inequality, and ordering between `Common.int t` values, returning results as `Common.bool t`. These capabilities are useful for tasks such as parsing numeric input, performing type-safe numerical computations, and implementing custom comparison logic in applications requiring precise control over integer operations.",
+      "description_length": 582,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Genspio.Language.Construct.Magic",
+      "description": "Provides a way to create and manipulate unit values from strings, enabling controlled flow and state management. Operates on `Common.string` and `Common.unit t` types, ensuring type-safe conversions. Used to initialize and validate unit-based operations in domain-specific workflows.",
+      "description_length": 283,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.Language.Construct.Elist",
+      "description": "Provides operations to construct, append, and iterate over lists wrapped in a custom type, along with serialization and deserialization functions for converting between list structures and byte arrays or C strings. Works with lists of arbitrary types, including integers, byte arrays, and C strings. Used to encode structured data for storage or transmission and decode it back into list formats.",
+      "description_length": 396,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.EDSL.Command_line.Arg",
+      "description": "Parses command-line arguments by defining options that accept strings or boolean flags, with customizable default values and documentation. It processes lists of strings to extract and validate command-line parameters. Used to build structured, documented CLI interfaces for applications.",
+      "description_length": 288,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Genspio.EDSL_v0.Command_line.Arg",
+      "description": "Parses command-line arguments by defining options for strings and boolean flags, with support for custom documentation. It works with option specifications and command-line option structures. Used to construct and validate user input for CLI tools, such as parsing configuration values or enabling features via flags.",
+      "description_length": 317,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Genspio.To_slow_flow.Tmp_db",
+      "description": "Provides operations to manage temporary files and variables, including creating a context with optional grouping, registering files with directories, retrieving a default temporary directory, generating deletion functions, and listing tracked variables. Works with strings, lists, and a custom context type encapsulating temporary state. Used to track and clean up temporary resources during build processes or script execution.",
+      "description_length": 428,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.To_slow_flow.Script",
+      "description": "The functions construct and manage shell command sequences with control flow mechanisms like conditionals and loops, operating on command lists and script state. They handle redirection, temporary file paths, and boolean-to-command conversion, enabling complex script execution structures. These capabilities are suited for automating system tasks requiring conditional logic, iterative processes, or dynamic command generation.",
+      "description_length": 428,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Genspio.Compile.To_posix",
+      "description": "Compiles EDSL.t expressions into POSIX shell scripts, supporting one-liner or multi-line output with customizable error handling. It processes EDSL.t values and returns a string result or compilation_error, using death_function to manage failure messages. It includes predefined parameters for common use cases like limiting argument length and defining exit codes.",
+      "description_length": 365,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.Compile.To_slow_flow",
+      "description": "Generates portable shell scripts from structured command sequences, using a custom script type to represent and manipulate execution flow. Supports operations like command composition, redirection, and conditional logic through a domain-specific language. Examples include generating scripts that execute system commands, handle output redirection, and chain processes with precise control. The output can be written to files and executed in any POSIX-compliant environment.",
+      "description_length": 474,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.Language.Literal",
+      "description": "Detects potentially dangerous characters in strings to prevent shell injection vulnerabilities. Operates on Genspio.Common.String.t to assess safety for use in shell variables or commands. Can flag strings that require escaping or rejection. Examples include validating user-provided filenames or command-line arguments before execution.",
+      "description_length": 337,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.Language.Construct",
+      "description": "Combines string, byte array, and list manipulation with monadic operation sequencing, enabling low-level data conversion, comparison, and transformation. Supports C-string and byte array equality checks, conversions, and concatenation, along with boolean, integer, and unit type handling for scripting and I/O workflows. Provides custom operators for byte array comparisons, monadic composition for control flow, and list serialization to byte arrays or C strings. Examples include parsing numeric input, serializing boolean flags, managing file descriptors, and encoding structured data for transmission.",
+      "description_length": 605,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.EDSL.Bool",
+      "description": "Converts boolean values to and from string representations. Accepts and returns the bool t type, enabling serialization and parsing of truth values. Used to generate human-readable output from boolean flags and to interpret user input as logical values.",
+      "description_length": 253,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.EDSL.Integer",
+      "description": "This module offers arithmetic operations (addition, subtraction, multiplication, division, modulo) and relational comparisons (equality, inequality, ordering) on `int t` values, supporting both direct functions and infix operators. It enables precise control over binary operations and returns boolean results for comparison tasks. Use cases include mathematical computations, sorting algorithms, and conditional logic requiring integer evaluations.",
+      "description_length": 449,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.EDSL.Elist",
+      "description": "Provides operations to construct, combine, and iterate over list structures within an embedded domain-specific language (EDSL). Works with list types wrapped in a custom t monadic structure, enabling serialization and deserialization of lists containing strings, integers, and byte arrays. Used to generate and process structured data streams in a controlled, type-safe manner.",
+      "description_length": 377,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Genspio.EDSL.Str",
+      "description": "Compares string values for equality and performs pattern matching using custom operators. Processes OCaml and Genspio list structures to concatenate string elements into a single string value. Used to combine multiple string fragments in scenarios requiring list-based aggregation.",
+      "description_length": 281,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Genspio.EDSL.Command_line",
+      "description": "Parses command-line arguments by defining options that accept strings or boolean flags, with customizable defaults and documentation. It processes input lists to extract and validate parameters, enabling structured CLI interfaces. Operations include defining string options, boolean flags, and setting default values. Example: specify a URL, a flag to remove files, and a custom filename, then extract these values in a typed function.",
+      "description_length": 435,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.EDSL.Script_with_describe",
+      "description": "Provides access to a named script's metadata through string-valued properties. Works with script identifiers and descriptive text. Used to retrieve and display script titles and associated explanations in runtime contexts.",
+      "description_length": 222,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.EDSL.Dispatcher_script",
+      "description": "Generates a script that executes subcommands by appending the first argument to its name, supporting custom aliases for command substitution. It operates on string-based command names and descriptions, enabling structured execution of nested scripts. Used to create command-line tools with a git-like interface, such as a screen manager with subcommands for attaching, starting, and logging.",
+      "description_length": 391,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.EDSL.Magic",
+      "description": "Provides functions to inject arbitrary strings as unit-typed commands and manipulate low-level values without type checks. Works with strings and abstract type `unit t` for inline execution. Used to bypass type safety for direct command insertion in specific EDSL contexts.",
+      "description_length": 273,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.Common.Unique_name",
+      "description": "Provides operations to manage a named reference value, generate strings based on input names, and retrieve string representations of variables. Works with references, strings, and named identifiers. Used to track and manipulate configuration variables and generate unique identifiers at runtime.",
+      "description_length": 295,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.Transform.Constant_propagation",
+      "description": "Processes expressions by substituting known constants during evaluation, using a trace formatter for debugging. Operates on custom language structures defined in 'a Language.t, enabling inlining of constant values. Used to optimize intermediate representations in a compiler pipeline by reducing runtime computations.",
+      "description_length": 317,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.EDSL_v0.Bool",
+      "description": "Converts boolean values to and from C-style string representations. Operates on the bool t type and c_string t for input and output. Used to serialize and deserialize boolean flags in system-level interfaces.",
+      "description_length": 208,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Genspio.EDSL_v0.Integer",
+      "description": "This module offers arithmetic operations (addition, subtraction, multiplication, division, modulo) and relational comparisons (equality, inequality, ordering) for integer-like values, alongside conversions between integer types and C strings or byte arrays. It enables precise numerical computations, data format transformations, and structured comparisons in scenarios requiring integer manipulation. Use cases include low-level data processing, numerical algorithm implementation, and interoperability between integer and byte-based representations.",
+      "description_length": 551,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.EDSL_v0.Elist",
+      "description": "Provides operations to construct, combine, and iterate over list structures, along with serialization and deserialization functions for converting between list types and byte arrays or C strings. Works with custom list types wrapped in a domain-specific language (EDSL) structure. Used to generate and process lists in a staged computation context, such as building and transmitting structured data.",
+      "description_length": 399,
+      "index": 29,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Genspio.EDSL_v0.Byte_array",
+      "description": "Compares byte arrays for equality and less-than using custom operators, converts byte arrays to C-style strings for interoperability with C libraries, and supports low-level memory manipulation tasks in systems programming.",
+      "description_length": 223,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.EDSL_v0.C_string",
+      "description": "Provides string comparison operations, including equality checks and lexicographical ordering, and conversions to byte arrays. Works with a custom c_string type and byte_array type, enabling low-level string manipulation. Used to combine lists of strings into a single c_string, supporting both standard OCaml lists and Genspio-specific list structures.",
+      "description_length": 353,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.EDSL_v0.Command_line",
+      "description": "Parses command-line arguments by defining options for strings and boolean flags, with custom documentation and validation. It constructs typed option specifications and processes user input for CLI tools, supporting default values and usage messages. Operations include defining string arguments, boolean flags, and generating usage help. Examples include parsing a URL, enabling a flag to remove files, overriding a filename, and specifying a temporary directory.",
+      "description_length": 464,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.EDSL_v0.Magic",
+      "description": "Provides functions to inject arbitrary strings as unit-typed commands and bypass type safety. Operates on strings and a custom unit t type for command injection. Used to execute raw shell commands without argument escaping or validation.",
+      "description_length": 237,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.Common",
+      "description": "Provides operations for managing named references, generating strings from names, and retrieving variable representations. Supports manipulation of references, strings, and identifiers. Enables tracking of configuration variables and creation of unique identifiers at runtime. Allows combining reference values with string formatting for dynamic data handling.",
+      "description_length": 360,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.Compile",
+      "description": "Translates EDSL.t expressions into executable shell scripts with customizable error handling and output formatting. It supports command composition, redirection, and conditional logic through a structured script type, enabling precise control over process execution. Users can generate portable scripts that handle system commands, manage input/output, and enforce exit codes. Examples include creating multi-line scripts for complex workflows or one-liner commands with tailored error messages.",
+      "description_length": 495,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.EDSL",
+      "description": "Handles boolean, integer, and string operations, along with list and command management, to construct and evaluate shell-like expressions. Supports `bool t`, `int t`, `list t`, and `unit t` types, offering arithmetic, comparison, concatenation, and command injection. Enables parsing of CLI arguments, generating scripts with subcommands, and manipulating structured data. Examples include evaluating conditional logic, building command pipelines, and extracting configuration values from user input.",
+      "description_length": 500,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Genspio.EDSL_v0",
+      "description": "combines boolean, integer, list, byte array, and string operations with command injection and CLI parsing, enabling low-level data manipulation, serialization, and execution. It handles conversions between custom types like bool t, c_string t, and byte_array t, and supports arithmetic, comparison, and list operations. Users can parse command-line arguments, compare byte arrays, and inject raw commands for system interaction. Examples include serializing boolean flags, converting integers to C strings, building lists for transmission, and executing shell commands.",
+      "description_length": 569,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Genspio.Language",
+      "description": "Provides string and byte array validation and manipulation capabilities, including safety checks for shell command execution and low-level data transformation. Offers type-specific operations such as equality comparisons, conversions, and monadic sequencing for structured data handling. Can validate user input for security, parse and encode data formats, and manage I/O workflows. Examples include escaping shell-sensitive strings, serializing boolean values to byte arrays, and combining sequential operations for script execution.",
+      "description_length": 534,
+      "index": 38,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Genspio.Meta",
+      "description": "Provides access to version information through a string-valued function. Works with static metadata generated during the build process. Used to dynamically retrieve the application's version number at runtime.",
+      "description_length": 209,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.Standard_compiler",
+      "description": "Provides functions to format and process internal error details, death messages, and compilation errors, along with conversion utilities between string representations and internal data structures. Works with custom types like internal_representation, death_message, and compilation_error, and supports generating shell-compatible output. Used to transform language-specific data into executable commands and handle error reporting with customizable formatting.",
+      "description_length": 461,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio.To_slow_flow",
+      "description": "manages temporary file tracking and shell command execution, combining resource management with script control flow. It defines a context type for state tracking, supports file registration, deletion, and command sequencing with conditionals and loops. Operations include generating cleanup functions, building command lists, and integrating temporary paths into scripts. Users can automate build processes with safe resource handling and dynamic script generation.",
+      "description_length": 465,
+      "index": 41,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Genspio.Transform",
+      "description": "Transform processes expressions by substituting known constants during evaluation, using a trace formatter for debugging. It operates on custom language structures, enabling inlining of constant values to optimize intermediate representations. The main data types include 'a Language.t and 'a EDST.t, with operations for substitution and tracing. For example, it can replace literal values in expressions or track evaluation steps during compilation.",
+      "description_length": 450,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "genspio",
+      "description": "Generates POSIX shell scripts and one-liners from OCaml values using combinators to construct command sequences, conditionals, and loops. Operates on a domain-specific language type 'a EDSL.t, enabling structured command building. Used to create dynamic shell workflows, such as automated system checks or deployment scripts, with guaranteed shell compatibility.",
+      "description_length": 362,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Genspio",
+      "description": "Combines reference management, shell script generation, and data manipulation to enable dynamic configuration handling, command execution, and structured data processing. Supports types like bool t, int t, list t, and byte_array t, with operations for arithmetic, comparison, command injection, and string formatting. Users can generate portable scripts, validate input, manage temporary files, and inline constants for optimization. Examples include building complex workflows, serializing configuration data, and executing shell commands with custom error handling.",
+      "description_length": 567,
+      "index": 44,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 130,
+    "meaningful_modules": 45,
+    "filtered_empty_modules": 85,
+    "retention_rate": 0.34615384615384615
+  },
+  "statistics": {
+    "max_description_length": 605,
+    "min_description_length": 208,
+    "avg_description_length": 378.2888888888889,
+    "embedding_file_size_mb": 0.16389942169189453
+  }
+}

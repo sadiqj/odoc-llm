@@ -1,0 +1,231 @@
+{
+  "package": "pa_comprehension",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 30,
+  "creation_timestamp": "2025-06-18T16:39:43.356406",
+  "modules": [
+    {
+      "module_path": "Pa_comprehension.Make.Ast.Meta.Make.Expr",
+      "description": "This module provides functions for constructing and converting OCaml syntax elements into annotated expression nodes, primarily working with abstract syntax tree (AST) structures, location metadata, and core language constructs like primitive types, lists, bindings, and module structures. It enables operations such as wrapping raw values into typed expressions and transforming syntax items (e.g., signature or structure elements) into executable forms, supporting tasks like compiler front-end processing or static analysis. Specific use cases include building intermediate representations for code transformation or validation in language tools.",
+      "description_length": 649,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Ast.Meta.Make.Patt",
+      "description": "This module constructs meta-patterns by wrapping OCaml AST nodes\u2014such as strings, integers, bindings, class expressions, and syntax elements like signature items\u2014with location metadata, enabling precise representation of syntactic structures. It facilitates operations on abstract syntax tree components, including module types and flags, to support tools requiring detailed syntactic analysis or transformation. Use cases include building structured representations for linters, pretty-printers, or code analysis utilities that need to track positional information within OCaml programs.",
+      "description_length": 588,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Gram.Token.Loc",
+      "description": "The module offers functions for manipulating and converting location data structures, focusing on source code positions represented by `Loc.t` objects, which include file names, line numbers, and byte offsets. It enables operations like merging, shifting, and extracting components, along with comparing locations, checking for ghost positions, and modifying file names. These capabilities are particularly useful in scenarios such as error reporting, code analysis, and text transformation tools where precise tracking of source code positions is required.",
+      "description_length": 557,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Gram.Token.Filter",
+      "description": "Provides functions to create and manage token filters, including defining transformation rules, applying filters, and tracking keyword additions and removals. Operates on `token_filter` and `t` types, which are used in parsing and processing token streams. Used to dynamically modify how tokens are processed during syntax analysis.",
+      "description_length": 332,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Gram.Token.Error",
+      "description": "Converts error values to human-readable strings and prints them using a formatter. Works with token-based error representations. Used to generate diagnostic messages during parsing or validation processes.",
+      "description_length": 205,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Ast.Meta.MetaLoc",
+      "description": "Generates pattern and expression locations by combining two source locations. Operates on OCaml's `loc` type and constructs `patt` and `expr` nodes. Used to annotate parsed syntax with precise source information during transformation passes.",
+      "description_length": 241,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Ast.Meta.MetaGhostLoc",
+      "description": "Generates pattern and expression nodes annotated with location information from a given position and value. Operates on `loc` type and injects it into `patt` and `expr` structures. Used to instrument abstract syntax trees with source location metadata during parsing or transformation.",
+      "description_length": 285,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Ast.Meta.MetaLocVar",
+      "description": "Generates pattern and expression nodes annotated with location information for use in code transformation pipelines. Operates on `loc` values and arbitrary type parameters to embed positional data within AST elements. Enables precise tracking of source positions during parsing or rewriting stages.",
+      "description_length": 298,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Ast.Meta.Make",
+      "description": "Generates pattern and expression nodes with location metadata, combining two location markers into a single node. Operates on `loc` type for source position tracking and `patt`/`expr` for abstract syntax tree elements. Used to construct AST nodes during parsing or transformation phases with precise location information.",
+      "description_length": 321,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Quotation.DynAst.Pack",
+      "description": "Provides functions to pack and unpack binary data using a flexible format, including operations for reading and writing integers, strings, and nested structures. Works with the 'a t type, which represents a binary buffer or stream. Used to serialize structured data for network transmission or file storage.",
+      "description_length": 307,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Token.Loc",
+      "description": "This module offers operations for managing source code position data, including creating, merging, shifting, and extracting components of location objects that track file names, line numbers, and byte offsets. It enables tasks like comparing positions, modifying file references, and checking properties such as \"ghost\" status, primarily used for error reporting, debugging, and range analysis in code processing. The `Loc.t` type serves as the core structure for these operations, facilitating precise manipulation of source code metadata.",
+      "description_length": 540,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Token.Filter",
+      "description": "Provides functions to create and manage token filters, including defining transformation rules, applying filters, and tracking keyword additions and removals. Operates on `token_filter` and `t` types, which represent stream filters and token filtering configurations. Used to dynamically modify token processing during parsing, such as enabling or disabling specific syntax rules.",
+      "description_length": 380,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Token.Error",
+      "description": "Converts error values to human-readable strings and prints them using a formatter. It operates on syntax token error types generated during parsing. Used to display parsing errors in compiler or interpreter outputs.",
+      "description_length": 215,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Gram.Loc",
+      "description": "The module provides operations for managing source code location data, including merging, shifting, and extracting components like file names, line numbers, and byte offsets from `Loc.t` structures. It supports position comparison, file name modification, and string conversion, enabling precise text positioning and range handling. These capabilities are critical for tasks such as error reporting, code analysis, and debugging, where accurate tracking of lexical positions is essential.",
+      "description_length": 488,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Gram.Action",
+      "description": "Creates and manipulates action objects tied to grammar parsing, enabling retrieval of associated values and transformation through function application. Operates on a specialized action type derived from a grammar parsing framework. Used to extract parsed data and apply processing functions during syntax analysis.",
+      "description_length": 315,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Gram.Token",
+      "description": "Manages source code positions through `Loc.t` operations like merging and shifting, supports token stream transformations via `token_filter` and `t` types, and converts errors to formatted messages. It enables precise location tracking, dynamic token processing, and clear error reporting. Users can adjust file names in locations, apply custom token rules, and generate diagnostic output. This integration is essential for building robust parsers and analyzers with detailed feedback.",
+      "description_length": 485,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Gram.Entry",
+      "description": "Creates and manages entries with associated parsing logic, allowing construction from strings or parsers and storing internal representations. Operates on typed entries wrapped in a grammar-specific structure, supporting parsing setup and state clearing. Used to define and manipulate syntactic elements in a parser, enabling custom formatting and debugging output.",
+      "description_length": 365,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Ast.Loc",
+      "description": "The module provides functions for creating, converting, and manipulating structured location data, centered on `Loc.t` types that track source code positions, file names, and metadata like ghost status. It supports use cases such as error reporting, debugging, and code analysis through operations like location merging, line-based adjustments, and context-aware exception handling.",
+      "description_length": 382,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Ast.Meta",
+      "description": "Constructs pattern and expression nodes with specified location metadata, enabling precise tracking of source positions. Operates on `loc` (location) and `patt`/`expr` (pattern and expression) types from the OCaml AST. Used to annotate parsed syntax with location information during code transformation or analysis.",
+      "description_length": 315,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Quotation.DynAst",
+      "description": "Encapsulates binary serialization and deserialization capabilities through a flexible format, handling integers, strings, and nested structures. Operates on the 'a t type, enabling efficient packing and unpacking of data for storage or transmission. Supports structured data manipulation by allowing nested operations within the same buffer. Examples include serializing a complex record to a byte stream or parsing a network packet into a typed structure.",
+      "description_length": 456,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Quotation.Error",
+      "description": "Converts error values to human-readable strings and prints them using a formatter. Operates on a specific error type derived from syntax quotation processing. Used to display parsing or quotation-related errors in a structured manner.",
+      "description_length": 234,
+      "index": 20,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Loc",
+      "description": "These operations handle creating, converting, and manipulating structured source code metadata, including file names, line numbers, and byte offsets, through type `t` with functionalities like serialization, merging, and line-based adjustments. They enable tasks such as debugging output generation, position tracking, and file association by supporting ghost checks, file name modifications, and comparative analysis of location data.",
+      "description_length": 435,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Token",
+      "description": "Manages source code positions, token filtering, and error reporting through integrated operations. It handles `Loc.t` for tracking file, line, and offset data, `token_filter` for modifying token streams, and error formatting for parsing issues. Users can manipulate location objects, apply dynamic token transformations, and generate readable error messages. Tasks include adjusting source references, filtering syntax elements, and presenting detailed error diagnostics.",
+      "description_length": 471,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Gram",
+      "description": "Manages source code positions and parsing actions through `Loc.t` and action types, enabling precise location tracking, token manipulation, and data extraction. Supports merging, shifting, and modifying locations, along with transforming tokens and generating error messages. Allows construction of parsing entries, application of processing functions, and customization of token rules. Users can adjust file names, extract parsed values, and generate diagnostic output for robust parser development.",
+      "description_length": 500,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_comprehension.Make.Quotation",
+      "description": "Encapsulates binary serialization, deserialization, and error reporting, enabling efficient data handling and debugging. It operates on a polymorphic 'a t type for structured data and a specific error type for syntax-related issues. Users can serialize complex records into byte streams or parse network packets, while also generating readable error messages from internal error values. This combination supports both data persistence and robust error visualization.",
+      "description_length": 466,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pa_comprehension.Make.AntiquotSyntax",
+      "description": "Parses string representations of OCaml expressions and patterns into their abstract syntax tree (AST) equivalents, using provided location information. Works with OCaml's `Ast.expr` and `Ast.patt` types to construct typed syntax structures. Used to dynamically interpret code snippets during macro expansion or interactive evaluation.",
+      "description_length": 334,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pa_comprehension.Id",
+      "description": "Provides functions to retrieve a string-based identifier and its corresponding version. Operates on a custom type that encapsulates unique entity labels and their semantic versions. Used to enforce consistent identification and versioning in distributed systems and configuration management.",
+      "description_length": 291,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Pa_comprehension.Make",
+      "description": "handles source code metadata, location tracking, and binary data manipulation through types like `t`, `Loc.t`, and polymorphic 'a t, enabling tasks such as adjusting file positions, filtering tokens, serializing data, and parsing OCaml expressions. It supports operations for merging location data, transforming token streams, generating error messages, and converting between string representations and AST structures. Users can track source references, modify parsing behavior, and debug complex data flows with precise control over location and serialization. Examples include generating debug output from parsed code, filtering syntax elements during parsing, and serializing structured data for network transmission.",
+      "description_length": 721,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "pa_comprehension",
+      "description": "Provides list, set, and map comprehensions using syntax extensions for filtering and transforming elements. Operates on OCaml's native list, set, and map types with custom syntax for inline processing. Enables concise data filtering and transformation in code that mirrors mathematical set notation.",
+      "description_length": 299,
+      "index": 28,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Pa_comprehension",
+      "description": "Retrieves and manages entity identifiers and versions through a custom type, enabling consistent labeling and version control in distributed systems. Handles source code metadata, location tracking, and binary data manipulation using types like `t`, `Loc.t`, and polymorphic 'a t, supporting tasks such as adjusting file positions, filtering tokens, and serializing data. Users can track source references, generate debug output, and parse OCaml expressions with precise control over location and structure. Examples include enforcing version consistency across systems, filtering syntax elements during parsing, and serializing structured data for network transmission.",
+      "description_length": 670,
+      "index": 29,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 33,
+    "meaningful_modules": 30,
+    "filtered_empty_modules": 3,
+    "retention_rate": 0.9090909090909091
+  },
+  "statistics": {
+    "max_description_length": 721,
+    "min_description_length": 205,
+    "avg_description_length": 404.8333333333333,
+    "embedding_file_size_mb": 0.10939693450927734
+  }
+}

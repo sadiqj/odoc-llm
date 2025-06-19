@@ -1,0 +1,182 @@
+{
+  "package": "picos_std",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 23,
+  "creation_timestamp": "2025-06-18T16:37:39.475177",
+  "modules": [
+    {
+      "module_path": "Picos_std_sync.Semaphore.Counting",
+      "description": "Provides operations to manage a counting semaphore, including acquiring and releasing resources, checking availability, and retrieving the current count. Works with the opaque type `t` to coordinate access to shared resources in concurrent programs. Used to limit simultaneous access to a resource, such as controlling the number of active database connections or thread pool entries.",
+      "description_length": 384,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Picos_std_sync.Semaphore.Binary",
+      "description": "Provides operations to manage a binary semaphore, including acquiring, releasing, and attempting to acquire without blocking. Works with a stateful type `t` that tracks a boolean count. Used to synchronize access to a shared resource in concurrent programs, ensuring only one thread can proceed at a time.",
+      "description_length": 305,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Picos_std_awaitable.Awaitable.Awaiter",
+      "description": "Adds an awaitable to a FIFO queue associated with a trigger, enabling asynchronous waiting for events. Removes an awaiter from the queue after it has been signaled, ensuring proper resource management. Used to coordinate event-driven workflows where specific triggers must be awaited and cleaned up after use.",
+      "description_length": 309,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Picos_std_event.Event",
+      "description": "Provides operations to create and combine events that represent asynchronous or conditional actions, including committing to a fixed value, selecting between multiple events, and transforming event results. Works with event types that encapsulate computations or requests, allowing for structured synchronization and cancellation. Used to manage concurrent operations where one of several possible outcomes is chosen, such as handling multiple I/O operations or coordinating thread actions.",
+      "description_length": 490,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Picos_std_sync.Mutex",
+      "description": "Provides operations to lock, unlock, and attempt to lock a mutex, with options to control error checking. Works with the `t` type representing a mutual-exclusion lock. Used to synchronize access to shared resources in concurrent code, ensuring only one fiber modifies the resource at a time.",
+      "description_length": 291,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Picos_std_sync.Condition",
+      "description": "Provides functions to manage synchronization between threads using a condition variable, including waiting, signaling, and broadcasting. Operates with a mutex to coordinate access to shared resources. Used to coordinate fiber execution in an effects-based scheduler, ensuring proper blocking and resumption of suspended tasks.",
+      "description_length": 326,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Picos_std_sync.Semaphore",
+      "description": "Manages concurrent access to shared resources using counting and binary semaphores. Counting semaphores track and limit the number of simultaneous accesses via operations on an opaque `t` type, while binary semaphores enforce mutual exclusion with a boolean `t` type. Operations include acquiring, releasing, and checking availability, enabling control over database connections or thread pools. Examples include limiting parallel database queries or ensuring exclusive access to a critical section.",
+      "description_length": 499,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Picos_std_sync.Lazy",
+      "description": "Provides functions to create and manipulate suspended computations that can be forced lazily. Works with a type `'a t` representing a delayed computation that may be forced from multiple fibers without raising exceptions. Enables safe deferred execution of thunks and transformation of results through mapping, useful in concurrent or asynchronous contexts where computation should be deferred until needed.",
+      "description_length": 407,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Picos_std_sync.Latch",
+      "description": "Provides methods to manage a countdown latch with atomic increment and decrement operations, including blocking waits and event-based notifications. Works with a mutable state representing the current count, supporting synchronization between parallel tasks. Used to coordinate completion of dynamic or fixed numbers of asynchronous operations, such as waiting for multiple network requests to finish or managing resource cleanup.",
+      "description_length": 430,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Picos_std_sync.Ivar",
+      "description": "Provides operations to manage a single-assignment variable that can be filled or poisoned, including attempting to assign a value, poisoning with an exception and backtrace, and checking the current state. Works with a polymorphic type 'a t that tracks whether the variable is unassigned, filled, or poisoned. Used to synchronize asynchronous computations, ensuring a value is set once and can be safely read or monitored for completion.",
+      "description_length": 437,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Picos_std_sync.Stream",
+      "description": "Creates and manages a stream of values that can be pushed and read concurrently. Supports operations to push values, poison the stream, and create cursors to access values from specific positions. Cursors allow reading or peeking at values, with blocking behavior for current positions until new data arrives or the stream is poisoned.",
+      "description_length": 335,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Picos_std_structured.Control",
+      "description": "Provides functions to manage fiber cancellation, scheduling, and timeouts. Operates on fibers and exceptions, including the Terminate exception for cancellation. Enables safe resource handling with protect, controlled suspension with sleep and yield, and timeout-based termination of long-running operations.",
+      "description_length": 308,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Picos_std_structured.Promise",
+      "description": "Provides operations to create, await, and cancel asynchronous computations. Works with a polymorphic type representing a promise that may be in progress, completed, or canceled. Enables managing timed cancellations and event-based completion tracking in concurrent workflows.",
+      "description_length": 275,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Picos_std_structured.Bundle",
+      "description": "Provides operations to manage a collection of fibers within a scoped execution context, including joining, terminating, and handling errors. Works with a `t` type representing the bundle, and supports spawning fibers that return values via promises or void. Used to ensure proper cleanup of concurrent tasks, such as canceling background processes on timeout or propagating errors across all spawned fibers.",
+      "description_length": 407,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Picos_std_structured.Flock",
+      "description": "Provides functions to manage a dynamic flock of fibers, including `join_after` to create a scoped concurrency environment, `terminate` to cancel all fibers, and `error` to handle exceptions and backtraces. Operates on fibers, promises, and exceptions, ensuring all spawned fibers are properly terminated upon scope exit. Used to structure concurrent operations with guaranteed cleanup, such as managing background tasks or timed cancellations.",
+      "description_length": 443,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Picos_std_structured.Run",
+      "description": "Executes a list of unit-returning functions as concurrent fibers, waiting for all to complete or for the first to fail, with cancellation of remaining tasks. Handles unhandled exceptions and special termination signals, ensuring cleanup of spawned fibers. Designed for orchestrating parallel tasks with controlled execution and error handling.",
+      "description_length": 343,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Picos_std_awaitable.Awaitable",
+      "description": "Provides asynchronous coordination through awaitable locations that support event-driven workflows. It introduces a FIFO queue system for managing awaiters, allowing processes to wait for specific triggers and automatically clean up after signaling. Key data types include awaitable locations and event queues, with operations for waiting, signaling, and managing resources. This enables efficient implementation of synchronization primitives like condition variables and message passing.",
+      "description_length": 488,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "picos_std",
+      "description": "Provides atomic operations and event-based synchronization for concurrent execution, including awaitable variables and structured concurrency constructs. Works with fiber-based execution contexts and low-level synchronization primitives like futexes. Used to manage resource cleanup, coordinate fiber execution, and implement non-blocking I/O patterns.",
+      "description_length": 352,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Picos_std_event",
+      "description": "Encapsulates asynchronous and conditional actions through event types, enabling structured handling of concurrent operations. Supports creating events that commit to values, select between alternatives, and transform results, with operations for combining and synchronizing them. Examples include managing I/O completion, coordinating thread execution, and handling multiple potential outcomes in a controlled manner. Key data types include event constructors and combinators for sequencing, branching, and transforming event-based computations.",
+      "description_length": 545,
+      "index": 18,
+      "embedding_norm": 1.0000001192092896
+    },
+    {
+      "module_path": "Picos_std_sync",
+      "description": "Provides synchronization and communication primitives for concurrent programming, including mutexes, condition variables, semaphores, delayed computations, countdown latches, single-assignment variables, and streams. Key types include `t` for locks, semaphores, and variables, `'a t` for delayed computations, and stream cursors for concurrent access. Operations like locking, waiting, acquiring, and pushing values enable controlled access to shared resources, coordination of tasks, and safe deferred execution. Examples include limiting database connections, coordinating fiber execution, and managing asynchronous result delivery.",
+      "description_length": 634,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Picos_std_finally",
+      "description": "Provides functions for safely managing resources that must be released after use, including acquiring, using, and releasing resources while preventing leaks. Works with a custom type 'r instance that encapsulates resource ownership and borrowing. Enables structured resource handling in concurrent programs, such as ensuring file handles are closed or network connections are terminated properly.",
+      "description_length": 396,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Picos_std_structured",
+      "description": "manages concurrent execution through fiber-based structured concurrency, offering cancellation, timeouts, and scoped resource control. it works with fibers, promises, and exception handling to enable safe, coordinated execution of asynchronous tasks. operations include spawning and joining fibers, managing timeouts, and ensuring cleanup through scoped environments. examples include running parallel tasks with automatic cancellation on failure, managing background processes with timeouts, and coordinating event-driven workflows.",
+      "description_length": 533,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Picos_std_awaitable",
+      "description": "manages asynchronous coordination via awaitable locations that act as synchronization points, using FIFO queues to handle waiting processes. It supports operations such as waiting for a signal, signaling to wake waiting processes, and managing event queues to ensure orderly execution. Key data types include awaitable locations and event queues, enabling constructs like condition variables and message passing. For example, a process can wait on an awaitable location until another process signals it, triggering the next step in a workflow.",
+      "description_length": 543,
+      "index": 22,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 23,
+    "meaningful_modules": 23,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 634,
+    "min_description_length": 275,
+    "avg_description_length": 412.17391304347825,
+    "embedding_file_size_mb": 0.08394241333007812
+  }
+}

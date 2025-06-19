@@ -1,0 +1,973 @@
+{
+  "package": "incremental",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 136,
+  "creation_timestamp": "2025-06-18T16:52:55.497688",
+  "modules": [
+    {
+      "module_path": "Incremental.Make.Let_syntax.Let_syntax.Open_on_rhs",
+      "description": "Monitors a variable for changes and returns a value that evaluates to the current state of the variable when accessed. It operates on variables wrapped in a `Var.t` type and values of type `'a t`. This is used to create reactive dependencies in a dataflow system where values update automatically when their sources change.",
+      "description_length": 323,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make_with_config.Let_syntax.Let_syntax.Open_on_rhs",
+      "description": "Monitors changes to a variable and returns a value that updates when the variable changes. It operates on variables and values wrapped in a tracking structure. Used to create reactive dependencies in dynamic data flows.",
+      "description_length": 219,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Node_id.Map.Key",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons in data structures.",
+      "description_length": 269,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Node_id.Map.Diff",
+      "description": "Provides operations to serialize and deserialize difference data between two maps, compute differences between map states, and apply changes to a map. Works with map-based data structures where keys are of type Key.t and values are associated with diff types. Used to track and apply incremental updates to configuration maps or state representations.",
+      "description_length": 351,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Node_id.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with Sexp.t and Key.t data structures. Used to deserialize key representations from structured text formats.",
+      "description_length": 187,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Node_id.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t, a custom type that may include polymorphic variants. Used to persist or transmit Key.t values efficiently in binary format.",
+      "description_length": 295,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Node_id.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information to prevent prefix-based collisions. Used to generate reliable hash values for complex structures in hashing-based data structures.",
+      "description_length": 371,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Node_id.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key by parsing its structure and extracting the relevant value. Works with `Sexplib0.Sexp.t` and returns a `key` type. Used to deserialize structured data from S-expressions into a specific domain type during parsing.",
+      "description_length": 249,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Node_id.Table.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, including polymorphic variants. Enables efficient storage and transmission of data structures in binary format.",
+      "description_length": 317,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Node_id.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific element type using a provided constructor. Works with S-expressions and custom data types defined by the user. Used to parse structured data from S-expression representations into typed values.",
+      "description_length": 233,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Node_id.Hash_set.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that need to be encoded in a binary format compatible with the Bin_prot library. Used to enable persistent storage or network transmission of structured data with precise control over the binary representation.",
+      "description_length": 393,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Node_id.Set.Elt",
+      "description": "Provides serialization and deserialization between S-expressions and a type `t`, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons for custom data types.",
+      "description_length": 272,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Node_id.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting between S-expressions and internal representations. Works with sets of elements and optional difference structures representing changes between two states. Used to track modifications in set-based data structures and apply them selectively.",
+      "description_length": 340,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Node_id.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a value of type Elt.t using a custom parsing function. Operates on Sexp.t values generated from serialized data. Used to deserialize structured data into domain-specific types during parsing workflows.",
+      "description_length": 231,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Node_id.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and variant-based decoding. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 343,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Node_id.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Operates on custom data types defined with `Elt.t`, supporting recursive and composite structures. Used to generate consistent, collision-resistant hash values for complex types in serialization and equality checks.",
+      "description_length": 413,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Stabilization_num.Map.Key",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons in data structures.",
+      "description_length": 269,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Stabilization_num.Map.Diff",
+      "description": "Provides operations to convert between S-expressions and a structured difference type, and to compute and apply differences between maps. Works with key-value maps and difference representations that track changes between states. Enables precise transformation of data structures by applying computed diffs or generating diffs from list-based changes.",
+      "description_length": 351,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Stabilization_num.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with S-expressions and key data structures derived from a specific domain model. Used to deserialize configuration data from S-expressions into typed key representations for validation and lookup.",
+      "description_length": 275,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Stabilization_num.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and related Bin_prot type classes for binary I/O operations. Used to persist and reconstruct Key.t values in binary format for storage or communication.",
+      "description_length": 323,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Stabilization_num.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. It operates on custom data types, particularly those defined with `Key.t`, and enforces proper handling of collections by incorporating their size before element-wise folding. Used to generate reliable hash values for complex structures in hashing-based data structures like hash tables.",
+      "description_length": 451,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Stabilization_num.Set.Elt",
+      "description": "Provides serialization and deserialization between a type and S-expressions, along with a comparator for ordered operations. Works with the abstract type `t` and its associated comparator witness. Used to enable persistent storage and ordered comparisons in data structures.",
+      "description_length": 274,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Stabilization_num.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting between S-expressions and internal representations. Works with sets of elements and optional difference structures representing changes between states. Used to track modifications in set-based data structures and apply them deterministically.",
+      "description_length": 342,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Stabilization_num.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and the module's defined `Elt.t` type. Used to parse structured data from S-expressions into application-specific values.",
+      "description_length": 216,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Stabilization_num.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and variant-based reading. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 342,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Stabilization_num.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Works with custom data types defined using the `Elt` module, supporting recursive and nested structures. Used to generate consistent, collision-resistant hash values for complex types in serialization and equality checks.",
+      "description_length": 419,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_memoize.Make.Let_syntax.Let_syntax.Open_on_rhs",
+      "description": "Registers a watch on a variable to trigger evaluation of a delayed computation when the variable's value changes. Works with variables and delayed computations represented as stateful objects. Used to implement reactive updates in systems where variable changes need to propagate to dependent values.",
+      "description_length": 300,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Let_syntax.Let_syntax.Open_on_rhs",
+      "description": "Registers a watch on a variable to trigger evaluation of a computation when the variable changes, using a specific event-driven mechanism. It operates on variables and computations represented as opaque types. This is used to implement reactive behaviors in systems where state changes need to propagate automatically.",
+      "description_length": 318,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make.State.Stats",
+      "description": "Calculates and aggregates performance metrics from event logs, including average response times and request counts. Operates on structured data containing timestamps, event types, and numerical values. Used to generate real-time dashboards and anomaly detection reports.",
+      "description_length": 270,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make.Observer.Update",
+      "description": "Compares two values using a custom comparator function, producing an integer result. Converts a value into an S-expression using a provided conversion function. Works with the 'a Observer.Update.t type, enabling structured data manipulation and serialization. Used to evaluate changes in observed values and generate serialized representations for logging or communication.",
+      "description_length": 373,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make.Let_syntax.Let_syntax",
+      "description": "Tracks variable changes and enables reactive updates through `Var.t` and `'a t` types, allowing values to dynamically reflect their dependencies. It supports building dataflow systems where computations automatically adjust as underlying variables change. For example, a counter can trigger a UI update whenever its value increments. Operations include binding, observing, and propagating changes across dependent values.",
+      "description_length": 421,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make.Expert.Dependency",
+      "description": "Provides functions to create and inspect dependency-tracking values, including a way to serialize them to S-expressions. Operates on a parameterized type that wraps an incremental value and tracks its state. Used to manage and query computed values that update in response to changes in underlying data.",
+      "description_length": 303,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make.Expert.Node",
+      "description": "Provides functions to serialize node data to S-expressions, create nodes with observability callbacks, and manage dependencies and state updates. Operates on a generic node type that tracks state and dependencies. Used to build reactive systems where node values are recalculated on demand and dependencies are explicitly managed.",
+      "description_length": 330,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make.Expert.Step_result",
+      "description": "Provides serialization of step result values to S-expressions. Works with a custom type representing the outcome of a computational step, including success and failure states. Used to generate human-readable and machine-parsable representations for logging and debugging.",
+      "description_length": 271,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.Make_with_config.State.Stats",
+      "description": "Calculates and aggregates performance metrics from system state data, including averages, totals, and rate calculations. It processes structured data containing timestamps, counters, and event logs. Used to generate real-time monitoring reports and detect anomalies in system behavior.",
+      "description_length": 285,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make_with_config.Observer.Update",
+      "description": "Compares two values using a provided comparison function, producing an integer result. Converts a value into an S-expression using a given conversion function. Operates on the 'a t type, which represents update events in an observer pattern. Used to determine differences between state updates and serialize them for logging or debugging.",
+      "description_length": 338,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make_with_config.Let_syntax.Let_syntax",
+      "description": "Tracks variable changes and generates reactive values that update automatically. It works with tracked variables and values, enabling dynamic data flow dependencies. Operations include creating, updating, and observing tracked values. For example, it can link a UI element to a state variable so the UI updates automatically when the state changes.",
+      "description_length": 348,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make_with_config.Expert.Dependency",
+      "description": "Provides functions to create and inspect dependency-tracking values, including a way to serialize them to S-expressions. Operates on a parameterized type that wraps an incremental value and tracks its state. Used to manage and query computed values that update in response to changes in underlying data.",
+      "description_length": 303,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make_with_config.Expert.Node",
+      "description": "Provides functions to serialize node data to S-expressions, create nodes with observability callbacks, and manage dependencies and state changes. Operates on a generic node type that tracks state and dependencies. Used to build reactive systems where node values are computed and updated based on changes in dependencies.",
+      "description_length": 321,
+      "index": 38,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.Make_with_config.Expert.Step_result",
+      "description": "Provides serialization of step result values to S-expressions. Works with a custom type representing the outcome of a computational step. Used to convert internal state into a format suitable for logging or debugging.",
+      "description_length": 217,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Node_id.Table",
+      "description": "Converts S-expressions into domain-specific keys and handles binary serialization and deserialization of custom types, including polymorphic variants. It supports operations like parsing, size calculation, writing, and reading data using Bin_prot. Key types are derived from S-expression structures, while binary formats enable efficient data storage and transmission. Examples include parsing structured data into a key and serializing a custom type for network transfer.",
+      "description_length": 472,
+      "index": 40,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Node_id.Hash_set",
+      "description": "Converts S-expressions to typed values using user-defined constructors and supports binary serialization and deserialization with Bin_prot, enabling efficient storage and transmission of structured data. It handles custom data types by providing methods to calculate size, write, read, and describe the shape of values. Users can parse and reconstruct complex data structures from textual S-expressions or binary formats. For example, it can transform an S-expression representing a tree into a typed tree structure or encode a list of records into a compact binary stream.",
+      "description_length": 573,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Node_id.Hash_queue",
+      "description": "This module provides operations for managing key-value queues, including insertion, retrieval, reordering, and modification of elements, with support for both safe (option-returning) and unsafe (exn-raising) variants. It works with structured hash queue data structures that maintain ordered access and key-based operations, enabling tasks like efficient membership checks, element transformation, and traversal. Use cases include scenarios requiring dynamic queue management, such as task scheduling or caching systems, where ordered access and key-value associations are critical.",
+      "description_length": 582,
+      "index": 42,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Node_id.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports comparison, enabling direct use in sorting and decision-making logic. Used to replace polymorphic comparisons in scenarios requiring explicit type-specific behavior.",
+      "description_length": 384,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Node_id.Map",
+      "description": "Encapsulates operations for serializing, comparing, and diffing map-like structures, along with key and value conversion and hashing. Supports S-expressions, binary protocols, and custom key parsing, enabling efficient storage, transmission, and version control of map states. Allows for generating consistent hashes, applying incremental changes, and converting between structured data formats. Can be used to persist configuration maps, track state changes, and ensure data integrity in distributed systems.",
+      "description_length": 509,
+      "index": 44,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Node_id.Set",
+      "description": "Encodes and decodes values between S-expressions and a type `t`, supporting ordered operations via a comparator and difference tracking for set-based modifications. Parses S-expressions into domain-specific elements using custom functions and serializes data in binary format with Bin_prot for efficient storage and reconstruction. Computes collision-resistant hashes by folding structured data into a hash state, accounting for both size and element composition. Enables persistent storage, version control, and consistent hashing for custom data types through integrated serialization, parsing, and hashing mechanisms.",
+      "description_length": 620,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Stabilization_num.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a specific type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports comparison, enabling direct use in sorting and decision-making logic. Used to replace polymorphic comparisons in custom types, ensuring consistent and explicit ordering behavior.",
+      "description_length": 399,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Stabilization_num.Map",
+      "description": "Combines S-expression and binary serialization for key types with difference tracking and hash folding, enabling data persistence, transformation, and consistent hashing. It supports ordered operations via comparators, structured diff computation, and custom parsing for domain-specific keys. Users can serialize and deserialize key-value maps, apply incremental changes, and generate reliable hash values for complex structures. Operations include converting between S-expressions, applying diffs, and folding hashes for use in hash tables.",
+      "description_length": 541,
+      "index": 47,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Stabilization_num.Set",
+      "description": "Encodes and decodes data between S-expressions and custom types, supporting ordered operations via a comparator and difference tracking for set modifications. Handles binary serialization with Bin_prot, enabling efficient storage and reconstruction of parameterized data structures. Parses S-expressions into application-specific values using a defined element type and supports structured hashing for collision-resistant representation. Examples include persisting sets with versioned changes, converting structured data for processing, and generating stable hashes for equality checks.",
+      "description_length": 587,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_memoize.Make.Let_syntax.Let_syntax",
+      "description": "Tracks changes to stateful variables and automatically evaluates associated delayed computations, enabling reactive behavior. Key types include variables and delayed computations, with operations to register watches and trigger updates. This allows for dynamic systems where dependent values respond to variable modifications. For example, a UI element can update automatically when a underlying data model changes.",
+      "description_length": 415,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_memoize.Make.State.Stats",
+      "description": "Calculates and aggregates performance metrics such as elapsed time, memory usage, and event counts. Operates on a custom type representing incremental statistics data. Used to track and serialize runtime performance data during long-running processes.",
+      "description_length": 251,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_memoize.Make.Observer.Update",
+      "description": "Compares two updates using a custom comparator function, enabling ordered evaluation of state changes. Converts updates into S-expression format for serialization, using a provided conversion function for the underlying data. Designed for use in incremental computation systems where precise control over update ordering and representation is required.",
+      "description_length": 352,
+      "index": 51,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_memoize.Make.Expert.Dependency",
+      "description": "Provides functions to create and inspect dependencies that track changes in incremental values. Works with a type representing dependencies tied to incremental computations, using a state witness for type safety. Enables capturing the current value of a dependency and serializing it with S-expressions.",
+      "description_length": 303,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_memoize.Make.Expert.Node",
+      "description": "Provides functions to serialize node values to S-expressions, create nodes with observability callbacks, and manage dependencies and state updates. Operates on a generic node type that encapsulates incremental computation state and dependencies. Used to track changes in reactive systems, trigger updates, and manage dependency graphs in real-time data processing.",
+      "description_length": 364,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_memoize.Make.Expert.Step_result",
+      "description": "Provides functions to convert step result values into S-expression format. Works with the incremental step result type used in parsing and processing streams. Used to serialize intermediate parsing states for logging or debugging purposes.",
+      "description_length": 239,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make.State",
+      "description": "Tracks and analyzes event data to compute key performance indicators, such as average response times and request volumes, from timestamped records. It processes structured data with event types and numerical metrics, enabling real-time monitoring and anomaly detection. Operations include aggregation, filtering, and time-based analysis. Examples include generating live dashboards and identifying spikes in error rates.",
+      "description_length": 420,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make.Infix",
+      "description": "Processes monadic transformations by chaining operations that either map values within a context or sequence computations that produce contexts. Operates on types that support monadic behavior, such as option, result, and custom wrapped types. Enables fluent composition of error-handling workflows and asynchronous operations.",
+      "description_length": 327,
+      "index": 56,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.Make.Unordered_array_fold_update",
+      "description": "Provides functions to fold over an unordered array while updating elements based on a given function. Operates on arrays of type ('a, 'b) t, allowing in-place modifications during traversal. Used to efficiently process and alter elements in a collection where order does not matter.",
+      "description_length": 282,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make.Scope",
+      "description": "Provides operations to manage and query a scoped execution context, including retrieving the top scope, accessing the current scope, and executing a function within a specified scope. Works with a scoped state type that tracks hierarchical scope relationships. Used to enforce context-specific behavior in nested evaluations, such as in interpreters or scoped configuration systems.",
+      "description_length": 382,
+      "index": 58,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.Make.Var",
+      "description": "Provides functions to create, update, and observe values with change tracking, including setting values, watching for updates, and retrieving current or latest values. Works with a parameterized type representing mutable state with versioning. Used to manage dynamic values in reactive systems, such as updating UI elements in response to changes.",
+      "description_length": 347,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make.Observer",
+      "description": "provides a mechanism for comparing and serializing values through customizable functions, operating on structured data types. It supports operations like value comparison, S-expression conversion, and update tracking. Users can monitor changes in observed data and generate serialized outputs for debugging or transmission. This enables precise control over how data is evaluated and represented in observer-based systems.",
+      "description_length": 422,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make.Update",
+      "description": "Compares two values using a custom comparator function, converting them into an integer result. Serializes values into S-expressions using a provided conversion function. Designed for handling structured data updates with explicit control over comparison and serialization.",
+      "description_length": 273,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make.Cutoff",
+      "description": "Provides functions to define and evaluate cutoff conditions based on value comparisons, including custom predicates, equality checks, and identity comparisons. Works with arbitrary data types through polymorphic comparison functions and value-based checks. Used to determine if a value should trigger a cutoff during operations like caching or state updates.",
+      "description_length": 358,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make.Node_value",
+      "description": "Converts values of a wrapped type to S-expressions using a provided converter function. Operates on a polymorphic variant type that encapsulates another value. Used to serialize structured data for debugging or configuration purposes.",
+      "description_length": 234,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make.Packed",
+      "description": "Generates Graphviz DOT format representations of graph structures, with options to include binding edges. Accepts a list of nodes and writes them to an output channel or file. Enhances nodes with user-defined labels and attributes for visualization purposes.",
+      "description_length": 258,
+      "index": 64,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.Make.Let_syntax",
+      "description": "Tracks variable changes and enables reactive updates through `Var.t` and `'a t` types, allowing values to dynamically reflect dependencies. It supports building dataflow systems where computations automatically adjust as underlying variables change. For example, a counter can trigger a UI update when its value increments. Operations include binding, observing, and propagating changes across dependent values.",
+      "description_length": 411,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make.Before_or_after",
+      "description": "Handles temporal ordering comparisons, determining if one event occurs before or after another. Operates on custom type `t` representing ordered relationships. Used to enforce or validate sequence constraints in event-driven systems.",
+      "description_length": 233,
+      "index": 66,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.Make.Clock",
+      "description": "Provides methods to manipulate a simulated clock, including advancing time, scheduling events at specific points, and defining interval-based actions. Operates with time values represented as 63-bit integers, time spans, and incremental event sequences. Used to simulate real-time behavior in testing or event-driven systems, such as scheduling alarms or managing timed state transitions.",
+      "description_length": 388,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make.Expert",
+      "description": "Manages reactive data structures with state tracking, serialization, and dependency resolution. Operates on parameterized values, generic nodes, and step results, enabling dynamic updates and structured data representation. Supports creating observable nodes, serializing computed outcomes, and inspecting state changes. Can track dependencies in real time, generate debuggable outputs, and handle complex state transitions in reactive applications.",
+      "description_length": 449,
+      "index": 68,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make_with_config.State",
+      "description": "Calculates and aggregates performance metrics from structured system state data, including averages, totals, and rates, using timestamps, counters, and event logs. It supports real-time monitoring by processing and analyzing continuous data streams. Operations include filtering, summarizing, and detecting anomalies in time-series data. Examples include computing CPU usage averages over intervals or identifying sudden spikes in request rates.",
+      "description_length": 445,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make_with_config.Infix",
+      "description": "Processes monadic transformations by chaining operations that either map values within a context or bind to new contexts. Works with wrapped data types such as option, result, and custom monadic structures. Enables fluent sequencing of computations like parsing followed by validation, or fetching data and transforming it.",
+      "description_length": 323,
+      "index": 70,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.Make_with_config.Unordered_array_fold_update",
+      "description": "Provides functions to fold over an unordered array while updating elements based on a given function. Operates on arrays of key-value pairs, applying a transformation during traversal. Used to efficiently modify and aggregate data in-place during iteration.",
+      "description_length": 257,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make_with_config.Scope",
+      "description": "Provides operations to manage and query a scoped execution context, including retrieving the top scope, accessing the current scope, and executing a function within a specified scope. Works with a scoped state type that tracks hierarchical scope boundaries. Used to enforce scope-based resource management and context switching during execution.",
+      "description_length": 345,
+      "index": 72,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.Make_with_config.Var",
+      "description": "Provides functions to create, update, and observe values with change tracking, including setting values, watching for updates, and retrieving current or latest values. Operates on a parameterized type representing mutable state with versioning. Used to manage dynamic values in reactive systems, such as updating UI elements in response to changes.",
+      "description_length": 348,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make_with_config.Observer",
+      "description": "Processes update events by comparing values with a custom function and converting them to S-expressions for serialization. Operates on the 'a t type, supporting comparison and conversion operations. Can detect state changes between updates and generate debug-friendly representations. Useful for tracking changes in observer-based systems and generating logs.",
+      "description_length": 359,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make_with_config.Update",
+      "description": "Compares two values using a custom comparator function, converting them into an integer result. Serializes values into S-expressions using a provided conversion function. Designed for handling structured data updates with explicit control over comparison and serialization.",
+      "description_length": 273,
+      "index": 75,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make_with_config.Cutoff",
+      "description": "Provides functions to define and evaluate cutoff conditions based on value comparisons, including custom predicates, equality checks, and identity comparisons. Works with arbitrary data types through provided comparison and equality functions. Used to determine if a value change should trigger an action, such as in caching or state management scenarios.",
+      "description_length": 355,
+      "index": 76,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make_with_config.Node_value",
+      "description": "Converts values of a wrapped type to S-expressions using a provided converter function. Operates on a polymorphic variant type that encapsulates values of any type. Used to serialize custom node data structures for debugging or configuration purposes.",
+      "description_length": 251,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make_with_config.Packed",
+      "description": "Generates Graphviz DOT format representations of graph structures, with options to include binding edges. Accepts a list of nodes and appends user-defined labels and attributes to their visual representation. Outputs to a file or channel, suitable for visualizing program analysis results.",
+      "description_length": 289,
+      "index": 78,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make_with_config.Let_syntax",
+      "description": "Tracks variable changes to produce reactive values that update automatically, supporting dynamic data flow through tracked variables and values. It provides operations to create, modify, and observe these values, enabling real-time synchronization. For instance, it can bind a user interface element to a state variable, ensuring the interface reflects updates instantly. The core data types include tracked variables and reactive values, with operations that manage their lifecycle and dependencies.",
+      "description_length": 500,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make_with_config.Before_or_after",
+      "description": "Handles comparisons between positions in a sequence, providing a total order. Works with ordered values that represent relative positioning, such as timestamps or indices. Used to determine the logical sequence of events in a parser or scheduler.",
+      "description_length": 246,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make_with_config.Clock",
+      "description": "Provides methods to manipulate a simulated clock, including advancing time, scheduling events, and querying current time. Operates with time values as 63-bit integers, time spans, and incremental event sequences. Used to simulate real-time behavior in event-driven systems, such as scheduling alarms or tracking time-based state transitions.",
+      "description_length": 341,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make_with_config.Expert",
+      "description": "Manages reactive data structures with state tracking, serialization, and dependency resolution. Operates on parameterized values, generic nodes, and step results, enabling computation of derived values, observability of changes, and conversion of internal states to S-expressions. Supports building systems where values update automatically in response to changes, with detailed logging and debugging capabilities. Can track dependencies between values, serialize node data for persistence, and record step outcomes for analysis.",
+      "description_length": 529,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.State.Stats",
+      "description": "Calculates and aggregates performance metrics from event logs, including mean, median, and percentile values. Operates on structured data containing timestamps, event types, and numerical measurements. Used to generate real-time analytics reports for system monitoring dashboards.",
+      "description_length": 280,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Cutoff",
+      "description": "Handles conversion between a custom type and S-expressions, with equality checks and string representation. Works with an abstract type encapsulating cutoff values. Used to serialize and deserialize cutoff data for logging and configuration parsing.",
+      "description_length": 249,
+      "index": 84,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Kind",
+      "description": "Provides serialization and deserialization between a custom type and S-expressions, along with a string representation. Works with an opaque type `t` that is convertible to and from S-expressions. Used to encode and decode structured data in a human-readable format for logging or configuration.",
+      "description_length": 295,
+      "index": 85,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Dot_user_info",
+      "description": "Converts between a structured user information type and S-expressions, and between that type and a custom dot format. Handles operations to create, combine, and serialize user data with labels, attributes, and visual properties. Generates string representations of user nodes for graph visualization tools.",
+      "description_length": 306,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Stabilization_num",
+      "description": "provides comparison, serialization, and deserialization capabilities for custom types, enabling ordered operations, data persistence, and structured hashing. It supports S-expression and binary formats, with functions to compute differences, apply incremental updates, and generate stable hash values. Users can sort, compare, and serialize complex data structures while maintaining consistency and traceability. Examples include persisting versioned sets, converting structured data for processing, and ensuring reliable equality checks through hash folding.",
+      "description_length": 559,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer.Node_id",
+      "description": "Combines S-expression parsing, binary serialization, and custom type handling with operations for key management, comparison, and map manipulation. It supports typed conversions, efficient data storage, and ordered access through hash queues, while enabling comparison, diffing, and hashing of structured data. Users can transform S-expressions into typed values, serialize complex structures for network transfer, and manage dynamic key-value collections with safe or unsafe operations. Examples include parsing a tree from an S-expression, serializing a map for persistence, and tracking changes in a configuration state.",
+      "description_length": 623,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Observer.Update",
+      "description": "Compares two values using a custom comparator function, producing an integer result. Converts a value into an s-expression using a provided mapping function. Operates on the 'a t type, which represents update events in an observer pattern. Used to determine differences between state updates and serialize them for logging or debugging.",
+      "description_length": 336,
+      "index": 89,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Let_syntax.Let_syntax",
+      "description": "Monitors variable changes to automatically evaluate associated computations, enabling reactive updates through an event-driven system. It works with opaque variable and computation types, allowing automatic state propagation. Users can set up dependencies where a computation re-runs when a tracked variable updates. This supports dynamic systems that respond to real-time data changes.",
+      "description_length": 386,
+      "index": 90,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.Config.Default",
+      "description": "Handles dependency invalidation logic between left-hand side and right-hand side values in a system that tracks changes. Operates on boolean flags to control whether a left-hand side change triggers an invalidation of dependent right-hand side computations. Used to maintain backward compatibility with older code that assumes a specific invalidation behavior.",
+      "description_length": 360,
+      "index": 91,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Expert.Dependency",
+      "description": "Provides functions to create and inspect dependency-tracking values, including a way to serialize them to S-expressions and retrieve their current value. Operates on a parameterized type that wraps an incremental value and a state witness. Used to track and react to changes in computed values within a reactive system.",
+      "description_length": 319,
+      "index": 92,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Expert.Node",
+      "description": "Provides functions to serialize node data to S-expressions, create nodes with observability callbacks, and manage dependencies and state changes. Operates on a generic node type that tracks state and dependencies. Used to build reactive systems where node values are computed and invalidated based on changes in dependencies.",
+      "description_length": 325,
+      "index": 93,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Expert.Step_result",
+      "description": "Provides functions to convert step result values into S-expression format. Works with the internal representation of step outcomes, including success and failure states. Used to serialize step data for logging or debugging purposes.",
+      "description_length": 232,
+      "index": 94,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_memoize.Make.Incr_with_store_params",
+      "description": "Provides functions to create, update, and query a persistent store for incremental computations, including `get`, `set`, and `update` operations. Works with the `'a t` type, which represents a versioned data structure storing values and their dependencies. Used to manage state in reactive systems where changes trigger recomputation of dependent values.",
+      "description_length": 354,
+      "index": 95,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_memoize.Make.Let_syntax",
+      "description": "Tracks state changes and triggers automatic evaluation of dependent computations, supporting reactive programming. It defines variables and delayed expressions, with mechanisms to observe and react to modifications. Operations include setting values, adding watchers, and propagating updates. This enables real-time data binding, such as updating a display when a configuration value changes.",
+      "description_length": 392,
+      "index": 96,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_memoize.Make.State",
+      "description": "Tracks and serializes performance data by aggregating metrics like elapsed time, memory usage, and event counts from incremental statistics. Provides operations to merge, update, and export these metrics in structured formats. Supports real-time monitoring and post-processing of long-running computations. Examples include logging execution duration, analyzing memory trends, and generating summary reports.",
+      "description_length": 408,
+      "index": 97,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_memoize.Make.Infix",
+      "description": "Processes monadic transformations by chaining operations that either map values within a context or bind to new contexts. Operates on type constructors that support monadic behavior, such as option, list, or custom wrapped types. Enables fluent sequencing of computations like parsing followed by validation, or fetching data then processing results.",
+      "description_length": 350,
+      "index": 98,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_memoize.Make.Unordered_array_fold_update",
+      "description": "Provides functions to fold over an unordered array while updating a state, with operations to accumulate results and modify elements during traversal. Works with arrays of arbitrary elements and associated state values, using a tuple type to track progress. Used to process and transform data in parallelizable workflows, such as aggregating statistics from a collection of independent sources.",
+      "description_length": 394,
+      "index": 99,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_memoize.Make.Scope",
+      "description": "Provides operations to manage and query scope states, including retrieving the top scope, accessing the current scope, and executing functions within a specified scope. Works with a scoped state type that tracks incremental scope boundaries. Used to isolate computations and check scope hierarchy during execution.",
+      "description_length": 314,
+      "index": 100,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_memoize.Make.Var",
+      "description": "Provides functions to create, update, and observe values with change tracking, including setting values, watching for updates, and retrieving current or latest values. Works with a parameterized type representing mutable variables that can emit incremental updates. Used to manage dynamic state in reactive systems, such as updating UI elements in response to variable changes.",
+      "description_length": 377,
+      "index": 101,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_memoize.Make.Observer",
+      "description": "Manages state transitions by comparing updates with a custom comparator, ensuring ordered processing. Supports serialization of updates to S-expressions via a user-defined conversion function. Enables precise control over how changes are evaluated and represented in incremental systems. For example, it can track and serialize database schema changes in a specific order.",
+      "description_length": 372,
+      "index": 102,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_memoize.Make.Update",
+      "description": "Compares two values using a custom comparator function, producing an integer result. Converts a value into an S-expression using a provided conversion function. Designed for use with incremental update structures in data processing pipelines.",
+      "description_length": 242,
+      "index": 103,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_memoize.Make.Cutoff",
+      "description": "Provides functions to define and evaluate cutoff conditions based on value comparisons, including custom predicates, equality checks, and reference identity. Works with arbitrary data types through provided comparison and equality functions. Used to determine if a value change should trigger an update in incremental computation systems.",
+      "description_length": 338,
+      "index": 104,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_memoize.Make.Node_value",
+      "description": "Converts values of a wrapped type to S-expressions using a provided converter function. Operates on a polymorphic variant type that encapsulates another value. Used to serialize structured data for debugging or configuration purposes.",
+      "description_length": 234,
+      "index": 105,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_memoize.Make.Packed",
+      "description": "Generates Graphviz DOT format representations of graph structures, supporting edge emission control and user-defined attributes. Operates on a list of graph nodes, each of type `Incremental.Packed.t`. Enables visualization of graph relationships and metadata through direct file output or channel writing.",
+      "description_length": 305,
+      "index": 106,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_memoize.Make.Before_or_after",
+      "description": "Handles conversion of time-based state representations to S-expression format. Operates on a type encapsulating temporal positioning data, such as event sequencing markers. Used to serialize state for logging or configuration purposes.",
+      "description_length": 235,
+      "index": 107,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_memoize.Make.Clock",
+      "description": "Provides methods to manage a simulated clock with precise timing controls, including advancing time, setting alarms, and creating incremental time-based computations. Operates on time values represented as 63-bit integers and time spans, supporting interval-based and event-driven scheduling. Used to simulate real-time behavior in reactive systems, such as triggering actions at specific time points or intervals.",
+      "description_length": 414,
+      "index": 108,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_memoize.Make.Expert",
+      "description": "Tracks incremental computations and their dependencies, enabling value capture, serialization, and reactive updates. Operates on node types that encapsulate state and dependencies, supporting observability and real-time data tracking. Serializes step results and node values using S-expressions for debugging and logging. Can log parsing states, trigger updates on value changes, and manage dependency graphs in reactive systems.",
+      "description_length": 429,
+      "index": 109,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.State",
+      "description": "Calculates and aggregates performance metrics from structured event data, supporting mean, median, and percentile computations. Processes timestamps, event types, and numerical values to produce real-time analytics. Generates summary statistics for system monitoring. Examples include tracking response times, identifying latency thresholds, and detecting anomalies in event streams.",
+      "description_length": 383,
+      "index": 110,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.Infix",
+      "description": "Processes monadic transformations by chaining operations that either map values within a context or bind to new contexts. Works with any type that supports the `t` constructor, such as option, list, or result. Enables fluent sequencing of computations like parsing nested JSON structures or handling asynchronous workflows.",
+      "description_length": 323,
+      "index": 111,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Unordered_array_fold_update",
+      "description": "Provides functions to fold over an unordered array while updating elements based on a given function. Operates on arrays of key-value pairs, applying a transformation during traversal. Used to efficiently modify and aggregate data in-place during iteration.",
+      "description_length": 257,
+      "index": 112,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Scope",
+      "description": "Provides operations to manage and query a scoped execution context, including retrieving the top scope, accessing the current scope, and executing a function within a specified scope. Works with a scoped state type that tracks hierarchical scope relationships. Used to enforce context-specific behavior during nested function calls or configuration overrides.",
+      "description_length": 359,
+      "index": 113,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Var",
+      "description": "Provides functions to create, update, and observe values with change tracking, including setting values, watching for updates, and retrieving current or latest values. Works with a parameterized type that wraps values and tracks their state. Used to manage dynamic values in reactive systems, such as updating UI elements in response to changes.",
+      "description_length": 345,
+      "index": 114,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Observer",
+      "description": "Provides operations to compare and serialize values within an observer pattern. It handles 'a t type, enabling comparison via a custom function and conversion to s-expressions using a mapping. This allows tracking state changes and generating debug logs. For example, it can compare two application states to detect changes or convert event data into a readable format for analysis.",
+      "description_length": 382,
+      "index": 115,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Update",
+      "description": "Compares two values using a provided comparison function, converting them from their wrapped type to a comparison result. Serializes values into S-expressions using a given conversion function. Designed for working with wrapped values in contexts requiring custom comparison and serialization.",
+      "description_length": 293,
+      "index": 116,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Cutoff",
+      "description": "Provides functions to define and evaluate cutoff conditions based on value comparisons, including custom predicates, equality checks, and identity comparisons. Works with arbitrary data types through provided comparison functions and predicate logic. Used to determine if a value change should trigger an action, such as in caching or state management scenarios.",
+      "description_length": 362,
+      "index": 117,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Node_value",
+      "description": "Converts values of a wrapped type to S-expressions using a provided converter function. Operates on a polymorphic variant type that encapsulates another value. Used to serialize structured data for debugging or configuration purposes.",
+      "description_length": 234,
+      "index": 118,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Packed",
+      "description": "Generates Graphviz DOT format representations of graph structures, supporting edge emission control and user-defined attributes. Operates on a list of `t` values, which represent packed graph nodes or edges. Enables exporting structured data for visualization with custom labels and properties.",
+      "description_length": 294,
+      "index": 119,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Let_syntax",
+      "description": "Tracks variable changes to trigger automatic recomputation, enabling real-time reactive updates. It uses opaque types for variables and computations, with dependency tracking to ensure relevant parts of a system update when data changes. Users can define computations that re-evaluate when specific variables change, supporting dynamic, event-driven behavior. For example, a UI element can update automatically when a tracked data source changes.",
+      "description_length": 446,
+      "index": 120,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Before_or_after",
+      "description": "Provides operations to convert a value representing a temporal position (before or after a reference point) into an S-expression. Works with the `t` type, which encodes whether an event occurs before or after a specified moment. Used to serialize temporal data in a structured, human-readable format for logging or configuration.",
+      "description_length": 329,
+      "index": 121,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Clock",
+      "description": "Provides methods to manipulate a simulated clock, including advancing time, setting alarms, and creating incremental time-based computations. Operates with time values as 63-bit integers, time spans, and custom state witnesses. Used to simulate real-time behavior in event-driven systems, such as scheduling periodic tasks or tracking time-sensitive operations.",
+      "description_length": 361,
+      "index": 122,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Expert",
+      "description": "Tracks and serializes reactive values and step outcomes, enabling change detection and data logging. Operates on parameterized values, nodes with state and dependencies, and step results, supporting serialization and observability. Allows creation of reactive nodes that update based on dependencies and conversion of step results to S-expressions. Enables building systems that respond to value changes and log detailed execution states.",
+      "description_length": 438,
+      "index": 123,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incremental.Make",
+      "description": "combines event analytics, monadic transformations, array folding, scoped execution, state tracking, serialization, comparison, cutoff logic, graph visualization, reactive variables, temporal ordering, and clock simulation. It handles types like event records, monadic contexts, arrays, scoped states, mutable parameters, S-expressions, and time values, offering operations for aggregation, transformation, modification, querying, serialization, comparison, and visualization. Users can build real-time dashboards, manage asynchronous workflows, update UIs reactively, serialize data for debugging, and simulate time-based events. It enables complex systems like event-driven applications, reactive interfaces, and scoped configuration environments.",
+      "description_length": 748,
+      "index": 124,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Config",
+      "description": "Handles configuration for dependency invalidation logic, specifically controlling whether changes to a left-hand side value should trigger an invalidation of the right-hand side. Operates on boolean flags and configuration records. Used to maintain backward compatibility with older Incremental code that did not support automatic invalidation.",
+      "description_length": 344,
+      "index": 125,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Make_with_config",
+      "description": "Handles dependency tracking between variables in a system where changes to one variable may invalidate another. Operates on boolean flags and internal state to control invalidation behavior during incremental updates. Used to maintain compatibility with legacy code that assumes a different invalidation model.",
+      "description_length": 310,
+      "index": 126,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.Private",
+      "description": "Provides a mechanism to enable or disable debug logging through a boolean flag. Operates on primitive boolean values to control output behavior. Used to conditionally print diagnostic information during development or troubleshooting.",
+      "description_length": 234,
+      "index": 127,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental.For_analyzer",
+      "description": "Encapsulates functionality for converting, comparing, and serializing custom data types to and from S-expressions, binary formats, and dot notation. Provides operations to traverse, analyze, and manipulate structured data, including incremental updates, hashing, and visualization. Supports tasks like logging cutoff values, generating graph node representations, and persisting versioned sets. Enables efficient data handling, configuration parsing, and graph analysis through a unified set of conversion and comparison tools.",
+      "description_length": 527,
+      "index": 128,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_memoize.Store_params",
+      "description": "Provides functions to configure caching strategies for incremental computations, including map-based storage that never evicts, hash table-based LRU, and alist-based LRU with linear access time. Works with key types that support comparison, hashing, or equality. Used to control memory usage and access patterns in memoized computations, such as logging cache hits or limiting cache size in performance-critical applications.",
+      "description_length": 425,
+      "index": 129,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_memoize.Store",
+      "description": "Provides operations to create a key-value store, retrieve values by key, and insert new key-value pairs. Works with a polymorphic table type that maps keys of type 'k to values of type 'v. Used to manage session data in a web application, storing user-specific information during requests.",
+      "description_length": 289,
+      "index": 130,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incr_memoize.Make",
+      "description": "Collects, processes, and reacts to incremental state changes through a set of interrelated modules. It manages metrics, monadic workflows, array folding, scoped computations, reactive variables, and time-based simulations, with core types including metrics structures, monadic contexts, array states, scope states, and time values. Operations include merging statistics, chaining transformations, accumulating results, isolating scopes, tracking value changes, and serializing state. Examples include logging execution metrics, parsing and validating data in sequence, aggregating distributed statistics, and simulating real-time events with precise timing.",
+      "description_length": 657,
+      "index": 131,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "incremental",
+      "description": "Processes and applies incremental updates to a tree structure using a set of defined transformation functions. Operates on labeled nodes represented as tuples containing identifiers and associated values. Enables efficient revalidation of hierarchical data after localized changes, such as updating a specific branch in a configuration tree.",
+      "description_length": 341,
+      "index": 132,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental",
+      "description": "Combines real-time analytics, monadic transformations, and in-place array folding to process and manipulate structured data. Supports custom comparisons, serialization to S-expressions, and scoped execution contexts for controlled computation. Enables reactive updates, temporal tracking, and graph visualization through opaque types and parameterized value handling. Examples include tracking system latency, parsing nested JSON, serializing application states, and generating visualizations of event graphs.",
+      "description_length": 509,
+      "index": 133,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Incr_memoize",
+      "description": "manages incremental computations with customizable caching, key-value storage, and state tracking. It supports persistent map-based caching, LRU eviction strategies, and polymorphic tables for storing and retrieving data. It enables tracking of state changes, merging metrics, and simulating time-based processes, allowing for efficient logging, data validation, and real-time event handling. Users can implement session management, control memory usage, and build reactive systems with precise state control.",
+      "description_length": 509,
+      "index": 134,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Incremental_step_function",
+      "description": "Provides functions to construct and query step functions that return a value based on a time parameter. Works with time-value pairs and sequences of events, allowing precise control over state transitions. Used to model systems where behavior changes at specific timestamps, such as scheduling or event-driven simulations.",
+      "description_length": 322,
+      "index": 135,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 142,
+    "meaningful_modules": 136,
+    "filtered_empty_modules": 6,
+    "retention_rate": 0.9577464788732394
+  },
+  "statistics": {
+    "max_description_length": 748,
+    "min_description_length": 187,
+    "avg_description_length": 354.0514705882353,
+    "embedding_file_size_mb": 0.49085330963134766
+  }
+}

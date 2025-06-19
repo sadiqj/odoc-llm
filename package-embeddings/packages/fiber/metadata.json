@@ -1,0 +1,147 @@
+{
+  "package": "fiber",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 18,
+  "creation_timestamp": "2025-06-18T16:34:16.533279",
+  "modules": [
+    {
+      "module_path": "Fiber.Stream.In",
+      "description": "Generates and processes sequences of values using asynchronous generators and list-based sources. It supports filtering, iteration, and combining streams with operations that handle element extraction and transformation. Used to manage asynchronous data flows, such as processing event streams or handling backpressure in I/O operations.",
+      "description_length": 337,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fiber.Stream.Out",
+      "description": "Provides functions to create and manage a stream output, including writing values and creating an empty stream. Operates with a parameterized type 'a t representing a stream of optional values. Used to route data from producers to consumers in asynchronous workflows.",
+      "description_length": 267,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fiber.Make_map_traversals.Multi",
+      "description": "Provides operations to manipulate a map where each key is associated with a list of values. It supports adding elements to lists, finding elements based on a predicate, merging maps, and converting structures to lists or dynamic representations. Used for managing key-value collections with multiple entries per key, such as grouping data or maintaining histories.",
+      "description_length": 364,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fiber.O",
+      "description": "Provides sequencing and binding operations for asynchronous or effectful computations, including operator overloads for chaining and transforming values within a monadic context. Works with a generic 'a t type representing computations that yield values of type 'a. Enables structured concurrency by combining independent computations into tuples and simplifying control flow in asynchronous workflows.",
+      "description_length": 402,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fiber.Make_map_traversals",
+      "description": "manages key-value collections with multiple values per key, enabling operations like adding to lists, querying with predicates, merging, and converting to lists or dynamic formats. It handles structured data grouping, history tracking, and flexible data transformations. For example, it can aggregate user activity logs by user ID or combine multiple configuration maps into a single structure. Core operations include `add`, `find`, `merge`, and `to_list`, working with maps of type ('a, 'b list) t.",
+      "description_length": 500,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fiber.Var",
+      "description": "Provides functions to create, read, and modify variables scoped to a single fiber. Operates on a type 'a t representing a fiber-local variable. Used to temporarily bind values during the execution of a fiber, such as setting a context for a computation and ensuring it is restored afterward.",
+      "description_length": 291,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fiber.Ivar",
+      "description": "Provides operations to create, read, and fill single-assignment variables, with a fiber-aware read and peek mechanism. Works with a parameterized type 'a t representing an immutable, once-set value. Used to synchronize asynchronous computations by ensuring a value is set exactly once before being accessed.",
+      "description_length": 307,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fiber.Mvar",
+      "description": "Provides operations to create and manipulate mailbox variables, including reading from and writing to them in a blocking manner. Works with a type 'a t that represents a mailbox capable of holding a single value. Used to synchronize communication between concurrent threads, such as passing a result from one thread to another.",
+      "description_length": 327,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fiber.Svar",
+      "description": "Provides functions to create, read, and update a state variable, and to wait for it to meet a specific condition. Operates on a mutable state wrapped in a fiber-aware type, allowing asynchronous coordination. Used to track process states in systems like build tools, enabling observers to react to specific transitions like error conditions.",
+      "description_length": 341,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fiber.Mutex",
+      "description": "Provides functions to create and manage mutual exclusion locks, enabling safe access to shared resources in concurrent code. Operates on the `t` type, representing a mutex lock. Used to execute critical sections of code atomically, ensuring only one thread or fiber modifies shared state at a time.",
+      "description_length": 298,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fiber.Throttle",
+      "description": "Limits concurrent execution by controlling the number of active jobs. Accepts a function to run as a fiber, waiting when the limit is reached, and supports dynamic adjustment of the maximum number of concurrent jobs. Tracks the current number of running jobs and allows resizing the limit during execution.",
+      "description_length": 306,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fiber.Stream",
+      "description": "creates and manipulates streams that process sequences of values, supporting asynchronous generation, filtering, and combination. it defines a type 'a t for streams of optional values and offers operations to write, read, and transform data. it enables handling of event-driven data flows, such as reading from a file or network and applying transformations on the fly. examples include building pipelines for real-time data processing or managing backpressure in high-throughput systems.",
+      "description_length": 488,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fiber.Pool",
+      "description": "Manages concurrent task execution by allowing tasks to be submitted and run in parallel. It works with a pool type that tracks the state of task processing. It enables controlled task submission, ensures tasks are executed in parallel, and handles error capture during execution.",
+      "description_length": 279,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fiber.Scheduler",
+      "description": "Manages the execution of fibers by advancing their state through a series of steps, using a list of ivars to resume suspended computations. It handles suspended fiber states and returns their next execution step after resuming. Used to coordinate asynchronous tasks that require precise control over execution flow and data availability.",
+      "description_length": 337,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fiber.Cancel",
+      "description": "Provides functions to manage cancellation of long-running operations, including creating cancellation tokens, triggering cancellations, and handling cancellation events. Works with a token type `t` and a result type `'a outcome` to track the success or failure of operations. Used to safely interrupt external processes or long-running tasks by checking for cancellation at key points in the code.",
+      "description_length": 397,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Fiber.Expert",
+      "description": "Provides functions to manage continuations and resume suspended computations. Operates with continuation types ('a k) and values of type 'a. Used to implement low-level control flow mechanisms in high-performance coroutine systems.",
+      "description_length": 231,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "fiber",
+      "description": "Provides functions to manage asynchronous execution contexts, including creating, switching between, and terminating lightweight threads. Operates on custom data types representing thread states and execution stacks. Enables non-blocking I/O handling and cooperative multitasking in networked applications.",
+      "description_length": 306,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Fiber",
+      "description": "provides structured concurrency primitives through a set of coordinated modules that manage asynchronous computations, state, and synchronization. it includes monadic operations for sequencing effects, key-value maps for data aggregation, fiber-local variables, single-assignment variables, mailboxes, state variables, mutexes, concurrency limits, streams, task pools, fiber resumption, cancellation tokens, and continuations. operations like `add`, `merge`, `wait`, `lock`, `send`, `cancel`, and `stream` enable complex asynchronous workflows, such as aggregating logs, coordinating thread communication, and managing resource access. examples include building real-time data pipelines, tracking state transitions, and safely interrupting long-running tasks.",
+      "description_length": 759,
+      "index": 17,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 18,
+    "meaningful_modules": 18,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 759,
+    "min_description_length": 231,
+    "avg_description_length": 363.1666666666667,
+    "embedding_file_size_mb": 0.06582927703857422
+  }
+}

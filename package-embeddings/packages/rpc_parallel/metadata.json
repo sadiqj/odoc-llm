@@ -1,0 +1,1449 @@
+{
+  "package": "rpc_parallel",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 204,
+  "creation_timestamp": "2025-06-18T16:58:55.548537",
+  "modules": [
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Id.Map.Key",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot and Sexp formats, along with a comparator for ordered operations. Works with the concrete type `t` and its associated variant representations. Used to encode and decode instances of `t` in binary and S-expression formats, and to enable ordered comparisons between values.",
+      "description_length": 354,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Id.Map.Diff",
+      "description": "Provides operations to serialize and deserialize values using Bin_prot, and to convert between structured data and S-expressions. Works with typed difference maps that track changes between two versions of a data structure. Enables applying diffs to reconstruct updated data and generating diffs from lists of changes.",
+      "description_length": 318,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Id.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with Sexp.t and Key.t data structures. Used to deserialize configuration keys from textual S-expression formats.",
+      "description_length": 191,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Id.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t when necessary. Used to persist and reconstruct key data structures in binary format for storage or communication.",
+      "description_length": 319,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Id.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, requiring explicit handling of structure size during folding. Used to generate reliable hash values for complex types in hashing-based data structures.",
+      "description_length": 361,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Id.Table.Provide_of_sexp",
+      "description": "Converts a S-expression into a key by parsing its structure and extracting the relevant value. Works with `Sexplib0.Sexp.t` and returns a custom key type. Used to deserialize structured data from S-expressions into a specific domain model.",
+      "description_length": 239,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Id.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, such as records or variants. Used to enable efficient binary persistence of data structures in applications needing fast serialization.",
+      "description_length": 356,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Id.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific type using a provided constructor function. Operates on S-expressions and custom data types defined with the `t` type. Used to parse structured data from S-expression representations in configuration or data loading scenarios.",
+      "description_length": 266,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Id.Hash_set.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that need to be encoded in a binary format suitable for persistence or communication. Used to enable binary serialization of custom data structures in applications requiring efficient data exchange.",
+      "description_length": 381,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Id.Set.Elt",
+      "description": "Provides serialization and deserialization functions for converting values to and from S-expressions and binary formats using Bin_prot. Works with a generic type `t` and its associated comparator. Used to enable persistent storage and network transmission of structured data.",
+      "description_length": 275,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Id.Set.Diff",
+      "description": "Provides functions to serialize and deserialize values using Bin_prot and Sexp formats, including size calculation, writing, reading, and shape definition. Operates on a type `t` representing set differences and a `derived_on` type based on Base sets. Enables generating and applying diffs between set-like structures for version control or change tracking.",
+      "description_length": 357,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Id.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a value of type Elt.t using a predefined parsing function. It operates on Sexp.t values generated from serialized data. Used to deserialize structured data into domain-specific types during parsing workflows.",
+      "description_length": 238,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Id.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a specific type `Elt.t` and its polymorphic variants when necessary. Used to persist and reconstruct instances of `Elt.t` in binary format for storage or communication.",
+      "description_length": 330,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Id.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of a data structure into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Operates on custom data types defined with `Elt.t`, supporting recursive and nested structures. Used to generate consistent, collision-resistant hash values for complex types in serialization and equality checks.",
+      "description_length": 411,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Id.Map.Key",
+      "description": "Provides serialization and deserialization functions for a type using Bin_prot, including size calculation, writing, reading, and shape definition. Supports S-expressions conversion and a comparator for ordered operations. Designed for use with binary and textual data interchange in structured applications.",
+      "description_length": 308,
+      "index": 14,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Id.Map.Diff",
+      "description": "Provides operations to serialize and deserialize values using Bin_prot, and to convert between S-expressions and structured data. Works with mapped differences between key-value pairs, where each entry has a value and a corresponding difference. Enables applying diffs to derive new states from existing ones and generating diffs from lists of changes.",
+      "description_length": 352,
+      "index": 15,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Id.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with S-expressions and a specific key data structure. Used to deserialize configuration keys from textual representations in parsing workflows.",
+      "description_length": 222,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Id.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t, supporting efficient binary encoding. Used to persist or transmit Key.t values across processes or storage systems.",
+      "description_length": 321,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Id.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information to prevent prefix-based collisions. Used to generate reliable hash values for complex structures in hashing-based data structures.",
+      "description_length": 371,
+      "index": 18,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Id.Table.Provide_of_sexp",
+      "description": "Converts a S-expression into a key by parsing its structure and extracting the relevant value. Works with Sexp.t and custom key types defined in the module. Used to deserialize structured data from S-expressions into a specific key format for lookup or comparison.",
+      "description_length": 264,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Id.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, such as records or variants. Used to enable efficient binary persistence of data structures in applications like network protocols or file storage.",
+      "description_length": 368,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Id.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific type using a provided constructor function. Operates on S-expressions and custom data types defined with the `elt` type. Used to parse structured data from S-expression representations in configuration or data-loading scenarios.",
+      "description_length": 268,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Id.Hash_set.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, including polymorphic variants. Used to enable efficient binary persistence of data structures in applications needing fast serialization.",
+      "description_length": 359,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Id.Set.Elt",
+      "description": "Provides serialization and deserialization functions for converting values to and from S-expressions and binary formats using Bin_prot. Works with a generic type `t` and its associated comparator. Used to enable persistent storage and network transmission of structured data.",
+      "description_length": 275,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Id.Set.Diff",
+      "description": "Provides operations to serialize and deserialize values using Bin_prot and Sexp formats, and to compute and apply diffs between sets of elements. Works with set-based data structures where elements are compared via a witness. Computes differences between sets and applies changes to derive new sets from diffs.",
+      "description_length": 310,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Id.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a value of type Elt.t using a custom parsing function. Operates on Sexp.t values generated from serialized data. Used to deserialize structured data into domain-specific types during parsing workflows.",
+      "description_length": 231,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Id.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and variant-based reading. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 342,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Id.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of a structured type into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Operates on custom types defined with `Elt.t`, supporting recursive and composite data structures. Used to generate consistent, collision-resistant hash values for complex data during serialization or equality checks.",
+      "description_length": 417,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Id.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports comparison, enabling direct use in conditional logic and sorting. Used to replace polymorphic comparisons in code, ensuring consistent behavior when comparing custom types.",
+      "description_length": 384,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Id.Map",
+      "description": "Encodes and decodes values of type `t` in binary and S-expressions, supports ordered comparisons, and handles variant representations. Manages typed difference maps to track and apply changes between data versions, converting between structured data and S-expressions. Parses S-expressions into key types using custom functions and serializes keys in binary format with size and shape information. Implements hash folding for structured data, ensuring consistent and collision-resistant hash values for complex types.",
+      "description_length": 517,
+      "index": 29,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Id.Set",
+      "description": "combines serialization, deserialization, and hashing for structured data, supporting S-expressions, binary formats, and set differences. It handles type `t` and `Elt.t`, enabling operations like size calculation, writing, reading, and hash generation. It allows converting S-expressions to domain-specific types, applying set diffs, and generating collision-resistant hashes. Examples include persisting data to disk, transmitting structures over networks, and tracking changes in set-like objects.",
+      "description_length": 498,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Id.Table",
+      "description": "Transforms S-expressions into domain-specific keys and enables binary serialization and deserialization of custom types, supporting efficient data persistence. It handles `Sexplib0.Sexp.t` for key extraction and provides Bin_prot operations for size, write, read, and shape functions. Users can convert structured data into typed keys and persist complex records or variants in binary format. Examples include deserializing configuration data from S-expressions and storing game states in binary files.",
+      "description_length": 502,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Id.Hash_set",
+      "description": "Converts S-expressions to custom types using a constructor function and supports binary serialization and deserialization with Bin_prot, including size and shape operations. Handles structured data parsing and efficient binary encoding of custom types. Can parse configuration data from S-expressions and serialize objects for storage or transmission. Enables seamless conversion between textual and binary representations of custom data structures.",
+      "description_length": 449,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Id.Hash_queue",
+      "description": "This module provides functions to manage key-value queues, enabling operations like enqueueing, dequeuing, checking membership, and transforming elements through iteration, folding, and filtering. It works with structured `(key, data)` pairs, maintaining order and uniqueness, and supports use cases such as task scheduling or caching where ordered, key-based access is critical. Operations include safe and exception-throwing variants for modifying or traversing the queue, ensuring flexibility in data manipulation.",
+      "description_length": 517,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Id.Map.Key",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot, including size calculation, writing, reading, and shape definition. Supports S-expressions conversion and a comparator for ordered operations. Designed for efficient binary encoding and decoding in contexts like network communication or persistent storage.",
+      "description_length": 340,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Id.Map.Diff",
+      "description": "Provides operations to serialize and deserialize values using Bin_prot, and to convert between S-expressions and structured data. Works with key-value maps that track differences between versions of data. Enables applying diffs to reconstruct updated data structures from original versions.",
+      "description_length": 290,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Id.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with S-expressions and a specific key data structure. Used to deserialize configuration keys from textual S-expression representations.",
+      "description_length": 214,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Id.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t, a type that may include polymorphic variants requiring tag-based reading. Used to persist and reconstruct Key.t values in binary format for storage or communication.",
+      "description_length": 337,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Id.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information to prevent prefix-based collisions. Used to generate reliable hash values for complex structures like trees and lists in hashing algorithms.",
+      "description_length": 381,
+      "index": 38,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Id.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key value by parsing and extracting the first element. Works with S-expressions and string-based keys. Used to transform serialized data into lookup keys for efficient data retrieval.",
+      "description_length": 215,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Id.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with a custom type `key` and supports polymorphic variants through a constructor tag reader. Used to enable binary persistence and network transmission of the type.",
+      "description_length": 324,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Id.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific type using a provided constructor function. Operates on S-expressions and custom data types defined with the `elt` type. Used to parse structured data from S-expression representations in configuration or serialization contexts.",
+      "description_length": 268,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Id.Hash_set.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type `elt` using the Bin_prot format, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, particularly those involving polymorphic variants. Enables efficient storage and transmission of structured data in binary form.",
+      "description_length": 350,
+      "index": 42,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Id.Set.Elt",
+      "description": "Provides serialization and deserialization functions for converting values to and from S-expressions and binary formats using Bin_prot. Works with a generic type `t` and its associated comparator. Used to enable persistent storage and network transmission of values with efficient binary encoding.",
+      "description_length": 297,
+      "index": 43,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Id.Set.Diff",
+      "description": "Provides operations to serialize and deserialize values using Bin_prot and Sexp formats, and to compute and apply diffs between sets of elements. Works with set-based data structures where elements are compared via a witness. Computes differences between sets, applies diffs to reconstruct original sets, and handles list-to-set conversions with error checking.",
+      "description_length": 361,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Id.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a value of type Elt.t using a provided constructor. Works with S-expressions and the Elt data type, enabling structured data parsing. Used to deserialize data from S-expression format into application-specific types during parsing workflows.",
+      "description_length": 271,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Id.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and variant-based reading. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 342,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Id.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Works with custom data types defined using the `Elt` module, supporting recursive and composite structures. Used to generate consistent, collision-resistant hash values for serialization, equality checks, and efficient storage in hash tables.",
+      "description_length": 440,
+      "index": 47,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_type_id.Map.Key",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot and Sexp formats, along with a comparator for ordered operations. Works with the concrete type `t` and its associated variant representations. Used to encode and decode instances of `t` in binary and S-expression formats, and to enable ordered comparisons between values.",
+      "description_length": 354,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_type_id.Map.Diff",
+      "description": "Provides operations to serialize and deserialize values using Bin_prot, and to convert between S-expressions and structured data. Works with key-value maps that track differences between versions of data. Enables applying diffs to update data structures and generating diffs from lists of changes.",
+      "description_length": 297,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_type_id.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Operates on S-expressions and the Key module's type. Used to deserialize configuration keys from textual representations.",
+      "description_length": 194,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_type_id.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t, supporting efficient binary encoding. Used to persist and transmit Key.t values in a compact, fast format.",
+      "description_length": 312,
+      "index": 51,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_type_id.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Works with custom data types and collections, using Base.Hash.state to accumulate hash values. Used to generate consistent, collision-resistant hashes for complex types in serialization and comparison contexts.",
+      "description_length": 408,
+      "index": 52,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_type_id.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key value using a predefined mapping. Works with S-expressions and custom key types defined in the module. Used to parse and transform configuration data from S-expressions into structured key representations.",
+      "description_length": 241,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_type_id.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, particularly those involving polymorphic variants. Used to enable efficient binary persistence and communication of data structures across processes or storage.",
+      "description_length": 371,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_type_id.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific element type using a provided constructor. Works with S-expressions and custom data types defined by the user. Used to parse structured data from S-expression representations into typed values.",
+      "description_length": 233,
+      "index": 55,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_type_id.Hash_set.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of type `elt` using the Bin_prot format, including size calculation, writing, reading, and shape information. Works with custom types that require binary encoding, particularly polymorphic variants. Used to enable efficient binary persistence of data structures in applications needing fast I/O operations.",
+      "description_length": 366,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_type_id.Set.Elt",
+      "description": "Provides serialization and deserialization functions for converting values to and from S-expressions and binary formats using Bin_prot. Works with a generic type `t` and its associated comparator. Used to enable persistent storage and network transmission of values with efficient binary encoding.",
+      "description_length": 297,
+      "index": 57,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_type_id.Set.Diff",
+      "description": "Provides operations to serialize and deserialize values using Bin_prot and Sexp formats, and to compute and apply diffs between sets of elements. Works with set-based diff structures and concrete set implementations for comparing and transforming data. Enables precise tracking of changes between two set states and applying those changes to update a set.",
+      "description_length": 355,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_type_id.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a value of type Elt.t using a provided decoding function. Operates on Sexp.t values generated from parsed S-expressions. Used to deserialize structured data from S-expressions into domain-specific types during parsing workflows.",
+      "description_length": 258,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_type_id.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and polymorphic variant representations. Used to persist and reconstruct complex data structures in binary format for storage or communication.",
+      "description_length": 373,
+      "index": 60,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_type_id.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Operates on custom data types defined with `Elt.t`, supporting recursive and composite structures. Used to generate consistent, collision-resistant hash values for serialization, equality checks, and deterministic data processing.",
+      "description_length": 428,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_id.Map.Key",
+      "description": "Provides serialization and deserialization functions for a type using Bin_prot, including size calculation, writing, reading, and shape definition. Supports S-expressions conversion and a comparator for ordered operations. Designed for use with binary and textual data interchange, as well as ordered data handling.",
+      "description_length": 315,
+      "index": 62,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_id.Map.Diff",
+      "description": "Provides operations to serialize and deserialize values using Bin_prot, and to convert between S-expressions and structured data. Works with typed differences between map-like structures, where each entry has a key, a value, and a corresponding difference. Enables applying diffs to derive new map states and generating diffs from lists of changes.",
+      "description_length": 348,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_id.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with Sexp.t and Key.t data structures. Used to deserialize configuration keys from structured text formats.",
+      "description_length": 186,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_id.Map.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t, a custom type representing keys, and supports polymorphic variants through a constructor tag reader. Used to encode key structures for storage or transmission in binary format.",
+      "description_length": 353,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_id.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, requiring explicit handling of structure size during folding. Used to generate reliable hash values for complex types in hashing-based data structures.",
+      "description_length": 361,
+      "index": 66,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_id.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key by parsing its structure and extracting the relevant value. Works with `Sexplib0.Sexp.t` and returns a custom key type. Used to deserialize structured data from S-expressions into a specific domain key for lookup or comparison.",
+      "description_length": 263,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_id.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of a specific type using the Bin_prot library, including size calculation, writing, and reading operations. Works with custom types that require binary I/O support, including polymorphic variants through specialized reader functions. Used to enable efficient binary persistence of data structures in applications requiring fast serialization.",
+      "description_length": 402,
+      "index": 68,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_id.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific type using a provided constructor function. Works with S-expressions and custom data types defined by the user. Used to parse structured data from S-expression representations into typed values.",
+      "description_length": 234,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_id.Hash_set.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary encoding and decoding, particularly those involving polymorphic variants. Used to enable efficient binary persistence of data structures in applications requiring fast I/O operations.",
+      "description_length": 386,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_id.Set.Elt",
+      "description": "Provides serialization and deserialization functions for converting values to and from S-expressions and binary formats using Bin_prot. Works with a generic type `t` and its associated comparator. Used to enable persistent storage and network transmission of data structures with efficient binary encoding.",
+      "description_length": 306,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_id.Set.Diff",
+      "description": "Provides operations to serialize and deserialize values using Bin_prot and Sexp formats, and to compute and apply optional diffs between sets of elements. Works with set-based data structures derived from `Elt.t` and supports transforming between these sets and their diff representations. Enables tracking changes between two set states and reconstructing a set from a diff.",
+      "description_length": 375,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_id.Set.Provide_of_sexp",
+      "description": "Converts a S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and `Elt.t` types, enabling structured data parsing. Used to deserialize specific domain objects from S-expression formatted input.",
+      "description_length": 225,
+      "index": 73,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_id.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and variant-based decoding. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 343,
+      "index": 74,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_id.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating size information before element-wise folding. Works with custom data types defined using the `Elt` module, supporting recursive and nested structures. Used to generate consistent, collision-resistant hash values for complex types in serialization and equality checks.",
+      "description_length": 415,
+      "index": 75,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Id.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a specific type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports the `compare` function to establish order. Used to implement custom sorting logic and decision-making based on value relationships.",
+      "description_length": 352,
+      "index": 76,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Id.Map",
+      "description": "Combines serialization, deserialization, and difference tracking for structured data, supporting binary, S-expression, and key-based formats. Offers operations to compute sizes, apply diffs, generate hashes, and convert between data representations. Key types and polymorphic variants are handled with efficient encoding, while custom parsing and hashing ensure flexibility and consistency. Enables efficient data interchange, configuration parsing, and state management in complex applications.",
+      "description_length": 495,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Id.Set",
+      "description": "offers serialization, deserialization, and diff operations for structured data using Bin_prot and Sexp formats, with support for set-based comparisons and custom type parsing. It handles type `t` with associated comparators, enabling efficient storage, transmission, and transformation of complex data. Operations include converting S-expressions to domain-specific types, computing set differences, and generating collision-resistant hashes. Examples include persisting sets to binary files, applying diffs to update data structures, and hashing composite types for equality checks.",
+      "description_length": 583,
+      "index": 78,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Id.Table",
+      "description": "Parses S-expressions into custom key types and enables binary serialization and deserialization of arbitrary data structures. Supports operations like size calculation, writing, and reading using Bin_prot, with direct access to underlying Sexp.t and custom type representations. Can convert structured data into lookup-friendly keys and persist complex records or variants in binary format. Examples include extracting identifiers from nested S-expressions and storing variant types in binary files for fast retrieval.",
+      "description_length": 518,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Id.Hash_set",
+      "description": "Converts S-expressions to custom types using a constructor function and supports binary I/O operations for serializing and deserializing values with Bin_prot. Handles structured data parsing and efficient binary persistence for polymorphic variants and user-defined types. Enables configuration loading and data storage by bridging S-expressions and binary formats. For example, it can parse a configuration file into a typed structure or save a complex data hierarchy to a binary file.",
+      "description_length": 486,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Id.Hash_queue",
+      "description": "The module provides operations for managing key-value queues with ordered insertion, including enqueueing, dequeuing, searching, and modifying elements based on keys, while supporting traversal and aggregation. It works with structured key-data pairs, enabling safe or exception-raising variants for manipulations like lookup, removal, and reordering. Use cases include maintaining ordered task sequences, caching with key-based access, or processing elements with dynamic priority adjustments.",
+      "description_length": 494,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.For_internal_testing.Spawn_in_foreground_result",
+      "description": "Handles the outcome of starting a process in the foreground, providing access to the process object and detailed exit or signal information. Works with asynchronous process states and error representations, including optional signal handling. Used to monitor and respond to process termination in real-time event loops.",
+      "description_length": 319,
+      "index": 82,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Id.Map.Key",
+      "description": "Provides serialization and deserialization functions for a type using Bin_prot, including size calculation, writing, reading, and shape definition. Supports S-expressions conversion and a comparator for ordered operations. Designed for use with binary and textual data interchange, as well as ordered data processing.",
+      "description_length": 317,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Id.Map.Diff",
+      "description": "Provides operations to serialize and deserialize values using Bin_prot and Sexp formats, with support for generating and applying diffs between map-like structures. Works with typed difference structures representing changes between two maps keyed by `Key.t`. Enables precise transformation of data by applying computed diffs or converting lists of diffs into combined diff values.",
+      "description_length": 381,
+      "index": 84,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Id.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Operates on Sexp.t and Key.t, enabling structured data deserialization. Used to parse configuration keys from S-expression formatted files.",
+      "description_length": 212,
+      "index": 85,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Id.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t when necessary. Used to persist or transmit Key.t values in a binary format across processes or storage.",
+      "description_length": 309,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Id.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information to prevent prefix-based collisions. Used to generate reliable hash values for complex structures like lists and records in hashing algorithms.",
+      "description_length": 383,
+      "index": 87,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Id.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key value using a predefined mapping. Works with S-expressions and string-based keys. Used to parse configuration data from S-expressed files into a structured key format.",
+      "description_length": 203,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Id.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing a custom type using the Bin_prot library, including size calculation, writing, reading, and shape information. Works with polymorphic variants and type-class-based serialization. Used to encode and decode values in binary format for persistent storage or network transmission.",
+      "description_length": 329,
+      "index": 89,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Id.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific element type using a provided constructor. Works with S-expressions and custom data types defined by the user. Used to parse structured data from S-expression representations into typed values.",
+      "description_length": 233,
+      "index": 90,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Id.Hash_set.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of type `elt` using the Bin_prot format, including size calculation, writing, reading, and shape information. Works with custom types that require binary encoding, particularly polymorphic variants. Used to enable binary persistence of data structures in applications needing efficient serialization.",
+      "description_length": 360,
+      "index": 91,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Id.Set.Elt",
+      "description": "Provides serialization and deserialization functions for converting values to and from S-expressions and binary formats using Bin_prot. Works with a generic type `t` and its associated comparator. Used to enable persistent storage and network transmission of structured data.",
+      "description_length": 275,
+      "index": 92,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Id.Set.Diff",
+      "description": "Provides operations to serialize and deserialize values using Bin_prot and Sexp formats, and to compute and apply optional diffs between sets of elements. Works with set-based diff structures and concrete set implementations for comparing and transforming data. Enables precise tracking of changes between two set states and reconstructing a set from a diff.",
+      "description_length": 358,
+      "index": 93,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Id.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and the module's defined `Elt.t` type. Used to parse structured data from S-expressions into application-specific values.",
+      "description_length": 216,
+      "index": 94,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Id.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and variant-based reading. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 342,
+      "index": 95,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Id.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of a data structure into a hash state, ensuring collision resistance and consistency with comparison. It operates on custom data types through a dedicated fold function, incorporating structural information like size to prevent prefix-based collisions. Used to generate reliable hash values for complex types in hashing contexts where structural integrity and uniqueness are critical.",
+      "description_length": 447,
+      "index": 96,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Function.Direct_pipe.Id",
+      "description": "Provides functions to generate, compare, and serialize unique identifiers for worker entities. Operates on the polymorphic type 'worker t, where 'worker represents the specific worker category. Used to track and distinguish between different worker instances in distributed task processing systems.",
+      "description_length": 298,
+      "index": 97,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Make_map_function_with_init.Param",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Works with the `t` type, supporting polymorphic variants through a constructor tag reader. Used to encode and decode instances of `t` in binary format for storage or communication.",
+      "description_length": 333,
+      "index": 98,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Make_map_function_with_init.Input",
+      "description": "Provides serialization and deserialization functions for a custom type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Works with the type `t` and its polymorphic variant form when applicable. Used to encode and decode instances of `t` in binary format for storage or communication.",
+      "description_length": 323,
+      "index": 99,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Make_map_function_with_init.Output",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot, including size calculation, writing, reading, and shape definition. Works with the concrete type `t` and supports polymorphic variants through a constructor tag reader. Used to encode and decode instances of `t` in binary format for storage or communication.",
+      "description_length": 342,
+      "index": 100,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Make_map_function_with_init.Worker",
+      "description": "Handles asynchronous task execution by spawning worker instances with specific configurations, running them with defined input, and shutting them down cleanly. Operates on worker instances, parameter objects, input objects, and output objects. Used to manage parallel processing of distinct tasks with controlled lifecycle management.",
+      "description_length": 334,
+      "index": 101,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Make_map_reduce_function_with_init.Param",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Works with the `t` type, supporting polymorphic variants through a constructor tag reader. Used to encode and decode values of `t` in binary format for storage or communication.",
+      "description_length": 330,
+      "index": 102,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Make_map_reduce_function_with_init.Accum",
+      "description": "Provides serialization and deserialization functions for a custom type `t` using Bin_prot, including size calculation, writing, reading, and shape definition. Works with the type `t` and supports polymorphic variants through a constructor tag reader. Used to encode and decode instances of `t` in binary format for storage or communication.",
+      "description_length": 340,
+      "index": 103,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Make_map_reduce_function_with_init.Input",
+      "description": "Handles serialization and deserialization of values of type `t` using Bin_prot, providing size calculation, writing, reading, and shape information. Supports polymorphic variants through a specialized reader that processes constructor tags explicitly. Used to persist or transmit structured data efficiently in binary format.",
+      "description_length": 325,
+      "index": 104,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Make_map_reduce_function_with_init.Worker",
+      "description": "Handles asynchronous task execution by spawning worker instances with specific configurations, running them with defined input, and shutting them down cleanly. Operates on worker instances, parameter objects, and accumulation results. Used to manage parallel processing of data streams with guaranteed cleanup.",
+      "description_length": 310,
+      "index": 105,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Make_map_function.Param",
+      "description": "Provides serialization and deserialization functions for the unit type using Bin_prot, including size calculation, writing, reading, and shape definition. Works with the `unit` data type, enabling binary encoding and decoding operations. Used to handle empty or placeholder values in binary data streams.",
+      "description_length": 304,
+      "index": 106,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Make_map_function.Input",
+      "description": "Provides serialization and deserialization functions for a custom type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Works with the `t` type and its polymorphic variant form when necessary. Used to encode and decode instances of `t` in binary format for storage or communication.",
+      "description_length": 322,
+      "index": 107,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Make_map_function.Output",
+      "description": "Provides functions for serializing and deserializing values of type t using Bin_prot, including size calculation, writing, reading, and shape definition. Supports polymorphic variants through a reader that consumes a constructor tag before parsing the variant's contents. Used to encode and decode structured data in binary format for storage or transmission.",
+      "description_length": 359,
+      "index": 108,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Make_map_function.Worker",
+      "description": "Handles asynchronous task execution by spawning worker instances with specific configurations, running them with defined input, and shutting them down cleanly. Operates on worker instances, parameter objects, input objects, and output objects. Used to manage parallel processing of distinct tasks with controlled lifecycle management.",
+      "description_length": 334,
+      "index": 109,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Make_map_reduce_function.Param",
+      "description": "Provides serialization and deserialization functions for the unit type using Bin_prot, including size calculation, writing, reading, and shape definition. Works with the `t` type, which is an alias for `unit`. Used to enable binary serialization of empty or placeholder values in data structures.",
+      "description_length": 296,
+      "index": 110,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Make_map_reduce_function.Accum",
+      "description": "Provides serialization and deserialization functions for a custom type `t` using Bin_prot, including size calculation, writing, reading, and shape definition. Works with the type `t` and supports polymorphic variants through a constructor tag reader. Used to encode and decode instances of `t` in binary format for storage or communication.",
+      "description_length": 340,
+      "index": 111,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Make_map_reduce_function.Input",
+      "description": "Provides serialization and deserialization functions for a custom type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Works with the `t` type, supporting both direct and polymorphic variant handling. Used to encode and decode instances of `t` in binary format for storage or communication.",
+      "description_length": 331,
+      "index": 112,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Make_map_reduce_function.Worker",
+      "description": "Handles asynchronous task execution by spawning worker instances with specific configurations, running tasks with defined input, and shutting down workers gracefully. Operates on worker handles, parameter objects, and accumulator-based outputs. Used to manage parallel processing of data streams and event-driven task handling.",
+      "description_length": 327,
+      "index": 113,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Id",
+      "description": "Provides comparison, serialization, and key-value queue operations for type `t`, enabling efficient data handling and transformation. Supports binary and S-expression encoding, set difference tracking, and ordered key-based data management. Users can compare values, serialize structured data, and manage queues with guaranteed order and uniqueness. Examples include parsing configuration files, persisting game states, and tracking changes in set-like structures.",
+      "description_length": 464,
+      "index": 114,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Worker_state",
+      "description": "Provides serialization and deserialization functions for `init_arg` and `t` types, including shape, size, write, read, and reader operations. Works with binary protocol structures from Core.Bin_prot to encode and decode worker initialization data. Used to ensure consistent binary representation when communicating with or persisting worker states.",
+      "description_length": 348,
+      "index": 115,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Connection_state",
+      "description": "Handles serialization and deserialization of connection initialization data using Bin_prot, supporting efficient binary encoding and decoding. Operates on `t` for connection state and `init_arg` for initial parameters passed during connection setup. Used to persist and restore connection metadata across process restarts or network reconnections.",
+      "description_length": 347,
+      "index": 116,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make.Functions",
+      "description": "Creates RPC and pipe-based communication protocols with custom serialization, handling query-response, streaming updates, and stateful interactions. Operates on worker, worker_state, and connection_state types, along with Bin_prot-serializable query and response types. Enables bidirectional data flow, direct stream control, and one-way messaging for distributed system interactions.",
+      "description_length": 384,
+      "index": 117,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Id.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine the minimum and maximum of two values. Works with any data type that supports polymorphic comparison through the `compare` function. Used to implement custom sorting logic and conditional branching based on value relationships.",
+      "description_length": 379,
+      "index": 118,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Id.Map",
+      "description": "combines binary and s-expression serialization with efficient data comparison, versioning, and hashing. it handles type `t` and `Key.t`, supporting operations like size calculation, reading, writing, and diff application, along with custom key parsing and hash folding. it enables efficient data persistence, network transmission, and configuration deserialization. examples include storing key-value maps with version diffs, reconstructing data from binary streams, and generating consistent hashes for complex structures.",
+      "description_length": 523,
+      "index": 119,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Id.Set",
+      "description": "offers serialization, deserialization, and diff operations for set-based data, supporting S-expressions, binary formats, and element comparisons. It handles type `t` with `Elt.t` as a parameter, enabling efficient storage, network transfer, and reconstruction of structured data. Operations include converting S-expressions to `Elt.t` values, computing set differences, and folding structured data into hash states. Examples include persisting sets to disk, applying diffs to update sets, and generating collision-resistant hashes for equality checks.",
+      "description_length": 551,
+      "index": 120,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Id.Table",
+      "description": "Transforms S-expressions into lookup keys by extracting their first element, enabling efficient data retrieval through string-based keys. Supports binary serialization and deserialization of a custom `key` type, including size computation, writing, reading, and shape analysis. Allows for efficient storage and transmission of structured data via Bin_prot. Example uses include converting serialized data into searchable keys and persisting or transmitting key values across systems.",
+      "description_length": 483,
+      "index": 121,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Id.Hash_set",
+      "description": "Converts S-expressions to custom types using a constructor function and supports binary serialization and deserialization of values via Bin_prot, including size, write, read, and shape operations. Handles structured data in configuration and communication scenarios, enabling efficient binary I/O for polymorphic variants. Parses and reconstructs data from textual S-expressions and stores or retrieves it in compact binary form. For example, it can convert an S-expression representing a list of options into a typed list or encode a variant type for network transmission.",
+      "description_length": 573,
+      "index": 122,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Id.Hash_queue",
+      "description": "The module provides operations for managing key-value queues, including enqueueing, dequeuing, and modifying elements while preserving insertion order and enabling key-based access. It supports traversal, filtering, and aggregation functions for transforming and querying data, alongside safe and unsafe (exn) variants for removal and replacement. These capabilities are suited for scenarios like task scheduling, caching systems, or data pipelines requiring ordered, key-driven manipulation.",
+      "description_length": 492,
+      "index": 123,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_type_id.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports comparison, enabling direct use in sorting and conditional logic. Used to replace polymorphic comparisons in scenarios requiring explicit type-specific behavior.",
+      "description_length": 380,
+      "index": 124,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_type_id.Map",
+      "description": "offers serialization, deserialization, and comparison capabilities for a type `t` in both binary and S-expression formats, along with diff operations for versioned key-value maps. It supports converting S-expressions to key types, efficiently encoding Key.t values, and generating collision-resistant hashes by integrating data structure size and content. Users can encode and decode instances of `t`, apply diffs to update data, and generate consistent hashes for complex types. Specific tasks include persisting configuration keys, transmitting structured data, and ensuring data integrity through hashing.",
+      "description_length": 608,
+      "index": 125,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_type_id.Set",
+      "description": "Offers serialization, deserialization, and diff operations for data structures using Bin_prot and Sexp formats, with support for efficient binary encoding, set-based transformations, and structured data parsing. It handles type `t` with associated comparators, enables precise change tracking between set states, and supports hash folding for collision-resistant data representation. Functions include converting S-expressions to domain-specific types, computing diffs, and persisting complex structures in binary form. Examples include storing sets in binary files, applying diffs to update data, and generating hashes for deterministic processing.",
+      "description_length": 649,
+      "index": 126,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_type_id.Table",
+      "description": "Transforms S-expressions into structured key-value pairs using a defined mapping, and supports custom key types for configuration parsing. Enables binary serialization and deserialization of custom types with Bin_prot, including size estimation and data shape inspection. Operations include parsing, transforming, writing, and reading binary data. Example tasks include converting configuration files into typed records and persisting complex data structures in binary format.",
+      "description_length": 476,
+      "index": 127,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_type_id.Hash_set",
+      "description": "Converts S-expressions to typed values using a custom constructor and supports binary serialization and deserialization of `elt` values with Bin_prot, enabling efficient storage and retrieval. Handles structured data parsing and binary encoding for user-defined types, including polymorphic variants. Allows conversion of complex data structures into and out of binary format, and parsing of nested S-expressions into specific element types. Enables efficient I/O operations and data transformation between textual and binary representations.",
+      "description_length": 542,
+      "index": 128,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_type_id.Hash_queue",
+      "description": "This module offers operations for managing key-value queues, including enqueueing, dequeuing, lookup, and modification with key-based constraints, while maintaining ordered insertion and unique keys. It supports traversal, transformation, and aggregation via iteration and folding, suitable for scenarios like task scheduling or data processing where ordered, keyed operations are critical. Functions provide both safe and exception-raising variants for robust handling of queue modifications and element access.",
+      "description_length": 512,
+      "index": 129,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_type_id.For_testing",
+      "description": "Resets a counter to its initial state, ensuring subsequent calls to create return IDs in the same sequence as the program's start. Operates on unit values to control the counter's state. Useful for test scenarios requiring predictable ID generation across multiple test runs.",
+      "description_length": 275,
+      "index": 130,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_id.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports comparison, enabling direct use in sorting and decision-making logic. Used to replace polymorphic comparisons in scenarios requiring explicit type-specific behavior.",
+      "description_length": 384,
+      "index": 131,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_id.Map",
+      "description": "Combines serialization, deserialization, and diff operations for key-value structures, supporting binary, S-expression, and ordered data formats. Handles Key.t and map-like types with custom parsing, difference tracking, and hash folding for consistent data representation. Enables converting between structured text and binary formats, applying changes to maps, and generating reliable hashes for complex types. Examples include deserializing configuration keys, applying incremental updates to maps, and hashing custom data for use in hash tables.",
+      "description_length": 549,
+      "index": 132,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_id.Set",
+      "description": "Encapsulates serialization, deserialization, and diff operations for set-based data, supporting S-exp and binary formats. Handles type-specific conversions, hash folding, and efficient storage of structured data using `Elt.t` and `t`. Enables reconstructing sets from diffs, parsing domain objects from S-expressions, and generating collision-resistant hashes. Supports binary encoding of complex types with size tracking and variant decoding.",
+      "description_length": 443,
+      "index": 133,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_id.Table",
+      "description": "Extracts domain-specific keys from S-expressions and enables binary serialization of custom types with efficient I/O operations. Processes `Sexplib0.Sexp.t` to generate custom key types for structured data, and supports binary reading, writing, and size calculation for polymorphic variants and user-defined types. Allows for precise data transformation between textual and binary formats, facilitating storage and communication. Example tasks include converting a nested S-expression into a lookup key and persisting a complex data structure in binary form for rapid access.",
+      "description_length": 575,
+      "index": 134,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_id.Hash_set",
+      "description": "Converts S-expressions to typed values using a constructor function and supports binary serialization and deserialization with Bin_prot, including size, write, read, and shape operations. Handles custom data types and polymorphic variants for structured data parsing and efficient binary storage. Parses and reconstructs complex data from textual S-expression formats and stores or retrieves them in binary form. Enables seamless data transformation between human-readable and compact binary representations.",
+      "description_length": 508,
+      "index": 135,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_id.Hash_queue",
+      "description": "The module provides operations for managing a keyed queue data structure, including enqueueing, dequeuing, lookup, and transformation of elements, with support for ordered traversal, filtering, and positional adjustments. It enables use cases like task scheduling or dynamic data processing, offering safe and unsafe variants for modifications and directional insertion. Specific patterns include predicate-based element selection, reordering, and accumulation through folding and iteration.",
+      "description_length": 491,
+      "index": 136,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Id",
+      "description": "offers comparison, serialization, and key-value queue operations for structured data, supporting ordered comparisons, binary and S-expression conversions, and efficient data management. It includes type `t` with comparator functions, serialization methods, and queue operations for ordered key-value pairs. Users can sort custom types, persist data in binary format, and manage ordered task sequences. Examples include generating hashes for data integrity, parsing configurations into typed structures, and maintaining priority-based queues.",
+      "description_length": 541,
+      "index": 137,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Connection",
+      "description": "Provides operations to manage connections to workers, including running functions, aborting direct pipe operations, and closing connections. Works with types like `Id.t`, `Function.t`, and `Rpc.Connection.t` to enable remote procedure calls. Used to establish and control communication channels for executing worker-specific tasks and handling connection lifecycle events.",
+      "description_length": 372,
+      "index": 138,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Shutdown_on",
+      "description": "Provides functions to create, inspect, and manipulate values wrapped in a monadic context, supporting sequencing and error propagation. Works with the polymorphic type 'a t, where 'a represents the inner value. Used to handle shutdown signals in concurrent systems by encapsulating asynchronous termination events.",
+      "description_length": 314,
+      "index": 139,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Spawn_in_foreground_result",
+      "description": "Handles process execution results by pairing a value with an asynchronous process, wrapped in an error-optional structure. Works with asynchronous process handles and arbitrary payload types. Used to track exit status and process metadata alongside computed results in concurrent workflows.",
+      "description_length": 290,
+      "index": 140,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Spawn_in_foreground_exn_result",
+      "description": "Provides functions to handle the result of spawning a process in the foreground, including extracting the process and its exit value or error. Works with the tuple type ('a, Async.Process.t) to associate a computation result with a running process. Used to manage process execution and capture outcomes in asynchronous workflows.",
+      "description_length": 329,
+      "index": 141,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Deprecated",
+      "description": "Handles process spawning and establishes a connection to a worker, managing shutdown on connection failure. Operates on connection states, worker states, and file descriptor redirections. Used to create a reliable client connection that automatically terminates the worker on error, suitable for scenarios requiring controlled process lifecycle management.",
+      "description_length": 356,
+      "index": 142,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.For_internal_testing",
+      "description": "Manages foreground process execution, capturing process objects and exit/signal details with asynchronous state support. Provides operations to inspect termination status, handle signals, and track process lifecycle events. Supports real-time monitoring through event loops with detailed error reporting. Examples include detecting abnormal termination, responding to signals, and logging process outcomes.",
+      "description_length": 406,
+      "index": 143,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Function.Direct_pipe",
+      "description": "Generates, compares, and serializes unique worker identifiers using a polymorphic type 'worker t, enabling distinct tracking in distributed systems. Supports operations like creating, comparing, and converting worker IDs to serial formats. Examples include generating a unique ID for a worker, checking equality between two workers, and converting a worker ID to a string for logging or transmission. The type allows flexibility across different worker categories while maintaining consistent identification logic.",
+      "description_length": 514,
+      "index": 144,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Function.For_internal_testing",
+      "description": "Provides functions to configure and manage RPC settings for internal worker server communication. Operates on custom types including `Rpc_settings.t` and abstracted request structures. Used to establish controlled RPC environments for testing distributed worker interactions.",
+      "description_length": 275,
+      "index": 145,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Expert.Worker_env",
+      "description": "Provides functions to manage environment variables within a worker process, including retrieval, modification, and persistence. Operates on the `t` type, which encapsulates a mutable environment state. Used to isolate and control the execution context of background tasks.",
+      "description_length": 272,
+      "index": 146,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Worker_state",
+      "description": "Provides serialization and deserialization functions for `init_arg` and `t` types using Bin_prot, enabling efficient binary encoding and decoding. Works with `init_arg` and `t` data structures, which are likely used to initialize and track the state of worker processes. Used to persist or transmit worker initialization data and internal state across network connections or storage.",
+      "description_length": 383,
+      "index": 147,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Connection_state",
+      "description": "Manages serialization and deserialization of connection initialization data using Bin_prot, supporting efficient binary encoding and decoding. Works with `t` for connection state and `init_arg` for initial parameters passed during connection setup. Used to persist and restore connection-specific configuration during communication with worker processes.",
+      "description_length": 354,
+      "index": 148,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make.Functions",
+      "description": "Creates RPC and pipe-based communication protocols with typed input and output using Bin_prot, enabling bidirectional data streaming and stateful interactions. Processes queries and responses through asynchronous functions, supporting one-way messages, direct and reverse pipes, and stateful operations. Used to define custom RPC endpoints for distributed systems, handling data serialization and connection management.",
+      "description_length": 419,
+      "index": 149,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Id.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports the `compare` function to establish order. Used to implement custom sorting logic and decision-making based on value relationships.",
+      "description_length": 350,
+      "index": 150,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Id.Map",
+      "description": "Offers serialization, deserialization, and diff operations for key-value structures using Bin_prot and Sexp, with support for size calculation, binary transmission, and ordered processing. Includes key parsing from S-expressions, hash folding for structured data, and typed diffs for precise data transformation. Operations work with Key.t, Sexp.t, and custom data types, enabling efficient data interchange and versioning. Examples include converting configuration files to keys, generating diffs between maps, and hashing complex records for consistent comparison.",
+      "description_length": 566,
+      "index": 151,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Id.Set",
+      "description": "offers serialization, deserialization, and diff operations for structured data, supporting S-expressions, binary formats, and set-based transformations. It handles generic types `t`, `Elt.t`, and custom data structures, enabling storage, transmission, and change tracking. Functions include parsing S-expressions into custom types, computing diffs between sets, and generating collision-resistant hashes. Examples include persisting sets to disk, reconstructing data from diffs, and hashing complex objects for consistent lookup.",
+      "description_length": 529,
+      "index": 152,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Id.Table",
+      "description": "Transforms S-expressions into structured key-value pairs using string keys and maps them according to a defined schema, enabling configuration parsing. Supports binary serialization and deserialization of custom types, including polymorphic variants, with operations for size estimation, writing, reading, and type inspection. Users can convert configuration files into accessible data structures and persist or transmit complex data types efficiently. Examples include parsing a config file into a map and storing a variant type in a binary file.",
+      "description_length": 547,
+      "index": 153,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Id.Hash_set",
+      "description": "Converts S-expressions to typed values using a custom constructor and supports binary serialization and deserialization of `elt` values with Bin_prot, including size, write, read, and shape operations. Enables structured data parsing and efficient binary storage for custom types, particularly polymorphic variants. Users can transform S-expressions into specific elements and persist data in binary form. Examples include parsing configuration data from S-expressions and saving complex data structures to binary files.",
+      "description_length": 520,
+      "index": 154,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Id.Hash_queue",
+      "description": "The module offers operations for managing key-value pairs in a hash queue, including enqueueing, dequeuing, membership checks, and element transformations via iteration, folding, and filtering. It works with a structured, ordered queue that ensures key uniqueness while supporting both safe and exception-raising variants for modifications. Use cases include efficiently handling ordered data with frequent lookups or updates, such as task scheduling or event-driven processing.",
+      "description_length": 478,
+      "index": 155,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.For_internal_testing.Spawn_in_foreground_result",
+      "description": "Handles the outcome of starting a process in the foreground, providing access to the process handle and detailed exit or signal information. Works with asynchronous process data and error states, encapsulating both successful and failed results. Used to monitor and respond to process termination signals or exit codes in real-time.",
+      "description_length": 332,
+      "index": 156,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Config",
+      "description": "Provides functions to configure execution parameters, including local and remote worker counts, connection timeouts, and output redirection. Works with integers, remote executable specifications, strings, time spans, and variant types for output handling. Used to set up worker processes with controlled logging and resource allocation for distributed tasks.",
+      "description_length": 358,
+      "index": 157,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Make_map_function_with_init",
+      "description": "Offers serialization and deserialization capabilities for a type `t` using Bin_prot, including size estimation, binary writing, reading, and shape definition. Supports polymorphic variants via constructor tag readers, enabling binary encoding and decoding of `t` instances. Can handle both concrete and variant forms of the type, ensuring compatibility in data storage and transmission. Examples include saving complex data structures to disk or sending them over a network in a compact binary format.",
+      "description_length": 501,
+      "index": 158,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Make_map_function",
+      "description": "Encodes and decodes values of type t and their polymorphic variants using Bin_prot, supporting size calculation, writing, reading, and shape definition. Operations include binary serialization and deserialization, with specialized handling for variant types through constructor tags. This enables efficient storage and transmission of structured data. For example, it allows converting a complex data structure into a binary stream and reconstructing it accurately later.",
+      "description_length": 471,
+      "index": 159,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Make_map_reduce_function_with_init",
+      "description": "Offers binary serialization and deserialization for type `t` using Bin_prot, including size estimation, writing, reading, and shape definitions. Supports polymorphic variants via explicit constructor tag handling during encoding and decoding. Enables efficient storage and transmission of structured data by converting values of `t` to and from binary format. For example, it can serialize a complex variant type into a binary stream for network transfer or file storage.",
+      "description_length": 471,
+      "index": 160,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Make_map_reduce_function",
+      "description": "Handles binary serialization and deserialization of a custom type `t` using Bin_prot, including size calculation, writing, reading, and shape definition. Supports both direct and polymorphic variant representations through constructor tag readers. Enables efficient encoding and decoding of `t` instances for storage or network transmission. Examples include converting a complex data structure to binary bytes and reconstructing it accurately.",
+      "description_length": 444,
+      "index": 161,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Make",
+      "description": "Encodes and decodes worker and connection states using Bin_prot, supporting binary serialization of initialization arguments, sizes, and shapes for consistent data representation. Provides mechanisms to persist and restore connection metadata and worker configurations across sessions. Enables efficient RPC and pipe-based communication with custom serialization, allowing query responses, streaming, and stateful interactions. Examples include saving worker states for later restoration, reinitializing connections with stored parameters, and establishing bidirectional data flows between distributed components.",
+      "description_length": 613,
+      "index": 162,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_id",
+      "description": "manages custom type comparisons, structured data serialization, and keyed queue operations, offering tools for sorting, data conversion, and efficient data manipulation. It includes comparison functions for any comparable type, serialization utilities for maps, sets, and custom types, and queue management with insertion, retrieval, and transformation capabilities. Users can sort custom types, convert S-expressions to binary, and manage task queues with filtering and reordering. Examples include generating hashes for configuration keys, applying incremental map updates, and scheduling tasks with priority-based dequeuing.",
+      "description_length": 627,
+      "index": 163,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Worker_type_id",
+      "description": "combines comparison, serialization, and queue management capabilities for custom types, enabling efficient data handling, transformation, and ordered operations. It supports binary and S-expression encoding, diff operations for versioned data, and key-based queue manipulations, with functions to generate and reset unique identifiers. Users can serialize complex structures, track changes between states, and manage ordered key-value pairs for task scheduling or configuration handling. Examples include persisting configuration data, applying diffs to update sets, and generating predictable IDs for testing.",
+      "description_length": 610,
+      "index": 164,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils.Internal_connection_state",
+      "description": "Manages the state of active connections and their associated worker states, combining an asynchronous RPC connection with a set of one-time values. It operates on tuples of worker and connection states, paired with an RPC connection object. Used to track and coordinate connection-specific data during asynchronous communication.",
+      "description_length": 329,
+      "index": 165,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Rpc_settings.For_internal_testing",
+      "description": "Handles creation of a testable communication endpoint with customizable environment variables, message size limits, buffer age constraints, timeout settings, and heartbeat configurations. Operates on types such as strings, integers, option types, and custom time and heartbeat structures. Used to simulate controlled network conditions during integration testing.",
+      "description_length": 363,
+      "index": 166,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Function",
+      "description": "manages worker identification and RPC configuration with polymorphic worker types and structured settings. It handles creation, comparison, and serialization of worker identifiers, and configures RPC environments with custom settings types. Operations include generating unique worker IDs, comparing them for equality, and setting up RPC parameters for controlled communication. Examples include logging worker IDs, testing distributed interactions, and ensuring consistent identification across system components.",
+      "description_length": 514,
+      "index": 167,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Backend_and_settings",
+      "description": "Provides functions to parse, validate, and apply configuration settings, including loading from files, merging with defaults, and extracting specific parameters. Works with nested records, lists, and optional fields representing application configuration. Used to initialize runtime parameters from a JSON file and enforce required fields during startup.",
+      "description_length": 354,
+      "index": 168,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Make",
+      "description": "Encodes and decodes `init_arg` and `t` types using Bin_prot, enabling efficient data persistence and transmission for worker and connection states. Supports bidirectional communication through RPC and pipes, handling asynchronous data flow and stateful interactions. Allows for the creation of custom RPC endpoints, managing connection setup and worker initialization parameters. Examples include serializing worker state for storage, transmitting connection configurations over networks, and implementing custom message-passing interfaces.",
+      "description_length": 540,
+      "index": 169,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.State",
+      "description": "Provides functions to check and enforce the initialization state of an RPC parallel master process, using a private type `t` to encode initialization evidence at the type level. Accepts a `t` as a parameter to ensure preconditions are met, and returns `t option` to represent the current state. Used to safely condition logic on whether `start_app` or `init_master_exn` has been called.",
+      "description_length": 386,
+      "index": 170,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.For_testing",
+      "description": "Initializes test environment for RPC parallel execution, ensuring proper setup before test definitions. Works with backend configurations and source code positions to track test locations. Used to set up inline and expect tests that rely on Rpc_parallel, requiring placement at the top of relevant files.",
+      "description_length": 304,
+      "index": 171,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Expert",
+      "description": "manages environment variables for worker processes, allowing retrieval, modification, and persistence through the `t` type. It enables isolation of execution contexts by maintaining a mutable environment state. Functions can set or read variables, ensuring consistent behavior across distributed tasks. For example, it can configure a worker to use a specific database connection string or logging level.",
+      "description_length": 404,
+      "index": 172,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Param",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Works with the `t` type, supporting polymorphic variants through a constructor tag reader. Used to encode and decode instances of `t` in binary format for storage or communication.",
+      "description_length": 333,
+      "index": 173,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Input",
+      "description": "Provides serialization and deserialization functions for a custom type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Works with the `t` type and supports polymorphic variants through a constructor tag reader. Used to encode and decode instances of `t` in binary format for storage or communication.",
+      "description_length": 341,
+      "index": 174,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Output",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot, including size calculation, writing, reading, and shape definition. Works with the `t` type, supporting both direct and polymorphic variant handling. Used to encode and decode values of `t` in binary format for storage or communication.",
+      "description_length": 320,
+      "index": 175,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Worker",
+      "description": "Handles asynchronous task execution by spawning worker instances with specific configurations, running them with input data, and shutting them down cleanly. Operates on worker instances, parameter objects, and accumulators representing processed results. Used to manage parallel processing of data streams with guaranteed cleanup.",
+      "description_length": 330,
+      "index": 176,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce.Accum",
+      "description": "Provides serialization and deserialization functions for a custom type `t` using Bin_prot, including size calculation, writing, reading, and shape definition. Works with the `t` type, supporting polymorphic variants through a constructor tag reader. Used to persist and reconstruct complex data structures in binary format for efficient storage or communication.",
+      "description_length": 362,
+      "index": 177,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed.Id",
+      "description": "manages custom types with comparison, serialization, and key-based operations, enabling efficient data handling across multiple formats and structures. it supports operations like ordering, hashing, diffing, and converting between S-expressions, binary, and key-value representations. it allows for set manipulations, key extraction, and queue management, with functions to serialize, deserialize, and transform data. examples include sorting custom values, persisting sets with version control, and managing ordered key-value collections for task scheduling.",
+      "description_length": 559,
+      "index": 178,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Worker_state",
+      "description": "Provides serialization and deserialization functions for `init_arg` and `t` types using Bin_prot, enabling efficient binary encoding and decoding. Works with `init_arg` and `t` data structures, which are used to initialize and track the state of worker processes. Used to persist and restore worker initialization data across network connections or process restarts.",
+      "description_length": 366,
+      "index": 179,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Connection_state",
+      "description": "Handles serialization and deserialization of connection initialization data using Bin_prot, supporting efficient binary encoding and decoding. Operates on `t` for connection state and `init_arg` for initial parameters passed during connection setup. Used to persist and restore connection details across process restarts or network reconnections.",
+      "description_length": 346,
+      "index": 180,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Functions",
+      "description": "Creates and configures various RPC and pipe-based communication protocols, including request-response, streaming, and stateful interactions. Operates with worker, worker_state, and connection_state types, along with Bin_prot-serializable query and response types. Enables direct integration with existing Async.Rpc and Async.Pipe_rpc instances for custom protocol handling.",
+      "description_length": 373,
+      "index": 181,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Id",
+      "description": "Provides comparison, serialization, and transformation capabilities for custom data types, key-value structures, and ordered collections. Supports operations like ordering, hashing, diffing, and binary serialization for types such as `t`, `Key.t`, `Elt.t`, and maps, enabling efficient data handling and manipulation. Users can parse S-expressions into structured data, generate diffs between configurations, and manage ordered key-value queues with unique elements. Examples include sorting custom records, serializing variant types, and maintaining ordered task lists with fast lookups.",
+      "description_length": 588,
+      "index": 182,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Connection",
+      "description": "Provides operations to manage a connection to a worker, including running functions, aborting direct pipe operations, and closing the connection. Works with types like `Id.t`, `Function.t`, and `Rpc.Connection.t` to enable remote procedure calls. Used to establish a client connection, execute worker functions asynchronously, and handle connection lifecycle events.",
+      "description_length": 366,
+      "index": 183,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Shutdown_on",
+      "description": "Provides functions to create and manage a shutdown signal that can be checked and triggered, working with the `'a t` type to encapsulate a value and a shutdown flag. Includes `is_shutdown` to test the flag and `shutdown` to set it, allowing coordinated termination of processes. Used to safely interrupt long-running computations or asynchronous tasks.",
+      "description_length": 352,
+      "index": 184,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Spawn_in_foreground_result",
+      "description": "Handles the result of spawning a process in the foreground, providing access to both the process handle and its exit value or error. Operates on a type that wraps a result containing a value and an Async process, or an error. Used to manage process execution outcomes in asynchronous workflows, such as capturing exit codes or handling failures during process startup.",
+      "description_length": 368,
+      "index": 185,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Spawn_in_foreground_exn_result",
+      "description": "Provides operations to handle the result of spawning a process in the foreground, including extracting the process and its exit value or error. Works with the tuple type ('a * Async.Process.t), where 'a represents the exit status or exception. Used to manage process execution outcomes in asynchronous workflows, such as capturing exit codes or errors during command execution.",
+      "description_length": 377,
+      "index": 186,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Deprecated",
+      "description": "Handles asynchronous process spawning and network connection setup, returning a tuple of a worker state and a connection object. Operates with file descriptor redirection settings, connection and worker initialization arguments, and asynchronous deferred values. Used to manage long-running processes with automatic worker shutdown on connection failure or to establish client connections with custom setup parameters.",
+      "description_length": 418,
+      "index": 187,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.For_internal_testing",
+      "description": "Manages process execution outcomes, offering access to process handles, exit codes, and signal information. Supports asynchronous process monitoring with detailed error handling and real-time termination tracking. Provides functions to inspect successful or failed process states, extract exit statuses, and handle signal events. Enables testing of process lifecycle events, such as capturing a process's exit code or detecting a termination signal.",
+      "description_length": 449,
+      "index": 188,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel.Settings",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot and Sexp formats, including size calculation, writing, reading, and shape definition. Works with the abstract type `t` to enable persistent storage and communication protocols. Used to convert configuration settings between binary and Sexp representations for logging and inter-process data exchange.",
+      "description_length": 383,
+      "index": 189,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Fd_redirection",
+      "description": "Handles file descriptor redirection by defining a type representing absolute file paths for writing. Provides serialization and deserialization functions for converting between the type and S-expressions. Used to specify output destinations in command-line tools or process execution contexts.",
+      "description_length": 293,
+      "index": 190,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.How_to_run",
+      "description": "Provides functions to configure and execute local or remote workers, with options to verify binary hashes and wrap execution commands. Operates on a custom type `t` representing worker configurations and uses `Prog_and_args.t` for command-line arguments. Enables running workers with specific environment settings and custom launch wrappers.",
+      "description_length": 341,
+      "index": 191,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Map_reduce",
+      "description": "Handles binary serialization and deserialization of type `t` using Bin_prot, including size computation, writing, reading, and shape definition. Supports direct and polymorphic variant types through constructor tag readers, enabling efficient encoding and decoding for storage or communication. Operations include serializing instances of `t` into binary format and reconstructing them from binary data. Examples include saving complex data structures to disk or transmitting them over a network.",
+      "description_length": 496,
+      "index": 192,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Prog_and_args",
+      "description": "Provides functions to convert a structured data type representing program and argument information into an S-expression. Works with a record type containing fields for program names and associated arguments. Used to serialize configuration data for logging or inter-process communication.",
+      "description_length": 288,
+      "index": 193,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Remote_executable",
+      "description": "Creates and manages remote executable instances, enabling deployment and execution of binaries on remote hosts. It supports copying, deleting, and running executables while ensuring binary consistency and handling SSH key checks. Operates with host strings, executable paths, and environment configurations to facilitate remote process execution.",
+      "description_length": 346,
+      "index": 194,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel.Rpc_settings",
+      "description": "Configures and manages testable communication endpoints with fine-grained control over environment variables, message limits, buffer constraints, timeouts, and heartbeats. Operates on core types like strings, integers, options, and custom time and heartbeat structures. Enables simulation of specific network behaviors for reliable integration testing. Examples include setting message size caps, defining timeout durations, and adjusting buffer retention periods.",
+      "description_length": 464,
+      "index": 195,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Utils",
+      "description": "Provides tools for comparing, serializing, and manipulating custom data types, with support for queues, diffs, and connection state management. Key data types include custom types, maps, sets, and connection-worker state tuples, with operations for sorting, serialization, diffing, and queue transformations. Users can serialize configuration data, apply incremental updates, manage task priorities, and track asynchronous connection states. Examples include generating unique IDs, persisting state changes, and coordinating worker tasks through RPC.",
+      "description_length": 550,
+      "index": 196,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Managed",
+      "description": "manages custom types with comparison, serialization, and key-based operations, supporting ordering, hashing, diffing, and conversion between S-expressions, binary, and key-value formats. it enables set manipulations, key extraction, and queue management through functions for serialization, deserialization, and transformation. users can sort custom values, persist sets with version control, and manage ordered key-value collections for task scheduling. operations include converting data between formats, tracking changes in sets, and organizing tasks by priority.",
+      "description_length": 566,
+      "index": 197,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel.Parallel",
+      "description": "Provides functions to define and wrap remote procedure calls (RPCs) and pipes, supporting synchronous and asynchronous communication patterns. Operates with worker, worker_state, and connection_state types, along with Bin_prot-serializable query and response types. Enables creation of bidirectional streams, stateful interactions, and one-way messages for distributed systems.",
+      "description_length": 377,
+      "index": 198,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel_unauthenticated.For_testing",
+      "description": "Initializes a testing environment with a specific source code position, enabling precise tracking of test execution points. It operates on Core.Source_code_position.t to associate tests with their origin in the code. This is used to generate detailed test reports and debug information during parallel test runs.",
+      "description_length": 312,
+      "index": 199,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel_unauthenticated.Expert",
+      "description": "Provides functions to initiate a master RPC server with customizable timeouts and message size limits, launch a worker server using a predefined environment, and define a command for worker execution. Operates with types such as `Async.Command.t`, `Rpc_parallel.Expert.Worker_env.t`, and `Async.Writer.buffer_age_limit`. Used to coordinate distributed processing tasks by setting up communication channels between master and worker nodes.",
+      "description_length": 438,
+      "index": 200,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "rpc_parallel",
+      "description": "Provides functions for executing RPC calls in parallel, including launching multiple requests and collecting results. Operates on lists of RPC endpoints and associated parameters, returning aggregated responses. Used to efficiently fetch data from multiple services simultaneously during batch processing tasks.",
+      "description_length": 311,
+      "index": 201,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Rpc_parallel",
+      "description": "Provides a type-safe parallel execution framework for running functions on local or remote workers, with support for configuration, serialization, and communication. Key data types include worker configurations, program arguments, connection states, and serialized binary or S-expression representations. It enables tasks such as executing commands with custom environments, managing remote binaries, serializing complex data, and setting up bidirectional RPC streams for distributed interactions.",
+      "description_length": 497,
+      "index": 202,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Rpc_parallel_unauthenticated",
+      "description": "Tracks test execution points using Core.Source_code_position.t, enabling detailed reporting in parallel test environments. Manages RPC communication through Async.Command.t, Worker_env.t, and buffer age limits to coordinate master and worker processes. Supports custom timeouts and message size constraints for reliable distributed task execution. Enables parallel test runs with precise debugging and scalable worker management.",
+      "description_length": 429,
+      "index": 203,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 210,
+    "meaningful_modules": 204,
+    "filtered_empty_modules": 6,
+    "retention_rate": 0.9714285714285714
+  },
+  "statistics": {
+    "max_description_length": 649,
+    "min_description_length": 186,
+    "avg_description_length": 377.30882352941177,
+    "embedding_file_size_mb": 0.7414016723632812
+  }
+}

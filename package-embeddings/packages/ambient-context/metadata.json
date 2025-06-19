@@ -1,0 +1,98 @@
+{
+  "package": "ambient-context",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 11,
+  "creation_timestamp": "2025-06-18T16:33:11.870415",
+  "modules": [
+    {
+      "module_path": "Ambient_context_atomic.Atomic",
+      "description": "Provides atomic read, write, and update operations for shared values, including compare-and-set and fetch-and-add for integers. Works with atomic references that wrap any type, with specialized integer operations for safe concurrent modification. Used to manage shared state in multithreaded environments, such as maintaining counters or coordinating access to resources.",
+      "description_length": 371,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ambient_context_tls.M",
+      "description": "Retrieves and modifies a mutable map structure, allowing temporary access to its contents and managing key-value pairs with scoped operations. It supports creating unique keys, fetching values by key, and executing functions with or without specific bindings. Used to isolate state changes in concurrent or nested operations without affecting the global map.",
+      "description_length": 358,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ambient_context_thread_local.Thread_local",
+      "description": "Provides functions to manage thread- or domain-specific storage, including creating, retrieving, setting, and removing values. Works with a type 'a t that encapsulates per-thread or per-domain state. Enables safe access to context-specific data in concurrent or parallel execution environments.",
+      "description_length": 294,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ambient_context_core.Ambient_context_hmap",
+      "description": "provides a mechanism to extend key-based data structures with additional context, such as names or custom printers. it introduces a key type and operations for associating and retrieving supplementary information. users can define custom pretty-printers or metadata for keys, enhancing data representation and debugging. this enables more expressive key handling in applications requiring contextual information.",
+      "description_length": 412,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ambient_context_core.Types",
+      "description": "Provides operations to manage key-value bindings with thread-local storage, including retrieving and modifying a map, creating keys, and binding values to keys within a scoped computation. Works with `Hmap.t` for hash maps and `'a key` for unique key identifiers. Used to safely isolate and manage contextual data in concurrent or nested function calls.",
+      "description_length": 353,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "ambient-context",
+      "description": "Provides functions to store, retrieve, and manage values in thread-local, Lwt-sequence, and Eio-fiber-local storage, supporting seamless context propagation across different concurrency models. Works with arbitrary data types through a unified interface that adapts to the underlying runtime environment. Enables passing request-specific data, such as user identifiers or logging contexts, through asynchronous call chains without explicit parameter passing.",
+      "description_length": 458,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ambient_context_atomic",
+      "description": "manages shared state in multithreaded environments through atomic operations on wrapped values and specialized integer functions like compare-and-set and fetch-and-add. It supports atomic references for arbitrary types and provides safe, concurrent modification of shared data. Operations include reading, writing, updating, and performing atomic arithmetic on integers. Examples include maintaining thread-safe counters, managing shared flags, and coordinating access to critical sections.",
+      "description_length": 490,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ambient_context",
+      "description": "Tracks contextual data across different concurrency models, using a heterogeneous map to store and propagate values within threads, Lwt, or Eio fibers. The main data type is a Hmap.t, with operations to bind and retrieve values under custom keys. Users can store and access arbitrary data per execution context, such as logging metadata or request-specific information. For example, a library might store a user ID under a custom key, ensuring it's accessible throughout a request's lifecycle.",
+      "description_length": 493,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ambient_context_tls",
+      "description": "manages a mutable map through scoped operations, enabling temporary access and modification of key-value pairs. It supports creating unique keys, retrieving values, and executing functions with or without specific bindings. This allows for isolated state changes in concurrent or nested contexts. Operations include binding, unbinding, and applying functions within a localized environment.",
+      "description_length": 390,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ambient_context_thread_local",
+      "description": "Manages per-thread or per-domain state through a type 'a t, offering functions to create, retrieve, set, and remove values. Supports safe access to context-specific data in concurrent or parallel environments. For example, it can store user session data per thread or configuration settings per domain. Operations include setting a thread-specific integer and retrieving it later in the same thread.",
+      "description_length": 399,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ambient_context_core",
+      "description": "manages key-value pairs with contextual metadata and thread-local scope, combining key extension with scoped storage. it defines a key type for unique identifiers and supports operations to bind, retrieve, and modify values within a thread-local environment. users can attach custom printers or metadata to keys, enabling richer data handling in concurrent or nested computations. examples include tracking request-specific data in web servers or preserving configuration across function calls.",
+      "description_length": 494,
+      "index": 10,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 16,
+    "meaningful_modules": 11,
+    "filtered_empty_modules": 5,
+    "retention_rate": 0.6875
+  },
+  "statistics": {
+    "max_description_length": 494,
+    "min_description_length": 294,
+    "avg_description_length": 410.1818181818182,
+    "embedding_file_size_mb": 0.04039478302001953
+  }
+}

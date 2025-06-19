@@ -1,0 +1,70 @@
+{
+  "package": "grpc-async",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 7,
+  "creation_timestamp": "2025-06-18T16:31:18.491039",
+  "modules": [
+    {
+      "module_path": "Grpc_async.Server.Rpc",
+      "description": "Handles gRPC request processing with distinct interaction patterns: unary calls, client and server streaming, and bidirectional streaming. Accepts request data through pipes or direct strings and manages response delivery via deferred computations. Processes RPCs by invoking handler functions that return status and optional payload responses.",
+      "description_length": 344,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grpc_async.Server.Service",
+      "description": "Creates a service instance and allows adding named RPC handlers, which can be invoked based on incoming HTTP/2 requests. Operates on a custom type `t` that encapsulates registered RPCs and their routing logic. Used to build interactive server components that respond to specific request paths by executing corresponding RPCs.",
+      "description_length": 325,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grpc_async.Client.Rpc",
+      "description": "Provides functions for handling RPC calls with bidirectional, client-streaming, server-streaming, and unary patterns. Operates on Async.Pipe.Writer.t, Async.Pipe.Reader.t, and H2.Body.Writer.t, H2.Body.Reader.t Async.Deferred.t for stream management. Used to process HTTP/2 requests by sending encoded data and managing response streams through handler functions that return deferred values.",
+      "description_length": 391,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Grpc_async.Client",
+      "description": "Handles RPC calls with various streaming patterns, using asynchronous pipes and HTTP/2 bodies to manage data flow. Supports operations on writers and readers for bidirectional, client-streaming, and server-streaming interactions. Processes HTTP/2 requests by encoding data and managing response streams via handler functions that return deferred values. Examples include sending real-time updates, receiving continuous data feeds, and executing asynchronous procedures with structured input and output.",
+      "description_length": 502,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grpc_async.Server",
+      "description": "manages gRPC and HTTP/2 request handling by defining service endpoints and processing various interaction patterns. It operates on a custom type `t` that tracks registered RPCs and their routing, enabling invocation based on request paths. Unary, client, server, and bidirectional streaming interactions are supported, with handlers returning status and payload responses. Examples include setting up a service that responds to a specific endpoint with a streamed response or handling a bidirectional flow for real-time communication.",
+      "description_length": 534,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "grpc-async",
+      "description": "Provides functions for establishing HTTP/2 connections, sending and receiving protocol buffers, and handling various RPC styles including unary calls, server and client streaming, and bidirectional streams. Operates on byte sequences, protocol buffer messages, and connection state objects. Used to build efficient, low-level gRPC clients and servers in OCaml applications.",
+      "description_length": 373,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Grpc_async",
+      "description": "manages gRPC and HTTP/2 interactions through a custom type `t` that routes and executes RPCs, supporting unary, client, server, and bidirectional streaming. It enables asynchronous data flow using pipes and handles request processing with handlers that return deferred values, allowing for real-time updates and continuous data exchange. Operations include sending and receiving streamed data, executing asynchronous procedures, and managing response streams via handler functions. Examples include setting up a service endpoint that returns a streamed response or facilitating bidirectional communication for real-time applications.",
+      "description_length": 633,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 7,
+    "meaningful_modules": 7,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 633,
+    "min_description_length": 325,
+    "avg_description_length": 443.14285714285717,
+    "embedding_file_size_mb": 0.025850296020507812
+  }
+}

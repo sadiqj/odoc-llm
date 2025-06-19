@@ -1,0 +1,42 @@
+{
+  "package": "lwt-parallel",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 3,
+  "creation_timestamp": "2025-06-18T16:28:04.454180",
+  "modules": [
+    {
+      "module_path": "Parallel.Io",
+      "description": "Defines protocols for serializing and deserializing values between input and output channels using custom read and write functions. Works with arbitrary data types through provided put and get functions, or with serializable types via the built-in marshaling protocol. Used to transmit structured data over network connections or file streams with precise control over encoding and decoding.",
+      "description_length": 391,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "lwt-parallel",
+      "description": "Provides functions to execute Lwt computations in separate OS processes by leveraging a pre-snapshot state to avoid fork-related issues. Works with Lwt promises, Unix sockets, and marshaled function definitions to ensure safe process creation. Enables parallel execution of I/O-bound tasks without thread interference or memory duplication.",
+      "description_length": 340,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Parallel",
+      "description": "Provides mechanisms for serializing and deserializing arbitrary data types across process boundaries using custom or built-in marshaling. Supports transmitting structured data over channels with precise control over encoding and decoding. Enables execution of Lwt computations in separate processes, allowing asynchronous operations like remote I/O or distributed processing. For example, values can be sent to another process for computation or output, such as printing a string in a different process.",
+      "description_length": 503,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 3,
+    "meaningful_modules": 3,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 503,
+    "min_description_length": 340,
+    "avg_description_length": 411.3333333333333,
+    "embedding_file_size_mb": 0.011316299438476562
+  }
+}

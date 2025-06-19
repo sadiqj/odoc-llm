@@ -1,0 +1,427 @@
+{
+  "package": "ppx_css",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 58,
+  "creation_timestamp": "2025-06-18T16:43:43.030681",
+  "modules": [
+    {
+      "module_path": "Ppx_css.For_testing.Traverse_css.Identifier_kind.Map.Key",
+      "description": "Provides serialization and deserialization between a type `t` and S-expressions, along with a comparator for ordered operations. Works with the `t` type and its associated comparator witness. Used to enable persistent storage and ordered comparisons for key-like values.",
+      "description_length": 270,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_css.For_testing.Traverse_css.Identifier_kind.Map.Diff",
+      "description": "Provides operations to construct and manipulate difference maps between two data structures, using key-based mappings. Works with typed difference maps and derived-on maps that track key comparisons. Applies diffs to update structures or generates diffs from lists of changes.",
+      "description_length": 276,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_css.For_testing.Traverse_css.Identifier_kind.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Operates on S-expressions and the Key module's type. Used to deserialize configuration keys from structured text data.",
+      "description_length": 191,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_css.For_testing.Traverse_css.Identifier_kind.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t. Used to persist and reconstruct key data structures in binary format for storage or communication.",
+      "description_length": 304,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_css.For_testing.Traverse_css.Identifier_kind.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information to prevent prefix-based collisions. Used to generate reliable hash values for complex structures in hashing and equality checks.",
+      "description_length": 369,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_css.For_testing.Traverse_css.Identifier_kind.Set.Elt",
+      "description": "Provides serialization and deserialization between a type and S-expressions, along with a comparator for ordered operations. Works with a generic type `t` and its associated comparator witness. Enables structured data handling in contexts requiring symbolic representation and ordered comparisons.",
+      "description_length": 297,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_css.For_testing.Traverse_css.Identifier_kind.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting between S-expressions and internal representations. Works with sets of elements and optional difference structures representing changes between two states. Used to track modifications in set-based data structures and apply them selectively.",
+      "description_length": 340,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_css.For_testing.Traverse_css.Identifier_kind.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Works with Sexp.t and a specific Elt.t type. Used to parse structured data from S-expressions into application-specific values.",
+      "description_length": 201,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_css.For_testing.Traverse_css.Identifier_kind.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and variant-based reading. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 342,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_css.For_testing.Traverse_css.Identifier_kind.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of a data structure into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Operates on custom data types defined with `Elt.t`, supporting recursive and nested structures. Used to generate consistent, collision-resistant hash values for complex types in serialization and equality checks.",
+      "description_length": 411,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_css.For_testing.Traverse_css.Identifier_kind.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports the `compare` function to establish order. Used to implement custom sorting logic and decision-making based on value relationships.",
+      "description_length": 350,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_css.For_testing.Traverse_css.Identifier_kind.Map",
+      "description": "combines serialization, comparison, and diff operations for key-like data, enabling storage, ordered manipulation, and change tracking. it supports S-expression and binary formats for key types, along with hash folding for consistent and collision-resistant hashing. operations include deserializing keys from structured text, applying diffs to update maps, and generating hash states for complex structures. examples include saving key-value pairs to disk, merging changes between data versions, and ensuring hash consistency across distributed systems.",
+      "description_length": 554,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_css.For_testing.Traverse_css.Identifier_kind.Set",
+      "description": "Combines serialization, comparison, and difference tracking for set-like structures, supporting S-expressions, binary formats, and custom type parsing. Key types include `t`, `Elt.t`, and `Sexp.t`, with operations for converting between representations, computing diffs, and generating hashes. It enables parsing structured data, applying incremental changes, and ensuring consistent hashing for complex types. Examples include converting sets to S-expressions, applying delta updates, and generating collision-resistant hashes for nested data.",
+      "description_length": 544,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_css.For_testing.Traverse_css.Identifier_kind",
+      "description": "Combines comparison, serialization, and difference tracking for custom types, enabling ordered operations, data persistence, and change management. Supports S-expressions, binary formats, and hash folding, with operations to compare values, serialize and deserialize data, and compute diffs. It allows for sorting custom types, saving structured data to disk, and tracking incremental changes in sets and keys. Examples include generating consistent hashes for nested structures, applying delta updates to sets, and merging key-value changes across versions.",
+      "description_length": 558,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_css.For_testing.Traverse_css.Transform",
+      "description": "Provides functions to transform CSS strings into hashed versions based on position, location, and rewrite mappings, while handling prefix exclusion and hash inclusion rules. Operates on Ppxlib location and position types, Core.String.Map, Core.String.Set, and strings. Used to generate consistent CSS class names during code generation, ensuring uniqueness and avoiding conflicts.",
+      "description_length": 380,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_css.For_testing.Traverse_css.Get_all_identifiers",
+      "description": "Extracts CSS and OCaml identifiers from a stylesheet, returning OCaml identifiers as a result type and CSS identifiers as a string set. Processes `Css_jane.Stylesheet.t` to isolate named entities used in styles. Converts the OCaml identifier result into an S-expression for serialization.",
+      "description_length": 288,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_css.For_testing.Traverse_css.For_testing",
+      "description": "Transforms CSS stylesheets by rewriting class, ID, and variable selectors according to a provided mapping and location information, while skipping specified prefixes. Operates on `Css_jane.Stylesheet.t` and `Core.String.Map.t` to apply custom label transformations. Used to generate hashed class names in a build process while preserving certain selectors.",
+      "description_length": 356,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Css_parser.Types.Component_value",
+      "description": "Provides functions to create, compare, and serialize component values, including parsing from and converting to JSON. Works with the `t` type, which represents structured data elements with nested fields. Used to validate and transform configuration entries during system initialization.",
+      "description_length": 287,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Css_parser.Types.Brace_block",
+      "description": "Provides functions to parse and manipulate block structures enclosed in braces, including checking for balanced brackets, extracting content, and validating syntax. Works with strings and abstract syntax tree nodes representing nested blocks. Used to process template literals and code blocks in parser implementations.",
+      "description_length": 319,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Css_parser.Types.At_rule",
+      "description": "Represents CSS at-rules with properties for name, parameters, and nested rules. Provides functions to parse, construct, and manipulate at-rule structures from raw strings. Used to process media queries, font-face declarations, and other CSS directives in parser implementations.",
+      "description_length": 278,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Css_parser.Types.Declaration",
+      "description": "type t = { name : string; type_expr : Core_type.t; value : Value.t; location : Location.t } Provides functions to parse, validate, and serialize declarations, including checking type consistency and extracting location information. Operates on structured data containing names, type expressions, values, and source locations. Used to process variable and function declarations in a compiler frontend.",
+      "description_length": 400,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Css_parser.Types.Declaration_list",
+      "description": "Provides functions to manipulate and analyze lists of declarations with location metadata. Operates on type t, which is a list of kind values annotated with source positions. Used to process parsed language constructs such as variable declarations or function signatures during static analysis.",
+      "description_length": 294,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Css_parser.Types.Style_rule",
+      "description": "type t = { selector : string; properties : (string * string) list } Provides functions to create, modify, and serialize CSS-like style rules with selectors and key-value property pairs. Operates on strings and associative lists to represent CSS selectors and inline styles. Used to generate structured style outputs for web components or templated HTML rendering.",
+      "description_length": 363,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Css_parser.Types.Rule",
+      "description": "Provides functions to create, evaluate, and combine logical rules based on conditions and actions. Works with a custom type representing rule structures, including boolean conditions and associated side effects. Used to implement business logic validation and trigger specific behaviors in response to input data.",
+      "description_length": 313,
+      "index": 23,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Css_parser.Types.Stylesheet",
+      "description": "Processes and applies CSS-like rules to structured data, supporting selectors and property overrides. Operates on lists of typed rules with location metadata for error tracking. Used to dynamically style user interfaces based on defined visual hierarchies.",
+      "description_length": 256,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inline_css.Private.Dynamic",
+      "description": "Produces a virtual DOM attribute that dynamically links a CSS string to the DOM, updating automatically when the string changes. Works with string values and Virtual_dom.Vdom.Attr.t to manage inline styles reactively. Useful for components where styles depend on mutable or reactive data, such as theme switches or user-driven style adjustments.",
+      "description_length": 345,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_css.For_testing.Traverse_css",
+      "description": "Combines custom type comparison, serialization, and difference tracking with support for multiple formats and ordered operations, enabling data persistence, incremental updates, and consistent hashing. Handles CSS identifier extraction and transformation, generating hashed class names while preserving specified selectors and managing location-based rewriting. Processes stylesheets to isolate and serialize OCaml identifiers, supporting build-time label customization. Examples include merging key-value changes, applying delta updates to sets, and generating conflict-free CSS class names.",
+      "description_length": 592,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Css_printer.Merge",
+      "description": "Provides functions to construct and manipulate CSS stylesheets by adding parsed CSS data and extracting the combined result. Operates on a custom type `t` that accumulates stylesheet content. Used to merge multiple CSS sources into a single stylesheet for output.",
+      "description_length": 263,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Css_printer.Print",
+      "description": "Provides functions to generate and compress CSS output from a template structure. Operates on a `template` type and a CSS stylesheet abstract syntax tree. Used to render styled content in a formatted or minified layout for web applications.",
+      "description_length": 240,
+      "index": 28,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Css_parser.Lex_buffer",
+      "description": "Provides functions to create and manipulate a lexing buffer that tracks source locations, including converting from Sedlex buffers, ASCII strings, and files. Works with Uchar.t, strings, and Lexing.position to manage character streams and location data. Used to generate precise error locations and handle text encoding conversions like Latin-1 and UTF-8.",
+      "description_length": 355,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Css_parser.Lexer",
+      "description": "Processes CSS input into a sequence of tokens according to the CSS syntax specification. Includes types for token kinds, positions, and source maps, with operations to parse and iterate through CSS content. Supports recognition of identifiers, numbers, strings, and special symbols within CSS rules. Example tasks include extracting property names from declarations or identifying selector components in a stylesheet.",
+      "description_length": 417,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Css_parser.Menhir_parser",
+      "description": "Parses CSS stylesheets and declaration lists from lexed input, converting tokens into structured data. It processes lexing buffers using custom token generators to build instances of `Types.Stylesheet.t` and `Types.Declaration_list.t`. This enables direct integration with CSS parsing pipelines where tokenization is handled separately.",
+      "description_length": 336,
+      "index": 31,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Css_parser.Parser",
+      "description": "Parses CSS stylesheet content into a structured representation, extracting rules and declarations from raw strings. Processes input with line number and position tracking for accurate error reporting. Accepts raw CSS strings and returns typed data structures for further processing.",
+      "description_length": 282,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Css_parser.Types",
+      "description": "Combines functions for parsing, validating, and manipulating structured data, including JSON serialization, block syntax processing, CSS at-rules, declarations with locations, and rule-based logic. Operates on types such as `t` for structured elements, lists of annotated declarations, and CSS-style rules with selectors and properties. Enables tasks like validating configuration entries, processing template blocks, generating style outputs, and applying dynamic styling. Supports operations like parsing raw strings into abstract syntax trees, extracting location metadata, and combining logical conditions for business rules.",
+      "description_length": 629,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Inline_css.Private",
+      "description": "Manages reactive inline styles by linking a CSS string to the DOM, ensuring updates are reflected automatically. It operates on string values and integrates with Virtual_dom.Vdom.Attr.t to apply styles dynamically. This enables components to adjust their appearance in response to changing data, such as switching themes or applying user-defined styles. Examples include real-time style modifications and dynamic UI adjustments based on application state.",
+      "description_length": 455,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inline_css.For_testing",
+      "description": "Produces a string representation of the current test state, retrieves the name of the active testing strategy, and outputs the detailed state of the strategy to standard output. Works with internal test configuration and state tracking structures. Used to log test progress, debug strategy execution, and generate human-readable test reports.",
+      "description_length": 342,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_css.With_hoisted_expression",
+      "description": "Provides functions to manipulate and evaluate expressions that are lifted out of their original context, including binding values to expressions and substituting references. Works with the 'a t type, which encapsulates an expression along with its environment. Used to manage scoped computations where expressions need to be evaluated in a specific context, such as in compiler transformations or embedded domain-specific languages.",
+      "description_length": 432,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_css.For_css_inliner",
+      "description": "Generates CSS-inlined HTML structures by rewriting expressions with mapped styles, incorporating raw CSS strings and handling hash prefix exclusions. It processes Ppxlib expressions and locations to produce styled output. Used to inline external styles directly into elements during code transformation.",
+      "description_length": 303,
+      "index": 37,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ppx_css.For_testing",
+      "description": "provides advanced data manipulation through custom type comparison, serialization, and difference tracking across multiple formats. It supports ordered operations, CSS identifier extraction, and conflict-free class name generation, along with incremental updates and build-time label customization. Users can merge key-value pairs, apply delta updates to sets, and transform stylesheets while preserving selectors. It enables consistent hashing and location-based rewriting for reliable data persistence and transformation.",
+      "description_length": 523,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Css_jane.Dimension",
+      "description": "Provides functions to convert dimension values to S-expressions, enabling serialization and debugging. Works with a custom type representing dimensional data, such as size or count. Used to generate human-readable representations during logging or data exchange.",
+      "description_length": 262,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Css_jane.Component_value",
+      "description": "Provides serialization of component values to S-expressions using the sexp_of_t function. Works with the abstract type t representing structured component data. Used to convert configuration or state data into a format suitable for logging or persistent storage.",
+      "description_length": 262,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Css_jane.Brace_block",
+      "description": "Provides serialization of block structures to S-expressions using `sexp_of_t`. Operates on a custom type `t` representing structured code blocks. Used to generate human-readable representations during debugging or configuration export.",
+      "description_length": 235,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Css_jane.At_rule",
+      "description": "Provides functions to convert a structured representation of CSS at-rules into S-expression format. Works with a record type containing properties specific to CSS at-rules, such as selectors and nested declarations. Used to serialize CSS rule sets for configuration parsing or debugging output.",
+      "description_length": 294,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Css_jane.Declaration",
+      "description": "Provides serialization of configuration objects to S-expressions using the sexp_of_t function. Works with a record type containing structured data fields. Used to generate human-readable configuration dumps for debugging and logging purposes.",
+      "description_length": 242,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Css_jane.Declaration_list",
+      "description": "Provides functions to convert a list of labeled items with locations into S-expression representations. Operates on types representing kinds and located lists of these kinds. Used to serialize structured data for debugging or configuration purposes.",
+      "description_length": 249,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Css_jane.Style_rule",
+      "description": "Provides functions to convert a style rule representation into an S-expression format. Works with a record type containing properties like selector, declarations, and specificity. Used to serialize CSS-like style rules for debugging or configuration output.",
+      "description_length": 257,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Css_jane.Rule",
+      "description": "Provides functions to convert rule representations into S-expression format. Works with a custom type encapsulating rule logic and metadata. Used to serialize rules for configuration storage and inter-process communication.",
+      "description_length": 223,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Css_jane.Stylesheet",
+      "description": "Provides functions to convert a styled rule list into S-expressions, human-readable strings, and minified strings, and to parse a string into a styled rule list. Works with a type representing a list of styled rules, each annotated with source code positions. Used to serialize and deserialize CSS-like styles during parsing and output generation.",
+      "description_length": 347,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_css_syntax.String_constant",
+      "description": "Provides functions to create and manipulate string-based constants used for type information in code generation. Works with a record type containing a string value and associated metadata. Used to embed static string identifiers into generated code for type inference in tools like Merlin.",
+      "description_length": 289,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_css_syntax.Serializable_options",
+      "description": "Converts S-expression data into a structured options record and generates CSS strings based on provided constants and configuration. Works with Sexp.t and String_constant.t to represent and output styling parameters. Used to dynamically produce CSS from serialized configuration data.",
+      "description_length": 284,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_css_syntax.Preprocess_arguments",
+      "description": "Provides functions to read and modify a configuration object that tracks preprocessing directives, including adding patterns to exclude from hashing and rewriting rules for identifiers. Operates on a mutable state of type `t` that captures settings from build configuration files. Used to customize how source files are processed during compilation by filtering and transforming specific elements.",
+      "description_length": 397,
+      "index": 50,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "ppx_css",
+      "description": "Generates Vdom.Attr.t values from embedded CSS expressions, supporting inline style definitions and interpolation. Works with OCaml syntax to create styled elements directly in code. Enables dynamic styling within web applications using a syntax similar to CSS within OCaml expressions.",
+      "description_length": 286,
+      "index": 51,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Css_printer",
+      "description": "Constructs and merges CSS stylesheets using a custom `t` type, allowing accumulation and combination of parsed CSS data into a unified output. Generates formatted or minified CSS from a `template` type and abstract syntax tree, enabling flexible rendering of styled content. Supports merging multiple CSS sources and applying compression for optimized web delivery. Examples include combining external stylesheets into one and generating compact CSS for production use.",
+      "description_length": 469,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Css_parser",
+      "description": "Processes CSS input by first creating and managing lexing buffers with location tracking, then tokenizing the content according to CSS syntax. It parses tokens into structured data, extracting stylesheets, declarations, and rules while preserving source positions for accurate error reporting. Supports tasks like identifying property names, handling at-rules, and generating abstract syntax trees with location metadata. Enables integration with parsing pipelines, validation, and dynamic styling through operations on typed data structures.",
+      "description_length": 542,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Inline_css",
+      "description": "Injects and updates inline CSS styles in the DOM using string values, leveraging Virtual_dom.Vdom.Attr.t for dynamic rendering. Tracks and logs test state, including active strategies and detailed execution information, through string outputs. Supports real-time UI adjustments based on application state and provides debuggable test reports. Enables theme switching, user-defined styling, and test progress monitoring.",
+      "description_length": 419,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_css",
+      "description": "Encapsulates expressions with their environment for context-aware evaluation, enabling scoped computations and dynamic substitution. Transforms expressions into styled HTML by inlining CSS, handling style mappings and exclusions for targeted rendering. Supports complex data operations like merging, delta updates, and class name generation, allowing precise manipulation of styles and structured data. Enables efficient transformation of code structures with consistent hashing and incremental updates.",
+      "description_length": 503,
+      "index": 55,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Css_jane",
+      "description": "Exports functions for converting various CSS-related data structures into S-expressions, strings, and minified formats. Handles dimensional values, component configurations, code blocks, at-rules, style rules, and styled rule lists, each with their own custom or record types. Supports serialization for debugging, logging, configuration export, and data exchange. Examples include converting a CSS rule set to a human-readable S-expression or parsing a string into a list of styled rules with source positions.",
+      "description_length": 511,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ppx_css_syntax",
+      "description": "Processes CSS directives by parsing and rewriting string-based constants, converting S-expression configurations into styled output, and managing preprocessing rules. It handles string constants with metadata, generates CSS from structured options, and modifies configuration states to control code transformation. Users can embed type identifiers, dynamically produce styles from data, and customize preprocessing behavior. Examples include rewriting placeholders in CSS, generating styles from serialized data, and filtering elements during compilation.",
+      "description_length": 555,
+      "index": 57,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 60,
+    "meaningful_modules": 58,
+    "filtered_empty_modules": 2,
+    "retention_rate": 0.9666666666666667
+  },
+  "statistics": {
+    "max_description_length": 629,
+    "min_description_length": 191,
+    "avg_description_length": 356.5689655172414,
+    "embedding_file_size_mb": 0.21114540100097656
+  }
+}

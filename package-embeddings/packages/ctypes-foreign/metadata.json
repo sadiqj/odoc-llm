@@ -1,0 +1,112 @@
+{
+  "package": "ctypes-foreign",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 13,
+  "creation_timestamp": "2025-06-18T16:32:18.376365",
+  "modules": [
+    {
+      "module_path": "Ctypes_foreign_basis.Make.Ffi",
+      "description": "Converts between OCaml functions and foreign function pointers using libffi, enabling low-level interoperability. Handles function pointers with specific ABI settings, runtime lock management, and thread registration. Used to bridge OCaml code with C libraries, manage callback lifetimes, and ensure safe memory operations during foreign function calls.",
+      "description_length": 353,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ctypes_ffi.Make",
+      "description": "Provides functions to manage object lifetimes by linking them through a key. It operates on OCaml objects and integer keys, allowing values to be retrieved as long as their associated object remains live. Used to safely access values during the lifetime of a reference, such as in garbage-collected environments where object retention is critical.",
+      "description_length": 347,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ctypes_foreign_basis.Make",
+      "description": "Provides functions to create and manage function pointers, including allocating, freeing, and executing them. Works with custom types `fn` and `t`, where `t` represents a managed function pointer. Used to integrate C functions with OCaml by wrapping them in a safe, manageable interface.",
+      "description_length": 287,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ctypes_closure_properties.Make",
+      "description": "Provides functions to create, acquire, and release a mutual exclusion lock. Operates on a single abstract type representing a lock state. Used to synchronize access to shared resources in concurrent code, such as protecting critical sections in multi-threaded applications.",
+      "description_length": 273,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "ctypes-foreign",
+      "description": "Provides functions for defining and interacting with C data types such as integers, arrays, pointers, and structs, enabling direct calls to C functions. Works with low-level type representations and function signatures to map C APIs into OCaml. Used to interface with system libraries, such as binding to C's standard math functions or handling binary data formats.",
+      "description_length": 365,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Foreign",
+      "description": "Provides functions to convert OCaml closures into C-compatible function pointers and manage their lifetimes. Works with `fn` closures and `t` function pointer types, supporting optional null pointers via `t option`. Used to safely pass OCaml functions to C code, ensuring proper cleanup after use.",
+      "description_length": 297,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Dl",
+      "description": "Provides functions to open, close, and look up symbols in dynamic libraries. Operates on `library` handles and `flag` values to control loading behavior. Used to access functions or variables from shared libraries at runtime, such as loading plugins or external modules.",
+      "description_length": 270,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ctypes_ffi",
+      "description": "Links the lifetimes of OCaml objects with C pointers, ensuring garbage collection safety. Operates on OCaml objects and integer keys to manage object retention. Used to safely access OCaml values from C code during foreign function calls.",
+      "description_length": 238,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ctypes_weak_ref",
+      "description": "Creates and manages weak references to single values, allowing safe access and updates without preventing garbage collection. Operates on values of any type through a wrapped reference structure. Useful for caching or tracking objects that should not be retained indefinitely.",
+      "description_length": 276,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ctypes_foreign_basis",
+      "description": "creates and manages function pointers with custom types `fn` and `t`, enabling safe integration of C functions into OCaml. It supports allocating, freeing, and invoking function pointers, allowing direct execution of C code through OCaml. Operations include wrapping C functions, managing their lifetimes, and invoking them with appropriate type conversions. Examples include calling C library functions, creating callbacks, and handling complex function signatures in a type-safe manner.",
+      "description_length": 488,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ctypes_closure_properties",
+      "description": "Provides operations to manage mutual exclusion in concurrent contexts, including creating, acquiring, and releasing locks. Works with a opaque type `t` representing a lock state. Used to synchronize access to shared resources in multi-threaded applications.",
+      "description_length": 257,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Libffi_abi",
+      "description": "This module provides functions for defining and manipulating ABI (Application Binary Interface) configurations, including converting ABIs to integer codes and representing system-specific calling conventions. It works with an `abi` type to encapsulate architecture- and OS-specific binary interface settings, such as \"darwin\" or \"stdcall\". Use cases include low-level system programming and interoperability tasks requiring precise control over binary format conventions.",
+      "description_length": 471,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ctypes_ffi_stubs",
+      "description": "Provides functions to define and manipulate foreign function interface (FFI) types, including primitive, pointer, and struct types, and to construct and execute calls to external functions. Works with low-level type representations like `ffitype`, `struct_ffitype`, and `callspec` to interface with C libraries. Used to allocate and configure function calls, manage memory for struct layouts, and invoke C functions with custom calling conventions.",
+      "description_length": 448,
+      "index": 12,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 13,
+    "meaningful_modules": 13,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 488,
+    "min_description_length": 238,
+    "avg_description_length": 336.15384615384613,
+    "embedding_file_size_mb": 0.047636985778808594
+  }
+}

@@ -1,0 +1,1652 @@
+{
+  "package": "resource_cache",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 233,
+  "creation_timestamp": "2025-06-18T17:00:06.517273",
+  "modules": [
+    {
+      "module_path": "Resource_cache.Make.Status.Key.Map.Key",
+      "description": "Provides serialization to S-expression format and a comparator for ordering values. Works with the abstract type `t` and its associated comparator witness. Used to enable consistent ordering and external representation in data serialization pipelines.",
+      "description_length": 251,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Key.Map.Diff",
+      "description": "Generates and applies differences between maps using key-based comparisons. Operates on typed maps and difference representations derived from key-value pairs. Enables precise transformation of map states by applying computed diffs or deriving diffs from map transitions.",
+      "description_length": 271,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Key.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with Sexp.t and Key.t data structures. Used to deserialize key representations from structured text formats.",
+      "description_length": 187,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Key.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t, a custom type representing identifiers or keys, and supports polymorphic variants through specialized reader functions. Used to persist and reconstruct key structures in binary format for storage or communication.",
+      "description_length": 385,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Key.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information during folding to prevent prefix-based collisions. Used to generate reliable hash values for complex structures in hashing and equality checks.",
+      "description_length": 384,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Key.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key value by parsing and extracting the first element. Works with Sexp.t and string-based keys. Used to transform serialized data into lookup keys for configuration or mapping structures.",
+      "description_length": 219,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Key.Table.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary encoding and decoding, particularly those involving polymorphic variants. Used to enable efficient binary persistence and communication of data structures across processes or storage.",
+      "description_length": 376,
+      "index": 6,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Key.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific element type using a provided constructor. Works with S-expressions and custom data types defined by the user. Used to parse structured data from S-expression representations into typed values.",
+      "description_length": 233,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Key.Hash_set.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, particularly those involving polymorphic variants. Used to enable efficient binary serialization in data exchange or persistent storage scenarios.",
+      "description_length": 362,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Key.Set.Elt",
+      "description": "Provides serialization to S-expression format and a comparator for ordering values. Works with the abstract type `t` and its associated comparator witness. Used to enable consistent ordering and external representation in data serialization pipelines.",
+      "description_length": 251,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Key.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting differences to S-expressions and constructing differences from lists. Works with sets of elements and their corresponding difference representations. Used to track changes between two versions of a set and apply those changes to produce a new set.",
+      "description_length": 347,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Key.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and the module's defined type `Elt.t`. Used to parse structured data from S-expressions into application-specific representations.",
+      "description_length": 225,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Key.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a specific type `Elt.t` and its polymorphic variant form when needed. Used to persist and reconstruct instances of `Elt.t` in binary format for storage or communication.",
+      "description_length": 331,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Key.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Operates on custom data types through a dedicated hash_fold_t function, which adheres to strict consistency and uniqueness constraints. Used to generate reliable hash values for complex types in scenarios requiring deterministic and collision-free hashing, such as in custom data storage or serialization.",
+      "description_length": 503,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Key.Map.Key",
+      "description": "Provides serialization to S-expression format and a comparator for ordered operations. Works with the abstract type `t` and its associated comparator witness. Used to enable ordered comparisons and S-expression encoding in data structures requiring custom typing.",
+      "description_length": 263,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Key.Map.Diff",
+      "description": "Generates and applies differences between maps using key-based comparisons. Operates on typed maps and difference representations derived from key-value pairs. Computes changes between two map states and applies them to produce a new map.",
+      "description_length": 238,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Key.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with S-expressions and key data structures derived from a specific domain model. Used to deserialize configuration data from textual S-expression formats into typed key representations.",
+      "description_length": 264,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Key.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t, a custom type that may include polymorphic variants. Used to persist or transmit Key.t values efficiently in binary format.",
+      "description_length": 295,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Key.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Works with custom data types and collections, using Base.Hash.state to accumulate hash values. Ensures consistent hashing for equal values and prevents partial matches by avoiding prefix-based folding sequences.",
+      "description_length": 409,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Key.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key by parsing and validating its structure. Works with `Sexplib0.Sexp.t` and extracts specific values based on predefined patterns. Used to deserialize configuration data from S-expressions into typed keys for lookup and processing.",
+      "description_length": 265,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Key.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, particularly those involving polymorphic variants. Used to enable efficient binary persistence of data structures in applications requiring fast serialization.",
+      "description_length": 370,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Key.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific element type using a provided constructor. Works with S-expressions and custom data types defined by the user. Used to parse structured data from S-expression representations into typed values.",
+      "description_length": 233,
+      "index": 21,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Key.Hash_set.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of type `elt` using the Bin_prot format, including size calculation, writing, and reading operations. Works with custom types that require binary encoding, supporting polymorphic variants through a constructor tag reader. Used to persist and reconstruct complex data structures in binary form for efficient storage or communication.",
+      "description_length": 392,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Key.Set.Elt",
+      "description": "Provides serialization to S-expression format and a comparator for type `t`. Operates on the abstract type `t` and its associated comparator witness. Used to enable ordered comparisons and S-expression encoding in data structures requiring custom typing.",
+      "description_length": 254,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Key.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting differences to S-expressions and constructing differences from lists. Works with sets of elements and their corresponding difference representations. Used to track changes between two versions of a set and apply those changes to produce a new set.",
+      "description_length": 347,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Key.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and the module's defined `Elt.t` type. Used to parse structured data from S-expressions into application-specific values.",
+      "description_length": 216,
+      "index": 25,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Key.Set.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type `Elt.t` using Bin_prot, including size calculation, writing, reading, and shape inspection. Works with binary representations of data, supporting polymorphic variants through a constructor tag-based reader. Used to persist and reconstruct complex data structures in binary format for storage or communication.",
+      "description_length": 372,
+      "index": 26,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Key.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Operates on custom data types through a fold-based approach, incorporating size information to prevent prefix-based collisions. Used to generate reliable hash values for complex structures like lists and variants during serialization or equality checks.",
+      "description_length": 417,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Resource.Make_simple.Key.Map.Key",
+      "description": "Provides serialization to S-expression format and a comparator for ordering values. Works with the abstract type `t` and its associated comparator witness. Used to enable consistent ordering and external representation in data serialization pipelines.",
+      "description_length": 251,
+      "index": 28,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Resource.Make_simple.Key.Map.Diff",
+      "description": "Generates and applies differences between maps using key-based comparisons. Operates on typed maps and difference representations derived from key-value pairs. Computes changes between two map states and applies them to produce updated maps.",
+      "description_length": 241,
+      "index": 29,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Resource.Make_simple.Key.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Operates on S-expressions and the Key module's type. Used to deserialize structured data from S-expression format into a typed key representation.",
+      "description_length": 219,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Resource.Make_simple.Key.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t, a custom type that may include polymorphic variants. Used to persist or transmit Key.t values efficiently in binary format.",
+      "description_length": 295,
+      "index": 31,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Resource.Make_simple.Key.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information before element-wise folding. Used to generate reliable hash values for complex structures in hashing-based data structures.",
+      "description_length": 364,
+      "index": 32,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Resource.Make_simple.Key.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key value by parsing and extracting the first element. Works with Sexp.t and string types, ensuring structured data representation. Used to transform serialized data into a usable key format for lookups or indexing.",
+      "description_length": 247,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Make_simple.Key.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary encoding, particularly those involving polymorphic variants. Used to enable efficient binary persistence of data structures in applications like network protocols or file storage.",
+      "description_length": 377,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Make_simple.Key.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific element type using a provided constructor. Works with S-expressions and custom data types defined by the user. Used to parse structured data from S-expression representations into typed values.",
+      "description_length": 233,
+      "index": 35,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Resource.Make_simple.Key.Hash_set.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that need to be encoded and decoded in binary format. Used to enable persistent storage or network transmission of structured data.",
+      "description_length": 314,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Make_simple.Key.Set.Elt",
+      "description": "Provides serialization to S-expression format and a comparator for equality and ordering. Works with the abstract type `t` and its associated comparator witness. Used to enable consistent ordering and S-expression representation in data structures and serialization pipelines.",
+      "description_length": 276,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Make_simple.Key.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including generating a diff from a list of elements and applying a diff to a set. Works with sets of elements and optional difference structures representing changes between sets. Used to track and apply incremental updates to set-based data structures.",
+      "description_length": 332,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Make_simple.Key.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type `Elt.t` using a provided deserialization function. Operates on `Sexplib0.Sexp.t` values, transforming them into structured data representations. Used to parse structured data from S-expressions into application-specific types during data loading or processing.",
+      "description_length": 304,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Make_simple.Key.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a specific type `t` defined by `Elt` and supports polymorphic variants through a constructor tag reader. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 352,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Make_simple.Key.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of a structured type into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Operates on custom data types defined with `Elt.t`, preserving equality-based hash consistency. Used to generate reliable hash values for complex types in contexts requiring deterministic and collision-free hashing, such as in custom hash tables or serialization protocols.",
+      "description_length": 473,
+      "index": 41,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Key.Map.Key",
+      "description": "Provides serialization to S-expression format and a comparator for ordered operations. Works with the abstract type `t` and its associated comparator witness. Used to enable ordered comparisons and S-expression encoding in data structures requiring custom typing.",
+      "description_length": 263,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Key.Map.Diff",
+      "description": "Generates and applies differences between maps using key-based comparisons. Operates on typed maps and difference representations derived from key-value pairs. Applies changes from a list of differences to a base map or computes the difference between two maps.",
+      "description_length": 261,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Key.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with S-expressions and key representations derived from a specific domain model. Used to deserialize configuration data from S-expressions into typed key structures for application logic.",
+      "description_length": 266,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Key.Map.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with binary I/O operations and polymorphic variants when necessary. Used to persist and reconstruct Key.t values in binary format for storage or communication.",
+      "description_length": 324,
+      "index": 45,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Key.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Works with custom data types and collections, using Base.Hash.state to accumulate hash values. Ensures consistent hashing for comparable values, preventing collisions in nested or composite structures like lists and records.",
+      "description_length": 422,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Key.Table.Provide_of_sexp",
+      "description": "Converts a S-expression into a key by parsing and validating its structure. Works with `Sexplib0.Sexp.t` and extracts a single value as the result. Used to deserialize structured data from S-expressions into a specific key type for lookup or comparison.",
+      "description_length": 253,
+      "index": 47,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Key.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, particularly those involving polymorphic variants. Enables efficient binary encoding and decoding for data persistence or network transmission.",
+      "description_length": 354,
+      "index": 48,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Key.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific element type using a provided constructor. Works with S-expressions and custom data types defined by the user. Used to parse structured data from S-expression representations into typed values.",
+      "description_length": 233,
+      "index": 49,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Key.Hash_set.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, including polymorphic variants. Used to enable efficient binary serialization in data exchange or persistent storage scenarios.",
+      "description_length": 343,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Key.Set.Elt",
+      "description": "Provides serialization to S-expression format and a type-safe comparator for values of type `t`. Operates on the abstract type `t` and its associated comparator witness. Used to enable consistent ordering and S-expression representation in data processing pipelines.",
+      "description_length": 266,
+      "index": 51,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Key.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting differences to S-expressions and constructing differences from lists. Works with sets of elements and their differences, using a specific internal representation for optional set changes. Used to track and apply incremental updates between two versions of a set.",
+      "description_length": 362,
+      "index": 52,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Key.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and the module's defined type `Elt.t`. Used to parse structured data from S-expressions into application-specific values.",
+      "description_length": 216,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Key.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a specific type `Elt.t` and its polymorphic variants when necessary. Used to persist and reconstruct instances of `Elt.t` in binary format for storage or communication.",
+      "description_length": 330,
+      "index": 54,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Key.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of a structured type into a hash state, ensuring collision resistance and consistency with comparison. It operates on custom data types through a dedicated fold function, incorporating size information to prevent prefix-based collisions. Used to generate reliable hash values for complex structures like lists and variants during serialization or equality checks.",
+      "description_length": 426,
+      "index": 55,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make.Key.Map.Key",
+      "description": "Provides serialization to S-expression format and a comparator for ordered operations. Works with the abstract type `t` and its associated comparator witness. Used to enable ordered comparisons and S-expression encoding in data structures requiring custom typing.",
+      "description_length": 263,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Key.Map.Diff",
+      "description": "Generates and applies differences between maps using key-based comparisons. Operates on typed maps and difference representations derived from key-value pairs. Computes changes between two map states and applies them to produce a new map.",
+      "description_length": 238,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Key.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with Sexp.t and Key.t data structures. Parses serialized key data from S-expressions into an internal key representation for use in cryptographic operations.",
+      "description_length": 236,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Key.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t through specialized reader and writer interfaces. Used to persist and reconstruct key structures in binary format for efficient storage or communication.",
+      "description_length": 358,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Key.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. It operates on custom data types, particularly those defined with `Key.t`, and enforces proper handling of collections by incorporating their size before element-wise folding. Used to generate reliable hash values for complex structures in hashing-based data structures like hash tables.",
+      "description_length": 451,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Key.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key value using a predefined mapping. Works with S-expressions and string-based keys. Used to parse and extract specific identifiers from structured data representations.",
+      "description_length": 202,
+      "index": 61,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make.Key.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of a specific type using the Bin_prot library, including size calculation, writing, and reading operations. Works with custom types that require binary I/O support, including polymorphic variants through specialized reader functions. Used to enable efficient binary persistence of data structures in applications requiring fast serialization.",
+      "description_length": 402,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Key.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific type using a provided constructor function. Works with S-expressions and custom data types defined by the user. Used to parse structured data from S-expression representations in configuration or serialization contexts.",
+      "description_length": 259,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Key.Hash_set.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of type `elt` using the Bin_prot format, including size calculation, writing, reading, and shape information. Works with custom types that need to be encoded and decoded in binary format. Used to enable persistent storage or network transmission of structured data.",
+      "description_length": 325,
+      "index": 64,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make.Key.Set.Elt",
+      "description": "Provides serialization to S-expression format and a comparator for type `t`. Operates on the abstract type `t` and its associated comparator witness. Used to enable ordered comparisons and S-expression encoding in data structures requiring custom types.",
+      "description_length": 253,
+      "index": 65,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make.Key.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting differences to S-expressions and constructing differences from lists. Works with sets of elements and their differences, using a specific internal representation for optional set changes. Used to track and apply incremental updates between two versions of a set.",
+      "description_length": 362,
+      "index": 66,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make.Key.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and the module's defined `Elt.t` type. Used to parse structured data from S-expressions into application-specific values.",
+      "description_length": 216,
+      "index": 67,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make.Key.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and variant-based reading. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 342,
+      "index": 68,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Key.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Operates on custom data types defined with `Elt.t`, supporting recursive and composite structures. Used to generate consistent, collision-resistant hash values for complex types in serialization and equality checks.",
+      "description_length": 413,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Key.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine the minimum and maximum of two values. Works with any data type that supports polymorphic comparison through the `compare` function. Used to implement custom sorting logic and conditional branching based on value relationships.",
+      "description_length": 379,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Key.Map",
+      "description": "manages key-value mappings with serialization, comparison, and transformation capabilities. it supports S-expression and binary serialization for keys, enables ordered comparisons via a comparator, and allows for precise state changes through difference operations. it can serialize maps to structured text, apply diffs to update map states, and generate collision-resistant hashes for complex data. examples include converting maps to and from S-expressions, applying incremental updates, and generating consistent hash values for key types.",
+      "description_length": 542,
+      "index": 71,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Key.Set",
+      "description": "Combines serialization, comparison, and transformation capabilities for structured data, enabling conversion between S-expressions, binary formats, and custom types. Supports set operations with difference tracking, allowing changes to be computed, stored, and applied. Provides hash folding for deterministic, collision-resistant hashing of complex structures. Examples include serializing a set to S-expressions, applying a difference to update a set, and generating a hash for a custom data type.",
+      "description_length": 499,
+      "index": 72,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Key.Table",
+      "description": "Encodes and decodes custom data types using binary protocols, supporting size estimation, serialization, and deserialization. Parses S-expressions to extract key-value pairs, enabling structured data to be used as lookup keys. Combines binary processing with symbolic data parsing for efficient data handling. Can convert configuration data into searchable keys and persist complex types across systems.",
+      "description_length": 403,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Key.Hash_set",
+      "description": "Converts S-expressions to typed values using user-defined constructors and supports binary serialization and deserialization of custom types with Bin_prot, including size computation and data shape analysis. It handles structured data parsing and efficient binary encoding for polymorphic variants and custom types. Users can transform S-expressions into specific elements and persist or transmit data in binary format. Examples include parsing configuration data from S-expressions and storing complex type instances in binary files.",
+      "description_length": 534,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Key.Hash_queue",
+      "description": "The module offers operations for iterating, transforming, and querying key-value pairs in a hash queue, including folding, filtering, and element inspection, while supporting insertion, lookup, and reordering. It works with a structured, keyed queue data structure that enables front/back dequeuing, safe or exception-raising modifications, and efficient key-based manipulations. Use cases include dynamic data management scenarios like task scheduling or caching, where precise control over key-value elements and queue order is critical.",
+      "description_length": 539,
+      "index": 75,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Make_stable.V1",
+      "description": "Provides serialization and deserialization functions for converting values of type Key.t to and from S-expressions and binary formats using Bin_prot. Supports size calculation, writing, reading, and shape definition for binary representation. Used to persist and transmit Key.t values efficiently across systems.",
+      "description_length": 312,
+      "index": 76,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Key.Map.Key",
+      "description": "Provides serialization to S-expression format and a comparator for equality and ordering. Works with the abstract type `t` and its associated comparator witness. Used to enable consistent comparison and representation of key values in data structures and serialization pipelines.",
+      "description_length": 279,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Key.Map.Diff",
+      "description": "Generates and applies differences between maps using key-based comparisons. Operates on typed maps and difference representations derived from key-value pairs. Computes changes between two map states and applies them to produce an updated map.",
+      "description_length": 243,
+      "index": 78,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Key.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Operates on S-expressions and the Key module's type. Used to deserialize configuration keys from structured text data.",
+      "description_length": 191,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Key.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with the Key.t data type, supporting both direct and variant-based reading. Used to persist or transmit Key.t values in a binary format suitable for storage or network communication.",
+      "description_length": 342,
+      "index": 80,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Key.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information during the folding process. Used to generate reliable hash values for complex structures like lists and records in hashing algorithms.",
+      "description_length": 375,
+      "index": 81,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Key.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key value by parsing and extracting the first element. Works with S-expressions and string-based keys. Used to transform serialized data from S-expresssions into lookup keys for configuration or data mapping.",
+      "description_length": 240,
+      "index": 82,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Key.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, particularly those involving polymorphic variants. Enables efficient binary persistence and transmission of data structures in applications like network protocols or file storage.",
+      "description_length": 390,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Key.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific type using a provided constructor function. Works with S-expressions and custom data types defined by the user. Used to parse structured data from S-expression representations into typed values.",
+      "description_length": 234,
+      "index": 84,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Key.Hash_set.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, including polymorphic variants. Used to enable efficient binary serialization in data exchange or persistent storage scenarios.",
+      "description_length": 343,
+      "index": 85,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Key.Set.Elt",
+      "description": "Provides serialization to S-expression format and a comparator for type `t`. Works with the abstract type `t` and its associated comparator witness. Used to enable ordered comparisons and S-expression encoding in data structures requiring custom types.",
+      "description_length": 252,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Key.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including generating a diff from a list and applying a diff to a set. Works with sets of elements and optional difference structures representing additions and removals. Used to track changes between versions of a dataset and update a base set accordingly.",
+      "description_length": 335,
+      "index": 87,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Key.Set.Provide_of_sexp",
+      "description": "Converts a S-expression into a custom type `Elt.t` using a provided function. Operates on `Sexplib0.Sexp.t` values, transforming them into structured data. Used to parse and validate S-expression inputs in domain-specific data processing workflows.",
+      "description_length": 248,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Key.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, and reading operations. Works with custom types defined via `Elt.t` and supports polymorphic variants through a constructor tag-based reader. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 345,
+      "index": 89,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Key.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of a structured type into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Works with custom data types defined using the `Elt` module, supporting recursive and nested structures. Used to generate consistent and unique hash values for complex types in hash tables and serialization workflows.",
+      "description_length": 417,
+      "index": 90,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Key.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports polymorphic comparison through the `compare` function. Used to implement custom sorting logic and value comparisons in data structures like priority queues or ordered lists.",
+      "description_length": 392,
+      "index": 91,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Key.Map",
+      "description": "Combines ordered operations, serialization, and difference computation for custom map types, supporting S-expressions, binary protocols, and hash folding. Key types include `t` and `Key.t`, with operations for comparison, encoding, decoding, and difference application. It enables deserializing configuration data, applying map updates, and generating consistent hashes for structured values. Examples include converting S-expressions to keys, merging map changes, and hashing complex data for integrity checks.",
+      "description_length": 511,
+      "index": 92,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Key.Set",
+      "description": "Encapsulates operations for handling custom data types with ordered comparisons, serialization, and difference tracking. Supports S-expression and binary encoding, difference computation, and hash folding for structured data. Enables parsing of S-expressions into custom types and applying changes between set states. Facilitates reliable hashing and efficient data persistence across multiple formats.",
+      "description_length": 402,
+      "index": 93,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Key.Table",
+      "description": "Extracts and validates key information from S-expressions, converting them into structured values using pattern matching. Supports binary serialization and deserialization of custom types, including size estimation and shape inspection. Operations include parsing, validation, writing, and reading of data in binary format. Can be used to transform configuration data into typed keys and persist complex data structures efficiently.",
+      "description_length": 432,
+      "index": 94,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Key.Hash_set",
+      "description": "Converts S-expressions into typed values using a custom constructor and supports binary serialization and deserialization of `elt` values with size, write, and read operations, including handling of polymorphic variants. It enables parsing structured data from S-expressions and efficiently storing or transmitting complex data in binary form. Users can define custom types and manipulate them through conversion and encoding functions. For example, it can parse an S-expression representing a tree structure into a typed value or serialize a list of records into a binary buffer.",
+      "description_length": 580,
+      "index": 95,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Key.Hash_queue",
+      "description": "The module offers operations for inserting, retrieving, and modifying key-value pairs in a hash queue, supporting ordered traversal, aggregation (e.g., folding, filtering), and dynamic reordering. It works with a data structure that ensures key uniqueness while preserving element order, enabling efficient lookups and controlled element manipulation. Use cases include managing ordered task queues or buffered data streams where rapid access and positional adjustments are critical.",
+      "description_length": 483,
+      "index": 96,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Make_stable.V1",
+      "description": "Provides serialization and deserialization functions for converting values between S-expressions and a type `t`, which is an alias for `Key.t`. Includes binary serialization support using Bin_prot, with specific functions for sizing, writing, reading, and shaping the data. Used to persist and reconstruct `Key.t` values in binary format across system boundaries.",
+      "description_length": 363,
+      "index": 97,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Key.Map.Key",
+      "description": "Provides serialization to S-expression format and a comparator for equality and ordering. Works with the abstract type `t` and its associated comparator witness. Used to enable consistent ordering and external representation in data structures and serialization pipelines.",
+      "description_length": 272,
+      "index": 98,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Key.Map.Diff",
+      "description": "Generates and applies differences between maps using key-based comparisons. Operates on typed maps and difference representations derived from key-value pairs. Enables precise transformation of map states by applying computed diffs or extracting changes between two map instances.",
+      "description_length": 280,
+      "index": 99,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Key.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Operates on S-expressions and the Key module's type. Used to deserialize configuration keys from structured text data.",
+      "description_length": 191,
+      "index": 100,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Key.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape information. Works with Key.t and polymorphic variants of Key.t. Used to persist or transmit Key.t values across processes or storage.",
+      "description_length": 275,
+      "index": 101,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Key.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information to prevent prefix-based collisions. Used to generate reliable hash values for complex structures in hashing and equality checks.",
+      "description_length": 369,
+      "index": 102,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Key.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key by parsing its structure and extracting the relevant value. Works with `Sexplib0.Sexp.t` and returns a `key` type. Used to deserialize structured data from S-expressions into a specific domain type during parsing.",
+      "description_length": 249,
+      "index": 103,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Resource.Key.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, including polymorphic variants through a constructor tag reader. Enables efficient binary encoding and decoding for data persistence or network transmission.",
+      "description_length": 368,
+      "index": 104,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Resource.Key.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific type using a provided constructor function. Works with S-expressions and custom data types defined by the user. Used to parse structured data from S-expression representations into typed values.",
+      "description_length": 234,
+      "index": 105,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Key.Hash_set.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary I/O support, particularly polymorphic variants. Used to enable efficient binary serialization in data exchange or persistent storage scenarios.",
+      "description_length": 346,
+      "index": 106,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Key.Set.Elt",
+      "description": "Provides serialization to S-expression format and a type-safe comparator for values of type `t`. Operates on the abstract type `t` and its associated comparator witness. Used to enable consistent ordering and S-expression representation in data processing pipelines.",
+      "description_length": 266,
+      "index": 107,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Resource.Key.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including generating a diff from two sets and applying a diff to a set. Works with sets of elements and optional difference structures representing changes between them. Used to track and revert modifications in structured data representations.",
+      "description_length": 323,
+      "index": 108,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Key.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and the module's defined type `Elt.t`. Used to parse structured data from S-expressions into application-specific representations.",
+      "description_length": 225,
+      "index": 109,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Resource.Key.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a specific type `t` defined by `Elt`, supporting both direct and variant-based reading. Used to persist and reconstruct instances of `t` in binary format for storage or communication.",
+      "description_length": 345,
+      "index": 110,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Key.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of a structured type into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Operates on custom data types defined with `Elt.t`, preserving hash consistency with their comparison function. Used to generate reliable hash values for complex types in hash tables and other data structures requiring deterministic hashing.",
+      "description_length": 441,
+      "index": 111,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Resource.Make_simple.Key.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators and functions to determine minimum and maximum values. Works with any data type that supports comparison via the `compare` function. Used to implement custom sorting logic and conditional branching based on value relationships.",
+      "description_length": 334,
+      "index": 112,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Make_simple.Key.Map",
+      "description": "manages key-value mappings with serialization, comparison, and versioning capabilities. it supports S-expression and binary serialization for key types, enables ordered comparisons via witnesses, and computes differences between map states. it also includes hash folding for structured data and deserialization from S-expressions into typed keys. users can serialize maps for storage, track changes between states, and generate consistent hashes for complex data.",
+      "description_length": 463,
+      "index": 113,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Make_simple.Key.Set",
+      "description": "Encapsulates set operations with serialization, comparison, and transformation capabilities. Supports S-expression and binary formats for data exchange, along with difference tracking for incremental updates. Enables conversion from S-expressions to custom types and computes structured hashes for reliable data representation. Can generate diffs from lists, apply changes to sets, parse structured data, and produce collision-resistant hashes for complex types.",
+      "description_length": 462,
+      "index": 114,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Resource.Make_simple.Key.Table",
+      "description": "Extracts and structures key values from S-expressions, enabling efficient data indexing, while supporting binary serialization and deserialization of custom types, including polymorphic variants, for compact storage and transmission. Operations include parsing, encoding, decoding, and size estimation. Examples include converting serialized data into lookup keys and storing complex data structures in binary format.",
+      "description_length": 417,
+      "index": 115,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Resource.Make_simple.Key.Hash_set",
+      "description": "Converts S-expressions to typed values using a custom constructor and supports binary serialization and deserialization of custom types with Bin_prot, including size, write, read, and shape operations. Handles structured data by parsing from S-expressions and encoding to binary formats for storage or transmission. Users can define custom types and perform conversions between their in-memory representations and serialized forms. For example, a user might parse an S-expression into a record type or save a list of integers in binary format.",
+      "description_length": 543,
+      "index": 116,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Make_simple.Key.Hash_queue",
+      "description": "The module provides operations for managing key-value pairs in a hash queue, including enqueueing, dequeuing, membership checks, and element transformation through folding, filtering, and iteration. It works with a structured queue type that supports ordered access and modification, distinguishing between safe (option-returning) and unsafe (exn-raising) variants for operations. Use cases include scenarios requiring efficient key-based data manipulation, such as task scheduling with priority constraints or maintaining ordered caches with frequent lookups.",
+      "description_length": 560,
+      "index": 117,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Key.Map.Key",
+      "description": "Provides serialization to S-expression format and a comparator for ordered operations. Works with the abstract type `t` and its associated comparator witness. Used to enable ordered comparisons and S-expression encoding in data structures requiring custom equality and ordering.",
+      "description_length": 278,
+      "index": 118,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Key.Map.Diff",
+      "description": "Generates and applies differences between maps using key-based comparisons. Operates on typed maps and difference representations derived from key-value pairs. Applies changes to a map based on a list of differences or computes the difference between two maps.",
+      "description_length": 260,
+      "index": 119,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Key.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with S-expressions and key representations derived from a specific domain model. Used to deserialize configuration data from S-expressions into typed key structures for application logic.",
+      "description_length": 266,
+      "index": 120,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Key.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape definition. Works with Key.t, a custom type that may include polymorphic variants. Used to persist or transmit Key.t values efficiently in binary format.",
+      "description_length": 294,
+      "index": 121,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Key.Map.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance and consistency with comparison. Works with custom data types and collections, incorporating size information during the folding process. Used to generate reliable hash values for complex structures like lists and records in hashing algorithms.",
+      "description_length": 375,
+      "index": 122,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Key.Table.Provide_of_sexp",
+      "description": "Converts an S-expression into a key value by parsing and extracting the first element. Works with Sexp.t and string-based keys. Used to deserialize structured data from S-expressions into a keyed format for lookup or processing.",
+      "description_length": 228,
+      "index": 123,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Key.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of a specific type using the Bin_prot library, including size calculation, writing, and reading operations. Works with custom types that require binary encoding, supporting both direct and variant-based decoding. Used to enable efficient binary persistence of data structures in applications requiring fast I/O.",
+      "description_length": 371,
+      "index": 124,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Key.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific element type using a provided constructor. Works with S-expressions and custom data types defined by the user. Used to parse structured data from S-expression representations into typed values.",
+      "description_length": 233,
+      "index": 125,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Key.Hash_set.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing values of type `elt` using the Bin_prot format, including size calculation, writing, reading, and shape information. Works with custom types that require binary encoding, supporting polymorphic variants through a constructor tag reader. Used to enable efficient binary persistence of data structures in applications requiring fast I/O operations.",
+      "description_length": 399,
+      "index": 126,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Key.Set.Elt",
+      "description": "Provides serialization to S-expression format and a comparator for type `t`. Works with the abstract type `t` and its associated comparator witness. Used to enable ordered comparisons and S-expression encoding in data structures requiring custom types.",
+      "description_length": 252,
+      "index": 127,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Key.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including generating a diff from a list of elements and applying a diff to a set. Works with sets of elements and optional difference structures representing changes between two states. Used to track and apply incremental updates to a set of values in a controlled manner.",
+      "description_length": 351,
+      "index": 128,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Key.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor. Operates on `Sexp.t` and the module's defined `Elt.t` type. Used to parse structured data from S-expressions into application-specific values.",
+      "description_length": 216,
+      "index": 129,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Key.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and variant-based reading. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 342,
+      "index": 130,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Key.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of structured data into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Works with custom data types defined using the `Elt` module, supporting recursive and nested structures. Used to generate consistent and unique hash values for complex types in hashing-based data structures like hash tables.",
+      "description_length": 422,
+      "index": 131,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Key.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine minimum and maximum values. Works with any data type that supports comparison, enabling direct use in sorting and conditional logic. Used to replace polymorphic comparisons in scenarios requiring explicit type-specific behavior.",
+      "description_length": 380,
+      "index": 132,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Key.Map",
+      "description": "Combines serialization, comparison, and difference computation for typed maps, enabling ordered operations, S-expression and binary encoding, and efficient delta updates. Supports key parsing from S-expressions, hash folding for structured data, and binary I/O for key values. Operations include converting maps to and from S-expressions, computing and applying differences, and generating consistent hashes. Examples include deserializing configuration data, persisting key-value stores in binary, and tracking changes between map states.",
+      "description_length": 539,
+      "index": 133,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Key.Set",
+      "description": "Combines serialization, comparison, and difference tracking for set-like structures, supporting S-expressions, binary formats, and hash folding. It handles operations like computing set differences, converting between representations, and parsing structured data into custom types. Key types include `t` for abstract values, `Elt.t` for element representations, and internal difference structures. Examples include serializing sets to S-expressions, applying incremental updates, and generating consistent hashes for complex data.",
+      "description_length": 530,
+      "index": 134,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Key.Table",
+      "description": "Extracts a key from a S-expression using `Sexplib0.Sexp.t` for structured data deserialization, while supporting binary I/O operations via Bin_prot for custom types, including size, write, read, and shape functions. Key types and binary-serializable structures are the primary data representations, enabling efficient data handling and transformation. This allows for converting S-expressions into lookup keys and serializing complex data for storage or transmission. Examples include parsing configuration data into a key for fast access and encoding polymorphic variant types for network communication.",
+      "description_length": 604,
+      "index": 135,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Key.Hash_set",
+      "description": "Converts S-expressions to typed values using user-defined constructors and supports binary serialization and deserialization of custom types with Bin_prot, including size computation and shape inspection. Handles structured data parsing and efficient binary data exchange. Can transform nested S-expressions into custom records and encode polymorphic variants into compact binary formats. Enables seamless data conversion between textual and binary representations for storage or communication.",
+      "description_length": 494,
+      "index": 136,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Key.Hash_queue",
+      "description": "This module provides operations for iterating, querying, and transforming key-value pairs in a hash queue, including folding, filtering, and element inspection, while supporting both safe and unsafe (exn-raising) modifications. It works with a keyed queue data structure that maintains insertion order and enables efficient key-based access, allowing enqueueing, dequeuing, and element replacement. Use cases include managing ordered collections with fast lookups, such as task scheduling with priority keys or maintaining ordered logs with unique identifiers.",
+      "description_length": 560,
+      "index": 137,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Make_stable.V1",
+      "description": "Provides serialization and deserialization functions for converting values of type Key.t to and from S-expressions and binary formats using Bin_prot. Supports size calculation, writing, reading, and shape definition for binary encoding. Used to persist and transmit Key.t values efficiently across systems.",
+      "description_length": 306,
+      "index": 138,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Status.Key.Map.Key",
+      "description": "Provides serialization to S-expression format and a comparator for equality and ordering. Works with the abstract type `t` and its associated comparator witness. Used to enable consistent comparison and serialization in data structures requiring ordered or storable keys.",
+      "description_length": 271,
+      "index": 139,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Status.Key.Map.Diff",
+      "description": "Generates and applies differences between maps using key-based comparisons. Operates on typed maps and difference representations derived from key-value pairs. Applies changes to a map based on a list of differences or computes the difference between two maps.",
+      "description_length": 260,
+      "index": 140,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Status.Key.Map.Provide_of_sexp",
+      "description": "Converts a S-expression into a key type using a custom parsing function. Works with S-expressions and key data structures derived from a specific domain model. Used to deserialize configuration data from textual S-expression formats into typed key representations.",
+      "description_length": 264,
+      "index": 141,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Status.Key.Map.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of type Key.t using Bin_prot, including size calculation, writing, reading, and shape definition. Works with Key.t and polymorphic variants of Key.t. Used to persist and reconstruct key data structures in binary format for storage or communication.",
+      "description_length": 303,
+      "index": 142,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Status.Key.Map.Provide_hash",
+      "description": "Provides hash folding operations for custom types, ensuring collision resistance by incorporating structural information like size and element order. Works with recursive and nested data structures, including lists, variants, and records. Used to generate consistent, secure hashes for persistent data in serialization and comparison contexts.",
+      "description_length": 343,
+      "index": 143,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Status.Key.Table.Provide_of_sexp",
+      "description": "Converts a S-expression into a key by parsing and extracting the first element. Works with Sexp.t and string-based keys. Used to transform serialized data into lookup keys for efficient data retrieval.",
+      "description_length": 201,
+      "index": 144,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Status.Key.Table.Provide_bin_io",
+      "description": "Provides functions for serializing and deserializing a custom type using the Bin_prot library, including size calculation, writing, and reading operations. Works with polymorphic variants and type classes to enable binary I/O for complex data structures. Used to persist and reconstruct custom types in binary format for efficient storage or communication.",
+      "description_length": 356,
+      "index": 145,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Status.Key.Hash_set.Provide_of_sexp",
+      "description": "Converts a S-expression into a specific type using a provided constructor function. Works with S-expressions and custom data types defined by the user. Used to parse structured data from S-expression representations into typed values.",
+      "description_length": 234,
+      "index": 146,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Status.Key.Hash_set.Provide_bin_io",
+      "description": "Provides functions to serialize and deserialize values of a specific type using Bin_prot, including size calculation, writing, reading, and shape information. Works with custom types that require binary encoding and decoding, particularly those involving polymorphic variants. Used to enable efficient binary persistence of data structures in applications requiring fast I/O operations.",
+      "description_length": 386,
+      "index": 147,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Status.Key.Set.Elt",
+      "description": "Provides serialization to S-expression format and a comparator for ordering values. Works with the abstract type `t` and its associated comparator witness. Used to enable consistent ordering and S-expression representation in data processing pipelines.",
+      "description_length": 252,
+      "index": 148,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Status.Key.Set.Diff",
+      "description": "Provides operations to compute and apply differences between sets of elements, including converting differences to S-expressions and constructing differences from lists. Works with sets of elements and their corresponding derived sets. Used to track changes between versions of a dataset and apply those changes to update a derived set.",
+      "description_length": 336,
+      "index": 149,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Status.Key.Set.Provide_of_sexp",
+      "description": "Converts an S-expression into a custom type using a provided constructor function. Operates on `Sexplib0.Sexp.t` and transforms it into values of type `Elt.t`. Used to deserialize structured data from S-expressions into application-specific types.",
+      "description_length": 247,
+      "index": 150,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Status.Key.Set.Provide_bin_io",
+      "description": "Provides binary serialization and deserialization for a type `t` using Bin_prot, including size calculation, writing, reading, and shape information. Operates on a type `t` that is parameterized by `Elt.t`, supporting both direct and variant-based decoding. Used to persist and reconstruct complex data structures efficiently in binary format.",
+      "description_length": 343,
+      "index": 151,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Status.Key.Set.Provide_hash",
+      "description": "Provides a hash folding mechanism that integrates the contents of a structured type into a hash state, ensuring collision resistance by incorporating the structure's size before element-wise folding. Works with custom data types defined using the `Elt` module, enabling consistent hashing for complex, nested structures. Used to generate reliable hash values for persistent data structures, ensuring that equivalent structures produce identical hashes regardless of internal representation.",
+      "description_length": 490,
+      "index": 152,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Key",
+      "description": "provides comparison, serialization, and transformation capabilities for custom types and structured data, enabling ordered operations, efficient data handling, and state management. it supports S-expression and binary formats, difference tracking, and hash folding, allowing for map and set manipulations, data persistence, and incremental updates. users can serialize and deserialize complex structures, apply diffs to modify states, and generate collision-resistant hashes. examples include converting maps to S-expressions, updating sets with differences, and parsing configuration data into typed values.",
+      "description_length": 608,
+      "index": 153,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Resource",
+      "description": "Provides serialization and comparison functions for resource states and instances, using S-expressions and integer-based ordering. Works with custom types `state` and `t`, where `state` is an extensible variant and `t` is a record structure. Used to generate human-readable representations and enforce consistent ordering in logging and data processing pipelines.",
+      "description_length": 363,
+      "index": 154,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Resource_list",
+      "description": "Provides operations to convert a resource list to an S-expression, compare lists, extract a key, access resource entries, determine queue length, and retrieve the maximum time a resource spent in the queue. Works with a custom type representing a collection of resources. Used to track and analyze resource allocation and scheduling metrics in a system.",
+      "description_length": 353,
+      "index": 155,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Status.Make_stable",
+      "description": "Handles serialization and deserialization of Key.t values using S-expressions and binary formats via Bin_prot. Offers operations to calculate size, write to, read from, and define the shape of binary representations. Enables efficient storage and transmission of Key.t across systems. Examples include saving keys to files, sending them over networks, and reconstructing them from stored data.",
+      "description_length": 393,
+      "index": 156,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Key.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a specific type `t`, including standard relational operators and functions to determine minimum and maximum values. Works with any data type that supports polymorphic comparison, enabling direct comparison of values without explicit type-specific implementations. Used to enforce consistent ordering in data structures like sorted lists or priority queues.",
+      "description_length": 404,
+      "index": 157,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Key.Map",
+      "description": "combines serialization, comparison, and difference computation for key-value mappings, supporting S-expression and binary formats. it handles operations on `t`, `Key.t`, and difference representations, enabling ordered comparisons, data transformation, and state tracking. it allows parsing of keys from S-expressions, binary persistence of key structures, and secure hash generation for complex data. examples include generating diffs between map states, converting serialized keys into cryptographic representations, and computing consistent hashes for use in hash tables.",
+      "description_length": 574,
+      "index": 158,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Key.Set",
+      "description": "combines serialization, comparison, and difference tracking for custom set-like types, offering operations to encode and decode data in S-expressions and binary formats, compute set deltas, and generate collision-resistant hashes. It supports type `t` with associated `Elt.t` for element handling, enabling ordered comparisons, incremental updates, and structured parsing. Users can serialize sets to S-expressions, apply differences from lists, and compute hashes that reflect both structure and content. Binary serialization allows efficient storage and reconstruction of complex, nested data structures.",
+      "description_length": 606,
+      "index": 159,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make.Key.Table",
+      "description": "Transforms S-expressions into structured key-value pairs using string keys, and supports binary serialization and deserialization of custom types with Bin_prot, including size estimation and polymorphic variant handling. It handles both parsing of structured data and efficient binary storage of complex values. For example, it can extract a specific identifier from an S-expression or save a custom type to a binary stream. Operations include mapping S-expressions to records and reading/writing values with optimized binary I/O.",
+      "description_length": 530,
+      "index": 160,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Key.Hash_set",
+      "description": "Converts S-expressions to custom types using a constructor function and supports binary serialization and deserialization of values using Bin_prot. Handles structured data for configuration, storage, and communication. Allows parsing of nested S-expressions and efficient binary encoding of complex types. For example, it can parse a configuration file into a custom record type or serialize a tree structure for network transmission.",
+      "description_length": 434,
+      "index": 161,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Key.Hash_queue",
+      "description": "This module provides operations for managing key-value pairs in a queue with ordered insertion and retrieval, including insertion, lookup, modification, and removal based on keys or positions. It works with a hash queue data structure that ensures key uniqueness while preserving element order, enabling efficient traversal, aggregation, and transformation of elements. Use cases include scenarios requiring ordered access with unique keys, such as task scheduling or maintaining a history with dynamic updates.",
+      "description_length": 511,
+      "index": 162,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Key",
+      "description": "Combines ordered comparisons, serialization, and difference computation for custom data types, supporting S-expressions, binary formats, and hash folding. It enables parsing, validation, and conversion of structured data, along with efficient storage and retrieval of key-value pairs in ordered collections. Operations include encoding/decoding, difference application, and hash generation, allowing tasks like merging map updates or persisting complex types. Examples include converting S-expressions to typed keys, applying incremental changes to data structures, and serializing records for transmission.",
+      "description_length": 607,
+      "index": 163,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Resource",
+      "description": "Provides serialization to S-expressions and comparison functions for `state` and `t` types. Works with abstract types representing resource states and resource identifiers. Used to generate human-readable representations and enforce ordering in data processing pipelines.",
+      "description_length": 271,
+      "index": 164,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Resource_list",
+      "description": "Provides operations to convert a resource list to an S-expression, compare lists, extract a key, access underlying resources, determine queue length, and retrieve maximum time a resource spent on the queue. Works with a custom type representing a collection of resources. Used to serialize data for logging, enforce ordering in processing, and monitor resource allocation delays.",
+      "description_length": 379,
+      "index": 165,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status.Make_stable",
+      "description": "Converts values of type `Key.t` to and from S-expressions and binary formats using Bin_prot. Offers functions to size, write, read, and shape data for efficient serialization. Enables persistent storage and cross-system communication of `Key.t` values. Examples include saving keys to files and transmitting them over networks.",
+      "description_length": 327,
+      "index": 166,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Key.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators and functions to determine minimum and maximum values. Works with any data type that supports comparison, enabling direct use in conditional logic and sorting. Used to replace polymorphic comparisons in scenarios requiring explicit ordering, such as custom data structures or domain-specific logic.",
+      "description_length": 405,
+      "index": 167,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Key.Map",
+      "description": "manages key-value mappings with support for serialization, comparison, and versioning; it handles S-expression and binary formats for keys and values, enables difference computation between map states, and integrates hash folding for structured data. Key types include `t` for keys and associated comparators, with operations for parsing, serializing, and comparing values. It allows deserializing keys from text, applying delta updates to maps, and generating consistent hashes for complex data. Examples include converting configuration files to key structures, synchronizing map states across systems, and ensuring hash consistency in distributed data.",
+      "description_length": 655,
+      "index": 168,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Key.Set",
+      "description": "combines serialization, comparison, and transformation capabilities for custom types, enabling ordered operations, diff tracking, and structured data parsing. It supports S-expression and binary encoding, along with hash folding for robust data representation. Operations include generating diffs from lists, applying changes to sets, and converting between S-expressions and typed values. It allows for efficient persistence, validation, and comparison of complex, nested data structures.",
+      "description_length": 489,
+      "index": 169,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Key.Table",
+      "description": "Processes S-expressions to generate key-value pairs for data lookup and supports binary serialization/deserialization of custom types with Bin_prot, enabling efficient data storage and transmission. Handles string-based keys and polymorphic variants, offering operations like parsing, size calculation, and data conversion. Allows transformation of serialized data into usable keys and facilitates binary I/O for complex data structures. Example tasks include extracting configuration keys from S-expressions and serializing variant types for network communication.",
+      "description_length": 565,
+      "index": 170,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Key.Hash_set",
+      "description": "Converts S-expressions to typed values using a custom constructor and supports binary serialization and deserialization with Bin_prot, including size and shape operations. Handles user-defined types and polymorphic variants for structured data parsing and efficient binary storage. Parses nested data structures from S-expressions and reconstructs them in memory, while also enabling compact binary representation for network transmission or file storage. Examples include converting an S-expression list into a custom tree type and saving a variant type to a binary buffer for later reconstruction.",
+      "description_length": 599,
+      "index": 171,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Key.Hash_queue",
+      "description": "This module provides operations for managing key-value queues with ordered elements and unique keys, including enqueueing, dequeuing, lookup, and modification based on keys. It supports iterative traversal, aggregation (e.g., folding, filtering), and safe or exception-raising variants for element manipulation. Use cases include task scheduling, caching systems, or data processing pipelines requiring ordered, key-based access and transformation.",
+      "description_length": 448,
+      "index": 172,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Make_simple.Key",
+      "description": "combines comparison, serialization, and data manipulation capabilities for custom types and structured data. it handles ordered operations, key-value mapping, set transformations, and hash queue management, with support for S-expressions, binary formats, and versioned diffs. users can sort custom types, serialize maps, track set changes, and manage priority queues with safe or unsafe operations. examples include parsing S-expressions into typed keys, generating hashes for complex data, and maintaining ordered task queues.",
+      "description_length": 527,
+      "index": 173,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Make_simple.Common_args",
+      "description": "Provides functions to parse command-line arguments into a structured type, extract specific values, and validate input formats. Works with the `t` type, which represents a collection of parsed argument values. Used to process user-provided options in CLI tools, ensuring correct handling of flags and positional arguments.",
+      "description_length": 322,
+      "index": 174,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Key.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a specific type `t`, including standard relational operators and functions to determine minimum and maximum values. Works with any data type that supports comparison, enabling direct use in sorting and decision-making logic. Used to replace polymorphic comparisons in contexts where explicit ordering is required, such as custom data structures or deterministic algorithm behavior.",
+      "description_length": 429,
+      "index": 175,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Resource.Key.Map",
+      "description": "Encapsulates map operations with serialization, comparison, and transformation capabilities. Supports typed maps with S-expression and Bin-prot serialization, key parsing, and difference computation. Enables precise state management, deserialization of configuration keys, and secure hashing of structured data. Facilitates consistent ordering, efficient data transmission, and reliable change tracking between map instances.",
+      "description_length": 425,
+      "index": 176,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Key.Set",
+      "description": "offers serialization to S-expressions and binary formats, along with diff operations, parsing, and hash folding for custom types. It supports ordered comparisons, structured data conversion, and efficient storage and retrieval of complex values. Users can generate diffs between sets, parse S-expressions into application-specific types, and compute consistent hashes for use in hash tables. Operations include diff generation, S-expression parsing, binary serialization, and structured hash computation.",
+      "description_length": 504,
+      "index": 177,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Key.Table",
+      "description": "Transforms S-expressions into domain-specific keys and handles binary serialization and deserialization of custom types, including polymorphic variants. It operates on `Sexplib0.Sexp.t` to produce `key` values and uses Bin_prot for efficient binary I/O. Functions include parsing structured data, calculating binary sizes, and encoding/decoding values for storage or transmission. Examples include converting configuration data from S-expressions to keys and persisting complex types in binary format.",
+      "description_length": 501,
+      "index": 178,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Key.Hash_set",
+      "description": "Converts S-expressions to custom types using a constructor function and supports binary serialization and deserialization of polymorphic variants with Bin_prot, including size computation and data shape inspection. It enables structured data parsing and efficient binary data handling. Users can transform S-expressed data into typed values and persist or transmit polymorphic variant data reliably. Examples include parsing configuration files and serializing complex data structures for network transmission.",
+      "description_length": 510,
+      "index": 179,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Key.Hash_queue",
+      "description": "The module provides operations for iterating, querying, and modifying key-value pairs in a hash queue, supporting ordered insertion, retrieval, and element manipulation. It includes functions for membership checks, dequeuing, and transformation, with both safe (option-returning) and unsafe (exception-raising) variants, suitable for scenarios requiring efficient ordered data management. Use cases include maintaining task queues with dynamic reordering or processing sequences where precise control over element access and modification is critical.",
+      "description_length": 550,
+      "index": 180,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Address_config.Stable.V3",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot and Sexp formats, including size calculation, writing, reading, and shape definition. Works with the type `t` as defined in the module, supporting both binary and s-expression representations. Used to persist or transmit instances of `t` across different parts of a system or between processes.",
+      "description_length": 377,
+      "index": 181,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Address_config.Stable.V2",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot and Sexp formats, including size calculation, writing, reading, and shape definition. Works with a concrete record type `t` and supports conversion to and from a `V3.t` type. Enables efficient binary and s-expression encoding for data interchange and persistence.",
+      "description_length": 346,
+      "index": 182,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Address_config.Stable.V1",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot and Sexp formats, including size calculation, writing, reading, and shape definition. Works with a concrete record type `t` and supports conversion to and from a `V2.t` type. Enables efficient binary and s-expression encoding for data interchange and persistence.",
+      "description_length": 346,
+      "index": 183,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Key",
+      "description": "provides comparison, serialization, and difference computation for custom data types, enabling ordered operations, efficient data encoding, and change tracking. It supports S-expression and binary I/O, set and map operations, and key extraction, with types like `t`, `Elt.t`, and internal difference structures. Users can serialize configurations, track map changes, and convert nested data into custom records. It also includes hash folding, incremental updates, and key-based queue manipulations for ordered data handling.",
+      "description_length": 524,
+      "index": 184,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Resource",
+      "description": "Provides serialization to S-expressions and comparison functions for `state` and `t` types. Works with abstract types representing resource states and resource identifiers. Used to generate human-readable representations and enforce ordering in data processing pipelines.",
+      "description_length": 271,
+      "index": 185,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Resource_list",
+      "description": "Provides operations to convert a resource list to an S-expression, compare lists, extract a key, access resource entries, determine queue length, and retrieve the maximum time a resource spent on the queue. Works with a custom type representing a collection of resources. Used to track and analyze resource allocation timelines in a scheduling system.",
+      "description_length": 351,
+      "index": 186,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status.Make_stable",
+      "description": "Encodes and decodes values of type Key.t using S-expressions and binary formats via Bin_prot, enabling efficient storage and transmission. Offers size estimation, writing, reading, and shape definition for binary serialization. Key operations include serializing a key to a binary buffer, deserializing from an S-expression, and calculating the size of a key's binary representation. This allows seamless integration of Key.t values into protocols requiring structured data exchange.",
+      "description_length": 483,
+      "index": 187,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Key.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a custom type `t`, including standard relational operators, equality checks, and functions to determine the minimum and maximum of two values. Works with any data type that supports the `compare` function to establish order. Used to implement custom sorting logic or decision-making based on value relationships.",
+      "description_length": 360,
+      "index": 188,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Key.Map",
+      "description": "combines ordered operations, difference computation, and serialization for custom key types, enabling efficient data manipulation and persistence. it supports S-expression and binary encoding, key parsing, and hash folding for structured data. operations include comparing maps, applying diffs, deserializing configurations, and generating consistent hashes. examples include converting maps to S-expressions, merging changes between maps, and hashing complex key structures.",
+      "description_length": 475,
+      "index": 189,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Key.Set",
+      "description": "manages custom data types with serialization, comparison, and hashing capabilities. it supports S-expression and binary encoding, difference tracking, and parsing, enabling efficient data manipulation and persistence. operations include diff generation, application, and hash folding for structured types. examples include serializing sets to S-expressions, applying incremental changes, and generating unique hashes for nested data.",
+      "description_length": 433,
+      "index": 190,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Key.Table",
+      "description": "Parses S-expressions into key-value structures using string keys, enabling structured data retrieval, and supports binary serialization and deserialization of custom types with efficient I/O operations. Key types include Sexp.t and custom data types encoded with Bin_prot, with operations for parsing, writing, reading, and size calculation. It allows converting nested S-expressions into accessible maps and storing complex objects in binary format for quick loading. For example, it can transform a nested S-expression into a lookup table or persist a variant type to disk for later reconstruction.",
+      "description_length": 600,
+      "index": 191,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Key.Hash_set",
+      "description": "Converts S-expressions to typed values using a custom constructor and supports binary serialization and deserialization of `elt` values with Bin_prot, including size, write, read, and shape operations. Enables parsing of structured data from S-expressions and efficient binary storage of custom types. For example, it can transform an S-expression representing a list of integers into a typed list or encode a polymorphic variant into a binary format. Operations include parsing, encoding, decoding, and determining the size of serialized data.",
+      "description_length": 544,
+      "index": 192,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Key.Hash_queue",
+      "description": "This module provides operations for managing key-value queues with ordered insertion and retrieval, including insertion, lookup, modification, and traversal. It works with a hash queue data structure that ensures key uniqueness while maintaining element order, supporting both safe and unsafe variants for operations like dequeuing and updating. Use cases include task scheduling systems requiring ordered access or caches needing efficient key-based updates and lookups.",
+      "description_length": 471,
+      "index": 193,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Status.Key.Replace_polymorphic_compare",
+      "description": "Provides comparison and ordering operations for a specific type `t`, including standard relational operators and functions to determine minimum and maximum values. Works with any data type that supports comparison, enabling direct use in sorting and conditional logic. Used to replace polymorphic comparisons in contexts where explicit ordering is required, such as custom data structures or deterministic sorting.",
+      "description_length": 414,
+      "index": 194,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Status.Key.Map",
+      "description": "combines serialization, comparison, and difference computation for key-based data structures, enabling ordered storage, versioning, and transformation of maps. it supports S-expression and binary serialization, custom key parsing, and hash folding for secure, structured data handling. operations include generating diffs, applying changes, and converting between textual and binary formats. examples include deserializing configuration keys, computing map deltas, and generating collision-resistant hashes for nested records.",
+      "description_length": 526,
+      "index": 195,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Status.Key.Set",
+      "description": "offers serialization to S-expressions and binary formats, along with operations for tracking and applying set differences, and hash folding for structured types. It supports operations on `t`, `Elt.t`, and `Sexplib0.Sexp.t`, enabling data transformation, version control, and efficient persistence. Users can convert between S-expressions and custom types, compute set deltas, and generate collision-resistant hashes. Examples include deserializing data from S-expressions, applying incremental updates to sets, and hashing nested structures for consistent identification.",
+      "description_length": 572,
+      "index": 196,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Status.Key.Table",
+      "description": "Converts S-expressions into string-based keys for efficient data lookup and enables binary serialization and deserialization of custom types, including size computation and I/O operations. It handles polymorphic variants and type classes, supporting efficient storage and transmission of structured data. For example, it can extract a key from an S-expression to index records or save a complex data structure to a binary stream. It also allows reconstructing these structures from binary input, facilitating data persistence and inter-process communication.",
+      "description_length": 558,
+      "index": 197,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Status.Key.Hash_set",
+      "description": "Converts S-expressions to typed values using a constructor function and supports binary serialization and deserialization with Bin_prot, including size, write, read, and shape operations. Handles custom data types and polymorphic variants for structured data parsing and efficient binary storage. Users can parse S-expressions into specific types and persist complex data structures in binary format. Examples include converting a custom record from an S-expression and saving a polymorphic variant to a binary file.",
+      "description_length": 516,
+      "index": 198,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Status.Key.Hash_queue",
+      "description": "This module provides operations for traversing, aggregating, and modifying key-value pairs within a structured queue, including folding, filtering, and element inspection. It supports ordered access and uniqueness guarantees, enabling tasks like safe or unsafe dequeuing, enqueuing, and key-based transformations. Use cases include managing dynamic data with ordered constraints, ensuring efficient lookups, and handling element modifications in scenarios requiring deterministic access patterns.",
+      "description_length": 496,
+      "index": 199,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Status.Make_stable.V1",
+      "description": "Provides serialization and deserialization functions for converting values of type Key.t to and from S-expressions and binary formats using Bin_prot. Supports size calculation, writing, reading, and shape definition for binary representation. Used to persist or transmit Key.t values efficiently across systems.",
+      "description_length": 311,
+      "index": 200,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Config.Stable.V3",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot and Sexp formats, including size calculation, writing, reading, and shape definition. Works with the concrete type `t` and supports polymorphic variants through a constructor tag reader. Used to persist and reconstruct values of type `t` in binary and s-expression formats.",
+      "description_length": 356,
+      "index": 201,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Config.Stable.V2",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot and Sexp formats, including size calculation, writing, reading, and shape definition. Works with a concrete record type `t` that includes fields and supports conversion to and from Sexp and a related V3 type. Enables efficient binary serialization and interoperability with sexp-based systems.",
+      "description_length": 376,
+      "index": 202,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Config.Stable.V1",
+      "description": "Provides serialization and deserialization functions for a type `t` using Bin_prot and Sexp formats, including size calculation, writing, reading, and conversion to and from S-expressions. Works with a concrete record type `t` defined in the module. Used to convert instances of `t` into a version-compatible format for inter-process communication or persistent storage.",
+      "description_length": 370,
+      "index": 203,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make.Status",
+      "description": "combines comparison, serialization, and transformation tools for structured data, supporting S-expressions, binary formats, and state management. it handles custom types like `state` and `t`, enables efficient data persistence, and provides operations for diffs, hashing, and resource tracking. users can serialize maps, update sets with differences, and analyze resource queue metrics. it also facilitates key serialization and binary representation for cross-system data exchange.",
+      "description_length": 482,
+      "index": 204,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Status",
+      "description": "Combines ordered comparisons, serialization, and difference computation for custom data types, supporting S-expressions, binary formats, and hash folding. It handles encoding/decoding, difference application, and hash generation, enabling tasks like merging map updates, persisting complex types, and converting S-expressions to typed keys. Operations include serializing resource lists, extracting keys, comparing states, and tracking resource queue times. Examples include transmitting keys over networks, applying incremental data changes, and monitoring resource delays.",
+      "description_length": 574,
+      "index": 205,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Make_simple",
+      "description": "combines comparison, serialization, and data manipulation for custom types and structured data, offering ordered operations, key-value mapping, set transformations, and hash queue management. it supports S-expressions, binary formats, and versioned diffs, enabling tasks like sorting custom types, serializing maps, and managing priority queues. it also includes argument parsing capabilities, allowing structured extraction and validation of command-line inputs. users can parse S-expressions into typed keys, generate hashes for complex data, and process CLI options with type-safe validation.",
+      "description_length": 595,
+      "index": 206,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Rpc_connection_resource.Make",
+      "description": "Establishes an asynchronous connection to a host and port, returning a deferred result. Operates on host-and-port structures and RPC connection objects. Used to create and manage network links for remote procedure calls.",
+      "description_length": 220,
+      "index": 207,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Address_config.Stable",
+      "description": "Offers serialization and deserialization for concrete record types `t` using Bin_prot and Sexp, with support for size calculation, writing, reading, and shape definition. Each module enables conversion between `t` and either `V3.t` or `V2.t`, facilitating efficient data interchange and persistence. Operations include encoding and decoding instances of `t` for storage or transmission. Examples include saving a `t` to a binary file or parsing an s-expression back into a `t` structure.",
+      "description_length": 487,
+      "index": 208,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Status",
+      "description": "combines data comparison, serialization, and tracking capabilities across custom types, enabling ordered operations, efficient encoding, and change analysis. It handles types like `t`, `Elt.t`, and `Key.t`, supporting S-expression and binary I/O, set/map operations, and key-based manipulations. Users can serialize configurations, track resource queue durations, and compute differences between data structures. It facilitates efficient data exchange, ordered processing, and detailed resource monitoring in scheduling and state management systems.",
+      "description_length": 549,
+      "index": 209,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Config.Stable",
+      "description": "Offers serialization and deserialization for concrete record types across Bin_prot and Sexp formats, including size computation, writing, reading, and shape definition. Supports conversion between types, polymorphic variants, and version-compatible representations for inter-process communication and storage. Enables efficient binary encoding and Sexp interoperability. Examples include persisting data structures, transmitting values between processes, and converting between related types like V3.",
+      "description_length": 500,
+      "index": 210,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make.Key",
+      "description": "provides comparison, serialization, and difference computation for key-based data, supporting ordered operations, S-expression and binary formats, and efficient data transformation. It handles types like `t`, `Key.t`, and custom sets with `Elt.t`, enabling tasks such as generating diffs, serializing structures, and computing cryptographic hashes. Operations include parsing S-expressions, applying set deltas, and managing key-value queues with ordered access. Examples include converting configuration data to records, tracking changes in maps, and persisting complex types in binary form.",
+      "description_length": 592,
+      "index": 211,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make.Common_args",
+      "description": "Provides functions to parse command-line arguments into a structured type, extract specific values by name, and validate required fields. Works with the `t` type, which represents a collection of named arguments and their parsed values. Used to process CLI inputs for configuration settings and flag-based options in command-line tools.",
+      "description_length": 336,
+      "index": 212,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Key",
+      "description": "combines comparison, serialization, and data manipulation capabilities for custom types and key-value structures. It defines types for keys, values, and maps, with operations for ordering, diffing, hashing, parsing, and binary serialization. It enables tasks like converting S-expressions to typed data, synchronizing map states, and managing ordered key-value queues. Examples include generating consistent hashes for distributed systems, applying delta updates to configurations, and serializing variant types for network transmission.",
+      "description_length": 537,
+      "index": 213,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped.Common_args",
+      "description": "Provides functions to parse command-line arguments into a structured type, extract specific values, and validate input formats. Works with the `t` type, which represents a collection of parsed arguments. Used to process user-provided options in CLI tools, ensuring correct handling of flags and positional arguments.",
+      "description_length": 316,
+      "index": 214,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Resource.Key",
+      "description": "provides a comprehensive set of tools for handling key-based data structures, including comparison, serialization, transformation, and manipulation. It supports typed maps, S-expression and binary serialization, diff operations, and hash computation, along with functions to convert between structured data formats and custom types. Users can generate diffs between sets, parse configuration data, and manage ordered key-value pairs with efficient I/O and state tracking. Examples include converting S-expressions to keys, persisting polymorphic variants, and maintaining ordered task queues with dynamic updates.",
+      "description_length": 613,
+      "index": 215,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Resource.Common_args",
+      "description": "Provides functions to parse command-line arguments into a structured type, extract specific values, and validate input formats. Works with the `t` type, which represents a collection of parsed argument values. Used to process user-provided options in CLI tools, ensuring required parameters are present and correctly formatted.",
+      "description_length": 327,
+      "index": 216,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Key",
+      "description": "combines comparison, serialization, and data manipulation capabilities for custom key types, offering ordered operations, diff tracking, and efficient I/O. It supports S-expression and binary encoding, hash folding, and key-value queue management, enabling tasks like merging map changes, serializing nested structures, and maintaining ordered access to unique keys. Operations include generating diffs, parsing S-expressions, and encoding custom types for storage. Examples include converting maps to S-expressions, applying incremental updates, and persisting variant types in binary format.",
+      "description_length": 593,
+      "index": 217,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple.Common_args",
+      "description": "Provides functions to parse command-line arguments into a structured type, extract specific values, and validate input formats. Works with the `t` type, which represents a collection of parsed arguments. Used to process user-provided options in CLI tools, ensuring correct handling of flags and positional arguments.",
+      "description_length": 316,
+      "index": 218,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Status.Key",
+      "description": "provides comparison, serialization, and transformation capabilities for key-based data, supporting ordered operations, versioning, and efficient storage. it handles types `t`, `Elt.t`, and `Sexplib0.Sexp.t`, enabling tasks like computing map deltas, generating hashes, and converting between S-expressions and binary formats. users can extract keys from S-expressions, apply incremental updates to sets, and serialize complex structures for persistence. it also supports traversing and modifying key-value pairs in structured queues with ordered access and uniqueness constraints.",
+      "description_length": 580,
+      "index": 219,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Status.Resource",
+      "description": "Provides serialization to S-expressions and comparison functions for `state` and `t` types. Works with abstract types representing resource states and resource identifiers. Used to generate human-readable representations and enforce ordering in resource management systems.",
+      "description_length": 273,
+      "index": 220,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Status.Resource_list",
+      "description": "Provides operations to convert a resource list to an S-expression, compare lists lexicographically, extract a key, access the underlying resource list, determine the queue length, and retrieve the maximum time a resource spent on the queue. Works with a custom type `t` that encapsulates a key and a list of resources. Used to track and analyze resource allocation timelines in a scheduling system.",
+      "description_length": 398,
+      "index": 221,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Status.Make_stable",
+      "description": "Handles serialization and deserialization of Key.t values using S-expressions and binary formats via Bin_prot, enabling efficient storage and transmission. Offers operations to calculate size, write to, read from, and define the shape of binary representations. Key.t is the primary data type, with functions for converting it between different formats. This allows for persistent storage of keys or their transfer between systems with minimal overhead.",
+      "description_length": 453,
+      "index": 222,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Address_config",
+      "description": "Serializes and deserializes record types `t` using Bin_prot and Sexp, supporting conversion between `t` and vector types `V3.t` or `V2.t` for efficient data handling. Provides operations to calculate size, write to, and read from binary or s-expression formats, enabling data persistence and interchange. Examples include saving a `t` to a binary file or reconstructing a `t` from an s-expression string. Key data types include `t`, `V3.t`, and `V2.t`, with core operations focused on encoding and decoding.",
+      "description_length": 507,
+      "index": 223,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Config",
+      "description": "provides serialization, deserialization, and type conversion for structured data in Bin_prot and Sexp formats, with support for size calculation, versioning, and polymorphic variants. It enables efficient data persistence, inter-process communication, and type transformation, such as converting between related representations like V3. Operations include writing, reading, and defining data shapes. Examples include storing complex records, transmitting values across processes, and handling type evolution.",
+      "description_length": 508,
+      "index": 224,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Resource",
+      "description": "manages key-based data with advanced manipulation, serialization, and comparison capabilities, while enabling structured command-line argument parsing and validation. It handles typed maps, S-expression and binary formats, diffs, and hash computations, alongside parsing and validating user input through a structured `t` type. Users can convert between data formats, track state changes, and ensure correct CLI parameter handling. Examples include generating diffs between configurations, persisting variant types, and extracting validated options from command-line input.",
+      "description_length": 573,
+      "index": 225,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Rpc_connection_resource",
+      "description": "Establishes an asynchronous connection to a specified host and port, returning a resource handle. Provides a conversion function to access the underlying RPC connection object. Used to manage and interact with remote procedure call connections in networked applications.",
+      "description_length": 270,
+      "index": 226,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Status",
+      "description": "combines key-based data manipulation, serialization, and comparison across multiple formats, supporting operations on structured queues, resource lists, and identifiers. it handles types such as `t`, `Elt.t`, `state`, and `Key.t`, enabling tasks like generating map deltas, converting between S-expressions and binary, and tracking resource timelines. users can extract keys from S-expressions, compare resource lists lexicographically, and serialize keys for efficient storage or transmission. it also supports incremental updates, ordered access, and time-based analysis in scheduling and state management systems.",
+      "description_length": 616,
+      "index": 227,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make",
+      "description": "handles key-based data comparison, serialization, and transformation, supporting ordered operations and multiple formats like S-expressions and binary. It works with types such as `t`, `Key.t`, and `Elt.t`, enabling tasks like generating diffs, parsing configurations, and persisting data. It also includes argument parsing capabilities for command-line tools, allowing structured extraction and validation of CLI inputs. Examples include converting JSON to records, tracking map changes, and processing flags in a CLI application.",
+      "description_length": 531,
+      "index": 228,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache.Make_simple",
+      "description": "Combines custom key handling with comparison, serialization, and manipulation, supporting ordered operations, diffs, and efficient I/O through S-expressions and binary formats. It manages key-value queues, enables merging of map changes, and allows serialization of nested and variant types. Parses command-line arguments into a structured `t` type, extracts values, and enforces input validation. Users can convert maps to S-expressions, apply incremental updates, and process CLI options with guaranteed format correctness.",
+      "description_length": 525,
+      "index": 229,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Resource_cache.Make_wrapped",
+      "description": "Combines comparison, serialization, and data manipulation for custom types and key-value structures, offering types for keys, values, and maps with operations like ordering, diffing, hashing, and binary serialization. It supports parsing S-expressions into typed data, synchronizing map states, and serializing variant types for network use. Functions also enable generating consistent hashes and applying delta updates to configurations. Additionally, it includes argument parsing capabilities, allowing structured extraction and validation of command-line inputs.",
+      "description_length": 565,
+      "index": 230,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "resource_cache",
+      "description": "Provides functions to create, manage, and query a cache that stores and reuses resources based on defined constraints. Operates on an abstract resource type and maintains a bounded collection of active resources. Used to optimize performance in systems requiring controlled access to expensive or limited resources, such as database connections or file handles.",
+      "description_length": 361,
+      "index": 231,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Resource_cache",
+      "description": "manages structured data through key-based operations, supporting serialization, comparison, and transformation across formats like S-expressions and binary. it handles types such as `t`, `Elt.t`, `state`, and `Key.t`, enabling tasks like generating map deltas, extracting keys from S-expressions, and comparing resource lists. it facilitates ordered access, incremental updates, and time-based analysis for scheduling and state tracking. users can serialize keys for storage, convert data formats, and analyze resource timelines efficiently.",
+      "description_length": 541,
+      "index": 232,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 235,
+    "meaningful_modules": 233,
+    "filtered_empty_modules": 2,
+    "retention_rate": 0.9914893617021276
+  },
+  "statistics": {
+    "max_description_length": 655,
+    "min_description_length": 187,
+    "avg_description_length": 378.68669527897,
+    "embedding_file_size_mb": 0.8432140350341797
+  }
+}

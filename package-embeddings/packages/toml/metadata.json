@@ -1,0 +1,112 @@
+{
+  "package": "toml",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 13,
+  "creation_timestamp": "2025-06-18T16:33:09.424290",
+  "modules": [
+    {
+      "module_path": "Toml.Types.Table.Key",
+      "description": "Compares key values using a custom ordering function. Converts between string representations and internal key structures. Used to standardize and compare unique identifiers in a system.",
+      "description_length": 186,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Toml.Types.Table",
+      "description": "Handles key comparison and conversion, enabling consistent handling of unique identifiers through user-defined ordering and string-to-internal format transformations. Core operations include ordering, parsing, and formatting keys. Users can define custom comparison logic, convert keys between representations, and ensure uniformity across data structures. For example, it supports sorting records by a specific key or validating input strings against internal key formats.",
+      "description_length": 473,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Toml.Compare",
+      "description": "Compares TOML values, arrays, and tables to determine their relative order, returning -1, 0, or 1 based on lexicographical and structural differences. It handles nested structures by recursively evaluating elements and key-value pairs. Used to validate configuration consistency or enforce ordering in TOML-based data workflows.",
+      "description_length": 328,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Toml.Lenses",
+      "description": "The module provides functions for safely accessing, modifying, and updating values within TOML data through lenses, utilizing patterns like key traversal and type casting. It operates on TOML's internal table, value, and array types, enabling manipulation of nested structures. This is particularly useful for handling immutable configuration files or complex data hierarchies where direct mutation isn't feasible.",
+      "description_length": 414,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Toml.Lexer",
+      "description": "Handles lexical scanning of OCaml source code, including updating location information and parsing various string literals. Operates on `Lexing.lexbuf`, `Buffer.t`, and `Menhir_parser.token` to process and tokenize input. Processes single-line and multi-line strings with optional trimming, and supports recursive parsing for complex token sequences.",
+      "description_length": 350,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Toml.Menhir_parser",
+      "description": "Parses TOML content using a provided lexer, converting input into a structured table representation. It consumes a lexing buffer and a token-producing function to process input according to TOML syntax rules. The output is a typed table suitable for further processing in configuration or data-handling workflows.",
+      "description_length": 313,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Toml.Min",
+      "description": "Converts strings to validated table keys and constructs TOML tables from key-value pairs. Operates on strings, table keys, and values. Used to parse and assemble TOML configurations from structured data.",
+      "description_length": 203,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Toml.Parser",
+      "description": "Parses TOML content from a lexer buffer, string, input channel, or filename into a structured table type, handling syntax validation and error reporting. Processes raw input and returns a result type that may contain a table or parser error. Extracts the parsed table from a result using an unsafe combinator that raises an error on failure.",
+      "description_length": 341,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Toml.Printer",
+      "description": "Formats TOML values, tables, and arrays into human-readable strings or directly to a formatter. Processes nested structures like tables and arrays, with specific handling for scalar values. Generates serialized TOML output for debugging or configuration writing.",
+      "description_length": 262,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Toml.Types",
+      "description": "Manages key comparison, parsing, and formatting with user-defined ordering and conversion rules. It supports operations like sorting, validation, and transformation between string and internal key representations. Custom comparison functions allow flexible sorting and equality checks. Examples include validating input strings, converting keys for storage, and sorting records by arbitrary key fields.",
+      "description_length": 402,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Toml.Unicode",
+      "description": "Converts a Unicode string into its UTF-8 encoded byte sequence. Handles characters outside the ASCII range by generating multi-byte sequences. Useful for encoding text for network transmission or file storage in UTF-8 format.",
+      "description_length": 225,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "toml",
+      "description": "Provides functions to read and write deeply nested TOML data using partial lenses, which return option types for safe access. Works with TOML's structured data types such as tables, arrays, and primitive values. Enables precise modification of configuration files by targeting specific fields without rewriting entire sections.",
+      "description_length": 327,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Toml",
+      "description": "provides a comprehensive set of tools for working with TOML data, including comparison, manipulation, parsing, formatting, and encoding. It supports operations on tables, arrays, and values, with functions for safe access, modification, and serialization. Examples include comparing configurations for consistency, parsing input into structured tables, and formatting data for output. It also includes utilities for handling keys, strings, and Unicode encoding.",
+      "description_length": 461,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 13,
+    "meaningful_modules": 13,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 473,
+    "min_description_length": 186,
+    "avg_description_length": 329.61538461538464,
+    "embedding_file_size_mb": 0.047672271728515625
+  }
+}

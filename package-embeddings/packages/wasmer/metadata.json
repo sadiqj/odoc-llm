@@ -1,0 +1,651 @@
+{
+  "package": "wasmer",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 90,
+  "creation_timestamp": "2025-06-18T16:49:10.529489",
+  "modules": [
+    {
+      "module_path": "Wasmer.Wasi.NamedExtern.Vec.O",
+      "description": "Allocates and returns a pointer to a structured data type, and releases the allocated resource. It operates on a C-compatible structure type and a unit type for signaling. Used to manage lifecycle of C interop objects in low-level system interactions.",
+      "description_length": 251,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Wasi.NamedExtern.O",
+      "description": "Allocates and returns a pointer to a C structure of type `t_bis`, and releases the allocated resource when given a pointer to it. Operates on C-compatible data structures and unit types. Used to manage low-level memory resources in FFI interactions.",
+      "description_length": 249,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Wasi.NamedExtern.V",
+      "description": "Provides functions to extract a data type from a structure, retrieve a name, transfer ownership of a structure, and create a dependent object linked to an owning structure. Operates on Ctypes-based data structures and owning structures represented as pointers. Used to manage object lifecycles and dependencies in low-level system interactions.",
+      "description_length": 344,
+      "index": 2,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasmer.Wasi.NamedExtern.Vec",
+      "description": "Manages C object lifecycles by allocating and releasing memory for C-compatible structures, using a unit type to signal completion. Provides direct control over low-level system resources through pointer manipulation. Supports safe interaction with foreign code by encapsulating allocation and cleanup. Can be used to create and destroy C structs, ensuring proper resource management during system-level operations.",
+      "description_length": 415,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasmer.Wasi.Config.O",
+      "description": "Creates and manages instances of a C-compatible structure, providing allocation and deallocation operations. Operates on Ctypes-based structure types and unit types for low-level memory management. Used to safely initialize and clean up C library objects from OCaml code.",
+      "description_length": 271,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Ref.O",
+      "description": "Creates and manages instances of a C-compatible structure, providing low-level memory manipulation and resource cleanup. Operates on Ctypes-based pointers and reference-counted objects. Used to interface with C libraries by allocating, initializing, and releasing native resources.",
+      "description_length": 281,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Val.Anon0",
+      "description": "Provides operations to define and access fields of a C-compatible union type, including 32-bit and 64-bit integers, 32-bit and 64-bit floats, and a reference pointer. Works with OCaml's Ctypes module to interact with C unions. Used to map and manipulate low-level data structures in FFI contexts.",
+      "description_length": 296,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Val.O",
+      "description": "Provides functions to allocate, access, and manipulate memory blocks represented as Ctypes structures. Works with opaque data types and structured memory layouts for low-level system interactions. Used to interface with C libraries by reading and writing fields of complex data structures directly.",
+      "description_length": 298,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Val.V",
+      "description": "Provides functions to manage ownership and conversion of structured data types, including transferring ownership from a structure and converting elements back to pointers with dependent state. Works with Ctypes-based structures and owning pointers, enabling low-level memory management. Used to safely handle Wasm-related data structures by detaching and reattaching ownership during manipulation.",
+      "description_length": 397,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Val.Vec",
+      "description": "This module handles low-level management of C-style vectors, focusing on ownership transfer, memory allocation, and pointer manipulation with explicit state transitions. It operates on `V.owning_struct` data, enabling safe and unsafe element access, duplication, and size queries. Use cases include interfacing with C APIs requiring precise ownership control or managing dynamic arrays with deterministic resource cleanup.",
+      "description_length": 422,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasmer.Wasi.Config_T",
+      "description": "Provides a way to access a configuration value by its name, returning a string. Works with a structured configuration data type that maps names to values. Used to retrieve specific configuration parameters during application setup or runtime.",
+      "description_length": 242,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Wasi.Config",
+      "description": "Manages C-compatible structures with low-level memory operations, supporting allocation, deallocation, and ownership tracking. It handles Ctypes-based types and unit types for direct interaction with C libraries. Operations include initializing, cleaning up, and transferring ownership of C objects. Example tasks include creating a C struct, setting its fields, and ensuring proper cleanup after use.",
+      "description_length": 401,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Wasi.NamedExtern_T",
+      "description": "Provides a way to access a string-based identifier through a named interface. Works with modules that expose a `name` function returning a string. Used to dynamically retrieve and compare symbolic names in configuration or mapping scenarios.",
+      "description_length": 241,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Wasi.NamedExtern",
+      "description": "Manages C object lifecycles by allocating, releasing, and transferring ownership of C-compatible structures, with support for pointer-based operations and dependency management. Key data types include C structures of type `t_bis`, pointers to owning objects, and unit types for signaling completion. Functions allow creating, extracting, and destroying C structs, as well as linking dependent objects to their owners. Examples include safely allocating memory for a C struct, transferring ownership to another component, and releasing resources after use.",
+      "description_length": 555,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Wasi.Env_T",
+      "description": "Provides functions to retrieve the name of an environment and work with environment-specific data structures. Operates on a type representing environment configurations, enabling direct access to named environment values. Used to fetch and manipulate environment identifiers in system configuration contexts.",
+      "description_length": 308,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Wasi.Env",
+      "description": "The module handles ownership states of C objects through operations like creation, transfer, and inspection, utilizing low-level C pointers and the `OwnableObject` type to enforce access control. It manages safe/unsafe construction patterns and ensures proper ownership semantics, particularly within the Wasi environment. This is critical for preventing memory leaks or unauthorized access when interacting with native resources.",
+      "description_length": 430,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.DeclareType.V",
+      "description": "Provides functions to manage ownership and dependencies between structured data types. Operates on pointer-based data structures and object states, enabling controlled access and lifecycle management. Used to transfer ownership of structured data and establish state-dependent relationships.",
+      "description_length": 291,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasmer.DeclareType.Vec",
+      "description": "This module provides low-level operations for managing C-style vectors, including creating, transferring ownership, and manipulating pointers with explicit ownership state tracking. It works with arrays and lists of `V.owning_struct` data structures, enabling safe and unsafe access to elements while handling memory management. Use cases include precise control over C object lifetimes and interoperability with foreign APIs requiring ownership semantics.",
+      "description_length": 456,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.DeclareShareableRef.S",
+      "description": "Provides functions to manipulate and query the `d` type, including operations to extract the name, inspect internal structure, and perform type-specific transformations. Works with the `d` type, which represents structured data with a defined name and hierarchical components. Used to process and validate data models in a domain-specific context.",
+      "description_length": 347,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.DeclareShareableRef.Shared",
+      "description": "Provides operations to manage ownership of C objects through a state machine, including creating, transferring, and releasing ownership. Works with Ctypes pointers and an object_state enum to track ownership transitions. Used to safely interact with WASM objects by ensuring proper ownership checks when accessing or deleting underlying C resources.",
+      "description_length": 349,
+      "index": 19,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasmer.Wasi_.Env_O_",
+      "description": "Creates and manages a pointer to an environment structure, allowing allocation and deallocation of resources. Operates on Ctypes-based structures and unit types for low-level system interactions. Used to initialize and clean up environment contexts in foreign function interfaces.",
+      "description_length": 280,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Wasi_.Env_",
+      "description": "Creates and manages ownership of C objects with precise control over pointer access and lifecycle. Operates on `s` type, which wraps C pointers and tracks ownership states like passed-away or owned. Provides methods to transfer, check, and release ownership, along with safe and unsafe pointer access for integration with C APIs.",
+      "description_length": 329,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Byte.V",
+      "description": "Provides functions to manage ownership and conversion of structured data types, including taking ownership of a structure and transforming elements back into a pointer with dependent ownership. Works with byte-based data types and owning structures, enabling low-level memory management. Used to safely transfer and manage ownership of elements within a vector of structured data.",
+      "description_length": 380,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Byte.Vec",
+      "description": "This module handles low-level management of C-based vector structures, focusing on ownership transfer, memory control, and pointer manipulation for objects like `V.owning_struct` and `OwnableObject`. It enables operations such as data conversion between vectors, arrays, lists, and byte sequences, alongside safe and unsafe element access. Use cases include lifecycle management of C resources and efficient interoperation between OCaml and C data formats.",
+      "description_length": 456,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Frame.V",
+      "description": "Provides functions to manage ownership and conversion of structured data types, including transferring ownership from one structure to another and converting elements back to pointers with dependent ownership. Works with data_type, which is a pointer to a Ctypes structure, and owning_struct, a reference to an owned structure. Used to safely handle memory management when interacting with vector elements in low-level system programming.",
+      "description_length": 438,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Frame.Vec",
+      "description": "This module handles low-level ownership management for C-style vectors, enabling creation, duplication, and element manipulation while tracking object lifecycles. It operates on `V.owning_struct` types, providing safe and unsafe methods to access raw pointers and manage memory. Use cases include interfacing with C APIs or systems programming scenarios requiring precise control over resource ownership and disposal.",
+      "description_length": 417,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Extern.V",
+      "description": "Provides functions to manage ownership and conversion of structured data types, including taking ownership of a structure and converting elements back to pointers with dependent ownership. Operates on data_type, which is a pointer to a Ctypes structure, and owning_struct, a reference to an owned structure. Used to safely transfer and manage memory ownership between vector elements and their parent structures.",
+      "description_length": 412,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Extern.Vec",
+      "description": "The module provides low-level operations for managing C-style vectors with ownership tracking, manipulating C struct fields (size, data) and enforcing ownership states through methods like `get_ptr` and `lose_ownership`. It works with `V.owning_struct` data structures, enabling safe and unsafe element access, duplication, and splitting into WebAssembly components, particularly useful for handling C object lifetimes in WebAssembly integrations.",
+      "description_length": 447,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.OwnableObject",
+      "description": "Provides functions to create, compare, and serialize objects of type `t` and their descriptors of type `d`. Operates on custom data structures representing unique entities and their metadata. Used to manage persistent object identities in a distributed system.",
+      "description_length": 260,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.DeclareOwn",
+      "description": "Provides functions to retrieve a structure's base name and manage its type representation. Operates on string identifiers and a custom type `d` representing declared structures. Used to extract and reference structure names in low-level type handling.",
+      "description_length": 251,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.DeclareVec",
+      "description": "Provides functions to manage ownership and conversion of vector elements, including transferring ownership from a structure to a data type and converting elements back to pointers with dependent ownership. Works with custom data types and owning structures representing vector elements. Used to safely handle memory management when interfacing with C libraries through Ctypes.",
+      "description_length": 376,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.DeclareType",
+      "description": "Provides functions to retrieve the name of a type structure and define a type `d` used to represent type metadata. Operates on string identifiers and type representations for internal type handling. Used to standardize type naming and metadata in code generation workflows.",
+      "description_length": 273,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.DeclareRefBase",
+      "description": "Provides functions to retrieve the name of a structure and work with the `d` type, which represents base definitions. Operates on string identifiers and structured data types used in low-level type declarations. Used to generate and reference type names in compiler or code generation contexts.",
+      "description_length": 294,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Ref_T",
+      "description": "Provides functions to manipulate and inspect a structured data type representing reference information, including retrieving a string identifier. Operates on a custom type `d` that encapsulates metadata and configuration. Used to extract and process base names from structured reference data in a compiler or code generation context.",
+      "description_length": 333,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasmer.Ref",
+      "description": "Manages C-compatible structures with low-level memory control, enabling allocation, initialization, and cleanup of native resources through Ctypes pointers and reference counting. Supports direct interaction with C libraries by handling resource lifecycles and memory operations. Operations include creating, accessing, and releasing C structures, as well as managing pointer arithmetic and type conversions. Example tasks include wrapping C functions, managing dynamic arrays, and ensuring proper memory release after use.",
+      "description_length": 523,
+      "index": 34,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.DeclareRef",
+      "description": "Provides functions to retrieve the name of a structure and work with a custom type `d` representing declared references. Operates on string identifiers and internal reference data. Used to extract and manipulate names of low-level type representations in a compiler or code generation context.",
+      "description_length": 293,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Wasi_",
+      "description": "Manages low-level system resources and C object ownership through pointer-based abstractions. Tracks ownership states and enables safe or unsafe access to C pointers via methods for transfer and release. Initializes and cleans up environment contexts while controlling resource allocation and deallocation. Supports precise lifecycle management and integration with foreign function interfaces.",
+      "description_length": 394,
+      "index": 36,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasmer.Byte",
+      "description": "Manages ownership and conversion of structured data types, enabling low-level memory control and safe transfer of elements between vectors and byte sequences. Supports operations on `V.owning_struct` and `OwnableObject`, including pointer manipulation and data transformation. Allows conversion between vectors, arrays, lists, and byte-based representations while maintaining ownership semantics. Facilitates efficient interoperation between OCaml and C by handling lifecycle management and element access.",
+      "description_length": 506,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Name",
+      "description": "This module handles C-level vector operations with ownership semantics, enabling creation, transfer, and safe/unsafe manipulation of data through structures like `Byte.V.owning_struct` and typed vectors. It manages byte-based data conversions between vectors, arrays, lists, and strings while enforcing ownership rules for C objects. Use cases include low-level memory management, interop with C APIs, and controlled data transformation where ownership tracking is critical.",
+      "description_length": 474,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Message",
+      "description": "This module handles low-level memory management and ownership transitions for C objects, focusing on vector operations, pointer access, and state transitions with byte data and ownable structures. It enables safe manipulation of owned data through creation, duplication, element access, and conversions between arrays, lists, bytes, and strings, while enforcing ownership semantics for memory safety. Specific use cases include managing C-level resources in systems programming and ensuring safe interoperation between OCaml and C data structures.",
+      "description_length": 547,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Config_T",
+      "description": "Provides functions to retrieve the base name of a configuration structure and manipulate configuration data through a custom type `d`. Works with string identifiers and a domain-specific configuration type for low-level configuration handling. Used to customize and access configuration parameters in embedded systems or domain-specific environments.",
+      "description_length": 350,
+      "index": 40,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Config",
+      "description": "Provides functions to manage ownership of C objects through a state machine, including creating instances from pointers, transferring ownership, and checking states. Operates on Ctypes pointers and object states, with methods to safely or unsafely retrieve and manipulate underlying C structures. Used to interface with WASM objects, ensuring proper memory management and ownership tracking during interactions with C APIs.",
+      "description_length": 423,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Engine_T",
+      "description": "Provides functions to retrieve the base name of a structure and work with the `d` type, which represents internal engine data. Operates on string identifiers and opaque data structures specific to the engine's runtime environment. Used to access and manipulate engine-specific metadata during execution.",
+      "description_length": 303,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Engine",
+      "description": "The module handles ownership management and pointer manipulation for C objects within OCaml, working with C structure pointers and ownership states to enable safe creation, transfer, and access control. It utilizes mechanisms like DeclareOwn and OwnableObject to manage reference counting and ownership transitions, particularly in low-level WASM runtime scenarios where precise control over C object lifetimes is required.",
+      "description_length": 423,
+      "index": 43,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasmer.Store_T",
+      "description": "Provides operations to retrieve a structured name and manage internal data representations. Works with string identifiers and a custom type `d` for encapsulated data. Used to standardize naming conventions and data handling in module-specific contexts.",
+      "description_length": 252,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Store",
+      "description": "Provides methods to manage ownership of C objects through a state machine, including creating instances from pointers, transferring ownership, and checking or modifying the ownership state. Works with Ctypes pointers and custom object states, enabling safe interaction with low-level C structures. Used to safely wrap and manipulate WASM objects, ensuring proper memory management and ownership tracking during interop.",
+      "description_length": 419,
+      "index": 45,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasmer.Mutability",
+      "description": "Provides conversion between OCaml values and C-compatible 8-bit unsigned integers. Operates on OCaml's native integer type and C's uint8_t representation. Used to interface with C libraries requiring byte-level data manipulation.",
+      "description_length": 229,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Limits",
+      "description": "Provides access to structure fields representing minimum and maximum values for a limit type, along with a default maximum value. Works with Ctypes-structured data and unsigned 32-bit integers. Used to interface with C libraries that define resource or configuration limits.",
+      "description_length": 274,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Valkind",
+      "description": "Provides functions to convert between OCaml values and 8-bit unsigned integers, check if an OCaml value is a number or reference, and expose the C type representation. Works with OCaml values and raw byte data. Used to interface OCaml with C libraries requiring primitive type conversions and type checks.",
+      "description_length": 305,
+      "index": 48,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Valtype_T",
+      "description": "Provides operations to manipulate and inspect a type representing WebAssembly value types, including converting to and from their string representations. Works with the `d` type, which encapsulates the internal representation of these types. Used to generate correct Wasm module definitions and validate type signatures during compilation.",
+      "description_length": 339,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Functype_T",
+      "description": "Provides functions to manipulate and inspect a type representation used for defining WebAssembly function types, including retrieving the base name of the structure. Works with the `d` type, which encapsulates the internal representation of function types. Used to generate and validate function signatures in WebAssembly module construction.",
+      "description_length": 342,
+      "index": 50,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasmer.Functype",
+      "description": "provides low-level ownership management for WebAssembly objects, tracking C object ownership states. it defines core types for managing object lifetimes and references. operations include transferring and releasing ownership of underlying C resources. this enables precise control over resource lifecycle in FFI interactions.",
+      "description_length": 325,
+      "index": 51,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Globaltype_T",
+      "description": "Provides functions to manipulate and inspect a type representing global type information, including retrieving its name as a string. Operates on the `d` type, which encapsulates structured data about global types. Used to extract and process type metadata during code generation or analysis.",
+      "description_length": 291,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Globaltype",
+      "description": "provides low-level management of ownership for C objects within WebAssembly, enabling safe interaction with underlying resources. it defines core ownership semantics and supports direct manipulation of C-based structures. operations include transferring and checking ownership states, allowing precise control over resource lifecycle. examples include managing memory-bound objects and ensuring proper cleanup in embedded environments.",
+      "description_length": 435,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Tabletype_T",
+      "description": "Provides functions to manipulate and inspect a custom data structure representing table types, including retrieving the base name of the structure. Operates on the `d` type, which encapsulates metadata and configuration for table definitions. Used to generate and validate table schemas in code generation workflows.",
+      "description_length": 316,
+      "index": 54,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasmer.Memorytype_T",
+      "description": "Provides operations to retrieve the name of a memory type and handle internal representation of memory structures. Works with the `d` type, which encapsulates memory type details. Used to identify and manipulate memory configurations in low-level runtime contexts.",
+      "description_length": 264,
+      "index": 55,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasmer.Memorytype",
+      "description": "Manages ownership tracking for WASM objects, enabling safe interaction with underlying C resources. Provides mechanisms to declare and manipulate objects that hold ownership of C entities. Supports operations to transfer, check, and manage ownership states. Allows for integration with low-level C code by wrapping and controlling access to native resources.",
+      "description_length": 358,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Externkind",
+      "description": "Handles conversion between OCaml values and C-compatible 8-bit unsigned integers. Provides direct mapping between OCaml types and C types using Ctypes. Used to interface with C libraries requiring byte-level data representation.",
+      "description_length": 228,
+      "index": 57,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasmer.Externtype_T",
+      "description": "Provides functions to manipulate and inspect a structured data type `d`, including retrieving its name as a string. Operates on internal representations of external types, enabling direct access to their metadata. Used to extract and work with type identifiers in low-level Wasm integration scenarios.",
+      "description_length": 301,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Externtype",
+      "description": "provides low-level management of WebAssembly objects with ownership tracking, enabling direct interaction with C-based resources. it defines core types for object ownership and lifecycle control, including methods to transfer and release ownership. users can manipulate WASM objects by asserting ownership, transferring between contexts, and managing resource lifetimes. examples include initializing C objects, passing them between modules, and ensuring proper cleanup.",
+      "description_length": 470,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Importtype_T",
+      "description": "Provides functions to manipulate and identify type structures, including retrieving a string representation of the type's base name. Operates on the `d` type, which represents structured type information. Used to extract and compare type identifiers during parsing and type checking.",
+      "description_length": 283,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Importtype",
+      "description": "provides a foundation for managing ownership of C objects within WASM environments, focusing on low-level object lifecycle control. It defines core types for tracking ownership states and includes basic operations for initializing and inspecting these states. Examples include creating owned objects and checking their ownership status during runtime. The module serves as a base for higher-level abstractions that interact with C-based WASM components.",
+      "description_length": 453,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Exporttype_T",
+      "description": "Provides functions to manipulate and identify structure names, and operates on a custom type `d` representing internal data structures. Extracts and processes base names from formatted strings for type-specific operations. Used to generate and validate type identifiers in code generation workflows.",
+      "description_length": 299,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Exporttype",
+      "description": "provides low-level management of ownership for WASM objects, enabling safe interaction with C-based resources. it defines core types for tracking ownership states and includes basic operations for transferring and inspecting ownership. examples include initializing an object's ownership and checking its current state. no functional operations are exposed beyond these foundational constructs.",
+      "description_length": 394,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Val",
+      "description": "Manages low-level memory and ownership of C-compatible data structures through union fields, memory blocks, and structured types. Supports operations like allocating memory, accessing union members, transferring ownership, and manipulating vectors with explicit state control. Provides direct access to C types such as integers, floats, pointers, and structured data, enabling precise interaction with C libraries and Wasm environments. Examples include reading and writing C structs, managing dynamic arrays, and converting between owned and unowned pointers.",
+      "description_length": 560,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.DeclareShareableRef",
+      "description": "Provides functions to define and manage shareable reference types, including retrieving the base name of a structure. Operates on string identifiers and a custom type `d` representing shared reference metadata. Used to generate Wasm-compatible type declarations and ensure proper naming conventions during code generation.",
+      "description_length": 322,
+      "index": 65,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Frame_T",
+      "description": "Provides functions to manipulate and query the name of a structure and its associated data type `d`, which represents a frame in a low-level runtime environment. Operates on string identifiers and structured data to support direct access and inspection during runtime processing. Used to retrieve and work with frame metadata in system-level debugging and analysis tools.",
+      "description_length": 371,
+      "index": 66,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Frame",
+      "description": "manages ownership and memory for C-compatible data structures, enabling safe transfer and conversion between owned and raw pointers. It operates on data_type and owning_struct, supporting operations like duplication, element access, and lifecycle management. Users can safely interface with C APIs, manipulate vector elements, and ensure proper resource disposal. Examples include converting a C structure to an owned reference, transferring ownership between objects, and accessing raw pointers with controlled lifetime tracking.",
+      "description_length": 530,
+      "index": 67,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Trap_T",
+      "description": "Provides functions to retrieve the base name of a structure and work with internal representation type d. Operates on string identifiers and opaque data structures representing trap definitions. Used to identify and manipulate exception handling contexts in low-level runtime operations.",
+      "description_length": 287,
+      "index": 68,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Trap",
+      "description": "This module handles ownership and lifecycle management of C objects wrapped in OCaml, focusing on WASM trap objects through creation, state manipulation, and safe/unsafe null pointer handling. It operates on `s` types representing owned C objects, enabling reference conversion and garbage collection coordination. Use cases include secure integration with C libraries, preventing memory leaks, and ensuring proper resource cleanup in WebAssembly environments.",
+      "description_length": 460,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Foreign_T",
+      "description": "Provides functions to manipulate and inspect a structured data type `d`, including retrieving its name as a string. Operates on internal representations of foreign types, enabling direct access to their properties. Used to extract and validate type metadata during runtime analysis.",
+      "description_length": 282,
+      "index": 70,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Foreign",
+      "description": "This module handles low-level ownership management and pointer operations for C objects encapsulated in OCaml, enabling safe and unsafe transfers, checks, and releases of ownership. It operates on `s` types that wrap C objects, supporting tasks like reference conversion, host information setup, and finalizer registration. Use cases include precise memory control in WebAssembly integration and ensuring proper resource cleanup during interoperability with C code.",
+      "description_length": 465,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Module_T",
+      "description": "Provides functions to manipulate and query the `d` type, including creating instances, extracting embedded values, and performing type-specific comparisons. Operates on the `d` type, which represents a structured data container with internal state. Used to process and validate data representations in low-level system interactions.",
+      "description_length": 332,
+      "index": 72,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Module",
+      "description": "This module handles ownership management and lifecycle control for C objects encapsulated in OCaml, operating on structures containing C pointers and ownership states, along with WebAssembly module data involving stores and byte vectors. It enables safe manipulation of underlying C resources through creation, transfer, and release operations, as well as serialization/deserialization of WebAssembly modules. Use cases include ensuring proper resource management in embedded systems and interoperability between OCaml and WebAssembly environments.",
+      "description_length": 548,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Func_T",
+      "description": "Provides functions to manipulate and inspect a custom data type `d`, including operations to retrieve its name as a string and perform transformations specific to its internal structure. Works with a domain-specific type representing structured data elements. Used to process and annotate data during code generation workflows.",
+      "description_length": 327,
+      "index": 74,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasmer.Func",
+      "description": "provides low-level management of ownership states for C objects, enabling controlled access and lifecycle management. it defines core types for tracking ownership and operations to transfer or check ownership status. examples include initializing an object's ownership and verifying its current state. this foundation supports higher-level abstractions that depend on precise control over resource management.",
+      "description_length": 409,
+      "index": 75,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Global_T",
+      "description": "Provides functions to retrieve the name of a structure and work with the `d` type, which represents a specific internal data representation. Operates on string identifiers and structured data for low-level type manipulation. Used to generate and manage symbolic representations in compiler or interpreter contexts.",
+      "description_length": 314,
+      "index": 76,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasmer.Global",
+      "description": "provides a foundation for managing C object ownership within WebAssembly, exposing low-level constructs for direct memory manipulation. It includes basic ownership tracking mechanisms and supports direct interaction with underlying C structures. Users can create, transfer, and inspect ownership states of C objects. This enables fine-grained control over resource management in embedded or performance-critical contexts.",
+      "description_length": 421,
+      "index": 77,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasmer.Table_T",
+      "description": "Provides functions to manipulate and query a structured data type `d` representing table metadata. Includes operations to retrieve the name, inspect schema details, and validate table configurations. Used to process database schema definitions and generate runtime table structures.",
+      "description_length": 282,
+      "index": 78,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Table",
+      "description": "provides low-level ownership management for WASM objects, enabling safe handling of C-based resources. it defines core ownership semantics and supports direct manipulation of underlying C objects. operations include transferring and checking ownership states, allowing precise control over resource lifecycle. examples include managing memory safety and interfacing with C libraries through owned pointers.",
+      "description_length": 406,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Memory_T",
+      "description": "Provides functions to manipulate and query memory structures, including operations to access and modify underlying data. Works with the `d` type, representing a memory descriptor used in low-level system interactions. Used to retrieve and manage memory layout information for specific runtime structures.",
+      "description_length": 304,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Memory",
+      "description": "provides low-level management of C object ownership through a structured interface, enabling safe interaction with WASM memory. It defines ownership states and operations for transferring and checking ownership of C objects. Users can track and manipulate ownership flags, ensuring proper resource handling in embedded environments. Examples include initializing ownership markers and verifying ownership before accessing underlying C resources.",
+      "description_length": 445,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Extern_T",
+      "description": "Provides functions to manipulate and inspect a structured data type representing external definitions, including retrieving a string identifier associated with the structure. Operates on a type `d` that encapsulates metadata and configuration for external entities. Used to extract and reference the base name of web assembly interfaces during code generation.",
+      "description_length": 360,
+      "index": 82,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Extern",
+      "description": "manages ownership and memory safety for C structures and vectors in WebAssembly, enabling safe transfer and manipulation of owned data. It operates on data_type pointers and owning_struct references, supporting operations like `get_ptr`, `lose_ownership`, and element duplication. Users can convert structured data to pointers, split vectors into WebAssembly components, and track ownership through C struct fields. Examples include safely passing C arrays to WebAssembly and managing lifetimes of nested objects.",
+      "description_length": 513,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Instance_T",
+      "description": "Provides functions to retrieve the base name of a structure and manipulate instances represented by the `d` type. Works with string identifiers and custom instance data structures. Used to extract and process core names from compiled WebAssembly types.",
+      "description_length": 252,
+      "index": 84,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Wasmer.Instance",
+      "description": "This module handles ownership management, pointer manipulation, and reference conversion for C objects within OCaml, operating on C pointers, OCaml references, and ownership states. It enables creating and transferring ownership of WASM instances, setting host information, and exporting externs, with patterns emphasizing safe interop between OCaml and C environments. Specific use cases include managing memory ownership during WASM execution and ensuring type-safe access to underlying C structures.",
+      "description_length": 502,
+      "index": 85,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Wasi",
+      "description": "provides configuration access, C object management, and name resolution capabilities. it includes operations to retrieve configuration values, manage C-compatible structures with ownership tracking, and access string identifiers from named interfaces. it supports creating, transferring, and cleaning up C objects, as well as fetching environment names and values. examples include initializing a C struct, retrieving a configuration parameter, and comparing module names at runtime.",
+      "description_length": 483,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer.Util",
+      "description": "Converts WebAssembly Text (WAT) to binary WebAssembly (WASM) using a string input and byte vector output. Constructs function types from lists of value kinds and loads WASM binaries from files into byte vectors. Processes low-level WebAssembly representations for compilation and execution workflows.",
+      "description_length": 300,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "wasmer",
+      "description": "Provides functions to instantiate and execute WebAssembly modules, manage imports, and handle values such as integers, floats, and references. Works with types like `Wasm.Module`, `Wasm.Instance`, and `Wasm.Value`. Enables embedding WebAssembly in OCaml applications for tasks like scripting, extending applications with compiled code, or running untrusted code in a sandboxed environment.",
+      "description_length": 389,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Wasmer",
+      "description": "Provides operations to retrieve the base name of a structure and manage metadata types used in Wasm declarations. Works with strings and a custom type `d` representing structure metadata. Used to extract and manipulate names of Wasm-defined structures during code generation.",
+      "description_length": 275,
+      "index": 89,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 118,
+    "meaningful_modules": 90,
+    "filtered_empty_modules": 28,
+    "retention_rate": 0.7627118644067796
+  },
+  "statistics": {
+    "max_description_length": 560,
+    "min_description_length": 228,
+    "avg_description_length": 363.8,
+    "embedding_file_size_mb": 0.3274555206298828
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "package": "bracetax",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 18,
+  "creation_timestamp": "2025-06-18T16:35:08.541524",
+  "modules": [
+    {
+      "module_path": "Bracetax_commands.Table.Util",
+      "description": "Provides functions to determine the number of rows in a table, generate and fill a riddle matrix, and find next coordinates within a grid. Works with tables, coordinate arrays, and custom cell representations including filled cells and errors. Used to dynamically generate and navigate puzzle-like structures during table processing.",
+      "description_length": 333,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bracetax_commands.Raw",
+      "description": "Converts between a raw command type and its string representation, checks if a string is a valid command, and provides a default end string for raw operations. Works with the `t` type, which represents raw commands, and strings. Used to parse user input into command structures and generate default termination strings for raw data processing.",
+      "description_length": 343,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bracetax_commands.Link",
+      "description": "Handles link creation and parsing with specific operations for extracting and constructing link kinds. Works with custom types for link kinds and a structured link representation. Used to process local and generic links, transform their content, and generate Bracetax formatted strings.",
+      "description_length": 286,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bracetax_commands.Stack",
+      "description": "Provides operations to manage a stack implemented as a reference to a list of environments. Supports pushing elements onto the stack, popping the top element, retrieving the top element, and converting the stack to a list. Used to track and manipulate bracetax environments during parsing or evaluation processes.",
+      "description_length": 313,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bracetax_commands.Names",
+      "description": "The module provides functions to validate and parse Bracetax commands, including checks for formatting indicators (italic, bold), punctuation (ellipsis, dashes), and structural elements (paragraphs, lists), alongside parsing command-specific data like depth, labels, and paths. It operates on strings and string lists, utilizing hooks for custom processing of elements such as headers, links, and tables. This enables tasks like syntax validation, content structuring, and metadata extraction in markup processing workflows.",
+      "description_length": 524,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bracetax_commands.Table",
+      "description": "Calculates row counts, constructs riddle matrices, and navigates grids using coordinate arrays and custom cell types like filled cells and errors. Operations include dynamic table generation and coordinate traversal. Examples include creating puzzle layouts and moving through structured data. Supports flexible cell representations for varied table configurations.",
+      "description_length": 365,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "bracetax",
+      "description": "Provides functions to validate, parse, and compute tax brackets based on income, using structured data like lists of bracket ranges and rates. Processes numerical values and nested tuples representing tax thresholds and applicable rates. Calculates tax liabilities for specific income figures by applying tiered rate logic.",
+      "description_length": 323,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bracetax_commands",
+      "description": "converts raw commands to and from strings, validates command syntax, and manages environment stacks for parsing; handles link construction and extraction, processes Bracetax formatting and structural elements, and supports grid-based data manipulation with custom cell types; performs tasks like parsing user input, generating formatted output, and constructing puzzle layouts; operates on types such as `t`, link kinds, environments, and coordinate arrays.",
+      "description_length": 457,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bracetax_latex_printer",
+      "description": "Generates LaTeX headers and footers, and constructs a printer for converting Bracetax data to LaTeX format. It handles custom styling, comments, and image or URL processing during output. Used to produce structured, formatted LaTeX documents from parsed data.",
+      "description_length": 259,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bracetax_generic_printer",
+      "description": "Generates formatted output using custom write and transformation functions, applying specific string manipulation and formatting rules. It operates on input data structured through a set of function types, including string writers and argument-to-string converters. Used to produce LaTeX-like output from parsed data structures during transformation processes.",
+      "description_length": 360,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bracetax_error",
+      "description": "Constructs and formats error messages with specific severity levels, incorporating location data and custom messages. Operates on types like location, gravity, message, and error to represent and serialize parsing errors. Used to generate human-readable error outputs during compiler or parser validation steps.",
+      "description_length": 311,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bracetax_signatures",
+      "description": "Provides functions to construct a writer object that handles string output and error reporting. Operates with custom types for writers and printers, including a write function that takes a string and an error handler. Used to encapsulate output and error logic in text generation workflows.",
+      "description_length": 290,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bracetax_parser",
+      "description": "Processes input streams by applying a printer's methods to transform characters, using a custom read function to fetch data and a filename for error reporting. Operates on character streams and string filenames, invoking printer-specific logic during parsing. Used to generate formatted output from raw input based on defined printing rules.",
+      "description_length": 341,
+      "index": 12,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bracetax_HTML_printer",
+      "description": "Provides functions to generate HTML headers and footers, and to construct a printer for transforming content into (X)HTML. Operates with strings, references, and custom hooks for modifying images, URLs, and classes. Used to produce structured web output from parsed data, including optional styling and section linking.",
+      "description_length": 319,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bracetax_TOC_output",
+      "description": "Generates table of contents structures with customizable link creation, list types, and numbering schemes. Operates on document elements such as sections, headings, and labeled items. Used to produce navigable, styled TOCs for structured documentation outputs.",
+      "description_length": 260,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bracetax_escape",
+      "description": "Replaces specific substrings or characters in a string using defined patterns. Processes strings by filtering out non-alphanumeric characters and whitespace. Used to sanitize user input for safe display in HTML contexts.",
+      "description_length": 220,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Bracetax_info",
+      "description": "Returns the version and license information of the library as strings. It exposes the exact release identifier and licensing terms. Used to programmatically access metadata for dependency tracking and compliance checks.",
+      "description_length": 219,
+      "index": 16,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Bracetax_transform",
+      "description": "Converts Bracetax input to HTML or LaTeX, handling formatting, links, and metadata. Processes character streams and supports custom hooks for images, URLs, and class attributes. Generates tables of contents from Bracetax content and facilitates in-memory transformations of strings.",
+      "description_length": 282,
+      "index": 17,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 30,
+    "meaningful_modules": 18,
+    "filtered_empty_modules": 12,
+    "retention_rate": 0.6
+  },
+  "statistics": {
+    "max_description_length": 524,
+    "min_description_length": 219,
+    "avg_description_length": 322.5,
+    "embedding_file_size_mb": 0.06586742401123047
+  }
+}

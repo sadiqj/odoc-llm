@@ -1,0 +1,777 @@
+{
+  "package": "ocaml-protoc-plugin",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 108,
+  "creation_timestamp": "2025-06-18T16:51:22.062462",
+  "modules": [
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.SourceCodeInfo.Location",
+      "description": "Tracks source code locations within Protocol Buffers definitions, handling paths, spans, and comments. It works with integers for line/column positions and strings for comment content. Used to map generated code back to original source for debugging or tooling integration.",
+      "description_length": 273,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.MethodOptions.IdempotencyLevel",
+      "description": "Determines if a method is safe, idempotent, or neither, guiding HTTP verb selection for RPC calls. Works with an enum type representing method characteristics. Used to enforce HTTP semantics in API implementations, such as using GET for safe methods and PUT for idempotent ones.",
+      "description_length": 278,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.EnumDescriptorProto.EnumReservedRange",
+      "description": "Provides operations to create, serialize, and deserialize reserved numeric ranges, ensuring they are inclusive and non-overlapping. Works with integer start and end values to define ranges within the int32 domain. Used to validate enum entries against reserved intervals during protocol buffer generation.",
+      "description_length": 305,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.DescriptorProto.ExtensionRange",
+      "description": "Provides functions to serialize and deserialize a protocol buffer message to and from binary and JSON formats, along with a helper to construct the message. Operates on a custom type representing a protobuf extension range, including start and end positions and options. Used to encode and decode protocol buffer data during code generation or data processing workflows.",
+      "description_length": 370,
+      "index": 3,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.DescriptorProto.ReservedRange",
+      "description": "Provides functions to serialize and deserialize a reserved tag range between binary and JSON formats, with support for protocol buffer encoding. Works with an opaque type representing a range of integers, used to define reserved tag numbers in message definitions. Used to ensure tag number consistency and prevent conflicts in protocol buffer schemas.",
+      "description_length": 352,
+      "index": 4,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.UninterpretedOption.NamePart",
+      "description": "Provides operations to create, serialize, and deserialize name segments with extension flags, working with strings and boolean indicators. Supports converting between binary protocol buffer format and JSON, using specific reader and writer types. Used to represent and manipulate dot-separated names with extension markers in protocol buffer processing.",
+      "description_length": 353,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.FileOptions.OptimizeMode",
+      "description": "Provides functions to determine the optimized mode of generated classes, returning a string representation of the protobuf enum name. Operates on a custom type representing optimization configurations. Used to select between speed or size optimization during code generation.",
+      "description_length": 275,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.FieldOptions.CType",
+      "description": "Provides functions to retrieve the fully qualified protobuf name of an enum. Works with enum types defined in the module. Used to generate or reference protobuf-registered names in serialization and reflection contexts.",
+      "description_length": 219,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.FieldOptions.JSType",
+      "description": "Provides functions to work with JavaScript-compatible string and number types, including a method to retrieve the fully qualified protobuf name of an enum. Operates on custom types derived from protobuf definitions and JavaScript primitive types. Used to serialize enum values into their corresponding JavaScript string representations during data exchange.",
+      "description_length": 357,
+      "index": 8,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.GeneratedCodeInfo.Annotation",
+      "description": "Provides operations to create, serialize, and deserialize annotations with path, source file, and byte range information. Works with a record type containing optional integers and strings representing source code locations. Used to track generated code positions back to original .proto definitions during code generation.",
+      "description_length": 322,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.FieldDescriptorProto.Type",
+      "description": "Handles encoding and decoding of protocol buffer type information. Works with enum values, tags, and wire formats, including support for signed integers and length-delimited data. Used to manage field types in protobuf serialization, particularly for distinguishing between signed and unsigned integer encodings.",
+      "description_length": 312,
+      "index": 10,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.FieldDescriptorProto.Label",
+      "description": "Provides functions to retrieve the fully qualified protobuf name of an enum and defines a type `t` representing enum values. Works with string data and enum structures specific to protobuf definitions. Used to generate and identify enum names in protocol buffer serialization contexts.",
+      "description_length": 285,
+      "index": 11,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Type.Google.Protobuf.Field.Kind",
+      "description": "Provides functions to retrieve the fully qualified protobuf name of an enum. Works with enum types defined in the module. Used to generate or validate protobuf serialization metadata.",
+      "description_length": 183,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Type.Google.Protobuf.Field.Cardinality",
+      "description": "Returns the fully qualified protobuf name of the enum. Works with the enum type representing field cardinality in protocol buffers. Used to generate correct serialization and deserialization logic based on field presence rules.",
+      "description_length": 227,
+      "index": 13,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Wrappers.Google.Protobuf.DoubleValue",
+      "description": "Wraps a float value for serialization and deserialization in Protobuf and JSON formats. Provides functions to convert between the float type and binary or JSON representations using specific reader and writer interfaces. Supports generating and parsing messages with explicit error handling for invalid input.",
+      "description_length": 309,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Wrappers.Google.Protobuf.FloatValue",
+      "description": "Wraps a float value for serialization and deserialization in Protobuf and JSON formats. Provides functions to convert between the float type and binary or JSON representations, using specific reader and writer types from the Protobuf plugin library. Supports generating and parsing messages with explicit error handling during deserialization.",
+      "description_length": 343,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Wrappers.Google.Protobuf.Int64Value",
+      "description": "Wraps an `int64` value for serialization and deserialization in Protobuf and JSON formats. Provides methods to convert between the internal `int` type and binary or JSON representations, ensuring compatibility with protocol buffer encoding. Used to handle 64-bit integer values in data exchange between systems.",
+      "description_length": 311,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Wrappers.Google.Protobuf.UInt64Value",
+      "description": "Wraps a 64-bit unsigned integer for serialization and deserialization. Provides methods to convert to and from Protobuf binary format, JSON, and retrieves the fully qualified name. Operates on integer values, ensuring compatibility with Protobuf and JSON representations.",
+      "description_length": 271,
+      "index": 17,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Wrappers.Google.Protobuf.Int32Value",
+      "description": "Provides functions to serialize and deserialize a 32-bit integer between binary and JSON formats, with support for Protobuf encoding. Works with the `int` type, treating it as a wrapped `int32` value. Used to ensure consistent serialization of integer values in protocol buffer messages and JSON outputs.",
+      "description_length": 304,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Wrappers.Google.Protobuf.UInt32Value",
+      "description": "Wraps a 32-bit unsigned integer, providing serialization to and from binary and JSON formats. Supports conversion from an optional integer value, with default handling. Used to ensure consistent encoding and decoding of uint32 values in protocol buffer interactions.",
+      "description_length": 266,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Wrappers.Google.Protobuf.BoolValue",
+      "description": "Wraps a boolean value for serialization and deserialization in Protobuf and JSON formats. It supports converting between the boolean type and binary or JSON representations using specific reader and writer functions. Used to ensure consistent handling of boolean values in protocol buffer messages and JSON payloads.",
+      "description_length": 316,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Wrappers.Google.Protobuf.StringValue",
+      "description": "Provides functions to serialize and deserialize a string-based message to and from binary and JSON formats, with support for Protobuf conventions. Operates on the `t` type, which is an alias for `string`, and includes a helper for creating instances with default values. Used to handle string values in Protobuf messages, ensuring compatibility with both binary and JSON serialization pipelines.",
+      "description_length": 395,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Wrappers.Google.Protobuf.BytesValue",
+      "description": "Wraps `bytes` values for serialization and deserialization in Protobuf and JSON formats. Provides methods to convert between binary, JSON, and raw byte representations. Used to handle binary data in protocol buffer messages and ensure compatibility with JSON serialization libraries.",
+      "description_length": 283,
+      "index": 22,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Api.Google.Protobuf.Api",
+      "description": "Provides functions to serialize and deserialize API descriptors to and from protocol buffer binary format and JSON, with support for method lists, options, and versioning. Operates on structured data types including method collections, source contexts, and syntax information. Used to convert API definitions between serialized formats for processing in code generation tools or configuration systems.",
+      "description_length": 401,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Api.Google.Protobuf.Method",
+      "description": "Provides methods to serialize and deserialize protocol buffer methods between binary and JSON formats, and to extract their fully qualified names. Works with protocol buffer message types and JSON representations using specific reader and writer interfaces. Used to process API method definitions during code generation or data exchange workflows.",
+      "description_length": 347,
+      "index": 24,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Api.Google.Protobuf.Mixin",
+      "description": "Provides functions to serialize and deserialize data structures to and from protocol buffer binary and JSON formats, with support for generating fully qualified names. Works with protocol buffer message types defined in the `t` type. Used to convert between in-memory representations and serialized formats for network transmission or storage.",
+      "description_length": 343,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.FileDescriptorSet",
+      "description": "Provides functions to serialize and deserialize a list of FileDescriptorProto objects to and from binary and JSON formats, with support for protocol buffer serialization options. Works with OCaml's protocol compiler output and JSON libraries. Used to convert parsed .proto files into structured data for further processing or transmission.",
+      "description_length": 339,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.FileDescriptorProto",
+      "description": "Provides operations to serialize and deserialize protocol buffer file definitions, including message types, enum types, services, and options. Works with structured data representing .proto files, such as message descriptors, enum descriptors, and file options. Used to convert between in-memory representations and binary or JSON formats during code generation or validation processes.",
+      "description_length": 386,
+      "index": 27,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.DescriptorProto",
+      "description": "Encodes and decodes protocol buffer data using binary and JSON formats, handling message structures and reserved tag ranges. It includes a custom type for extension ranges with start, end, and options, and an opaque type for reserved tag ranges. Functions support constructing, serializing, and deserializing these structures during data processing or code generation. Examples include parsing a message with extensions and validating reserved tag boundaries to avoid schema conflicts.",
+      "description_length": 485,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.ExtensionRangeOptions",
+      "description": "Provides functions to serialize and deserialize data structures representing unrecognized protocol buffer options, supporting binary and JSON formats. Works with custom types for uninterpreted options and extension ranges, enabling integration with protocol buffer parsing workflows. Used to persist and reconstruct option data during code generation processes.",
+      "description_length": 361,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.FieldDescriptorProto",
+      "description": "Encodes and decodes protocol buffer fields, handling type information, tags, and wire formats, including signed integers and length-delimited data. Supports enum value retrieval and manipulation, with a type `t` for representing enum values and functions to generate fully qualified enum names. Enables precise control over field serialization and type identification during message encoding. Examples include parsing signed integer fields and generating enum names for output.",
+      "description_length": 477,
+      "index": 30,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.OneofDescriptorProto",
+      "description": "Provides functions to serialize and deserialize a oneof structure to and from binary and JSON formats, along with a helper to create instances with optional name and options. Works with protobuf oneof definitions and associated options. Used to generate and parse oneof fields during protocol buffer code generation.",
+      "description_length": 316,
+      "index": 31,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.EnumDescriptorProto",
+      "description": "Manages enum type definitions by handling reserved numeric ranges, ensuring they are valid, non-overlapping, and properly serialized. Supports operations to construct ranges, validate against them, and convert between internal representations and serialized formats. Accepts start and end integers to define intervals, and checks for conflicts during enum generation. Examples include reserving [10, 20] and verifying that new enum values fall outside reserved zones.",
+      "description_length": 467,
+      "index": 32,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.EnumValueDescriptorProto",
+      "description": "Describes an enum value with methods to serialize and deserialize to and from binary and JSON formats, and to retrieve its fully qualified name. Works with protocol buffer message structures and JSON representations. Used to generate and parse enum value data during code generation or data processing workflows.",
+      "description_length": 312,
+      "index": 33,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.ServiceDescriptorProto",
+      "description": "Provides functions to serialize and deserialize service definitions between binary and JSON formats, and to retrieve the fully qualified name. Works with protocol buffer message types and JSON representations. Used to convert service metadata for plugin integration and configuration parsing.",
+      "description_length": 292,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.MethodDescriptorProto",
+      "description": "Provides functions to construct, serialize, and deserialize method metadata including name, input and output types, streaming options, and protocol buffer options. Works with protocol buffer message structures and JSON representations using specific reader and writer types. Used to generate and process method definitions in protocol buffer plugins and serialization pipelines.",
+      "description_length": 378,
+      "index": 35,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.FileOptions",
+      "description": "Controls the configuration for generating language-specific code from a .proto file, including package names, class wrappers, and optimization settings. Main data types include configuration records with fields for Java, Go, PHP, and other language-specific options, along with enums for optimization modes. Functions allow setting the Java package, enabling multiple files, and selecting between speed or size optimization. Examples include setting the Java outer class name, enabling UTF-8 enforcement for string fields, and specifying a Go package.",
+      "description_length": 551,
+      "index": 36,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.MessageOptions",
+      "description": "Provides serialization and deserialization of protocol buffer messages to and from binary and JSON formats, with support for custom options like message set wire format, deprecated flags, and map entry handling. Operates on a structured type representing message options, including extensions and uninterpreted options. Used to configure message behavior during code generation and ensure compatibility with specific protobuf wire formats and language features.",
+      "description_length": 461,
+      "index": 37,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.FieldOptions",
+      "description": "Manages field-specific serialization and type conversion options, including packed encoding, lazy parsing, and JavaScript type mappings. Supports operations on primitive and message types, with functions to retrieve protobuf-qualified names and convert enum values to JavaScript-compatible representations. Enables efficient wire encoding for repeated fields and custom type handling in generated code. Examples include serializing packed repeated integers and converting enum values to strings for JavaScript interoperability.",
+      "description_length": 527,
+      "index": 38,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.OneofOptions",
+      "description": "Provides functions to serialize and deserialize data structures using binary and JSON formats, with support for custom options and extensions. Works with protocol buffer messages and uninterpreted options, enabling integration with plugin systems. Used to handle unrecognized protobuf options during parsing and generation.",
+      "description_length": 323,
+      "index": 39,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.EnumOptions",
+      "description": "Provides functions to create, serialize, and deserialize protocol buffer options, including handling of aliases, deprecation flags, and uninterpreted options. Works with custom types such as `UninterpretedOption.t`, `Ocaml_protoc_plugin.Extensions.t`, and JSON representations. Used to manage enum configuration during code generation, enabling compatibility with different protobuf versions and tooling.",
+      "description_length": 404,
+      "index": 40,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.EnumValueOptions",
+      "description": "Provides functions to serialize and deserialize data structures representing enum value options, including deprecation flags and custom options. Works with types such as `UninterpretedOption.t`, `Ocaml_protoc_plugin.Extensions.t`, and JSON-compatible representations. Used to handle protocol buffer enum value metadata during code generation and validation.",
+      "description_length": 357,
+      "index": 41,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.ServiceOptions",
+      "description": "Provides functions to create, serialize, and deserialize protocol buffer service options, including handling deprecation flags and uninterpreted options. Works with protocol buffer message structures and JSON representations using Yojson. Used to manage service metadata during code generation and validation processes.",
+      "description_length": 319,
+      "index": 42,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.MethodOptions",
+      "description": "Encapsulates method attributes and deprecation status, enabling precise control over HTTP semantics and API behavior. It defines an enum for method safety and idempotency, along with mechanisms to mark methods as deprecated. Operations include checking method properties and applying deprecation flags based on target platforms. For example, it ensures GET is used for safe methods and allows suppression of unrecognized options during parsing.",
+      "description_length": 444,
+      "index": 43,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.UninterpretedOption",
+      "description": "Handles the creation, serialization, and manipulation of name segments with extension flags, supporting conversions between binary and JSON formats. It works with strings and booleans to represent dot-separated names used in protocol buffer processing. Operations include parsing and generating name segments with extension markers. Examples include parsing \"foo.bar\" with an extension flag or converting a name segment to JSON for external use.",
+      "description_length": 445,
+      "index": 44,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.SourceCodeInfo",
+      "description": "Encapsulates source file metadata, including line and column positions, file paths, and associated comments, enabling traceability between generated code and original definitions. Provides types for representing source spans, file paths, and comment strings, along with operations to extract or annotate this information. It supports mapping specific code elements back to their original source locations, facilitating debugging and tooling. For example, it can retrieve the original comment preceding a field in a .proto file or identify the file path where a message was defined.",
+      "description_length": 581,
+      "index": 45,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf.GeneratedCodeInfo",
+      "description": "tracks source code locations from generated code back to original .proto definitions using records with optional integers and strings for byte ranges and file paths. It supports creating, serializing, and deserializing annotations that map generated elements to their source origins. Operations include encoding location data into structured formats and reconstructing this information from serialized inputs. For example, it can trace a generated function's origin to a specific line in a .proto file or identify which source file a code snippet came from.",
+      "description_length": 557,
+      "index": 46,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Timestamp.Google.Protobuf.Timestamp",
+      "description": "Provides operations to create, serialize, and deserialize timestamps with second and nanosecond precision, convert to and from RFC 3339 formatted strings, and handle JSON encoding and decoding. Works with a structured type containing seconds and nanoseconds as integers. Used to standardize time representation across systems, such as converting POSIX time, Windows file time, or Java Instant into a unified format.",
+      "description_length": 415,
+      "index": 47,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Type.Google.Protobuf.Syntax",
+      "description": "Provides functions to retrieve the fully qualified name of a protobuf enum. Operates on a type representing protocol buffer elements. Used to generate unique identifiers for enum types during code generation.",
+      "description_length": 208,
+      "index": 48,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Type.Google.Protobuf.Type",
+      "description": "Provides functions to serialize and deserialize protocol buffer messages to and from binary and JSON formats, along with methods to construct messages and retrieve their fully qualified names. Works with protocol buffer message structures, field lists, oneof declarations, and options. Used to convert message definitions between OCaml representations and serialized formats for plugin integration.",
+      "description_length": 398,
+      "index": 49,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Type.Google.Protobuf.Field",
+      "description": "Encapsulates field metadata for protocol buffers, offering functions to derive fully qualified enum names for both custom enums and cardinality indicators. Supports operations that extract and validate enum identifiers used in serialization and deserialization. Enables precise control over field representation in generated code. For example, it can retrieve the enum name for a repeated field or ensure the correct enum is used for optional fields.",
+      "description_length": 450,
+      "index": 50,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Type.Google.Protobuf.Enum",
+      "description": "Provides functions to serialize and deserialize data structures to and from Protocol Buffers binary format, JSON, and retrieve the fully qualified name. Works with protocol buffer message types and associated metadata like enum values, options, and source context. Used to convert between OCaml representations and wire formats for communication or storage.",
+      "description_length": 357,
+      "index": 51,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Type.Google.Protobuf.EnumValue",
+      "description": "Generates and manipulates protocol buffer enum values with methods to serialize to and deserialize from binary and JSON formats. Works with a custom type representing enum values, including name, number, and options. Used to convert enum definitions between internal representation and serialized formats for protocol buffer processing.",
+      "description_length": 336,
+      "index": 52,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Type.Google.Protobuf.Option",
+      "description": "Provides functions to serialize and deserialize protocol buffer options between binary, JSON, and internal representations. Works with protocol buffer message types and JSON values compatible with Yojson. Used to generate, store, and parse option metadata in protobuf-based systems.",
+      "description_length": 282,
+      "index": 53,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Empty.Google.Protobuf.Empty",
+      "description": "Provides functions to serialize and deserialize a unit type to and from binary and JSON formats, along with a helper to create instances. Works with the `unit` type and integrates with Protobuf and JSON serialization libraries. Used to standardize empty request and response types in API definitions.",
+      "description_length": 300,
+      "index": 54,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Struct.Google.Protobuf.NullValue",
+      "description": "Represents the null value in a union type, providing a single, fixed instance. Works with the `Value` type to denote absence of data. Used in JSON serialization to output `null` when the value is undefined.",
+      "description_length": 206,
+      "index": 55,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Struct.Google.Protobuf.Struct",
+      "description": "Provides functions to serialize and deserialize structured data between binary and JSON formats, and to create instances with default fields. Operates on a list of string-field value pairs, where values are dynamically typed. Used to convert protocol buffer messages to and from JSON for interoperability with external systems.",
+      "description_length": 327,
+      "index": 56,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Struct.Google.Protobuf.Value",
+      "description": "Provides operations to serialize and deserialize values between binary and JSON formats, and to create values with specific types such as numbers, strings, booleans, structs, or lists. Works with dynamically typed values that can represent null, numbers, strings, booleans, recursive structures, or lists. Used to convert between protocol buffer binary data and JSON representations in a type-safe manner.",
+      "description_length": 405,
+      "index": 57,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Struct.Google.Protobuf.ListValue",
+      "description": "Provides functions to serialize and deserialize a list of `Value.t` values to and from binary and JSON formats, including a helper to create instances with default values. Works with the `t` type, which is an alias for `Value.t list`. Used to handle repeated fields in protocol buffer messages that need to be converted to and from JSON and binary representations.",
+      "description_length": 364,
+      "index": 58,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Duration.Google.Protobuf.Duration",
+      "description": "Provides operations to create, serialize, and deserialize durations with second and nanosecond components, and to convert between duration representations and JSON strings. Works with a structured type containing signed integers for seconds and nanoseconds. Used to calculate time differences between timestamps, adjust timestamps by adding or subtracting durations, and interchange duration data in protocol buffer and JSON formats.",
+      "description_length": 433,
+      "index": 59,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Any.Google.Protobuf.Any",
+      "description": "Provides functions to serialize and deserialize protocol buffer messages into binary and JSON formats, with support for type URLs and unpacking. Works with serialized byte streams and JSON values, preserving type information through URL metadata. Used to handle polymorphic message types in distributed systems, such as storing and retrieving different message variants in a unified structure.",
+      "description_length": 393,
+      "index": 60,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Source_context.Google.Protobuf.SourceContext",
+      "description": "Provides functions to serialize and deserialize data between binary and JSON formats using Protobuf conventions, and to retrieve the fully qualified name of a message. Works with string-based source information representing protobuf element locations. Used to encode and decode source context data during code generation and validation processes.",
+      "description_length": 346,
+      "index": 61,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Field_mask.Google.Protobuf.FieldMask",
+      "description": "Provides functions to create, serialize, and deserialize field masks represented as lists of path strings, supporting JSON and binary encodings. Operates on lists of strings where each string denotes a hierarchical field path for filtering or updating message fields. Used to control which fields are included in API responses or modified in update requests, ensuring precise data handling in projections and updates.",
+      "description_length": 417,
+      "index": 62,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Wrappers.Google.Protobuf",
+      "description": "Encapsulates primitive types for serialization and deserialization in Protobuf and JSON formats, offering conversion functions between native types and their encoded representations. Supports float, int64, uint64, int32, uint32, boolean, string, and byte values, with dedicated methods for each type. Each module provides reader and writer interfaces, error handling, and compatibility with protocol buffer conventions. Examples include converting a float to binary, parsing a JSON string into an int64, or serializing a byte array to JSON.",
+      "description_length": 540,
+      "index": 63,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Api.Google.Protobuf",
+      "description": "Encodes and decodes structured data, including API descriptors, methods, and message types, between protocol buffer binary and JSON formats. Supports extracting fully qualified names, handling method lists, and preserving metadata like options and versioning. Enables seamless data transformation for code generation, configuration, and data exchange. Examples include converting API definitions for tooling, serializing method signatures for RPC systems, and storing message types in persistent storage.",
+      "description_length": 504,
+      "index": 64,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google.Protobuf",
+      "description": "Encapsulates protocol buffer data processing by offering serialization and deserialization capabilities for message structures, enums, services, and options across binary and JSON formats. It includes custom types for extensions, reserved ranges, enum values, and source annotations, with functions to manipulate and validate these structures. Operations include parsing messages with extensions, reserving enum ranges, generating qualified names, and tracing code back to original .proto definitions. Examples include serializing packed repeated fields, validating enum reservations, and reconstructing source locations for debugging.",
+      "description_length": 635,
+      "index": 65,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Timestamp.Google.Protobuf",
+      "description": "Handles time representation with high precision, offering creation, serialization, and conversion between timestamps, RFC 3339 strings, and JSON. It uses a structured type with separate fields for seconds and nanoseconds. Operations include converting POSIX, Windows, and Java time formats into a unified structure. Examples include serializing a timestamp for network transmission or parsing an RFC 3339 string into a structured time value.",
+      "description_length": 441,
+      "index": 66,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Type.Google.Protobuf",
+      "description": "Offers serialization, deserialization, and metadata extraction capabilities for protocol buffer elements, including enums, messages, and options. Handles fully qualified name resolution, field validation, and format conversion between binary, JSON, and OCaml representations. Supports operations like retrieving enum names for repeated or optional fields, constructing messages, and managing enum value serialization. Enables precise control over protocol buffer structures during code generation and plugin integration.",
+      "description_length": 520,
+      "index": 67,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Empty.Google.Protobuf",
+      "description": "Handles serialization and deserialization of the `unit` type in both binary and JSON formats, with helper functions for creating instances. Supports integration with Protobuf and JSON libraries to ensure consistent representation of empty values. Enables standardized handling of empty requests and responses in API definitions. Examples include converting `()` to a binary stream or parsing a JSON null value into `()`.",
+      "description_length": 420,
+      "index": 68,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Struct.Google.Protobuf",
+      "description": "encapsulates serialization and deserialization of protocol buffer data between binary and JSON formats, supporting null, numbers, strings, booleans, structs, and lists. it includes operations for handling single values, lists of values, and structured data with default field initialization. it enables converting protocol buffer messages to JSON by representing null through a dedicated value and managing dynamic typing. examples include serializing a message to JSON with null values, deserializing a list of values from binary, and creating structured data with default fields.",
+      "description_length": 581,
+      "index": 69,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Duration.Google.Protobuf",
+      "description": "Encapsulates operations for handling time durations, including creation, serialization, and conversion between structured formats and JSON. Supports signed integers for seconds and nanoseconds, enabling precise time difference calculations and timestamp adjustments. Allows seamless integration with protocol buffer and JSON data streams. Examples include converting a duration to a JSON string, adding a duration to a timestamp, and parsing a duration from a serialized byte stream.",
+      "description_length": 483,
+      "index": 70,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Any.Google.Protobuf",
+      "description": "Encodes and decodes protocol buffer messages in binary and JSON, maintaining type information via URLs for polymorphic message handling. Supports unpacking of messages from byte streams and JSON values, enabling consistent processing of diverse message variants. Operations include serialization, deserialization, and type-aware unpacking. Can be used to store and retrieve messages in a unified format across distributed systems, ensuring type safety and compatibility.",
+      "description_length": 470,
+      "index": 71,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Source_context.Google.Protobuf",
+      "description": "Encodes and decodes data between binary and JSON formats following Protobuf standards, while extracting message names and source context. Processes string-based location data to track protobuf element origins. Supports operations like converting messages to JSON, parsing binary streams, and retrieving source metadata. Enables accurate data transformation and context preservation in code generation and validation workflows.",
+      "description_length": 426,
+      "index": 72,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Field_mask.Google.Protobuf",
+      "description": "Encodes and decodes field masks as lists of hierarchical paths, supporting both JSON and binary formats. Processes lists of strings to filter or update specific message fields in API interactions. Enables precise control over data inclusion and modification in serialized messages. Examples include excluding sensitive fields from responses or applying targeted updates to nested structures.",
+      "description_length": 391,
+      "index": 73,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocaml_protoc_plugin.Service.Request",
+      "description": "Provides functions to construct, serialize, and deserialize request objects, including parsing from protocol buffers and converting to JSON. Works with custom types `t` for request data and `make_t` for initialization parameters. Used to process incoming request data from binary formats and generate structured JSON outputs for API responses.",
+      "description_length": 343,
+      "index": 74,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocaml_protoc_plugin.Service.Response",
+      "description": "Provides functions to construct, serialize, and deserialize instances using a protocol buffer format, with methods to merge data and convert to and from JSON. Operates on a custom type `t` and a builder type `make_t` for structured data. Used to parse incoming data from binary streams, combine responses, and generate JSON outputs for API interactions.",
+      "description_length": 353,
+      "index": 75,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Wrappers.Google",
+      "description": "Handles serialization and deserialization of primitive types across Protobuf and JSON formats, with dedicated functions for float, int64, uint64, int32, uint32, boolean, string, and byte. Provides reader and writer interfaces for encoding and decoding values, along with error handling mechanisms. Operations include converting a float to binary Protobuf format, parsing a JSON string into an int64, and serializing a byte array to JSON. Supports direct type-specific conversions and ensures compatibility with protocol buffer standards.",
+      "description_length": 537,
+      "index": 76,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Api.Google",
+      "description": "Converts structured data between protocol buffer binary and JSON formats, supporting API descriptors, methods, and message types. Extracts fully qualified names, manages method lists, and retains metadata such as options and versioning. Enables data serialization for RPC systems, configuration storage, and code generation. Examples include serializing method signatures, storing message definitions, and transforming API contracts for tooling.",
+      "description_length": 445,
+      "index": 77,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor.Google",
+      "description": "Handles protocol buffer data by enabling serialization and deserialization of messages, enums, services, and options in both binary and JSON formats. It defines custom types for extensions, enum values, reserved ranges, and source annotations, supporting operations like parsing with extensions, validating enum reservations, and generating qualified names. Functions allow for tracing code to original .proto definitions and reconstructing source locations. Examples include serializing packed repeated fields, validating enum constraints, and debugging by recovering source references.",
+      "description_length": 587,
+      "index": 78,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Timestamp.Google",
+      "description": "Manages precise time values through a structured type with seconds and nanoseconds, enabling conversion between various time formats and string representations. It supports operations to parse, serialize, and transform time across POSIX, Windows, Java, and RFC 3339 standards. Users can convert a timestamp to a JSON-compatible format or extract nanoseconds from a parsed RFC 3339 string. This allows consistent time handling in distributed systems and data interchange.",
+      "description_length": 470,
+      "index": 79,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Type.Google",
+      "description": "provides serialization, deserialization, and metadata extraction for protocol buffer elements, supporting enums, messages, and options. It manages field validation, name resolution, and format conversion between binary, JSON, and OCaml. Operations include retrieving enum names, constructing messages, and controlling serialization behavior. Users can precisely manipulate protocol buffer structures during code generation and plugin development.",
+      "description_length": 446,
+      "index": 80,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Empty.Google",
+      "description": "Manages the conversion of the `unit` type between binary and JSON formats, with support for Protobuf and JSON libraries to ensure consistent empty value representation. Provides functions to serialize `()` into a binary stream or parse JSON null into `()`. Enables uniform handling of empty API requests and responses. Examples include encoding an empty response for transmission or decoding a null value from an API call.",
+      "description_length": 422,
+      "index": 81,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Struct.Google",
+      "description": "handles conversion between binary and JSON representations of protocol buffer data, supporting null, numbers, strings, booleans, structs, and lists. it provides operations for serializing single values, lists, and structured data, including default field initialization. it allows converting protocol buffer messages to JSON with explicit null handling and parsing binary data into typed lists. examples include serializing a message with null fields to JSON and deserializing a binary list into a typed structure.",
+      "description_length": 514,
+      "index": 82,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Duration.Google",
+      "description": "Handles time duration manipulation with support for signed seconds and nanoseconds, enabling precise time calculations and conversions. Provides serialization to and from JSON and protocol buffers, along with operations to adjust timestamps and parse durations from byte streams. Examples include converting a duration to a JSON string, adding a duration to a timestamp, and parsing a duration from a serialized format. Key data types include duration structures and timestamp adjustments.",
+      "description_length": 489,
+      "index": 83,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Any.Google",
+      "description": "Encodes and decodes protocol buffer messages in binary and JSON formats, preserving type information through URLs for polymorphic handling. Supports serialization, deserialization, and type-aware unpacking from byte streams or JSON values. This enables consistent processing of message variants across distributed systems, ensuring type safety during storage and retrieval. For example, it can unpack a message from a byte stream and safely cast it to its original type based on registered URLs.",
+      "description_length": 495,
+      "index": 84,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Source_context.Google",
+      "description": "Handles data serialization and deserialization between binary and JSON formats using Protobuf standards, with support for tracking message origins and source context. Provides operations to convert messages to JSON, parse binary streams, and extract metadata. Processes location data to maintain traceability of protobuf elements. Enables precise data manipulation and context-aware code generation.",
+      "description_length": 399,
+      "index": 85,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Field_mask.Google",
+      "description": "Handles field mask serialization and manipulation, translating hierarchical paths into structured data for API operations. Supports JSON and binary formats, allowing filtering and updating of specific message fields. Processes string lists to target nested structures, such as omitting confidential data or modifying selective fields. Enables efficient and precise control over message serialization and deserialization.",
+      "description_length": 420,
+      "index": 86,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocaml_protoc_plugin.Json",
+      "description": "Converts a JSON value to its string representation. Works with the variant type representing JSON data, including numbers, strings, booleans, arrays, and objects. Used to serialize structured data for transmission or storage in text format.",
+      "description_length": 240,
+      "index": 87,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocaml_protoc_plugin.Reader",
+      "description": "Reads and tracks position within a byte string, supporting offset and reset operations for precise data parsing. It works with raw string data and maintains internal state to facilitate sequential access. Used to process serialized protocol buffer data by advancing through the input string while tracking current position.",
+      "description_length": 323,
+      "index": 88,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocaml_protoc_plugin.Writer",
+      "description": "Writes serialized data into a string using configurable serialization modes and block sizes. Operates on a custom type `t` that manages the serialization process and a `mode` type defining serialization strategies. Used to generate optimized protobuf outputs for large or recursive message structures, balancing speed, space, and compatibility.",
+      "description_length": 344,
+      "index": 89,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocaml_protoc_plugin.Service",
+      "description": "Provides operations to construct, serialize, and deserialize instances using protocol buffers, including merging two instances and converting to and from JSON. Works with protocol buffer readers and writers, JSON values, and a custom type `t` along with a builder type `make_t`. Used to parse and generate service configurations from binary or JSON representations.",
+      "description_length": 365,
+      "index": 90,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ocaml_protoc_plugin.Result",
+      "description": "Provides operations to handle success or failure states, including mapping, binding, and error propagation. Works with the result type, which encapsulates either a value or an error. Used to safely unwrap values, convert errors to exceptions, and format error messages for debugging or logging.",
+      "description_length": 294,
+      "index": 91,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocaml_protoc_plugin.Extensions",
+      "description": "Provides operations to create a default value, pretty-print, convert to string, compare, and check equality of a list of integer-field pairs. Supports retrieving and updating specific fields using a compound identifier. Used to manage and manipulate protocol buffer field data within plugin extensions.",
+      "description_length": 302,
+      "index": 92,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Ocaml_protoc_plugin.Json_options",
+      "description": "Provides options for controlling JSON serialization behavior, including enum representation, field name usage, and default value omission. Works with boolean flags to customize output format. Used to generate JSON with consistent naming and minimal extra data.",
+      "description_length": 260,
+      "index": 93,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Any",
+      "description": "Encodes and decodes protocol buffer messages in binary and JSON, using URLs to manage polymorphic types during serialization and deserialization. It supports type-aware unpacking from byte streams or JSON values, enabling safe type casting based on registered identifiers. This allows consistent handling of message variants across distributed systems, ensuring type safety during data exchange. For instance, it can extract a message from a byte stream and cast it to its original type using registered URL mappings.",
+      "description_length": 517,
+      "index": 94,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Api",
+      "description": "Converts structured data between protocol buffer binary and JSON formats, handling API descriptors, methods, and message types with full name extraction, metadata retention, and method listing. Supports serialization for RPC systems, configuration storage, and code generation through operations like method signature serialization and message definition storage. Enables transformation of API contracts for tooling by preserving options, versioning, and hierarchical relationships. Examples include converting protocol buffer schemas to JSON for inspection, storing message layouts in configuration files, and generating code from serialized API definitions.",
+      "description_length": 659,
+      "index": 95,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Descriptor",
+      "description": "Encodes and decodes protocol buffer structures, including messages, enums, services, and options, in binary and JSON formats. It introduces types for extensions, enum values, reserved ranges, and source annotations, with operations for parsing, validation, and source reconstruction. Users can serialize packed fields, check enum validity, and trace generated code back to original .proto definitions. Examples include validating enum constraints and recovering source locations for debugging.",
+      "description_length": 493,
+      "index": 96,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Duration",
+      "description": "Manages time durations using signed seconds and nanoseconds, supporting precise arithmetic, conversions, and serialization. Offers operations to adjust timestamps, parse durations from byte streams, and convert between JSON and protocol buffers. Key data types include duration representations and timestamp modifiers. Examples include adding a duration to a timestamp, serializing a duration to JSON, and parsing a duration from a binary stream.",
+      "description_length": 446,
+      "index": 97,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Empty",
+      "description": "Handles the serialization and deserialization of the `unit` type between binary and JSON formats, ensuring consistency across Protobuf and JSON representations. Supports converting `()` to binary streams and parsing JSON null into `()`, enabling reliable exchange of empty values in API interactions. Functions include encoding empty responses and decoding null values from incoming data. Examples include transmitting empty API responses or interpreting null fields as unit values.",
+      "description_length": 482,
+      "index": 98,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Field_mask",
+      "description": "Handles field mask serialization and manipulation, translating hierarchical paths into structured data for API operations. It supports JSON and binary formats, enabling filtering and updating of specific message fields through string lists that target nested structures. Operations include omitting confidential data or modifying selective fields with precision. Key data types include field paths and structured masks, with functions for parsing, combining, and applying masks to messages.",
+      "description_length": 490,
+      "index": 99,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Source_context",
+      "description": "Encodes and decodes data using Protobuf, preserving source context and location metadata. Supports converting messages to JSON, parsing binary streams, and extracting origin information. Tracks element positions for traceability and context-aware processing. Enables accurate data manipulation and generation with detailed source references.",
+      "description_length": 341,
+      "index": 100,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Struct",
+      "description": "converts protocol buffer data between binary and JSON formats, handling null, numbers, strings, booleans, structs, and lists. it supports serialization of individual values, lists, and nested structures, with options for default field initialization. it enables precise control over null representation in JSON and parsing of binary data into typed collections. examples include serializing a message with optional fields to JSON and reconstructing a structured list from binary input.",
+      "description_length": 485,
+      "index": 101,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Timestamp",
+      "description": "Encapsulates time values with precise second and nanosecond components, offering conversion between POSIX, Windows, Java, and RFC 3339 formats. Provides parsing and serialization functions to transform timestamps into JSON or extract nanoseconds from string representations. Supports arithmetic and comparison operations to manipulate and compare time values. Users can convert a Unix timestamp to an RFC 3339 string or extract nanosecond precision from a parsed time value.",
+      "description_length": 474,
+      "index": 102,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Google_types.Type",
+      "description": "Handles protocol buffer element serialization, deserialization, and metadata extraction, supporting enums, messages, and options with field validation and name resolution. Provides operations to retrieve enum names, construct messages, and convert between binary, JSON, and OCaml formats. Users can control serialization behavior and manipulate protocol buffer structures during code generation. Examples include extracting enum values from binary data and generating JSON representations of messages.",
+      "description_length": 501,
+      "index": 103,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types.Wrappers",
+      "description": "Encodes and decodes primitive types between Protobuf and JSON formats using type-specific functions. Supports operations like converting floats to Protobuf binary, parsing JSON strings to int64, and serializing byte arrays to JSON. Provides reader and writer interfaces with error handling for reliable data transformation. Handles types including float, int64, uint64, int32, uint32, boolean, string, and byte.",
+      "description_length": 411,
+      "index": 104,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "ocaml-protoc-plugin",
+      "description": "Generates OCaml types and serialization/deserialization functions from .proto definitions, mapping protocol buffers to modules and records. Processes message structures, enums, and nested types with custom type definitions. Enables direct integration of protocol buffer schemas into OCaml applications for data exchange and storage.",
+      "description_length": 332,
+      "index": 105,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Ocaml_protoc_plugin",
+      "description": "Converts JSON values to strings, parses byte strings with position tracking, and serializes data with configurable modes. Handles protocol buffer construction, serialization, and deserialization, along with error management and field manipulation. Supports custom types for data processing, including default values, pretty-printing, and JSON formatting options. Examples include serializing a JSON object to text, parsing a protobuf byte string, and generating compact JSON with specified conventions.",
+      "description_length": 502,
+      "index": 106,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Google_types",
+      "description": "Provides comprehensive serialization and deserialization capabilities for protocol buffer data, supporting binary and JSON formats with type-aware operations. Key data types include durations, timestamps, field masks, and protocol buffer messages, with functions for parsing, validation, and metadata extraction. It enables precise control over data transformation, such as converting timestamps to RFC 3399 strings, applying field masks to messages, and serializing enums with source context. Examples include reconstructing message layouts from binary streams, validating enum values, and handling unit types in API responses.",
+      "description_length": 628,
+      "index": 107,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 108,
+    "meaningful_modules": 108,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 659,
+    "min_description_length": 183,
+    "avg_description_length": 394.80555555555554,
+    "embedding_file_size_mb": 0.39270591735839844
+  }
+}

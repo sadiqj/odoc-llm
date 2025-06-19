@@ -1,0 +1,98 @@
+{
+  "package": "p4pp",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 11,
+  "creation_timestamp": "2025-06-18T16:32:52.349690",
+  "modules": [
+    {
+      "module_path": "P4pp.Eval.Make",
+      "description": "Checks if a file exists at a given path and reads its contents. Operates on file paths and string data. Used to verify presence of configuration files and load their content during setup processes.",
+      "description_length": 197,
+      "index": 0,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "P4pp.Eval.FileSystem",
+      "description": "Checks if a file exists at a given path and returns a boolean. Reads the contents of a file from a path and returns its string content. Processes a file's content using an environment, modifying both the content and the environment based on predefined rules. Works with file paths, strings, and environment records. Used to verify file presence before processing, retrieve configuration data, and apply environment-specific transformations during build steps.",
+      "description_length": 459,
+      "index": 1,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "P4pp.Eval.Web",
+      "description": "Checks if a web resource is available by its URL, retrieves its content, and processes it with environment variables to produce updated content and state. Operates on strings and an environment record representing configuration or session data. Used to validate API endpoints, fetch and transform web pages, and manage dynamic content generation.",
+      "description_length": 346,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "P4pp.Ast",
+      "description": "Provides operations for manipulating abstract syntax tree nodes, including binary operations, unary operations, and conditional tests. Works with custom types representing expressions, logical conditions, and program terms. Used to construct and analyze parsed code structures during compiler front-end processing.",
+      "description_length": 314,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "P4pp.Bake",
+      "description": "Provides string constants for P4 core and V1 model definitions. Works with raw string data representing P4 language syntax. Used to embed standardized P4 code snippets in compiler or runtime configurations.",
+      "description_length": 206,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "P4pp.Eval",
+      "description": "Checks if a named value exists in the current environment, loads its content, and preprocesses a string with environment variables, returning updated content and environment state. Works with strings, environments represented as associative lists, and handles variable substitution and conditional logic. Used to dynamically load and process configuration snippets or script fragments during runtime.",
+      "description_length": 400,
+      "index": 5,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "P4pp.Lexer",
+      "description": "Provides functions to parse input streams into tokens, track line numbers, and manage lexing state. Operates on `Lexing.lexbuf` and `Parser.token` types, supporting recursive and non-recursive lexing strategies. Used to process source code for syntax analysis, handle multi-line input, and extract string literals during compilation.",
+      "description_length": 333,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "P4pp.Parser",
+      "description": "Parses a stream of tokens into an abstract syntax tree, processing a sequence of terms based on a provided lexer. It operates on a custom token type and a lexing buffer, constructing a list of AST terms. This is used to convert source code into a structured representation for further analysis or execution.",
+      "description_length": 307,
+      "index": 7,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "P4pp.Prelexer",
+      "description": "Handles lexical processing for OCaml source code, providing functions to emit tokens, manage line tracking, and parse comments. Operates on lexing buffers, strings, and line counters to support custom lexing workflows. Used to preprocess input before standard lexing, enabling inline comment handling and token emission with precise line tracking.",
+      "description_length": 347,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "p4pp",
+      "description": "Processes P4 language source code by expanding macros, handling include directives, and resolving conditional compilation blocks. Operates on abstract syntax trees and raw string input, supporting P4 version 1.0.1 and later. Used to prepare P4 programs for compilation by eliminating preprocessor directives and generating normalized source code.",
+      "description_length": 346,
+      "index": 9,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "P4pp",
+      "description": "Manages P4 language processing by constructing and analyzing abstract syntax trees, handling string embeddings, and enabling dynamic configuration expansion. Supports tokenization, lexing, and parsing of source code, with operations on AST nodes, lexing buffers, and environment variables. Processes P4 programs by converting raw input into structured representations, substituting environment values, and managing comment and token metadata. Enables compiler front-end tasks such as syntax validation, code transformation, and configuration injection.",
+      "description_length": 552,
+      "index": 10,
+      "embedding_norm": 1.0
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 11,
+    "meaningful_modules": 11,
+    "filtered_empty_modules": 0,
+    "retention_rate": 1.0
+  },
+  "statistics": {
+    "max_description_length": 552,
+    "min_description_length": 197,
+    "avg_description_length": 346.09090909090907,
+    "embedding_file_size_mb": 0.040401458740234375
+  }
+}

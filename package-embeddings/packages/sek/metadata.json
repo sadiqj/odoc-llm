@@ -1,0 +1,266 @@
+{
+  "package": "sek",
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 1024,
+  "total_modules": 35,
+  "creation_timestamp": "2025-06-18T16:41:38.849549",
+  "modules": [
+    {
+      "module_path": "Sek.Make.Ephemeral.Iter",
+      "description": "The module provides operations for navigating, modifying, and manipulating iterators over ephemeral sequences, focusing on index-based traversal, element access, and segment retrieval in forward and backward directions. It works with ephemeral sequences and their associated iterators, enabling direct element modification and state management during iteration. Use cases include efficient data stream processing, dynamic sequence manipulation, and structured access to segmented data.",
+      "description_length": 485,
+      "index": 0,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.Make.Persistent.Iter",
+      "description": "The module provides low-level operations for navigating and manipulating iterators over persistent sequences, including creating, resetting, copying, and moving through elements or segments. It works with immutable data structures, using an iterator type that tracks positions within sequences to enable efficient traversal without modifying the underlying data. This is particularly useful in scenarios requiring sequential access to large or immutable datasets, such as processing log files or streaming data.",
+      "description_length": 511,
+      "index": 1,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sek.Make.Emulated.Array",
+      "description": "This module offers functional operations for element-wise transformations, indexing, slicing, and iteration over arrays of arbitrary elements, alongside folding, mapping, and predicate checks. It includes sorting capabilities and dual-argument functions like `for_all` and `for_all2`, facilitating tasks such as data validation, sequence conversions, and complex array manipulations in functional programming workflows.",
+      "description_length": 419,
+      "index": 2,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.Make.Emulated.List",
+      "description": "This module offers a suite of list operations including construction, transformation (map, filter, fold), querying (element checking, searching), and sorting, all tailored for persistent, immutable data structures. It works with lists represented as 'a t, enabling efficient, version-controlled modifications while supporting arbitrary element types and association lists. Use cases include functional programming workflows, data processing pipelines, and scenarios requiring immutability with optimized updates.",
+      "description_length": 512,
+      "index": 3,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sek.Make.Emulated.Queue",
+      "description": "Provides operations to manage a queue where elements are added to the back and removed from the front, including adding, removing, inspecting, and iterating over elements. Works with a custom queue type wrapped around an ephemeral sequence, supporting both imperative and functional styles. Used for processing elements in FIFO order, such as task scheduling or breadth-first traversal.",
+      "description_length": 386,
+      "index": 4,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.Make.Emulated.Stack",
+      "description": "Provides operations to manipulate a stack structure where elements are added and removed from the front. Works with a custom type 'a t, which wraps an ephemeral sequence, and includes functions for pushing, popping, inspecting, and iterating over elements. Supports converting between stacks and sequences, and performing folds and iterations over stack contents.",
+      "description_length": 363,
+      "index": 5,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.SupplyDefault.Ephemeral.Iter",
+      "description": "The module enables precise control over indexed traversal and manipulation of ephemeral sequences through iterator operations, including creation, resetting, and movement. It supports direct access to writable segments and in-place modifications while managing shared data structures efficiently. Use cases include optimizing performance for large datasets and handling dynamic sequence updates without full replication.",
+      "description_length": 420,
+      "index": 6,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.SupplyDefault.Persistent.Iter",
+      "description": "Operations include navigating, manipulating, and querying iterators over persistent sequences, supporting position-based traversal and element access. It utilizes iterator types that track positions within sequences, enabling efficient manipulation without altering the original data. This is useful for processing large datasets or functional programming scenarios requiring controlled iteration over immutable structures.",
+      "description_length": 423,
+      "index": 7,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.SupplyDefault.Emulated.Array",
+      "description": "This module offers functional array manipulations, including creation, transformation, and traversal, with support for indexing, slicing, and higher-order operations like mapping and folding. It handles arrays of arbitrary elements and provides paired functions for parallel processing of one or two arrays, such as predicate checks and combined transformations. Use cases include data processing pipelines, parallel array operations, and functional-style data manipulation.",
+      "description_length": 474,
+      "index": 8,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.SupplyDefault.Emulated.List",
+      "description": "This module provides persistent list operations including mapping, filtering, folding, and sorting, working with lists represented as immutable sequences to enable efficient modifications. It supports arbitrary type lists and associative structures, facilitating use cases like data transformation pipelines or functional programming workflows where immutability is critical. Specialized functions for key-value pair handling and predicate-based queries further enhance its utility in structured data processing.",
+      "description_length": 512,
+      "index": 9,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sek.SupplyDefault.Emulated.Queue",
+      "description": "Provides operations to manage a queue where elements are added to the back and removed from the front, including adding, removing, inspecting, and iterating over elements. Works with a custom queue type wrapped around an ephemeral sequence, supporting both imperative and functional style operations. Used to process elements in FIFO order, efficiently transfer elements between queues, and convert between queues and sequences.",
+      "description_length": 428,
+      "index": 10,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sek.SupplyDefault.Emulated.Stack",
+      "description": "Provides operations to manipulate a stack structure where elements are added and removed from the front. Works with a custom type 'a t, which wraps an ephemeral sequence, and includes functions for pushing, popping, inspecting, and iterating over elements. Used to manage temporary data in LIFO order, such as tracking function call states or parsing nested structures.",
+      "description_length": 369,
+      "index": 11,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.Make.Ephemeral",
+      "description": "provides index-based navigation and modification of ephemeral sequences through iterator operations, supporting forward and backward traversal, element access, and segment extraction. It handles mutable sequences and their iterators, allowing in-place element updates and controlled iteration states. Users can process data streams dynamically, manipulate sequences in real time, and access segmented portions efficiently. Examples include updating elements during iteration, extracting sub-sequences, and managing traversal direction.",
+      "description_length": 535,
+      "index": 12,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.Make.Persistent",
+      "description": "provides a set of low-level tools for working with immutable sequences through iterator-based access, enabling efficient traversal and manipulation without altering the original data. It defines an iterator type that tracks positions within sequences, supporting operations like creation, resetting, and movement across elements. This allows for sequential processing of large datasets, such as reading lines from a log file or iterating over a versioned data structure. Key operations include element access, segment navigation, and iterator duplication, all while maintaining immutability.",
+      "description_length": 591,
+      "index": 13,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.Make.Emulated",
+      "description": "provides functional and imperative operations for array, list, queue, and stack manipulations, supporting element-wise transformations, folding, filtering, and traversal across various data structures. It includes custom types for arrays, lists, queues, and stacks, with operations like map, fold, push, pop, enqueue, dequeue, and element inspection. Tasks such as data validation, sequence conversion, and workflow automation can be performed using these structures. Examples include sorting lists, processing elements in FIFO order, and managing immutable data with efficient updates.",
+      "description_length": 586,
+      "index": 14,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.Make.Segment",
+      "description": "Provides operations to validate and check the emptiness of array segments, and to iterate over elements in specified directions. Works with array segments represented as triples of an array, start index, and length. Enables processing of elements in parallel from two segments of equal size or sequential traversal of a single segment.",
+      "description_length": 335,
+      "index": 15,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.Ephemeral.Iter",
+      "description": "The module provides operations for creating, navigating, and modifying iterators over ephemeral sequences, enabling efficient traversal and manipulation of data structures with support for forward and backward movement. It handles tasks like element validation, state adjustment, and segment access, allowing direct modification of sequence elements and dynamic iterator control. Use cases include processing streaming data, implementing custom traversal logic, or managing complex sequence transformations with consistent performance characteristics.",
+      "description_length": 551,
+      "index": 16,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.SupplyDefault.Ephemeral",
+      "description": "provides indexed traversal and modification of mutable sequences with efficient shared data handling. it supports creating, resetting, and moving through sequences, along with direct access to writable segments for in-place updates. operations include dynamic sequence manipulation and performance-optimized handling of large datasets. examples include real-time data updates and efficient memory usage during sequence transformations.",
+      "description_length": 435,
+      "index": 17,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.SupplyDefault.Persistent",
+      "description": "Provides persistent sequence operations through iterator-based navigation, manipulation, and querying. Key data types include iterators that track positions and sequences that remain unchanged during operations. Users can traverse, access elements, and transform data without modifying the original structure, making it suitable for handling large or immutable datasets. Examples include iterating over elements in order, extracting specific positions, and building new sequences from existing ones.",
+      "description_length": 499,
+      "index": 18,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.SupplyDefault.Emulated",
+      "description": "offers functional array, list, queue, and stack operations with custom types and immutable or ephemeral sequences, enabling data processing, transformation, and ordered element management. It includes array mapping, list persistence, queue FIFO operations, and stack LIFO manipulations, along with higher-order functions for parallel processing and structured data handling. Users can build data pipelines, manage stateful operations, and perform efficient transformations on sequences. Examples include filtering lists, combining arrays in parallel, dequeuing elements, and tracking nested structures with stacks.",
+      "description_length": 614,
+      "index": 19,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.Persistent.Iter",
+      "description": "This module provides operations for creating, navigating, and manipulating iterators over persistent sequences, enabling index-based traversal, element access, and segment retrieval through forward and backward movement. It works with persistent sequences and iterator types ('a iter) to support efficient, immutable data processing. Use cases include scenarios requiring non-destructive iteration over large or complex data structures, such as functional programming workflows or data transformation pipelines.",
+      "description_length": 511,
+      "index": 20,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.Emulated.Array",
+      "description": "This module offers functional array manipulation, including creation, transformation, and iteration, with support for indexing, slicing, and parallel operations on arrays of arbitrary elements. It enables tasks like data processing and sequence conversion through functions for folding, mapping, and sorting, while handling array-to-sequence transformations efficiently. Specific use cases include batch data modification, predicate-based filtering, and structured array comparisons.",
+      "description_length": 483,
+      "index": 21,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.Emulated.List",
+      "description": "The module provides a suite of operations for manipulating persistent, immutable lists, including construction, transformation, and traversal tasks like mapping, filtering, folding, and sorting. It works with arbitrary-type lists and association lists, offering specialized functions for key-value pair handling, efficient concatenation, and stable sorting. Use cases include data processing pipelines, functional programming scenarios requiring immutability, and applications needing efficient sequence operations with historical state preservation.",
+      "description_length": 550,
+      "index": 22,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sek.Emulated.Queue",
+      "description": "Provides operations to manage a queue where elements are added to the back and removed from the front, including adding, removing, inspecting, and iterating over elements. Works with a custom queue type that wraps an ephemeral sequence, supporting both imperative and functional styles. Used to process elements in FIFO order, such as managing task lists or buffering data streams.",
+      "description_length": 381,
+      "index": 23,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.Emulated.Stack",
+      "description": "Provides operations to manipulate a stack structure where elements are added and removed from the front, including push, pop, top, and clear. Works with a custom type 'a t, which wraps an ephemeral sequence, and supports iteration, folding, and conversion to and from sequences. Used for managing ordered data with LIFO semantics, such as parsing expressions or tracking call contexts.",
+      "description_length": 385,
+      "index": 24,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.SupplyDefault.Segment",
+      "description": "Provides operations to validate, check emptiness, and iterate over array segments in forward or reverse order. Works with triples representing an array, start index, and length. Used to process subarrays efficiently in algorithms requiring controlled traversal or comparison of two subarrays.",
+      "description_length": 292,
+      "index": 25,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.Ephemeral",
+      "description": "provides iterator-based manipulation of mutable sequences, supporting forward and backward traversal, element modification, and dynamic state control. It defines types for iterators and sequence segments, with operations for navigation, validation, and transformation. Users can process streaming data, adjust sequence states on the fly, or implement custom traversal logic. Examples include updating elements during iteration or extracting specific segments for further processing.",
+      "description_length": 482,
+      "index": 26,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.Persistent",
+      "description": "provides a set of tools for working with immutable sequences through iterator-based operations, allowing efficient traversal and manipulation without modifying the original data. It supports index-based access, forward and backward movement, and segment extraction using types like 'a iter. Users can process large datasets or transform data in functional pipelines while maintaining immutability. Examples include iterating over a sequence to compute aggregates or extracting sub-sequences for further processing.",
+      "description_length": 514,
+      "index": 27,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sek.Emulated",
+      "description": "offers functional array, list, queue, and stack operations with custom types, enabling data processing, sequence transformations, and ordered data management. It includes array manipulation with indexing and parallel operations, list handling with immutability and key-value support, queue management for FIFO processing, and stack operations for LIFO workflows. Tasks like filtering, sorting, and converting between data structures are supported through high-level functions. Examples include batch data filtering, task scheduling, and expression parsing with preserved state.",
+      "description_length": 577,
+      "index": 28,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.Segment",
+      "description": "Provides operations to validate and check the emptiness of array segments, and to iterate over elements in specified directions. Works with segments represented as triples of an array, start index, and length. Enables processing of array subsections in forward or reverse order, and synchronized traversal of two segments of equal size.",
+      "description_length": 336,
+      "index": 29,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.Make",
+      "description": "Provides functions to configure chunk capacity, manage slot overwriting in ephemeral sequences, set a compact representation threshold for persistent sequences, and enable iterator validity checks. Operates with integers and boolean flags to control low-level data structure behavior. Used to optimize memory usage, ensure data integrity, and prevent invalid iterator usage in sequence implementations.",
+      "description_length": 402,
+      "index": 30,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek.DefaultSettings",
+      "description": "Provides functions to configure chunk capacities, control slot overwriting in ephemeral sequences, set a compact representation threshold for persistent sequences, and enable iterator validity checks. Operates with integers and boolean flags to customize behavior. Used to define default parameters for persistent and ephemeral sequence implementations.",
+      "description_length": 353,
+      "index": 31,
+      "embedding_norm": 0.9999999403953552
+    },
+    {
+      "module_path": "Sek.SupplyDefault",
+      "description": "combines indexed mutable sequence manipulation with persistent iterator-based operations and array-like functional transformations. it supports direct modification of mutable sequences, immutable traversal of persistent data, and efficient subarray processing through indexed ranges. users can perform in-place updates, build new sequences from existing ones, and process subarrays in both directions. examples include real-time data updates, safe sequence transformations, and parallel array operations.",
+      "description_length": 504,
+      "index": 32,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "sek",
+      "description": "Provides operations for pushing and popping elements from both ends, concatenating, splitting, and randomly accessing elements. Works with chunk sequences, which are implemented as fixed-capacity array chunks for efficient memory management. Used for handling large datasets with frequent insertions and accesses at arbitrary positions.",
+      "description_length": 336,
+      "index": 33,
+      "embedding_norm": 1.0
+    },
+    {
+      "module_path": "Sek",
+      "description": "Checks for invalid iterator states during traversal, raising an exception when an invalidated iterator is used. Operates on iterator objects and boolean flags to control validation behavior. Ensures safe iteration over collections by enforcing validity checks at runtime.",
+      "description_length": 271,
+      "index": 34,
+      "embedding_norm": 0.9999999403953552
+    }
+  ],
+  "filtering": {
+    "total_modules_in_package": 41,
+    "meaningful_modules": 35,
+    "filtered_empty_modules": 6,
+    "retention_rate": 0.8536585365853658
+  },
+  "statistics": {
+    "max_description_length": 614,
+    "min_description_length": 271,
+    "avg_description_length": 452.14285714285717,
+    "embedding_file_size_mb": 0.1276111602783203
+  }
+}
