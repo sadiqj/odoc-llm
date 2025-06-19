@@ -276,7 +276,7 @@ Exposes OCaml module search functionality through the Model Context Protocol (MC
 
 1. **FastMCP Framework**: Uses FastMCP for simplified server implementation with automatic schema generation
 2. **HTTP SSE Transport**: Provides HTTP-based Server-Sent Events endpoint instead of stdio
-3. **Tool Exposure**: Provides `find_ocaml_packages` tool for semantic search using decorators
+3. **Tool Exposure**: Provides tools for semantic search, package summaries, and opam compatibility testing using decorators
 4. **Lazy Loading**: Initializes search engine only when first query is made
 5. **Type-Safe API**: Uses Python type hints and docstrings for automatic tool schema generation
 6. **Extensible Design**: Easy to add new tools using `@mcp.tool()` decorator
@@ -290,6 +290,7 @@ uv run python mcp_server.py
 # Test the functionality directly (without MCP protocol)
 uv run python mcp_server.py --test "HTTP server"
 uv run python mcp_server.py --test --summary=lwt
+uv run python mcp_server.py --test opam base core
 ```
 
 ### HTTP SSE Endpoint
@@ -313,6 +314,12 @@ The server runs on HTTP with Server-Sent Events transport:
 - **Input**: `package_name` (string) - Name of the OCaml package
 - **Output**: Package name, version, and 3-4 sentence description
 
+#### test_opam_compatibility
+- **Description**: Test opam package compatibility for a list of packages
+- **Input**: `packages` (list of strings) - List of opam package names to test
+- **Output**: Compatible package versions for the current opam switch
+- **Note**: Requires the current opam switch for the project to be active
+
 ### Claude Desktop Integration
 
 Add to your Claude Desktop configuration:
@@ -332,8 +339,9 @@ Add to your Claude Desktop configuration:
 ### Key Features
 
 - **HTTP SSE Transport**: Server-Sent Events over HTTP instead of stdio
-- **Dual Search Capabilities**: Semantic search across 137,000+ module embeddings plus package summaries
+- **Triple Capabilities**: Semantic search, package summaries, and opam compatibility testing
 - **Package Summaries**: Instant access to concise 3-4 sentence package descriptions
+- **Opam Integration**: Test package compatibility with current opam switch
 - **FastMCP Framework**: Simplified development with automatic schema generation
 - **Type Safety**: Automatic validation using Python type hints
 - **Low Latency**: Reuses existing search infrastructure
@@ -345,7 +353,8 @@ Add to your Claude Desktop configuration:
 
 ### Recent Project Developments
 - **Package Description Generation**: Added tool for generating concise package summaries from README content
-- **MCP Server Integration**: Implemented FastMCP server with both semantic search and package summary tools
+- **MCP Server Integration**: Implemented FastMCP server with semantic search, package summary, and opam compatibility tools
+- **Opam Compatibility Testing**: Added tool to test package compatibility with current opam switch
 - **Directory Structure Standardization**: Unified naming conventions using hyphens throughout
 - **Code Cleanup**: Removed over-engineered infrastructure (progress_tracker.py, error_handling.py)
 - **Tool Separation**: Split module and package description generation into focused, specialized tools
