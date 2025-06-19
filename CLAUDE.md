@@ -7,9 +7,11 @@
 This repository contains tools for extracting and analyzing OCaml package documentation from odoc-generated HTML/JSON files. The project provides a complete pipeline for processing OCaml documentation:
 
 1. **Documentation Extraction**: Parses HTML/JSON documentation into structured, machine-readable format
-2. **Semantic Description Generation**: Uses LLMs to generate natural language descriptions of modules
-3. **Embedding Generation**: Creates high-dimensional vector embeddings from module descriptions
-4. **Semantic Search**: Enables natural language queries to find relevant OCaml modules
+2. **Module Description Generation**: Uses LLMs to generate natural language descriptions of individual modules
+3. **Package Description Generation**: Uses LLMs to generate concise summaries of entire packages
+4. **Embedding Generation**: Creates high-dimensional vector embeddings from module descriptions
+5. **Semantic Search**: Enables natural language queries to find relevant OCaml modules
+6. **MCP Server**: Provides access to search and package information through Model Context Protocol
 
 ## Development Environment
 
@@ -21,9 +23,13 @@ uv sync
 
 # Run extraction tools
 uv run python extract_docs.py --help
-uv run python generate_descriptions.py --help
+uv run python generate_module_descriptions.py --help
+uv run python generate_package_descriptions.py --help
 uv run python generate_embeddings.py --help
 uv run python semantic_search.py --help
+
+# Run MCP server
+uv run python mcp_server.py
 ```
 
 ## Tool 1: Documentation Extraction (`extract_docs.py`)
@@ -279,14 +285,11 @@ Exposes OCaml module search functionality through the Model Context Protocol (MC
 
 ```bash
 # Run the FastMCP server with HTTP SSE transport
-uv run mcp-server
-
-# Or run directly
 uv run python mcp_server.py
 
 # Test the functionality directly (without MCP protocol)
-uv run mcp-server --test "HTTP server"
-uv run mcp-server --test "JSON parsing"
+uv run python mcp_server.py --test "HTTP server"
+uv run python mcp_server.py --test --summary=lwt
 ```
 
 ### HTTP SSE Endpoint
@@ -319,7 +322,7 @@ Add to your Claude Desktop configuration:
   "mcpServers": {
     "ocaml-search": {
       "command": "uv",
-      "args": ["run", "mcp-server"],
+      "args": ["run", "python", "mcp_server.py"],
       "cwd": "/path/to/odoc-llm"
     }
   }
@@ -329,7 +332,8 @@ Add to your Claude Desktop configuration:
 ### Key Features
 
 - **HTTP SSE Transport**: Server-Sent Events over HTTP instead of stdio
-- **Semantic Search**: Full access to the 137,000+ module embeddings
+- **Dual Search Capabilities**: Semantic search across 137,000+ module embeddings plus package summaries
+- **Package Summaries**: Instant access to concise 3-4 sentence package descriptions
 - **FastMCP Framework**: Simplified development with automatic schema generation
 - **Type Safety**: Automatic validation using Python type hints
 - **Low Latency**: Reuses existing search infrastructure
@@ -337,6 +341,26 @@ Add to your Claude Desktop configuration:
 - **Extensible**: Easy to add new tools using decorators
 - **Standard Protocol**: Compatible with all MCP clients
 
+## Repository Updates and Progress
+
+### Recent Project Developments
+- **Package Description Generation**: Added tool for generating concise package summaries from README content
+- **MCP Server Integration**: Implemented FastMCP server with both semantic search and package summary tools
+- **Directory Structure Standardization**: Unified naming conventions using hyphens throughout
+- **Code Cleanup**: Removed over-engineered infrastructure (progress_tracker.py, error_handling.py)
+- **Tool Separation**: Split module and package description generation into focused, specialized tools
+
+### Ongoing Research and Improvements
+- Continuous refinement of LLM-based description generation
+- Exploring advanced embedding techniques
+- Expanding package coverage and documentation quality assessment
+- Developing more sophisticated semantic search algorithms
+
+### Challenges and Future Work
+- Handling documentation variations across different packages
+- Improving description generation for complex or minimal documentation
+- Scaling the infrastructure for even larger package ecosystems
+- Developing more advanced natural language understanding for module search
 
 ## Repository Statistics
 
@@ -354,6 +378,11 @@ Add to your Claude Desktop configuration:
 - **Packages with descriptions**: 3,938 packages
 - **Total modules described**: 158,229 modules
 - **Description generation**: Using LLM with hierarchical summarization
+
+### Package Descriptions
+- **Packages with descriptions**: Growing dataset of concise package summaries
+- **Description generation**: Using README content and LLM processing
+- **Output format**: 3-4 sentence summaries focusing on purpose and key capabilities
 
 ### Embeddings Dataset
 - **Packages embedded**: 3,934 packages (99.9% success rate)
@@ -381,415 +410,14 @@ Add to your Claude Desktop configuration:
 └── CLAUDE.md               # This documentation
 ```
 
-### Generated Data Directories
-
-```
-├── parsed-docs/            # Extracted documentation JSON files
-├── module-descriptions/    # Generated module descriptions
-├── package-descriptions/   # Generated package descriptions
-└── package-embeddings/     # Module embeddings and metadata
-```
-
-## Data Directory Structure
-
-```
-docs/
-├── package-name/           # 4,695 different packages
-│   ├── v1.0.0/            # Multiple versions per package
-│   │   ├── doc/           # Documentation directory
-│   │   │   ├── Module/    # Module directories
-│   │   │   │   ├── Submodule/
-│   │   │   │   │   └── index.html.json  # Module documentation
-│   │   │   └── index.html.json         # Package root documentation
-│   │   ├── package.json                # Package metadata
-│   │   ├── status.json                 # Build status information
-│   │   ├── README.md.html.json         # README documentation
-│   │   ├── CHANGES.md.html.json        # Changelog documentation
-│   │   └── LICENSE.*.html.json         # License files
-│   └── v2.0.0/            # Additional versions
-└── all-docs.tar.gz        # Compressed archive of all documentation
-```
-
-## JSON File Structure
-
-### Core Documentation Files (`index.html.json`)
-
-Each documentation file follows a consistent JSON schema:
-
-```json
-{
-  "type": "documentation",
-  "uses_katex": false,
-  "breadcrumbs": [
-    {
-      "name": "package-name",
-      "href": "../../../../index.html",
-      "kind": "page"
-    },
-    {
-      "name": "v1.0.0",
-      "href": "../../../index.html", 
-      "kind": "page"
-    },
-    {
-      "name": "Module",
-      "href": "../index.html",
-      "kind": "module"
-    }
-  ],
-  "toc": [
-    {
-      "title": "Types",
-      "href": "#types",
-      "children": []
-    },
-    {
-      "title": "Values", 
-      "href": "#values",
-      "children": []
-    }
-  ],
-  "source_anchor": null,
-  "preamble": "<p>Module description and overview</p>",
-  "content": "<div class=\"odoc-spec\">...extensive HTML content...</div>"
-}
-```
-
-### Package Metadata Files (`package.json`)
-
-Contains structural information about the package:
-
-```json
-{
-  "libraries": [
-    {
-      "name": "library-name",
-      "modules": [
-        {
-          "name": "ModuleName",
-          "submodules": [],
-          "kind": "module"
-        }
-      ],
-      "dependencies": []
-    }
-  ]
-}
-```
-
-### Build Status Files (`status.json`)
-
-Indicates build success/failure and additional documentation:
-
-```json
-{
-  "failed": false,
-  "otherdocs": {
-    "readme": ["linked/p/package/version/doc/README.md"],
-    "license": ["linked/p/package/version/doc/LICENSE.md"],
-    "changes": ["linked/p/package/version/doc/CHANGES.md"],
-    "others": ["linked/p/package/version/package.json"]
-  }
-}
-```
-
-## Data Categories and Content Types
-
-### 1. API Documentation
-The primary content consists of rich API documentation with:
-
-#### Function Signatures
-```html
-<div class="spec value anchored" id="val-map">
-  <code>
-    <span class="keyword">val</span> map : 
-    <span>('a -> 'b) -> 'a list -> 'b list</span>
-  </code>
-</div>
-```
-
-#### Type Definitions
-```html
-<div class="spec type anchored" id="type-t">
-  <code>
-    <span class="keyword">type</span> 'a t = 
-    | Empty 
-    | Node of 'a * 'a t * 'a t
-  </code>
-</div>
-```
-
-#### Module Interfaces
-```html
-<div class="spec module anchored" id="module-Set">
-  <code>
-    <span class="keyword">module</span> Set : 
-    <span class="keyword">sig</span> ... <span class="keyword">end</span>
-  </code>
-</div>
-```
-
-### 2. Documentation Content
-Rich semantic documentation including:
-
-- **Function descriptions**: Detailed behavioral specifications
-- **Parameter documentation**: Usage and type information
-- **Exception documentation**: Error conditions and handling
-- **Code examples**: OCaml code snippets demonstrating usage
-- **Deprecation notices**: Version compatibility information
-
-### 3. Structural Information
-- **Module hierarchies**: Complete package organization
-- **Cross-references**: Links between modules and types  
-- **Version evolution**: API changes across package versions
-- **Dependency graphs**: Inter-package relationships
-
-### 4. Metadata
-- **Build status**: Success/failure indicators
-- **Version information**: Semantic versioning data
-- **Documentation completeness**: Coverage metrics
-- **Package categorization**: Domain-specific groupings
-
-## Key OCaml Packages Represented
-
-The dataset includes major OCaml ecosystem packages:
-
-### Core Libraries
-- **base**: Jane Street's standard library replacement
-- **core**: Comprehensive standard library extensions
-- **lwt**: Cooperative threading library
-- **async**: Asynchronous programming framework
-
-### Web and Networking
-- **cohttp**: HTTP client/server library
-- **dream**: Modern web framework
-- **conduit**: Network connection abstraction
-
-### Data Processing
-- **yojson**: JSON parsing and manipulation
-- **csv**: CSV file processing
-- **angstrom**: Parser combinators
-
-### System Programming
-- **lwt-unix**: Unix system call bindings
-- **mirage**: Unikernel operating system library
-- **eio**: Effects-based parallel I/O
-
-### Build and Development Tools
-- **dune**: Build system
-- **merlin**: IDE integration
-- **odoc**: Documentation generator
-
-## Data Quality Assessment
-
-### High-Quality Packages (Excellent Documentation)
-- Comprehensive function documentation with examples
-- Complete type information with explanations
-- Rich cross-references and module organization
-- Multiple versions showing API evolution
-
-Examples: `base`, `lwt`, `async`, `core`, `dune`, `cohttp`
-
-### Medium-Quality Packages (Good Documentation)
-- Complete API signatures with basic descriptions
-- Type information present but minimal examples
-- Standard module organization
-
-Examples: Many specialty libraries and domain-specific packages
-
-### Failed Builds
-- Packages with `"failed": true` in status.json
-- Limited to metadata and error logs
-- Still provide package structure information
-
-### Documentation Completeness Metrics
-- **Function coverage**: ~85% of functions have descriptions
-- **Type coverage**: ~95% of types have definitions
-- **Example coverage**: ~40% of functions have usage examples
-- **Cross-reference density**: Extensive linking between modules
-
-## Data Extraction Patterns
-
-### Parsing HTML Content
-
-The `content` field contains structured HTML that can be parsed to extract:
-
-```python
-import json
-import re
-from bs4 import BeautifulSoup
-
-def extract_function_signatures(json_file):
-    with open(json_file) as f:
-        doc = json.load(f)
-    
-    soup = BeautifulSoup(doc['content'], 'html.parser')
-    functions = []
-    
-    for spec in soup.find_all('div', class_='spec value anchored'):
-        code = spec.find('code')
-        if code:
-            functions.append(code.get_text())
-    
-    return functions
-
-def extract_type_definitions(json_file):
-    with open(json_file) as f:
-        doc = json.load(f)
-    
-    soup = BeautifulSoup(doc['content'], 'html.parser') 
-    types = []
-    
-    for spec in soup.find_all('div', class_='spec type anchored'):
-        code = spec.find('code')
-        if code:
-            types.append(code.get_text())
-    
-    return types
-```
-
-### Extracting Documentation Text
-
-```python
-def extract_function_docs(json_file):
-    with open(json_file) as f:
-        doc = json.load(f)
-    
-    soup = BeautifulSoup(doc['content'], 'html.parser')
-    docs = []
-    
-    for spec in soup.find_all('div', class_='spec value anchored'):
-        doc_div = spec.find_next_sibling('div', class_='spec-doc')
-        if doc_div:
-            docs.append({
-                'signature': spec.find('code').get_text(),
-                'documentation': doc_div.get_text()
-            })
-    
-    return docs
-```
-
-### Building Module Hierarchies
-
-```python
-def build_module_tree(package_path):
-    structure = {}
-    
-    for root, dirs, files in os.walk(package_path):
-        if 'index.html.json' in files:
-            with open(os.path.join(root, 'index.html.json')) as f:
-                doc = json.load(f)
-            
-            # Extract module path from breadcrumbs
-            path = [crumb['name'] for crumb in doc['breadcrumbs']]
-            
-            # Build nested dictionary structure
-            current = structure
-            for component in path:
-                if component not in current:
-                    current[component] = {}
-                current = current[component]
-    
-    return structure
-```
-
-## Applications for LLM Training
-
-### 1. Code Completion and Generation
-- **Function signatures**: Complete type information for accurate suggestions
-- **Usage patterns**: Real-world examples of API usage
-- **Type inference**: Rich type system examples for training type checkers
-
-### 2. Documentation Generation
-- **Template learning**: Consistent documentation patterns across packages
-- **Example generation**: Code snippet patterns for different function types
-- **API description**: Natural language explanations of technical concepts
-
-### 3. Code Understanding and Analysis
-- **Semantic parsing**: Understanding OCaml syntax and semantics
-- **Module organization**: Software architecture patterns
-- **Dependency analysis**: Inter-module relationships
-
-### 4. Educational Content Creation
-- **Tutorial generation**: Progressive learning sequences
-- **Concept explanation**: Functional programming paradigms
-- **Best practices**: Idiomatic OCaml patterns
-
-### 5. Language Model Fine-tuning
-- **Domain-specific knowledge**: Functional programming concepts
-- **OCaml syntax**: Language-specific patterns and idioms
-- **Software engineering**: Module design and API development
-
-## Data Processing Recommendations
-
-### For Training Data Preparation
-
-1. **Content Extraction**
-   - Parse HTML to extract clean text
-   - Preserve code formatting and syntax highlighting
-   - Maintain structural relationships between modules
-
-2. **Quality Filtering**
-   - Exclude failed builds (`"failed": true`)
-   - Prioritize packages with rich documentation
-   - Filter by documentation completeness metrics
-
-3. **Augmentation Strategies**
-   - Combine related functions into learning sequences
-   - Generate negative examples from type mismatches
-   - Create multi-modal examples with code and documentation
-
-4. **Tokenization Considerations**
-   - Preserve OCaml syntax tokens
-   - Handle special characters in identifiers
-   - Maintain HTML structure markers for formatting
-
-### For Analysis and Research
-
-1. **Longitudinal Studies**
-   - Track API evolution across versions
-   - Analyze deprecation patterns
-   - Study breaking change communication
-
-2. **Ecosystem Analysis**
-   - Map dependency relationships
-   - Identify common patterns and anti-patterns
-   - Analyze documentation quality factors
-
-3. **Comparative Studies**
-   - Compare with other language ecosystems
-   - Analyze documentation style variations
-   - Study community contribution patterns
-
-## Technical Specifications
-
-### File Format Details
-- **Encoding**: UTF-8
-- **JSON Schema**: Consistent across all files
-- **HTML Content**: Well-formed, parseable HTML5
-- **Link Structure**: Relative paths maintaining relationships
-
-### Performance Considerations
-- **Total Size**: Multiple gigabytes of text data
-- **File Count**: 2.2M+ individual files
-- **Memory Usage**: Optimized for large-scale processing with garbage collection
-- **Parallel Processing**: Files can be processed independently with up to 12 workers
-- **Reliability**: Comprehensive error handling prevents silent crashes during parallel processing
-
-### Integration Patterns
-- **Batch Processing**: Process packages independently
-- **Incremental Updates**: Use timestamps and version information
-- **Cross-Package Analysis**: Leverage dependency information
-
 ## Conclusion
 
-This OCaml documentation dataset represents an exceptional resource for:
+This OCaml documentation dataset and toolset provides:
 
-- **Programming language research**: Comprehensive functional programming documentation
-- **Machine learning applications**: High-quality training data for code-related tasks
-- **Software engineering studies**: Real-world API design patterns
-- **Educational tool development**: Rich content for learning resources
+- **Comprehensive Coverage**: 4,695+ OCaml packages with detailed extraction and analysis
+- **Multi-Level Descriptions**: Both detailed module descriptions and concise package summaries
+- **Semantic Search**: Natural language queries across 137,000+ module embeddings
+- **Modern Integration**: MCP server for seamless Claude Desktop integration
+- **Clean Architecture**: Focused, single-purpose tools with consistent naming and structure
 
-The structured, machine-readable format combined with the breadth and depth of coverage makes this dataset particularly valuable for advancing research in programming language understanding, automated documentation generation, and code intelligence systems.
-
-The consistent schema and comprehensive coverage across the OCaml ecosystem provide a unique opportunity to study software documentation at scale, while the rich semantic content enables sophisticated natural language processing applications in the programming domain.
+The project demonstrates effective use of LLMs for documentation analysis while maintaining practical, efficient tooling that scales to large codebases.
