@@ -65,7 +65,7 @@ Each package generates a JSON file in `parsed-docs/` with:
 - Statistics (total modules, types, values)
 - Documentation sections and code examples
 
-## Tool 2: Description Generator (`generate_descriptions.py`)
+## Tool 2: Module Description Generator (`generate_module_descriptions.py`)
 
 Generates semantic descriptions for OCaml modules using an LLM.
 
@@ -83,19 +83,19 @@ Generates semantic descriptions for OCaml modules using an LLM.
 
 ```bash
 # Generate descriptions for specific package
-uv run python generate_descriptions.py --package base
+uv run python generate_module_descriptions.py --package base
 
 # Generate for first 10 packages
-uv run python generate_descriptions.py --limit 10
+uv run python generate_module_descriptions.py --limit 10
 
 # Use custom LLM endpoint and parallel workers
-uv run python generate_descriptions.py --llm-url http://localhost:8000 --model Qwen/Qwen3-30B-A3B-FP8 --workers 12
+uv run python generate_module_descriptions.py --llm-url http://localhost:8000 --model Qwen/Qwen3-30B-A3B-FP8 --workers 12
 
 # Debug prompts/responses
-uv run python generate_descriptions.py --package base --log-prompts
+uv run python generate_module_descriptions.py --package base --log-prompts
 
 # Test syntax
-uv run python -m py_compile generate_descriptions.py
+uv run python -m py_compile generate_module_descriptions.py
 ```
 
 ### Configuration
@@ -105,6 +105,56 @@ uv run python -m py_compile generate_descriptions.py
 - **Processing**: Excludes Tezos packages and skips already-processed files
 - **Parallel Processing**: Supports up to 12 workers for faster processing
 - **Signal Handling**: Graceful shutdown support for robust operation
+
+## Tool 3: Package Description Generator (`generate_package_descriptions.py`)
+
+Generates concise package descriptions using README content and LLM.
+
+### How it Works
+
+1. **Package Information Extraction**: Reads parsed JSON files and extracts README content
+2. **Content Cleaning**: Removes HTML tags and normalizes whitespace from documentation
+3. **LLM Description Generation**: Uses README content to generate 3-4 sentence package summaries
+4. **Simple Output**: Creates JSON files with package name, version, and description
+5. **Parallel Processing**: Supports multiple workers for efficient batch processing
+
+### Quick Start
+
+```bash
+# Generate description for specific package
+uv run python generate_package_descriptions.py --package lwt
+
+# Generate for first 10 packages
+uv run python generate_package_descriptions.py --limit 10
+
+# Use custom LLM endpoint and parallel workers
+uv run python generate_package_descriptions.py --llm-url http://localhost:8000 --model Qwen/Qwen3-30B-A3B-FP8 --workers 8
+
+# Debug prompts/responses
+uv run python generate_package_descriptions.py --package base --log-prompts
+```
+
+### Configuration
+
+- **LLM Endpoint**: Default expects local OpenAI-compatible server at `http://localhost:8000`
+- **Model**: Default uses `Qwen/Qwen3-30B-A3B-FP8`
+- **Processing**: Skips packages that already have descriptions
+- **Parallel Processing**: Supports up to 8 workers for faster processing
+- **Signal Handling**: Graceful shutdown support for robust operation
+
+### Output Structure
+
+Creates `package-descriptions/` directory with:
+- `{package_name}.json`: Package name, version, and 3-4 sentence description
+
+Example output:
+```json
+{
+  "package": "lwt",
+  "version": "5.9.1", 
+  "description": "Lwt is a concurrent programming library for OCaml that simplifies asynchronous and parallel execution through a promise-based model. It enables efficient handling of I/O operations and background tasks without requiring manual thread management or synchronization. Key features include non-blocking I/O, cooperative multitasking, and support for reactive programming, making it suitable for building scalable networked applications and event-driven systems."
+}
+```
 
 ## Supporting Modules
 
@@ -128,7 +178,7 @@ Handles OCaml-specific version string normalization.
 - Handles special cases like `v0.17.1`, `4.2.1-1`
 - Finds latest version from a list of version strings
 
-## Tool 3: Embedding Generator (`generate_embeddings.py`)
+## Tool 4: Embedding Generator (`generate_embeddings.py`)
 
 Generates high-dimensional embeddings for OCaml module descriptions using a local embedding model server.
 
@@ -176,7 +226,7 @@ Creates `package_embeddings/` directory with:
 - **Storage Efficient**: ~600MB for 137,000+ embeddings using NPZ compression
 - **Quality Assurance**: Validates embeddings, checks for NaN/inf values, ensures normalization
 
-## Tool 4: Semantic Search (`semantic_search.py`)
+## Tool 5: Semantic Search (`semantic_search.py`)
 
 Enables natural language search for OCaml modules using query embeddings and cosine similarity.
 
@@ -212,7 +262,7 @@ uv run python semantic_search.py "async IO" --verbose
 - **Comprehensive Results**: Returns package name, module path, and description
 - **Scalable**: Efficiently searches across 137,000+ module embeddings
 
-## Tool 5: MCP Server (`mcp_server.py`)
+## Tool 6: MCP Server (`mcp_server.py`)
 
 Exposes OCaml module search functionality through the Model Context Protocol (MCP) using FastMCP with HTTP SSE (Server-Sent Events) transport, allowing integration with Claude Desktop and other MCP-compatible clients.
 
@@ -254,6 +304,11 @@ The server runs on HTTP with Server-Sent Events transport:
 - **Description**: Find OCaml packages providing specific functionality
 - **Input**: `functionality` (string) - Natural language description
 - **Output**: Top 5 matching packages with modules and similarity scores
+
+#### get_package_summary
+- **Description**: Get a concise summary of an OCaml package
+- **Input**: `package_name` (string) - Name of the OCaml package
+- **Output**: Package name, version, and 3-4 sentence description
 
 ### Claude Desktop Integration
 
@@ -313,13 +368,14 @@ Add to your Claude Desktop configuration:
 ### Core Files
 
 ```
-├── extract_docs.py           # Documentation extraction from HTML/JSON
-├── generate_descriptions.py  # LLM-based description generation
-├── generate_embeddings.py    # Vector embedding generation
-├── semantic_search.py        # Natural language module search
-├── mcp_server.py            # MCP server for tool access
-├── parse_html.py            # HTML parsing utilities
-├── version_utils.py         # Version handling utilities
+├── extract_docs.py               # Documentation extraction from HTML/JSON
+├── generate_module_descriptions.py  # LLM-based module description generation
+├── generate_package_descriptions.py # LLM-based package description generation
+├── generate_embeddings.py        # Vector embedding generation
+├── semantic_search.py            # Natural language module search
+├── mcp_server.py                  # MCP server for tool access
+├── parse_html.py                  # HTML parsing utilities
+├── version_utils.py               # Version handling utilities
 ├── pyproject.toml          # Project configuration and dependencies
 ├── uv.lock                 # Dependency lock file
 └── CLAUDE.md               # This documentation
@@ -330,6 +386,7 @@ Add to your Claude Desktop configuration:
 ```
 ├── parsed-docs/            # Extracted documentation JSON files
 ├── module-descriptions/    # Generated module descriptions
+├── package-descriptions/   # Generated package descriptions
 └── package_embeddings/     # Module embeddings and metadata
 ```
 
