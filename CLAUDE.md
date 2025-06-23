@@ -341,7 +341,7 @@ Exposes OCaml module search functionality through the Model Context Protocol (MC
 
 1. **FastMCP Framework**: Uses FastMCP for simplified server implementation with automatic schema generation
 2. **HTTP SSE Transport**: Provides HTTP-based Server-Sent Events endpoint instead of stdio
-3. **Tool Exposure**: Provides tools for semantic search, package summaries, and opam compatibility testing using decorators
+3. **Tool Exposure**: Provides tools for semantic search, package summaries, and unified search using decorators
 4. **Lazy Loading**: Initializes search engine only when first query is made
 5. **Type-Safe API**: Uses Python type hints and docstrings for automatic tool schema generation
 6. **Extensible Design**: Easy to add new tools using `@mcp.tool()` decorator
@@ -355,7 +355,6 @@ uv run python mcp_server.py
 # Test the functionality directly (without MCP protocol)
 uv run python mcp_server.py --test "HTTP server"
 uv run python mcp_server.py --test --summary=lwt
-uv run python mcp_server.py --test opam base core
 uv run python mcp_server.py --test "list operations" --packages base lwt
 ```
 
@@ -389,11 +388,6 @@ The server runs on HTTP with Server-Sent Events transport:
 - **Output**: Deduplicated results from both semantic (embedding) and keyword (BM25) search
 - **Note**: Combines comprehensive search methods for maximum coverage
 
-#### test_opam_compatibility
-- **Description**: Test opam package compatibility for a list of packages
-- **Input**: `packages` (list of strings) - List of opam package names to test
-- **Output**: Compatible package versions for the current opam switch
-- **Note**: Requires the current opam switch for the project to be active
 
 ### Claude Desktop Integration
 
@@ -414,10 +408,9 @@ Add to your Claude Desktop configuration:
 ### Key Features
 
 - **HTTP SSE Transport**: Server-Sent Events over HTTP instead of stdio
-- **Quad Capabilities**: Semantic search, unified search, package summaries, and opam compatibility testing
+- **Triple Capabilities**: Semantic search, unified search, and package summaries
 - **Unified Search**: Combines semantic (embedding) and keyword (BM25) search for comprehensive results
 - **Package Summaries**: Instant access to concise 3-4 sentence package descriptions
-- **Opam Integration**: Test package compatibility with current opam switch
 - **FastMCP Framework**: Simplified development with automatic schema generation
 - **Type Safety**: Automatic validation using Python type hints
 - **Low Latency**: Reuses existing search infrastructure
@@ -430,7 +423,7 @@ Add to your Claude Desktop configuration:
 ### Recent Project Developments
 - **Unified Search Implementation**: Added comprehensive search combining semantic similarity and keyword matching through BM25 indexing
 - **BM25 Index Generation**: Built per-package full-text search indexes for fast keyword-based module discovery
-- **Enhanced MCP Server**: Extended with unified search capabilities alongside existing semantic search, package summaries, and opam compatibility
+- **Enhanced MCP Server**: Extended with unified search capabilities alongside existing semantic search and package summaries
 - **Package Description Generation**: Added tool for generating concise package summaries from README content
 - **Directory Structure Standardization**: Unified naming conventions using hyphens throughout
 - **Code Cleanup**: Removed over-engineered infrastructure (progress_tracker.py, error_handling.py)

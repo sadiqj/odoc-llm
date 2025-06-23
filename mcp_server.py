@@ -10,8 +10,6 @@ import json
 import logging
 from pathlib import Path
 from typing import Dict, Any, Optional, List
-import subprocess
-import shlex
 
 from mcp.server.fastmcp import FastMCP
 
@@ -36,17 +34,24 @@ indexes_dir = Path("module-indexes")
 @mcp.tool()
 async def find_ocaml_packages(functionality: str) -> Dict[str, Any]:
     """
-    Find OCaml packages that provide specific functionality.
+    Discover OCaml packages across the entire ecosystem for specific functionality.
     
-    Takes a natural language description of the desired functionality and 
-    returns the top 5 most relevant packages with their modules.
+    Use this when you don't know which packages might contain what you need.
+    This searches across all available packages to find the most relevant ones.
     
     Args:
-        functionality: Natural language description of the desired functionality 
-                      (e.g., 'HTTP server', 'JSON parsing', 'cryptographic hashing')
+        functionality: Describe what you're looking for. Be specific:
+                      - "WebSocket client implementation"
+                      - "Machine learning matrix operations" 
+                      - "CSV file parsing and writing"
+                      - "OAuth2 authentication flow"
+                      - "Image processing and filtering"
     
     Returns:
-        Dictionary containing query and list of matching packages with modules
+        List of packages ranked by relevance, each with:
+        - package: Package name
+        - module: Primary module providing the functionality  
+        - description: What the module does
     """
     global search_engine
     
@@ -71,8 +76,7 @@ async def find_ocaml_packages(functionality: str) -> Dict[str, Any]:
                 {
                     "package": result["package"],
                     "module": result["module_path"],
-                    "description": result["description"],
-                    "similarity": round(result["similarity_score"], 4)
+                    "description": result["description"]
                 }
                 for result in results
             ]
@@ -87,16 +91,21 @@ async def find_ocaml_packages(functionality: str) -> Dict[str, Any]:
 @mcp.tool()
 async def get_package_summary(package_name: str) -> Dict[str, Any]:
     """
-    Get a concise summary of an OCaml package.
+    Get a concise overview of what an OCaml package does.
     
-    Returns a 3-4 sentence description of what the package does, its main purpose,
-    key capabilities, and practical use cases.
+    Provides a 3-4 sentence summary explaining the package's purpose, main features,
+    and typical use cases. Helpful for understanding a package before using it.
     
     Args:
-        package_name: Name of the OCaml package (e.g., 'lwt', 'base', 'cohttp')
+        package_name: The OCaml package name you want to learn about:
+                     - 'lwt' (asynchronous programming)
+                     - 'base' (alternative standard library)  
+                     - 'cohttp' (HTTP client/server)
+                     - 'cmdliner' (command-line interfaces)
+                     - 'yojson' (JSON processing)
     
     Returns:
-        Dictionary containing package name, version, and description
+        Package name, version, and description explaining what it does
     """
     try:
         description_file = package_descriptions_dir / f"{package_name}.json"
@@ -121,97 +130,35 @@ async def get_package_summary(package_name: str) -> Dict[str, Any]:
         return {"error": error_msg}
 
 
-@mcp.tool()
-async def test_opam_compatibility(packages: List[str]) -> Dict[str, Any]:
-    """
-    Test opam package compatibility for a list of packages.
-    
-    Runs 'opam list --installable --all-versions -s' to find concrete package 
-    versions that are compatible with the current switch.
-
-    Requires the current opam switch for the project to be the active one.
-    
-    Args:
-        packages: List of opam package names to test for compatibility
-    
-    Returns:
-        Dictionary containing the list of compatible package versions and any errors
-    """
-    if not packages:
-        return {"error": "No packages provided"}
-    
-    # Join packages with spaces and ensure proper escaping
-    package_list = " ".join(shlex.quote(pkg) for pkg in packages)
-    cmd = f"opam list --installable --all-versions -s {package_list}"
-    
-    logger.info(f"Running opam compatibility test: {cmd}")
-    
-    try:
-        # Run the opam command
-        result = subprocess.run(
-            cmd,
-            shell=True,
-            capture_output=True,
-            text=True,
-            timeout=30  # 30 second timeout
-        )
-        
-        if result.returncode != 0:
-            return {
-                "error": f"opam command failed with exit code {result.returncode}",
-                "stderr": result.stderr.strip()
-            }
-        
-        # Parse the output - opam list returns one package per line
-        output_lines = result.stdout.strip().split('\n')
-        compatible_versions = []
-        
-        for line in output_lines:
-            line = line.strip()
-            if line and not line.startswith('#'):  # Skip comments and empty lines
-                compatible_versions.append(line)
-        
-        return {
-            "packages_tested": packages,
-            "compatible_versions": compatible_versions,
-            "count": len(compatible_versions)
-        }
-        
-    except subprocess.TimeoutExpired:
-        return {
-            "error": "opam command timed out after 30 seconds",
-            "packages_tested": packages
-        }
-    except Exception as e:
-        error_msg = f"Failed to run opam command: {str(e)}"
-        logger.error(error_msg)
-        return {"error": error_msg}
 
 
 @mcp.tool()
-async def search_ocaml_modules(query: str, packages: List[str], top_k: int = 5) -> Dict[str, Any]:
+async def search_ocaml_modules(query: str, packages: List[str], top_k: int = 8) -> Dict[str, Any]:
     """
-    Search OCaml modules using both semantic similarity and keyword matching.
+    Find OCaml modules that provide specific functionality within chosen packages.
     
-    Combines two search methods for comprehensive results:
-    1. Semantic search using embeddings to find conceptually related modules
-    2. Full-text search using BM25 to find modules containing specific keywords
-    
-    Results are deduplicated so each module appears only once across both methods.
+    Provide a clear description of the functionality you need and specify which 
+    packages to search. The tool will find relevant modules using both conceptual 
+    understanding and exact keyword matching.
     
     Args:
-        query: Natural language query describing the desired functionality
-               (e.g., 'HTTP server', 'JSON parsing', 'list operations')
-        packages: List of package names to search within
-                 (e.g., ['base', 'lwt', 'cohttp', 'yojson'])
-        top_k: Maximum number of results to return from each search method (default: 5)
+        query: Specific functionality you're looking for. Be precise about what you need:
+               - "MD5 hash function" 
+               - "HTTP client for making requests"
+               - "JSON parsing and serialization"
+               - "list sorting operations"
+               - "TCP socket server"
+        packages: List of OCaml package names to search within. You must specify
+                 which packages to search - common ones include:
+                 ['base', 'core', 'lwt', 'async', 'cohttp', 'yojson', 'cmdliner']
+        top_k: Maximum number of results to return (default: 8)
     
     Returns:
-        Dictionary containing:
-        - query: The search query
-        - packages_searched: List of packages that were searched
-        - semantic_results: Results from embedding-based semantic search
-        - keyword_results: Results from BM25 full-text search
+        Two lists of matching modules:
+        - semantic_results: Modules with conceptually similar functionality (includes descriptions)
+        - keyword_results: Modules containing your exact keywords in their documentation
+        
+        Each result includes the package name, module name, and module path.
     """
     global unified_engine
     
@@ -232,8 +179,9 @@ async def search_ocaml_modules(query: str, packages: List[str], top_k: int = 5) 
             return {"error": error_msg}
     
     try:
-        # Perform unified search
-        results = unified_engine.unified_search(query, packages, top_k)
+        # Perform unified search - split top_k between the two methods
+        results_per_method = top_k // 2
+        results = unified_engine.unified_search(query, packages, results_per_method)
         
         # Format results for MCP response
         return {
@@ -244,7 +192,6 @@ async def search_ocaml_modules(query: str, packages: List[str], top_k: int = 5) 
                     "package": r["package"],
                     "module": r["module_name"],
                     "module_path": r["module_path"],
-                    "similarity_score": round(r["score"], 4),
                     "description": r["description"]
                 }
                 for r in results["embedding_results"]
@@ -253,8 +200,7 @@ async def search_ocaml_modules(query: str, packages: List[str], top_k: int = 5) 
                 {
                     "package": r["package"],
                     "module": r["module_name"],
-                    "module_path": r["module_path"],
-                    "relevance_score": round(r["score"], 4)
+                    "module_path": r["module_path"]
                 }
                 for r in results["bm25_results"]
             ],
@@ -286,12 +232,6 @@ def main():
                 package = sys.argv[3] if len(sys.argv) > 3 else "lwt"
                 print(f"Testing package summary for: {package}\n")
                 result = await get_package_summary(package)
-                print(json.dumps(result, indent=2))
-            elif len(sys.argv) > 2 and sys.argv[2] == "opam":
-                # Test opam compatibility
-                packages = sys.argv[3:] if len(sys.argv) > 3 else ["base", "core"]
-                print(f"Testing opam compatibility for: {packages}\n")
-                result = await test_opam_compatibility(packages)
                 print(json.dumps(result, indent=2))
             elif "--packages" in sys.argv:
                 # Test unified search functionality
