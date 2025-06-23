@@ -17,6 +17,7 @@ from mcp.server.fastmcp import FastMCP
 
 # Import semantic search components
 from semantic_search import SemanticSearch
+from unified_search import UnifiedSearchEngine
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -25,10 +26,12 @@ logger = logging.getLogger(__name__)
 # Initialize FastMCP server
 mcp = FastMCP("ocaml-search")
 
-# Global search engine instance (lazy loaded)
+# Global search engine instances (lazy loaded)
 search_engine: Optional[SemanticSearch] = None
+unified_engine: Optional[UnifiedSearchEngine] = None
 embeddings_dir = Path("package-embeddings")
 package_descriptions_dir = Path("package-descriptions")
+indexes_dir = Path("module-indexes")
 
 @mcp.tool()
 async def find_ocaml_packages(functionality: str) -> Dict[str, Any]:
@@ -185,18 +188,86 @@ async def test_opam_compatibility(packages: List[str]) -> Dict[str, Any]:
         return {"error": error_msg}
 
 
+@mcp.tool()
+async def search_ocaml_modules(query: str, packages: List[str], top_k: int = 5) -> Dict[str, Any]:
+    """
+    Search OCaml modules using both semantic similarity and keyword matching.
+    
+    Combines two search methods for comprehensive results:
+    1. Semantic search using embeddings to find conceptually related modules
+    2. Full-text search using BM25 to find modules containing specific keywords
+    
+    Results are deduplicated so each module appears only once across both methods.
+    
+    Args:
+        query: Natural language query describing the desired functionality
+               (e.g., 'HTTP server', 'JSON parsing', 'list operations')
+        packages: List of package names to search within
+                 (e.g., ['base', 'lwt', 'cohttp', 'yojson'])
+        top_k: Maximum number of results to return from each search method (default: 5)
+    
+    Returns:
+        Dictionary containing:
+        - query: The search query
+        - packages_searched: List of packages that were searched
+        - semantic_results: Results from embedding-based semantic search
+        - keyword_results: Results from BM25 full-text search
+    """
+    global unified_engine
+    
+    if not packages:
+        return {"error": "No packages specified. Please provide a list of package names to search."}
+    
+    # Initialize unified search engine on first use (lazy loading)
+    if unified_engine is None:
+        logger.info("Initializing unified search engine...")
+        try:
+            unified_engine = UnifiedSearchEngine(
+                embedding_dir=str(embeddings_dir),
+                index_dir=str(indexes_dir)
+            )
+        except Exception as e:
+            error_msg = f"Failed to initialize unified search engine: {str(e)}"
+            logger.error(error_msg)
+            return {"error": error_msg}
+    
+    try:
+        # Perform unified search
+        results = unified_engine.unified_search(query, packages, top_k)
+        
+        # Format results for MCP response
+        return {
+            "query": results["query"],
+            "packages_searched": results["packages_searched"],
+            "semantic_results": [
+                {
+                    "package": r["package"],
+                    "module": r["module_name"],
+                    "module_path": r["module_path"],
+                    "similarity_score": round(r["score"], 4),
+                    "description": r["description"]
+                }
+                for r in results["embedding_results"]
+            ],
+            "keyword_results": [
+                {
+                    "package": r["package"],
+                    "module": r["module_name"],
+                    "module_path": r["module_path"],
+                    "relevance_score": round(r["score"], 4)
+                }
+                for r in results["bm25_results"]
+            ],
+            "total_results": len(results["embedding_results"]) + len(results["bm25_results"])
+        }
+        
+    except Exception as e:
+        error_msg = f"Unified search failed: {str(e)}"
+        logger.error(error_msg)
+        return {"error": error_msg}
+
+
 # Additional tool functions can be added here using the @mcp.tool() decorator
-# Example structure for future tools:
-#
-# @mcp.tool()
-# async def analyze_package_dependencies(package_name: str) -> Dict[str, Any]:
-#     """Analyze dependencies of a given OCaml package."""
-#     # Implementation here
-#     pass
-#
-# @mcp.tool()
-# async def get_module_documentation(package_name: str, module_path: str) -> Dict[str, Any]:
-#     """Get detailed documentation for a specific module."""
 #     # Implementation here
 #     pass
 
@@ -221,6 +292,16 @@ def main():
                 packages = sys.argv[3:] if len(sys.argv) > 3 else ["base", "core"]
                 print(f"Testing opam compatibility for: {packages}\n")
                 result = await test_opam_compatibility(packages)
+                print(json.dumps(result, indent=2))
+            elif "--packages" in sys.argv:
+                # Test unified search functionality
+                query_idx = sys.argv.index("--test") + 1
+                packages_idx = sys.argv.index("--packages") + 1
+                query = sys.argv[query_idx] if query_idx < len(sys.argv) else "HTTP server"
+                packages = sys.argv[packages_idx:] if packages_idx < len(sys.argv) else ["base", "lwt", "cohttp"]
+                print(f"Testing unified search query: {query}")
+                print(f"Packages: {packages}\n")
+                result = await search_ocaml_modules(query, packages)
                 print(json.dumps(result, indent=2))
             else:
                 # Test search functionality

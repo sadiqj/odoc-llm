@@ -268,7 +268,72 @@ uv run python semantic_search.py "async IO" --verbose
 - **Comprehensive Results**: Returns package name, module path, and description
 - **Scalable**: Efficiently searches across 137,000+ module embeddings
 
-## Tool 6: MCP Server (`mcp_server.py`)
+## Tool 6: BM25 Index Generator (`generate_module_index.py`)
+
+Generates BM25 indexes for full-text search across OCaml module documentation.
+
+### How it Works
+
+1. **Documentation Extraction**: Reads parsed JSON files from `extract_docs.py` output
+2. **Text Aggregation**: Combines all documentation text from each module (module, type, and function-level docs)
+3. **Per-Package Indexing**: Creates separate BM25 indexes for each package for efficient loading
+4. **Text Preprocessing**: Uses bm25s library with English stopwords for tokenization
+5. **Storage**: Saves indexes to `module-indexes/{package}/` with metadata for result mapping
+
+### Quick Start
+
+```bash
+# Build indexes for specific packages
+uv run python generate_module_index.py --packages base lwt cohttp
+
+# Build indexes for all packages
+uv run python generate_module_index.py
+
+# Build indexes for first 10 packages (testing)
+uv run python generate_module_index.py --limit 10
+```
+
+### Key Features
+
+- **Per-Package Indexes**: Enables loading only needed packages for memory efficiency
+- **Documentation Focus**: Indexes only documentation text, not code signatures
+- **Fast Search**: BM25 provides sub-second keyword-based search
+- **Metadata Storage**: Preserves module paths and package information for result mapping
+
+## Tool 7: Unified Search (`unified_search.py`)
+
+Combines semantic similarity search and keyword-based search for comprehensive module discovery.
+
+### How it Works
+
+1. **Dual Search Methods**: Performs both embedding-based semantic search and BM25 keyword search
+2. **Local Embedding Model**: Uses Qwen3-Embedding-0.6B model for query embedding (same as semantic search)
+3. **Package Filtering**: Loads and searches only specified packages for efficiency
+4. **Result Deduplication**: Ensures each module appears only once across both result sets
+5. **Comprehensive Coverage**: Combines conceptual similarity with exact keyword matching
+
+### Quick Start
+
+```bash
+# Search across multiple packages
+uv run python unified_search.py "HTTP server" base lwt cohttp
+
+# Search single package with JSON output
+uv run python unified_search.py "list operations" base --format json --top-k 3
+
+# Search with custom parameters
+uv run python unified_search.py "JSON parsing" yojson ezjsonm --top-k 10
+```
+
+### Key Features
+
+- **Best of Both Worlds**: Semantic understanding + exact keyword matching
+- **Memory Efficient**: Loads only specified packages and their indexes
+- **No External Dependencies**: Uses local transformer model, no API calls required
+- **Deduplicated Results**: Clean result sets with no overlap between methods
+- **Package Scoped**: Results filtered to only requested packages
+
+## Tool 8: MCP Server (`mcp_server.py`)
 
 Exposes OCaml module search functionality through the Model Context Protocol (MCP) using FastMCP with HTTP SSE (Server-Sent Events) transport, allowing integration with Claude Desktop and other MCP-compatible clients.
 
@@ -291,6 +356,7 @@ uv run python mcp_server.py
 uv run python mcp_server.py --test "HTTP server"
 uv run python mcp_server.py --test --summary=lwt
 uv run python mcp_server.py --test opam base core
+uv run python mcp_server.py --test "list operations" --packages base lwt
 ```
 
 ### HTTP SSE Endpoint
@@ -313,6 +379,15 @@ The server runs on HTTP with Server-Sent Events transport:
 - **Description**: Get a concise summary of an OCaml package
 - **Input**: `package_name` (string) - Name of the OCaml package
 - **Output**: Package name, version, and 3-4 sentence description
+
+#### search_ocaml_modules
+- **Description**: Search OCaml modules using both semantic similarity and keyword matching
+- **Input**: 
+  - `query` (string) - Natural language description of desired functionality
+  - `packages` (list of strings) - List of package names to search within
+  - `top_k` (int, optional) - Maximum results per search method (default: 5)
+- **Output**: Deduplicated results from both semantic (embedding) and keyword (BM25) search
+- **Note**: Combines comprehensive search methods for maximum coverage
 
 #### test_opam_compatibility
 - **Description**: Test opam package compatibility for a list of packages
@@ -339,7 +414,8 @@ Add to your Claude Desktop configuration:
 ### Key Features
 
 - **HTTP SSE Transport**: Server-Sent Events over HTTP instead of stdio
-- **Triple Capabilities**: Semantic search, package summaries, and opam compatibility testing
+- **Quad Capabilities**: Semantic search, unified search, package summaries, and opam compatibility testing
+- **Unified Search**: Combines semantic (embedding) and keyword (BM25) search for comprehensive results
 - **Package Summaries**: Instant access to concise 3-4 sentence package descriptions
 - **Opam Integration**: Test package compatibility with current opam switch
 - **FastMCP Framework**: Simplified development with automatic schema generation
@@ -352,24 +428,28 @@ Add to your Claude Desktop configuration:
 ## Repository Updates and Progress
 
 ### Recent Project Developments
+- **Unified Search Implementation**: Added comprehensive search combining semantic similarity and keyword matching through BM25 indexing
+- **BM25 Index Generation**: Built per-package full-text search indexes for fast keyword-based module discovery
+- **Enhanced MCP Server**: Extended with unified search capabilities alongside existing semantic search, package summaries, and opam compatibility
 - **Package Description Generation**: Added tool for generating concise package summaries from README content
-- **MCP Server Integration**: Implemented FastMCP server with semantic search, package summary, and opam compatibility tools
-- **Opam Compatibility Testing**: Added tool to test package compatibility with current opam switch
 - **Directory Structure Standardization**: Unified naming conventions using hyphens throughout
 - **Code Cleanup**: Removed over-engineered infrastructure (progress_tracker.py, error_handling.py)
 - **Tool Separation**: Split module and package description generation into focused, specialized tools
 
 ### Ongoing Research and Improvements
 - Continuous refinement of LLM-based description generation
-- Exploring advanced embedding techniques
+- Exploring advanced embedding techniques and hybrid search ranking methods
 - Expanding package coverage and documentation quality assessment
 - Developing more sophisticated semantic search algorithms
+- Investigating query expansion and result re-ranking techniques for unified search
 
 ### Challenges and Future Work
 - Handling documentation variations across different packages
 - Improving description generation for complex or minimal documentation
 - Scaling the infrastructure for even larger package ecosystems
 - Developing more advanced natural language understanding for module search
+- Optimizing search result ranking by combining semantic and keyword scores
+- Expanding BM25 indexing to include function signatures and type definitions
 
 ## Repository Statistics
 
@@ -410,7 +490,9 @@ Add to your Claude Desktop configuration:
 ├── generate_module_descriptions.py  # LLM-based module description generation
 ├── generate_package_descriptions.py # LLM-based package description generation
 ├── generate_embeddings.py        # Vector embedding generation
+├── generate_module_index.py      # BM25 index generation for full-text search
 ├── semantic_search.py            # Natural language module search
+├── unified_search.py             # Combined semantic and keyword search
 ├── mcp_server.py                  # MCP server for tool access
 ├── parse_html.py                  # HTML parsing utilities
 ├── version_utils.py               # Version handling utilities
@@ -425,8 +507,10 @@ This OCaml documentation dataset and toolset provides:
 
 - **Comprehensive Coverage**: 4,695+ OCaml packages with detailed extraction and analysis
 - **Multi-Level Descriptions**: Both detailed module descriptions and concise package summaries
-- **Semantic Search**: Natural language queries across 137,000+ module embeddings
-- **Modern Integration**: MCP server for seamless Claude Desktop integration
+- **Hybrid Search**: Combines semantic similarity and keyword matching for maximum search coverage
+- **Dual Search Methods**: Natural language queries across 137,000+ module embeddings plus BM25 full-text search
+- **Modern Integration**: Enhanced MCP server with unified search capabilities for seamless Claude Desktop integration
 - **Clean Architecture**: Focused, single-purpose tools with consistent naming and structure
+- **Efficient Indexing**: Per-package BM25 indexes enable memory-efficient targeted search
 
-The project demonstrates effective use of LLMs for documentation analysis while maintaining practical, efficient tooling that scales to large codebases.
+The project demonstrates effective use of LLMs for documentation analysis while maintaining practical, efficient tooling that scales to large codebases. The hybrid search approach provides both conceptual understanding and precise keyword matching for comprehensive module discovery.
