@@ -8,7 +8,7 @@ import os
 import json
 import argparse
 from pathlib import Path
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any, Optional, Tuple
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from tqdm import tqdm
 
@@ -67,8 +67,9 @@ def is_library_directory(dir_path: Path) -> bool:
     
     return has_module_subdirs
 
-def find_documentation_files(version_dir: Path) -> List[Path]:
-    """Recursively find all index.html.json files in the documentation."""
+def find_documentation_files(version_dir: Path) -> List[Tuple[Path, Optional[str]]]:
+    """Recursively find all index.html.json files in the documentation.
+    Returns list of (file_path, library_name) tuples where library_name is None for non-library files."""
     doc_files = []
     
     # Main documentation directory
@@ -76,24 +77,25 @@ def find_documentation_files(version_dir: Path) -> List[Path]:
     if doc_dir.exists():
         # First, process files directly in doc/
         for json_file in doc_dir.glob('*.html.json'):
-            doc_files.append(json_file)
+            doc_files.append((json_file, None))
         
         # Then process library directories
         for item in doc_dir.iterdir():
             if item.is_dir():
                 if is_library_directory(item):
                     # This is a library directory, recursively find all index.html.json files
+                    library_name = item.name
                     for json_file in item.rglob('index.html.json'):
-                        doc_files.append(json_file)
+                        doc_files.append((json_file, library_name))
                 else:
                     # This is a non-library directory (like deprecated/), just get direct index.html.json files
                     for json_file in item.glob('*.html.json'):
-                        doc_files.append(json_file)
+                        doc_files.append((json_file, None))
     
     # Also check for README, CHANGES, LICENSE files at the version root
     for pattern in ['*.md.html.json', '*.txt.html.json', '*.org.html.json']:
         for file in version_dir.glob(pattern):
-            doc_files.append(file)
+            doc_files.append((file, None))
     
     return doc_files
 
@@ -105,7 +107,7 @@ def load_package_metadata(version_dir: Path) -> Optional[Dict[str, Any]]:
             return json.load(f)
     return None
 
-def process_documentation_file(doc_file: Path, package_name: str, version: str, version_dir: Path) -> Optional[Dict[str, Any]]:
+def process_documentation_file(doc_file: Path, package_name: str, version: str, version_dir: Path, library_name: Optional[str]) -> Optional[Dict[str, Any]]:
     """Process a single documentation file."""
     try:
         # Parse the documentation
@@ -115,6 +117,7 @@ def process_documentation_file(doc_file: Path, package_name: str, version: str, 
         parsed['package'] = package_name
         parsed['version'] = version
         parsed['file_path'] = str(doc_file.relative_to(version_dir))  # Relative to version dir
+        parsed['library'] = library_name  # Will be None for non-library files
         
         # Extract module path
         if parsed.get('breadcrumbs'):
@@ -148,8 +151,8 @@ def process_package_version(package_name: str, version: str, docs_dir: Path) -> 
     modules = []
     other_docs = {}
     
-    for doc_file in doc_files:
-        result = process_documentation_file(doc_file, package_name, version, version_dir)
+    for doc_file, library_name in doc_files:
+        result = process_documentation_file(doc_file, package_name, version, version_dir, library_name)
         if result:
             # Categorize the documentation
             rel_path = str(doc_file.relative_to(version_dir))
