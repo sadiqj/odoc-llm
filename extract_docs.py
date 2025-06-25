@@ -39,6 +39,34 @@ def check_build_status(version_dir: Path) -> Dict[str, Any]:
             return json.load(f)
     return {'failed': True, 'error': 'No status.json found'}
 
+def is_valid_ocaml_module_name(name: str) -> bool:
+    """Check if a string is a valid OCaml module name."""
+    if not name:
+        return False
+    # Module names must start with a capital letter and contain only letters, numbers, underscores, and apostrophes
+    if not name[0].isupper():
+        return False
+    return all(c.isalnum() or c in ('_', "'") for c in name)
+
+def is_library_directory(dir_path: Path) -> bool:
+    """Check if a directory under doc/ is a library directory."""
+    # Library directories have:
+    # 1. An index.html file in them
+    # 2. One or more subdirectories that are valid OCaml module names
+    
+    index_file = dir_path / 'index.html'
+    if not index_file.exists():
+        return False
+    
+    # Check for subdirectories with valid OCaml module names
+    has_module_subdirs = False
+    for item in dir_path.iterdir():
+        if item.is_dir() and is_valid_ocaml_module_name(item.name):
+            has_module_subdirs = True
+            break
+    
+    return has_module_subdirs
+
 def find_documentation_files(version_dir: Path) -> List[Path]:
     """Recursively find all index.html.json files in the documentation."""
     doc_files = []
@@ -46,10 +74,23 @@ def find_documentation_files(version_dir: Path) -> List[Path]:
     # Main documentation directory
     doc_dir = version_dir / 'doc'
     if doc_dir.exists():
-        for json_file in doc_dir.rglob('index.html.json'):
+        # First, process files directly in doc/
+        for json_file in doc_dir.glob('*.html.json'):
             doc_files.append(json_file)
+        
+        # Then process library directories
+        for item in doc_dir.iterdir():
+            if item.is_dir():
+                if is_library_directory(item):
+                    # This is a library directory, recursively find all index.html.json files
+                    for json_file in item.rglob('index.html.json'):
+                        doc_files.append(json_file)
+                else:
+                    # This is a non-library directory (like deprecated/), just get direct index.html.json files
+                    for json_file in item.glob('*.html.json'):
+                        doc_files.append(json_file)
     
-    # Also check for README, CHANGES, LICENSE files
+    # Also check for README, CHANGES, LICENSE files at the version root
     for pattern in ['*.md.html.json', '*.txt.html.json', '*.org.html.json']:
         for file in version_dir.glob(pattern):
             doc_files.append(file)
@@ -64,7 +105,7 @@ def load_package_metadata(version_dir: Path) -> Optional[Dict[str, Any]]:
             return json.load(f)
     return None
 
-def process_documentation_file(doc_file: Path, package_name: str, version: str) -> Optional[Dict[str, Any]]:
+def process_documentation_file(doc_file: Path, package_name: str, version: str, version_dir: Path) -> Optional[Dict[str, Any]]:
     """Process a single documentation file."""
     try:
         # Parse the documentation
@@ -73,7 +114,7 @@ def process_documentation_file(doc_file: Path, package_name: str, version: str) 
         # Add metadata
         parsed['package'] = package_name
         parsed['version'] = version
-        parsed['file_path'] = str(doc_file.relative_to(doc_file.parents[3]))  # Relative to version dir
+        parsed['file_path'] = str(doc_file.relative_to(version_dir))  # Relative to version dir
         
         # Extract module path
         if parsed.get('breadcrumbs'):
@@ -108,7 +149,7 @@ def process_package_version(package_name: str, version: str, docs_dir: Path) -> 
     other_docs = {}
     
     for doc_file in doc_files:
-        result = process_documentation_file(doc_file, package_name, version)
+        result = process_documentation_file(doc_file, package_name, version, version_dir)
         if result:
             # Categorize the documentation
             rel_path = str(doc_file.relative_to(version_dir))
