@@ -122,7 +122,7 @@ class LLMClient:
             for func in module.functions:
                 func_line = f"- {func.get('signature', func.get('name', 'unnamed'))}"
                 if func.get('documentation'):
-                    func_line += f" // {func['documentation']}"
+                    func_line += f" (* {func['documentation']} *)"
                 context_parts.append(func_line)
         
         # Include all types with their documentation  
@@ -131,7 +131,7 @@ class LLMClient:
             for typ in module.types:
                 type_line = f"- {typ.get('signature', typ.get('name', 'unnamed'))}"
                 if typ.get('documentation'):
-                    type_line += f" // {typ['documentation']}"
+                    type_line += f" (* {typ['documentation']} *)"
                 context_parts.append(type_line)
         
         if module.modules:
@@ -234,7 +234,7 @@ Description:"""
         for item in chunk:
             item_line = f"- {item.get('signature', item.get('name', 'unnamed'))}"
             if item.get('documentation'):
-                item_line += f" // {item['documentation']}"
+                item_line += f" (* {item['documentation']} *)"
             context_parts.append(item_line)
         
         context = "\n".join(context_parts)
