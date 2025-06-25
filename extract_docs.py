@@ -83,10 +83,14 @@ def find_documentation_files(version_dir: Path) -> List[Tuple[Path, Optional[str
         for item in doc_dir.iterdir():
             if item.is_dir():
                 if is_library_directory(item):
-                    # This is a library directory, recursively find all index.html.json files
+                    # This is a library directory
                     library_name = item.name
+                    library_index = item / 'index.html.json'
+                    
+                    # Process module subdirectories (skip the library's main index)
                     for json_file in item.rglob('index.html.json'):
-                        doc_files.append((json_file, library_name))
+                        if json_file != library_index:  # Skip the library's main index - it's just a landing page
+                            doc_files.append((json_file, library_name))
                 else:
                     # This is a non-library directory (like deprecated/), just get direct index.html.json files
                     for json_file in item.glob('*.html.json'):
@@ -149,6 +153,7 @@ def process_package_version(package_name: str, version: str, docs_dir: Path) -> 
     
     # Process all documentation files
     modules = []
+    package_docs = {}
     other_docs = {}
     
     for doc_file, library_name in doc_files:
@@ -157,9 +162,15 @@ def process_package_version(package_name: str, version: str, docs_dir: Path) -> 
             # Categorize the documentation
             rel_path = str(doc_file.relative_to(version_dir))
             if rel_path.startswith('doc/'):
-                modules.append(result)
+                if library_name:
+                    # This is a library module
+                    modules.append(result)
+                else:
+                    # This is package-level documentation
+                    doc_type = doc_file.stem.split('.')[0].upper()
+                    package_docs[doc_type] = result
             else:
-                # It's a README, LICENSE, etc.
+                # It's a README, LICENSE, etc. at the version root
                 doc_type = doc_file.stem.split('.')[0].upper()
                 other_docs[doc_type] = result
     
@@ -169,6 +180,7 @@ def process_package_version(package_name: str, version: str, docs_dir: Path) -> 
         'version': version,
         'metadata': metadata,
         'modules': modules,
+        'package_documentation': package_docs,
         'documentation': other_docs,
         'statistics': {
             'total_modules': len(modules),

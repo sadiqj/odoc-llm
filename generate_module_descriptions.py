@@ -73,6 +73,7 @@ class ModuleContent:
     types: List[Dict[str, Any]]
     modules: List[Dict[str, Any]]
     documentation: str
+    library: Optional[str] = None
     parent: Optional[str] = None
     children: List[str] = None
 
@@ -344,6 +345,66 @@ Module Description:"""
                 logger.error(f"LLM error combining chunks for module {module.name}: {e}")
                 return f"OCaml module {module.name} with {len(chunk_summaries)} functional areas"
     
+    def generate_library_summary(self, library_name: str, module_descriptions: List[str], log_prompts: bool = False) -> str:
+        """Generate a summary for a library based on its module descriptions."""
+        
+        context_parts = [f"Library: {library_name}"]
+        
+        context_parts.append("Module descriptions:")
+        for i, desc in enumerate(module_descriptions, 1):
+            context_parts.append(f"{i}. {desc}")
+        
+        context = "\n".join(context_parts)
+        
+        prompt = f"""You are an expert OCaml developer. Write a 3-4 sentence summary of this library that:
+- Identifies the main purpose and functionality of the library
+- Describes the types of operations and data structures it provides
+- Explains what developers would use this library for
+- Mentions specific capabilities where relevant
+
+Do NOT:
+- Use generic phrases like "provides functionality" or "collection of modules"
+- Repeat the library name
+- Use filler words about code quality or programming patterns
+
+{context}
+
+Library Summary:"""
+
+        if log_prompts:
+            logger.info(f"=== LIBRARY SUMMARY PROMPT for {library_name} ===")
+            logger.info(prompt)
+            logger.info("=== END LIBRARY SUMMARY PROMPT ===")
+        
+        try:
+            response = self.client.chat.completions.create(
+                model=self.model,
+                messages=[
+                    {"role": "system", "content": "You are an expert OCaml developer. Provide concise, direct answers without thinking aloud or explanation."},
+                    {"role": "user", "content": prompt + "\n\n/no_think"}
+                ],
+                max_tokens=1024,
+                temperature=0.1
+            )
+            result = response.choices[0].message.content.strip()
+            
+            # Filter out think tags and their content
+            import re
+            result = re.sub(r'<think>.*?</think>\s*', '', result, flags=re.DOTALL).strip()
+            
+            if log_prompts:
+                logger.info(f"=== LIBRARY SUMMARY RESPONSE for {library_name} ===")
+                logger.info(result)
+                logger.info("=== END LIBRARY SUMMARY RESPONSE ===")
+            return result
+        except Exception as e:
+            if "timeout" in str(e).lower():
+                logger.error(f"LLM timeout generating library summary for {library_name}: {e}")
+                return f"Library containing {len(module_descriptions)} modules (timed out)"
+            else:
+                logger.error(f"LLM error generating library summary for {library_name}: {e}")
+                return f"Library containing {len(module_descriptions)} modules"
+
     def merge_descriptions(self, module_name: str, child_descriptions: List[str], module_content: Optional[ModuleContent] = None, log_prompts: bool = False) -> str:
         """Merge child module descriptions into a parent description."""
         
@@ -450,6 +511,9 @@ class ModuleExtractor:
                 if doc_sections and not documentation:
                     documentation = " ".join(doc_sections)
             
+            # Extract library from the module data
+            library = module_data.get("library")
+            
             module = ModuleContent(
                 name=name,
                 path=path,
@@ -457,14 +521,16 @@ class ModuleExtractor:
                 types=types,
                 modules=submodules,
                 documentation=documentation,
+                library=library,
                 parent=parent_path if parent_path else None
             )
             
-            # Process submodules
+            # For flat JSON structures, don't process submodules since they exist as separate entries
+            # Just record the child paths for hierarchical relationships
             for submodule_data in submodules:
-                child_module = extract_module_recursive(submodule_data, path)
-                modules.append(child_module)
-                module.children.append(child_module.path)
+                child_name = submodule_data.get("name", "unnamed")
+                child_path = f"{path}.{child_name}" if path else child_name
+                module.children.append(child_path)
             
             return module
         
@@ -530,52 +596,131 @@ def process_single_package(json_file: Path, output_dir: Path, llm_client: LLMCli
         after_load_memory = process.memory_info().rss / 1024 / 1024
         logger.info(f"Package {package_name}: loaded {len(modules)} modules, memory: {after_load_memory:.1f}MB (+{after_load_memory-initial_memory:.1f}MB)")
         
-        # Generate descriptions for leaf modules first
-        descriptions = {}
+        # Group modules by library
+        libraries = {}
+        no_library_modules = []
         
-        # Sort modules by depth (leaf modules first)
-        modules_by_depth = sorted(modules, key=lambda m: m.path.count('.'), reverse=True)
+        for module in modules:
+            if module.library:
+                if module.library not in libraries:
+                    libraries[module.library] = []
+                libraries[module.library].append(module)
+            else:
+                no_library_modules.append(module)
         
-        # Process modules
-        for module in modules_by_depth:
-            # Skip empty modules (no content to describe)
-            if not module.children and not module.functions and not module.types and not module.documentation.strip():
-                logger.info(f"Skipping empty module: {module.path}")
-                descriptions[module.path] = f"Empty module with no functions, types, or documentation."
-                continue
+        logger.info(f"Package {package_name}: {len(libraries)} libraries, {len(no_library_modules)} modules without library")
+        
+        # Process each library separately
+        library_results = {}
+        
+        for library_name, library_modules in libraries.items():
+            logger.info(f"Processing library {library_name} with {len(library_modules)} modules")
             
-            # Generate new description
-            if not module.children:  # Leaf module
-                description = llm_client.generate_module_description(module, log_prompts)
-            else:  # Parent module - merge child descriptions
-                child_descriptions = [descriptions.get(child, "") for child in module.children if child in descriptions]
-                description = llm_client.merge_descriptions(module.name, child_descriptions, module, log_prompts)
+            # Sort modules by depth (leaf modules first) within this library
+            modules_by_depth = sorted(library_modules, key=lambda m: m.path.count('.'), reverse=True)
             
-            descriptions[module.path] = description
+            # Generate descriptions for modules in this library
+            module_descriptions = {}
+            
+            for module in modules_by_depth:
+                # Skip empty modules (no content to describe)
+                if not module.children and not module.functions and not module.types and not module.documentation.strip():
+                    logger.info(f"Skipping empty module: {module.path}")
+                    module_descriptions[module.path] = f"Empty module with no functions, types, or documentation."
+                    continue
+                
+                # Generate new description
+                if not module.children:  # Leaf module
+                    description = llm_client.generate_module_description(module, log_prompts)
+                else:  # Parent module - merge child descriptions
+                    child_descriptions = [module_descriptions.get(child, "") for child in module.children if child in module_descriptions]
+                    description = llm_client.merge_descriptions(module.name, child_descriptions, module, log_prompts)
+                
+                module_descriptions[module.path] = description
+            
+            # Generate library summary
+            valid_descriptions = [desc for desc in module_descriptions.values() if desc and not desc.startswith("Empty module")]
+            if valid_descriptions:
+                library_summary = llm_client.generate_library_summary(library_name, valid_descriptions, log_prompts)
+            else:
+                library_summary = f"Library with {len(module_descriptions)} modules (no valid descriptions)"
+            
+            library_results[library_name] = {
+                "summary": library_summary,
+                "modules": module_descriptions
+            }
         
-        # Clean up module paths - replace "unnamed" with package name
-        cleaned_descriptions = {}
-        for module_path, description in descriptions.items():
-            # Replace "unnamed" with package name in the path
+        # Process modules without library (if any)
+        no_library_descriptions = {}
+        if no_library_modules:
+            logger.info(f"Processing {len(no_library_modules)} modules without library")
+            
+            # Sort by depth
+            modules_by_depth = sorted(no_library_modules, key=lambda m: m.path.count('.'), reverse=True)
+            
+            for module in modules_by_depth:
+                # Skip empty modules
+                if not module.children and not module.functions and not module.types and not module.documentation.strip():
+                    logger.info(f"Skipping empty module: {module.path}")
+                    no_library_descriptions[module.path] = f"Empty module with no functions, types, or documentation."
+                    continue
+                
+                # Generate description
+                if not module.children:  # Leaf module
+                    description = llm_client.generate_module_description(module, log_prompts)
+                else:  # Parent module - merge child descriptions
+                    child_descriptions = [no_library_descriptions.get(child, "") for child in module.children if child in no_library_descriptions]
+                    description = llm_client.merge_descriptions(module.name, child_descriptions, module, log_prompts)
+                
+                no_library_descriptions[module.path] = description
+        
+        # Clean up module paths in all libraries
+        cleaned_library_results = {}
+        for library_name, library_data in library_results.items():
+            cleaned_modules = {}
+            for module_path, description in library_data["modules"].items():
+                # Replace "unnamed" with package name in the path
+                if module_path.startswith("unnamed."):
+                    clean_path = module_path.replace("unnamed.", f"{package_name}.", 1)
+                elif module_path == "unnamed":
+                    clean_path = package_name
+                else:
+                    clean_path = module_path
+                cleaned_modules[clean_path] = description
+            
+            cleaned_library_results[library_name] = {
+                "summary": library_data["summary"],
+                "modules": cleaned_modules
+            }
+        
+        # Clean up no-library modules
+        cleaned_no_library = {}
+        for module_path, description in no_library_descriptions.items():
             if module_path.startswith("unnamed."):
                 clean_path = module_path.replace("unnamed.", f"{package_name}.", 1)
             elif module_path == "unnamed":
                 clean_path = package_name
             else:
                 clean_path = module_path
-            cleaned_descriptions[clean_path] = description
+            cleaned_no_library[clean_path] = description
         
-        # Save package descriptions
+        # Save package descriptions with library organization
         output_file = output_dir / f"{package_name}.json"
+        result = {
+            "package": package_name,
+            "libraries": cleaned_library_results
+        }
+        
+        if cleaned_no_library:
+            result["modules_without_library"] = cleaned_no_library
+        
         with open(output_file, 'w') as f:
-            json.dump({
-                "package": package_name,
-                "descriptions": cleaned_descriptions
-            }, f, indent=2)
+            json.dump(result, f, indent=2)
         
         # Memory check at completion
         final_memory = process.memory_info().rss / 1024 / 1024
-        logger.info(f"Successfully completed package: {package_name} ({len(modules)} modules, {len(descriptions)} descriptions)")
+        total_descriptions = sum(len(lib_data["modules"]) for lib_data in cleaned_library_results.values()) + len(cleaned_no_library)
+        logger.info(f"Successfully completed package: {package_name} ({len(modules)} modules, {total_descriptions} descriptions, {len(libraries)} libraries)")
         logger.info(f"Package {package_name}: final memory: {final_memory:.1f}MB (+{final_memory-initial_memory:.1f}MB total)")
         
         # Force garbage collection for large packages
