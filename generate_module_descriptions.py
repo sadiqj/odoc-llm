@@ -69,9 +69,10 @@ class ModuleContent:
     """Extracted content from a module."""
     name: str
     path: str
-    functions: List[Dict[str, Any]]
-    types: List[Dict[str, Any]]
-    modules: List[Dict[str, Any]]
+    elements: List[Dict[str, Any]]  # New ordered list of all elements
+    functions: List[Dict[str, Any]]  # Keep for backward compatibility
+    types: List[Dict[str, Any]]     # Keep for backward compatibility
+    modules: List[Dict[str, Any]]   # Keep for backward compatibility
     documentation: str
     library: Optional[str] = None
     parent: Optional[str] = None
@@ -101,39 +102,83 @@ class LLMClient:
     def generate_module_description(self, module: ModuleContent, log_prompts: bool = False) -> str:
         """Generate a concise description for a single module using chunking strategy."""
         
-        # If module has many functions, use chunking strategy
-        all_items = module.functions + module.types
+        # Count code elements (functions, types, modules) from ordered elements if available
+        if hasattr(module, 'elements') and module.elements:
+            code_elements = [elem for elem in module.elements if elem.get('kind') in ['value', 'type', 'module', 'module-type']]
+            total_items = len(code_elements)
+        else:
+            # Fall back to old format
+            total_items = len(module.functions) + len(module.types)
         
-        if len(all_items) <= 20:
+        if total_items <= 20:
             return self._generate_simple_description(module, log_prompts)
         else:
             return self._generate_chunked_description(module, log_prompts)
     
-    def _generate_simple_description(self, module: ModuleContent, log_prompts: bool = False) -> str:
-        """Generate description for modules with ≤20 functions/types."""
+    def _build_simple_description_prompt(self, module: ModuleContent) -> str:
+        """Build prompt for modules with ≤20 functions/types."""
         
         context_parts = [f"Module: {module.name}"]
         
         if module.documentation:
             context_parts.append(f"Module Documentation: {module.documentation}")
         
-        # Include all functions with their documentation
-        if module.functions:
-            context_parts.append("Functions:")
-            for func in module.functions:
-                func_line = f"- {func.get('signature', func.get('name', 'unnamed'))}"
-                if func.get('documentation'):
-                    func_line += f" (* {func['documentation']} *)"
-                context_parts.append(func_line)
+        # Process elements in order they appear in documentation
+        current_section = None
+        for elem in module.elements:
+            if elem.get('kind') == 'section':
+                current_section = elem.get('title', '')
+                if current_section:
+                    context_parts.append(f"\n## {current_section}")
+                    if elem.get('content'):
+                        context_parts.append(elem['content'])
+            elif elem.get('kind') in ['value', 'type', 'module', 'module-type']:
+                # Format based on kind
+                if elem.get('kind') == 'value':
+                    # Use signature if available, otherwise format as val name
+                    if elem.get('signature'):
+                        elem_line = f"- {elem['signature']}"
+                    else:
+                        elem_line = f"- val {elem.get('name', 'unnamed')}"
+                elif elem.get('kind') == 'type':
+                    # Use signature if available, otherwise format as type name
+                    if elem.get('signature'):
+                        elem_line = f"- {elem['signature']}"
+                    else:
+                        elem_line = f"- type {elem.get('name', 'unnamed')}"
+                elif elem.get('kind') == 'module':
+                    # Format as module name
+                    elem_line = f"- module {elem.get('name', 'unnamed')}"
+                elif elem.get('kind') == 'module-type':
+                    # Format as module type name
+                    elem_line = f"- module type {elem.get('name', 'unnamed')}"
+                else:
+                    # Fallback
+                    elem_line = f"- {elem.get('signature', elem.get('name', 'unnamed'))}"
+                
+                if elem.get('documentation'):
+                    elem_line += f" (* {elem['documentation']} *)"
+                context_parts.append(elem_line)
         
-        # Include all types with their documentation  
-        if module.types:
-            context_parts.append("Types:")
-            for typ in module.types:
-                type_line = f"- {typ.get('signature', typ.get('name', 'unnamed'))}"
-                if typ.get('documentation'):
-                    type_line += f" (* {typ['documentation']} *)"
-                context_parts.append(type_line)
+        # Fall back to old format if no elements available (backward compatibility)
+        if not hasattr(module, 'elements') or not module.elements:
+            # Include all functions with their documentation
+            if module.functions:
+                context_parts.append("Functions:")
+                for func in module.functions:
+                    func_line = f"- {func.get('signature', func.get('name', 'unnamed'))}"
+                    if func.get('documentation'):
+                        func_line += f" (* {func['documentation']} *)"
+                    context_parts.append(func_line)
+            
+            # Include all types with their documentation  
+            if module.types:
+                context_parts.append("Types:")
+                for typ in module.types:
+                    type_line = f"- {typ.get('signature', typ.get('name', 'unnamed'))}"
+                    if typ.get('documentation'):
+                        type_line += f" (* {typ['documentation']} *)"
+                    context_parts.append(type_line)
         
         if module.modules:
             submodule_names = [m.get("name", "unnamed") for m in module.modules[:8]]
@@ -155,6 +200,13 @@ Do NOT:
 {context}
 
 Description:"""
+        
+        return prompt
+    
+    def _generate_simple_description(self, module: ModuleContent, log_prompts: bool = False) -> str:
+        """Generate description for modules with ≤20 functions/types."""
+        
+        prompt = self._build_simple_description_prompt(module)
 
         if log_prompts:
             logger.info(f"=== PROMPT for {module.name} ===")
@@ -208,22 +260,27 @@ Description:"""
     def _generate_chunked_description(self, module: ModuleContent, log_prompts: bool = False) -> str:
         """Generate description for large modules using chunking strategy."""
         
-        all_items = module.functions + module.types
+        # Extract code elements (functions, types, modules) from ordered elements
+        code_elements = [elem for elem in module.elements if elem.get('kind') in ['value', 'type', 'module', 'module-type']]
+        
+        # Fall back to old format if no elements available
+        if not code_elements:
+            code_elements = module.functions + module.types
+        
         chunk_size = 20
         chunk_summaries = []
         
         # Process each chunk of 20 functions/types
-        for i in range(0, len(all_items), chunk_size):
-            chunk = all_items[i:i + chunk_size]
+        for i in range(0, len(code_elements), chunk_size):
+            chunk = code_elements[i:i + chunk_size]
             chunk_summary = self._summarize_chunk(module, chunk, i // chunk_size + 1, log_prompts)
             chunk_summaries.append(chunk_summary)
         
         # Now combine all chunk summaries with module info
         return self._combine_chunk_summaries(module, chunk_summaries, log_prompts)
     
-    def _summarize_chunk(self, module: ModuleContent, chunk: List[Dict], chunk_num: int, log_prompts: bool = False) -> str:
-        """Summarize a chunk of functions/types."""
-        
+    def _build_chunk_prompt(self, module: ModuleContent, chunk: List[Dict], chunk_num: int) -> str:
+        """Build prompt for summarizing a chunk of functions/types/modules."""
         context_parts = [
             f"Module: {module.name} (Chunk {chunk_num})",
         ]
@@ -231,16 +288,38 @@ Description:"""
         if module.documentation:
             context_parts.append(f"Module Documentation: {module.documentation}")
         
-        context_parts.append(f"Functions/Types in this chunk:")
+        context_parts.append(f"Functions/Types/Modules in this chunk:")
         for item in chunk:
-            item_line = f"- {item.get('signature', item.get('name', 'unnamed'))}"
+            # Format based on kind
+            if item.get('kind') == 'value':
+                # Use signature if available, otherwise format as val name
+                if item.get('signature'):
+                    item_line = f"- {item['signature']}"
+                else:
+                    item_line = f"- val {item.get('name', 'unnamed')}"
+            elif item.get('kind') == 'type':
+                # Use signature if available, otherwise format as type name
+                if item.get('signature'):
+                    item_line = f"- {item['signature']}"
+                else:
+                    item_line = f"- type {item.get('name', 'unnamed')}"
+            elif item.get('kind') == 'module':
+                # Format as module name
+                item_line = f"- module {item.get('name', 'unnamed')}"
+            elif item.get('kind') == 'module-type':
+                # Format as module type name
+                item_line = f"- module type {item.get('name', 'unnamed')}"
+            else:
+                # Fallback for old format or other kinds
+                item_line = f"- {item.get('signature', item.get('name', 'unnamed'))}"
+            
             if item.get('documentation'):
                 item_line += f" (* {item['documentation']} *)"
             context_parts.append(item_line)
         
         context = "\n".join(context_parts)
         
-        prompt = f"""You are an expert OCaml developer. Summarize this chunk in 1-2 sentences by identifying:
+        return f"""You are an expert OCaml developer. Summarize this chunk in 1-2 sentences by identifying:
 - The specific operations these functions provide
 - What data they operate on
 - Any patterns in their functionality (e.g., all string manipulation, all file operations, etc.)
@@ -250,6 +329,11 @@ Avoid generic terms. Be specific about what these functions actually do.
 {context}
 
 Chunk Summary:"""
+
+    def _summarize_chunk(self, module: ModuleContent, chunk: List[Dict], chunk_num: int, log_prompts: bool = False) -> str:
+        """Summarize a chunk of functions/types."""
+        
+        prompt = self._build_chunk_prompt(module, chunk, chunk_num)
 
         if log_prompts:
             logger.info(f"=== CHUNK PROMPT for {module.name} chunk {chunk_num} ===")
@@ -285,9 +369,8 @@ Chunk Summary:"""
                 logger.error(f"LLM error for chunk {chunk_num} of module {module.name}: {e}")
                 return f"Chunk {chunk_num}: {len(chunk)} functions/types"
     
-    def _combine_chunk_summaries(self, module: ModuleContent, chunk_summaries: List[str], log_prompts: bool = False) -> str:
-        """Combine chunk summaries into final module description."""
-        
+    def _build_chunk_combine_prompt(self, module: ModuleContent, chunk_summaries: List[str]) -> str:
+        """Build prompt for combining chunk summaries into final module description."""
         context_parts = [f"Module: {module.name}"]
         
         if module.documentation:
@@ -303,7 +386,7 @@ Chunk Summary:"""
         
         context = "\n".join(context_parts)
         
-        prompt = f"""You are an expert OCaml developer. Based on the chunk summaries below, write a 2-3 sentence description that:
+        return f"""You are an expert OCaml developer. Based on the chunk summaries below, write a 2-3 sentence description that:
 - Identifies the main types of operations this module provides
 - Specifies what data structures or types it works with
 - Mentions specific use cases where applicable
@@ -313,6 +396,11 @@ Do NOT use generic phrases or repeat the module name.
 {context}
 
 Module Description:"""
+
+    def _combine_chunk_summaries(self, module: ModuleContent, chunk_summaries: List[str], log_prompts: bool = False) -> str:
+        """Combine chunk summaries into final module description."""
+        
+        prompt = self._build_chunk_combine_prompt(module, chunk_summaries)
 
         if log_prompts:
             logger.info(f"=== FINAL PROMPT for {module.name} ===")
@@ -468,6 +556,72 @@ Merged description:"""
                 logger.error(f"LLM error merging descriptions for {module_name}: {e}")
                 return f"OCaml module {module_name} containing: {'; '.join(child_descriptions[:3])}"
 
+    def merge_descriptions_with_own_content(self, module_name: str, own_description: str, child_descriptions: List[str], module_content: Optional[ModuleContent] = None, log_prompts: bool = False) -> str:
+        """Merge a module's own description with its child module descriptions."""
+        
+        context_parts = [f"Parent Module: {module_name}"]
+        
+        if module_content and module_content.documentation:
+            context_parts.append(f"Documentation: {module_content.documentation}")
+        
+        context_parts.append(f"Own functionality: {own_description}")
+        
+        if child_descriptions:
+            context_parts.append("Child module descriptions:")
+            for i, desc in enumerate(child_descriptions, 1):
+                context_parts.append(f"{i}. {desc}")
+        
+        context = "\n".join(context_parts)
+        
+        prompt = f"""You are an expert OCaml developer. Write a 3-4 sentence description that:
+- Combines the module's own functionality with its child modules into a coherent overview
+- Identifies the main data types and operations available
+- Provides specific examples of what can be done with this module
+- Balances coverage of both the module's direct API and its submodules
+
+Do NOT:
+- Use generic phrases like "provides functionality" or "collection of modules"
+- Repeat the module name
+- Use filler words about code quality or programming patterns
+
+{context}
+
+Merged description:"""
+
+        if log_prompts:
+            logger.info(f"=== HYBRID MERGE PROMPT for {module_name} ===")
+            logger.info(prompt)
+            logger.info("=== END HYBRID MERGE PROMPT ===")
+        
+        try:
+            response = self.client.chat.completions.create(
+                model=self.model,
+                messages=[
+                    {"role": "system", "content": "You are an expert OCaml developer. Provide concise, direct answers without thinking aloud or explanation."},
+                    {"role": "user", "content": prompt + "\n\n/no_think"}
+                ],
+                max_tokens=1024,
+                temperature=0.1
+            )
+            result = response.choices[0].message.content.strip()
+            
+            # Filter out think tags and their content
+            import re
+            result = re.sub(r'<think>.*?</think>\s*', '', result, flags=re.DOTALL).strip()
+            
+            if log_prompts:
+                logger.info(f"=== HYBRID MERGE RESPONSE for {module_name} ===")
+                logger.info(result)
+                logger.info("=== END HYBRID MERGE RESPONSE ===")
+            return result
+        except Exception as e:
+            if "timeout" in str(e).lower():
+                logger.error(f"LLM timeout merging hybrid descriptions for {module_name}: {e}")
+                return f"OCaml module {module_name}: {own_description} Also contains: {'; '.join(child_descriptions[:2])} (timed out)"
+            else:
+                logger.error(f"LLM error merging hybrid descriptions for {module_name}: {e}")
+                return f"OCaml module {module_name}: {own_description} Also contains: {'; '.join(child_descriptions[:2])}"
+
 
 class ModuleExtractor:
     """Extract modules from parsed JSON data."""
@@ -484,32 +638,43 @@ class ModuleExtractor:
             # Extract name from module_path if available, otherwise use name field
             module_path = module_data.get("module_path", "")
             if module_path:
-                # Extract the last component of the module path as the name
-                name = module_path.split(".")[-1] if module_path else "unnamed"
-                path = module_path
+                # Handle both string and list formats for module_path
+                if isinstance(module_path, list):
+                    # Join list elements with dots
+                    path = ".".join(module_path)
+                    name = module_path[-1] if module_path else "unnamed"
+                else:
+                    # Extract the last component of the module path as the name
+                    name = module_path.split(".")[-1] if module_path else "unnamed"
+                    path = module_path
             else:
                 name = module_data.get("name", "unnamed")
                 path = f"{parent_path}.{name}" if parent_path else name
             
             # Extract content
-            functions = module_data.get("values", [])
-            types = module_data.get("types", [])
-            submodules = module_data.get("modules", [])
+            elements = module_data.get("elements", [])  # New ordered elements
+            functions = module_data.get("values", [])   # Keep for backward compatibility
+            types = module_data.get("types", [])        # Keep for backward compatibility
+            submodules = module_data.get("modules", []) # Keep for backward compatibility
             
             # Get documentation from preamble or documentation_sections
             documentation = module_data.get("documentation", "")
             if not documentation:
-                # Try preamble
-                preamble = module_data.get("preamble", "")
-                if preamble:
-                    # Simple HTML stripping
-                    import re
-                    documentation = re.sub('<[^<]+?>', '', preamble).strip()
+                # Try module_documentation
+                documentation = module_data.get("module_documentation", "")
                 
-                # Also check documentation_sections
-                doc_sections = module_data.get("documentation_sections", [])
-                if doc_sections and not documentation:
-                    documentation = " ".join(doc_sections)
+                if not documentation:
+                    # Try preamble
+                    preamble = module_data.get("preamble", "")
+                    if preamble:
+                        # Simple HTML stripping
+                        import re
+                        documentation = re.sub('<[^<]+?>', '', preamble).strip()
+                    
+                    # Also check documentation_sections
+                    doc_sections = module_data.get("documentation_sections", [])
+                    if doc_sections and not documentation:
+                        documentation = " ".join(doc_sections)
             
             # Extract library from the module data
             library = module_data.get("library")
@@ -517,6 +682,7 @@ class ModuleExtractor:
             module = ModuleContent(
                 name=name,
                 path=path,
+                elements=elements,
                 functions=functions,
                 types=types,
                 modules=submodules,
@@ -630,11 +796,29 @@ def process_single_package(json_file: Path, output_dir: Path, llm_client: LLMCli
                     continue
                 
                 # Generate new description
+                # Check if module has its own content (functions, types, elements)
+                has_own_content = (module.functions or module.types or 
+                                 (hasattr(module, 'elements') and module.elements and 
+                                  any(elem.get('kind') in ['value', 'type', 'module-type'] for elem in module.elements)))
+                
                 if not module.children:  # Leaf module
                     description = llm_client.generate_module_description(module, log_prompts)
-                else:  # Parent module - merge child descriptions
+                elif not has_own_content:  # Pure parent module - merge child descriptions only
                     child_descriptions = [module_descriptions.get(child, "") for child in module.children if child in module_descriptions]
                     description = llm_client.merge_descriptions(module.name, child_descriptions, module, log_prompts)
+                else:  # Hybrid module - has both own content and children
+                    # First generate description for own content
+                    own_description = llm_client.generate_module_description(module, log_prompts)
+                    
+                    # Then get child descriptions
+                    child_descriptions = [module_descriptions.get(child, "") for child in module.children if child in module_descriptions]
+                    
+                    # Combine both own content and children
+                    if child_descriptions:
+                        description = llm_client.merge_descriptions_with_own_content(
+                            module.name, own_description, child_descriptions, module, log_prompts)
+                    else:
+                        description = own_description
                 
                 module_descriptions[module.path] = description
             
@@ -666,11 +850,29 @@ def process_single_package(json_file: Path, output_dir: Path, llm_client: LLMCli
                     continue
                 
                 # Generate description
+                # Check if module has its own content (functions, types, elements)
+                has_own_content = (module.functions or module.types or 
+                                 (hasattr(module, 'elements') and module.elements and 
+                                  any(elem.get('kind') in ['value', 'type', 'module-type'] for elem in module.elements)))
+                
                 if not module.children:  # Leaf module
                     description = llm_client.generate_module_description(module, log_prompts)
-                else:  # Parent module - merge child descriptions
+                elif not has_own_content:  # Pure parent module - merge child descriptions only
                     child_descriptions = [no_library_descriptions.get(child, "") for child in module.children if child in no_library_descriptions]
                     description = llm_client.merge_descriptions(module.name, child_descriptions, module, log_prompts)
+                else:  # Hybrid module - has both own content and children
+                    # First generate description for own content
+                    own_description = llm_client.generate_module_description(module, log_prompts)
+                    
+                    # Then get child descriptions
+                    child_descriptions = [no_library_descriptions.get(child, "") for child in module.children if child in no_library_descriptions]
+                    
+                    # Combine both own content and children
+                    if child_descriptions:
+                        description = llm_client.merge_descriptions_with_own_content(
+                            module.name, own_description, child_descriptions, module, log_prompts)
+                    else:
+                        description = own_description
                 
                 no_library_descriptions[module.path] = description
         
@@ -875,6 +1077,210 @@ def monitor_thread(workers, stop_event):
         except Exception as e:
             logger.error(f"[MONITOR] Monitor thread error: {e}")
 
+def debug_module_prompts(args):
+    """Debug mode: show prompts for a specific module without making API calls."""
+    
+    module_path = args.debug
+    input_dir = Path(args.input_dir)
+    
+    print(f"=== DEBUG MODE: {module_path} ===")
+    print(f"Input directory: {input_dir}")
+    print()
+    
+    # Find the package file
+    if args.package:
+        json_file = input_dir / f"{args.package}.json"
+        if not json_file.exists():
+            print(f"Error: Package file {json_file} does not exist")
+            return
+    else:
+        # Try to infer package from module path
+        package_name = module_path.split('.')[0].lower()
+        json_file = input_dir / f"{package_name}.json"
+        if not json_file.exists():
+            print(f"Error: Could not find package file for '{module_path}'. Try using --package flag.")
+            print(f"Looked for: {json_file}")
+            return
+    
+    print(f"Package file: {json_file}")
+    
+    # Extract module using the same logic as the main script
+    extractor = ModuleExtractor()
+    try:
+        modules = extractor.extract_from_parsed_json(json_file)
+    except Exception as e:
+        print(f"Error extracting modules: {e}")
+        return
+    
+    # Find our target module
+    target_module = None
+    for module in modules:
+        if module.path == module_path:
+            target_module = module
+            break
+    
+    if not target_module:
+        print(f"Module '{module_path}' not found")
+        print("\nAvailable modules:")
+        for module in modules:
+            print(f"  - {module.path}")
+        return
+    
+    print(f"Module name: {target_module.name}")
+    print(f"Module path: {target_module.path}")
+    print(f"Elements: {len(target_module.elements) if target_module.elements else 0}")
+    print(f"Functions: {len(target_module.functions)}")
+    print(f"Types: {len(target_module.types)}")
+    print(f"Submodules: {len(target_module.modules)}")
+    print(f"Children: {target_module.children}")
+    print()
+    
+    # Check processing strategy
+    has_own_content = (target_module.functions or target_module.types or 
+                     (hasattr(target_module, 'elements') and target_module.elements and 
+                      any(elem.get('kind') in ['value', 'type', 'module-type'] for elem in target_module.elements)))
+    
+    print(f"Has own content: {has_own_content}")
+    print(f"Has children: {bool(target_module.children)}")
+    
+    if not target_module.children:
+        strategy = "Leaf module"
+    elif not has_own_content:
+        strategy = "Pure parent module"
+    else:
+        strategy = "Hybrid module"
+    
+    print(f"Processing strategy: {strategy}")
+    print()
+    
+    # Create a mock LLM client to generate prompts without API calls
+    class DebugLLMClient(LLMClient):
+        def __init__(self):
+            # Skip the parent __init__ to avoid API setup
+            pass
+            
+        def _show_prompt(self, title, prompt):
+            print("="*80)
+            print(title)
+            print("="*80)
+            print(prompt)
+            print("="*80)
+            print()
+            
+        def _show_chunked_prompts(self, module: ModuleContent):
+            """Show all prompts that would be generated for chunked description."""
+            # Extract code elements (functions, types, modules) from ordered elements
+            code_elements = [elem for elem in module.elements if elem.get('kind') in ['value', 'type', 'module', 'module-type']]
+            
+            # Fall back to old format if no elements available
+            if not code_elements:
+                code_elements = module.functions + module.types
+            
+            chunk_size = 20
+            
+            # Show chunk prompts using the actual prompt building logic
+            for i in range(0, len(code_elements), chunk_size):
+                chunk = code_elements[i:i + chunk_size]
+                chunk_num = i // chunk_size + 1
+                
+                chunk_prompt = self._build_chunk_prompt(module, chunk, chunk_num)
+                self._show_prompt(f"CHUNK {chunk_num} PROMPT", chunk_prompt)
+            
+            # Show final combining prompt using the actual prompt building logic
+            mock_summaries = [f"Chunk {i+1}: [would contain summary of chunk {i+1}]" 
+                            for i in range(len(range(0, len(code_elements), chunk_size)))]
+            
+            final_prompt = self._build_chunk_combine_prompt(module, mock_summaries)
+            self._show_prompt("FINAL COMBINING PROMPT", final_prompt)
+    
+    debug_client = DebugLLMClient()
+    
+    if strategy == "Leaf module":
+        print("PROCESSING AS LEAF MODULE")
+        print()
+        
+        # Check if simple or chunked
+        if hasattr(target_module, 'elements') and target_module.elements:
+            code_elements = [elem for elem in target_module.elements if elem.get('kind') in ['value', 'type', 'module', 'module-type']]
+            total_items = len(code_elements)
+        else:
+            total_items = len(target_module.functions) + len(target_module.types)
+        
+        if total_items <= 20:
+            prompt = debug_client._build_simple_description_prompt(target_module)
+            debug_client._show_prompt("SIMPLE DESCRIPTION PROMPT", prompt)
+        else:
+            print(f"This module has {total_items} items - using CHUNKED DESCRIPTION")
+            print()
+            debug_client._show_chunked_prompts(target_module)
+            
+    elif strategy == "Pure parent module":
+        print("PROCESSING AS PURE PARENT MODULE")
+        print("This would use MERGE DESCRIPTIONS with child modules")
+        print("Child descriptions would be generated first, then merged")
+        print()
+        print("Example merge prompt:")
+        
+        mock_child_descs = [f"Child {child}: [would contain description of {child}]" 
+                           for child in target_module.children[:3]]  # Show first 3
+        if len(target_module.children) > 3:
+            mock_child_descs.append(f"... and {len(target_module.children) - 3} more children")
+        
+        merge_prompt = f"""You are an expert OCaml developer. Write a 2-3 sentence description for the {target_module.name} module based on its submodules:
+
+Module: {target_module.name}
+Documentation: {target_module.documentation or "No documentation"}
+
+Submodule descriptions:
+{chr(10).join(f"{i+1}. {desc}" for i, desc in enumerate(mock_child_descs))}
+
+Description:"""
+        
+        debug_client._show_prompt("MERGE DESCRIPTIONS PROMPT", merge_prompt)
+        
+    else:  # Hybrid module
+        print("PROCESSING AS HYBRID MODULE")
+        print()
+        print("1. First generating own description:")
+        
+        # Check if simple or chunked
+        if hasattr(target_module, 'elements') and target_module.elements:
+            code_elements = [elem for elem in target_module.elements if elem.get('kind') in ['value', 'type', 'module', 'module-type']]
+            total_items = len(code_elements)
+        else:
+            total_items = len(target_module.functions) + len(target_module.types)
+        
+        if total_items <= 20:
+            prompt = debug_client._build_simple_description_prompt(target_module)
+            debug_client._show_prompt("OWN FUNCTIONALITY PROMPT", prompt)
+        else:
+            print(f"Own functionality has {total_items} items - using CHUNKED DESCRIPTION")
+            print()
+            debug_client._show_chunked_prompts(target_module)
+        
+        if target_module.children:
+            print(f"2. Then merging with {len(target_module.children)} children using HYBRID MERGE")
+            print()
+            
+            mock_child_descs = [f"Child {child}: [would contain description of {child}]" 
+                               for child in target_module.children[:3]]  # Show first 3
+            if len(target_module.children) > 3:
+                mock_child_descs.append(f"... and {len(target_module.children) - 3} more children")
+            
+            hybrid_merge_prompt = f"""You are an expert OCaml developer. Write a comprehensive 3-4 sentence description combining this module's own functionality with its submodules:
+
+Module: {target_module.name}
+Own functionality: [would contain description generated from step 1]
+
+Submodule descriptions:
+{chr(10).join(f"{i+1}. {desc}" for i, desc in enumerate(mock_child_descs))}
+
+Combined Description:"""
+            
+            debug_client._show_prompt("HYBRID MERGE PROMPT", hybrid_merge_prompt)
+        else:
+            print("2. No children to merge with")
+
 def main():
     parser = argparse.ArgumentParser(description="Generate semantic descriptions for OCaml modules")
     parser.add_argument("--input-dir", default="parsed-docs", help="Directory with parsed JSON files")
@@ -886,8 +1292,14 @@ def main():
     parser.add_argument("--log-prompts", action="store_true", help="Log prompts and responses sent to LLM")
     parser.add_argument("--workers", type=int, default=10, help="Number of parallel workers")
     parser.add_argument("--api-key-file", help="File containing API key (if needed for remote endpoint)")
+    parser.add_argument("--debug", help="Debug mode: show prompts for specific module path (e.g., 'Cmdliner.Term') without making API calls")
     
     args = parser.parse_args()
+    
+    # Handle debug mode
+    if args.debug:
+        debug_module_prompts(args)
+        return
     
     # Read API key from file if provided
     api_key = "dummy_key"
