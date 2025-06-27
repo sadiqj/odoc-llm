@@ -158,11 +158,16 @@ def extract_package_info(json_file: Path) -> Optional[PackageInfo]:
         version = data.get('version', 'unknown')
         statistics = data.get('statistics', {})
         
-        # Extract README content
+        # Extract README content - handle both old and new format
         readme_content = ""
-        documentation = data.get('documentation', {})
-        if 'README' in documentation and isinstance(documentation['README'], dict):
-            readme_doc = documentation['README']
+        # Try new format first (package_documentation)
+        package_documentation = data.get('package_documentation', {})
+        # Fall back to old format (documentation)
+        if not package_documentation:
+            package_documentation = data.get('documentation', {})
+            
+        if 'README' in package_documentation and isinstance(package_documentation['README'], dict):
+            readme_doc = package_documentation['README']
             # Try different fields that might contain the actual content
             readme_content = (
                 readme_doc.get('preamble', '') +
@@ -171,8 +176,8 @@ def extract_package_info(json_file: Path) -> Optional[PackageInfo]:
         
         # Extract other documentation if available
         changes_content = ""
-        if 'CHANGES' in documentation and isinstance(documentation['CHANGES'], dict):
-            changes_doc = documentation['CHANGES']
+        if 'CHANGES' in package_documentation and isinstance(package_documentation['CHANGES'], dict):
+            changes_doc = package_documentation['CHANGES']
             changes_content = (
                 changes_doc.get('preamble', '') +
                 ' '.join(changes_doc.get('documentation_sections', []))

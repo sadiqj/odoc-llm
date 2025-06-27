@@ -16,6 +16,7 @@ from tqdm import tqdm
 import signal
 import sys
 import numpy as np
+import re
 
 
 def signal_handler(signum, frame):
@@ -36,8 +37,15 @@ def extract_module_documentation(module: Dict) -> Tuple[str, str]:
     """
     texts = []
     
-    # Add module-level documentation sections
-    if "documentation_sections" in module:
+    # Add preamble (module-level documentation in new format)
+    if "preamble" in module and module["preamble"]:
+        # Remove HTML tags from preamble
+        preamble_text = re.sub(r'<[^>]+>', '', module["preamble"])
+        if preamble_text.strip():
+            texts.append(preamble_text.strip())
+    
+    # Add documentation sections (raw documentation text)
+    if "documentation_sections" in module and module["documentation_sections"]:
         texts.extend(module["documentation_sections"])
     
     # Add type documentation

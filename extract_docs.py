@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Extract and parse OCaml documentation from odoc-generated HTML/JSON files.
+Extract and parse OCaml documentation from odoc-generated markdown files.
 For each package, finds the latest version and extracts all module documentation
 into a structured JSON format.
 """
@@ -13,7 +13,7 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 from tqdm import tqdm
 
 from version_utils import find_latest_version
-from parse_html import parse_json_documentation, extract_module_path
+from parse_markdown import parse_markdown_documentation, extract_module_path
 
 def find_all_packages(docs_dir: Path) -> List[str]:
     """Find all package directories in the docs folder."""
@@ -37,7 +37,13 @@ def check_build_status(version_dir: Path) -> Dict[str, Any]:
     if status_file.exists():
         with open(status_file, 'r') as f:
             return json.load(f)
-    return {'failed': True, 'error': 'No status.json found'}
+    
+    # For markdown docs, if there's a doc directory, assume the build succeeded
+    doc_dir = version_dir / 'doc'
+    if doc_dir.exists() and doc_dir.is_dir():
+        return {'failed': False}
+    
+    return {'failed': True, 'error': 'No documentation found'}
 
 def is_valid_ocaml_module_name(name: str) -> bool:
     """Check if a string is a valid OCaml module name."""
@@ -50,34 +56,37 @@ def is_valid_ocaml_module_name(name: str) -> bool:
 
 def is_library_directory(dir_path: Path) -> bool:
     """Check if a directory under doc/ is a library directory."""
-    # Library directories have:
-    # 1. An index.html file in them
-    # 2. One or more subdirectories that are valid OCaml module names
+    # Library directories in markdown format have:
+    # 1. An index.md file in them  
+    # 2. One or more .md files with module names (e.g., Module.md or Module-Submodule.md)
     
-    index_file = dir_path / 'index.html'
+    index_file = dir_path / 'index.md'
     if not index_file.exists():
         return False
     
-    # Check for subdirectories with valid OCaml module names
-    has_module_subdirs = False
+    # Check for module markdown files
+    has_module_files = False
     for item in dir_path.iterdir():
-        if item.is_dir() and is_valid_ocaml_module_name(item.name):
-            has_module_subdirs = True
-            break
+        if item.is_file() and item.suffix == '.md' and item.name != 'index.md':
+            # Check if the filename looks like a module (starts with capital letter)
+            base_name = item.stem
+            if base_name and base_name[0].isupper():
+                has_module_files = True
+                break
     
-    return has_module_subdirs
+    return has_module_files
 
 def find_documentation_files(version_dir: Path) -> List[Tuple[Path, Optional[str]]]:
-    """Recursively find all index.html.json files in the documentation.
+    """Recursively find all .md files in the documentation.
     Returns list of (file_path, library_name) tuples where library_name is None for non-library files."""
     doc_files = []
     
     # Main documentation directory
     doc_dir = version_dir / 'doc'
     if doc_dir.exists():
-        # First, process files directly in doc/
-        for json_file in doc_dir.glob('*.html.json'):
-            doc_files.append((json_file, None))
+        # First, process markdown files directly in doc/
+        for md_file in doc_dir.glob('*.md'):
+            doc_files.append((md_file, None))
         
         # Then process library directories
         for item in doc_dir.iterdir():
@@ -85,21 +94,16 @@ def find_documentation_files(version_dir: Path) -> List[Tuple[Path, Optional[str
                 if is_library_directory(item):
                     # This is a library directory
                     library_name = item.name
-                    library_index = item / 'index.html.json'
+                    library_index = item / 'index.md'
                     
-                    # Process module subdirectories (skip the library's main index)
-                    for json_file in item.rglob('index.html.json'):
-                        if json_file != library_index:  # Skip the library's main index - it's just a landing page
-                            doc_files.append((json_file, library_name))
+                    # Process all markdown files in the library
+                    for md_file in item.rglob('*.md'):
+                        if md_file != library_index:  # Skip the library's main index - it's just a landing page
+                            doc_files.append((md_file, library_name))
                 else:
-                    # This is a non-library directory (like deprecated/), just get direct index.html.json files
-                    for json_file in item.glob('*.html.json'):
-                        doc_files.append((json_file, None))
-    
-    # Also check for README, CHANGES, LICENSE files at the version root
-    for pattern in ['*.md.html.json', '*.txt.html.json', '*.org.html.json']:
-        for file in version_dir.glob(pattern):
-            doc_files.append((file, None))
+                    # This is a non-library directory, get all markdown files
+                    for md_file in item.rglob('*.md'):
+                        doc_files.append((md_file, None))
     
     return doc_files
 
@@ -115,7 +119,7 @@ def process_documentation_file(doc_file: Path, package_name: str, version: str, 
     """Process a single documentation file."""
     try:
         # Parse the documentation
-        parsed = parse_json_documentation(str(doc_file))
+        parsed = parse_markdown_documentation(str(doc_file))
         
         # Add metadata
         parsed['package'] = package_name
@@ -123,9 +127,8 @@ def process_documentation_file(doc_file: Path, package_name: str, version: str, 
         parsed['file_path'] = str(doc_file.relative_to(version_dir))  # Relative to version dir
         parsed['library'] = library_name  # Will be None for non-library files
         
-        # Extract module path
-        if parsed.get('breadcrumbs'):
-            parsed['module_path'] = extract_module_path(parsed['breadcrumbs'])
+        # Extract module path from file path
+        parsed['module_path'] = extract_module_path(str(doc_file))
         
         return parsed
     except Exception as e:
@@ -186,7 +189,8 @@ def process_package_version(package_name: str, version: str, docs_dir: Path) -> 
             'total_modules': len(modules),
             'total_types': sum(len(m.get('types', [])) for m in modules),
             'total_values': sum(len(m.get('values', [])) for m in modules),
-            'total_submodules': sum(len(m.get('modules', [])) for m in modules)
+            'total_submodules': sum(len(m.get('modules', [])) for m in modules),
+            'total_elements': sum(len(m.get('elements', [])) for m in modules)
         }
     }
     
@@ -226,7 +230,7 @@ def save_package_documentation(package_doc: Dict[str, Any], output_dir: Path):
 
 def main():
     parser = argparse.ArgumentParser(description='Extract OCaml documentation to structured JSON')
-    parser.add_argument('--docs-dir', type=Path, default=Path('docs'),
+    parser.add_argument('--docs-dir', type=Path, default=Path('docs-md'),
                         help='Directory containing OCaml documentation')
     parser.add_argument('--output-dir', type=Path, default=Path('parsed-docs'),
                         help='Output directory for parsed documentation')
