@@ -75,10 +75,38 @@ def parse_ocaml_code_block(code_text: str, following_text: str = "") -> Optional
         name = type_match.group(1)
         return parse_type_definition(name, code_text)
     
-    # Parse module definitions
-    module_match = re.match(r'module\s+(\w+)\s*:\s*sig\s+\.\.\.\s+end', code_text)
-    if module_match:
-        name = module_match.group(1)
+    # Parse module type definitions
+    module_type_match = re.match(r'module\s+type\s+(\w+)\s*=\s*sig\s+\.\.\.\s+end', code_text)
+    if module_type_match:
+        name = module_type_match.group(1)
+        return {
+            'name': name,
+            'kind': 'module-type'
+        }
+    
+    # Parse module definitions - handle various patterns
+    # Pattern 1: module Name : sig ... end
+    module_match1 = re.match(r'module\s+(\w+)\s*:\s*sig\s+\.\.\.\s+end', code_text)
+    if module_match1:
+        name = module_match1.group(1)
+        return {
+            'name': name,
+            'kind': 'module'
+        }
+    
+    # Pattern 2: module Name (Arg : Type) : ReturnType with constraints
+    module_match2 = re.match(r'module\s+(\w+)\s*\([^)]+\)\s*:\s*\w+', code_text)
+    if module_match2:
+        name = module_match2.group(1)
+        return {
+            'name': name,
+            'kind': 'module'
+        }
+    
+    # Pattern 3: module Name : Type  (simple module signature)
+    module_match3 = re.match(r'module\s+(\w+)\s*:\s*\w+', code_text)
+    if module_match3:
+        name = module_match3.group(1)
         return {
             'name': name,
             'kind': 'module'
@@ -205,6 +233,8 @@ def extract_module_path(file_path: str) -> List[str]:
     """Extract module path from file path."""
     # Example: docs-md/package/version/doc/module/Module-Submodule.md
     # Should return ['Module', 'Submodule']
+    # Special case: Module-Submodule-module-type-TypeName.md
+    # Should return ['Module', 'Submodule', 'TypeName']
     
     parts = file_path.split('/')
     
@@ -225,6 +255,16 @@ def extract_module_path(file_path: str) -> List[str]:
         if len(parts) > doc_index + 1:
             return [parts[-2]]
         return []
+    
+    # Check for module-type pattern and handle specially
+    if '-module-type-' in filename:
+        # Split on '-module-type-' to separate the module path from the type name
+        module_part, type_name = filename.split('-module-type-', 1)
+        # Split the module part on '-' for nested modules
+        module_parts = module_part.split('-')
+        # Add the type name at the end
+        module_parts.append(type_name)
+        return module_parts
     
     # Split on '-' for nested modules
     module_parts = filename.split('-')

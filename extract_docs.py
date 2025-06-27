@@ -115,6 +115,38 @@ def load_package_metadata(version_dir: Path) -> Optional[Dict[str, Any]]:
             return json.load(f)
     return None
 
+def build_module_hierarchy(modules: List[Dict[str, Any]]) -> None:
+    """Build parent-child relationships between modules based on their paths."""
+    # Convert string paths to list format for consistent handling
+    for module in modules:
+        if "module_path" in module:
+            if isinstance(module["module_path"], str):
+                module["module_path"] = module["module_path"].split(".")
+    
+    # Build parent-child relationships
+    for module in modules:
+        module_path = module.get("module_path", [])
+        if not module_path:
+            continue
+            
+        # Initialize children list if not present
+        if "children" not in module:
+            module["children"] = []
+        
+        # Look for potential children
+        for other_module in modules:
+            other_path = other_module.get("module_path", [])
+            if not other_path or len(other_path) <= len(module_path):
+                continue
+                
+            # Check if other_module is a direct child of this module
+            if (len(other_path) == len(module_path) + 1 and 
+                other_path[:len(module_path)] == module_path):
+                
+                child_path_str = ".".join(other_path)
+                if child_path_str not in module["children"]:
+                    module["children"].append(child_path_str)
+
 def process_documentation_file(doc_file: Path, package_name: str, version: str, version_dir: Path, library_name: Optional[str]) -> Optional[Dict[str, Any]]:
     """Process a single documentation file."""
     try:
@@ -176,6 +208,9 @@ def process_package_version(package_name: str, version: str, docs_dir: Path) -> 
                 # It's a README, LICENSE, etc. at the version root
                 doc_type = doc_file.stem.split('.')[0].upper()
                 other_docs[doc_type] = result
+    
+    # Build parent-child relationships between modules
+    build_module_hierarchy(modules)
     
     # Build the package documentation structure
     package_doc = {
