@@ -37,7 +37,11 @@ def extract_module_documentation(module: Dict) -> Tuple[str, str]:
     """
     texts = []
     
-    # Add preamble (module-level documentation in new format)
+    # Add module documentation (new format)
+    if "documentation" in module and module["documentation"]:
+        texts.append(module["documentation"])
+    
+    # Add preamble (module-level documentation in old format)
     if "preamble" in module and module["preamble"]:
         # Remove HTML tags from preamble
         preamble_text = re.sub(r'<[^>]+>', '', module["preamble"])
@@ -48,17 +52,26 @@ def extract_module_documentation(module: Dict) -> Tuple[str, str]:
     if "documentation_sections" in module and module["documentation_sections"]:
         texts.extend(module["documentation_sections"])
     
-    # Add type documentation
-    if "types" in module:
-        for type_def in module["types"]:
-            if "documentation" in type_def and type_def["documentation"]:
-                texts.append(type_def["documentation"])
+    # Handle new format with elements array
+    if "elements" in module and module["elements"]:
+        for element in module["elements"]:
+            if element.get("kind") in ["value", "type", "module", "module-type"]:
+                if "documentation" in element and element["documentation"]:
+                    texts.append(element["documentation"])
     
-    # Add value (function) documentation
-    if "values" in module:
-        for value in module["values"]:
-            if "documentation" in value and value["documentation"]:
-                texts.append(value["documentation"])
+    # Handle old format with separate types and values arrays (for backward compatibility)
+    elif "types" in module or "values" in module:
+        # Add type documentation
+        if "types" in module:
+            for type_def in module["types"]:
+                if "documentation" in type_def and type_def["documentation"]:
+                    texts.append(type_def["documentation"])
+        
+        # Add value (function) documentation
+        if "values" in module:
+            for value in module["values"]:
+                if "documentation" in value and value["documentation"]:
+                    texts.append(value["documentation"])
     
     # Combine all documentation with space separation
     combined_text = " ".join(texts).strip()
