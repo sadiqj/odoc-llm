@@ -123,6 +123,7 @@ def parse_module_markdown(content: str) -> Dict[str, Any]:
         'values': [],    # Keep for backward compatibility
         'modules': [],   # Keep for backward compatibility
         'module_documentation': "",
+        'preamble': "",  # Documentation before first section or code element
         'sections': []   # Keep for backward compatibility
     }
     
@@ -142,16 +143,30 @@ def parse_module_markdown(content: str) -> Dict[str, Any]:
         if match:
             module_name = match.group(1)
     
-    # Extract main module documentation (text before the first h2)
-    main_doc_parts = []
-    for elem in soup.find_all(['p', 'h2']):
-        if elem.name == 'h2':
-            break
-        if elem.name == 'p':
-            main_doc_parts.append(elem.get_text().strip())
+    # Extract preamble (all content before first section heading or code element)
+    preamble_parts = []
+    current_elem = soup.find('h1')  # Start after the h1 title
+    if current_elem:
+        current_elem = current_elem.find_next_sibling()
+        
+        while current_elem:
+            # Stop at first section heading (h2-h6) or code block
+            if current_elem.name and (current_elem.name in ['h2', 'h3', 'h4', 'h5', 'h6'] or 
+                                    (current_elem.name == 'pre' and current_elem.find('code'))):
+                break
+            
+            # Collect text from paragraphs and other text elements
+            if current_elem.name in ['p', 'ul', 'ol', 'blockquote']:
+                text = current_elem.get_text().strip()
+                if text:
+                    preamble_parts.append(text)
+            
+            current_elem = current_elem.find_next_sibling()
     
-    if main_doc_parts:
-        result['module_documentation'] = '\n'.join(main_doc_parts)
+    if preamble_parts:
+        result['preamble'] = '\n'.join(preamble_parts)
+        # Keep module_documentation for backward compatibility
+        result['module_documentation'] = result['preamble']
     
     # Process all elements in order
     all_elements = soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'pre'])
@@ -227,7 +242,8 @@ def parse_markdown_documentation(file_path: str) -> Dict[str, Any]:
     # Otherwise, it's a general documentation file (README, CHANGES, etc.)
     return {
         'content': content,
-        'type': 'documentation'
+        'type': 'documentation',
+        'preamble': ''  # No preamble for non-module files
     }
 
 def extract_module_path(file_path: str) -> List[str]:
