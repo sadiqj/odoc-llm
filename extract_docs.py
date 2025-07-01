@@ -7,6 +7,7 @@ into a structured JSON format.
 import os
 import json
 import argparse
+import re
 from pathlib import Path
 from typing import Dict, List, Any, Optional, Tuple
 from concurrent.futures import ProcessPoolExecutor, as_completed
@@ -198,6 +199,10 @@ def process_package_version(package_name: str, version: str, docs_dir: Path) -> 
     other_docs = {}
     
     for doc_file, library_name in doc_files:
+        # Skip functor arguments (files with 'argument-N-' in the path)
+        if 'argument-' in doc_file.name and re.match(r'.*argument-\d+-', doc_file.name):
+            continue
+            
         result = process_documentation_file(doc_file, package_name, version, version_dir, library_name)
         if result:
             # Categorize the documentation
