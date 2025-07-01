@@ -77,6 +77,7 @@ class ModuleContent:
     parent: Optional[str] = None
     children: List[str] = None
     is_module_type: bool = False
+    preamble: str = ""
 
     def __post_init__(self):
         if self.children is None:
@@ -113,7 +114,25 @@ class LLMClient:
         """Check if a module is actually a module type."""
         return module.is_module_type
     
-    def generate_module_description(self, module: ModuleContent, log_prompts: bool = False) -> str:
+    def _get_ancestor_preambles(self, module: ModuleContent, all_modules: Dict[str, ModuleContent]) -> List[Tuple[str, str]]:
+        """Get preambles from ancestor modules.
+        Returns list of (module_path, preamble) tuples."""
+        ancestor_preambles = []
+        
+        # Split the module path to find ancestors
+        path_parts = module.path.split('.')
+        
+        # Build ancestor paths (e.g., for "Eio.Private.Cells" -> ["Eio", "Eio.Private"])
+        for i in range(1, len(path_parts)):
+            ancestor_path = '.'.join(path_parts[:i])
+            if ancestor_path in all_modules:
+                ancestor = all_modules[ancestor_path]
+                if ancestor.preamble:
+                    ancestor_preambles.append((ancestor_path, ancestor.preamble))
+        
+        return ancestor_preambles
+    
+    def generate_module_description(self, module: ModuleContent, all_modules: Dict[str, ModuleContent], log_prompts: bool = False) -> str:
         """Generate a concise description for a single module using chunking strategy."""
         
         # Count code elements (functions, types, modules) from ordered elements
@@ -121,11 +140,11 @@ class LLMClient:
         total_items = len(code_elements)
         
         if total_items <= 20:
-            return self._generate_simple_description(module, log_prompts)
+            return self._generate_simple_description(module, all_modules, log_prompts)
         else:
-            return self._generate_chunked_description(module, log_prompts)
+            return self._generate_chunked_description(module, all_modules, log_prompts)
     
-    def _build_simple_description_prompt(self, module: ModuleContent) -> str:
+    def _build_simple_description_prompt(self, module: ModuleContent, all_modules: Dict[str, ModuleContent]) -> str:
         """Build prompt for modules with ≤20 functions/types."""
         
         # Check if this is a module type
@@ -134,8 +153,15 @@ class LLMClient:
         
         context_parts = [f"{module_label}: {module.path}"]
         
+        # Add ancestor preambles for context
+        ancestor_preambles = self._get_ancestor_preambles(module, all_modules)
+        if ancestor_preambles:
+            context_parts.append("\nAncestor Module Context:")
+            for ancestor_path, preamble in ancestor_preambles:
+                context_parts.append(f"- {ancestor_path}: {preamble}")
+        
         if module.documentation:
-            context_parts.append(f"Module Documentation: {module.documentation}")
+            context_parts.append(f"\nModule Documentation: {module.documentation}")
         
         # Process elements in order they appear in documentation
         current_section = None
@@ -198,10 +224,10 @@ Description:"""
         
         return prompt
     
-    def _generate_simple_description(self, module: ModuleContent, log_prompts: bool = False) -> str:
+    def _generate_simple_description(self, module: ModuleContent, all_modules: Dict[str, ModuleContent], log_prompts: bool = False) -> str:
         """Generate description for modules with ≤20 functions/types."""
         
-        prompt = self._build_simple_description_prompt(module)
+        prompt = self._build_simple_description_prompt(module, all_modules)
 
         if log_prompts:
             logger.info(f"=== PROMPT for {module.path} ===")
@@ -252,7 +278,7 @@ Description:"""
                 logger.error(f"LLM error traceback: {traceback.format_exc()}")
                 return f"OCaml module {module.path} - description generation failed: {type(e).__name__}"
     
-    def _generate_chunked_description(self, module: ModuleContent, log_prompts: bool = False) -> str:
+    def _generate_chunked_description(self, module: ModuleContent, all_modules: Dict[str, ModuleContent], log_prompts: bool = False) -> str:
         """Generate description for large modules using chunking strategy."""
         
         # Extract code elements (functions, types, modules) from ordered elements
@@ -264,13 +290,13 @@ Description:"""
         # Process each chunk of 20 functions/types
         for i in range(0, len(code_elements), chunk_size):
             chunk = code_elements[i:i + chunk_size]
-            chunk_summary = self._summarize_chunk(module, chunk, i // chunk_size + 1, log_prompts)
+            chunk_summary = self._summarize_chunk(module, chunk, i // chunk_size + 1, all_modules, log_prompts)
             chunk_summaries.append(chunk_summary)
         
         # Now combine all chunk summaries with module info
-        return self._combine_chunk_summaries(module, chunk_summaries, log_prompts)
+        return self._combine_chunk_summaries(module, chunk_summaries, all_modules, log_prompts)
     
-    def _build_chunk_prompt(self, module: ModuleContent, chunk: List[Dict], chunk_num: int) -> str:
+    def _build_chunk_prompt(self, module: ModuleContent, chunk: List[Dict], chunk_num: int, all_modules: Dict[str, ModuleContent]) -> str:
         """Build prompt for summarizing a chunk of functions/types/modules."""
         # Check if this is a module type
         is_module_type = self._is_module_type(module)
@@ -280,8 +306,16 @@ Description:"""
             f"{module_label}: {module.path} (Chunk {chunk_num})",
         ]
         
+        # Add ancestor preambles for context (only in first chunk)
+        if chunk_num == 1:
+            ancestor_preambles = self._get_ancestor_preambles(module, all_modules)
+            if ancestor_preambles:
+                context_parts.append("\nAncestor Module Context:")
+                for ancestor_path, preamble in ancestor_preambles:
+                    context_parts.append(f"- {ancestor_path}: {preamble}")
+        
         if module.documentation:
-            context_parts.append(f"Module Documentation: {module.documentation}")
+            context_parts.append(f"\nModule Documentation: {module.documentation}")
         
         context_parts.append(f"Functions/Types/Modules in this chunk:")
         for item in chunk:
@@ -325,10 +359,10 @@ Avoid generic terms. Be specific about what these functions actually do.
 
 Chunk Summary:"""
 
-    def _summarize_chunk(self, module: ModuleContent, chunk: List[Dict], chunk_num: int, log_prompts: bool = False) -> str:
+    def _summarize_chunk(self, module: ModuleContent, chunk: List[Dict], chunk_num: int, all_modules: Dict[str, ModuleContent], log_prompts: bool = False) -> str:
         """Summarize a chunk of functions/types."""
         
-        prompt = self._build_chunk_prompt(module, chunk, chunk_num)
+        prompt = self._build_chunk_prompt(module, chunk, chunk_num, all_modules)
 
         if log_prompts:
             logger.info(f"=== CHUNK PROMPT for {module.path} chunk {chunk_num} ===")
@@ -364,7 +398,7 @@ Chunk Summary:"""
                 logger.error(f"LLM error for chunk {chunk_num} of module {module.path}: {e}")
                 return f"Chunk {chunk_num}: {len(chunk)} functions/types"
     
-    def _build_chunk_combine_prompt(self, module: ModuleContent, chunk_summaries: List[str]) -> str:
+    def _build_chunk_combine_prompt(self, module: ModuleContent, chunk_summaries: List[str], all_modules: Dict[str, ModuleContent]) -> str:
         """Build prompt for combining chunk summaries into final module description."""
         # Check if this is a module type
         is_module_type = self._is_module_type(module)
@@ -372,8 +406,15 @@ Chunk Summary:"""
         
         context_parts = [f"{module_label}: {module.path}"]
         
+        # Add ancestor preambles for context
+        ancestor_preambles = self._get_ancestor_preambles(module, all_modules)
+        if ancestor_preambles:
+            context_parts.append("\nAncestor Module Context:")
+            for ancestor_path, preamble in ancestor_preambles:
+                context_parts.append(f"- {ancestor_path}: {preamble}")
+        
         if module.documentation:
-            context_parts.append(f"Module Documentation: {module.documentation}")
+            context_parts.append(f"\nModule Documentation: {module.documentation}")
         
         if module.modules:
             submodule_names = [m.get("name", "unnamed") for m in module.modules[:8]]
@@ -396,10 +437,10 @@ Do NOT use generic phrases or repeat the module name.
 
 Module Description:"""
 
-    def _combine_chunk_summaries(self, module: ModuleContent, chunk_summaries: List[str], log_prompts: bool = False) -> str:
+    def _combine_chunk_summaries(self, module: ModuleContent, chunk_summaries: List[str], all_modules: Dict[str, ModuleContent], log_prompts: bool = False) -> str:
         """Combine chunk summaries into final module description."""
         
-        prompt = self._build_chunk_combine_prompt(module, chunk_summaries)
+        prompt = self._build_chunk_combine_prompt(module, chunk_summaries, all_modules)
 
         if log_prompts:
             logger.info(f"=== FINAL PROMPT for {module.path} ===")
@@ -673,9 +714,10 @@ class ModuleExtractor:
                     if doc_sections and not documentation:
                         documentation = " ".join(doc_sections)
             
-            # Extract library and is_module_type from the module data
+            # Extract library, is_module_type, and preamble from the module data
             library = module_data.get("library")
             is_module_type = module_data.get("is_module_type", False)
+            preamble = module_data.get("preamble", "")
             
             module = ModuleContent(
                 name=name,
@@ -685,7 +727,8 @@ class ModuleExtractor:
                 documentation=documentation,
                 library=library,
                 parent=parent_path if parent_path else None,
-                is_module_type=is_module_type
+                is_module_type=is_module_type,
+                preamble=preamble
             )
             
             # For flat JSON structures, don't process submodules since they exist as separate entries
@@ -747,6 +790,9 @@ def process_library(work_item: LibraryWorkItem, llm_client: LLMClient, log_promp
     else:
         logger.info(f"Processing {len(modules)} modules without library from package {package_name}")
     
+    # Create a dictionary of all modules for ancestor lookup
+    all_modules = {module.path: module for module in modules}
+    
     # Sort modules by depth (leaf modules first)
     modules_by_depth = sorted(modules, key=lambda m: m.path.count('.'), reverse=True)
     
@@ -766,13 +812,13 @@ def process_library(work_item: LibraryWorkItem, llm_client: LLMClient, log_promp
         has_own_content = any(elem.get('kind') in ['value', 'type', 'module-type'] for elem in module.elements)
         
         if not module.children:  # Leaf module
-            description = llm_client.generate_module_description(module, log_prompts)
+            description = llm_client.generate_module_description(module, all_modules, log_prompts)
         elif not has_own_content:  # Pure parent module - merge child descriptions only
             child_descriptions = [module_descriptions.get(child, "") for child in module.children if child in module_descriptions]
             description = llm_client.merge_descriptions(module.name, child_descriptions, module, log_prompts)
         else:  # Hybrid module - has both own content and children
             # First generate description for own content
-            own_description = llm_client.generate_module_description(module, log_prompts)
+            own_description = llm_client.generate_module_description(module, all_modules, log_prompts)
             
             # Then get child descriptions
             child_descriptions = [module_descriptions.get(child, "") for child in module.children if child in module_descriptions]
