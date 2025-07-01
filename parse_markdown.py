@@ -63,7 +63,8 @@ def parse_ocaml_code_block(code_text: str, following_text: str = "") -> Optional
     code_text = code_text.strip()
     
     # Parse value definitions
-    val_match = re.match(r'val\s+(\w+)\s*:\s*(.+)', code_text, re.DOTALL)
+    # Match both regular names (\w+) and special operator names in parentheses (\([^)]+\))
+    val_match = re.match(r'val\s+(\w+|\([^)]+\))\s*:\s*(.+)', code_text, re.DOTALL)
     if val_match:
         name = val_match.group(1)
         sig = val_match.group(2).strip()
