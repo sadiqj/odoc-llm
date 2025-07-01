@@ -162,6 +162,12 @@ def process_documentation_file(doc_file: Path, package_name: str, version: str, 
         # Extract module path from file path
         parsed['module_path'] = extract_module_path(str(doc_file))
         
+        # Determine if this is a module type based on file path
+        filename = doc_file.name
+        if filename.endswith('.md'):
+            filename = filename[:-3]
+        parsed['is_module_type'] = '-module-type-' in filename and filename.split('-module-type-')[-1] != ''
+        
         return parsed
     except Exception as e:
         print(f"Error processing {doc_file}: {e}")

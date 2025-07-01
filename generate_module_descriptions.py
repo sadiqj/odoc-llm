@@ -23,6 +23,7 @@ from openai import OpenAI
 import argparse
 from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor
+from collections import defaultdict
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -69,18 +70,27 @@ class ModuleContent:
     """Extracted content from a module."""
     name: str
     path: str
-    elements: List[Dict[str, Any]]  # New ordered list of all elements
-    functions: List[Dict[str, Any]]  # Keep for backward compatibility
-    types: List[Dict[str, Any]]     # Keep for backward compatibility
-    modules: List[Dict[str, Any]]   # Keep for backward compatibility
+    elements: List[Dict[str, Any]]  # Ordered list of all elements
+    modules: List[Dict[str, Any]]   # Submodules
     documentation: str
     library: Optional[str] = None
     parent: Optional[str] = None
     children: List[str] = None
+    is_module_type: bool = False
 
     def __post_init__(self):
         if self.children is None:
             self.children = []
+
+@dataclass
+class LibraryWorkItem:
+    """Work item for processing a single library."""
+    package_file: Path
+    package_name: str
+    package_version: str
+    library_name: Optional[str]  # None for modules without library
+    modules: List[ModuleContent]
+    extractor: 'ModuleExtractor'  # Shared extractor instance
 
 class LLMClient:
     """OpenAI-compatible client for generating descriptions."""
@@ -99,16 +109,16 @@ class LLMClient:
             logger.error(f"Failed to initialize OpenAI client: {e}")
             raise
     
+    def _is_module_type(self, module: ModuleContent) -> bool:
+        """Check if a module is actually a module type."""
+        return module.is_module_type
+    
     def generate_module_description(self, module: ModuleContent, log_prompts: bool = False) -> str:
         """Generate a concise description for a single module using chunking strategy."""
         
-        # Count code elements (functions, types, modules) from ordered elements if available
-        if hasattr(module, 'elements') and module.elements:
-            code_elements = [elem for elem in module.elements if elem.get('kind') in ['value', 'type', 'module', 'module-type']]
-            total_items = len(code_elements)
-        else:
-            # Fall back to old format
-            total_items = len(module.functions) + len(module.types)
+        # Count code elements (functions, types, modules) from ordered elements
+        code_elements = [elem for elem in module.elements if elem.get('kind') in ['value', 'type', 'module', 'module-type']]
+        total_items = len(code_elements)
         
         if total_items <= 20:
             return self._generate_simple_description(module, log_prompts)
@@ -118,7 +128,11 @@ class LLMClient:
     def _build_simple_description_prompt(self, module: ModuleContent) -> str:
         """Build prompt for modules with ≤20 functions/types."""
         
-        context_parts = [f"Module: {module.name}"]
+        # Check if this is a module type
+        is_module_type = self._is_module_type(module)
+        module_label = "Module Type" if is_module_type else "Module"
+        
+        context_parts = [f"{module_label}: {module.path}"]
         
         if module.documentation:
             context_parts.append(f"Module Documentation: {module.documentation}")
@@ -160,25 +174,6 @@ class LLMClient:
                     elem_line += f" (* {elem['documentation']} *)"
                 context_parts.append(elem_line)
         
-        # Fall back to old format if no elements available (backward compatibility)
-        if not hasattr(module, 'elements') or not module.elements:
-            # Include all functions with their documentation
-            if module.functions:
-                context_parts.append("Functions:")
-                for func in module.functions:
-                    func_line = f"- {func.get('signature', func.get('name', 'unnamed'))}"
-                    if func.get('documentation'):
-                        func_line += f" (* {func['documentation']} *)"
-                    context_parts.append(func_line)
-            
-            # Include all types with their documentation  
-            if module.types:
-                context_parts.append("Types:")
-                for typ in module.types:
-                    type_line = f"- {typ.get('signature', typ.get('name', 'unnamed'))}"
-                    if typ.get('documentation'):
-                        type_line += f" (* {typ['documentation']} *)"
-                    context_parts.append(type_line)
         
         if module.modules:
             submodule_names = [m.get("name", "unnamed") for m in module.modules[:8]]
@@ -209,12 +204,12 @@ Description:"""
         prompt = self._build_simple_description_prompt(module)
 
         if log_prompts:
-            logger.info(f"=== PROMPT for {module.name} ===")
+            logger.info(f"=== PROMPT for {module.path} ===")
             logger.info(prompt)
             logger.info("=== END PROMPT ===")
         
         try:
-            logger.info(f"Sending LLM request for module {module.name} (length: {len(prompt)} chars)")
+            logger.info(f"Sending LLM request for module {module.path} (length: {len(prompt)} chars)")
             import time
             start_time = time.time()
             response = self.client.chat.completions.create(
@@ -227,11 +222,11 @@ Description:"""
                 temperature=0.1
             )
             elapsed = time.time() - start_time
-            logger.info(f"LLM request completed for module {module.name} in {elapsed:.1f}s")
+            logger.info(f"LLM request completed for module {module.path} in {elapsed:.1f}s")
             
             if not response.choices:
-                logger.error(f"LLM returned no choices for module {module.name}")
-                return f"OCaml module {module.name} - no response from LLM"
+                logger.error(f"LLM returned no choices for module {module.path}")
+                return f"OCaml module {module.path} - no response from LLM"
             
             result = response.choices[0].message.content.strip()
             
@@ -239,33 +234,29 @@ Description:"""
             result = re.sub(r'<think>.*?</think>\s*', '', result, flags=re.DOTALL).strip()
             
             if log_prompts:
-                logger.info(f"=== RESPONSE for {module.name} ===")
+                logger.info(f"=== RESPONSE for {module.path} ===")
                 logger.info(result)
                 logger.info("=== END RESPONSE ===")
             return result
         except Exception as e:
             import time
             elapsed = time.time() - start_time if 'start_time' in locals() else 0
-            logger.error(f"LLM error for module {module.name} after {elapsed:.1f}s: {type(e).__name__}: {e}")
+            logger.error(f"LLM error for module {module.path} after {elapsed:.1f}s: {type(e).__name__}: {e}")
             
             if "timeout" in str(e).lower() or "timed out" in str(e).lower():
-                logger.error(f"LLM timeout for module {module.name}: {e}")
-                return f"OCaml module {module.name} - description generation timed out after {elapsed:.1f}s."
+                logger.error(f"LLM timeout for module {module.path}: {e}")
+                return f"OCaml module {module.path} - description generation timed out after {elapsed:.1f}s."
             else:
                 logger.error(f"LLM error type: {type(e)}, message: {e}")
                 import traceback
                 logger.error(f"LLM error traceback: {traceback.format_exc()}")
-                return f"OCaml module {module.name} - description generation failed: {type(e).__name__}"
+                return f"OCaml module {module.path} - description generation failed: {type(e).__name__}"
     
     def _generate_chunked_description(self, module: ModuleContent, log_prompts: bool = False) -> str:
         """Generate description for large modules using chunking strategy."""
         
         # Extract code elements (functions, types, modules) from ordered elements
         code_elements = [elem for elem in module.elements if elem.get('kind') in ['value', 'type', 'module', 'module-type']]
-        
-        # Fall back to old format if no elements available
-        if not code_elements:
-            code_elements = module.functions + module.types
         
         chunk_size = 20
         chunk_summaries = []
@@ -281,8 +272,12 @@ Description:"""
     
     def _build_chunk_prompt(self, module: ModuleContent, chunk: List[Dict], chunk_num: int) -> str:
         """Build prompt for summarizing a chunk of functions/types/modules."""
+        # Check if this is a module type
+        is_module_type = self._is_module_type(module)
+        module_label = "Module Type" if is_module_type else "Module"
+        
         context_parts = [
-            f"Module: {module.name} (Chunk {chunk_num})",
+            f"{module_label}: {module.path} (Chunk {chunk_num})",
         ]
         
         if module.documentation:
@@ -336,7 +331,7 @@ Chunk Summary:"""
         prompt = self._build_chunk_prompt(module, chunk, chunk_num)
 
         if log_prompts:
-            logger.info(f"=== CHUNK PROMPT for {module.name} chunk {chunk_num} ===")
+            logger.info(f"=== CHUNK PROMPT for {module.path} chunk {chunk_num} ===")
             logger.info(prompt)
             logger.info("=== END CHUNK PROMPT ===")
         
@@ -357,21 +352,25 @@ Chunk Summary:"""
             result = re.sub(r'<think>.*?</think>\s*', '', result, flags=re.DOTALL).strip()
             
             if log_prompts:
-                logger.info(f"=== CHUNK RESPONSE for {module.name} chunk {chunk_num} ===")
+                logger.info(f"=== CHUNK RESPONSE for {module.path} chunk {chunk_num} ===")
                 logger.info(result)
                 logger.info("=== END CHUNK RESPONSE ===")
             return result
         except Exception as e:
             if "timeout" in str(e).lower():
-                logger.error(f"LLM timeout for chunk {chunk_num} of module {module.name}: {e}")
+                logger.error(f"LLM timeout for chunk {chunk_num} of module {module.path}: {e}")
                 return f"Chunk {chunk_num}: {len(chunk)} functions/types (timed out)"
             else:
-                logger.error(f"LLM error for chunk {chunk_num} of module {module.name}: {e}")
+                logger.error(f"LLM error for chunk {chunk_num} of module {module.path}: {e}")
                 return f"Chunk {chunk_num}: {len(chunk)} functions/types"
     
     def _build_chunk_combine_prompt(self, module: ModuleContent, chunk_summaries: List[str]) -> str:
         """Build prompt for combining chunk summaries into final module description."""
-        context_parts = [f"Module: {module.name}"]
+        # Check if this is a module type
+        is_module_type = self._is_module_type(module)
+        module_label = "Module Type" if is_module_type else "Module"
+        
+        context_parts = [f"{module_label}: {module.path}"]
         
         if module.documentation:
             context_parts.append(f"Module Documentation: {module.documentation}")
@@ -403,7 +402,7 @@ Module Description:"""
         prompt = self._build_chunk_combine_prompt(module, chunk_summaries)
 
         if log_prompts:
-            logger.info(f"=== FINAL PROMPT for {module.name} ===")
+            logger.info(f"=== FINAL PROMPT for {module.path} ===")
             logger.info(prompt)
             logger.info("=== END FINAL PROMPT ===")
         
@@ -421,17 +420,17 @@ Module Description:"""
             result = re.sub(r'<think>.*?</think>\s*', '', result, flags=re.DOTALL).strip()
             
             if log_prompts:
-                logger.info(f"=== FINAL RESPONSE for {module.name} ===")
+                logger.info(f"=== FINAL RESPONSE for {module.path} ===")
                 logger.info(result)
                 logger.info("=== END FINAL RESPONSE ===")
             return result
         except Exception as e:
             if "timeout" in str(e).lower():
-                logger.error(f"LLM timeout combining chunks for module {module.name}: {e}")
-                return f"OCaml module {module.name} with {len(chunk_summaries)} functional areas (timed out)"
+                logger.error(f"LLM timeout combining chunks for module {module.path}: {e}")
+                return f"OCaml module {module.path} with {len(chunk_summaries)} functional areas (timed out)"
             else:
-                logger.error(f"LLM error combining chunks for module {module.name}: {e}")
-                return f"OCaml module {module.name} with {len(chunk_summaries)} functional areas"
+                logger.error(f"LLM error combining chunks for module {module.path}: {e}")
+                return f"OCaml module {module.path} with {len(chunk_summaries)} functional areas"
     
     def generate_library_summary(self, library_name: str, module_descriptions: List[str], log_prompts: bool = False) -> str:
         """Generate a summary for a library based on its module descriptions."""
@@ -652,10 +651,8 @@ class ModuleExtractor:
                 path = f"{parent_path}.{name}" if parent_path else name
             
             # Extract content
-            elements = module_data.get("elements", [])  # New ordered elements
-            functions = module_data.get("values", [])   # Keep for backward compatibility
-            types = module_data.get("types", [])        # Keep for backward compatibility
-            submodules = module_data.get("modules", []) # Keep for backward compatibility
+            elements = module_data.get("elements", [])  # Ordered elements
+            submodules = module_data.get("modules", [])
             
             # Get documentation from preamble or documentation_sections
             documentation = module_data.get("documentation", "")
@@ -676,27 +673,26 @@ class ModuleExtractor:
                     if doc_sections and not documentation:
                         documentation = " ".join(doc_sections)
             
-            # Extract library from the module data
+            # Extract library and is_module_type from the module data
             library = module_data.get("library")
+            is_module_type = module_data.get("is_module_type", False)
             
             module = ModuleContent(
                 name=name,
                 path=path,
                 elements=elements,
-                functions=functions,
-                types=types,
                 modules=submodules,
                 documentation=documentation,
                 library=library,
-                parent=parent_path if parent_path else None
+                parent=parent_path if parent_path else None,
+                is_module_type=is_module_type
             )
             
             # For flat JSON structures, don't process submodules since they exist as separate entries
-            # Just record the child paths for hierarchical relationships
-            for submodule_data in submodules:
-                child_name = submodule_data.get("name", "unnamed")
-                child_path = f"{path}.{child_name}" if path else child_name
-                module.children.append(child_path)
+            # Use the children field that was calculated by build_module_hierarchy in extract_docs.py
+            # This includes both submodules and sub-module-types
+            children_from_json = module_data.get("children", [])
+            module.children.extend(children_from_json)
             
             return module
         
@@ -710,8 +706,8 @@ class ModuleExtractor:
                     module = extract_module_recursive(module_data)
                     
                     # For empty main modules, try to get documentation from README
-                    if (not module.functions and not module.types and 
-                        module_data.get("module_path", "") == ""):
+                    code_elements = [elem for elem in module.elements if elem.get('kind') in ['value', 'type', 'module', 'module-type']]
+                    if (not code_elements and module_data.get("module_path", "") == ""):
                         # Check if documentation is just a version string (like "package 1.2.3")
                         doc_words = module.documentation.strip().split()
                         is_just_version = (len(doc_words) <= 3 and 
@@ -740,27 +736,104 @@ class ModuleExtractor:
         
         return modules
 
-def process_single_package(json_file: Path, output_dir: Path, llm_client: LLMClient, extractor: ModuleExtractor, log_prompts: bool) -> bool:
-    """Process a single package and return success status."""
+def process_library(work_item: LibraryWorkItem, llm_client: LLMClient, log_prompts: bool) -> Dict[str, Any]:
+    """Process a single library and return its descriptions."""
+    library_name = work_item.library_name
+    modules = work_item.modules
+    package_name = work_item.package_name
+    
+    if library_name:
+        logger.info(f"Processing library {library_name} from package {package_name} with {len(modules)} modules")
+    else:
+        logger.info(f"Processing {len(modules)} modules without library from package {package_name}")
+    
+    # Sort modules by depth (leaf modules first)
+    modules_by_depth = sorted(modules, key=lambda m: m.path.count('.'), reverse=True)
+    
+    # Generate descriptions for modules
+    module_descriptions = {}
+    
+    for module in modules_by_depth:
+        # Skip empty modules (no content to describe)
+        code_elements = [elem for elem in module.elements if elem.get('kind') in ['value', 'type', 'module', 'module-type']]
+        if not module.children and not code_elements and not module.documentation.strip():
+            logger.info(f"Skipping empty module: {module.path}")
+            module_descriptions[module.path] = f"Empty module with no functions, types, or documentation."
+            continue
+        
+        # Generate new description
+        # Check if module has its own content (functions, types, elements)
+        has_own_content = any(elem.get('kind') in ['value', 'type', 'module-type'] for elem in module.elements)
+        
+        if not module.children:  # Leaf module
+            description = llm_client.generate_module_description(module, log_prompts)
+        elif not has_own_content:  # Pure parent module - merge child descriptions only
+            child_descriptions = [module_descriptions.get(child, "") for child in module.children if child in module_descriptions]
+            description = llm_client.merge_descriptions(module.name, child_descriptions, module, log_prompts)
+        else:  # Hybrid module - has both own content and children
+            # First generate description for own content
+            own_description = llm_client.generate_module_description(module, log_prompts)
+            
+            # Then get child descriptions
+            child_descriptions = [module_descriptions.get(child, "") for child in module.children if child in module_descriptions]
+            
+            # Combine both own content and children
+            if child_descriptions:
+                description = llm_client.merge_descriptions_with_own_content(
+                    module.name, own_description, child_descriptions, module, log_prompts)
+            else:
+                description = own_description
+        
+        module_descriptions[module.path] = description
+    
+    # Generate library summary if this is a library
+    library_summary = None
+    if library_name:
+        valid_descriptions = [desc for desc in module_descriptions.values() if desc and not desc.startswith("Empty module")]
+        if valid_descriptions:
+            library_summary = llm_client.generate_library_summary(library_name, valid_descriptions, log_prompts)
+        else:
+            library_summary = f"Library with {len(module_descriptions)} modules (no valid descriptions)"
+    
+    # Clean up module paths
+    cleaned_modules = {}
+    for module_path, description in module_descriptions.items():
+        # Replace "unnamed" with package name in the path
+        if module_path.startswith("unnamed."):
+            clean_path = module_path.replace("unnamed.", f"{package_name}.", 1)
+        elif module_path == "unnamed":
+            clean_path = package_name
+        else:
+            clean_path = module_path
+        cleaned_modules[clean_path] = description
+    
+    result = {
+        "library_name": library_name,
+        "modules": cleaned_modules
+    }
+    
+    if library_summary:
+        result["summary"] = library_summary
+    
+    return result
+
+def load_package_and_create_work_items(json_file: Path, extractor: ModuleExtractor) -> List[LibraryWorkItem]:
+    """Load a package and create work items for each library."""
     package_name = json_file.stem
-    
-    # Memory monitoring
-    process = psutil.Process()
-    initial_memory = process.memory_info().rss / 1024 / 1024  # MB
-    file_size_mb = json_file.stat().st_size / 1024 / 1024
-    
-    logger.info(f"Starting processing of package: {package_name} (file size: {file_size_mb:.1f}MB, memory: {initial_memory:.1f}MB)")
+    work_items = []
     
     try:
+        # Load package data
+        with open(json_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        package_version = data.get('version', 'unknown')
+        
         # Extract modules
         modules = extractor.extract_from_parsed_json(json_file)
         if not modules:
             logger.warning(f"No modules found in {package_name}")
-            return False
-        
-        # Memory check after loading
-        after_load_memory = process.memory_info().rss / 1024 / 1024
-        logger.info(f"Package {package_name}: loaded {len(modules)} modules, memory: {after_load_memory:.1f}MB (+{after_load_memory-initial_memory:.1f}MB)")
+            return work_items
         
         # Group modules by library
         libraries = {}
@@ -776,279 +849,193 @@ def process_single_package(json_file: Path, output_dir: Path, llm_client: LLMCli
         
         logger.info(f"Package {package_name}: {len(libraries)} libraries, {len(no_library_modules)} modules without library")
         
-        # Process each library separately
-        library_results = {}
-        
+        # Create work items for each library
         for library_name, library_modules in libraries.items():
-            logger.info(f"Processing library {library_name} with {len(library_modules)} modules")
-            
-            # Sort modules by depth (leaf modules first) within this library
-            modules_by_depth = sorted(library_modules, key=lambda m: m.path.count('.'), reverse=True)
-            
-            # Generate descriptions for modules in this library
-            module_descriptions = {}
-            
-            for module in modules_by_depth:
-                # Skip empty modules (no content to describe)
-                if not module.children and not module.functions and not module.types and not module.documentation.strip():
-                    logger.info(f"Skipping empty module: {module.path}")
-                    module_descriptions[module.path] = f"Empty module with no functions, types, or documentation."
-                    continue
-                
-                # Generate new description
-                # Check if module has its own content (functions, types, elements)
-                has_own_content = (module.functions or module.types or 
-                                 (hasattr(module, 'elements') and module.elements and 
-                                  any(elem.get('kind') in ['value', 'type', 'module-type'] for elem in module.elements)))
-                
-                if not module.children:  # Leaf module
-                    description = llm_client.generate_module_description(module, log_prompts)
-                elif not has_own_content:  # Pure parent module - merge child descriptions only
-                    child_descriptions = [module_descriptions.get(child, "") for child in module.children if child in module_descriptions]
-                    description = llm_client.merge_descriptions(module.name, child_descriptions, module, log_prompts)
-                else:  # Hybrid module - has both own content and children
-                    # First generate description for own content
-                    own_description = llm_client.generate_module_description(module, log_prompts)
-                    
-                    # Then get child descriptions
-                    child_descriptions = [module_descriptions.get(child, "") for child in module.children if child in module_descriptions]
-                    
-                    # Combine both own content and children
-                    if child_descriptions:
-                        description = llm_client.merge_descriptions_with_own_content(
-                            module.name, own_description, child_descriptions, module, log_prompts)
-                    else:
-                        description = own_description
-                
-                module_descriptions[module.path] = description
-            
-            # Generate library summary
-            valid_descriptions = [desc for desc in module_descriptions.values() if desc and not desc.startswith("Empty module")]
-            if valid_descriptions:
-                library_summary = llm_client.generate_library_summary(library_name, valid_descriptions, log_prompts)
-            else:
-                library_summary = f"Library with {len(module_descriptions)} modules (no valid descriptions)"
-            
-            library_results[library_name] = {
-                "summary": library_summary,
-                "modules": module_descriptions
-            }
+            work_items.append(LibraryWorkItem(
+                package_file=json_file,
+                package_name=package_name,
+                package_version=package_version,
+                library_name=library_name,
+                modules=library_modules,
+                extractor=extractor
+            ))
         
-        # Process modules without library (if any)
-        no_library_descriptions = {}
+        # Create work item for modules without library
         if no_library_modules:
-            logger.info(f"Processing {len(no_library_modules)} modules without library")
-            
-            # Sort by depth
-            modules_by_depth = sorted(no_library_modules, key=lambda m: m.path.count('.'), reverse=True)
-            
-            for module in modules_by_depth:
-                # Skip empty modules
-                if not module.children and not module.functions and not module.types and not module.documentation.strip():
-                    logger.info(f"Skipping empty module: {module.path}")
-                    no_library_descriptions[module.path] = f"Empty module with no functions, types, or documentation."
-                    continue
-                
-                # Generate description
-                # Check if module has its own content (functions, types, elements)
-                has_own_content = (module.functions or module.types or 
-                                 (hasattr(module, 'elements') and module.elements and 
-                                  any(elem.get('kind') in ['value', 'type', 'module-type'] for elem in module.elements)))
-                
-                if not module.children:  # Leaf module
-                    description = llm_client.generate_module_description(module, log_prompts)
-                elif not has_own_content:  # Pure parent module - merge child descriptions only
-                    child_descriptions = [no_library_descriptions.get(child, "") for child in module.children if child in no_library_descriptions]
-                    description = llm_client.merge_descriptions(module.name, child_descriptions, module, log_prompts)
-                else:  # Hybrid module - has both own content and children
-                    # First generate description for own content
-                    own_description = llm_client.generate_module_description(module, log_prompts)
-                    
-                    # Then get child descriptions
-                    child_descriptions = [no_library_descriptions.get(child, "") for child in module.children if child in no_library_descriptions]
-                    
-                    # Combine both own content and children
-                    if child_descriptions:
-                        description = llm_client.merge_descriptions_with_own_content(
-                            module.name, own_description, child_descriptions, module, log_prompts)
-                    else:
-                        description = own_description
-                
-                no_library_descriptions[module.path] = description
+            work_items.append(LibraryWorkItem(
+                package_file=json_file,
+                package_name=package_name,
+                package_version=package_version,
+                library_name=None,
+                modules=no_library_modules,
+                extractor=extractor
+            ))
         
-        # Clean up module paths in all libraries
-        cleaned_library_results = {}
-        for library_name, library_data in library_results.items():
-            cleaned_modules = {}
-            for module_path, description in library_data["modules"].items():
-                # Replace "unnamed" with package name in the path
-                if module_path.startswith("unnamed."):
-                    clean_path = module_path.replace("unnamed.", f"{package_name}.", 1)
-                elif module_path == "unnamed":
-                    clean_path = package_name
-                else:
-                    clean_path = module_path
-                cleaned_modules[clean_path] = description
-            
-            cleaned_library_results[library_name] = {
-                "summary": library_data["summary"],
-                "modules": cleaned_modules
-            }
-        
-        # Clean up no-library modules
-        cleaned_no_library = {}
-        for module_path, description in no_library_descriptions.items():
-            if module_path.startswith("unnamed."):
-                clean_path = module_path.replace("unnamed.", f"{package_name}.", 1)
-            elif module_path == "unnamed":
-                clean_path = package_name
-            else:
-                clean_path = module_path
-            cleaned_no_library[clean_path] = description
-        
-        # Save package descriptions with library organization
-        output_file = output_dir / f"{package_name}.json"
-        result = {
-            "package": package_name,
-            "libraries": cleaned_library_results
-        }
-        
-        if cleaned_no_library:
-            result["modules_without_library"] = cleaned_no_library
-        
-        with open(output_file, 'w') as f:
-            json.dump(result, f, indent=2)
-        
-        # Memory check at completion
-        final_memory = process.memory_info().rss / 1024 / 1024
-        total_descriptions = sum(len(lib_data["modules"]) for lib_data in cleaned_library_results.values()) + len(cleaned_no_library)
-        logger.info(f"Successfully completed package: {package_name} ({len(modules)} modules, {total_descriptions} descriptions, {len(libraries)} libraries)")
-        logger.info(f"Package {package_name}: final memory: {final_memory:.1f}MB (+{final_memory-initial_memory:.1f}MB total)")
-        
-        # Force garbage collection for large packages
-        if file_size_mb > 5:
-            logger.info(f"Large package {package_name}: forcing garbage collection")
-            gc.collect()
-            after_gc_memory = process.memory_info().rss / 1024 / 1024
-            logger.info(f"Package {package_name}: after GC memory: {after_gc_memory:.1f}MB")
-        
-        return True
+        return work_items
         
     except Exception as e:
-        logger.error(f"FAILED processing package {package_name}: {e}")
-        import traceback
-        logger.error(f"Full traceback for {package_name}: {traceback.format_exc()}")
+        logger.error(f"Failed to load package {package_name}: {e}")
+        return work_items
+
+# Global storage for package results
+package_results = defaultdict(lambda: {'libraries': {}, 'modules_without_library': {}})
+results_lock = threading.Lock()
+
+def save_package_results(output_dir: Path, package_name: str, completed_packages: set) -> bool:
+    """Save results for a package when all its libraries are processed."""
+    try:
+        with results_lock:
+            if package_name not in package_results:
+                return False
+            
+            result_data = package_results[package_name]
+            
+            # Build final result structure
+            result = {
+                "package": package_name,
+                "libraries": result_data['libraries']
+            }
+            
+            if result_data['modules_without_library']:
+                result["modules_without_library"] = result_data['modules_without_library']
+            
+            # Save to file
+            output_file = output_dir / f"{package_name}.json"
+            with open(output_file, 'w') as f:
+                json.dump(result, f, indent=2)
+            
+            # Clean up memory
+            del package_results[package_name]
+            
+            # Mark package as completed
+            completed_packages.add(package_name)
+            
+            return True
+    except Exception as e:
+        logger.error(f"Failed to save results for package {package_name}: {e}")
         return False
 
-def package_worker(package_queue: queue.Queue, output_dir: Path, llm_url: str, model: str, api_key: str, log_prompts: bool, 
-                  progress_lock: threading.Lock, completed_count: list, failed_count: list):
-    """Worker function that processes packages from the queue."""
+def library_worker(work_queue: queue.Queue, output_dir: Path, llm_url: str, model: str, api_key: str, log_prompts: bool, 
+                   progress_lock: threading.Lock, completed_count: list, failed_count: list, completed_packages: set):
+    """Worker function that processes library work items from the queue."""
     import threading
     import time
     import traceback
     worker_id = threading.current_thread().name
     logger.info(f"Worker {worker_id} started successfully")
     
-    # Install signal handlers for this worker thread
-    def worker_signal_handler(signum, frame):
-        logger.error(f"Worker {worker_id} RECEIVED SIGNAL {signum}")
-        logger.error(f"Worker {worker_id} signal traceback: {''.join(traceback.format_stack(frame))}")
-        raise KeyboardInterrupt(f"Worker {worker_id} signal {signum}")
-    
     try:
-        # Each worker gets its own LLM client and extractor
+        # Each worker gets its own LLM client
         logger.info(f"Worker {worker_id} initializing LLM client...")
         llm_client = LLMClient(llm_url, model, api_key)
-        logger.info(f"Worker {worker_id} initializing extractor...")
-        extractor = ModuleExtractor()
         logger.info(f"Worker {worker_id} initialization complete")
         
-        package_count = 0
+        work_count = 0
         last_heartbeat = time.time()
         
         while True:
-            json_file = None
+            work_item = None
             try:
                 # Heartbeat every 30 seconds
                 if time.time() - last_heartbeat > 30:
-                    logger.info(f"Worker {worker_id} HEARTBEAT - alive and processing (packages done: {package_count})")
+                    logger.info(f"Worker {worker_id} HEARTBEAT - alive and processing (work items done: {work_count})")
                     last_heartbeat = time.time()
                 
-                logger.info(f"Worker {worker_id} waiting for package from queue...")
-                json_file = package_queue.get(timeout=5)  # Increased timeout
-                package_count += 1
-                package_name = json_file.stem
+                logger.info(f"Worker {worker_id} waiting for work item from queue...")
+                work_item = work_queue.get(timeout=5)
+                work_count += 1
                 
-                logger.info(f"Worker {worker_id} picked up package #{package_count}: {package_name}")
+                package_name = work_item.package_name
+                library_name = work_item.library_name
+                work_description = f"{package_name}::{library_name if library_name else 'no-library'}"
                 
-                # Add heartbeat logging
+                logger.info(f"Worker {worker_id} picked up work item #{work_count}: {work_description}")
+                
                 start_time = time.time()
-                logger.info(f"Worker {worker_id} starting processing of {package_name} at {time.strftime('%H:%M:%S')}")
                 
-                # Wrap in try-catch for individual package processing
+                # Process the library
                 try:
-                    success = process_single_package(json_file, output_dir, llm_client, extractor, log_prompts)
-                    logger.info(f"Worker {worker_id} process_single_package returned: {success}")
-                except Exception as package_error:
-                    logger.error(f"Worker {worker_id} EXCEPTION in process_single_package for {package_name}: {package_error}")
-                    logger.error(f"Worker {worker_id} package traceback: {traceback.format_exc()}")
+                    result = process_library(work_item, llm_client, log_prompts)
+                    
+                    # Store result in global package results
+                    with results_lock:
+                        if library_name:
+                            package_results[package_name]['libraries'][library_name] = {
+                                "summary": result["summary"],
+                                "modules": result["modules"]
+                            }
+                        else:
+                            package_results[package_name]['modules_without_library'] = result["modules"]
+                    
+                    success = True
+                    
+                except Exception as work_error:
+                    logger.error(f"Worker {worker_id} EXCEPTION processing {work_description}: {work_error}")
+                    logger.error(f"Worker {worker_id} work traceback: {traceback.format_exc()}")
                     success = False
                 
                 end_time = time.time()
                 duration = end_time - start_time
-                logger.info(f"Worker {worker_id} finished processing {package_name} in {duration:.1f}s")
+                logger.info(f"Worker {worker_id} finished processing {work_description} in {duration:.1f}s")
                 
-                # Update progress counters thread-safely
+                # Update progress counters
                 try:
                     with progress_lock:
                         if success:
                             completed_count[0] += 1
-                            logger.info(f"Worker {worker_id} completed package: {package_name} (SUCCESS) - total completed: {completed_count[0]}")
+                            logger.info(f"Worker {worker_id} completed work item: {work_description} (SUCCESS) - total completed: {completed_count[0]}")
                         else:
                             failed_count[0] += 1
-                            logger.error(f"Worker {worker_id} failed package: {package_name} (FAILED) - total failed: {failed_count[0]}")
+                            logger.error(f"Worker {worker_id} failed work item: {work_description} (FAILED) - total failed: {failed_count[0]}")
+                
+                        # Check if this completes a package (all libraries processed)
+                        # Note: This is a simplified check - for full correctness we'd need to track expected work items per package
+                        if success and save_package_results(output_dir, package_name, completed_packages):
+                            logger.info(f"Package {package_name} completed and saved")
+                            
                 except Exception as count_error:
                     logger.error(f"Worker {worker_id} EXCEPTION updating progress counts: {count_error}")
-                    logger.error(f"Worker {worker_id} count traceback: {traceback.format_exc()}")
                 
                 try:
-                    logger.info(f"Worker {worker_id} marking task done for {package_name}")
-                    package_queue.task_done()
-                    logger.info(f"Worker {worker_id} successfully completed task for {package_name}")
+                    work_queue.task_done()
                 except Exception as task_done_error:
                     logger.error(f"Worker {worker_id} EXCEPTION in task_done: {task_done_error}")
-                    logger.error(f"Worker {worker_id} task_done traceback: {traceback.format_exc()}")
                 
             except queue.Empty:
-                # No more packages in queue
-                logger.info(f"Worker {worker_id} finished - no more packages in queue after processing {package_count} packages")
+                logger.info(f"Worker {worker_id} finished - no more work items in queue after processing {work_count} items")
                 break
             except Exception as e:
-                logger.error(f"Worker {worker_id} encountered CRITICAL error processing {json_file.stem if json_file else 'unknown'}: {e}")
+                logger.error(f"Worker {worker_id} encountered CRITICAL error processing {work_item.package_name if work_item else 'unknown'}: {e}")
                 logger.error(f"Worker {worker_id} full traceback: {traceback.format_exc()}")
                 
-                # Still mark task as done to prevent hanging
-                if json_file:
+                if work_item:
                     try:
-                        package_queue.task_done()
-                        logger.info(f"Worker {worker_id} marked failed task as done")
-                    except Exception as task_done_error:
-                        logger.error(f"Worker {worker_id} could not mark task as done: {task_done_error}")
-                
-                # Update failed count
-                try:
-                    with progress_lock:
-                        failed_count[0] += 1
-                        logger.error(f"Worker {worker_id} incremented failed count to {failed_count[0]}")
-                except Exception as count_error:
-                    logger.error(f"Worker {worker_id} could not update failed count: {count_error}")
+                        work_queue.task_done()
+                    except Exception:
+                        pass
+                    
+                    try:
+                        with progress_lock:
+                            failed_count[0] += 1
+                    except Exception:
+                        pass
     
     except Exception as fatal_error:
         logger.error(f"Worker {worker_id} FATAL ERROR in main loop: {fatal_error}")
         logger.error(f"Worker {worker_id} FATAL traceback: {traceback.format_exc()}")
-        logger.error(f"Worker {worker_id} FATAL error type: {type(fatal_error)}")
     
-    logger.info(f"Worker {worker_id} exiting after processing {package_count} packages")
+    logger.info(f"Worker {worker_id} exiting after processing {work_count} work items")
+
+def create_work_items(json_files: List[Path]) -> List[LibraryWorkItem]:
+    """Create all work items from a list of package files."""
+    all_work_items = []
+    extractor = ModuleExtractor()
+    
+    for json_file in json_files:
+        work_items = load_package_and_create_work_items(json_file, extractor)
+        all_work_items.extend(work_items)
+    
+    return all_work_items
 
 def monitor_thread(workers, stop_event):
     """Background thread to monitor worker health"""
@@ -1128,17 +1115,15 @@ def debug_module_prompts(args):
     
     print(f"Module name: {target_module.name}")
     print(f"Module path: {target_module.path}")
-    print(f"Elements: {len(target_module.elements) if target_module.elements else 0}")
-    print(f"Functions: {len(target_module.functions)}")
-    print(f"Types: {len(target_module.types)}")
+    print(f"Elements: {len(target_module.elements)}")
+    code_elements = [elem for elem in target_module.elements if elem.get('kind') in ['value', 'type', 'module', 'module-type']]
+    print(f"Code elements: {len(code_elements)}")
     print(f"Submodules: {len(target_module.modules)}")
     print(f"Children: {target_module.children}")
     print()
     
     # Check processing strategy
-    has_own_content = (target_module.functions or target_module.types or 
-                     (hasattr(target_module, 'elements') and target_module.elements and 
-                      any(elem.get('kind') in ['value', 'type', 'module-type'] for elem in target_module.elements)))
+    has_own_content = any(elem.get('kind') in ['value', 'type', 'module-type'] for elem in target_module.elements)
     
     print(f"Has own content: {has_own_content}")
     print(f"Has children: {bool(target_module.children)}")
@@ -1172,10 +1157,6 @@ def debug_module_prompts(args):
             # Extract code elements (functions, types, modules) from ordered elements
             code_elements = [elem for elem in module.elements if elem.get('kind') in ['value', 'type', 'module', 'module-type']]
             
-            # Fall back to old format if no elements available
-            if not code_elements:
-                code_elements = module.functions + module.types
-            
             chunk_size = 20
             
             # Show chunk prompts using the actual prompt building logic
@@ -1200,11 +1181,8 @@ def debug_module_prompts(args):
         print()
         
         # Check if simple or chunked
-        if hasattr(target_module, 'elements') and target_module.elements:
-            code_elements = [elem for elem in target_module.elements if elem.get('kind') in ['value', 'type', 'module', 'module-type']]
-            total_items = len(code_elements)
-        else:
-            total_items = len(target_module.functions) + len(target_module.types)
+        code_elements = [elem for elem in target_module.elements if elem.get('kind') in ['value', 'type', 'module', 'module-type']]
+        total_items = len(code_elements)
         
         if total_items <= 20:
             prompt = debug_client._build_simple_description_prompt(target_module)
@@ -1244,11 +1222,8 @@ Description:"""
         print("1. First generating own description:")
         
         # Check if simple or chunked
-        if hasattr(target_module, 'elements') and target_module.elements:
-            code_elements = [elem for elem in target_module.elements if elem.get('kind') in ['value', 'type', 'module', 'module-type']]
-            total_items = len(code_elements)
-        else:
-            total_items = len(target_module.functions) + len(target_module.types)
+        code_elements = [elem for elem in target_module.elements if elem.get('kind') in ['value', 'type', 'module', 'module-type']]
+        total_items = len(code_elements)
         
         if total_items <= 20:
             prompt = debug_client._build_simple_description_prompt(target_module)
@@ -1334,19 +1309,32 @@ def main():
     
     logger.info(f"Processing {len(json_files)} packages with {args.workers} workers")
     
-    # Estimate time based on ~30 seconds per package
-    estimated_hours = (len(json_files) * 30) / 3600
+    # Create work items for all libraries
+    logger.info("Creating work items for all libraries...")
+    all_work_items = create_work_items(json_files)
+    total_work_items = len(all_work_items)
+    
+    logger.info(f"Created {total_work_items} library work items from {len(json_files)} packages")
+    
+    # Estimate time based on ~15 seconds per library (improved parallelism)
+    estimated_hours = (total_work_items * 15) / 3600
     logger.info(f"Estimated time: {estimated_hours:.1f} hours ({estimated_hours/24:.1f} days)")
     
-    # Create package queue with filtered files
-    package_queue = queue.Queue()
-    for json_file in json_files:
-        package_queue.put(json_file)
+    # Shuffle the work items to distribute load better
+    import random
+    random.shuffle(all_work_items)
+    logger.info(f"Shuffled work items to distribute load")
+    
+    # Create work queue
+    work_queue = queue.Queue()
+    for work_item in all_work_items:
+        work_queue.put(work_item)
     
     # Shared progress tracking
     progress_lock = threading.Lock()
     completed_count = [0]  # Use list for mutable reference
     failed_count = [0]
+    completed_packages = set()  # Track completed packages
     
     # Main thread signal handlers
     def main_signal_handler(signum, frame):
@@ -1359,11 +1347,6 @@ def main():
     
     logger.info(f"Starting ThreadPoolExecutor with {args.workers} workers...")
     
-    # Shuffle the queue to distribute load better
-    import random
-    random.shuffle(json_files)
-    logger.info(f"Shuffled package order to distribute load")
-    
     try:
         with ThreadPoolExecutor(max_workers=args.workers) as executor:
             logger.info("ThreadPoolExecutor created successfully")
@@ -1373,8 +1356,8 @@ def main():
             for i in range(args.workers):
                 logger.info(f"Submitting worker {i}...")
                 future = executor.submit(
-                    package_worker, 
-                    package_queue, 
+                    library_worker, 
+                    work_queue, 
                     output_dir, 
                     args.llm_url, 
                     args.model, 
@@ -1382,7 +1365,8 @@ def main():
                     args.log_prompts,
                     progress_lock,
                     completed_count,
-                    failed_count
+                    failed_count,
+                    completed_packages
                 )
                 workers.append(future)
                 logger.info(f"Worker {i} submitted successfully")
@@ -1396,11 +1380,10 @@ def main():
             logger.info("Background monitor thread started")
             
             # Monitor progress
-            total_packages = len(json_files)
-            logger.info(f"Starting progress monitoring for {total_packages} packages...")
+            logger.info(f"Starting progress monitoring for {total_work_items} work items...")
             
             try:
-                with tqdm(total=total_packages, desc="Processing packages", unit="package") as pbar:
+                with tqdm(total=total_work_items, desc="Processing libraries", unit="library") as pbar:
                     last_completed = 0
                     monitoring_cycles = 0
                     
@@ -1425,18 +1408,18 @@ def main():
                         
                         with progress_lock:
                             current_completed = completed_count[0] + failed_count[0]
-                            logger.debug(f"Progress check: {current_completed}/{total_packages} completed")
+                            logger.debug(f"Progress check: {current_completed}/{total_work_items} completed")
                         
                         # Update progress bar
                         if current_completed > last_completed:
                             delta = current_completed - last_completed
                             pbar.update(delta)
                             last_completed = current_completed
-                            logger.info(f"Progress updated: {current_completed}/{total_packages} packages processed")
+                            logger.info(f"Progress updated: {current_completed}/{total_work_items} work items processed")
                         
-                        # Check if all packages are done
-                        if current_completed >= total_packages:
-                            logger.info("All packages completed!")
+                        # Check if all work items are done
+                        if current_completed >= total_work_items:
+                            logger.info("All work items completed!")
                             break
                         
                         # Small delay to avoid busy waiting
@@ -1452,7 +1435,7 @@ def main():
             
             # Wait for all workers to complete
             try:
-                package_queue.join()
+                work_queue.join()
                 logger.info("Queue join completed successfully")
             except Exception as join_error:
                 logger.error(f"Queue join failed: {join_error}")
