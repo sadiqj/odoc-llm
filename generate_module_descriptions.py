@@ -17,7 +17,7 @@ import sys
 import traceback
 import time
 from pathlib import Path
-from typing import Dict, List, Optional, Any
+from typing import Dict, List, Optional, Any, Tuple
 from dataclasses import dataclass
 from openai import OpenAI
 import argparse
@@ -1198,7 +1198,7 @@ def debug_module_prompts(args):
             print("="*80)
             print()
             
-        def _show_chunked_prompts(self, module: ModuleContent):
+        def _show_chunked_prompts(self, module: ModuleContent, all_modules: Dict[str, ModuleContent]):
             """Show all prompts that would be generated for chunked description."""
             # Extract code elements (functions, types, modules) from ordered elements
             code_elements = [elem for elem in module.elements if elem.get('kind') in ['value', 'type', 'module', 'module-type']]
@@ -1210,17 +1210,20 @@ def debug_module_prompts(args):
                 chunk = code_elements[i:i + chunk_size]
                 chunk_num = i // chunk_size + 1
                 
-                chunk_prompt = self._build_chunk_prompt(module, chunk, chunk_num)
+                chunk_prompt = self._build_chunk_prompt(module, chunk, chunk_num, all_modules)
                 self._show_prompt(f"CHUNK {chunk_num} PROMPT", chunk_prompt)
             
             # Show final combining prompt using the actual prompt building logic
             mock_summaries = [f"Chunk {i+1}: [would contain summary of chunk {i+1}]" 
                             for i in range(len(range(0, len(code_elements), chunk_size)))]
             
-            final_prompt = self._build_chunk_combine_prompt(module, mock_summaries)
+            final_prompt = self._build_chunk_combine_prompt(module, mock_summaries, all_modules)
             self._show_prompt("FINAL COMBINING PROMPT", final_prompt)
     
     debug_client = DebugLLMClient()
+    
+    # Create all_modules dictionary for ancestor lookup
+    all_modules = {module.path: module for module in modules}
     
     if strategy == "Leaf module":
         print("PROCESSING AS LEAF MODULE")
@@ -1231,12 +1234,12 @@ def debug_module_prompts(args):
         total_items = len(code_elements)
         
         if total_items <= 20:
-            prompt = debug_client._build_simple_description_prompt(target_module)
+            prompt = debug_client._build_simple_description_prompt(target_module, all_modules)
             debug_client._show_prompt("SIMPLE DESCRIPTION PROMPT", prompt)
         else:
             print(f"This module has {total_items} items - using CHUNKED DESCRIPTION")
             print()
-            debug_client._show_chunked_prompts(target_module)
+            debug_client._show_chunked_prompts(target_module, all_modules)
             
     elif strategy == "Pure parent module":
         print("PROCESSING AS PURE PARENT MODULE")
@@ -1272,12 +1275,12 @@ Description:"""
         total_items = len(code_elements)
         
         if total_items <= 20:
-            prompt = debug_client._build_simple_description_prompt(target_module)
+            prompt = debug_client._build_simple_description_prompt(target_module, all_modules)
             debug_client._show_prompt("OWN FUNCTIONALITY PROMPT", prompt)
         else:
             print(f"Own functionality has {total_items} items - using CHUNKED DESCRIPTION")
             print()
-            debug_client._show_chunked_prompts(target_module)
+            debug_client._show_chunked_prompts(target_module, all_modules)
         
         if target_module.children:
             print(f"2. Then merging with {len(target_module.children)} children using HYBRID MERGE")
