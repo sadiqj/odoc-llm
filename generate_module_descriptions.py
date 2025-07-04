@@ -895,6 +895,14 @@ def load_package_and_create_work_items(json_file: Path, extractor: ModuleExtract
         
         logger.info(f"Package {package_name}: {len(libraries)} libraries, {len(no_library_modules)} modules without library")
         
+        # Track expected libraries for this package
+        with results_lock:
+            package_expected_libraries[package_name].clear()
+            for library_name in libraries:
+                package_expected_libraries[package_name].add(library_name)
+            if no_library_modules:
+                package_expected_libraries[package_name].add(None)  # None represents modules without library
+        
         # Create work items for each library
         for library_name, library_modules in libraries.items():
             work_items.append(LibraryWorkItem(
@@ -923,8 +931,10 @@ def load_package_and_create_work_items(json_file: Path, extractor: ModuleExtract
         logger.error(f"Failed to load package {package_name}: {e}")
         return work_items
 
-# Global storage for package results
+# Global storage for package results and tracking
 package_results = defaultdict(lambda: {'libraries': {}, 'modules_without_library': {}})
+package_expected_libraries = defaultdict(set)  # Track expected libraries per package
+package_completed_libraries = defaultdict(set)  # Track completed libraries per package
 results_lock = threading.Lock()
 
 def save_package_results(output_dir: Path, package_name: str, completed_packages: set) -> bool:
@@ -1034,10 +1044,22 @@ def library_worker(work_queue: queue.Queue, output_dir: Path, llm_url: str, mode
                             failed_count[0] += 1
                             logger.error(f"Worker {worker_id} failed work item: {work_description} (FAILED) - total failed: {failed_count[0]}")
                 
-                        # Check if this completes a package (all libraries processed)
-                        # Note: This is a simplified check - for full correctness we'd need to track expected work items per package
-                        if success and save_package_results(output_dir, package_name, completed_packages):
-                            logger.info(f"Package {package_name} completed and saved")
+                        # Track completed libraries and check if package is complete
+                        if success:
+                            # Mark this library as completed
+                            library_completed = library_name if library_name else None
+                            package_completed_libraries[package_name].add(library_completed)
+                            
+                            # Check if all expected libraries for this package are completed
+                            expected_libs = package_expected_libraries[package_name]
+                            completed_libs = package_completed_libraries[package_name]
+                            
+                            if expected_libs <= completed_libs:  # All libraries completed
+                                if save_package_results(output_dir, package_name, completed_packages):
+                                    logger.info(f"Package {package_name} completed and saved (libraries: {expected_libs})")
+                                    # Clean up tracking
+                                    del package_expected_libraries[package_name]
+                                    del package_completed_libraries[package_name]
                             
                 except Exception as count_error:
                     logger.error(f"Worker {worker_id} EXCEPTION updating progress counts: {count_error}")
