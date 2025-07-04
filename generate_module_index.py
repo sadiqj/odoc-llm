@@ -16,6 +16,7 @@ from tqdm import tqdm
 import signal
 import sys
 import numpy as np
+import re
 
 
 def signal_handler(signum, frame):
@@ -36,21 +37,16 @@ def extract_module_documentation(module: Dict) -> Tuple[str, str]:
     """
     texts = []
     
-    # Add module-level documentation sections
-    if "documentation_sections" in module:
-        texts.extend(module["documentation_sections"])
+    # Add module documentation
+    if "documentation" in module and module["documentation"]:
+        texts.append(module["documentation"])
     
-    # Add type documentation
-    if "types" in module:
-        for type_def in module["types"]:
-            if "documentation" in type_def and type_def["documentation"]:
-                texts.append(type_def["documentation"])
-    
-    # Add value (function) documentation
-    if "values" in module:
-        for value in module["values"]:
-            if "documentation" in value and value["documentation"]:
-                texts.append(value["documentation"])
+    # Add elements documentation
+    if "elements" in module and module["elements"]:
+        for element in module["elements"]:
+            if element.get("kind") in ["value", "type", "module", "module-type"]:
+                if "documentation" in element and element["documentation"]:
+                    texts.append(element["documentation"])
     
     # Combine all documentation with space separation
     combined_text = " ".join(texts).strip()

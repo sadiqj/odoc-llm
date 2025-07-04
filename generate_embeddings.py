@@ -17,6 +17,7 @@ import sys
 import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import concurrent.futures
 from dataclasses import dataclass
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -45,6 +46,12 @@ def signal_handler(signum, frame):
     global shutdown_requested
     shutdown_requested = True
     logging.info(f"Received signal {signum}, initiating graceful shutdown...")
+    
+    # If called twice, force exit
+    if hasattr(signal_handler, 'called'):
+        logging.warning("Forced shutdown requested")
+        os._exit(1)
+    signal_handler.called = True
 
 
 signal.signal(signal.SIGINT, signal_handler)
@@ -117,7 +124,7 @@ class EmbeddingClient:
                         self.endpoint_url,
                         json={"content": text},
                         headers={"Content-Type": "application/json"},
-                        timeout=self.config.timeout
+                        timeout=min(self.config.timeout, 5.0)  # Shorter timeout for better shutdown response
                     )
                     
                     if response.status_code == 200:
@@ -301,7 +308,7 @@ class TaskQueue:
             # Handle case where file doesn't exist
             self.queue.put((priority, str(package_path)))
     
-    def get_task(self, timeout: float = 5.0) -> Optional[Path]:
+    def get_task(self, timeout: float = 1.0) -> Optional[Path]:
         """Get the next task from the queue."""
         try:
             priority, task_path = self.queue.get(timeout=timeout)
@@ -394,7 +401,15 @@ def process_single_package(
         if not package_data:
             return {"success": False, "error": "Failed to load package data"}
         
-        descriptions = package_data.get("descriptions", {})
+        # Extract descriptions from the nested library structure
+        descriptions = {}
+        libraries = package_data.get("libraries", {})
+        
+        # Collect all module descriptions from all libraries
+        for library_name, library_data in libraries.items():
+            modules = library_data.get("modules", {})
+            descriptions.update(modules)
+        
         if not descriptions:
             logging.warning(f"No descriptions found in {package_name}")
             return {"success": False, "error": "No descriptions found"}
@@ -439,14 +454,20 @@ def process_single_package(
             
             batch_texts = texts[i:i + batch_size]
             
-            # Apply rate limiting
+            # Apply rate limiting with shutdown check
+            if shutdown_requested:
+                return {"success": False, "error": "Shutdown requested"}
             rate_limiter.acquire(worker_id)
             
             # Get embeddings for batch
             try:
+                if shutdown_requested:
+                    return {"success": False, "error": "Shutdown requested"}
                 batch_embeddings = client.get_embeddings(batch_texts)
                 all_embeddings.extend(batch_embeddings)
             except Exception as e:
+                if shutdown_requested:
+                    return {"success": False, "error": "Shutdown requested"}
                 logging.error(f"Failed to get embeddings for {package_name} batch {i//batch_size}: {e}")
                 return {"success": False, "error": f"Embedding generation failed: {e}"}
         
@@ -525,11 +546,14 @@ def package_worker(
     logging.info(f"Worker {worker_name} starting")
     
     while not shutdown_requested:
-        # Get next task
-        task = task_queue.get_task()
+        # Get next task with shorter timeout
+        task = task_queue.get_task(timeout=1.0)
         if task is None:
-            logging.info(f"Worker {worker_name} finished - no more tasks")
-            break
+            # Check shutdown again after empty queue
+            if shutdown_requested:
+                logging.info(f"Worker {worker_name} shutting down")
+                break
+            continue  # Keep trying unless shutdown requested
         
         package_name = task.stem
         
@@ -730,24 +754,42 @@ def main():
             
             # Monitor and save checkpoints periodically
             checkpoint_counter = 0
+            shutdown_wait_counter = 0
             while not all(future.done() for future in futures):
-                time.sleep(5)  # Check every 5 seconds
+                time.sleep(1)  # Check every second
                 
                 checkpoint_counter += 1
-                if checkpoint_counter >= 12:  # Save every minute (5s * 12 = 60s)
+                if checkpoint_counter >= 60:  # Save every minute
                     checkpoint.save_checkpoint()
                     checkpoint_counter = 0
                 
                 if shutdown_requested:
-                    logging.info("Shutdown requested, waiting for workers to finish...")
-                    break
+                    shutdown_wait_counter += 1
+                    logging.info(f"Shutdown requested, waiting for workers to finish... ({shutdown_wait_counter}s)")
+                    if shutdown_wait_counter > 10:  # Force exit after 10 seconds
+                        logging.warning("Forcing exit after 10 second wait")
+                        break
             
-            # Wait for all workers to complete
-            for future in futures:
-                try:
-                    future.result(timeout=30)
-                except Exception as e:
-                    logging.error(f"Worker error: {e}")
+            # Wait for all workers to complete with shorter timeout
+            remaining_futures = list(futures)
+            while remaining_futures and not shutdown_requested:
+                done_futures = []
+                for future in remaining_futures:
+                    try:
+                        future.result(timeout=1.0)
+                        done_futures.append(future)
+                    except concurrent.futures.TimeoutError:
+                        continue
+                    except Exception as e:
+                        logging.error(f"Worker error: {e}")
+                        done_futures.append(future)
+                
+                for future in done_futures:
+                    remaining_futures.remove(future)
+                
+                if remaining_futures and shutdown_requested:
+                    logging.warning(f"Forcing shutdown with {len(remaining_futures)} workers still running")
+                    break
     
     except KeyboardInterrupt:
         logging.info("Interrupted by user")
