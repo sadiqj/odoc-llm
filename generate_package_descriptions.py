@@ -54,16 +54,16 @@ class PackageInfo:
 class LLMClient:
     """OpenAI-compatible client for generating package descriptions."""
     
-    def __init__(self, base_url: str = "http://localhost:8000", model: str = "Qwen/Qwen3-30B-A3B-FP8"):
+    def __init__(self, base_url: str = "http://localhost:8000", model: str = "Qwen/Qwen3-30B-A3B-FP8", api_key: str = "dummy_key"):
         try:
             self.client = OpenAI(
                 base_url=f"{base_url}/v1",
-                api_key="dummy_key",  # Local endpoint doesn't need real key
+                api_key=api_key,  # Use provided API key
                 timeout=60.0,  # 1 minute timeout for requests
                 max_retries=1
             )
             self.model = model
-            logger.info(f"LLMClient initialized with base_url={base_url}, model={model}")
+            logger.info(f"LLMClient initialized with base_url={base_url}, model={model}, api_key={'***' if api_key != 'dummy_key' else 'dummy_key'}")
         except Exception as e:
             logger.error(f"Failed to initialize OpenAI client: {e}")
             raise
@@ -169,19 +169,27 @@ def extract_package_info(json_file: Path) -> Optional[PackageInfo]:
         if 'README' in package_documentation and isinstance(package_documentation['README'], dict):
             readme_doc = package_documentation['README']
             # Try different fields that might contain the actual content
-            readme_content = (
-                readme_doc.get('preamble', '') +
-                ' '.join(readme_doc.get('documentation_sections', []))
-            ).strip()
+            # Handle both old format (preamble + documentation_sections) and new format (content)
+            if 'content' in readme_doc:
+                readme_content = readme_doc['content'].strip()
+            else:
+                readme_content = (
+                    readme_doc.get('preamble', '') +
+                    ' '.join(readme_doc.get('documentation_sections', []))
+                ).strip()
         
         # Extract other documentation if available
         changes_content = ""
         if 'CHANGES' in package_documentation and isinstance(package_documentation['CHANGES'], dict):
             changes_doc = package_documentation['CHANGES']
-            changes_content = (
-                changes_doc.get('preamble', '') +
-                ' '.join(changes_doc.get('documentation_sections', []))
-            ).strip()
+            # Handle both old format (preamble + documentation_sections) and new format (content)
+            if 'content' in changes_doc:
+                changes_content = changes_doc['content'].strip()
+            else:
+                changes_content = (
+                    changes_doc.get('preamble', '') +
+                    ' '.join(changes_doc.get('documentation_sections', []))
+                ).strip()
         
         # If no README content, try to extract from main module documentation
         if not readme_content and 'modules' in data and data['modules']:
@@ -253,8 +261,20 @@ def main():
     parser.add_argument("--model", default="Qwen/Qwen3-30B-A3B-FP8", help="LLM model name")
     parser.add_argument("--log-prompts", action="store_true", help="Log prompts and responses sent to LLM")
     parser.add_argument("--workers", type=int, default=8, help="Number of parallel workers")
+    parser.add_argument("--api-key-file", help="File containing API key (if needed for remote endpoint)")
     
     args = parser.parse_args()
+    
+    # Read API key from file if provided
+    api_key = "dummy_key"
+    if args.api_key_file:
+        try:
+            with open(args.api_key_file, 'r') as f:
+                api_key = f.read().strip()
+            logger.info(f"API key loaded from {args.api_key_file}")
+        except Exception as e:
+            logger.error(f"Failed to read API key from {args.api_key_file}: {e}")
+            return 1
     
     # Setup directories
     input_dir = Path(args.input_dir)
@@ -290,7 +310,7 @@ def main():
     
     # Initialize LLM client
     try:
-        llm_client = LLMClient(args.llm_url, args.model)
+        llm_client = LLMClient(args.llm_url, args.model, api_key)
     except Exception as e:
         logger.error(f"Failed to initialize LLM client: {e}")
         return 1
